@@ -3,7 +3,7 @@
 	<head>
 		<title>Proposal: COGA Semantics to Enable Personalization</title>
 		<script src="https://www.w3.org/Tools/respec/respec-w3c-common" class="remove"></script>
-		<script src="../common/biblio.js" class="remove"></script>
+		<!--<script src="../common/biblio.js" class="remove"></script>-->
 		<script class="remove">
 	var respecConfig = {
 		// embed RDFa data in the output
@@ -22,12 +22,12 @@
 		//diffTool:             "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
 		
 		// the specifications short name, as in http://www.w3.org/TR/short-name/
-		shortName:            "coga-issue-papers",
+		shortName:            "personalization-semantics",
 		
 
 		// if you wish the publication date to be other than today, set this
 		// publishDate:  "2009-08-06",
-		copyrightStart:  "2015",
+		copyrightStart:  "2016",
 
 		// if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
 		// and its maturity status
@@ -37,7 +37,7 @@
 		//previousDiffURI: "",
 
 		// if there a publicly available Editors Draft, this is the link
-		edDraftURI: "https://w3c.github.io/coga/issue-papers/link-buttons.html",
+		edDraftURI: "https://w3c.github.io/personalization-semantics/",
 
 		// if this is a LCWD, uncomment and set the end of its review period
 		// lcEnd: "2012-02-21",
@@ -48,14 +48,26 @@
 			{
 				name: "Lisa Seeman",
 				url: 'http://athena-ict.com',
-				mailto: "lisa.seeman@zoho.com"
+				company: "IBM",
+				companyURI: "http://www.ibm.com/able",
+				mailto: "lisa.seeman@zoho.com",
+				w3cid: 16320
 			},
 			{
 				name: "Rich Schwerdtfeger",
 				url: 'http://www.w3.org',
 				mailto: "schwer@us.ibm.com",
 				company: "IBM",
-				companyURI: "http://www.ibm.com/able"
+				companyURI: "http://www.ibm.com/able",
+				w3cid: 2460
+			},
+			{
+				name: "Michael Cooper",
+				url: 'http://www.w3.org',
+				mailto: "cooper@w3.org",
+				company: "W3C",
+				companyURI: "http://www.w3.org",
+				w3cid: 34017
 			}
 		],
 
@@ -79,23 +91,23 @@
 		// errata: 'http://www.w3.org/2010/02/rdfa/errata.html',
 		
 		// name of the WG
-		wg:           ["Cognitive and Learning Disabilities Accessibility Task Force", "Protocols and Formats Working Group", "Web Content Accessibility Guidelines Working Group"],
+		wg:           "Accessible Rich Internet Applications Working Group",
 		
 		// URI of the public WG page
-		wgURI:        ["http://www.w3.org/WAI/PF/cognitive-a11y-tf/", "http://www.w3.org/WAI/PF/", "http://www.w3.org/WAI/GL/"],
+		wgURI:        "http://www.w3.org/WAI/ARIA/",
 		
 		// name (with the @w3c.org) of the public mailing to which comments are due
-		wgPublicList: "public-coga-comments",
+		wgPublicList: "public-aria",
 		
 		// URI of the patent status for this WG, for Rec-track documents
 		// !!!! IMPORTANT !!!!
 		// This is important for Rec-track documents, do not copy a patent URI from a random
 		// document unless you know what you're doing. If in doubt ask your friendly neighbourhood
 		// Team Contact.
-		wgPatentURI:  ["", "http://www.w3.org/2004/01/pp-impl/35422/status", "http://www.w3.org/2004/01/pp-impl/32212/status"],
+		wgPatentURI:  "http://www.w3.org/2004/01/pp-impl/83726/status",
 		//maxTocLevel: 2,
 		
-		localBiblio: biblio,
+		//localBiblio: biblio,
 	};
 		</script>
 	</head>
@@ -574,6 +586,6 @@ some users may be able to remove them from content.</p>
 			</section>
 		</section>
 		-->
-		<div data-include='../common/acknowledgements.html' data-oninclude='fixIncludes' data-include-replace='true'>Acknowledgements placeholder</div>
+		<div data-include='../aria/common/acknowledgements.html' data-oninclude='fixIncludes' data-include-replace='true'>Acknowledgements placeholder</div>
 	</body>
 </html>
