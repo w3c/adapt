@@ -106,10 +106,9 @@
 		<section id="sotd"> </section>
 		<section>
 			<h2>Introduction</h2>
-<p>Personalization involves tailoring aspects of the user experience to  meet the preferences or needs of the user. For example, having familiar terms and symbols is key to being able to use the web. However what is familiar for one user may be new for another requiring them to learn new symbols. Personalization could include loading a set of symbols that is appropriate for the specific user, ensuring that all users find the icons simple and familiar.<br />
-Technology holds the  promise of being extremely flexible and the design of many systems includes the  expectation that users will be able to optimise their interaction experience  according to their personal preferences or accessibility  requirements (needs).  
-<p></p>
-We need personalization  because:  </p>
+<p>Personalization involves tailoring aspects of the user experience to  meet the preferences or needs of the user. For example, having familiar terms and symbols is key to being able to use the web. However what is familiar for one user may be new for another requiring them to learn new symbols. Personalization could include loading a set of symbols that is appropriate for the specific user, ensuring that all users find the icons simple and familiar.</p>
+<p>Technology holds the  promise of being extremely flexible and the design of many systems includes the  expectation that users will be able to optimise their interaction experience  according to their personal preferences or accessibility  requirements (needs).  </p>
+<p>We need personalization  because:  </p>
     <ul>
       <li>Different user needs can conflict  </li>
       <li>Learning new design patterns (and widgets) can  be confusing - we want to allow users to stick with what works for them  </li>
@@ -410,7 +409,6 @@ This attribute provides  any information that helps the user anticipate the  fun
 		<p> coga-explain= "press enter to send the email" </p>
 		<p>coga-feedback= "your email on birthdays was sent" </p>
 		<p>These values will change when the email is sent.</p>
-		<p>&nbsp;</p>
 	</section>
     
     
@@ -433,8 +431,9 @@ If you press it by mistake, press control and y at the same time and your answer
 &lt;a href=&quot;functiongethelp()&quot; coga-extrahelp=&quot;humanhelp&quot; coga-hidden=&quot;true&quot;&gt;
 I want a person to help me
 &lt;/a&gt;
-&lt;div id=&quot;uri3&quot; coga-extrahelp=&quot;glossary&quot; coga-hidden=&quot;true&quot;&gt;</p></section>
+&lt;div id=&quot;uri3&quot; coga-extrahelp=&quot;glossary&quot; coga-hidden=&quot;true&quot;&gt;
 </pre>
+</section>
                 <section>
                  <h2>Potential Features</h2>
                         <p>The following may not be necessary </p>
@@ -484,7 +483,6 @@ I want a person to help me
           <p>Notes: </p>
           <p>This is just a proposed syntax. Other syntax may be better.</p>
           <p>For protection of privacy ,it must be easy for the user to delete the log, and prevent the log from being stored.        </p>
-          <p>&nbsp;</p>
         </div>
         <pre>&lt;log name=&quot;booking trip&quot;&gt; &lt;step status =&quot;done&quot;&gt; &lt;name&gt;buy ticket&lt;/name&gt;&lt;actiontaken&gt;bought ticket to NY return&lt;/actiontaken&gt;&lt;view changepossible="yes"&gt;url &lt;/view&gt;&lt;step&gt;</pre>
         <pre>&lt;step  status =&quot;done&quot;&gt; &lt;name&gt;hotel&lt;/name&gt;&lt;actiontaken&gt;booked Sheraton single room&lt;/actiontaken&gt;&lt;view changepossible="yes"&gt;url &lt;/view&gt;&lt;/step&gt;</pre>
@@ -508,23 +506,19 @@ Note that status can have values of :  done, pending , current. Where pending is
 			<p><strong>low</strong>: A message that does not need time sensitive attention. For example, a typical chat message</p>
 			<p><strong>Example:</strong></p>
 			<p>&lt;div role=&quot;alert&quot; coga-messageimportance=&quot;medium&quot;&gt; It is your daughter's birthday tomorrow&lt;/div&gt;</p>
-			<p>&nbsp;</p>
 			<p><strong>Proposed attribute: </strong>coga-messagefrom</p>
             <p><strong>Supported values: </strong>a string value that identifies the sender of the message. If multiple names are used they can be separated by a coma.</p>
             <p><strong>Example:</strong></p>
             <p>&lt;div role=&quot;alert&quot; coga-messageimportance=&quot;low&quot; coga-messagefrom=&quot;lisa seeman, lseeman&quot;&gt;I posted a new version on github for you to review&lt;/div&gt;</p>
-            <p>&nbsp;</p>
             <p><strong>Proposed attribute: </strong>coga-messagecontext</p>
             <p><strong>Supported values: </strong><strong> </strong>a string value that identifies the locaction that makes this message relevent. Typical values are &quot;home&quot; nd &quot;work&quot;. If multiple locations are relivent they can be separated by a coma.</p>
             <p><strong>Example:</strong></p>
             <p>&lt;div role=&quot;alert&quot; coga-messageimportance=&quot;low&quot; coga-messagefrom=&quot;lisa seeman, lseeman&quot; coga-messagecontext=&quot;work&quot;&gt;I posted a new version on github for you to review&lt;/div&gt;</p>
-            <p>&nbsp;</p>
             <p><strong>Proposed attribute: </strong>coga-messagetime</p>
             <p><strong>Supported values: </strong><strong> </strong>24 hour date time format. DD.MM.YEAR.HOUR.MM - DD.MM.YEAR.HOUR.MM where the second date is an optional exclusive expiry date.</p>
             <p><strong>Example:</strong></p>
             <p>&lt;div role=&quot;alert&quot; coga-messageimportance=&quot;medium&quot; coga-messagefrom=&quot;my calender&quot; coga-messagecontext=&quot;work&quot; coga-messagetime=&quot;10.02.2017.00.00-16.02.2017.00.00&quot;&gt;Renew your driving license this week&lt;/div&gt;</p>
             <p>&lt;div role=&quot;alert&quot; coga-messageimportance=&quot;critical&quot; coga-messagefrom=&quot;my calender&quot; coga-messagecontext=&quot;work&quot; coga-messagetime=&quot;16.02.2017.00.00&quot;&gt;Renew your driving license ASAP&lt;/div&gt;</p>
-			<p>&nbsp;</p>
 		</section>
 		<section>
 			<h2>Distractions</h2>
@@ -533,7 +527,7 @@ some users may be able to remove them from content.</p>
 			<p><strong>Proposed attribute: </strong><code> coga-distraction</code></p>
 			<p>This attribute should be used on non essential, detracting content, so that people who have problems keeping focus can turn them off. An example user experiences would be to hide all distraction content.</p>
 			<p><strong>Example: </strong> coga-distraction=&quot;moving ad&quot;</p>
-			<p>Supported values: animations, auto-starting,  moving, ad, message, chat , overlay, popup<br>
+			<p>Supported values: animations, auto-starting,  moving, ad, message, chat , overlay, popup<br/>
 			  Auto-changing (logs) third-party,  offer
 		    ( includes suggestions).</p>
 			<p>Note that elements with the coga-distraction attribute should also have a lable or  accessible name.</p>
