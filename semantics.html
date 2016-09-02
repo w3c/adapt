@@ -348,7 +348,6 @@
 	...     
 &lt;/div&gt;
 			</pre>
-                        <p> </p>
                 	</section>
 
          	</section>
@@ -361,7 +360,7 @@
 				URL
 			</p>
       			<p><strong>Examples:</strong></p>
-      			<p>&lt;img coga-concept="http//wordnet.com/node/girl&quot; href=&quot;mygirlsy.bmp/&gt; </p>
+      			<pre>&lt;img coga-concept="http//wordnet.com/node/girl&quot; href=&quot;mygirlsy.bmp/&gt; </pre>
       			<p> </p>
     		</section>
        		<section>
@@ -389,8 +388,8 @@
 			<p><strong>Proposed attribute:</strong><code>coga-numberfree</code> </p>
 			<p><strong>Supported value : </strong> String</p>
 			<p><strong>For example:</strong></p>
-			<p><span>&lt;span coga-numberfree=&quot;almost all&quot;&gt;9 out of 10</span> &lt;/span&gt;
-			</p>
+			<pre>&lt;span coga-numberfree=&quot;almost all&quot;&gt;9 out of 10 &lt;/span&gt;
+			</pre>
 			<pre>&lt;span coga-numberfree=&quot;hat and coat weather&quot;&gt;The weather is <span>9 degrees&lt;/span&gt;</span>
 			</pre>
 		</section>
@@ -432,18 +431,25 @@ This attribute provides  any information that helps the user anticipate the  fun
 <p><strong>Proposed attribute: </strong><code>coga-extrahelp</code></p>
 <p><strong>Supported values: </strong>  tooltips/humanhelp/morehelp/glossary/dictionary/thesaurus</p>
 <p><strong>Example:</strong></p>
-<p>&lt;button type="button" coga-moreinfo=&quot;uri2 uri3&quot; &gt;undo&lt;/button&gt;</p>
+<pre>&lt;button type="button" coga-moreinfo=&quot;uri2 uri3&quot; &gt;undo&lt;/button&gt;</pre>
 <p>URI 2 may read: </p>
-<pre>
-&lt;div id=&quot;uri2&quot; coga-extrahelp=&quot;morehelp&quot; coga-hidden=&quot;true&quot;&gt;
-pressing the undo button will erase all your work on this page. Use this button with care. 
-If you press it by mistake, press control and y at the same time and your answers will come back. 
+<pre>&lt;div id=&quot;uri2&quot; 
+    coga-extrahelp=&quot;morehelp&quot; 
+    coga-hidden=&quot;true&quot;&gt;
+  pressing the undo button will erase all your work on this page. 
+  Use this button with care. 
+  If you press it by mistake, press control and y at the same time 
+  and your answers will come back. 
 &lt;/div&gt;
 
-&lt;a href=&quot;functiongethelp()&quot; coga-extrahelp=&quot;humanhelp&quot; coga-hidden=&quot;true&quot;&gt;
-I want a person to help me
+&lt;a href=&quot;functiongethelp()&quot; 
+    coga-extrahelp=&quot;humanhelp&quot; 
+    coga-hidden=&quot;true&quot;&gt;
+  I want a person to help me
 &lt;/a&gt;
-&lt;div id=&quot;uri3&quot; coga-extrahelp=&quot;glossary&quot; coga-hidden=&quot;true&quot;&gt;
+&lt;div id=&quot;uri3&quot; 
+    coga-extrahelp=&quot;glossary&quot; 
+    coga-hidden=&quot;true&quot;&gt;
 </pre>
 </section>
                 <section>
@@ -471,19 +477,22 @@ I want a person to help me
 				</ul>
 
 			<strong>Example:</strong>
-			<div><em>&lt;div&gt;</em></div>
-			<div><em>&lt;span</em> <em>coga-alternative="easylang numberfree vocab1000" class="hidden"&gt;>most people prefer simple text</em><em>&lt;/span&gt;</em></div>
-			<div><em>In studies it was found that only 30% of users prefer long convoluted text with obtuse words and lots of numbers, with 56% claiming there preferred the simplified text , with the remainder unsure or stated it depends on the context.</em></div>
-			<div><em><br />
-			</em></div>
-			<div><em>&lt;/div&gt;</em></div>
+			<pre>&lt;div&gt;
+  &lt;span coga-alternative="easylang numberfree vocab1000" class="hidden"&gt;>
+    most people prefer simple text
+  &lt;/span&gt;
+  In studies it was found that only 30% of users prefer long convoluted text 
+  with obtuse words and lots of numbers, 
+  with 56% claiming there preferred the simplified text , 
+  with the remainder unsure or stated it depends on the context.
+&lt;/div&gt;</pre>
 		</section>
 		<section>
 			<p> <strong>Proposed attribute: </strong><code>coga-easylang</code> </p>
 			<p><code>coga-easylang</code> will contain a version of the content that is easier to read and understand. Note that this only works on small sections of text as the easylang attribute does not support full HTML, such as lists and sections.</p>
 
 			<p><strong>Supported values:</strong> String</p>
-			<p>&lt;span coga-easylang=&quot; some text that is easy to read&quot;&gt; some convoluted obtuse text&lt;/span&gt;</p>
+			<pre>&lt;span coga-easylang=&quot; some text that is easy to read&quot;&gt; some convoluted obtuse text&lt;/span&gt;</pre>
 			<p>Where coga-easylang should use as simple well-known words as possible, and active voicing, literal text, small simple sentences. Acronyms and abbreviations should be avoided, unless they are the common way to refer to an item.</p>
 			<p> </p>
 		</section>
@@ -496,13 +505,24 @@ I want a person to help me
           <p>This is just a proposed syntax. Other syntax may be better.</p>
           <p>For protection of privacy ,it must be easy for the user to delete the log, and prevent the log from being stored.        </p>
         </div>
-        <pre>&lt;log name=&quot;booking trip&quot;&gt; &lt;step status =&quot;done&quot;&gt; &lt;name&gt;buy ticket&lt;/name&gt;&lt;actiontaken&gt;bought ticket to NY return&lt;/actiontaken&gt;&lt;view changepossible="yes"&gt;url &lt;/view&gt;&lt;step&gt;</pre>
-        <pre>&lt;step  status =&quot;done&quot;&gt; &lt;name&gt;hotel&lt;/name&gt;&lt;actiontaken&gt;booked Sheraton single room&lt;/actiontaken&gt;&lt;view changepossible="yes"&gt;url &lt;/view&gt;&lt;/step&gt;</pre>
-        <pre>
-&lt;step  status =&quot;current&quot;&gt; &lt;name&gt;car rental&lt;/name&gt;&lt;view current changepossible="yes"/&gt; &lt;/step&gt;       </pre>
-        <pre>&lt;/log&gt;
+        <pre>&lt;log name="booking trip"&gt; 
+  &lt;step status ="done"&gt; 
+    &lt;name&gt;buy ticket&lt;/name&gt;
+    &lt;actiontaken&gt;bought ticket to NY return&lt;/actiontaken&gt;
+    &lt;view changepossible="yes"&gt;url &lt;/view&gt;
+  &lt;/step&gt;
+  &lt;step  status ="done"&gt; 
+    &lt;name&gt;hotel&lt;/name&gt;
+    &lt;actiontaken&gt;booked Sheraton single room&lt;/actiontaken&gt;
+    &lt;view changepossible="yes"&gt;url &lt;/view&gt;
+  &lt;/step&gt;
+  &lt;step  status ="current"&gt; 
+    &lt;name&gt;car rental&lt;/name&gt;
+    &lt;view current changepossible="yes"/&gt; 
+  &lt;/step&gt;
+&lt;/log&gt;</pre>
 
-Note that status can have values of :  done, pending , current. Where pending is a step that has not yet been completed but is not the current step.</pre>
+<p>Note that status can have values of :  done, pending , current. Where pending is a step that has not yet been completed but is not the current step.</p>
         <pre>An alternative syntax could be</pre>
         <pre>&lt;div role="log" aria-label=&quot;booking trip&quot; aria-hidden="true"/&gt;
 </pre>
@@ -517,20 +537,44 @@ Note that status can have values of :  done, pending , current. Where pending is
 			<p><strong>medium: </strong>Important messages that  needs the user's attention at their convenience. For example, a relatively important  chat message.</p>
 			<p><strong>low</strong>: A message that does not need time sensitive attention. For example, a typical chat message</p>
 			<p><strong>Example:</strong></p>
-			<p>&lt;div role=&quot;alert&quot; coga-messageimportance=&quot;medium&quot;&gt; It is your daughter's birthday tomorrow&lt;/div&gt;</p>
+			<pre>&lt;div role=&quot;alert&quot; 
+    coga-messageimportance=&quot;medium&quot;&gt;
+  It is your daughter's birthday tomorrow
+&lt;/div&gt;</pre>
 			<p><strong>Proposed attribute: </strong>coga-messagefrom</p>
             <p><strong>Supported values: </strong>a string value that identifies the sender of the message. If multiple names are used they can be separated by a coma.</p>
             <p><strong>Example:</strong></p>
-            <p>&lt;div role=&quot;alert&quot; coga-messageimportance=&quot;low&quot; coga-messagefrom=&quot;lisa seeman, lseeman&quot;&gt;I posted a new version on github for you to review&lt;/div&gt;</p>
+            <pre>&lt;div role=&quot;alert&quot; 
+    coga-messageimportance=&quot;low&quot; 
+    coga-messagefrom=&quot;lisa seeman, lseeman&quot;&gt;
+  I posted a new version on github for you to review
+&lt;/div&gt;</pre>
             <p><strong>Proposed attribute: </strong>coga-messagecontext</p>
             <p><strong>Supported values: </strong><strong> </strong>a string value that identifies the locaction that makes this message relevent. Typical values are &quot;home&quot; nd &quot;work&quot;. If multiple locations are relivent they can be separated by a coma.</p>
             <p><strong>Example:</strong></p>
-            <p>&lt;div role=&quot;alert&quot; coga-messageimportance=&quot;low&quot; coga-messagefrom=&quot;lisa seeman, lseeman&quot; coga-messagecontext=&quot;work&quot;&gt;I posted a new version on github for you to review&lt;/div&gt;</p>
+            <pre>&lt;div role=&quot;alert&quot;
+   coga-messageimportance=&quot;low&quot; 
+   coga-messagefrom=&quot;lisa seeman, lseeman&quot; 
+   coga-messagecontext=&quot;work&quot;&gt;
+  I posted a new version on github for you to review
+&lt;/div&gt;</pre>
             <p><strong>Proposed attribute: </strong>coga-messagetime</p>
             <p><strong>Supported values: </strong><strong> </strong>24 hour date time format. DD.MM.YEAR.HOUR.MM - DD.MM.YEAR.HOUR.MM where the second date is an optional exclusive expiry date.</p>
             <p><strong>Example:</strong></p>
-            <p>&lt;div role=&quot;alert&quot; coga-messageimportance=&quot;medium&quot; coga-messagefrom=&quot;my calender&quot; coga-messagecontext=&quot;work&quot; coga-messagetime=&quot;10.02.2017.00.00-16.02.2017.00.00&quot;&gt;Renew your driving license this week&lt;/div&gt;</p>
-            <p>&lt;div role=&quot;alert&quot; coga-messageimportance=&quot;critical&quot; coga-messagefrom=&quot;my calender&quot; coga-messagecontext=&quot;work&quot; coga-messagetime=&quot;16.02.2017.00.00&quot;&gt;Renew your driving license ASAP&lt;/div&gt;</p>
+            <pre>&lt;div role=&quot;alert&quot; 
+    coga-messageimportance=&quot;medium&quot; 
+    coga-messagefrom=&quot;my calender&quot; 
+    coga-messagecontext=&quot;work&quot; 
+    coga-messagetime=&quot;10.02.2017.00.00-16.02.2017.00.00&quot;&gt;
+  Renew your driving license this week
+&lt;/div&gt;</pre>
+            <pre>&lt;div role=&quot;alert&quot; 
+    coga-messageimportance=&quot;critical&quot; 
+    coga-messagefrom=&quot;my calender&quot; 
+    coga-messagecontext=&quot;work&quot; 
+    coga-messagetime=&quot;16.02.2017.00.00&quot;&gt;
+  Renew your driving license ASAP
+&lt;/div&gt;</pre>
 		</section>
 		<section>
 			<h2>Distractions</h2>
