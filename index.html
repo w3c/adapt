@@ -884,14 +884,18 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <h2 id="h-more-help" resource="#h-more-help"><span property="xhv:role" resource="xhv:heading"><span class="secno">10. </span>More Help<span class="permalink" typeof="bookmark"><a href="#more-help" aria-label="Permalink for 10. More Help" title="Permalink for 10. More Help" property="url"><span property="title" content="10. More Help">§</span></a></span></span></h2>
     <p><strong>Requirement: </strong>Some users may need additional information or specifically additional help inforamtion. We request additonal attributes so that an author can indicate the existence of this additional information.</p>
     <p><strong>Proposed attribute: </strong><code>coga-moreinfo</code></p>
-    <p><strong>Supported values: </strong>URL</p>
+    <p><strong>Supported values: </strong>URI</p>
     <p><strong>Proposed attribute: </strong><code>coga-extrahelp</code></p>
-    <p><strong>Supported values: </strong> tooltips/humanhelp/morehelp/glossary/dictionary/thesaurus</p>
+    <p><strong>Supported values: </strong>URI</p>
+    <p></p>
+    <p><strong>Proposed attribute: </strong><code>coga-helptype</code></p>
+    <p><strong>Supported values: </strong> tooltips/humanhelp/morehelp/topicsearch/automated/faqs/helpform/simplified/glossary/dictionary/thesaurus</p>
+    <p>&nbsp;</p>
     <p><strong>Example:</strong></p>
-    <pre class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">coga-moreinfo</span>=<span class="hljs-string">"uri2 uri3"</span> &gt;</span>undo<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></pre>
+    <pre class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">coga-extrahelp</span>=<span class="hljs-string">"uri2 uri3"</span> &gt;</span>undo<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></pre>
     <p>URI 2 may read: </p>
     <pre class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"uri2"</span> 
-    <span class="hljs-attr">coga-extrahelp</span>=<span class="hljs-string">"morehelp"</span> 
+    <span class="hljs-attr">coga-helptype</span>=<span class="hljs-string">"morehelp"</span> 
     <span class="hljs-attr">coga-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
   pressing the undo button will erase all your work on this page. 
   Use this button with care. 
@@ -900,7 +904,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"functiongethelp()"</span> 
-    <span class="hljs-attr">coga-extrahelp</span>=<span class="hljs-string">"humanhelp"</span> 
+    <span class="hljs-attr">coga-helptype</span>=<span class="hljs-string">"humanhelp"</span> 
     <span class="hljs-attr">coga-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
   I want a person to help me
 <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
