@@ -2,8 +2,8 @@
 <html lang="en" typeof="bibo:Document " prefix="bibo: http://purl.org/ontology/bibo/ w3p: http://www.w3.org/2001/02pd/rec54#">
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-  <meta property="dc:language" content="en" lang="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta lang="" property="dc:language" content="en">
   <style>
     /*
 
@@ -396,10 +396,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
   <!--<script src="../common/biblio.js" class="remove"></script>-->
 
-  <link href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED">
   <!--[if lt IE 9]><script src='https://www.w3.org/2008/site/js/html5shiv.js'></script><![endif]-->
-  <meta content="ReSpec 5.0.0" name="generator">
-  <script type="application/json" id="initialUserConfig">
+  <meta name="generator" content="ReSpec 5.0.0">
+  <script id="initialUserConfig" type="application/json">
     {
       "trace": true,
       "doRDFa": "1.1",
@@ -444,10 +444,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     }
   </script>
 </head>
-<body id="respecDocument" role="document" class="h-entry toc-inline">
-  <div id="respecHeader" role="contentinfo" class="head">
+<body class="h-entry toc-inline" role="document" id="respecDocument">
+  <div class="head" role="contentinfo" id="respecHeader">
     <p>
-      <a class="logo" href="https://www.w3.org/"><img src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt="W3C" height="48" width="72"></a>
+      <a class="logo" href="https://www.w3.org/"><img width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt="W3C"></a>
     </p>
     <h1 class="title p-name" id="title" property="dcterms:title">Proposal: COGA Semantics to Enable Personalization</h1>
     <h2 id="w3c-editor-s-draft-02-september-2016"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time property="dcterms:issued" class="dt-published" datetime="2016-09-02">02 September 2016</time></h2>
@@ -483,15 +483,15 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <hr title="Separator for header">
   </div>
 
-  <section property="dc:abstract" class="introductory" id="abstract">
+  <section id="abstract" class="introductory" property="dc:abstract">
     <!--OddPage-->
-    <h2 resource="#h-abstract" id="h-abstract"><span property="xhv:role" resource="xhv:heading">Abstract</span></h2>
+    <h2 id="h-abstract" resource="#h-abstract"><span property="xhv:role" resource="xhv:heading">Abstract</span></h2>
     <p>This is a proposal to define syntax for adaptable content such as: links, buttons, symbols, help and keyboard. This may be an WAI-ARIA COGA Extension.</p>
   </section>
 
   <section id="sotd" class="introductory">
     <!--OddPage-->
-    <h2 resource="#h-sotd" id="h-sotd"><span property="xhv:role" resource="xhv:heading">Status of This Document</span></h2>
+    <h2 id="h-sotd" resource="#h-sotd"><span property="xhv:role" resource="xhv:heading">Status of This Document</span></h2>
     <p>
       <em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em>
     </p>
@@ -520,47 +520,40 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
   </section>
   <nav id="toc">
-    <h2 resource="#table-of-contents" id="table-of-contents" class="introductory"><span property="xhv:role" resource="xhv:heading">Table of Contents</span></h2>
-    <ol role="directory" class="toc">
-      <li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li>
-      <li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li>
-      <li class="tocline"><a class="tocxref" href="#introduction"><span class="secno">1. </span>Introduction</a>
+    <h2 class="introductory" id="table-of-contents" resource="#table-of-contents"><span property="xhv:role" resource="xhv:heading">Table of Contents</span></h2>
+    <ol class="toc" role="directory">
+      <li class="tocline"><a href="#abstract" class="tocxref">Abstract</a></li>
+      <li class="tocline"><a href="#sotd" class="tocxref">Status of This Document</a></li>
+      <li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a>
         <ol class="toc">
-          <li class="tocline"><a class="tocxref" href="#contextual-personalization"><span class="secno">1.1 </span>Contextual Personalization</a></li>
+          <li class="tocline"><a href="#contextual-personalization" class="tocxref"><span class="secno">1.1 </span>Contextual Personalization</a></li>
         </ol>
       </li>
-      <li class="tocline"><a class="tocxref" href="#simplification"><span class="secno">2. </span>Simplification</a></li>
-      <li class="tocline"><a class="tocxref" href="#adding-context"><span class="secno">3. </span>Adding Context </a></li>
-      <li class="tocline"><a class="tocxref" href="#general-context"><span class="secno">4. </span>General context</a>
+      <li class="tocline"><a href="#simplification" class="tocxref"><span class="secno">2. </span>Simplification</a></li>
+      <li class="tocline"><a href="#adding-context" class="tocxref"><span class="secno">3. </span>Adding Context </a></li>
+      <li class="tocline"><a href="#general-context" class="tocxref"><span class="secno">4. </span>General context</a>
         <ol class="toc">
-          <li class="tocline"><a class="tocxref" href="#should-we-be-using-rdfa"><span class="secno">4.1 </span>Should we be using RDFa?</a></li>
+          <li class="tocline"><a href="#should-we-be-using-rdfa" class="tocxref"><span class="secno">4.1 </span>Should we be using RDFa?</a></li>
         </ol>
       </li>
-      <li class="tocline"><a class="tocxref" href="#concept-codes"><span class="secno">5. </span>Concept codes</a></li>
-      <li class="tocline"><a class="tocxref" href="#potential-parts-of-a-page"><span class="secno">6. </span>Potential parts of a page</a></li>
-      <li class="tocline"><a class="tocxref" href="#number-free"><span class="secno">7. </span>Number free</a></li>
-      <li class="tocline"><a class="tocxref" href="#non-literal-text-and-images"><span class="secno">8. </span>Non-literal text and images</a></li>
-      <li class="tocline"><a class="tocxref" href="#explain-and-feedback"><span class="secno">9. </span>Explain and feedback</a></li>
-      <li class="tocline"><a class="tocxref" href="#more-help"><span class="secno">10. </span>More Help</a></li>
-      <li class="tocline"><a class="tocxref" href="#potential-features"><span class="secno">11. </span>Potential Features</a></li>
-      <li class="tocline"><a class="tocxref" href="#language-type-support"><span class="secno">12. </span>Language type support</a></li>
-      <li class="tocline"><a class="tocxref" href="#logs"><span class="secno">13. </span>Logs</a></li>
-      <li class="tocline"><a class="tocxref" href="#reminders-and-messages"><span class="secno">14. </span>Reminders and messages</a></li>
-      <li class="tocline"><a class="tocxref" href="#distractions"><span class="secno">15. </span>Distractions</a></li>
-      <li class="tocline"><a class="tocxref" href="#additional-wai-aria-roles"><span class="secno">16. </span>Additional WAI-ARIA roles</a></li>
-      <li class="tocline"><a class="tocxref" href="#acknowledgements"><span class="secno">A. </span>Acknowledgments</a>
-        <ol class="toc">
-          <li class="tocline"><a class="tocxref" href="#ack_group"><span class="secno">A.1 </span>Participants active in the ARIA WG at the time of publication</a></li>
-          <li class="tocline"><a class="tocxref" href="#ack_others"><span class="secno">A.2 </span>Other ARIA contributors, commenters, and previously active participants</a></li>
-          <li class="tocline"><a class="tocxref" href="#ack_funders"><span class="secno">A.3 </span>Enabling funders</a></li>
-        </ol>
-      </li>
+      <li class="tocline"><a href="#concept-codes" class="tocxref"><span class="secno">5. </span>Concept codes</a></li>
+      <li class="tocline"><a href="#potential-parts-of-a-page" class="tocxref"><span class="secno">6. </span>Potential parts of a page</a></li>
+      <li class="tocline"><a href="#number-free" class="tocxref"><span class="secno">7. </span>Number free</a></li>
+      <li class="tocline"><a href="#non-literal-text-and-images" class="tocxref"><span class="secno">8. </span>Non-literal text and images</a></li>
+      <li class="tocline"><a href="#explain-and-feedback" class="tocxref"><span class="secno">9. </span>Explain and feedback</a></li>
+      <li class="tocline"><a href="#more-help" class="tocxref"><span class="secno">10. </span>More Help</a></li>
+      <li class="tocline"><a href="#potential-features" class="tocxref"><span class="secno">11. </span>Potential Features</a></li>
+      <li class="tocline"><a href="#language-type-support" class="tocxref"><span class="secno">12. </span>Language type support</a></li>
+      <li class="tocline"><a href="#logs" class="tocxref"><span class="secno">13. </span>Logs</a></li>
+      <li class="tocline"><a href="#reminders-and-messages" class="tocxref"><span class="secno">14. </span>Reminders and messages</a></li>
+      <li class="tocline"><a href="#distractions" class="tocxref"><span class="secno">15. </span>Distractions</a></li>
+      <li class="tocline"><a href="#additional-wai-aria-roles" class="tocxref"><span class="secno">16. </span>Additional WAI-ARIA roles</a></li>
     </ol>
   </nav>
 
-  <section property="bibo:hasPart" resource="#introduction" typeof="bibo:Chapter" id="introduction">
+  <section id="introduction" typeof="bibo:Chapter" resource="#introduction" property="bibo:hasPart">
     <!--OddPage-->
-    <h2 resource="#h-introduction" id="h-introduction"><span property="xhv:role" resource="xhv:heading"><span class="secno">1. </span>Introduction<span typeof="bookmark" class="permalink"><a property="url" title="Permalink for 1. Introduction" aria-label="Permalink for 1. Introduction" href="#introduction"><span content="1. Introduction" property="title">§</span></a></span></span></h2>
+    <h2 id="h-introduction" resource="#h-introduction"><span property="xhv:role" resource="xhv:heading"><span class="secno">1. </span>Introduction<span class="permalink" typeof="bookmark"><a href="#introduction" aria-label="Permalink for 1. Introduction" title="Permalink for 1. Introduction" property="url"><span property="title" content="1. Introduction">§</span></a></span></span></h2>
     <p>Personalization involves tailoring aspects of the user experience to meet the preferences or needs of the user. For example, having familiar terms and symbols is key to being able to use the web. However what is familiar for one user may be new for another requiring them to learn new symbols. Personalization could include loading a set of symbols that is appropriate for the specific user, ensuring that all users find the icons simple and familiar.</p>
     <p>Technology holds the promise of being extremely flexible and the design of many systems includes the expectation that users will be able to optimise their interaction experience according to their personal preferences or accessibility requirements (needs). </p>
     <p>We need personalization because: </p>
@@ -597,16 +590,16 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <p>This is one example of personalization based on semantics. Others may follow. It is also worth noting that the GPII project is working on making user preferences portable which would also enhance this work.</p>
     <p>In another use-case we would like to see interoperable symbol set codes for non-verbal people. Products for people who are non vocal often use symbols to help users communicate. These symbols are in fact peoples language. Unfortunately many of these symbols are both subject to copy write and are not interoperable. That means end-users can only use one device, and can not use apps or AT from a different company. An open set of references for symbol codes for these symbol sets however, could be interoperable. That means the end user could use an open source symbol set or buy the symbols and use them across different devices or applications. Symbols could still be proprietary but they would also be interoperable. </p>
 
-    <section property="bibo:hasPart" resource="#contextual-personalization" typeof="bibo:Chapter" id="contextual-personalization">
-      <h3 resource="#h-contextual-personalization" id="h-contextual-personalization"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.1 </span>Contextual Personalization<span typeof="bookmark" class="permalink"><a property="url" title="Permalink for 1.1 Contextual Personalization" aria-label="Permalink for 1.1 Contextual Personalization" href="#contextual-personalization"><span content="1.1 Contextual Personalization" property="title">§</span></a></span></span></h3>
+    <section id="contextual-personalization" typeof="bibo:Chapter" resource="#contextual-personalization" property="bibo:hasPart">
+      <h3 id="h-contextual-personalization" resource="#h-contextual-personalization"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.1 </span>Contextual Personalization<span class="permalink" typeof="bookmark"><a href="#contextual-personalization" aria-label="Permalink for 1.1 Contextual Personalization" title="Permalink for 1.1 Contextual Personalization" property="url"><span property="title" content="1.1 Contextual Personalization">§</span></a></span></span></h3>
       <p>One important factor in optimizing the personalization of a product or service is to ensure that the personalization is appropriate for the current context of use. For example, settings that will suit the user of a mobile phone in their office or home will not be well suited to that user when they are driving a car. In a home or office, the typical user would probably prefer to send and receive text messages using the keyboard and screen of the mobile phone. However, in the car, voice input and text to speech output would be the most appropriate. In this car context, the profile settings of a typical user might be very similar to those that a blind user would use in all contexts.</p>
     </section>
 
   </section>
 
-  <section property="bibo:hasPart" resource="#simplification" typeof="bibo:Chapter" id="simplification">
+  <section id="simplification" typeof="bibo:Chapter" resource="#simplification" property="bibo:hasPart">
     <!--OddPage-->
-    <h2 resource="#h-simplification" id="h-simplification"><span property="xhv:role" resource="xhv:heading"><span class="secno">2. </span>Simplification<span typeof="bookmark" class="permalink"><a property="url" title="Permalink for 2. Simplification" aria-label="Permalink for 2. Simplification" href="#simplification"><span content="2. Simplification" property="title">§</span></a></span></span></h2>
+    <h2 id="h-simplification" resource="#h-simplification"><span property="xhv:role" resource="xhv:heading"><span class="secno">2. </span>Simplification<span class="permalink" typeof="bookmark"><a href="#simplification" aria-label="Permalink for 2. Simplification" title="Permalink for 2. Simplification" property="url"><span property="title" content="2. Simplification">§</span></a></span></span></h2>
     <p><strong>Requirement</strong>: The user must be able to request a way to identify and differentiate between critical features, medium features and less important features. These need to be defined as important from a user perspective in the content. Typically, critical features may be used by many or most users, 90% of the time or more. High important features would be above 60% use. Medium important features would be 20% of users use it 20% of the time . Under 20% usage would be of low importance.</p>
     <p><strong>User experience</strong>: Based on personalization setting the user can see less options. A sample user experience is available at <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html">https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html </a></p>
     <p><strong>Proposed attribute</strong>: coga-simplification (formerly coga-importance). Having the following values: (main task such as send for an email) </p>
@@ -633,7 +626,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       <li> <code>coga-simplification="low"</code>. This setting should be used on elements that are rarely used or only used by advanced users. (Example: The terms and services or the archive button for an email draft) </li>
     </ul>
     <div class="note">
-      <div id="h-note1" role="heading" aria-level="3" class="note-title marker"><span>Note</span></div>
+      <div class="note-title marker" aria-level="3" role="heading" id="h-note1"><span>Note</span></div>
       <div class="">
         <p>These semantics aid simplification. But what content is most useful to a user varies from user to user. For example, men may be more interested in mens clothing, and may not be interested in the more frequently use womens clothing option. For that reason we may add context for elements that will help the personalization agent select the most useful content for a given user. This is also necessary for reminders (see bellow). RDFa may be the best way forward for this aspect.</p>
         <p> It is worth mentioning that a lot of this information is known for personalization of advertisements and content optimization. </p>
@@ -641,9 +634,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </div>
   </section>
 
-  <section property="bibo:hasPart" resource="#adding-context" typeof="bibo:Chapter" id="adding-context">
+  <section id="adding-context" typeof="bibo:Chapter" resource="#adding-context" property="bibo:hasPart">
     <!--OddPage-->
-    <h2 resource="#h-adding-context" id="h-adding-context"><span property="xhv:role" resource="xhv:heading"><span class="secno">3. </span>Adding Context <span typeof="bookmark" class="permalink"><a property="url" title="Permalink for 3. Adding Context " aria-label="Permalink for 3. Adding Context " href="#adding-context"><span content="3. Adding Context " property="title">§</span></a></span></span></h2>
+    <h2 id="h-adding-context" resource="#h-adding-context"><span property="xhv:role" resource="xhv:heading"><span class="secno">3. </span>Adding Context <span class="permalink" typeof="bookmark"><a href="#adding-context" aria-label="Permalink for 3. Adding Context " title="Permalink for 3. Adding Context " property="url"><span property="title" content="3. Adding Context ">§</span></a></span></span></h2>
     <p><strong>Requirement:</strong> Having familiar terms and symbols is key to being able to use the web. However what is familiar for one user may be strange for another requiring them to learn new symbols. If a user agent or script knows the context of links, buttons, and other page elements then symbols and text used can be ones that the user understands. This can include: </p>
     <ul>
       <li> Symbols and graphics that they are familiar with </li>
@@ -694,7 +687,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </ul>
   </section>
 
-  <section property="bibo:hasPart" resource="" typeof="bibo:Chapter">
+  <section typeof="bibo:Chapter" resource="" property="bibo:hasPart">
     <p><strong>Proposed attribute:</strong><code>coga-destination</code></p>
     <p>The <code>coga-destination</code> attribute provides the context of a link. It should be used on a link element or element with role="link".</p>
     <p>For example: &lt;a href="home.html" coga-destination="home" &gt;our main page&lt;/a&gt;</p>
@@ -726,7 +719,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </ul>
   </section>
 
-  <section property="bibo:hasPart" resource="" typeof="bibo:Chapter">
+  <section typeof="bibo:Chapter" resource="" property="bibo:hasPart">
     <p><strong>Proposed attribute: </strong><code>coga-field</code></p>
     <p><code>coga-field</code> provides the context of a text input field such as a text box. It should be used on an input, text a responding role.</p>
     <p>For example: &lt;input type="text" name="fname" coga-field="phone"/&gt;</p>
@@ -764,9 +757,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </ul>
   </section>
 
-  <section property="bibo:hasPart" resource="#general-context" typeof="bibo:Chapter" id="general-context">
+  <section id="general-context" typeof="bibo:Chapter" resource="#general-context" property="bibo:hasPart">
     <!--OddPage-->
-    <h2 resource="#h-general-context" id="h-general-context"><span property="xhv:role" resource="xhv:heading"><span class="secno">4. </span>General context<span typeof="bookmark" class="permalink"><a property="url" title="Permalink for 4. General context" aria-label="Permalink for 4. General context" href="#general-context"><span content="4. General context" property="title">§</span></a></span></span></h2>
+    <h2 id="h-general-context" resource="#h-general-context"><span property="xhv:role" resource="xhv:heading"><span class="secno">4. </span>General context<span class="permalink" typeof="bookmark"><a href="#general-context" aria-label="Permalink for 4. General context" title="Permalink for 4. General context" property="url"><span property="title" content="4. General context">§</span></a></span></span></h2>
     <p><strong>Requirement: </strong> One important factor in optimizing the personalization of a product or service is to ensure that the personalization is appropriate for the current context of use as well as what is relevant for the user. For example a female user with a cognitive disability may need less options, and options that are for men are less likely to be relevant for her and may be demoted to bellow the scroll or placed under a "more option" button.</p>
     <p><strong>Proposed attribute:</strong>coga-context</p>
     Coga-context would let the author give additional contextual information about the content.
@@ -774,8 +767,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <pre class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"women.html"</span> <span class="hljs-attr">coga-context</span>=<span class="hljs-string">"openref:gender#femail"</span>&gt;</span>women<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> </pre>
     <p>To make this work without an RDF parser we recommend maintaining a list of recommended ontologies. </p>
 
-    <section property="bibo:hasPart" resource="#should-we-be-using-rdfa" typeof="bibo:Chapter" id="should-we-be-using-rdfa">
-      <h3 resource="#h-should-we-be-using-rdfa" id="h-should-we-be-using-rdfa"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.1 </span>Should we be using RDFa?<span typeof="bookmark" class="permalink"><a property="url" title="Permalink for 4.1 Should we be using RDFa?" aria-label="Permalink for 4.1 Should we be using RDFa?" href="#should-we-be-using-rdfa"><span content="4.1 Should we be using RDFa?" property="title">§</span></a></span></span></h3>
+    <section id="should-we-be-using-rdfa" typeof="bibo:Chapter" resource="#should-we-be-using-rdfa" property="bibo:hasPart">
+      <h3 id="h-should-we-be-using-rdfa" resource="#h-should-we-be-using-rdfa"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.1 </span>Should we be using RDFa?<span class="permalink" typeof="bookmark"><a href="#should-we-be-using-rdfa" aria-label="Permalink for 4.1 Should we be using RDFa?" title="Permalink for 4.1 Should we be using RDFa?" property="url"><span property="title" content="4.1 Should we be using RDFa?">§</span></a></span></span></h3>
       <p>The context based properties should be convertible to RDFa. (see <a href="https://www.w3.org/TR/xhtml-rdfa-primer/">RDFa Primer</a>) and the task force should create this mapping.</p>
       <p>Note that a lot of this can be done using RDFa. However it is easy to change the meaning with RDFa and a very basic parser will misinterpret the result. The coga work needs to be usable by as many authors as possible, and not only thoughs who can implement RDF logic.</p>
       <p>Further , personalization setting need to be limited, and RDF can give an unlimited number of potential options which will make the system unusable. (This is unless we create restrictions and controls on an ontology uses - such as mapping to know ontologies.)</p>
@@ -806,9 +799,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
   </section>
 
-  <section property="bibo:hasPart" resource="#concept-codes" typeof="bibo:Chapter" id="concept-codes">
+  <section id="concept-codes" typeof="bibo:Chapter" resource="#concept-codes" property="bibo:hasPart">
     <!--OddPage-->
-    <h2 resource="#h-concept-codes" id="h-concept-codes"><span property="xhv:role" resource="xhv:heading"><span class="secno">5. </span>Concept codes<span typeof="bookmark" class="permalink"><a property="url" title="Permalink for 5. Concept codes" aria-label="Permalink for 5. Concept codes" href="#concept-codes"><span content="5. Concept codes" property="title">§</span></a></span></span></h2>
+    <h2 id="h-concept-codes" resource="#h-concept-codes"><span property="xhv:role" resource="xhv:heading"><span class="secno">5. </span>Concept codes<span class="permalink" typeof="bookmark"><a href="#concept-codes" aria-label="Permalink for 5. Concept codes" title="Permalink for 5. Concept codes" property="url"><span property="title" content="5. Concept codes">§</span></a></span></span></h2>
     <p><strong>Requirement: </strong>We would like to enable interoperable symbol set codes for Non verbal people. Products for people who are non vocal often use symbols to help users communicate. These symbols are in fact peoples language. Unfortunately many of these symbols are both subject to copy write AND not interoperable. That means end-users can only use one device, and can not use apps or AT from a different company. There are open set of symbol codes for these symbol sets, that could be referenced then they can be interoperable. alternatively wordnet nodes could be referenced. If the users symbols are mapped to the same nodes then users agents will be able to load the user understandable symbol. That means the end use could buy the symbols and use them across different devices or applications. They would still be proprietary but they would also be interoperable. </p>
     <p>User experience: AAC users will load symbols that they understand in different applications that are made by a different provider.</p>
     <p><strong>Proposed attribute:</strong> <code>coga-concept</code></p>
@@ -819,9 +812,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <p> </p>
   </section>
 
-  <section property="bibo:hasPart" resource="#potential-parts-of-a-page" typeof="bibo:Chapter" id="potential-parts-of-a-page">
+  <section id="potential-parts-of-a-page" typeof="bibo:Chapter" resource="#potential-parts-of-a-page" property="bibo:hasPart">
     <!--OddPage-->
-    <h2 resource="#h-potential-parts-of-a-page" id="h-potential-parts-of-a-page"><span property="xhv:role" resource="xhv:heading"><span class="secno">6. </span>Potential parts of a page<span typeof="bookmark" class="permalink"><a property="url" title="Permalink for 6. Potential parts of a page" aria-label="Permalink for 6. Potential parts of a page" href="#potential-parts-of-a-page"><span content="6. Potential parts of a page" property="title">§</span></a></span></span></h2>
+    <h2 id="h-potential-parts-of-a-page" resource="#h-potential-parts-of-a-page"><span property="xhv:role" resource="xhv:heading"><span class="secno">6. </span>Potential parts of a page<span class="permalink" typeof="bookmark"><a href="#potential-parts-of-a-page" aria-label="Permalink for 6. Potential parts of a page" title="Permalink for 6. Potential parts of a page" property="url"><span property="title" content="6. Potential parts of a page">§</span></a></span></span></h2>
     <p><strong>Requirement:</strong> The following could be extensions for aria landmarks or ePub </p>
     <p><strong>User experience:</strong> symbols and colors could be used consistently across different content. </p>
     <p>Links (such as ePub nav maps) can be automatically generated for people learn via keypoints or examples.</p>
@@ -838,9 +831,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </ul>
   </section>
 
-  <section property="bibo:hasPart" resource="#number-free" typeof="bibo:Chapter" id="number-free">
+  <section id="number-free" typeof="bibo:Chapter" resource="#number-free" property="bibo:hasPart">
     <!--OddPage-->
-    <h2 resource="#h-number-free" id="h-number-free"><span property="xhv:role" resource="xhv:heading"><span class="secno">7. </span>Number free<span typeof="bookmark" class="permalink"><a property="url" title="Permalink for 7. Number free" aria-label="Permalink for 7. Number free" href="#number-free"><span content="7. Number free" property="title">§</span></a></span></span></h2>
+    <h2 id="h-number-free" resource="#h-number-free"><span property="xhv:role" resource="xhv:heading"><span class="secno">7. </span>Number free<span class="permalink" typeof="bookmark"><a href="#number-free" aria-label="Permalink for 7. Number free" title="Permalink for 7. Number free" property="url"><span property="title" content="7. Number free">§</span></a></span></span></h2>
     <p><strong>Requirement</strong>: Not everyone can understand numbers. We therefor suggest coga-numberfree for alternative text for people who can not understand the main content</p>
     <p><strong>User experience:</strong></p>
     <p>A suggested user experience would be: Numerical concepts could be rendered by the user agent slightly different so that the user knows a number free explanation is available. The user can then mouse over the content and a tooltips would give the number free value</p>
@@ -853,9 +846,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       </pre>
   </section>
 
-  <section property="bibo:hasPart" resource="#non-literal-text-and-images" typeof="bibo:Chapter" id="non-literal-text-and-images">
+  <section id="non-literal-text-and-images" typeof="bibo:Chapter" resource="#non-literal-text-and-images" property="bibo:hasPart">
     <!--OddPage-->
-    <h2 resource="#h-non-literal-text-and-images" id="h-non-literal-text-and-images"><span property="xhv:role" resource="xhv:heading"><span class="secno">8. </span>Non-literal text and images<span typeof="bookmark" class="permalink"><a property="url" title="Permalink for 8. Non-literal text and images" aria-label="Permalink for 8. Non-literal text and images" href="#non-literal-text-and-images"><span content="8. Non-literal text and images" property="title">§</span></a></span></span></h2>
+    <h2 id="h-non-literal-text-and-images" resource="#h-non-literal-text-and-images"><span property="xhv:role" resource="xhv:heading"><span class="secno">8. </span>Non-literal text and images<span class="permalink" typeof="bookmark"><a href="#non-literal-text-and-images" aria-label="Permalink for 8. Non-literal text and images" title="Permalink for 8. Non-literal text and images" property="url"><span property="title" content="8. Non-literal text and images">§</span></a></span></span></h2>
     <p><strong>Requirement: </strong>Not everyone can understand non-literal text and icons such as metaphors, idioms etc. We need a tag that identifies text or images as non literal and allows the author to explain non-literal text and images to users.</p>
     <p><strong>User experience:</strong></p>
     <p>A suggested user experience would be: Non literal content could be rendered by the user agent slightly differently so that the user knows that this content should not be taken literally and that a literal explanation is available. The user can then mouse over the content and a tooltips would give the literal value.</p>
@@ -867,9 +860,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </p>
   </section>
 
-  <section property="bibo:hasPart" resource="#explain-and-feedback" typeof="bibo:Chapter" id="explain-and-feedback">
+  <section id="explain-and-feedback" typeof="bibo:Chapter" resource="#explain-and-feedback" property="bibo:hasPart">
     <!--OddPage-->
-    <h2 resource="#h-explain-and-feedback" id="h-explain-and-feedback"><span property="xhv:role" resource="xhv:heading"><span class="secno">9. </span>Explain and feedback<span typeof="bookmark" class="permalink"><a property="url" title="Permalink for 9. Explain and feedback" aria-label="Permalink for 9. Explain and feedback" href="#explain-and-feedback"><span content="9. Explain and feedback" property="title">§</span></a></span></span></h2>
+    <h2 id="h-explain-and-feedback" resource="#h-explain-and-feedback"><span property="xhv:role" resource="xhv:heading"><span class="secno">9. </span>Explain and feedback<span class="permalink" typeof="bookmark"><a href="#explain-and-feedback" aria-label="Permalink for 9. Explain and feedback" title="Permalink for 9. Explain and feedback" property="url"><span property="title" content="9. Explain and feedback">§</span></a></span></span></h2>
     <p><strong>Requirement: </strong></p>
     <p>Some users need additional help. We request an attribute where the author can provide additional information.or what just happened.</p>
     <strong>Proposed attribute: </strong><code>coga-feedback</code>
@@ -879,16 +872,16 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <p>
       This attribute provides any information that helps the user anticipate the functionality, such as letting the user know what behavior will trigger an event. This is most important if the mechanism is not standard. </p>
     <p> User experience: This help can be rendered as a tool tip, help link or read when the control or link is read. Most users will not want this text rendered or spoken, but other users however will need it to understand the behavior of the element.</p>
-    <h2 id="examples">Examples:<span typeof="bookmark" class="permalink"><a property="url" title="Permalink for Examples:" aria-label="Permalink for Examples:" href="#explain-and-feedback"><span content="Examples:" property="title">§</span></a></span></h2>
+    <h2 id="examples">Examples:<span class="permalink" typeof="bookmark"><a href="#explain-and-feedback" aria-label="Permalink for Examples:" title="Permalink for Examples:" property="url"><span property="title" content="Examples:">§</span></a></span></h2>
     <p> coga-explain= "press enter to send the email" </p>
     <p>coga-feedback= "your email on birthdays was sent" </p>
     <p>These values will change when the email is sent.</p>
   </section>
 
 
-  <section property="bibo:hasPart" resource="#more-help" typeof="bibo:Chapter" id="more-help">
+  <section id="more-help" typeof="bibo:Chapter" resource="#more-help" property="bibo:hasPart">
     <!--OddPage-->
-    <h2 resource="#h-more-help" id="h-more-help"><span property="xhv:role" resource="xhv:heading"><span class="secno">10. </span>More Help<span typeof="bookmark" class="permalink"><a property="url" title="Permalink for 10. More Help" aria-label="Permalink for 10. More Help" href="#more-help"><span content="10. More Help" property="title">§</span></a></span></span></h2>
+    <h2 id="h-more-help" resource="#h-more-help"><span property="xhv:role" resource="xhv:heading"><span class="secno">10. </span>More Help<span class="permalink" typeof="bookmark"><a href="#more-help" aria-label="Permalink for 10. More Help" title="Permalink for 10. More Help" property="url"><span property="title" content="10. More Help">§</span></a></span></span></h2>
     <p><strong>Requirement: </strong>Some users may need additional information or specifically additional help inforamtion. We request additonal attributes so that an author can indicate the existence of this additional information.</p>
     <p><strong>Proposed attribute: </strong><code>coga-moreinfo</code></p>
     <p><strong>Supported values: </strong>URL</p>
@@ -917,9 +910,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 </pre>
   </section>
 
-  <section property="bibo:hasPart" resource="#potential-features" typeof="bibo:Chapter" id="potential-features">
+  <section id="potential-features" typeof="bibo:Chapter" resource="#potential-features" property="bibo:hasPart">
     <!--OddPage-->
-    <h2 resource="#h-potential-features" id="h-potential-features"><span property="xhv:role" resource="xhv:heading"><span class="secno">11. </span>Potential Features<span typeof="bookmark" class="permalink"><a property="url" title="Permalink for 11. Potential Features" aria-label="Permalink for 11. Potential Features" href="#potential-features"><span content="11. Potential Features" property="title">§</span></a></span></span></h2>
+    <h2 id="h-potential-features" resource="#h-potential-features"><span property="xhv:role" resource="xhv:heading"><span class="secno">11. </span>Potential Features<span class="permalink" typeof="bookmark"><a href="#potential-features" aria-label="Permalink for 11. Potential Features" title="Permalink for 11. Potential Features" property="url"><span property="title" content="11. Potential Features">§</span></a></span></span></h2>
     <p>The following may not be necessary </p>
     <ul>
       <li>Views </li>
@@ -931,9 +924,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </ul>
   </section>
 
-  <section property="bibo:hasPart" resource="#language-type-support" typeof="bibo:Chapter" id="language-type-support">
+  <section id="language-type-support" typeof="bibo:Chapter" resource="#language-type-support" property="bibo:hasPart">
     <!--OddPage-->
-    <h2 resource="#h-language-type-support" id="h-language-type-support"><span property="xhv:role" resource="xhv:heading"><span class="secno">12. </span>Language type support<span typeof="bookmark" class="permalink"><a property="url" title="Permalink for 12. Language type support" aria-label="Permalink for 12. Language type support" href="#language-type-support"><span content="12. Language type support" property="title">§</span></a></span></span></h2>
+    <h2 id="h-language-type-support" resource="#h-language-type-support"><span property="xhv:role" resource="xhv:heading"><span class="secno">12. </span>Language type support<span class="permalink" typeof="bookmark"><a href="#language-type-support" aria-label="Permalink for 12. Language type support" title="Permalink for 12. Language type support" property="url"><span property="title" content="12. Language type support">§</span></a></span></span></h2>
     <p><strong>Requirement: </strong>Sometimes you may want to provide a simplified version of a section of a page. For example, you may wish to provide a simplified summary of legal document, but still have a longer version for other users. These alternative versions may not be identical in content but maintain the gist of the original content.</p>
     <p><strong>Proposed attribute: </strong><code>coga-alternative</code> Would be used on an alternitive content as an alternative to more detailed or difficult to understand content. coga-alternative can be used on a span, div, link or image that servers as alternitive content to it's direct parent element.</p>
 
@@ -956,7 +949,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 &lt;<span class="hljs-regexp">/div&gt;</span></pre>
   </section>
 
-  <section property="bibo:hasPart" resource="" typeof="bibo:Chapter">
+  <section typeof="bibo:Chapter" resource="" property="bibo:hasPart">
     <p> <strong>Proposed attribute: </strong><code>coga-easylang</code> </p>
     <p><code>coga-easylang</code> will contain a version of the content that is easier to read and understand. Note that this only works on small sections of text as the easylang attribute does not support full HTML, such as lists and sections.</p>
 
@@ -966,9 +959,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <p> </p>
   </section>
 
-  <section property="bibo:hasPart" resource="#logs" typeof="bibo:Chapter">
+  <section typeof="bibo:Chapter" resource="#logs" property="bibo:hasPart">
     <!--OddPage-->
-    <h2 resource="#logs" id="logs"><span property="xhv:role" resource="xhv:heading"><span class="secno">13. </span>Logs</span></h2>
+    <h2 id="logs" resource="#logs"><span property="xhv:role" resource="xhv:heading"><span class="secno">13. </span>Logs</span></h2>
   </section>
   <div>&nbsp;This proposal is to track the tasks that a user has done, so that they can be reminded of them, and return to or fix a task. The suggested syntax should allow the author to transform some of the information into breadcrumbs via CSS, and &nbsp;the user system can read and present more or less information to the user as per their preferences.
     <p>Preferably this should be in the header so that the user agent can build a cross application log of user tasks.</p>
@@ -999,9 +992,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 </pre>
   <p>Open questions: Should the application name be in the log?</p>
 
-  <section property="bibo:hasPart" resource="#reminders-and-messages" typeof="bibo:Chapter" id="reminders-and-messages">
+  <section id="reminders-and-messages" typeof="bibo:Chapter" resource="#reminders-and-messages" property="bibo:hasPart">
     <!--OddPage-->
-    <h2 resource="#h-reminders-and-messages" id="h-reminders-and-messages"><span property="xhv:role" resource="xhv:heading"><span class="secno">14. </span>Reminders and messages<span typeof="bookmark" class="permalink"><a property="url" title="Permalink for 14. Reminders and messages" aria-label="Permalink for 14. Reminders and messages" href="#reminders-and-messages"><span content="14. Reminders and messages" property="title">§</span></a></span></span></h2>
+    <h2 id="h-reminders-and-messages" resource="#h-reminders-and-messages"><span property="xhv:role" resource="xhv:heading"><span class="secno">14. </span>Reminders and messages<span class="permalink" typeof="bookmark"><a href="#reminders-and-messages" aria-label="Permalink for 14. Reminders and messages" title="Permalink for 14. Reminders and messages" property="url"><span property="title" content="14. Reminders and messages">§</span></a></span></span></h2>
     <p><strong>Requirement: </strong>We require an attribute that enables different users to experience different amount of reminders and messages based on personal preferences. Reminders are a wonderful tool for many people with cognitive disabilities. However too many reminders will be annoying or distracting for some other users. Currently people can turn off distractions such as skype, and facebook, across different devices, and then may forget to turn them back on.</p>
     <p>These semantics allow for different solutions so that users are able to focus without missing important messages. Users need to manage all distractions by forming a cross application and cross device distraction matrix that manages all distractions in one setting. It is based on a matrix for distractions at the operating system , browser or cloud level. People and users can be clustered in terms of importance or groups. For example, the CEO and your child's care giver could both be considered critical contacts. So even if they do not feel the message is urgent they can sometimes disrupt the user anyway. Some family members and important colleagues can be in another group, friends and extended family in a third group, system messages from the compliance system can be a different group again. </p>
     <p><strong>Proposed attribute: </strong>coga-messageimportance</p>
@@ -1050,9 +1043,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
   </section>
 
-  <section property="bibo:hasPart" resource="#distractions" typeof="bibo:Chapter" id="distractions">
+  <section id="distractions" typeof="bibo:Chapter" resource="#distractions" property="bibo:hasPart">
     <!--OddPage-->
-    <h2 resource="#h-distractions" id="h-distractions"><span property="xhv:role" resource="xhv:heading"><span class="secno">15. </span>Distractions<span typeof="bookmark" class="permalink"><a property="url" title="Permalink for 15. Distractions" aria-label="Permalink for 15. Distractions" href="#distractions"><span content="15. Distractions" property="title">§</span></a></span></span></h2>
+    <h2 id="h-distractions" resource="#h-distractions"><span property="xhv:role" resource="xhv:heading"><span class="secno">15. </span>Distractions<span class="permalink" typeof="bookmark"><a href="#distractions" aria-label="Permalink for 15. Distractions" title="Permalink for 15. Distractions" property="url"><span property="title" content="15. Distractions">§</span></a></span></span></h2>
     <p><strong>Requirement: </strong> We require an attribute that indicates a distraction so that some users may be able to remove them from content.</p>
     <p><strong>Proposed attribute: </strong><code> coga-distraction</code></p>
     <p>This attribute should be used on non essential, detracting content, so that people who have problems keeping focus can turn them off. An example user experiences would be to hide all distraction content.</p>
@@ -1061,9 +1054,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <p>Note that elements with the coga-distraction attribute should also have a lable or accessible name.</p>
   </section>
 
-  <section property="bibo:hasPart" resource="#additional-wai-aria-roles" typeof="bibo:Chapter" id="additional-wai-aria-roles">
+  <section id="additional-wai-aria-roles" typeof="bibo:Chapter" resource="#additional-wai-aria-roles" property="bibo:hasPart">
     <!--OddPage-->
-    <h2 resource="#h-additional-wai-aria-roles" id="h-additional-wai-aria-roles"><span property="xhv:role" resource="xhv:heading"><span class="secno">16. </span>Additional WAI-ARIA roles<span typeof="bookmark" class="permalink"><a property="url" title="Permalink for 16. Additional WAI-ARIA roles" aria-label="Permalink for 16. Additional WAI-ARIA roles" href="#additional-wai-aria-roles"><span content="16. Additional WAI-ARIA roles" property="title">§</span></a></span></span></h2>
+    <h2 id="h-additional-wai-aria-roles" resource="#h-additional-wai-aria-roles"><span property="xhv:role" resource="xhv:heading"><span class="secno">16. </span>Additional WAI-ARIA roles<span class="permalink" typeof="bookmark"><a href="#additional-wai-aria-roles" aria-label="Permalink for 16. Additional WAI-ARIA roles" title="Permalink for 16. Additional WAI-ARIA roles" property="url"><span property="title" content="16. Additional WAI-ARIA roles">§</span></a></span></span></h2>
     <p><strong>Requirement: </strong> We may want to add roles for sections a page such as: contact us - for a contact us form&nbsp; </p>
     <p><strong>User experience: </strong>symbols and colors could be used consistently across different content.</p>
     <p>Nav maps can be automatically generated for people learn via key-points or examples.</p>
@@ -1104,196 +1097,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 			</section>
 		</section>
 		-->
-
-  <section property="bibo:hasPart" resource="#acknowledgements" typeof="bibo:Chapter" class="appendix informative section" id="acknowledgements">
-    <!--OddPage-->
-    <h2 resource="#h-acknowledgements" id="h-acknowledgements"><span property="xhv:role" resource="xhv:heading"><span class="secno">A. </span>Acknowledgments<span typeof="bookmark" class="permalink"><a property="url" title="Permalink for A. Acknowledgments" aria-label="Permalink for A. Acknowledgments" href="#acknowledgements"><span content="A. Acknowledgments" property="title">§</span></a></span></span></h2>
-    <p><em>This section is non-normative.</em></p>
-    <p>The following people contributed to the development of this document.</p>
-
-    <section property="bibo:hasPart" resource="#ack_group" typeof="bibo:Chapter" class="section" id="ack_group">
-      <h3 resource="#h-ack_group" id="h-ack_group"><span property="xhv:role" resource="xhv:heading"><span class="secno">A.1 </span>Participants active in the ARIA WG at the time of publication<span typeof="bookmark" class="permalink"><a property="url" title="Permalink for A.1 Participants active in the ARIA WG at the time of publication" aria-label="Permalink for A.1 Participants active in the ARIA WG at the time of publication" href="#ack_group"><span content="A.1 Participants active in the ARIA WG at the time of publication" property="title">§</span></a></span></span></h3>
-      <ul>
-        <li>Ann Abbott (IBM Corporation)</li>
-        <li>Michiel Bijl (The Paciello Group)</li>
-        <li>Christy Blew (University of Illinois at Urbana-Champaign)</li>
-        <li>David Bolter (Mozilla Foundation) </li>
-        <li>Michael Cooper (<abbr title="World Wide Web Consortium">W3C</abbr>/<abbr title="Massachusetts Institute of Technology">MIT</abbr>)</li>
-        <li>James Craig (Apple Inc.) </li>
-        <li>Joanmarie Diggs (Igalia)</li>
-        <li>Fred Esch (IBM Corporation)</li>
-        <li>Steve Faulkner (The Paciello Group) </li>
-        <li>John Foliot (Invited Expert)</li>
-        <li>Bryan Garaventa (SSB BART Group)</li>
-        <li>Matt Garrish (DAISY Consortium)</li>
-        <li>Billy Gregory (The Paciello Group)</li>
-        <li>Karl Groves (The Paciello Group)</li>
-        <li>Jon Gunderson (University of Illinois at Urbana-Champaign)</li>
-        <li>Markus Gylling (DAISY Consortium)</li>
-        <li>Markku Hakkinen (Educational Testing Service)</li>
-        <li>Katie Haritos-Shea (Knowbility)</li>
-        <li>Susann Keohane (IBM Corporation)</li>
-        <li>Matthew King (Facebook)</li>
-        <li>Jason Kiss (Department of Internal Affairs, New Zealand Government)</li>
-        <li>Jamie Knight (British Broadcasting Corporation)</li>
-        <li>JaEun Jemma Ku (University of Illinois at Urbana-Champaign)</li>
-        <li>Shane McCarron (Invited Expert, Aptest)</li>
-        <li>Charles McCathie Nevile (Yandex)</li>
-        <li>Mary Jo Mueller (IBM Corporation)</li>
-        <li>James Nurthen (Oracle Corporation) </li>
-        <li>Ian Pouncey (The Paciello Group, LLC)</li>
-        <li>Mark Sadecki (Invited Expert)</li>
-        <li>Janina Sajka (Invited Expert, The Linux Foundation)</li>
-        <li>Joseph Scheuhammer (Invited Expert, Inclusive Design Research Centre, OCAD University) </li>
-        <li>Stefan Schnabel (SAP AG) </li>
-        <li>Richard Schwerdtfeger (IBM Corporation)</li>
-        <li>Lisa Seeman (Invited Expert) </li>
-        <li>Tzviya Siegman (Wiley)</li>
-        <li>Cynthia Shelly (Microsoft Corporation) </li>
-        <li>Alexander Surkov (Mozilla Foundation)</li>
-        <li>Léonie Watson (The Paciello Group)</li>
-        <li>Jason White (Educational Testing Service)</li>
-        <li>Gottfried Zimmermann (Invited Expert, Access Technologies Group)</li>
-      </ul>
-    </section>
-
-    <section property="bibo:hasPart" resource="#ack_others" typeof="bibo:Chapter" class="section" id="ack_others">
-      <h3 resource="#h-ack_others" id="h-ack_others"><span property="xhv:role" resource="xhv:heading"><span class="secno">A.2 </span>Other ARIA contributors, commenters, and previously active participants<span typeof="bookmark" class="permalink"><a property="url" title="Permalink for A.2 Other ARIA contributors, commenters, and previously active participants" aria-label="Permalink for A.2 Other ARIA contributors, commenters, and previously active participants" href="#ack_others"><span content="A.2 Other ARIA contributors, commenters, and previously active participants" property="title">§</span></a></span></span></h3>
-      <ul>
-        <li>Shadi Abou-Zahra (<abbr title="World Wide Web Consortium">W3C</abbr>)</li>
-        <li>Jim Allan (TSB)</li>
-        <li>Jonny Axelsson (Opera Software)</li>
-        <li>David Baron (Mozilla Foundation)</li>
-        <li>Art Barstow (Nokia Corporation)</li>
-        <li>Simon Bates</li>
-        <li>Chris Blouch (AOL)</li>
-        <li>Judy Brewer (<abbr title="World Wide Web Consortium">W3C</abbr>/<abbr title="Massachusetts Institute of Technology">MIT</abbr>)</li>
-        <li>Mark Birbeck (Sidewinder Labs)</li>
-        <li>Sally Cain (Royal National Institute of Blind People (RNIB))</li>
-        <li>Gerardo Capiel (Benetech)</li>
-        <li>Ben Caldwell (Trace)</li>
-        <li>Sofia Celic-Li</li>
-        <li>Jaesik Chang (Samsung Electronics Co., Ltd.)</li>
-        <li>Alex Qiang Chen (University of Manchester)</li>
-        <li>Charles Chen (Google, Inc.)</li>
-        <li>Christian Cohrs</li>
-        <li>Deborah Dahl</li>
-        <li>Erik Dahlström (Opera Software)</li>
-        <li>Dimitar Denev (Frauenhofer Gesellschaft)</li>
-        <li>Micah Dubinko (Invited Expert)</li>
-        <li>Mandana Eibegger</li>
-        <li>Beth Epperson (Websense)</li>
-        <li>Donald Evans (AOL)</li>
-        <li>Chris Fleizach (Apple Inc.)</li>
-        <li>Kelly Ford (Microsoft Corporation)</li>
-        <li>Geoff Freed (Invited Expert, NCAM)</li>
-        <li>Christopher Gallelo (Microsoft Corporation)</li>
-        <li>Birkir Gunnarsson (Deque Systems, Inc.)</li>
-        <li>Kentarou Fukuda (IBM Corporation)</li>
-        <li>Bryan Garaventa</li>
-        <li>Guido Geloso</li>
-        <li>Ali Ghassemi</li>
-        <li>Becky Gibson (IBM)</li>
-        <li>Alfred S. Gilman</li>
-        <li>Andres Gonzalez (Adobe Systems Inc.)</li>
-        <li>Scott González (JQuery Foundation)</li>
-        <li>James Graham</li>
-        <li>Georgios Grigoriadis (SAP AG)</li>
-        <li>Jeff Grimes (Oracle)</li>
-        <li>Loretta Guarino Reid (Google, Inc.)</li>
-        <li>Barbara Hartel</li>
-        <li>James Hawkins (Google, Inc.)</li>
-        <li>Benjamin Hawkes-Lewis</li>
-        <li>Sean Hayes (Microsoft Corporation)</li>
-        <li>Mona Heath (University of Illinois at Urbana-Champaign)</li>
-        <li>Jan Heck</li>
-        <li>Shawn Henry</li>
-        <li>Tina Homboe</li>
-        <li>John Hrvatin (Microsoft Corporation)</li>
-        <li>Takahiro Inada</li>
-        <li>Masayasu Ishikawa (<abbr title="World Wide Web Consortium">W3C</abbr>)</li>
-        <li>Jim Jewitt</li>
-        <li>Kenny Johar (Microsoft Corporation)</li>
-        <li>Shilpi Kapoor (BarrierBreak Technologies)</li>
-        <li>Masahiko Kaneko (Microsoft Corporation)</li>
-        <li>Marjolein Katsma</li>
-        <li>George Kerscher (International Digital Publishing Forum)</li>
-        <li>Jason Kiss (New Zealand Government)</li>
-        <li>Todd Kloots</li>
-        <li>Johannes Koch</li>
-        <li>Sam Kuper</li>
-        <li>Earl Johnson (Sun)</li>
-        <li>Jael Kurz</li>
-        <li>Rajesh Lal (Nokia Corporation)</li>
-        <li>Diego La Monica (International Webmasters Association / HTML Writers Guild (IWA-HWG))</li>
-        <li>Aaron Leventhal (IBM Corporation)</li>
-        <li>Gez Lemon (International Webmasters Association / HTML Writers Guild (IWA-HWG))</li>
-        <li>Alex Li (SAP)</li>
-        <li>Chris Lilley</li>
-        <li>Thomas Logan (HiSoftware Inc.)</li>
-        <li>William Loughborough (Invited Expert)</li>
-        <li>Linda Mao (Microsoft)</li>
-        <li>David MacDonald (Invited Expert, CanAdapt Solutions Inc.)</li>
-        <li>Carolyn MacLeod</li>
-        <li>Anders Markussen (Opera Software)</li>
-        <li>Krzysztof Maczyński </li>
-        <li>Matthew May (Adobe Systems Inc.)</li>
-        <li>Dominic Mazzoni (Google, Inc.)</li>
-        <li>Alexandre Morgaut (4D)</li>
-        <li>Ann Navarro (Invited Expert)</li>
-        <li>Joshue O Connor (Invited Expert, CFIT)</li>
-        <li>Artur Ortega (Microsoft Corporation)</li>
-        <li>Sailesh Panchang (Deque)</li>
-        <li>Lisa Pappas (Society for Technical Communication (STC))</li>
-        <li>Marta Pawlowlska (Samsung Electronics Co., Ltd.)</li>
-        <li>Dave Pawson (RNIB)</li>
-        <li>Steven Pemberton (CWI Amsterdam)</li>
-        <li>Simon Pieters (Opera Software)</li>
-        <li>Jean-Bernard Piot (4D)</li>
-        <li>David Poehlman, Simon Pieters (Opera Software)</li>
-        <li>Sarah Pulis (Media Access Australia)</li>
-        <li>T.V. Raman (Google, Inc.)</li>
-        <li>Jan Richards</li>
-        <li>Gregory Rosmaita (Invited Expert)</li>
-        <li>Tony Ross (Microsoft Corporation)</li>
-        <li>Alex Russell (Dojo Foundation) (</li>
-        <li>Mark Sadecki (Invited Expert)</li>
-        <li>Mario Sánchez Prada (Samsung Electronics Co., Ltd. and Gnome Foundation)</li>
-        <li>Martin Schaus (SAP AG)</li>
-        <li>Doug Schepers (<abbr title="World Wide Web Consortium">W3C</abbr>)</li>
-        <li>Matthias Schmitt </li>
-        <li>Marc Silbey (Microsoft Corporation)</li>
-        <li>Leif Halvard Sili</li>
-        <li>Henri Sivonen (Mozilla)</li>
-        <li>Michael Smith (<abbr title="World Wide Web Consortium">W3C</abbr>)</li>
-        <li>Andi Snow-Weaver (IBM Corporation)</li>
-        <li>Ville Skyttä </li>
-        <li>Henny Swan (BBC)</li>
-        <li>Neil Soiffer (Design Science)</li>
-        <li>Vitaly Sourikov</li>
-        <li>Mike Squillace (IBM)</li>
-        <li>Maciej Stachowiak (Apple Inc.)</li>
-        <li>Christophe Strobbe</li>
-        <li>Suzanne Taylor (Pearson plc)</li>
-        <li>Terrill Thompson</li>
-        <li>David Todd</li>
-        <li>Gregg Vanderheiden (Invited Expert, Trace)</li>
-        <li>Anne van Kesteren</li>
-        <li>Wen He (Tencent)</li>
-        <li>Wu Wei (<abbr title="World Wide Web Consortium">W3C</abbr> / RITT)</li>
-        <li>Ryan Williams (Oracle)</li>
-        <li>Tom Wlodkowski</li>
-        <li>Sam White (Apple Inc.)</li>
-        <li>Marco Zehe (Mozilla Foundation)</li>
-      </ul>
-    </section>
-
-    <section property="bibo:hasPart" resource="#ack_funders" typeof="bibo:Chapter" class="section" id="ack_funders">
-      <h3 resource="#h-ack_funders" id="h-ack_funders"><span property="xhv:role" resource="xhv:heading"><span class="secno">A.3 </span>Enabling funders<span typeof="bookmark" class="permalink"><a property="url" title="Permalink for A.3 Enabling funders" aria-label="Permalink for A.3 Enabling funders" href="#ack_funders"><span content="A.3 Enabling funders" property="title">§</span></a></span></span></h3>
-      <p>This publication has been funded in part with U.S. Federal funds from the Department of Education, National Institute on Disability, Independent Living, and Rehabilitation Research (NIDILRR), initially under contract number ED-OSE-10-C-0067 and currently under contract number HHSP23301500054C. The content of this publication does not necessarily reflect the views or policies of the U.S. Department of Education, nor does mention of trade names, commercial products, or organizations imply endorsement by the U.S. Government.</p>
-    </section>
-  </section>
-
+  <div>Acknowledgements placeholder</div>
 
 
   <p role="navigation" id="back-to-top"><a href="#toc"><abbr title="Back to Top">↑</abbr></a></p>
