@@ -145,10 +145,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       margin-bottom: 1em;
     }
     
-    .note> p:first-child,
-    .ednote> p:first-child,
-    .issue> p:first-child,
-    .warning> p:first-child {
+    .note>p:first-child,
+    .ednote>p:first-child,
+    .issue>p:first-child,
+    .warning>p:first-child {
       margin-top: 0
     }
     
@@ -365,11 +365,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     }
     /* --- DL --- */
     
-    .section dd> p:first-child {
+    .section dd>p:first-child {
       margin-top: 0;
     }
     
-    .section dd> p:last-child {
+    .section dd>p:last-child {
       margin-bottom: 0;
     }
     
@@ -386,6 +386,130 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       display: none;
     }
     
+    #respec-ui {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 202px;
+      text-align: right;
+    }
+    
+    #respec-pill,
+    .respec-info-button {
+      background: #fff;
+      height: 2.5em;
+      color: rgb(120, 120, 120);
+      border: 1px solid #ccc;
+      box-shadow: 1px 1px 8px 0 rgba(100, 100, 100, .5);
+    }
+    
+    .respec-info-button {
+      border: none;
+      border-radius: 2em;
+      margin-right: 1em;
+      min-width: 3.5em;
+    }
+    
+    #respec-pill:disabled {
+      margin: 10px auto;
+      font-size: 2.8px;
+      position: relative;
+      text-indent: -9999em;
+      border-top: 1.1em solid rgba(40, 40, 40, 0.2);
+      border-right: 1.1em solid rgba(40, 40, 40, 0.2);
+      border-bottom: 1.1em solid rgba(40, 40, 40, 0.2);
+      border-left: 1.1em solid #ffffff;
+      transform: translateZ(0);
+      animation: respec-spin 1.1s infinite linear;
+      box-shadow: none;
+    }
+    
+    #respec-pill:disabled,
+    #respec-pill:disabled:after {
+      border-radius: 50%;
+      width: 10em;
+      height: 10em;
+    }
+    
+    @keyframes respec-spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    
+    #respec-pill:hover,
+    #respec-pill:focus {
+      color: rgb(0, 0, 0);
+      transition: color .2s
+    }
+    
+    #respec-menu {
+      font-family: sans-serif;
+      background: #fff;
+      box-shadow: 1px 1px 8px 0 rgba(100, 100, 100, .5);
+      width: 200px;
+      display: none;
+      text-align: left;
+      margin-top: 5px;
+      font-size: .8em;
+    }
+    
+    .respec-save-button {
+      background: #fff;
+      border: 1px solid #000;
+      border-radius: 5px;
+      padding: 5px;
+      margin: 5px;
+      display: block;
+      width: 100%;
+      color: #000;
+      text-decoration: none;
+      text-align: center;
+      font-size: inherit;
+    }
+    
+    #respec-ui button:focus,
+    #respec-pill:focus,
+    .respec-option:focus {
+      outline: 0;
+      outline-style: none;
+    }
+    
+    #respec-ui button.respec-pill-error {
+      background-color: red;
+      color: white;
+    }
+    
+    #respec-ui button.respec-pill-warning {
+      background-color: orange;
+      color: white;
+    }
+    
+    #respec-menu button.respec-option {
+      background: white;
+      border: none;
+      width: 100%;
+      text-align: left;
+      font-size: inherit;
+      padding: 1.2em 1.2em;
+    }
+    
+    #respec-menu button.respec-option:hover {
+      background-color: #eeeeee;
+    }
+    
+    .respec-cmd-icon {
+      padding-right: .5em;
+    }
+    
+    #respec-ui button.respec-option:last-child {
+      border: none;
+      border-radius: inherit;
+    }
+    
     @media print {
       .removeOnSave {
         display: none;
@@ -398,7 +522,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
   <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED">
   <!--[if lt IE 9]><script src='https://www.w3.org/2008/site/js/html5shiv.js'></script><![endif]-->
-  <meta name="generator" content="ReSpec 5.0.0">
+  <link rel="canonical" href="https://www.w3.org/TR/personalization-semantics/">
+  <meta name="generator" content="ReSpec 6.0.0">
   <script id="initialUserConfig" type="application/json">
     {
       "trace": true,
@@ -450,7 +575,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       <a class="logo" href="https://www.w3.org/"><img width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt="W3C"></a>
     </p>
     <h1 class="title p-name" id="title" property="dcterms:title">Proposal: COGA Semantics to Enable Personalization</h1>
-    <h2 id="w3c-editor-s-draft-02-september-2016"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time property="dcterms:issued" class="dt-published" datetime="2016-09-02">02 September 2016</time></h2>
+    <h2 id="w3c-editor-s-draft-13-october-2016"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time property="dcterms:issued" class="dt-published" datetime="2016-10-13">13 October 2016</time></h2>
     <dl>
       <dt>This version:</dt>
       <dd><a class="u-url" href="https://w3c.github.io/personalization-semantics/">https://w3c.github.io/personalization-semantics/</a></dd>
@@ -486,7 +611,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   <section id="abstract" class="introductory" property="dc:abstract">
     <!--OddPage-->
     <h2 id="h-abstract" resource="#h-abstract"><span property="xhv:role" resource="xhv:heading">Abstract</span></h2>
-    <p>This is a proposal to define syntax for adaptable content such as: links, buttons, symbols, help and keyboard. This may be an WAI-ARIA COGA Extension.</p>
+
+    <p>Personalization involves tailoring aspects of the user experience to meet the needs and prefences of the user. For example, having familiar terms and symbols is key to many users being able to use the web. However, what is familiar for one user may be unfamiliar to another requiring them to learn new symbols. The challenge has been the ability to identify the types of content in a document that should be adapted to the preferred user experience. The introduction of standardized semantics allows web applications to customize the exposure of that content to one that is familiar to individuals based on their needs and preferences. This specification defines standard semantics to enable user driven personalization such as the association of a user-preferred symbols to elements having those semantics. This ensures that users can quickly find familiar icons, such as a help icon, that apply to user interface elements.</p>
   </section>
 
   <section id="sotd" class="introductory">
@@ -526,375 +652,753 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       <li class="tocline"><a href="#sotd" class="tocxref">Status of This Document</a></li>
       <li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a>
         <ol class="toc">
-          <li class="tocline"><a href="#contextual-personalization" class="tocxref"><span class="secno">1.1 </span>Contextual Personalization</a></li>
+          <li class="tocline"><a href="#why_accessibility" class="tocxref"><span class="secno">1.1 </span>Why We Need Personalization</a></li>
+          <li class="tocline"><a href="#intro_context" class="tocxref"><span class="secno">1.2 </span>Contextual Personalization</a></li>
         </ol>
       </li>
-      <li class="tocline"><a href="#simplification" class="tocxref"><span class="secno">2. </span>Simplification</a></li>
-      <li class="tocline"><a href="#adding-context" class="tocxref"><span class="secno">3. </span>Adding Context </a></li>
-      <li class="tocline"><a href="#general-context" class="tocxref"><span class="secno">4. </span>General context</a>
+      <li class="tocline"><a href="#terms" class="tocxref"><span class="secno">2. </span>Important Terms</a></li>
+      <li class="tocline"><a href="#semanticProperties" class="tocxref"><span class="secno">3. </span>Semantic Properties</a>
         <ol class="toc">
-          <li class="tocline"><a href="#should-we-be-using-rdfa" class="tocxref"><span class="secno">4.1 </span>Should we be using RDFa?</a></li>
+          <li class="tocline"><a href="#characteristics_semanticproperties&gt;&#10;                &#9;&#9;&lt;h2&gt;Characteristics of Semantic Properties&lt;/h2&gt;&#10;                &#9;&#9;&lt;p&gt;Semantic properties have the characteristics described in the following sections.&lt;/p&gt;&#10;                &#9;&#9;&lt;section id=" class="tocxref"><span class="secno">3.1 </span>Related Concepts</a></li>
+          <li class="tocline"><a href="#propcharacteristic_value" class="tocxref"><span class="secno">3.2 </span>Value</a></li>
+          <li class="tocline"><a href="#semantic_prop_taxonomy" class="tocxref"><span class="secno">3.3 </span>Taxonomy of Semantic Properties</a>
+            <ol class="toc">
+              <li class="tocline"><a href="#generalSemantics" class="tocxref"><span class="secno">3.3.1 </span>General Semantic Properties</a></li>
+            </ol>
+          </li>
+          <li class="tocline"><a href="#prop_def" class="tocxref"><span class="secno">3.4 </span>Definitions of Semantic Properties (all coga-* attributes)</a></li>
         </ol>
       </li>
-      <li class="tocline"><a href="#concept-codes" class="tocxref"><span class="secno">5. </span>Concept codes</a></li>
-      <li class="tocline"><a href="#potential-parts-of-a-page" class="tocxref"><span class="secno">6. </span>Potential parts of a page</a></li>
-      <li class="tocline"><a href="#number-free" class="tocxref"><span class="secno">7. </span>Number free</a></li>
-      <li class="tocline"><a href="#non-literal-text-and-images" class="tocxref"><span class="secno">8. </span>Non-literal text and images</a></li>
-      <li class="tocline"><a href="#explain-and-feedback" class="tocxref"><span class="secno">9. </span>Explain and feedback</a></li>
-      <li class="tocline"><a href="#more-help" class="tocxref"><span class="secno">10. </span>More Help</a></li>
-      <li class="tocline"><a href="#potential-features" class="tocxref"><span class="secno">11. </span>Potential Features</a></li>
-      <li class="tocline"><a href="#language-type-support" class="tocxref"><span class="secno">12. </span>Language type support</a></li>
-      <li class="tocline"><a href="#logs" class="tocxref"><span class="secno">13. </span>Logs</a></li>
-      <li class="tocline"><a href="#reminders-and-messages" class="tocxref"><span class="secno">14. </span>Reminders and messages</a></li>
-      <li class="tocline"><a href="#distractions" class="tocxref"><span class="secno">15. </span>Distractions</a></li>
-      <li class="tocline"><a href="#additional-wai-aria-roles" class="tocxref"><span class="secno">16. </span>Additional WAI-ARIA roles</a></li>
+      <li class="tocline"><a href="#simplification" class="tocxref"><span class="secno">4. </span>Simplification</a></li>
+      <li class="tocline"><a href="#adding-context" class="tocxref"><span class="secno">5. </span>Adding Context </a></li>
+      <li class="tocline"><a href="#general-context" class="tocxref"><span class="secno">6. </span>General context</a>
+        <ol class="toc">
+          <li class="tocline"><a href="#should-we-be-using-rdfa" class="tocxref"><span class="secno">6.1 </span>Should we be using RDFa?</a></li>
+        </ol>
+      </li>
+      <li class="tocline"><a href="#concept-codes" class="tocxref"><span class="secno">7. </span>Concept codes</a></li>
+      <li class="tocline"><a href="#potential-parts-of-a-page" class="tocxref"><span class="secno">8. </span>Potential parts of a page</a></li>
+      <li class="tocline"><a href="#number-free" class="tocxref"><span class="secno">9. </span>Number free</a></li>
+      <li class="tocline"><a href="#non-literal-text-and-images" class="tocxref"><span class="secno">10. </span>Non-literal text and images</a></li>
+      <li class="tocline"><a href="#explain-and-feedback" class="tocxref"><span class="secno">11. </span>Explain and feedback</a></li>
+      <li class="tocline"><a href="#more-help" class="tocxref"><span class="secno">12. </span>More Help</a></li>
+      <li class="tocline"><a href="#potential-features" class="tocxref"><span class="secno">13. </span>Potential Features</a></li>
+      <li class="tocline"><a href="#language-type-support" class="tocxref"><span class="secno">14. </span>Language type support</a></li>
+      <li class="tocline"><a href="#logs" class="tocxref"><span class="secno">15. </span>Logs</a></li>
+      <li class="tocline"><a href="#reminders-and-messages" class="tocxref"><span class="secno">16. </span>Reminders and messages</a></li>
+      <li class="tocline"><a href="#distractions" class="tocxref"><span class="secno">17. </span>Distractions</a></li>
+      <li class="tocline"><a href="#new-misc.x" class="tocxref"><span class="secno">18. </span>New Misc.</a></li>
+      <li class="tocline"><a href="#additional-wai-aria-roles" class="tocxref"><span class="secno">19. </span>Additional <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> roles</a></li>
+      <li class="tocline"><a href="#references" class="tocxref"><span class="secno">A. </span>References</a>
+        <ol class="toc">
+          <li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">A.1 </span>Informative references</a></li>
+        </ol>
+      </li>
     </ol>
   </nav>
 
-  <section id="introduction" typeof="bibo:Chapter" resource="#introduction" property="bibo:hasPart">
+  <section class="informative" id="introduction" typeof="bibo:Chapter" resource="#introduction" property="bibo:hasPart">
     <!--OddPage-->
-    <h2 id="h-introduction" resource="#h-introduction"><span property="xhv:role" resource="xhv:heading"><span class="secno">1. </span>Introduction<span class="permalink" typeof="bookmark"><a href="#introduction" aria-label="Permalink for 1. Introduction" title="Permalink for 1. Introduction" property="url"><span property="title" content="1. Introduction">§</span></a></span></span></h2>
+    <h2 id="h-introduction" resource="#h-introduction"><span property="xhv:role" resource="xhv:heading"><span class="secno">1. </span>Introduction<span class="permalink" typeof="bookmark"><a href="#introduction" aria-label="Permalink for 1. Introduction" title="Permalink for 1. Introduction" property="url"><span property="title" content="1. Introduction">§</span></a>
+      </span>
+      </span>
+    </h2>
+    <p><em>This section is non-normative.</em></p>
+    <p>The goals of this specification include:</p>
+    <ul>
+      <li> expanding the accessibility information that may be supplied by the author;</li>
+      <li> facilitate preference driven individual personalization;
+      </li>
+      <li> enable the author to specify key semantics needed to support users with cognitive i mpairments
+      </li>
+    </ul>
+
+    <p>This is a proposal to define syntax for adaptable content such as: links, buttons, symbols, help and keyboard. This may be an <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> COGA Extension.</p>
+
     <p>Personalization involves tailoring aspects of the user experience to meet the preferences or needs of the user. For example, having familiar terms and symbols is key to being able to use the web. However what is familiar for one user may be new for another requiring them to learn new symbols. Personalization could include loading a set of symbols that is appropriate for the specific user, ensuring that all users find the icons simple and familiar.</p>
     <p>Technology holds the promise of being extremely flexible and the design of many systems includes the expectation that users will be able to optimise their interaction experience according to their personal preferences or accessibility requirements (needs). </p>
-    <p>We need personalization because: </p>
-    <ul>
-      <li>Different user needs can conflict </li>
-      <li>Learning new design patterns (and widgets) can be confusing - we want to allow users to stick with what works for them </li>
-      <li>Extra support can be annoying to people who do not need it </li>
-      <li>Making content predictable is necessary for accessibility but can often be considered boring design </li>
-      <li>Ability to change levels of complexity (increase or decrease) - As people skills improve or decrease over time or context. </li>
-      <li>Enable us to really meet the user needs </li>
-    </ul>
-    <p></p>
-    <p>Some users need extra support. This can include: </p>
-    <ul>
-      <li> Symbols and graphics that they are familiar with </li>
-      <li> Tool tips </li>
-      <li> Language they understand </li>
-      <li> Less features </li>
-      <li> Separating advertisements, so they do not confuse them with native content </li>
-      <li> Keyboard short cuts </li>
-    </ul>
-    <p>For this we need standardized terms and supportive syntax that can be linked to associated symbols, terms, translations and explanations for the individual use via an attribute and personal preferences. </p>
-    <p>For example, assume an author can make it programanticaly known that a button is used to send an email. At at the user end, the button could be renderer with a symbol, term, and/or tooltips that is understandable for this particular user. It could automatically imply F1 help that explains the send function in simple terms. It could be identified with a keyboard short cut that will always be used for send. In addition it could be identified as important and always rendered, or rendered as a large button. </p>
-    <p>Working examples of how this could be used in practice, with user preferences, are available at <a href="https://github.com/ayelet-seeman/coga.personalisation">https://github.com/ayelet-seeman/coga.personalisation</a>. This is a project to help personalization for any use - including people with learning and memory issues. It is described more at: <a href="https://www.w3.org/WAI/PF/cognitive-a11y-tf/wiki/Easy_Personalization">https://www.w3.org/WAI/PF/cognitive-a11y-tf/wiki/Easy_Personalization</a>. </p>
-    <p></p>
-    <p>This project consists of 4 parts:</p>
-    <ol>
-      <li><a href="https://github.com/ayelet-seeman/coga.personalisation/tree/JSON-Script">JSON files for user setting</a></li>
-      <li>Proposal for new syntax: (This document) <br>
-      </li>
-      <li>An HTML page that uses some of the new syntax: <a href="https://github.com/ayelet-seeman/coga.personalisation/tree/ExampleWebPage/">https://github.com/ayelet-seeman/coga.personalisation/tree/ExampleWebPage/</a></li>
-      <li>Scripts that a web author can use or include that read the user settings in the JSON files and adapt the page for the user needs: <a href="https://github.com/ayelet-seeman/coga.personalisation/tree/Script-Options">https://github.com/ayelet-seeman/coga.personalisation/tree/Script-Options</a></li>
-    </ol>
-    <p>This is one example of personalization based on semantics. Others may follow. It is also worth noting that the GPII project is working on making user preferences portable which would also enhance this work.</p>
-    <p>In another use-case we would like to see interoperable symbol set codes for non-verbal people. Products for people who are non vocal often use symbols to help users communicate. These symbols are in fact peoples language. Unfortunately many of these symbols are both subject to copy write and are not interoperable. That means end-users can only use one device, and can not use apps or AT from a different company. An open set of references for symbol codes for these symbol sets however, could be interoperable. That means the end user could use an open source symbol set or buy the symbols and use them across different devices or applications. Symbols could still be proprietary but they would also be interoperable. </p>
 
-    <section id="contextual-personalization" typeof="bibo:Chapter" resource="#contextual-personalization" property="bibo:hasPart">
-      <h3 id="h-contextual-personalization" resource="#h-contextual-personalization"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.1 </span>Contextual Personalization<span class="permalink" typeof="bookmark"><a href="#contextual-personalization" aria-label="Permalink for 1.1 Contextual Personalization" title="Permalink for 1.1 Contextual Personalization" property="url"><span property="title" content="1.1 Contextual Personalization">§</span></a></span></span></h3>
+    <section class="section" id="why_accessibility" typeof="bibo:Chapter" resource="#why_accessibility" property="bibo:hasPart">
+      <h3 id="h-why_accessibility" resource="#h-why_accessibility"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.1 </span>Why We Need Personalization<span class="permalink" typeof="bookmark"><a href="#why_accessibility" aria-label="Permalink for 1.1 Why We Need Personalization" title="Permalink for 1.1 Why We Need Personalization" property="url"><span property="title" content="1.1 Why We Need Personalization">§</span></a>
+        </span>
+        </span>
+      </h3>
+      <p>We need personalization because: </p>
+      <ul>
+        <li>Different user needs can conflict</li>
+        <li>Learning new design patterns (and widgets) can be confusing - we want to allow users to stick with what works for them </li>
+        <li>Extra support can be annoying to people who do not need it </li>
+        <li>Making content predictable is necessary for accessibility but can often be considered boring design </li>
+        <li>Ability to change levels of complexity (increase or decrease) - As people skills improve or decrease over time or context. </li>
+        <li>Enable us to really meet the user needs </li>
+      </ul>
+      <p></p>
+      <p>Some users need extra support. This can include: </p>
+      <ul>
+        <li> Symbols and graphics that they are familiar with </li>
+        <li> Tool tips </li>
+        <li> Language they understand </li>
+        <li> Less features </li>
+        <li> Separating advertisements, so they do not confuse them with native content </li>
+        <li> Keyboard short cuts </li>
+      </ul>
+      <p>For this we need standardized terms and supportive syntax that can be linked to associated symbols, terms, translations and explanations for the individual use via an attribute and personal preferences. </p>
+      <p>For example, assume an author can make it programanticaly known that a button is used to send an email. At at the user end, the button could be renderer with a symbol, term, and/or tooltips that is understandable for this particular user. It could automatically imply F1 help that explains the send function in simple terms. It could be identified with a keyboard short cut that will always be used for send. In addition it could be identified as important and always rendered, or rendered as a large button. </p>
+      <p>Working examples of how this could be used in practice, with user preferences, are available at <a href="https://github.com/ayelet-seeman/coga.personalisation">https://github.com/ayelet-seeman/coga.personalisation</a>. This is a project to help personalization for any use - including people with learning and memory issues. It is described more at: <a href="https://www.w3.org/WAI/PF/cognitive-a11y-tf/wiki/Easy_Personalization">https://www.w3.org/WAI/PF/cognitive-a11y-tf/wiki/Easy_Personalization</a>. </p>
+      <p></p>
+      <p>This project consists of 4 parts:</p>
+      <ol>
+        <li><a href="https://github.com/ayelet-seeman/coga.personalisation/tree/JSON-Script">JSON files for user setting</a></li>
+        <li>Proposal for new syntax: (This document) <br></li>
+        <li>An <abbr title="Hypertext Markup Language">HTML</abbr> page that uses some of the new syntax: <a href="https://github.com/ayelet-seeman/coga.personalisation/tree/ExampleWebPage/">https://github.com/ayelet-seeman/coga.personalisation/tree/ExampleWebPage/</a></li>
+        <li>Scripts that a web author can use or include that read the user settings in the JSON files and adapt the page for the user needs: <a href="https://github.com/ayelet-seeman/coga.personalisation/tree/Script-Options">https://github.com/ayelet-seeman/coga.personalisation/tree/Script-Options</a></li>
+      </ol>
+      <p>This is one example of personalization based on semantics. Others may follow. It is also worth noting that the GPII project is working on making user preferences portable which would also enhance this work.</p>
+      <p>In another use-case we would like to see interoperable symbol set codes for non-verbal people. Products for people who are non vocal often use symbols to help users communicate. These symbols are in fact peoples language. Unfortunately many of these symbols are both subject to copy write and are not interoperable. That means end-users can only use one device, and can not use apps or AT from a different company. An open set of references for symbol codes for these symbol sets however, could be interoperable. That means the end user could use an open source symbol set or buy the symbols and use them across different devices or applications. Symbols could still be proprietary but they would also be interoperable. </p>
+    </section>
+
+    <section class="section" id="intro_context" typeof="bibo:Chapter" resource="#intro_context" property="bibo:hasPart">
+      <h3 id="h-intro_context" resource="#h-intro_context"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.2 </span>Contextual Personalization<span class="permalink" typeof="bookmark"><a href="#intro_context" aria-label="Permalink for 1.2 Contextual Personalization" title="Permalink for 1.2 Contextual Personalization" property="url"><span property="title" content="1.2 Contextual Personalization">§</span></a>
+        </span>
+        </span>
+      </h3>
       <p>One important factor in optimizing the personalization of a product or service is to ensure that the personalization is appropriate for the current context of use. For example, settings that will suit the user of a mobile phone in their office or home will not be well suited to that user when they are driving a car. In a home or office, the typical user would probably prefer to send and receive text messages using the keyboard and screen of the mobile phone. However, in the car, voice input and text to speech output would be the most appropriate. In this car context, the profile settings of a typical user might be very similar to those that a blind user would use in all contexts.</p>
     </section>
 
   </section>
 
-  <section id="simplification" typeof="bibo:Chapter" resource="#simplification" property="bibo:hasPart">
+  <section class="informative" id="terms" typeof="bibo:Chapter" resource="#terms" property="bibo:hasPart">
     <!--OddPage-->
-    <h2 id="h-simplification" resource="#h-simplification"><span property="xhv:role" resource="xhv:heading"><span class="secno">2. </span>Simplification<span class="permalink" typeof="bookmark"><a href="#simplification" aria-label="Permalink for 2. Simplification" title="Permalink for 2. Simplification" property="url"><span property="title" content="2. Simplification">§</span></a></span></span></h2>
-    <p><strong>Requirement</strong>: The user must be able to request a way to identify and differentiate between critical features, medium features and less important features. These need to be defined as important from a user perspective in the content. Typically, critical features may be used by many or most users, 90% of the time or more. High important features would be above 60% use. Medium important features would be 20% of users use it 20% of the time . Under 20% usage would be of low importance.</p>
-    <p><strong>User experience</strong>: Based on personalization setting the user can see less options. A sample user experience is available at <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html">https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html </a></p>
-    <p><strong>Proposed attribute</strong>: coga-simplification (formerly coga-importance). Having the following values: (main task such as send for an email) </p>
-    <ul>
-      <li><code>coga-simplification="simplest"</code>. This setting should be used on:
-        <ul>
-          <li> Elements that are essential for the key function (from the user perspective) of the page (Example: The send button for an email draft) or</li>
-          <li> Elements that are sometimes critical to a user being able to use the site, such as "save my work" or "emergency instructions" or</li>
-          <li> Elements that are used by over 90% of a user group (such as parents or teachers) use this element most times they use the content<br>
-          </li>
-        </ul>
-      </li>
-    </ul>
-    <p>Typically 3 links or buttons would be considered "simplest"</p>
-    <ul>
-      <li> <code>coga-simplification="high"</code>. This setting should be used on:
-        <ul>
-          <li> Elements that are used frequent (Example: The delete button for an email draft) or</li>
-          <li> Elements that are sometimes important to a user being able to use the site, such as settings or</li>
-          <li> Elements that are used by frequently (over 60%) by a user group (such as parents or teachers) use this element most times they use the content</li>
-        </ul>
-      </li>
-      <li> <code>coga-simplification= "med"</code>. This setting should be used on elements that are not typically used.</li>
-      <li> <code>coga-simplification="low"</code>. This setting should be used on elements that are rarely used or only used by advanced users. (Example: The terms and services or the archive button for an email draft) </li>
-    </ul>
-    <div class="note">
-      <div class="note-title marker" aria-level="3" role="heading" id="h-note1"><span>Note</span></div>
-      <div class="">
-        <p>These semantics aid simplification. But what content is most useful to a user varies from user to user. For example, men may be more interested in mens clothing, and may not be interested in the more frequently use womens clothing option. For that reason we may add context for elements that will help the personalization agent select the most useful content for a given user. This is also necessary for reminders (see bellow). RDFa may be the best way forward for this aspect.</p>
-        <p> It is worth mentioning that a lot of this information is known for personalization of advertisements and content optimization. </p>
-      </div>
+    <h2 id="h-terms" resource="#h-terms"><span property="xhv:role" resource="xhv:heading"><span class="secno">2. </span>Important Terms<span class="permalink" typeof="bookmark"><a href="#terms" aria-label="Permalink for 2. Important Terms" title="Permalink for 2. Important Terms" property="url"><span property="title" content="2. Important Terms">§</span></a>
+      </span>
+      </span>
+    </h2>
+    <p><em>This section is non-normative.</em></p>
+    <div>
+      <p>While some terms are defined in place, the following definitions are used throughout this document. </p>
+      <dl class="termlist">
+        <dt><dfn data-dfn-type="dfn" id="dfn-accessibility-api">Accessibility <abbr title="Application Programming Interface">API</abbr></dfn></dt>
+        <dd>
+          <p>Operating systems and other platforms provide a set of interfaces that expose information about <a class="termref internalDFN" data-lt="object" href="#dfn-object" data-link-type="dfn">objects</a> and <a class="termref internalDFN" data-lt="event" href="#dfn-event" data-link-type="dfn">events</a> to <a href="#dfn-assistive-technologies" class="internalDFN" data-link-type="dfn">assistive technologies</a>. Assistive technologies use these interfaces to get information about and interact with those <a class="termref internalDFN" data-lt="widget" href="#dfn-widget" data-link-type="dfn">widgets</a>. Examples of accessibility APIs are <a href="https://msdn.microsoft.com/en-us/library/ms697270(VS.85).aspx">Microsoft Active Accessibility</a> [<cite><a class="bibref" href="#bib-MSAA">MSAA</a></cite>], <a href="https://msdn.microsoft.com/en-us/library/ee684013%28VS.85%29.aspx">Microsoft User Interface Automation</a> [<cite><a class="bibref" href="#bib-UI-AUTOMATION">UI-AUTOMATION</a></cite>], <abbr title="Microsoft Active Accessibility">MSAA</abbr> with <cite><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898(v=vs.85).aspx"><abbr title="User Interface Automation">UIA</abbr> Express</a></cite> [<cite><a class="bibref" href="#bib-UIA-EXPRESS">UIA-EXPRESS</a></cite>], the
+            <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSAccessibility_Protocol/index.html">Mac <abbr title="OS Ten">OS X</abbr> Accessibility Protocol</a> [<cite><a class="bibref" href="#bib-AXAPI">AXAPI</a></cite>], the <cite><a href="https://developer.gnome.org/atk/unstable/">Linux/Unix Accessibility Toolkit</a></cite> [<cite><a class="bibref" href="#bib-ATK">ATK</a></cite>] and <cite><a href="https://developer.gnome.org/libatspi/stable/">Assistive Technology Service Provider Interface</a></cite> [<cite><a class="bibref" href="#bib-AT-SPI">AT-SPI</a></cite>], and <a href="http://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2">IAccessible2</a> [<cite><a class="bibref" href="#bib-IAccessible2">IAccessible2</a></cite>].</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-accessibility-subtree">Accessibility Subtree</dfn></dt>
+        <dd>
+          <p>An <a href="#dfn-accessible-object" class="internalDFN" data-link-type="dfn">accessible object</a> in the <a href="#dfn-accessibility-tree" class="internalDFN" data-link-type="dfn">accessibility tree</a> and its descendants in that tree. It does not include objects which have relationships other than parent-child in that tree. For example, it does not include objects linked via
+            <pref>aria-flowto</pref> unless those objects are also descendants in the <a href="#dfn-accessibility-tree" class="internalDFN" data-link-type="dfn">accessibility tree</a>.</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-accessibility-tree">Accessibility Tree</dfn></dt>
+        <dd>
+          <p>Tree of <a class="termref internalDFN" data-lt="accessible object" href="#dfn-accessible-object" data-link-type="dfn">accessible objects</a> that represents the structure of the user interface (<abbr title="user interface">UI</abbr>). Each node in the accessibility tree represents an element in the <abbr title="user interface">UI</abbr> as exposed through the <a href="#dfn-accessibility-api" class="internalDFN" data-link-type="dfn">accessibility <abbr title="Application Programming Interface">API</abbr></a>; for example, a push button, a check box, or container.</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-accessible-description">Accessible Description</dfn></dt>
+        <dd>
+          <p>An accessible description provides additional information, related to an interface element, that complements the <a href="#dfn-accessible-name" class="internalDFN" data-link-type="dfn">accessible name</a>. The accessible description might or might not be visually perceivable. </p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-accessible-name">Accessible Name</dfn></dt>
+        <dd>
+          <p>The accessible name is the name of a user interface element. Each platform <a href="#dfn-accessibility-api" class="internalDFN" data-link-type="dfn">accessibility <abbr title="application programming interface">API</abbr></a> provides the accessible name property. The value of the accessible name may be derived from a visible (e.g., the visible text on a button) or invisible (e.g., the text alternative that describes an icon) property of the user interface element. See related <a href="#dfn-accessible-description" class="internalDFN" data-link-type="dfn">accessible description</a>.</p>
+          <p>A simple use for the accessible name property may be illustrated by an "OK" button. The text "OK" is the accessible name. When the button receives focus, assistive technologies may concatenate the platform's role description with the accessible name. For example, a screen reader may speak "push-button OK" or "OK button". The order of concatenation and specifics of the role description (e.g., "button", "push-button", "clickable button") are determined by platform <a class="termref internalDFN" data-lt="accessibility api" href="#dfn-accessibility-api" data-link-type="dfn">accessibility <abbr title="Application Programming Interfaces">API</abbr></a>s or <a href="#dfn-assistive-technologies" class="internalDFN" data-link-type="dfn">assistive technologies</a>.</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-accessible-object">Accessible object</dfn></dt>
+        <dd>
+          <p>A <a href="#dfn-node" class="internalDFN" data-link-type="dfn">node</a> in the <a href="#dfn-accessibility-tree" class="internalDFN" data-link-type="dfn">accessibility tree</a> of a platform <a href="#dfn-accessibility-api" class="internalDFN" data-link-type="dfn">accessibility <abbr title="application programming interface">API</abbr></a>. Accessible objects expose various <a class="termref internalDFN" data-lt="state" href="#dfn-state" data-link-type="dfn">states</a>, <a class="termref internalDFN" data-lt="property" href="#dfn-property" data-link-type="dfn">properties</a>, and <a class="termref internalDFN" data-lt="event" href="#dfn-event" data-link-type="dfn">events</a> for use by <a href="#dfn-assistive-technologies" class="internalDFN" data-link-type="dfn">assistive technologies</a>. In the context of markup languages (e.g., <abbr title="Hypertext Markup Language">HTML</abbr> and <abbr title="Scalable Vector Graphics">SVG</abbr>) in general, and of <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> in particular, markup <a class="termref internalDFN" data-lt="element" href="#dfn-element" data-link-type="dfn">elements</a> and their <a class="termref internalDFN" data-lt="attribute" href="#dfn-attribute" data-link-type="dfn">attributes</a> are represented as accessible objects. </p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-activation-behavior">Activation behavior</dfn></dt>
+        <dd>
+          <p>The action taken when an <a href="#dfn-event" class="internalDFN" data-link-type="dfn">event</a>, typically initiated by users through an input device, causes an element to fulfill a defined role. The role may be defined for that element by the host language, or by author-defined variables, or both. The role for any given element may be a generic action, or may be unique to that element. For example, the activation behavior of an <abbr title="Hypertext Markup Language">HTML</abbr> or <abbr title="Scalable Vector Graphics">SVG</abbr> <code>&lt;a&gt;</code> element shall be to cause the user agent to traverse the link specified in the <code>href</code> attribute, with the further optional parameter of specifying the browsing context for the traversal (such as the current window or tab, a named window, or a new window); the activation behavior of an <abbr title="Hypertext Markup Language">HTML</abbr> <code>&lt;input&gt;</code> element with the <code>type</code> attribute value <code>submit</code> shall be to send the values of the form elements to an author-defined <abbr title="Internationalized Resource Identifiers">IRI</abbr> by the author-defined <abbr title="Hypertext Transfer Protocol">HTTP</abbr> method.</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-assistive-technologies">Assistive Technologies</dfn></dt>
+        <dd>
+          <p>Hardware and/or software that:</p>
+          <ul>
+            <li>relies on services provided by a <a href="#dfn-user-agent" class="internalDFN" data-link-type="dfn">user agent</a> to retrieve and render Web content </li>
+            <li>works with a user agent or web content itself through the use of APIs, and</li>
+            <li>provides services beyond those offered by the user agent to facilitate user interaction with web content by people with disabilities</li>
+          </ul>
+          <p>This definition may differ from that used in other documents.</p>
+          <p>Examples of assistive technologies that are important in the context of this document include the following:</p>
+          <ul>
+            <li>screen magnifiers, which are used to enlarge and improve the visual readability of rendered text and images;</li>
+            <li>screen readers, which are most-often used to convey information through synthesized speech or a refreshable Braille display;</li>
+            <li>text-to-speech software, which is used to convert text into synthetic speech;</li>
+            <li>speech recognition software, which is used to allow spoken control and dictation;</li>
+            <li>alternate input technologies (including head pointers, on-screen keyboards, single switches, and sip/puff devices), which are used to simulate the keyboard;</li>
+            <li>alternate pointing devices, which are used to simulate mouse pointing and clicking.</li>
+          </ul>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-attribute">Attribute</dfn></dt>
+        <dd>
+          <p>In this specification, attribute is used as it is in markup languages. Attributes are structural features added to <a class="termref" href="#dfn-element">elements</a> to provide information about the <a class="termref" href="#dfn-state">states</a> and <a class="termref" href="#dfn-property">properties</a> of the <a class="termref" href="#dfn-object">object</a> represented by the element.</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-class">Class</dfn></dt>
+        <dd>
+          <p>A set of instance <a class="termref" href="#dfn-object">objects</a> that share similar characteristics.</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-deprecated">Deprecated</dfn></dt>
+        <dd>
+          <p>A deprecated <a class="termref" href="#dfn-role">role</a>, <a class="termref" href="#dfn-state">state</a>, or <a class="termref" href="#dfn-property">property</a> is one which has been outdated by newer constructs or changed circumstances, and which may be removed in future versions of the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> specification. <a class="termref internalDFN" data-lt="user agent" href="#dfn-user-agent" data-link-type="dfn">User agents</a> are encouraged to continue to support items identified as deprecated for backward compatibility. For more information, see <a href="#deprecated">Deprecated Requirements</a> in the Conformance section.</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-desktop-focus-event">Desktop focus event</dfn></dt>
+        <dd>
+          <p>Event from/to the host operating system via the accessibility <abbr title="application programming interface">API</abbr>, notifying of a change of input focus.</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-element">Element</dfn></dt>
+        <dd>
+          <p>In this specification, element is used as it is in markup languages. Elements are the structural elements in markup language that contains the data profile for <a class="termref internalDFN" data-lt="object" href="#dfn-object" data-link-type="dfn">objects</a>.</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-event">Event</dfn></dt>
+        <dd>
+          <p>A programmatic message used to communicate discrete changes in the <a href="#dfn-state" class="internalDFN" data-link-type="dfn">state</a> of an <a href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a> to other objects in a computational system. User input to a web page is commonly mediated through abstract events that describe the interaction and can provide notice of changes to the state of a document object. In some programming languages, events are more commonly known as notifications.</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-expose">Expose</dfn></dt>
+        <dd>
+          <p>Translated to platform-specific <a class="termref internalDFN" data-lt="accessibility api" href="#dfn-accessibility-api" data-link-type="dfn">accessibility APIs</a> as defined in the <cite><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> User Agent Implementation Guide.</cite> [<cite><a class="bibref" href="#bib-WAI-ARIA-IMPLEMENTATION">WAI-ARIA-IMPLEMENTATION</a></cite>]</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-graphical-document">Graphical Document</dfn></dt>
+        <dd>
+          <p>A document containing graphic representations with user-navigable parts. Charts, maps, diagrams, blueprints, and dashboards are examples of graphical documents. A graphical document is composed using any combination of symbols, images, text, and graphic primitives (shapes such as circles, points, lines, paths, rectangles, etc).</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-hidden">Hidden</dfn></dt>
+        <dd>
+          <p>Indicates that the <a href="#dfn-element" class="internalDFN" data-link-type="dfn">element</a> is not visible, <a href="#dfn-perceivable" class="internalDFN" data-link-type="dfn">perceivable</a>, or interactive to <em>any</em> user. An element is considered <em>hidden</em> if it or any one of its ancestor elements is not rendered or is explicitly hidden.</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-informative">Informative</dfn></dt>
+        <dd>
+          <p>Content provided for information purposes and not required for conformance. Content required for conformance is referred to as <a href="#dfn-normative" class="internalDFN" data-link-type="dfn">normative</a>.</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-keyboard-accessible">Keyboard Accessible</dfn></dt>
+        <dd>
+          <p>Accessible to the user using a keyboard or <a href="#dfn-assistive-technologies" class="internalDFN" data-link-type="dfn">assistive technologies</a> that mimic keyboard input, such as a sip and puff tube. References in this document relate to <cite><a href="http://www.w3.org/TR/WCAG20/#keyboard-operation"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0 Guideline 2.1: Make all functionality available from a keyboard</a></cite> [<cite><a class="bibref" href="#bib-WCAG20">WCAG20</a></cite>].</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-landmark">Landmark</dfn></dt>
+        <dd>
+          <p>A type of region on a page to which the user may want quick access. Content in such a region is different from that of other regions on the page and relevant to a specific user purpose, such as navigating, searching, perusing the primary content, etc.</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-live-region">Live Region</dfn></dt>
+        <dd>
+          <p>Live regions are perceivable regions of a web page that are typically updated as a result of an external event when user focus may be elsewhere. These regions are not always updated as a result of a user interaction. This practice has become commonplace with the growing use of Ajax. Examples of live regions include a chat log, stock ticker, or a sport scoring section that updates periodically to reflect game statistics. Since these asynchronous areas are expected to update outside the user's area of focus, assistive technologies such as screen readers have either been unaware of their existence or unable to process them for the user. <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> has provided a collection of properties that allow the author to identify these live regions and process them: aria-live, aria-relevant, aria-atomic, and aria-busy. Pre-defined live region roles are listed in the <cite><a href="http://www.w3.org/TR/wai-aria-practices/#chobet">Choosing Between Special Case Live Regions</a></cite> ([<cite><a class="bibref" href="#bib-WAI-ARIA-PRACTICES">WAI-ARIA-PRACTICES</a></cite>], Section 5.3).</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-primary-content-element">Primary Content Element</dfn></dt>
+        <dd>
+          <p>An implementing host language's primary content element, such as the <code>body</code> element in <abbr title="Hypertext Markup Language">HTML</abbr>.</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-managed-state">Managed State</dfn></dt>
+        <dd>
+          <p><a href="#dfn-accessibility-api" class="internalDFN" data-link-type="dfn">Accessibility <abbr title="Application Programming Interfaces">API</abbr></a> <a href="#dfn-state" class="internalDFN" data-link-type="dfn">state</a> that is controlled by the user agent, such as focus and selection. These are contrasted with "unmanaged states" that are typically controlled by the author. Nevertheless, authors can override some managed states, such as aria-posinset and aria-setsize. Many managed states have corresponding CSS pseudo-classes, such as :focus, and pseudo-elements, such as ::selection, that are also updated by the user agent.</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-nemeth-braille">Nemeth Braille</dfn></dt>
+        <dd>
+          <p>The Nemeth Braille Code for Mathematics is a braille code for encoding mathematical and scientific notation. See <cite><a href="https://en.wikipedia.org/wiki/Nemeth_Braille">Nemeth Braille on Wikipedia</a>.</cite></p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-node">Node</dfn></dt>
+        <dd>
+          <p>Basic type of <a class="termref internalDFN" href="#dfn-object" data-link-type="dfn">object</a> in the <abbr title="Document Object Model">DOM</abbr> tree or <a class="termref internalDFN" href="#dfn-accessibility-tree" data-link-type="dfn">accessibility tree</a>. <abbr title="Document Object Model">DOM</abbr> nodes are further specified as <a class="termref internalDFN" href="#dfn-element" data-link-type="dfn">Element</a> or <a class="termref internalDFN" data-lt="Text node" href="#dfn-text-node" data-link-type="dfn">Text nodes</a>, among other types. The nodes of an <a class="termref internalDFN" href="#dfn-accessibility-tree" data-link-type="dfn">accessibility tree</a> are <a class="termref internalDFN" data-lt="accessible object" href="#dfn-accessible-object" data-link-type="dfn">accessible objects</a>. </p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-normative">Normative</dfn></dt>
+        <dd>
+          <p>Required for conformance. By contrast, content identified as <a href="#dfn-informative" class="internalDFN" data-link-type="dfn">informative</a> or "non-normative" is not required for conformance.</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-object">Object</dfn></dt>
+        <dd>
+          <p>In the context of user interfaces, an item in the perceptual user experience, represented in markup languages by one or more <a class="termref internalDFN" data-lt="element" href="#dfn-element" data-link-type="dfn">elements</a>, and rendered by <a class="termref internalDFN" data-lt="user agent" href="#dfn-user-agent" data-link-type="dfn">user agents</a>.</p>
+          In the context of programming, the instantiation of one or more <a class="termref internalDFN" data-lt="class" href="#dfn-class" data-link-type="dfn">classes</a> and interfaces which define the general characteristics of similar objects. An object in an <a href="#dfn-accessibility-api" class="internalDFN" data-link-type="dfn">accessibility <abbr title="Application Programming Interfaces">API</abbr></a> may represent one or more <abbr title="Document Object Model">DOM</abbr> objects. <a class="termref internalDFN" data-lt="accessibility api" href="#dfn-accessibility-api" data-link-type="dfn">Accessibility APIs</a> have defined interfaces that are distinct from <abbr title="Document Object Model">DOM</abbr> interfaces.</dd>
+
+        <dt><dfn data-dfn-type="dfn" id="dfn-ontology">Ontology</dfn></dt>
+        <dd>
+          <p>A description of the characteristics of <a class="termref internalDFN" data-lt="class" href="#dfn-class" data-link-type="dfn">classes</a> and how they relate to each other.</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-operable">Operable</dfn></dt>
+        <dd>
+          <p>Usable by users in ways they can control. References in this document relate to <cite><a href="http://www.w3.org/TR/WCAG20/#operable"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0 Principle 2: Content must be operable</a></cite> [<cite><a class="bibref" href="#bib-WCAG20">WCAG20</a></cite>]. See <a href="#dfn-keyboard-accessible" class="internalDFN" data-link-type="dfn">Keyboard Accessible</a>.</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-owned-element">Owned Element</dfn></dt>
+        <dd>
+          <p>An 'owned element' is any <abbr title="Document Object Model">DOM</abbr> descendant of the <a href="#dfn-element" class="internalDFN" data-link-type="dfn">element</a>, any element specified as a child via
+            <pref>aria-owns</pref>, or any <abbr title="Document Object Model">DOM</abbr> descendant of the owned child.</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-owning-element">Owning Element</dfn></dt>
+        <dd>
+          <p>An 'owning element' is any <abbr title="Document Object Model">DOM</abbr> ancestor of the <a href="#dfn-element" class="internalDFN" data-link-type="dfn">element</a>, or any element with an
+            <pref>aria-owns</pref> attribute which references the ID of the element. </p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-perceivable">Perceivable</dfn></dt>
+        <dd>
+          <p>Presentable to users in ways they can sense. References in this document relate to <cite><a href="http://www.w3.org/TR/WCAG20/#perceivable"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0 Principle 1: Content must be perceivable</a></cite> [<cite><a class="bibref" href="#bib-WCAG20">WCAG20</a></cite>].</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-property">Property</dfn></dt>
+        <dd>
+          <p><a class="termref internalDFN" data-lt="attribute" href="#dfn-attribute" data-link-type="dfn">Attributes</a> that are essential to the nature of a given <a href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a>, or that represent a data value associated with the object. A change of a property may significantly impact the meaning or presentation of an object. Certain properties (for example,
+            <pref>aria-multiline</pref>) are less likely to change than <a class="termref" href="#dfn-state">states</a>, but note that the frequency of change difference is not a rule. A few properties, such as
+            <pref>aria-activedescendant</pref>,
+            <pref>aria-valuenow</pref>, and
+            <pref>aria-valuetext</pref> are expected to change often. See <a href="http://www.w3.org/TR/wai-aria/states_and_properties#statevsprop">clarification of states versus properties</a>.</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-relationship">Relationship</dfn></dt>
+        <dd>
+          <p>A connection between two distinct things. Relationships may be of various types to indicate which <a href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a> labels another, controls another, etc.</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-role">Role</dfn></dt>
+        <dd>
+          <p>Main indicator of type.
+            <!-- (removing, vague) The object's role is the class of <a class="termref" data-lt="object">objects</a> of which it is a member. -->This <a class="termref internalDFN" data-lt="semantics" href="#dfn-semantics" data-link-type="dfn">semantic</a> association allows tools to present and support interaction with the object in a manner that is consistent with user expectations about other objects of that type.</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-root-wai-aria-node">Root <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> node</dfn></dt>
+        <dd>
+          <p> The primary element containing non-metadata content. In many languages, this is the document element but in <abbr title="Hypertext Markup Language">HTML</abbr>, it is the <code>&lt;body&gt;</code>.</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-semantics">Semantics</dfn></dt>
+        <dd>
+          <p>The meaning of something as understood by a human, defined in a way that computers can process a representation of an <a href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a>, such as <a class="termref internalDFN" data-lt="element" href="#dfn-element" data-link-type="dfn">elements</a> and <a class="termref internalDFN" data-lt="attribute" href="#dfn-attribute" data-link-type="dfn">attributes</a>, and reliably represent the object in a way that various humans will achieve a mutually consistent understanding of the object.</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-state">State</dfn></dt>
+        <dd>
+          <p>A state is a dynamic <a class="termref" href="#dfn-property">property</a> expressing characteristics of an <a href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a> that may change in response to user action or automated processes. States do not affect the essential nature of the object, but represent data associated with the object or user interaction possibilities. See <a href="http://www.w3.org/TR/wai-aria/states_and_properties#statevsprop">clarification of states versus properties</a>.</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-sub-document">Sub-document</dfn></dt>
+        <dd>
+          <p>Any document created from a <code>&lt;frame&gt;</code>, <code>&lt;iframe&gt;</code> or similar mechanism. A sub-document may contain a document, an application or any widget such as a calendar pulled in from another server. In the <a href="#dfn-accessibility-tree" class="internalDFN" data-link-type="dfn">accessibility tree</a> there are two <a class="termref internalDFN" data-lt="accessible object" href="#dfn-accessible-object" data-link-type="dfn">accessible objects</a> for this situation—one represents the <code>&lt;frame&gt;</code>/<code>&lt;iframe&gt;</code> element in the parent document, which parents a single <a href="#dfn-accessible-object" class="internalDFN" data-link-type="dfn">accessible object</a> child representing the spawned document contents.</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-target-element">Target Element</dfn></dt>
+        <dd>
+          <p>An element specified in a <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> relation. For example, in <code> &lt;div aria-controls=”elem1”&gt;</code>, where <code>“elem1”</code> is the ID for the target element.</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-taxonomy">Taxonomy</dfn></dt>
+        <dd>
+          <p>A hierarchical definition of how the characteristics of various <a class="termref internalDFN" data-lt="class" href="#dfn-class" data-link-type="dfn">classes</a> relate to each other, in which classes inherit the properties of superclasses in the hierarchy. A taxonomy can comprise part of the formal definition of an <a href="#dfn-ontology" class="internalDFN" data-link-type="dfn">ontology</a>.</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-text-node">Text node</dfn></dt>
+        <dd>
+          <p>Type of <abbr title="Document Object Model">DOM</abbr> <a class="termref internalDFN" data-lt="node" href="#dfn-node" data-link-type="dfn">node</a> that represents the textual content of an <a class="termref internalDFN" href="#dfn-attribute" data-link-type="dfn">attribute</a> or an <a class="termref internalDFN" href="#dfn-element" data-link-type="dfn">element</a>. A Text node has no child nodes. </p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-understandable">Understandable</dfn></dt>
+        <dd>
+          <p>Presentable to users in ways they can construct an appropriate meaning. References in this document relate to <cite><a href="http://www.w3.org/TR/WCAG20/#understandable"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0 Principle 3: Information and the operation of user interface must be understandable</a></cite> [<cite><a class="bibref" href="#bib-WCAG20">WCAG20</a></cite>].</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-user-agent">User Agent</dfn></dt>
+        <dd>
+          <p>Any software that retrieves, renders and facilitates end user interaction with Web content. This definition may differ from that used in other documents.</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-valid-idref">Valid IDREF</dfn></dt>
+        <dd>
+          <p>A reference to a target element in the same document that has a matching ID</p>
+        </dd>
+        <dt><dfn data-dfn-type="dfn" id="dfn-widget">Widget</dfn></dt>
+        <dd>
+          <p>Discrete user interface <a class="termref" href="#dfn-object">object</a> with which the user can interact. Widgets range from simple objects that have one value or operation (e.g., check boxes and menu items), to complex objects that contain many managed sub-objects (e.g., trees and grids).</p>
+        </dd>
+      </dl>
     </div>
   </section>
 
-  <section id="adding-context" typeof="bibo:Chapter" resource="#adding-context" property="bibo:hasPart">
+  <section class="normative" id="semanticProperties" typeof="bibo:Chapter" resource="#semanticProperties" property="bibo:hasPart">
     <!--OddPage-->
-    <h2 id="h-adding-context" resource="#h-adding-context"><span property="xhv:role" resource="xhv:heading"><span class="secno">3. </span>Adding Context <span class="permalink" typeof="bookmark"><a href="#adding-context" aria-label="Permalink for 3. Adding Context " title="Permalink for 3. Adding Context " property="url"><span property="title" content="3. Adding Context ">§</span></a></span></span></h2>
-    <p><strong>Requirement:</strong> Having familiar terms and symbols is key to being able to use the web. However what is familiar for one user may be strange for another requiring them to learn new symbols. If a user agent or script knows the context of links, buttons, and other page elements then symbols and text used can be ones that the user understands. This can include: </p>
-    <ul>
-      <li> Symbols and graphics that they are familiar with </li>
-      <li> Tool tips </li>
-      <li> Language the use can understand </li>
-      <li> Keyboard short cuts </li>
-    </ul>
-    <p> </p>
-    <p>For that we need to standardize supportive syntax and terms that can be linked to associated symbols, terms, translations and explanations, for the individual, via an attribute.</p>
-    <p> </p>
-    <p><strong>Example user experience:</strong>, if an author gives to a button a role "send" then, without any work by the author, the button could be automatically rendered with a symbol, term, and/or tooltips that is understandable by a particular user. It could automatically imply F1 help that explains the send function in simple terms. It could be identified with a keyboard short cut that will always be used for send. In addition it could be identified as important and always rendered, or rendered as a large button. This would enable a consistent UI experience across applications and websites.</p>
-    <p><strong>Proposed attribute:</strong> <code>coga-action</code></p>
-    <p>For example: &lt;button coga-action="undo" &gt;default&lt;/button&gt;</p>
-    <p>The user experience may be simply replacing the text for the term "undo".</p>
-    <p><strong>Supported Values: </strong></p>
-    <p>The following could be supported values of <code>coga-action</code> for buttons:</p>
-    <ul>
-      <li>compose(default importance = "critical") </li>
-      <li>delete </li>
-      <li>next </li>
-      <li>previous </li>
-      <li>submit (default importance = "critical") </li>
-      <li>undo </li>
-      <li>cancel </li>
-      <li>buy</li>
-      <li>add label </li>
-      <li>move </li>
-      <li>view </li>
-      <li>save (default importance = "critical") </li>
-      <li>send (default importance = "critical") </li>
-      <li>received </li>
-      <li>sent </li>
-      <li>edit </li>
-      <li>reply </li>
-      <li>forward </li>
-      <li>my profile </li>
-      <li>upload </li>
-      <li>close </li>
-      <li>more </li>
-      <li>calendar </li>
-      <li>add entry </li>
-      <li>expand </li>
-      <li>unexpanded </li>
-      <li>open </li>
-      <li>new </li>
-      <li>print </li>
-      <li>settings </li>
-    </ul>
-  </section>
+    <h2 id="h-semanticproperties" resource="#h-semanticproperties"><span property="xhv:role" resource="xhv:heading"><span class="secno">3. </span>Semantic Properties<span class="permalink" typeof="bookmark"><a href="#semanticProperties" aria-label="Permalink for 3. Semantic Properties" title="Permalink for 3. Semantic Properties" property="url"><span property="title" content="3. Semantic Properties">§</span></a>
+      </span>
+      </span>
+    </h2>
+    This Section covers semantic properties.
 
-  <section typeof="bibo:Chapter" resource="" property="bibo:hasPart">
-    <p><strong>Proposed attribute:</strong><code>coga-destination</code></p>
-    <p>The <code>coga-destination</code> attribute provides the context of a link. It should be used on a link element or element with role="link".</p>
-    <p>For example: &lt;a href="home.html" coga-destination="home" &gt;our main page&lt;/a&gt;</p>
-    <p>The user experience may be simply replacing the text for the term "home" and adding an icon. Based on personalization setting the user can see diffrent icons. A sample user experience is available at <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html">https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html </a></p>
-    <p>It may also position this button to a location on the screen where the user is expecting the home page link.</p>
-    <p><strong>Supported Values: </strong></p>
-    <p>The following could be supported values of <code>coga-destination</code>. </p>
-    <ul>
-      <li>home </li>
-      <li>contact us </li>
-      <li>our phone </li>
-      <li>our email </li>
-      <li>site map </li>
-      <li>help </li>
-      <li>about us </li>
-      <li>terms </li>
-      <li>tools </li>
-      <li>comment </li>
-      <li>language (English) </li>
-      <li>sign in </li>
-      <li>sign up </li>
-      <li>product </li>
-      <li>services </li>
-      <li>social (provide label ) </li>
-      <li>post </li>
-      <li>contactus </li>
-      <li>help </li>
-      <li>chat help </li>
-    </ul>
-  </section>
+    <section id="characteristics_semanticproperties>
+                		<h2>Characteristics of Semantic Properties</h2>
+                		<p>Semantic properties have the characteristics described in the following sections.</p>
+                		<section id=" propcharacteristic_relatedconcept "=" " typeof="bibo:Chapter " resource="#characteristics_semanticproperties>
+      <h2>Characteristics of Semantic Properties</h2>
+      <p>Semantic properties have the characteristics described in the following sections.</p>
 
-  <section typeof="bibo:Chapter" resource="" property="bibo:hasPart">
-    <p><strong>Proposed attribute: </strong><code>coga-field</code></p>
-    <p><code>coga-field</code> provides the context of a text input field such as a text box. It should be used on an input, text a responding role.</p>
-    <p>For example: &lt;input type="text" name="fname" coga-field="phone"/&gt;</p>
-    <p>The user experience may include filling in the field and adding an icon.</p>
-    <p>coga-field values that would typically be on form controls and would have a user context - for example phone would relate to the user's phone</p>
-    <p>Note they can be concatenated such as coga-field="birthdate month"</p>
-    <ul>
-      <li>first name </li>
-      <li>family name </li>
-      <li>initial </li>
-      <li>phone (corresponds to a user phone number)</li>
-      <li>cell phone </li>
-      <li>address 1 </li>
-      <li>city </li>
-      <li>state </li>
-      <li>country </li>
-      <li>post code </li>
-      <li>phone </li>
-      <li>credit card </li>
-      <li>expiry </li>
-      <li>birth date</li>
-      <li>day, *month *year </li>
-      <li>expiry date</li>
-      <li>todays date</li>
-      <li>credit card code </li>
-      <li>date start </li>
-      <li>date end</li>
-    </ul>
-    <p><code>coga-field</code> can also give the context for text elements.</p>
-    <p><code>coga-field</code> values on text are:</p>
-    <ul>
-      <li>our-phone </li>
-      <li>our-address </li>
-      <li>our-email </li>
-    </ul>
-  </section>
+      <section id=" property=" bibo:hasPart ">
+                        		<h3 id="h-characteristics_semanticproperties-h2-characteristics-of-semantic-properties-h2-p-semantic-properties-have-the-characteristics-described-in-the-following-sections.-p-section-id " resource="#h-characteristics_semanticproperties-h2-characteristics-of-semantic-properties-h2-p-semantic-properties-have-the-characteristics-described-in-the-following-sections.-p-section-id "><span property="xhv:role " resource="xhv:heading "><span class="secno ">3.1 </span>Related Concepts<span class="permalink " typeof="bookmark "><a href="#characteristics_semanticproperties&gt;&#10; &#9;&#9;&lt;h2&gt;Characteristics of Semantic Properties&lt;/h2&gt;&#10; &#9;&#9;&lt;p&gt;Semantic properties have the characteristics described in the following sections.&lt;/p&gt;&#10; &#9;&#9;&lt;section id=" aria-label=" Permalink for 3.1 Related Concepts " title="Permalink for 3.1 Related Concepts " property="url "><span property="title " content="3.1 Related Concepts ">§</span></a></span></span></h3>
+                        		<p>Advisory information about features from this or other languages that correspond to this <a href="#dfn-property " class="internalDFN " data-link-type="dfn ">property</a>. While the correspondence may not be exact, it is useful to help understand the intent of the state or property.</p>
+                		</section>
+                		<section id="propcharacteristic_value " typeof="bibo:Chapter " resource="#propcharacteristic_value " property="bibo:hasPart ">
+                        		<h3 id="h-propcharacteristic_value " resource="#h-propcharacteristic_value "><span property="xhv:role " resource="xhv:heading "><span class="secno ">3.2 </span>Value<span class="permalink " typeof="bookmark "><a href="#propcharacteristic_value " aria-label="Permalink for 3.2 Value " title="Permalink for 3.2 Value " property="url "><span property="title " content="3.2 Value ">§</span></a></span></span></h3>
+                        		<p>Value type of the semantic <a href="#dfn-property " class="internalDFN " data-link-type="dfn ">property</a>. The value may be one of the following types:</p>
+                        		<dl>
+             		                   <dt id="valuetype_true-false ">true/false</dt>
+                        		   <dd>Value representing either true or false, with a default "false " value.</dd>
+                 		           <dt id="valuetype_true-false-undefined ">true/false/undefined</dt>
+                                	   <dd>Value representing true or false, with a default "undefined " value indicating the state or property is not relevant.</dd>
+                                	   <dt id="valuetype_idref ">ID reference</dt>
+                   	                   <dd>Reference to the ID of another <a href="#dfn-element " class="internalDFN " data-link-type="dfn ">element</a> in the same document</dd>
+                                	   <dt id="valuetype_idref_list ">ID reference list</dt>
+                                	   <dd>A list of one or more ID references.</dd>
+                                	   <dt id="valuetype_integer ">integer</dt>
+                                	   <dd>A numerical value without a fractional component.</dd>
+                                	   <dt id="valuetype_number ">number</dt>
+                                	   <dd>Any real numerical value.</dd>
+                                	   <dt id="valuetype_string ">string</dt>
+                                	   <dd>Unconstrained value type.</dd>
+                                	   <dt id="valuetype_token ">token</dt>
+                                	   <dd>One of a limited set of allowed values.</dd>
+                                	   <dt id="valuetype_token_list ">token list</dt>
+                                	   <dd>A list of one or more tokens.</dd>
+                                	   <dt id="valuetype_uri ">URI</dt>
+                                	   <dd>A Uniform Resource Identifier as defined by <cite><a href="http://www.ietf.org/rfc/rfc3986.txt ">RFC 3986</a></cite> [<cite><a class="bibref " href="#bib-RFC3986 ">RFC3986</a></cite>]. It may reference a separate document, or a content fragment identifier in a separate document, or a content fragment identifier within the same document.</dd>
+                        		</dl>
+                        		<p>The "undefined " value, when allowed on a state or property, is an explicit indication that the state or property is not set. The value is used on states and properties that support tokens, and the "undefined " value is a string that is one of the allowed tokens. It is also used on some states and properties that accept true/false values, when "undefined " has a different meaning than "false ".</p>
+                        		<p>These are generic types for states and properties, but do not define specific representation. See <a href="#state_property_processing ">State and Property Attribute Processing</a> for details on how these values are expressed and handled in host languages.</p>
+                		</section>
+				<section id="semantic_prop_taxonomy " typeof="bibo:Chapter " resource="#semantic_prop_taxonomy " property="bibo:hasPart ">
+					<h3 id="h-semantic_prop_taxonomy " resource="#h-semantic_prop_taxonomy "><span property="xhv:role " resource="xhv:heading "><span class="secno ">3.3 </span>Taxonomy of Semantic Properties<span class="permalink " typeof="bookmark "><a href="#semantic_prop_taxonomy " aria-label="Permalink for 3.3 Taxonomy of Semantic Properties " title="Permalink for 3.3 Taxonomy of Semantic Properties " property="url "><span property="title " content="3.3 Taxonomy of Semantic Properties ">§</span></a></span></span></h3>
+					Semantic properties are categorized as follows:
+					<ol>
+						<li a=" " href="#generalSemantics ">General Semantics</li>
+					</ol>
+					<section id="generalSemantics " typeof="bibo:Chapter " resource="#generalSemantics " property="bibo:hasPart ">
+		                                <h4 id="h-generalsemantics " resource="#h-generalsemantics "><span property="xhv:role " resource="xhv:heading "><span class="secno ">3.3.1 </span>General Semantic Properties<span class="permalink " typeof="bookmark "><a href="#generalSemantics " aria-label="Permalink for 3.3.1 General Semantic Properties " title="Permalink for 3.3.1 General Semantic Properties " property="url "><span property="title " content="3.3.1 General Semantic Properties ">§</span></a></span></span></h4>
+                                		The following are general semantic properties used for personalization:
+                                		<ul>
+                                        		<li><pref>coga-simplification</pref></li>
+                                		</ul>
+					</section>
+				</section>
+				<section id="prop_def " typeof="bibo:Chapter " resource="#prop_def " property="bibo:hasPart ">
+					<h3 id="h-prop_def " resource="#h-prop_def "><span property="xhv:role " resource="xhv:heading "><span class="secno ">3.4 </span>Definitions of Semantic Properties (all coga-* attributes)<span class="permalink " typeof="bookmark "><a href="#prop_def " aria-label="Permalink for 3.4 Definitions of Semantic Properties (all coga-* attributes) " title="Permalink for 3.4 Definitions of Semantic Properties (all coga-* attributes) " property="url "><span property="title " content="3.4 Definitions of Semantic Properties (all coga-* attributes) ">§</span></a></span></span></h3>
+					<p id="index_state_prop " class="placeholder ">
+						Placeholder for index of states and properties
+					</p>
+<!--
+					<div class="property " id="coga-simplification ">
+				  		<pdef>coga-simplification</pdef>
+                                		<p></p>
+                        		</div>
+-->
+                        		ion&gt;
+                                               			<table class="property-features ">
+                                		<caption>Characteristics:</caption>
+                                		<thead>
+                                        		<tr>
+                                                		<th scope="col ">Characteristic</th>
+                                                		<th scope="col ">Value</th>
+                                        		</tr>
+                                		</thead>
+                                		<tbody>
+                                        		<tr>
+                                                		<th class="property-related-head " scope="row ">Related Concepts:</th><td class="property-related "><cite><a href="https://www.w3.org/TR/SVG2/ "><abbr title="Scalable Vector Graphics ">SVG</abbr></a></cite> [<cite><a class="bibref " href="#bib-SVG2 ">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/ "><abbr title="Document Object Model ">DOM</abbr></a></cite> [<cite><a class="bibref " href="#bib-DOM4 ">DOM4</a></cite>] active</td>
+                                        		</tr>
+                                        		<tr>
+                                                		<th class="property-applicability-head " scope="row ">Used in Roles:</th>
+                                                		<td class="property-applicability ">Placeholder</td>
+                                        		</tr>
+                                        		<tr>
+                                                		<th class="property-descendants-head " scope="row ">Inherits into Roles:</th>
+                                                		<td class="property-descendants ">Placeholder</td>
+                                        		</tr>
+                                        		<tr>
+                                                		<th class="property-value-head " scope="row ">Value:</th>
+                                                		<td class="property-value "><a href="#valuetype_idref ">ID reference</a></td>
+                                        		</tr>
+                                		</tbody>
+                        		</table>
+                	
 
-  <section id="general-context" typeof="bibo:Chapter" resource="#general-context" property="bibo:hasPart">
-    <!--OddPage-->
-    <h2 id="h-general-context" resource="#h-general-context"><span property="xhv:role" resource="xhv:heading"><span class="secno">4. </span>General context<span class="permalink" typeof="bookmark"><a href="#general-context" aria-label="Permalink for 4. General context" title="Permalink for 4. General context" property="url"><span property="title" content="4. General context">§</span></a></span></span></h2>
-    <p><strong>Requirement: </strong> One important factor in optimizing the personalization of a product or service is to ensure that the personalization is appropriate for the current context of use as well as what is relevant for the user. For example a female user with a cognitive disability may need less options, and options that are for men are less likely to be relevant for her and may be demoted to bellow the scroll or placed under a "more option" button.</p>
-    <p><strong>Proposed attribute:</strong>coga-context</p>
-    Coga-context would let the author give additional contextual information about the content.
-    <p> Coga-context accepts the values of a URI or shortened URI.</p>
-    <pre class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"women.html"</span> <span class="hljs-attr">coga-context</span>=<span class="hljs-string">"openref:gender#femail"</span>&gt;</span>women<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> </pre>
-    <p>To make this work without an RDF parser we recommend maintaining a list of recommended ontologies. </p>
+                        </section>  
 
-    <section id="should-we-be-using-rdfa" typeof="bibo:Chapter" resource="#should-we-be-using-rdfa" property="bibo:hasPart">
-      <h3 id="h-should-we-be-using-rdfa" resource="#h-should-we-be-using-rdfa"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.1 </span>Should we be using RDFa?<span class="permalink" typeof="bookmark"><a href="#should-we-be-using-rdfa" aria-label="Permalink for 4.1 Should we be using RDFa?" title="Permalink for 4.1 Should we be using RDFa?" property="url"><span property="title" content="4.1 Should we be using RDFa?">§</span></a></span></span></h3>
-      <p>The context based properties should be convertible to RDFa. (see <a href="https://www.w3.org/TR/xhtml-rdfa-primer/">RDFa Primer</a>) and the task force should create this mapping.</p>
-      <p>Note that a lot of this can be done using RDFa. However it is easy to change the meaning with RDFa and a very basic parser will misinterpret the result. The coga work needs to be usable by as many authors as possible, and not only thoughs who can implement RDF logic.</p>
-      <p>Further , personalization setting need to be limited, and RDF can give an unlimited number of potential options which will make the system unusable. (This is unless we create restrictions and controls on an ontology uses - such as mapping to know ontologies.)</p>
-      <p>For example, in the code below the property homepage does not refer to the home page of the site but of the person being references. Beyond declaring the type of data we are dealing with, each typeof creates a new blank node with its own distinct properties. </p>
-      <pre class="hljs javascript">&lt;div vocab=<span class="hljs-string">"http://xmlns.com/foaf/0.1/"</span>&gt;
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>        
-   <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">typeof</span>=<span class="hljs-string">"Person"</span>&gt;</span>          
-      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"homepage"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://example.com/bob/"</span>&gt;</span>Bob<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>        
-   <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>        
-   <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">typeof</span>=<span class="hljs-string">"Person"</span>&gt;</span>          
-      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"homepage"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://example.com/eve/"</span>&gt;</span>Eve<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>        
-   <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>        
-   <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">typeof</span>=<span class="hljs-string">"Person"</span>&gt;</span>         
-      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"homepage"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://example.com/manu/"</span>&gt;</span>Manu<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>        
-   <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>     
-<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></span>
-        </pre>
+                </section> 
+		<section id="simplification " typeof="bibo:Chapter " resource="#simplification " property="bibo:hasPart ">
+			<!--OddPage--><h2 id="h-simplification " resource="#h-simplification "><span property="xhv:role " resource="xhv:heading "><span class="secno ">4. </span>Simplification<span class="permalink " typeof="bookmark "><a href="#simplification " aria-label="Permalink for 4. Simplification " title="Permalink for 4. Simplification " property="url "><span property="title " content="4. Simplification ">§</span></a></span></span></h2>
+                        <p><strong>Requirement</strong>: The user must be able to request a way to identify and differentiate between critical features, medium features and less important features. These need to be defined as important from a user perspective in the content. Typically, critical features may be used by many or most users, 90% of the time or more. High important features would be above 60% use. Medium important features would be 20% of users use it 20% of the time . Under 20% usage would be of low importance.</p>
+                        <p><strong>User experience</strong>: Based on personalization setting the user can see less options. A sample user experience is available at <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html ">https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html </a></p>
+                        <p><strong>Proposed attribute</strong>: coga-simplification (formerly coga-importance). Having the following values: (main task such as send for an email) </p>
+                        <ul>
+                                <li><code>coga-simplification="simplest "</code>. This  setting should be used on:
+                                  <ul>
+                                    <li> Elements that are essential for the key  function (from the user perspective) of the page (Example: The send button for  an email draft) or</li>
+                                    <li> Elements  that are sometimes critical to a user being able to use the site, such as  "save my work " or "emergency instructions " or</li>
+                                    <li> Elements  that are used by over 90% of a user group (such as parents or teachers) use  this element most times they use the content<br>
+                                </li>
+                              </ul>
+                                </li>
+                        </ul>
+                        <p>Typically  3 links or buttons would be considered "simplest "</p>
+                        <ul>
+                          <li> <code>coga-simplification="high "</code>. This setting should be used on:
+                <ul>
+                  <li> Elements that are used frequent  (Example: The delete button for an email draft)  or</li>
+                  <li> Elements  that are sometimes important to a user being able to use the site, such as  settings or</li>
+                  <li> Elements  that are used by frequently (over 60%) by a user group (such as parents or teachers) use  this element most times they use the content</li>
+                </ul>
+                          </li>
+                          <li> <code>coga-simplification= "med "</code>. This  setting should be used on elements that are not typically used.</li>
+                          <li> <code>coga-simplification="low "</code>. This  setting should be used on elements that are rarely used or only used by advanced users. (Example: The terms and services or the archive button for an email draft) </li>
+                  </ul>
+			<div class="note "><div class="note-title marker " aria-level="3 " role="heading " id="h-note1 "><span>Note</span></div><div class=" ">
+                        <p>These semantics aid simplification. But what content is most useful to a user varies from user to user. For example, men may be more interested in mens clothing, and may not be interested in the more frequently use womens clothing option. For that reason we may add context for elements that will help the personalization agent select the most useful content for a given user. This is also necessary for reminders (see bellow). RDFa may be the best way forward for this aspect.</p>
+                  <p> It is worth mentioning that a lot of this information is known for personalization of advertisements and content optimization. </p>
+			</div></div>
+		</section>
+                <section id="adding-context " typeof="bibo:Chapter " resource="#adding-context " property="bibo:hasPart ">
+                 <!--OddPage--><h2 id="h-adding-context " resource="#h-adding-context "><span property="xhv:role " resource="xhv:heading "><span class="secno ">5. </span>Adding Context <span class="permalink " typeof="bookmark "><a href="#adding-context " aria-label="Permalink for 5. Adding Context " title="Permalink for 5. Adding Context " property="url "><span property="title " content="5. Adding Context ">§</span></a></span></span></h2>
+                        <p><strong>Requirement:</strong> Having familiar terms and symbols is key to being able to use the web. However what is familiar for one user may be strange for another requiring them to learn new symbols. If a user agent or script knows the context of links, buttons, and other page elements then symbols and text used can be ones that the user understands. This can include: </p>
+      <ul>
+       <li> Symbols and graphics that they are familiar with </li>
+       <li> Tool tips </li>
+       <li> Language the use can understand </li>
+       <li> Keyboard short cuts </li>
+      </ul>
       <p> </p>
-      <p>We may recommend adding RDFA that describe the role of the item (see <a href="https://www.w3.org/TR/xhtml-rdfa-primer/">RDFa Primer</a>):</p>
-      <pre class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">resource</span>=<span class="hljs-string">"/alice/posts/jos_barbecue"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"title"</span>&gt;</span>Jo's Barbecue<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Date: <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"created"</span>&gt;</span>2011-09-14<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"creator"</span>&gt;</span>Eve<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>        
+      <p>For that we need to standardize supportive syntax and terms that can be linked to associated symbols, terms, translations and explanations, for the individual, via an attribute.</p>
+      <p> </p>
+      <p><strong>Example user experience:</strong>, if an author gives to a button a role "send " then, without any work by the author, the button could be automatically rendered with a symbol, term, and/or tooltips that is understandable by a particular user. It could automatically imply F1 help that explains the send function in simple terms. It could be identified with a keyboard short cut that will always be used for send. In addition it could be identified as important and always rendered, or rendered as a large button. This would enable a consistent <abbr title="user interface ">UI</abbr> experience across applications and websites.</p>
+                        <p><strong>Proposed attribute:</strong> <code>coga-action</code></p>
+                        <p>For example: &lt;button coga-action="undo " &gt;default&lt;/button&gt;</p>
+                        <p>The user experience may be simply replacing the text for the term "undo ".</p>
+                        <p><strong>Supported Values: </strong></p>
+                        <p>The following could be supported values of <code>coga-action</code> for buttons:</p>
+			<ul>
+                                <li>compose(default importance = "critical ") </li>
+                                <li>delete </li>
+                                <li>next </li>
+                                <li>previous </li>
+                                <li>submit (default importance = "critical ") </li>
+                                <li>undo </li>
+                                <li>cancel </li>
+                                <li>buy</li>
+                                <li>add label </li>
+                                <li>move </li>
+                                <li>view </li>
+                                <li>save (default importance = "critical ") </li>
+                                <li>send (default importance = "critical ") </li>
+                                <li>received </li>
+                                <li>sent </li>
+                                <li>edit </li>
+                                <li>reply </li>
+                                <li>forward </li>
+                                <li>my profile </li>
+                                <li>upload </li>
+                                <li>close </li>
+                                <li>more </li>
+                                <li>calendar </li>
+                                <li>add entry </li>
+                                <li>expand </li>
+                                <li>unexpanded </li>
+                                <li>open </li>
+                                <li>new </li>
+                                <li>print </li>
+                                <li>settings </li>
+                        </ul>
+		</section>
+		<section typeof="bibo:Chapter " resource=" " property="bibo:hasPart ">
+     			<p><strong>Proposed attribute:</strong><code>coga-destination</code></p>
+     			<p>The <code>coga-destination</code> attribute provides the context of a link. It should be used on a link element or element with role="link ".</p>
+     			<p>For example: &lt;a href="home.html " coga-destination="home " &gt;our main page&lt;/a&gt;</p>
+     			<p>The user experience may be simply replacing the text for the term "home " and adding an icon.  Based on personalization setting the user can see diffrent icons. A sample user experience is available at <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html ">https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html </a></p>
+     			<p>It may also position this button to a location on the screen where the user is expecting the home page link.</p>
+     			<p><strong>Supported Values: </strong></p>
+     			<p>The following could be supported values of <code>coga-destination</code>.              </p>
+     			<ul>
+        	   		<li>home </li>
+	        	        <li>contact us </li>
+                 		<li>our phone </li>
+                 		<li>our email </li>
+                 		<li>site map </li>
+                 		<li>help </li>
+                 		<li>about us </li>
+                 		<li>terms </li>
+                 		<li>tools </li>
+                 		<li>comment </li>
+                 		<li>language (English) </li>
+                 		<li>sign in </li>
+                 		<li>sign up </li>
+                 		<li>product </li>
+                 		<li>services </li>
+                 		<li>social (provide label ) </li>
+                 		<li>post </li>
+                 		<li>contactus </li>
+                 		<li>help </li>
+                 		<li>chat help </li>
+           		</ul>
+		</section>
+                <section typeof="bibo:Chapter " resource=" " property="bibo:hasPart ">
+                        <p><strong>Proposed attribute: </strong><code>coga-field</code></p>
+      			<p><code>coga-field</code> provides the context of a text input field such as a text box. It should be used on an input, text a responding role.</p>
+      			<p>For example: &lt;input type="text " name="fname " coga-field="phone "/&gt;</p>
+      			<p>The user experience may include filling in the field and adding an icon.</p>
+      			<p>coga-field values that would typically be on form controls and would have a user context - for example phone would relate to the user's phone</p>
+                 	<p>Note they can be concatenated such as coga-field="birthdate month "</p>
+                        <ul>
+                         	<li>first name </li>
+                                <li>family name </li>
+                                <li>initial </li>
+                                <li>phone (corresponds to a user phone number)</li>
+                                <li>cell phone </li>
+                                <li>address 1 </li>
+                                <li>city </li>
+                                <li>state </li>
+                                <li>country </li>
+                                <li>post code </li>
+                                <li>phone </li>
+                                <li>credit card </li>
+                                <li>expiry </li>
+                                <li>birth date</li>
+                                <li>day, *month *year </li>
+                                <li>expiry date</li>
+                                <li>todays date</li>
+                                <li>credit card code </li>
+                                <li>date start </li>
+                                <li>date end</li>
+                        </ul>
+                        <p><code>coga-field</code> can also give the context for text elements.</p>
+      			<p><code>coga-field</code> values on text are:</p>
+      			<ul>
+       				<li>our-phone </li>
+       				<li>our-address </li>
+       				<li>our-email </li>
+      			</ul>
+                </section>
+         	<section id="general-context " typeof="bibo:Chapter " resource="#general-context " property="bibo:hasPart ">
+           		<!--OddPage--><h2 id="h-general-context " resource="#h-general-context "><span property="xhv:role " resource="xhv:heading "><span class="secno ">6. </span>General context<span class="permalink " typeof="bookmark "><a href="#general-context " aria-label="Permalink for 6. General context " title="Permalink for 6. General context " property="url "><span property="title " content="6. General context ">§</span></a></span></span></h2>
+           		<p><strong>Requirement: </strong> One important factor in optimizing the personalization of a product or   service is to ensure that the personalization is appropriate for the   current context of use as well as what is relevant for the user. For example a female user with a cognitive disability may need less options, and options that are for men are less likely to be relevant for her and may be demoted to bellow the scroll or placed under a "more option " button.</p>
+           		<p><strong>Proposed attribute:</strong>coga-context</p>
+           		Coga-context would let the author give additional contextual information about the content.
+           		<p> Coga-context accepts the values of a URI or shortened URI.</p>
+           		<pre class="hljs xml "><span class="hljs-tag ">&lt;<span class="hljs-name ">a</span> <span class="hljs-attr ">href</span>=<span class="hljs-string ">"women.html "</span> <span class="hljs-attr ">coga-context</span>=<span class="hljs-string ">"openref:gender#femail "</span>&gt;</span>women<span class="hljs-tag ">&lt;/<span class="hljs-name ">a</span>&gt;</span> </pre>
+           		<p>To make this work without an RDF parser we recommend maintaining a list of recommended ontologies. </p>
+			<section id="should-we-be-using-rdfa " typeof="bibo:Chapter " resource="#should-we-be-using-rdfa " property="bibo:hasPart ">
+                        	<h3 id="h-should-we-be-using-rdfa " resource="#h-should-we-be-using-rdfa "><span property="xhv:role " resource="xhv:heading "><span class="secno ">6.1 </span>Should we be using RDFa?<span class="permalink " typeof="bookmark "><a href="#should-we-be-using-rdfa " aria-label="Permalink for 6.1 Should we be using RDFa? " title="Permalink for 6.1 Should we be using RDFa? " property="url "><span property="title " content="6.1 Should we be using RDFa? ">§</span></a></span></span></h3>
+                        	<p>The context based properties should be convertible to RDFa. (see <a href="https://www.w3.org/TR/xhtml-rdfa-primer/ ">RDFa Primer</a>) and the task force should create this mapping.</p>
+                        	<p>Note that a lot of this can be done using RDFa.  However it is easy to change the meaning with RDFa and a very basic parser will misinterpret the result. The coga work needs to be usable by as many authors as possible, and not only thoughs who can implement  RDF logic.</p>
+                        	<p>Further , personalization setting need to be limited, and RDF can give an unlimited  number of potential options which will make the system unusable. (This is unless we create restrictions and controls on an ontology uses - such as mapping to know ontologies.)</p>
+                        	<p>For example, in the code below the property homepage does not refer to the home page of the site but of the person being references.  Beyond declaring the type of data we are dealing with, each typeof                              creates a new blank node with its own distinct properties. </p>
+                        	<pre class="hljs javascript ">&lt;div vocab=<span class="hljs-string ">"http://xmlns.com/foaf/0.1/ "</span>&gt;
+<span class="xml "><span class="hljs-tag ">&lt;<span class="hljs-name ">ul</span>&gt;</span>        
+   <span class="hljs-tag ">&lt;<span class="hljs-name ">li</span> <span class="hljs-attr ">typeof</span>=<span class="hljs-string ">"Person "</span>&gt;</span>          
+      <span class="hljs-tag ">&lt;<span class="hljs-name ">a</span> <span class="hljs-attr ">property</span>=<span class="hljs-string ">"homepage "</span> <span class="hljs-attr ">href</span>=<span class="hljs-string ">"http://example.com/bob/ "</span>&gt;</span>Bob<span class="hljs-tag ">&lt;/<span class="hljs-name ">a</span>&gt;</span>        
+   <span class="hljs-tag ">&lt;/<span class="hljs-name ">li</span>&gt;</span>        
+   <span class="hljs-tag ">&lt;<span class="hljs-name ">li</span> <span class="hljs-attr ">typeof</span>=<span class="hljs-string ">"Person "</span>&gt;</span>          
+      <span class="hljs-tag ">&lt;<span class="hljs-name ">a</span> <span class="hljs-attr ">property</span>=<span class="hljs-string ">"homepage "</span> <span class="hljs-attr ">href</span>=<span class="hljs-string ">"http://example.com/eve/ "</span>&gt;</span>Eve<span class="hljs-tag ">&lt;/<span class="hljs-name ">a</span>&gt;</span>        
+   <span class="hljs-tag ">&lt;/<span class="hljs-name ">li</span>&gt;</span>        
+   <span class="hljs-tag ">&lt;<span class="hljs-name ">li</span> <span class="hljs-attr ">typeof</span>=<span class="hljs-string ">"Person "</span>&gt;</span>         
+      <span class="hljs-tag ">&lt;<span class="hljs-name ">a</span> <span class="hljs-attr ">property</span>=<span class="hljs-string ">"homepage "</span> <span class="hljs-attr ">href</span>=<span class="hljs-string ">"http://example.com/manu/ "</span>&gt;</span>Manu<span class="hljs-tag ">&lt;/<span class="hljs-name ">a</span>&gt;</span>        
+   <span class="hljs-tag ">&lt;/<span class="hljs-name ">li</span>&gt;</span>     
+<span class="hljs-tag ">&lt;/<span class="hljs-name ">ul</span>&gt;</span></span>
+        </pre>
+                        <p> </p>
+                        <p>We may recommend adding RDFA that describe the role of the item (see <a href="https://www.w3.org/TR/xhtml-rdfa-primer/ ">RDFa Primer</a>):</p>
+                        <pre class="hljs xml "><span class="hljs-tag ">&lt;<span class="hljs-name ">div</span> <span class="hljs-attr ">resource</span>=<span class="hljs-string ">"/alice/posts/jos_barbecue "</span>&gt;</span>
+  <span class="hljs-tag ">&lt;<span class="hljs-name ">h2</span> <span class="hljs-attr ">property</span>=<span class="hljs-string ">"title "</span>&gt;</span>Jo's Barbecue<span class="hljs-tag ">&lt;/<span class="hljs-name ">h2</span>&gt;</span>
+  <span class="hljs-tag ">&lt;<span class="hljs-name ">p</span>&gt;</span>Date: <span class="hljs-tag ">&lt;<span class="hljs-name ">span</span> <span class="hljs-attr ">property</span>=<span class="hljs-string ">"created "</span>&gt;</span>2011-09-14<span class="hljs-tag ">&lt;/<span class="hljs-name ">span</span>&gt;</span><span class="hljs-tag ">&lt;/<span class="hljs-name ">p</span>&gt;</span>
+  <span class="hljs-tag ">&lt;<span class="hljs-name ">h3</span> <span class="hljs-attr ">property</span>=<span class="hljs-string ">"creator "</span>&gt;</span>Eve<span class="hljs-tag ">&lt;/<span class="hljs-name ">h3</span>&gt;</span>        
   ...     
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag ">&lt;/<span class="hljs-name ">div</span>&gt;</span>
       </pre>
-    </section>
+                	</section>
 
-  </section>
+         	</section>
+         	<section id="concept-codes " typeof="bibo:Chapter " resource="#concept-codes " property="bibo:hasPart ">
+                 	<!--OddPage--><h2 id="h-concept-codes " resource="#h-concept-codes "><span property="xhv:role " resource="xhv:heading "><span class="secno ">7. </span>Concept codes<span class="permalink " typeof="bookmark "><a href="#concept-codes " aria-label="Permalink for 7. Concept codes " title="Permalink for 7. Concept codes " property="url "><span property="title " content="7. Concept codes ">§</span></a></span></span></h2>
+                        <p><strong>Requirement: </strong>We would like to enable interoperable symbol set codes for Non verbal people. Products for people who are non vocal often use symbols to help users communicate. These symbols are in fact peoples language. Unfortunately many of these symbols are both subject to copy write AND not interoperable. That means end-users can only use one device, and can not use apps or AT from a different company. There are open set of symbol codes for these symbol sets, that could be referenced then they can be interoperable. alternatively wordnet nodes could be referenced. If the users symbols are mapped to the same nodes then users agents will be able to load the user understandable symbol. That means the end use could buy the symbols and use them across different devices or applications. They would still be proprietary but they would also be interoperable. </p>
+      			<p>User experience: AAC users will load symbols that they understand in different applications that are made by a different provider.</p>
+      			<p><strong>Proposed attribute:</strong> <code>coga-concept</code></p>
+      			<p><strong>Supported Values:</strong> 
+				URL
+			</p>
+      			<p><strong>Examples:</strong></p>
+      			<pre class="hljs javascript ">&lt;img coga-concept=<span class="hljs-string ">"http//wordnet.com/node/girl "</span> href=<span class="hljs-string ">"mygirlsy.bmp/&gt; </span>
+        </pre>
+        <p> </p>
+      </section>
 
-  <section id="concept-codes" typeof="bibo:Chapter" resource="#concept-codes" property="bibo:hasPart">
-    <!--OddPage-->
-    <h2 id="h-concept-codes" resource="#h-concept-codes"><span property="xhv:role" resource="xhv:heading"><span class="secno">5. </span>Concept codes<span class="permalink" typeof="bookmark"><a href="#concept-codes" aria-label="Permalink for 5. Concept codes" title="Permalink for 5. Concept codes" property="url"><span property="title" content="5. Concept codes">§</span></a></span></span></h2>
-    <p><strong>Requirement: </strong>We would like to enable interoperable symbol set codes for Non verbal people. Products for people who are non vocal often use symbols to help users communicate. These symbols are in fact peoples language. Unfortunately many of these symbols are both subject to copy write AND not interoperable. That means end-users can only use one device, and can not use apps or AT from a different company. There are open set of symbol codes for these symbol sets, that could be referenced then they can be interoperable. alternatively wordnet nodes could be referenced. If the users symbols are mapped to the same nodes then users agents will be able to load the user understandable symbol. That means the end use could buy the symbols and use them across different devices or applications. They would still be proprietary but they would also be interoperable. </p>
-    <p>User experience: AAC users will load symbols that they understand in different applications that are made by a different provider.</p>
-    <p><strong>Proposed attribute:</strong> <code>coga-concept</code></p>
-    <p><strong>Supported Values:</strong> URL
-    </p>
-    <p><strong>Examples:</strong></p>
-    <pre class="hljs javascript">&lt;img coga-concept=<span class="hljs-string">"http//wordnet.com/node/girl"</span> href=<span class="hljs-string">"mygirlsy.bmp/&gt; </span></pre>
-    <p> </p>
-  </section>
+      <section id="potential-parts-of-a-page" typeof="bibo:Chapter" resource="#potential-parts-of-a-page" property="bibo:hasPart">
+        <!--OddPage-->
+        <h2 id="h-potential-parts-of-a-page" resource="#h-potential-parts-of-a-page"><span property="xhv:role" resource="xhv:heading"><span class="secno">8. </span>Potential parts of a page<span class="permalink" typeof="bookmark"><a href="#potential-parts-of-a-page" aria-label="Permalink for 8. Potential parts of a page" title="Permalink for 8. Potential parts of a page" property="url"><span property="title" content="8. Potential parts of a page">§</span></a>
+          </span>
+          </span>
+        </h2>
+        <p><strong>Requirement:</strong> The following could be extensions for aria landmarks or ePub </p>
+        <p><strong>User experience:</strong> symbols and colors could be used consistently across different content. </p>
+        <p>Links (such as ePub nav maps) can be automatically generated for people learn via keypoints or examples.</p>
+        <p><strong>Examples:</strong> </p>
+        <ul>
+          <li>key points </li>
+          <li>example </li>
+          <li>note </li>
+          <li>warning </li>
+          <li>step </li>
+          <li>external - for external content, such as sponsored or advertising </li>
+          <li>offers - for special offers that are complementary to the main content or task </li>
+          <li>advertisement - advertisement or sponsored content </li>
+        </ul>
+      </section>
 
-  <section id="potential-parts-of-a-page" typeof="bibo:Chapter" resource="#potential-parts-of-a-page" property="bibo:hasPart">
-    <!--OddPage-->
-    <h2 id="h-potential-parts-of-a-page" resource="#h-potential-parts-of-a-page"><span property="xhv:role" resource="xhv:heading"><span class="secno">6. </span>Potential parts of a page<span class="permalink" typeof="bookmark"><a href="#potential-parts-of-a-page" aria-label="Permalink for 6. Potential parts of a page" title="Permalink for 6. Potential parts of a page" property="url"><span property="title" content="6. Potential parts of a page">§</span></a></span></span></h2>
-    <p><strong>Requirement:</strong> The following could be extensions for aria landmarks or ePub </p>
-    <p><strong>User experience:</strong> symbols and colors could be used consistently across different content. </p>
-    <p>Links (such as ePub nav maps) can be automatically generated for people learn via keypoints or examples.</p>
-    <p><strong>Examples:</strong> </p>
-    <ul>
-      <li>key points </li>
-      <li>example </li>
-      <li>note </li>
-      <li>warning </li>
-      <li>step </li>
-      <li>external - for external content, such as sponsored or advertising </li>
-      <li>offers - for special offers that are complementary to the main content or task </li>
-      <li>advertisement - advertisement or sponsored content </li>
-    </ul>
-  </section>
-
-  <section id="number-free" typeof="bibo:Chapter" resource="#number-free" property="bibo:hasPart">
-    <!--OddPage-->
-    <h2 id="h-number-free" resource="#h-number-free"><span property="xhv:role" resource="xhv:heading"><span class="secno">7. </span>Number free<span class="permalink" typeof="bookmark"><a href="#number-free" aria-label="Permalink for 7. Number free" title="Permalink for 7. Number free" property="url"><span property="title" content="7. Number free">§</span></a></span></span></h2>
-    <p><strong>Requirement</strong>: Not everyone can understand numbers. We therefor suggest coga-numberfree for alternative text for people who can not understand the main content</p>
-    <p><strong>User experience:</strong></p>
-    <p>A suggested user experience would be: Numerical concepts could be rendered by the user agent slightly different so that the user knows a number free explanation is available. The user can then mouse over the content and a tooltips would give the number free value</p>
-    <p><strong>Proposed attribute:</strong><code>coga-numberfree</code> </p>
-    <p><strong>Supported value : </strong> String</p>
-    <p><strong>For example:</strong></p>
-    <pre class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">coga-numberfree</span>=<span class="hljs-string">"almost all"</span>&gt;</span>9 out of 10 <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <section id="number-free" typeof="bibo:Chapter" resource="#number-free" property="bibo:hasPart">
+        <!--OddPage-->
+        <h2 id="h-number-free" resource="#h-number-free"><span property="xhv:role" resource="xhv:heading"><span class="secno">9. </span>Number free<span class="permalink" typeof="bookmark"><a href="#number-free" aria-label="Permalink for 9. Number free" title="Permalink for 9. Number free" property="url"><span property="title" content="9. Number free">§</span></a>
+          </span>
+          </span>
+        </h2>
+        <p><strong>Requirement</strong>: Not everyone can understand numbers. We therefor suggest coga-numberfree for alternative text for people who can not understand the main content</p>
+        <p><strong>User experience:</strong></p>
+        <p>A suggested user experience would be: Numerical concepts could be rendered by the user agent slightly different so that the user knows a number free explanation is available. The user can then mouse over the content and a tooltips would give the number free value</p>
+        <p><strong>Proposed attribute:</strong><code>coga-numberfree</code> </p>
+        <p><strong>Supported value : </strong> String</p>
+        <p><strong>For example:</strong></p>
+        <pre class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">coga-numberfree</span>=<span class="hljs-string">"almost all"</span>&gt;</span>9 out of 10 <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
       </pre>
-    <pre class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">coga-numberfree</span>=<span class="hljs-string">"hat and coat weather"</span>&gt;</span>The weather is <span>9 degrees<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span>
+        <pre class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">coga-numberfree</span>=<span class="hljs-string">"hat and coat weather"</span>&gt;</span>The weather is <span>9 degrees<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span>
       </pre>
-  </section>
+      </section>
 
-  <section id="non-literal-text-and-images" typeof="bibo:Chapter" resource="#non-literal-text-and-images" property="bibo:hasPart">
-    <!--OddPage-->
-    <h2 id="h-non-literal-text-and-images" resource="#h-non-literal-text-and-images"><span property="xhv:role" resource="xhv:heading"><span class="secno">8. </span>Non-literal text and images<span class="permalink" typeof="bookmark"><a href="#non-literal-text-and-images" aria-label="Permalink for 8. Non-literal text and images" title="Permalink for 8. Non-literal text and images" property="url"><span property="title" content="8. Non-literal text and images">§</span></a></span></span></h2>
-    <p><strong>Requirement: </strong>Not everyone can understand non-literal text and icons such as metaphors, idioms etc. We need a tag that identifies text or images as non literal and allows the author to explain non-literal text and images to users.</p>
-    <p><strong>User experience:</strong></p>
-    <p>A suggested user experience would be: Non literal content could be rendered by the user agent slightly differently so that the user knows that this content should not be taken literally and that a literal explanation is available. The user can then mouse over the content and a tooltips would give the literal value.</p>
-    <p><strong>Proposed attribute: </strong><code>coga-literal</code> </p>
-    <p><strong>Supported value: </strong>String</p>
-    <p><strong>Examples:</strong></p>
-    <p>&lt;span coga-literal="it is raining hard"&gt; It is <span>raining cats and dogs</span> &lt;/span&gt;</p>
-    <p> User agents can render non-literal text in a different way so that users will know that this is non literal. They can then use a mouse over or other technique to receive the translation.
-    </p>
-  </section>
+      <section id="non-literal-text-and-images" typeof="bibo:Chapter" resource="#non-literal-text-and-images" property="bibo:hasPart">
+        <!--OddPage-->
+        <h2 id="h-non-literal-text-and-images" resource="#h-non-literal-text-and-images"><span property="xhv:role" resource="xhv:heading"><span class="secno">10. </span>Non-literal text and images<span class="permalink" typeof="bookmark"><a href="#non-literal-text-and-images" aria-label="Permalink for 10. Non-literal text and images" title="Permalink for 10. Non-literal text and images" property="url"><span property="title" content="10. Non-literal text and images">§</span></a>
+          </span>
+          </span>
+        </h2>
+        <p><strong>Requirement: </strong>Not everyone can understand non-literal text and icons such as metaphors, idioms etc. We need a tag that identifies text or images as non literal and allows the author to explain non-literal text and images to users.</p>
+        <p><strong>User experience:</strong></p>
+        <p>A suggested user experience would be: Non literal content could be rendered by the user agent slightly differently so that the user knows that this content should not be taken literally and that a literal explanation is available. The user can then mouse over the content and a tooltips would give the literal value.</p>
+        <p><strong>Proposed attribute: </strong><code>coga-literal</code> </p>
+        <p><strong>Supported value: </strong>String</p>
+        <p><strong>Examples:</strong></p>
+        <p>&lt;span coga-literal="it is raining hard"&gt; It is <span>raining cats and dogs</span> &lt;/span&gt;</p>
+        <p> User agents can render non-literal text in a different way so that users will know that this is non literal. They can then use a mouse over or other technique to receive the translation.
+        </p>
+      </section>
 
-  <section id="explain-and-feedback" typeof="bibo:Chapter" resource="#explain-and-feedback" property="bibo:hasPart">
-    <!--OddPage-->
-    <h2 id="h-explain-and-feedback" resource="#h-explain-and-feedback"><span property="xhv:role" resource="xhv:heading"><span class="secno">9. </span>Explain and feedback<span class="permalink" typeof="bookmark"><a href="#explain-and-feedback" aria-label="Permalink for 9. Explain and feedback" title="Permalink for 9. Explain and feedback" property="url"><span property="title" content="9. Explain and feedback">§</span></a></span></span></h2>
-    <p><strong>Requirement: </strong></p>
-    <p>Some users need additional help. We request an attribute where the author can provide additional information.or what just happened.</p>
-    <strong>Proposed attribute: </strong><code>coga-feedback</code>
-    <p>This attribute provides immediate feedback that can be shown or spoken when any event is triggered on a control.</p>
-    <p><strong>User experience: </strong>This can be rendered as text at the top of the page and read immediately. Most users will not want this text rendered and spoken. Other users however will need it to know what has just happened. </p>
-    <strong>Proposed attribute: </strong><code>coga-explain</code>
-    <p>
-      This attribute provides any information that helps the user anticipate the functionality, such as letting the user know what behavior will trigger an event. This is most important if the mechanism is not standard. </p>
-    <p> User experience: This help can be rendered as a tool tip, help link or read when the control or link is read. Most users will not want this text rendered or spoken, but other users however will need it to understand the behavior of the element.</p>
-    <h2 id="examples">Examples:<span class="permalink" typeof="bookmark"><a href="#explain-and-feedback" aria-label="Permalink for Examples:" title="Permalink for Examples:" property="url"><span property="title" content="Examples:">§</span></a></span></h2>
-    <p> coga-explain= "press enter to send the email" </p>
-    <p>coga-feedback= "your email on birthdays was sent" </p>
-    <p>These values will change when the email is sent.</p>
-  </section>
+      <section id="explain-and-feedback" typeof="bibo:Chapter" resource="#explain-and-feedback" property="bibo:hasPart">
+        <!--OddPage-->
+        <h2 id="h-explain-and-feedback" resource="#h-explain-and-feedback"><span property="xhv:role" resource="xhv:heading"><span class="secno">11. </span>Explain and feedback<span class="permalink" typeof="bookmark"><a href="#explain-and-feedback" aria-label="Permalink for 11. Explain and feedback" title="Permalink for 11. Explain and feedback" property="url"><span property="title" content="11. Explain and feedback">§</span></a>
+          </span>
+          </span>
+        </h2>
+        <p><strong>Requirement: </strong></p>
+        <p>Some users need additional help. We request an attribute where the author can provide additional information.or what just happened.</p>
+        <strong>Proposed attribute: </strong><code>coga-feedback</code>
+        <p>This attribute provides immediate feedback that can be shown or spoken when any event is triggered on a control.</p>
+        <p><strong>User experience: </strong>This can be rendered as text at the top of the page and read immediately. Most users will not want this text rendered and spoken. Other users however will need it to know what has just happened. </p>
+        <strong>Proposed attribute: </strong><code>coga-explain</code>
+        <p>
+          This attribute provides any information that helps the user anticipate the functionality, such as letting the user know what behavior will trigger an event. This is most important if the mechanism is not standard. </p>
+        <p> User experience: This help can be rendered as a tool tip, help link or read when the control or link is read. Most users will not want this text rendered or spoken, but other users however will need it to understand the behavior of the element.</p>
+        <h2 id="examples">Examples:<span class="permalink" typeof="bookmark"><a href="#explain-and-feedback" aria-label="Permalink for Examples:" title="Permalink for Examples:" property="url"><span property="title" content="Examples:">§</span></a>
+          </span>
+        </h2>
+        <p> coga-explain= "press enter to send the email" </p>
+        <p>coga-feedback= "your email on birthdays was sent" </p>
+        <p>These values will change when the email is sent.</p>
+      </section>
 
 
-  <section id="more-help" typeof="bibo:Chapter" resource="#more-help" property="bibo:hasPart">
-    <!--OddPage-->
-    <h2 id="h-more-help" resource="#h-more-help"><span property="xhv:role" resource="xhv:heading"><span class="secno">10. </span>More Help<span class="permalink" typeof="bookmark"><a href="#more-help" aria-label="Permalink for 10. More Help" title="Permalink for 10. More Help" property="url"><span property="title" content="10. More Help">§</span></a></span></span></h2>
-    <p><strong>Requirement: </strong>Some users may need additional information or specifically additional help inforamtion. We request additonal attributes so that an author can indicate the existence of this additional information.</p>
-    <p><strong>Proposed attribute: </strong><code>coga-moreinfo</code></p>
-    <p><strong>Supported values: </strong>URI</p>
-    <p><strong>Proposed attribute: </strong><code>coga-extrahelp</code></p>
-    <p><strong>Supported values: </strong>URI</p>
-    <p></p>
-    <p><strong>Proposed attribute: </strong><code>coga-helptype</code></p>
-    <p><strong>Supported values: </strong> tooltips/humanhelp/morehelp/topicsearch/automated/faqs/helpform/simplified/glossary/dictionary/thesaurus</p>
-    <p>&nbsp;</p>
-    <p><strong>Example:</strong></p>
-    <pre class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">coga-extrahelp</span>=<span class="hljs-string">"uri2 uri3"</span> &gt;</span>undo<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></pre>
-    <p>URI 2 may read: </p>
-    <pre class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"uri2"</span> 
+      <section id="more-help" typeof="bibo:Chapter" resource="#more-help" property="bibo:hasPart">
+        <!--OddPage-->
+        <h2 id="h-more-help" resource="#h-more-help"><span property="xhv:role" resource="xhv:heading"><span class="secno">12. </span>More Help<span class="permalink" typeof="bookmark"><a href="#more-help" aria-label="Permalink for 12. More Help" title="Permalink for 12. More Help" property="url"><span property="title" content="12. More Help">§</span></a>
+          </span>
+          </span>
+        </h2>
+        <p><strong>Requirement: </strong>Some users may need additional information or specifically additional help inforamtion. We request additonal attributes so that an author can indicate the existence of this additional information.</p>
+        <p><strong>Proposed attribute: </strong><code>coga-moreinfo</code></p>
+        <p><strong>Supported values: </strong>URI</p>
+        <p><strong>Proposed attribute: </strong><code>coga-extrahelp</code></p>
+        <p><strong>Supported values: </strong>URI</p>
+        <p></p>
+        <p><strong>Proposed attribute: </strong><code>coga-helptype</code></p>
+        <p><strong>Supported values: </strong> tooltips/humanhelp/morehelp/topicsearch/automated/faqs/helpform/simplified/glossary/dictionary/thesaurus</p>
+        <p>&nbsp;</p>
+        <p><strong>Example:</strong></p>
+        <pre class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">coga-extrahelp</span>=<span class="hljs-string">"uri2 uri3"</span> &gt;</span>undo<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></pre>
+        <p>URI 2 may read: </p>
+        <pre class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"uri2"</span> 
     <span class="hljs-attr">coga-helptype</span>=<span class="hljs-string">"morehelp"</span> 
     <span class="hljs-attr">coga-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
   pressing the undo button will erase all your work on this page. 
@@ -912,37 +1416,43 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <span class="hljs-attr">coga-extrahelp</span>=<span class="hljs-string">"glossary"</span> 
     <span class="hljs-attr">coga-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
 </pre>
-  </section>
+      </section>
 
-  <section id="potential-features" typeof="bibo:Chapter" resource="#potential-features" property="bibo:hasPart">
-    <!--OddPage-->
-    <h2 id="h-potential-features" resource="#h-potential-features"><span property="xhv:role" resource="xhv:heading"><span class="secno">11. </span>Potential Features<span class="permalink" typeof="bookmark"><a href="#potential-features" aria-label="Permalink for 11. Potential Features" title="Permalink for 11. Potential Features" property="url"><span property="title" content="11. Potential Features">§</span></a></span></span></h2>
-    <p>The following may not be necessary </p>
-    <ul>
-      <li>Views </li>
-      <li>ascending. descending </li>
-      <li>day, week month </li>
-      <li>this week </li>
-      <li>this month </li>
-      <li>today </li>
-    </ul>
-  </section>
+      <section id="potential-features" typeof="bibo:Chapter" resource="#potential-features" property="bibo:hasPart">
+        <!--OddPage-->
+        <h2 id="h-potential-features" resource="#h-potential-features"><span property="xhv:role" resource="xhv:heading"><span class="secno">13. </span>Potential Features<span class="permalink" typeof="bookmark"><a href="#potential-features" aria-label="Permalink for 13. Potential Features" title="Permalink for 13. Potential Features" property="url"><span property="title" content="13. Potential Features">§</span></a>
+          </span>
+          </span>
+        </h2>
+        <p>The following may not be necessary </p>
+        <ul>
+          <li>Views </li>
+          <li>ascending. descending </li>
+          <li>day, week month </li>
+          <li>this week </li>
+          <li>this month </li>
+          <li>today </li>
+        </ul>
+      </section>
 
-  <section id="language-type-support" typeof="bibo:Chapter" resource="#language-type-support" property="bibo:hasPart">
-    <!--OddPage-->
-    <h2 id="h-language-type-support" resource="#h-language-type-support"><span property="xhv:role" resource="xhv:heading"><span class="secno">12. </span>Language type support<span class="permalink" typeof="bookmark"><a href="#language-type-support" aria-label="Permalink for 12. Language type support" title="Permalink for 12. Language type support" property="url"><span property="title" content="12. Language type support">§</span></a></span></span></h2>
-    <p><strong>Requirement: </strong>Sometimes you may want to provide a simplified version of a section of a page. For example, you may wish to provide a simplified summary of legal document, but still have a longer version for other users. These alternative versions may not be identical in content but maintain the gist of the original content.</p>
-    <p><strong>Proposed attribute: </strong><code>coga-alternative</code> Would be used on an alternitive content as an alternative to more detailed or difficult to understand content. coga-alternative can be used on a span, div, link or image that servers as alternitive content to it's direct parent element.</p>
+      <section id="language-type-support" typeof="bibo:Chapter" resource="#language-type-support" property="bibo:hasPart">
+        <!--OddPage-->
+        <h2 id="h-language-type-support" resource="#h-language-type-support"><span property="xhv:role" resource="xhv:heading"><span class="secno">14. </span>Language type support<span class="permalink" typeof="bookmark"><a href="#language-type-support" aria-label="Permalink for 14. Language type support" title="Permalink for 14. Language type support" property="url"><span property="title" content="14. Language type support">§</span></a>
+          </span>
+          </span>
+        </h2>
+        <p><strong>Requirement: </strong>Sometimes you may want to provide a simplified version of a section of a page. For example, you may wish to provide a simplified summary of legal document, but still have a longer version for other users. These alternative versions may not be identical in content but maintain the gist of the original content.</p>
+        <p><strong>Proposed attribute: </strong><code>coga-alternative</code> Would be used on an alternitive content as an alternative to more detailed or difficult to understand content. coga-alternative can be used on a span, div, link or image that servers as alternitive content to it's direct parent element.</p>
 
-    <p><strong>Supported values:</strong> </p>
-    <ul>
-      <li>On text: easylang, explain, more, vocab500, vocab1000, vocab2000, active, literal, numberfree, smallsentences, chunks, General: lessoptions. Whitespace, largefont&nbsp;</li>
-      <li>Images: symbolic , realistic</li>
-      <li>p0, p1, p1, p2, p3 Where p0 are images with true content, p1 is a symbol or illustration that is typically shown with alt="", P2 are extra illustration that most people will not mind such as at the start of a paragraph or option. p3 are for disability centric illustrations that can disturb other people and may be mid sentence.&nbsp;</li>
-    </ul>
+        <p><strong>Supported values:</strong> </p>
+        <ul>
+          <li>On text: easylang, explain, more, vocab500, vocab1000, vocab2000, active, literal, numberfree, smallsentences, chunks, General: lessoptions. Whitespace, largefont&nbsp;</li>
+          <li>Images: symbolic , realistic</li>
+          <li>p0, p1, p1, p2, p3 Where p0 are images with true content, p1 is a symbol or illustration that is typically shown with alt="", P2 are extra illustration that most people will not mind such as at the start of a paragraph or option. p3 are for disability centric illustrations that can disturb other people and may be mid sentence.&nbsp;</li>
+        </ul>
 
-    <strong>Example:</strong>
-    <pre class="hljs javascript">&lt;div&gt;
+        <strong>Example:</strong>
+        <pre class="hljs javascript">&lt;div&gt;
   <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">coga-alternative</span>=<span class="hljs-string">"easylang numberfree vocab1000"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hidden"</span>&gt;</span>&gt;
     most people prefer simple text
   <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span>
@@ -951,29 +1461,30 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   <span class="hljs-keyword">with</span> <span class="hljs-number">56</span>% claiming there&nbsp;preferred&nbsp;the simplified text , 
   <span class="hljs-keyword">with</span> the&nbsp;remainder&nbsp;unsure or stated it depends on the context.
 &lt;<span class="hljs-regexp">/div&gt;</span></pre>
-  </section>
+      </section>
 
-  <section typeof="bibo:Chapter" resource="" property="bibo:hasPart">
-    <p> <strong>Proposed attribute: </strong><code>coga-easylang</code> </p>
-    <p><code>coga-easylang</code> will contain a version of the content that is easier to read and understand. Note that this only works on small sections of text as the easylang attribute does not support full HTML, such as lists and sections.</p>
+      <section typeof="bibo:Chapter" resource="" property="bibo:hasPart">
+        <p> <strong>Proposed attribute: </strong><code>coga-easylang</code> </p>
+        <p><code>coga-easylang</code> will contain a version of the content that is easier to read and understand. Note that this only works on small sections of text as the easylang attribute does not support full <abbr title="Hypertext Markup Language">HTML</abbr>, such as lists and sections.</p>
 
-    <p><strong>Supported values:</strong> String</p>
-    <pre class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">coga-easylang</span>=<span class="hljs-string">" some text that is easy to read"</span>&gt;</span> some convoluted obtuse text<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></pre>
-    <p>Where coga-easylang should use as simple well-known words as possible, and active voicing, literal text, small simple sentences.&nbsp;Acronyms and abbreviations should be avoided, unless they are the common way to refer to an item.</p>
-    <p> </p>
-  </section>
+        <p><strong>Supported values:</strong> String</p>
+        <pre class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">coga-easylang</span>=<span class="hljs-string">" some text that is easy to read"</span>&gt;</span> some convoluted obtuse text<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></pre>
+        <p>Where coga-easylang should use as simple well-known words as possible, and active voicing, literal text, small simple sentences.&nbsp;Acronyms and abbreviations should be avoided, unless they are the common way to refer to an item.</p>
+        <p> </p>
+      </section>
 
-  <section typeof="bibo:Chapter" resource="#logs" property="bibo:hasPart">
-    <!--OddPage-->
-    <h2 id="logs" resource="#logs"><span property="xhv:role" resource="xhv:heading"><span class="secno">13. </span>Logs</span></h2>
-  </section>
-  <div>&nbsp;This proposal is to track the tasks that a user has done, so that they can be reminded of them, and return to or fix a task. The suggested syntax should allow the author to transform some of the information into breadcrumbs via CSS, and &nbsp;the user system can read and present more or less information to the user as per their preferences.
-    <p>Preferably this should be in the header so that the user agent can build a cross application log of user tasks.</p>
-    <p>Notes: </p>
-    <p>This is just a proposed syntax. Other syntax may be better.</p>
-    <p>For protection of privacy ,it must be easy for the user to delete the log, and prevent the log from being stored. </p>
-  </div>
-  <pre class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">log</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"booking trip"</span>&gt;</span> 
+      <section typeof="bibo:Chapter" resource="#logs" property="bibo:hasPart">
+        <!--OddPage-->
+        <h2 id="logs" resource="#logs"><span property="xhv:role" resource="xhv:heading"><span class="secno">15. </span>Logs</span>
+        </h2>
+      </section>
+      <div>&nbsp;This proposal is to track the tasks that a user has done, so that they can be reminded of them, and return to or fix a task. The suggested syntax should allow the author to transform some of the information into breadcrumbs via CSS, and &nbsp;the user system can read and present more or less information to the user as per their preferences.
+        <p>Preferably this should be in the header so that the user agent can build a cross application log of user tasks.</p>
+        <p>Notes: </p>
+        <p>This is just a proposed syntax. Other syntax may be better.</p>
+        <p>For protection of privacy ,it must be easy for the user to delete the log, and prevent the log from being stored. </p>
+      </div>
+      <pre class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">log</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"booking trip"</span>&gt;</span> 
   <span class="hljs-tag">&lt;<span class="hljs-name">step</span> <span class="hljs-attr">status</span> =<span class="hljs-string">"done"</span>&gt;</span> 
     <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>buy ticket<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">actiontaken</span>&gt;</span>bought ticket to NY return<span class="hljs-tag">&lt;/<span class="hljs-name">actiontaken</span>&gt;</span>
@@ -990,99 +1501,117 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   <span class="hljs-tag">&lt;/<span class="hljs-name">step</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">log</span>&gt;</span></pre>
 
-  <p>Note that status can have values of : done, pending , current. Where pending is a step that has not yet been completed but is not the current step.</p>
-  <pre class="hljs">An alternative syntax could be</pre>
-  <pre class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"log"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"booking trip"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>/&gt;</span>
+      <p>Note that status can have values of : done, pending , current. Where pending is a step that has not yet been completed but is not the current step.</p>
+      <pre class="hljs">An alternative syntax could be</pre>
+      <pre class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"log"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"booking trip"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>/&gt;</span>
 </pre>
-  <p>Open questions: Should the application name be in the log?</p>
+      <p>Open questions: Should the application name be in the log?</p>
 
-  <section id="reminders-and-messages" typeof="bibo:Chapter" resource="#reminders-and-messages" property="bibo:hasPart">
-    <!--OddPage-->
-    <h2 id="h-reminders-and-messages" resource="#h-reminders-and-messages"><span property="xhv:role" resource="xhv:heading"><span class="secno">14. </span>Reminders and messages<span class="permalink" typeof="bookmark"><a href="#reminders-and-messages" aria-label="Permalink for 14. Reminders and messages" title="Permalink for 14. Reminders and messages" property="url"><span property="title" content="14. Reminders and messages">§</span></a></span></span></h2>
-    <p><strong>Requirement: </strong>We require an attribute that enables different users to experience different amount of reminders and messages based on personal preferences. Reminders are a wonderful tool for many people with cognitive disabilities. However too many reminders will be annoying or distracting for some other users. Currently people can turn off distractions such as skype, and facebook, across different devices, and then may forget to turn them back on.</p>
-    <p>These semantics allow for different solutions so that users are able to focus without missing important messages. Users need to manage all distractions by forming a cross application and cross device distraction matrix that manages all distractions in one setting. It is based on a matrix for distractions at the operating system , browser or cloud level. People and users can be clustered in terms of importance or groups. For example, the CEO and your child's care giver could both be considered critical contacts. So even if they do not feel the message is urgent they can sometimes disrupt the user anyway. Some family members and important colleagues can be in another group, friends and extended family in a third group, system messages from the compliance system can be a different group again. </p>
-    <p><strong>Proposed attribute: </strong>coga-messageimportance</p>
-    <p><strong>Supported values: </strong></p>
-    <p><strong>critical: </strong>To be critical a message needs to be both urgent and content that the user is very likely to consider important. For example, a system may send a message that it is going to reboot in one miunet to install updates. </p>
-    <p><strong>medium: </strong>Important messages that needs the user's attention at their convenience. For example, a relatively important chat message.</p>
-    <p><strong>low</strong>: A message that does not need time sensitive attention. For example, a typical chat message</p>
-    <p><strong>Example:</strong></p>
-    <pre class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"alert"</span> 
+      <section id="reminders-and-messages" typeof="bibo:Chapter" resource="#reminders-and-messages" property="bibo:hasPart">
+        <!--OddPage-->
+        <h2 id="h-reminders-and-messages" resource="#h-reminders-and-messages"><span property="xhv:role" resource="xhv:heading"><span class="secno">16. </span>Reminders and messages<span class="permalink" typeof="bookmark"><a href="#reminders-and-messages" aria-label="Permalink for 16. Reminders and messages" title="Permalink for 16. Reminders and messages" property="url"><span property="title" content="16. Reminders and messages">§</span></a>
+          </span>
+          </span>
+        </h2>
+        <p><strong>Requirement: </strong>We require an attribute that enables different users to experience different amount of reminders and messages based on personal preferences. Reminders are a wonderful tool for many people with cognitive disabilities. However too many reminders will be annoying or distracting for some other users. Currently people can turn off distractions such as skype, and facebook, across different devices, and then may forget to turn them back on.</p>
+        <p>These semantics allow for different solutions so that users are able to focus without missing important messages. Users need to manage all distractions by forming a cross application and cross device distraction matrix that manages all distractions in one setting. It is based on a matrix for distractions at the operating system , browser or cloud level. People and users can be clustered in terms of importance or groups. For example, the CEO and your child's care giver could both be considered critical contacts. So even if they do not feel the message is urgent they can sometimes disrupt the user anyway. Some family members and important colleagues can be in another group, friends and extended family in a third group, system messages from the compliance system can be a different group again. </p>
+        <p><strong>Proposed attribute: </strong>coga-messageimportance</p>
+        <p><strong>Supported values: </strong></p>
+        <p><strong>critical: </strong>To be critical a message needs to be both urgent and content that the user is very likely to consider important. For example, a system may send a message that it is going to reboot in one miunet to install updates. </p>
+        <p><strong>medium: </strong>Important messages that needs the user's attention at their convenience. For example, a relatively important chat message.</p>
+        <p><strong>low</strong>: A message that does not need time sensitive attention. For example, a typical chat message</p>
+        <p><strong>Example:</strong></p>
+        <pre class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"alert"</span> 
     <span class="hljs-attr">coga-messageimportance</span>=<span class="hljs-string">"medium"</span>&gt;</span>
   It is your daughter's birthday tomorrow
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
-    <p><strong>Proposed attribute: </strong>coga-messagefrom</p>
-    <p><strong>Supported values: </strong>a string value that identifies the sender of the message. If multiple names are used they can be separated by a coma.</p>
-    <p><strong>Example:</strong></p>
-    <pre class="hljs javascript">&lt;div role=<span class="hljs-string">"alert"</span> 
+        <p><strong>Proposed attribute: </strong>coga-messagefrom</p>
+        <p><strong>Supported values: </strong>a string value that identifies the sender of the message. If multiple names are used they can be separated by a coma.</p>
+        <p><strong>Example:</strong></p>
+        <pre class="hljs javascript">&lt;div role=<span class="hljs-string">"alert"</span> 
     coga-messageimportance=<span class="hljs-string">"low"</span> 
     coga-messagefrom=<span class="hljs-string">"lisa seeman, lseeman"</span>&gt;
   I posted a <span class="hljs-keyword">new</span> version on github <span class="hljs-keyword">for</span> you to review
 &lt;<span class="hljs-regexp">/div&gt;</span></pre>
-    <p><strong>Proposed attribute: </strong>coga-messagecontext</p>
-    <p><strong>Supported values: </strong><strong> </strong>a string value that identifies the locaction that makes this message relevent. Typical values are "home" nd "work". If multiple locations are relivent they can be separated by a coma.</p>
-    <p><strong>Example:</strong></p>
-    <pre class="hljs javascript">&lt;div role=<span class="hljs-string">"alert"</span>
+        <p><strong>Proposed attribute: </strong>coga-messagecontext</p>
+        <p><strong>Supported values: </strong><strong> </strong>a string value that identifies the locaction that makes this message relevent. Typical values are "home" nd "work". If multiple locations are relivent they can be separated by a coma.</p>
+        <p><strong>Example:</strong></p>
+        <pre class="hljs javascript">&lt;div role=<span class="hljs-string">"alert"</span>
    coga-messageimportance=<span class="hljs-string">"low"</span> 
    coga-messagefrom=<span class="hljs-string">"lisa seeman, lseeman"</span> 
    coga-messagecontext=<span class="hljs-string">"work"</span>&gt;
   I posted a <span class="hljs-keyword">new</span> version on github <span class="hljs-keyword">for</span> you to review
 &lt;<span class="hljs-regexp">/div&gt;</span></pre>
-    <p><strong>Proposed attribute: </strong>coga-messagetime</p>
-    <p><strong>Supported values: </strong><strong> </strong>24 hour date time format. DD.MM.YEAR.HOUR.MM - DD.MM.YEAR.HOUR.MM where the second date is an optional exclusive expiry date.</p>
-    <p><strong>Example:</strong></p>
-    <pre class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"alert"</span> 
+        <p><strong>Proposed attribute: </strong>coga-messagetime</p>
+        <p><strong>Supported values: </strong><strong> </strong>24 hour date time format. DD.MM.YEAR.HOUR.MM - DD.MM.YEAR.HOUR.MM where the second date is an optional exclusive expiry date.</p>
+        <p><strong>Example:</strong></p>
+        <pre class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"alert"</span> 
     <span class="hljs-attr">coga-messageimportance</span>=<span class="hljs-string">"medium"</span> 
     <span class="hljs-attr">coga-messagefrom</span>=<span class="hljs-string">"my calender"</span> 
     <span class="hljs-attr">coga-messagecontext</span>=<span class="hljs-string">"work"</span> 
     <span class="hljs-attr">coga-messagetime</span>=<span class="hljs-string">"10.02.2017.00.00-16.02.2017.00.00"</span>&gt;</span>
   Renew your driving license this week
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
-    <pre class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"alert"</span> 
+        <pre class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"alert"</span> 
     <span class="hljs-attr">coga-messageimportance</span>=<span class="hljs-string">"critical"</span> 
     <span class="hljs-attr">coga-messagefrom</span>=<span class="hljs-string">"my calender"</span> 
     <span class="hljs-attr">coga-messagecontext</span>=<span class="hljs-string">"work"</span> 
     <span class="hljs-attr">coga-messagetime</span>=<span class="hljs-string">"16.02.2017.00.00"</span>&gt;</span>
   Renew your driving license ASAP
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
-  </section>
+      </section>
 
-  <section id="distractions" typeof="bibo:Chapter" resource="#distractions" property="bibo:hasPart">
-    <!--OddPage-->
-    <h2 id="h-distractions" resource="#h-distractions"><span property="xhv:role" resource="xhv:heading"><span class="secno">15. </span>Distractions<span class="permalink" typeof="bookmark"><a href="#distractions" aria-label="Permalink for 15. Distractions" title="Permalink for 15. Distractions" property="url"><span property="title" content="15. Distractions">§</span></a></span></span></h2>
-    <p><strong>Requirement: </strong> We require an attribute that indicates a distraction so that some users may be able to remove them from content.</p>
-    <p><strong>Proposed attribute: </strong><code> coga-distraction</code></p>
-    <p>This attribute should be used on non essential, detracting content, so that people who have problems keeping focus can turn them off. An example user experiences would be to hide all distraction content.</p>
-    <p><strong>Example: </strong> coga-distraction="moving ad"</p>
-    <p>Supported values: animations, auto-starting, moving, ad, message, chat , overlay, popup<br> Auto-changing (logs) third-party, offer ( includes suggestions).</p>
-    <p>Note that elements with the coga-distraction attribute should also have a lable or accessible name.</p>
-  </section>
+      <section id="distractions" typeof="bibo:Chapter" resource="#distractions" property="bibo:hasPart">
+        <!--OddPage-->
+        <h2 id="h-distractions" resource="#h-distractions"><span property="xhv:role" resource="xhv:heading"><span class="secno">17. </span>Distractions<span class="permalink" typeof="bookmark"><a href="#distractions" aria-label="Permalink for 17. Distractions" title="Permalink for 17. Distractions" property="url"><span property="title" content="17. Distractions">§</span></a>
+          </span>
+          </span>
+        </h2>
+        <p><strong>Requirement: </strong> We require an attribute that indicates a distraction so that some users may be able to remove them from content.</p>
+        <p><strong>Proposed attribute: </strong><code> coga-distraction</code></p>
+        <p>This attribute should be used on non essential, detracting content, so that people who have problems keeping focus can turn them off. An example user experiences would be to hide all distraction content.</p>
+        <p><strong>Example: </strong> coga-distraction="moving ad"</p>
+        <p>Supported values: animations, auto-starting, moving, ad, message, chat , overlay, popup<br> Auto-changing (logs) third-party, offer ( includes suggestions).</p>
+        <p>Note that elements with the coga-distraction attribute should also have a lable or accessible name.</p>
+      </section>
 
-  <section id="additional-wai-aria-roles" typeof="bibo:Chapter" resource="#additional-wai-aria-roles" property="bibo:hasPart">
-    <!--OddPage-->
-    <h2 id="h-additional-wai-aria-roles" resource="#h-additional-wai-aria-roles"><span property="xhv:role" resource="xhv:heading"><span class="secno">16. </span>Additional WAI-ARIA roles<span class="permalink" typeof="bookmark"><a href="#additional-wai-aria-roles" aria-label="Permalink for 16. Additional WAI-ARIA roles" title="Permalink for 16. Additional WAI-ARIA roles" property="url"><span property="title" content="16. Additional WAI-ARIA roles">§</span></a></span></span></h2>
-    <p><strong>Requirement: </strong> We may want to add roles for sections a page such as: contact us - for a contact us form&nbsp; </p>
-    <p><strong>User experience: </strong>symbols and colors could be used consistently across different content.</p>
-    <p>Nav maps can be automatically generated for people learn via key-points or examples.</p>
-    <p>Further these sections could be hidden in the normal rendering of a page or rendered the top of page depending on user preferences. The location of these sections can also be changed, based on the user preference, enabling the user to find them easily.</p>
-    <p>Values:</p>
-    <p></p>
-    <ul>
-      <li>summary</li>
-      <li>keypoints</li>
-      <li>example</li>
-      <li>note</li>
-      <li>warning</li>
-      <li>step</li>
-      <li>external - for external content, such as sponsored or advertising</li>
-      <li>offers - for special offers that are complementary to the main content or task</li>
-      <li>advertisement - advertisement or sponsored content</li>
-      <li>contactus</li>
-      <li>aboutus</li>
-    </ul>
-    <p> </p>
-  </section>
-  <!--
+      <section id="new-misc.x" typeof="bibo:Chapter" resource="#new-misc.x" property="bibo:hasPart">
+        <!--OddPage-->
+        <h2 id="h-new-misc.x" resource="#h-new-misc.x"><span property="xhv:role" resource="xhv:heading"><span class="secno">18. </span>New Misc.<span class="permalink" typeof="bookmark"><a href="#new-misc.x" aria-label="Permalink for 18. New Misc." title="Permalink for 18. New Misc." property="url"><span property="title" content="18. New Misc.">§</span></a>
+          </span>
+          </span>
+        </h2>
+        Triggers: for emotional support. coga-trigger: violent, racism, etc. coga-keyparts of the page: key points, example, note, warningi, external (content), advertisements, (some may be in digital publishing) coga-dates - (cancellation, return)
+      </section>
+
+      <section id="additional-wai-aria-roles" typeof="bibo:Chapter" resource="#additional-wai-aria-roles" property="bibo:hasPart">
+        <!--OddPage-->
+        <h2 id="h-additional-wai-aria-roles" resource="#h-additional-wai-aria-roles"><span property="xhv:role" resource="xhv:heading"><span class="secno">19. </span>Additional <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> roles<span class="permalink" typeof="bookmark"><a href="#additional-wai-aria-roles" aria-label="Permalink for 19. Additional WAI-ARIA roles" title="Permalink for 19. Additional WAI-ARIA roles" property="url"><span property="title" content="19. Additional WAI-ARIA roles">§</span></a>
+          </span>
+          </span>
+        </h2>
+        <p><strong>Requirement: </strong> We may want to add roles for sections a page such as: contact us - for a contact us form&nbsp; </p>
+        <p><strong>User experience: </strong>symbols and colors could be used consistently across different content.</p>
+        <p>Nav maps can be automatically generated for people learn via key-points or examples.</p>
+        <p>Further these sections could be hidden in the normal rendering of a page or rendered the top of page depending on user preferences. The location of these sections can also be changed, based on the user preference, enabling the user to find them easily.</p>
+        <p>Values:</p>
+        <p></p>
+        <ul>
+          <li>summary</li>
+          <li>keypoints</li>
+          <li>example</li>
+          <li>note</li>
+          <li>warning</li>
+          <li>step</li>
+          <li>external - for external content, such as sponsored or advertising</li>
+          <li>offers - for special offers that are complementary to the main content or task</li>
+          <li>advertisement - advertisement or sponsored content</li>
+          <li>contactus</li>
+          <li>aboutus</li>
+        </ul>
+        <p> </p>
+      </section>
+      <!--
 		<section class="appendix" id="changelog">
 			<h2>Change Log</h2>
 			<section>
@@ -1101,10 +1630,52 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 			</section>
 		</section>
 		-->
-  <div>Acknowledgements placeholder</div>
+      <div>Acknowledgements placeholder</div>
 
 
-  <p role="navigation" id="back-to-top"><a href="#toc"><abbr title="Back to Top">↑</abbr></a></p>
-  <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
+      <section id="references" class="appendix" typeof="bibo:Chapter" resource="#references" property="bibo:hasPart">
+        <!--OddPage-->
+        <h2 id="h-references" resource="#h-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">A. </span>References<span class="permalink" typeof="bookmark"><a href="#references" aria-label="Permalink for A. References" title="Permalink for A. References" property="url"><span property="title" content="A. References">§</span></a>
+          </span>
+          </span>
+        </h2>
+
+        <section id="informative-references" typeof="bibo:Chapter" resource="#informative-references" property="bibo:hasPart">
+          <h3 id="h-informative-references" resource="#h-informative-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">A.1 </span>Informative references<span class="permalink" typeof="bookmark"><a href="#informative-references" aria-label="Permalink for A.1 Informative references" title="Permalink for A.1 Informative references" property="url"><span property="title" content="A.1 Informative references">§</span></a>
+            </span>
+            </span>
+          </h3>
+          <dl class="bibliography" resource=""><dt id="bib-AT-SPI">[AT-SPI]</dt>
+            <dd>The GNOME Project. <a href="https://developer.gnome.org/libatspi/stable/" property="dc:references"><cite>Assistive Technology Service Provider Interface</cite></a>. URL: <a href="https://developer.gnome.org/libatspi/stable/" property="dc:references">https://developer.gnome.org/libatspi/stable/</a>
+            </dd><dt id="bib-ATK">[ATK]</dt>
+            <dd>The GNOME Project. <a href="https://developer.gnome.org/atk/stable/" property="dc:references"><cite>ATK - Accessibility Toolkit</cite></a>. URL: <a href="https://developer.gnome.org/atk/stable/" property="dc:references">https://developer.gnome.org/atk/stable/</a>
+            </dd><dt id="bib-AXAPI">[AXAPI]</dt>
+            <dd>Apple, Inc. <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSAccessibility_Protocol/index.html" property="dc:references"><cite>The Mac OS X Accessibility Protocol Mac OS 10.10</cite></a>. URL: <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSAccessibility_Protocol/index.html" property="dc:references">https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSAccessibility_Protocol/index.html</a>
+            </dd><dt id="bib-DOM4">[DOM4]</dt>
+            <dd>Anne van Kesteren; Aryeh Gregor; Ms2ger; Alex Russell; Robin Berjon. W3C. <a href="https://www.w3.org/TR/dom/" property="dc:references"><cite>W3C DOM4</cite></a>. 19 November 2015. W3C Recommendation. URL: <a href="https://www.w3.org/TR/dom/" property="dc:references">https://www.w3.org/TR/dom/</a>
+            </dd><dt id="bib-IAccessible2">[IAccessible2]</dt>
+            <dd>Linux Foundation. <a href="http://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2" property="dc:references"><cite>IAccessible2</cite></a>. URL: <a href="http://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2" property="dc:references">http://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2</a>
+            </dd><dt id="bib-MSAA">[MSAA]</dt>
+            <dd>Microsoft Corporation. <a href="http://msdn.microsoft.com/en-us/library/ms697707.aspx" property="dc:references"><cite>Microsoft Active Accessibility (MSAA) 2.0</cite></a>. URL: <a href="http://msdn.microsoft.com/en-us/library/ms697707.aspx" property="dc:references">http://msdn.microsoft.com/en-us/library/ms697707.aspx</a>
+            </dd><dt id="bib-RFC3986">[RFC3986]</dt>
+            <dd>T. Berners-Lee; R. Fielding; L. Masinter. IETF. <a href="https://tools.ietf.org/html/rfc3986" property="dc:references"><cite>Uniform Resource Identifier (URI): Generic Syntax</cite></a>. January 2005. Internet Standard. URL: <a href="https://tools.ietf.org/html/rfc3986" property="dc:references">https://tools.ietf.org/html/rfc3986</a>
+            </dd><dt id="bib-SVG2">[SVG2]</dt>
+            <dd>Nikos Andronikos; Rossen Atanassov; Tavmjong Bah; Amelia Bellamy-Royds; Brian Birtles; Bogdan Brinza; Cyril Concolato; Erik Dahlström; Chris Lilley; Cameron McCormack; Doug Schepers; Dirk Schulze; Richard Schwerdtfeger; Satoru Takagi; Jonathan Watt. W3C. <a href="https://www.w3.org/TR/SVG2/" property="dc:references"><cite>Scalable Vector Graphics (SVG) 2</cite></a>. 15 September 2016. W3C Candidate Recommendation. URL: <a href="https://www.w3.org/TR/SVG2/" property="dc:references">https://www.w3.org/TR/SVG2/</a>
+            </dd><dt id="bib-UI-AUTOMATION">[UI-AUTOMATION]</dt>
+            <dd>Microsoft Corporation. <a href="http://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx" property="dc:references"><cite>UI Automation</cite></a>. URL: <a href="http://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx" property="dc:references">http://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx</a>
+            </dd><dt id="bib-UIA-EXPRESS">[UIA-EXPRESS]</dt>
+            <dd>Microsoft Corporation. <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx" property="dc:references"><cite>The IAccessibleEx Interface</cite></a>. URL: <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx" property="dc:references">https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx</a>
+            </dd><dt id="bib-WAI-ARIA-IMPLEMENTATION">[WAI-ARIA-IMPLEMENTATION]</dt>
+            <dd>Joseph Scheuhammer; Michael Cooper. W3C. <a href="https://www.w3.org/TR/wai-aria-implementation/" property="dc:references"><cite>WAI-ARIA 1.0 User Agent Implementation Guide</cite></a>. 20 March 2014. W3C Recommendation. URL: <a href="https://www.w3.org/TR/wai-aria-implementation/" property="dc:references">https://www.w3.org/TR/wai-aria-implementation/</a>
+            </dd><dt id="bib-WAI-ARIA-PRACTICES">[WAI-ARIA-PRACTICES]</dt>
+            <dd>Joseph Scheuhammer; Michael Cooper. W3C. <a href="https://www.w3.org/TR/wai-aria-practices/" property="dc:references"><cite>WAI-ARIA 1.0 Authoring Practices</cite></a>. 14 July 2016. W3C Working Draft. URL: <a href="https://www.w3.org/TR/wai-aria-practices/" property="dc:references">https://www.w3.org/TR/wai-aria-practices/</a>
+            </dd><dt id="bib-WCAG20">[WCAG20]</dt>
+            <dd>Ben Caldwell; Michael Cooper; Loretta Guarino Reid; Gregg Vanderheiden et al. W3C. <a href="https://www.w3.org/TR/WCAG20/" property="dc:references"><cite>Web Content Accessibility Guidelines (WCAG) 2.0</cite></a>. 11 December 2008. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WCAG20/" property="dc:references">https://www.w3.org/TR/WCAG20/</a>
+            </dd>
+          </dl>
+        </section>
+      </section>
+      <p role="navigation" id="back-to-top"><a href="#toc"><abbr title="Back to Top">↑</abbr></a></p>
+      <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
 </body>
 </html>
