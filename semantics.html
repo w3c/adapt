@@ -3,7 +3,10 @@
 	<head>
 		<title>Proposal: COGA Semantics to Enable Personalization</title>
 		<script src="https://www.w3.org/Tools/respec/respec-w3c-common" class="remove"></script>
-		<!--<script src="../common/biblio.js" class="remove"></script>-->
+		<!--<script src="script/resolveReferences.js" class="remove"></script>
+		<script class="remove" src="script/ariaChild.js"></script>
+		<script class="remove" src="script/roleInfo.js"></script>-->
+		<script src="biblio.js" class="remove"></script>
 		<script class="remove">
 	var respecConfig = {
 		// embed RDFa data in the output
@@ -107,7 +110,7 @@
 		wgPatentURI:  "http://www.w3.org/2004/01/pp-impl/83726/status",
 		//maxTocLevel: 2,
 		
-		//localBiblio: biblio,
+		localBiblio: biblio,
 	};
 		</script>
 	</head>
@@ -174,7 +177,7 @@ mpairments</li>
 		</section>
 		<section class="informative" id="terms">
 			<h1>Important Terms</h1>
-			<div data-include="https://rawgit.com/w3c/aria/master/common/terms.html" data-oninclude="restrictReferences"></div>
+			<div data-include="terms.html" data-oninclude="restrictReferences"></div>
 		</section>
 		<section class="normative" id="semanticProperties">
 			<h1>Semantic Properties</h1>
@@ -752,7 +755,7 @@ some users may be able to remove them from content.</p>
 			</section>
 		</section>
 		-->
-		<div data-include='../aria/common/acknowledgements.html' data-oninclude='fixIncludes' data-include-replace='true'>Acknowledgements placeholder</div>
+		<div data-include='acknowledgements.html' data-oninclude='fixIncludes' data-include-replace='true'>Acknowledgements placeholder</div>
 		</section>
 	</body>
 </html>
