@@ -310,7 +310,7 @@ mpairments</li>
                   <li> Elements  that are used by frequently (over 60%) by a user group (such as parents or teachers) use  this element most times they use the content</li>
                 </ul>
                           </li>
-                          <li> <code>coga-simplification= "med"</code>. This  setting should be used on elements that are not typically used.</li>
+                          <li> <code>coga-simplification= "med"</code>. This  setting should be used on elements that are not typically used. This is the default value.</li>
                           <li> <code>coga-simplification="low"</code>. This  setting should be used on elements that are rarely used or only used by advanced users. (Example: The terms and services or the archive button for an email draft) </li>
                   </ul>
 			<div class="note">
@@ -335,7 +335,7 @@ mpairments</li>
                 	<section>
                         <h3>Proposed attribute: <code>coga-action</code></h3>
                         <p>For example: &lt;button coga-action=&quot;undo&quot; &gt;default&lt;/button&gt;</p>
-                        <p>The user experience may be simply replacing the text for the term &quot;undo&quot;.</p>
+                        <p>The user experience may be simply replacing the text for the term &quot;undo&quot;. Note that there is no default value.</p>
                         <p><strong>Supported Values: </strong></p>
                         <p>The following could be supported values of <code>coga-action</code> for buttons:</p>
 			<ul>
@@ -379,7 +379,7 @@ mpairments</li>
      			<p>The <code>coga-destination</code> attribute provides the context of a link. It should be used on a link element or element with role="link".</p>
      			<p>For example: &lt;a href=&quot;home.html&quot; coga-destination=&quot;home&quot; &gt;our main page&lt;/a&gt;</p>
      			<p>The user experience may be simply replacing the text for the term &quot;home&quot; and adding an icon.  Based on personalization setting the user can see diffrent icons. A sample user experience is available at <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html">https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html </a></p>
-     			<p>It may also position this button to a location on the screen where the user is expecting the home page link.</p>
+     			<p>It may also position this button to a location on the screen where the user is expecting the home page link. Note that there is no default value.</p>
      			<p><strong>Supported Values: </strong></p>
      			<p>The following could be supported values of <code>coga-destination</code>.              </p>
      			<ul>
@@ -410,7 +410,7 @@ mpairments</li>
       			<p><code>coga-field</code> provides the context of a text input field such as a text box. It should be used on an input, text a responding role.</p>
       			<p>For example: &lt;input type="text" name="fname" coga-field=&quot;phone&quot;/&gt;</p>
       			<p>The user experience may include filling in the field and adding an icon.</p>
-      			<p>coga-field values that would typically be on form controls and would have a user context - for example phone would relate to the user's phone</p>
+      			<p>coga-field values that would typically be on form controls and would have a user context - for example phone would relate to the user's phone. Note that there is no default value.</p>
                  	<p>Note they can be concatenated such as coga-field=&quot;birthdate month&quot;</p>
                         <ul>
                          	<li>name (corresponds to both first and family)</li>
@@ -450,7 +450,7 @@ mpairments</li>
          		<section>
            		<h3>Proposed attribute:coga-context</h3>
            		Coga-context would let the author give additional contextual information about the content.
-           		<p> Coga-context accepts the values of a URI or shortened URI.</p>
+           		<p> Coga-context accepts the values of a URI or shortened URI. Note that there is no default value.</p>
            		<pre>&lt;a href=&quot;women.html&quot; coga-context=&quot;openref:gender#femail&quot;&gt;women&lt;/a&gt; </pre>
            		<p>To make this work without an RDF parser we recommend maintaining a list of recommended ontologies. </p>
          		</section>
@@ -496,6 +496,7 @@ mpairments</li>
       			<p><strong>Supported Values:</strong> 
 				URL
 			</p>
+      			<p>Note that there is no default value.</p>
       			<p><strong>Examples:</strong></p>
       			<pre>&lt;img coga-concept="http//wordnet.com/node/girl&quot; href=&quot;mygirlsy.bmp/&gt; </pre>
          		</section>
@@ -525,6 +526,7 @@ mpairments</li>
 			<section>
 			<h3>Proposed attribute: <code>coga-numberfree</code> </h3>
 			<p><strong>Supported value : </strong> String</p>
+			<p>Note that there is no default value.</p>
 			<p><strong>For example:</strong></p>
 			<pre>&lt;span coga-numberfree=&quot;almost all&quot;&gt;9 out of 10 &lt;/span&gt;
 			</pre>
@@ -540,6 +542,7 @@ mpairments</li>
 			<section>
 			<h3>Proposed attribute: <code>coga-literal</code> </h3>
 			<p><strong>Supported value: </strong>String</p>
+			<p>Note that there is no default value.</p>
 			<p><strong>Examples:</strong></p>
 			<pre>&lt;span coga-literal=&quot;it is raining hard&quot;&gt; It is <span>raining cats and dogs</span> &lt;/span&gt;</pre>
 			<p> User agents can render non-literal text in a different way so that users will know that this is non literal. They can then use a mouse over or other technique to receive the translation.
@@ -560,6 +563,7 @@ mpairments</li>
 <p> 
 This attribute provides  any information that helps the user anticipate the  functionality, such as letting the user know what behavior will trigger an  event. This is most important if the mechanism is not standard. </p>
 <p> User experience: This help can be rendered as a tool tip, help link or read when the control or link is read. Most users will not want this text rendered or spoken, but other users however will need it to understand the behavior of the  element.</p>
+<p>Note that there is no default value.</p>
 		<p><strong>Examples:</strong></p>
 		<pre>coga-explain="press enter to send the email" </pre>
 		<pre>coga-feedback="your email on birthdays was sent" </pre>
@@ -574,10 +578,12 @@ This attribute provides  any information that helps the user anticipate the  fun
 	<section>
 <h3>Proposed attribute: <code>coga-moreinfo</code></h3>
 <p><strong>Supported values: </strong>URI</p>
+<p>Note that there is no default value.</p>
 	</section>
 	<section>
 <h3>Proposed attribute: <code>coga-extrahelp</code></h3>
 <p><strong>Supported values: </strong>URI</p>
+<p>Note that there is no default value.</p>
 	</section>
 	<section>
 <h3>Proposed attribute: <code>coga-helptype</code></h3>
@@ -629,7 +635,8 @@ This attribute provides  any information that helps the user anticipate the  fun
  				<li>On text: easylang, explain, more, vocab500, vocab1000, vocab2000, active, literal, numberfree, smallsentences, chunks, General: lessoptions. Whitespace, largefont </li>
  				<li>Images: symbolic , realistic</li>
  				<li>p0, p1, p1, p2, p3 Where p0 are images with true content, p1 is a symbol or illustration that is typically shown with alt=&quot;&quot;, P2 are extra illustration that most people will not mind such as at the start of a paragraph or option. p3 are for disability centric illustrations that can disturb other people and may be mid sentence. </li>
-				</ul>
+ 				</ul>
+			<p>Note that there is no default value.</p>
 
 			<strong>Example:</strong>
 			<pre>&lt;div&gt;
@@ -657,6 +664,7 @@ This attribute provides  any information that helps the user anticipate the  fun
         </section>
         <div> This proposal is to track the tasks that a user has done, so that they can be reminded of them, and return to or fix  a task. The  suggested syntax should allow the author to transform some of the information into breadcrumbs via CSS, and  the user system can read and present more or less information to the user as per their preferences.
           <p>Preferably this should be in the header so that the user agent can build a cross application log of user tasks.</p>
+          <p>Note that there is no default value.</p>
           <p>Notes: </p>
           <p>This is just a proposed syntax. Other syntax may be better.</p>
           <p>For protection of privacy ,it must be easy for the user to delete the log, and prevent the log from being stored.        </p>
@@ -691,7 +699,7 @@ This attribute provides  any information that helps the user anticipate the  fun
 			<h3>Proposed attribute: <code>coga-messageimportance</code></h3>
 <p><strong>Supported values: </strong></p>
 			<p><strong>critical: </strong>To be critical a message needs to be both urgent and content that the user is very likely to consider important.  For example, a system may send a message that it is going to reboot in one miunet to install updates. </p>
-			<p><strong>medium: </strong>Important messages that  needs the user's attention at their convenience. For example, a relatively important  chat message.</p>
+			<p><strong>medium: </strong>Important messages that  needs the user's attention at their convenience. For example, a relatively important  chat message. Note that this is the default value.</p>
 			<p><strong>low</strong>: A message that does not need time sensitive attention. For example, a typical chat message</p>
 			<p><strong>Example:</strong></p>
 			<pre>&lt;div role=&quot;alert&quot; 
@@ -702,6 +710,7 @@ This attribute provides  any information that helps the user anticipate the  fun
 			<section>
 			<h3>Proposed attribute: <code>coga-messagefrom</code></h3>
             <p><strong>Supported values: </strong>a string value that identifies the sender of the message. If multiple names are used they can be separated by a coma.</p>
+            <p>Note that there is no default value.</p>
             <p><strong>Example:</strong></p>
             <pre>&lt;div role=&quot;alert&quot; 
     coga-messageimportance=&quot;low&quot; 
@@ -712,6 +721,8 @@ This attribute provides  any information that helps the user anticipate the  fun
 			<section>
             <h3>Proposed attribute: <code>coga-messagecontext</code></h3>
             <p><strong>Supported values: </strong><strong> </strong>a string value that identifies the locaction that makes this message relevent. Typical values are &quot;home&quot; nd &quot;work&quot;. If multiple locations are relivent they can be separated by a coma.</p>
+            <p>&nbsp;</p>
+            <p>Note that there is no default value.</p>
             <p><strong>Example:</strong></p>
             <pre>&lt;div role=&quot;alert&quot;
    coga-messageimportance=&quot;low&quot; 
@@ -723,6 +734,7 @@ This attribute provides  any information that helps the user anticipate the  fun
 			<section>
             <h3>Proposed attribute: <code>coga-messagetime</code></h3>
             <p><strong>Supported values: </strong><strong> </strong>24 hour date time format. DD.MM.YEAR.HOUR.MM - DD.MM.YEAR.HOUR.MM where the second date is an optional exclusive expiry date.</p>
+            <p>Note that there is no default value.</p>
             <p><strong>Example:</strong></p>
             <pre>&lt;div role=&quot;alert&quot; 
     coga-messageimportance=&quot;medium&quot; 
@@ -749,9 +761,10 @@ some users may be able to remove them from content.</p>
 			<p>This attribute should be used on non essential, detracting content, so that people who have problems keeping focus can turn them off. An example user experiences would be to hide all distraction content.</p>
 			<p><strong>Example: </strong></p>
 			<pre>coga-distraction=&quot;moving ad&quot;</pre>
-			<p>Supported values: animations, auto-starting,  moving, ad, message, chat , overlay, popup<br/>
+			<p><strong>Supported values: </strong>animations, auto-starting,  moving, ad, message, chat , overlay, popup<br/>
 			  Auto-changing (logs) third-party,  offer
 		    ( includes suggestions).</p>
+			<p>Note that there is no default value.</p>
 			<p>Note that elements with the coga-distraction attribute should also have a lable or  accessible name.</p>
 			</section>
 </section>
@@ -1302,7 +1315,7 @@ Always have a link icon next to links<br>
           <p>&nbsp;</p>
           </div>
         
-        </section>
+    </section>
 		<!--
 		<section class="appendix" id="changelog">
 			<h2>Change Log</h2>
