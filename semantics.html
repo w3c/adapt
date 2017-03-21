@@ -243,6 +243,7 @@ mpairments</li>
 					</section>
 				<section id="prop_def">
 					<h2>Definitions of Semantic Properties (all coga-* attributes)</h2>
+				  <p id="index_role" class="placeholder">Placeholder for roles</p>
 					<p id="index_state_prop" class="placeholder">
 						Placeholder for index of states and properties
 					</p>
@@ -288,7 +289,7 @@ mpairments</li>
 			<h2>Simplification</h2>
                         <p><strong>Requirement</strong>: The user must be able to request a way to identify and differentiate between critical features, medium features and less important features. These need to be defined as important from a user perspective in the content. Typically, critical features may be used by many or most users, 90% of the time or more. High important features would be above 60% use. Medium important features would be 20% of users use it 20% of the time . Under 20% usage would be of low importance.</p>
                         <p><strong>User experience</strong>: Based on personalization setting the user can see less options. A sample user experience is available at <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html">https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html </a></p>
-			<section>
+			<div class="property" id="coga-simplification">
                         <h3>Proposed attribute: <code>coga-simplification</code> (formerly coga-importance).</h3>
 				<p>Having the following values: (main task such as send for an email) </p>
                         <ul>
@@ -317,7 +318,35 @@ mpairments</li>
                         <p>These semantics aid simplification. But what content is most useful to a user varies from user to user. For example, men may be more interested in mens clothing, and may not be interested in the more frequently use womens clothing option. For that reason we may add context for elements that will help the personalization agent select the most useful content for a given user. This is also necessary for reminders (see bellow). RDFa may be the best way forward for this aspect.</p>
                   <p> It is worth mentioning that a lot of this information is known for personalization of advertisements and content optimization. </p>
 			</div>
-			</section>
+			  <table class="property-features">
+			    <caption>Characteristics:</caption>
+			    <thead>
+			      <tr>
+			        <th scope="col">Characteristic</th>
+			        <th scope="col">Value</th>
+			      </tr>
+			    </thead>
+			    <tbody>
+			      <tr>
+			        <th class="property-related-head" scope="row">Related Concepts:</th>
+			        <td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
+			      </tr>
+			      <tr>
+			        <th class="property-applicability-head" scope="row">Used in Roles:</th>
+			        <td class="property-applicability">Placeholder</td>
+			      </tr>
+			      <tr>
+			        <th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+			        <td class="property-descendants">Placeholder</td>
+			      </tr>
+			      <tr>
+			        <th class="property-value-head" scope="row">Value:</th>
+			        <td class="property-value"><a href="#valuetype_idref">ID reference</a></td>
+			      </tr>
+			    </tbody>
+			  </table>
+			  
+			</div>
 		</section>
                 <section>
                  <h2>Adding Context </h2>
