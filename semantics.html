@@ -290,7 +290,9 @@ mpairments</li>
                         <p><strong>Requirement</strong>: The user must be able to request a way to identify and differentiate between critical features, medium features and less important features. These need to be defined as important from a user perspective in the content. Typically, critical features may be used by many or most users, 90% of the time or more. High important features would be above 60% use. Medium important features would be 20% of users use it 20% of the time . Under 20% usage would be of low importance.</p>
                         <p><strong>User experience</strong>: Based on personalization setting the user can see less options. A sample user experience is available at <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html">https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html </a></p>
 			<div class="property" id="coga-simplification">
-                        <h3>Proposed attribute: <code>coga-simplification</code> (formerly coga-importance).</h3>
+			  <pdef>coga-simplification</pdef>
+			  <div class="property-description">
+                        <p>(formerly coga-importance).</p>
 				<p>Having the following values: (main task such as send for an email) </p>
                         <ul>
                                 <li><code>coga-simplification="simplest"</code>. This  setting should be used on:
@@ -318,6 +320,7 @@ mpairments</li>
                         <p>These semantics aid simplification. But what content is most useful to a user varies from user to user. For example, men may be more interested in mens clothing, and may not be interested in the more frequently use womens clothing option. For that reason we may add context for elements that will help the personalization agent select the most useful content for a given user. This is also necessary for reminders (see bellow). RDFa may be the best way forward for this aspect.</p>
                   <p> It is worth mentioning that a lot of this information is known for personalization of advertisements and content optimization. </p>
 			</div>
+			  </div>
 			  <table class="property-features">
 			    <caption>Characteristics:</caption>
 			    <thead>
@@ -361,8 +364,9 @@ mpairments</li>
       <p>For that we need to standardize supportive syntax and terms that can be linked to associated symbols, terms, translations and explanations, for the individual, via an attribute.</p>
       <p> </p>
       <p><strong>Example user experience:</strong>, if an author gives to a button a role "send" then, without any work by the author, the button could be automatically rendered with a symbol, term, and/or tooltips that is understandable by a particular user. It could automatically imply F1 help that explains the send function in simple terms. It could be identified with a keyboard short cut that will always be used for send. In addition it could be identified as important and always rendered, or rendered as a large button. This would enable a consistent UI experience across applications and websites.</p>
-                	<section>
-                        <h3>Proposed attribute: <code>coga-action</code></h3>
+                	<div class="property" id="coga-action">
+                        <pdef>coga-action</pdef>
+                	  <div class="property-description">
                         <p>For example: &lt;button coga-action=&quot;undo&quot; &gt;default&lt;/button&gt;</p>
                         <p>The user experience may be simply replacing the text for the term &quot;undo&quot;. Note that there is no default value.</p>
                         <p><strong>Supported Values: </strong></p>
@@ -402,9 +406,11 @@ mpairments</li>
                                 <li>higher</li>
                                 <li>lower</li>
                         </ul>
-                	</section>
-		<section>
-     			<h3>Proposed attribute: <code>coga-destination</code></h3>
+                	  </div>
+                	</div>
+		<div class="property" id="coga-destination">
+     			<pdef>coga-destination</pdef>
+		  <div class="property-description">
      			<p>The <code>coga-destination</code> attribute provides the context of a link. It should be used on a link element or element with role="link".</p>
      			<p>For example: &lt;a href=&quot;home.html&quot; coga-destination=&quot;home&quot; &gt;our main page&lt;/a&gt;</p>
      			<p>The user experience may be simply replacing the text for the term &quot;home&quot; and adding an icon.  Based on personalization setting the user can see diffrent icons. A sample user experience is available at <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html">https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html </a></p>
@@ -433,9 +439,11 @@ mpairments</li>
                  		<li>help </li>
                  		<li>chat help </li>
            		</ul>
-		</section>
-                <section>
-                        <h3>Proposed attribute: <code>coga-field</code></h3>
+		  </div>
+		</div>
+                <div class="property" id="coga-field">
+                        <pdef>coga-field</pdef>
+                  <div class="property-description">
       			<p><code>coga-field</code> provides the context of a text input field such as a text box. It should be used on an input, text a responding role.</p>
       			<p>For example: &lt;input type="text" name="fname" coga-field=&quot;phone&quot;/&gt;</p>
       			<p>The user experience may include filling in the field and adding an icon.</p>
@@ -471,18 +479,21 @@ mpairments</li>
        				<li>our-address </li>
        				<li>our-email </li>
       			</ul>
-                </section>
+                  </div>
+                </div>
                 </section>
          	<section>
            		<h2>General context</h2>
            		<p><strong>Requirement: </strong> One important factor in optimizing the personalization of a product or   service is to ensure that the personalization is appropriate for the   current context of use as well as what is relevant for the user. For example a female user with a cognitive disability may need less options, and options that are for men are less likely to be relevant for her and may be demoted to bellow the scroll or placed under a &quot;more option&quot; button.</p>
-         		<section>
-           		<h3>Proposed attribute:coga-context</h3>
-           		Coga-context would let the author give additional contextual information about the content.
+         		<div class="property" id="coga-context">
+           		<pdef>coga-context</pdef>
+         		  <div class="property-description">
+           		  <p>Coga-context would let the author give additional contextual information about the content.</p>
            		<p> Coga-context accepts the values of a URI or shortened URI. Note that there is no default value.</p>
            		<pre>&lt;a href=&quot;women.html&quot; coga-context=&quot;openref:gender#femail&quot;&gt;women&lt;/a&gt; </pre>
            		<p>To make this work without an RDF parser we recommend maintaining a list of recommended ontologies. </p>
-         		</section>
+         		  </div>
+         		</div>
 			<section>
                         	<h3>Should we be using RDFa?</h3>
                         	<p>The context based properties should be convertible to RDFa. (see <a href="https://www.w3.org/TR/xhtml-rdfa-primer/">RDFa Primer</a>) and the task force should create this mapping.</p>
@@ -520,15 +531,17 @@ mpairments</li>
                  	<h2>Concept codes</h2>
                         <p><strong>Requirement: </strong>We would like to enable interoperable symbol set codes for Non verbal people. Products for people who are non vocal often use symbols to help users communicate. These symbols are in fact peoples language. Unfortunately many of these symbols are both subject to copy write AND not interoperable. That means end-users can only use one device, and can not use apps or AT from a different company. There are open set of symbol codes for these symbol sets, that could be referenced then they can be interoperable. alternatively wordnet nodes could be referenced. If the users symbols are mapped to the same nodes then users agents will be able to load the user understandable symbol. That means the end use could buy the symbols and use them across different devices or applications. They would still be proprietary but they would also be interoperable. </p>
       			<p>User experience: AAC users will load symbols that they understand in different applications that are made by a different provider.</p>
-         		<section>
-      			<h3>Proposed attribute: <code>coga-concept</code></h3>
+         		<div class="property" id="coga-concept">
+      			<pdef>coga-concept</pdef>
+         		  <div class="property-description">
       			<p><strong>Supported Values:</strong> 
 				URL
 			</p>
       			<p>Note that there is no default value.</p>
       			<p><strong>Examples:</strong></p>
       			<pre>&lt;img coga-concept="http//wordnet.com/node/girl&quot; href=&quot;mygirlsy.bmp/&gt; </pre>
-         		</section>
+         		  </div>
+         		</div>
     		</section>
        		<section>
                  	<h2>Potential parts of a page</h2>
@@ -552,8 +565,9 @@ mpairments</li>
 			<p><strong>Requirement</strong>: Not everyone can understand numbers. We therefor suggest coga-numberfree for alternative text for people who can not understand the main content</p>
 			<p><strong>User experience:</strong></p>
 			<p>A suggested user experience would be: Numerical concepts could be rendered by the user agent slightly different so that the user knows a number free explanation is available. The user can then mouse over the content and a tooltips would give the number free value</p>
-			<section>
-			<h3>Proposed attribute: <code>coga-numberfree</code> </h3>
+			<div class="property" id="coga-numberfree">
+			<pdef>coga-numberfree</pdef> 
+			  <div class="property-description">
 			<p><strong>Supported value : </strong> String</p>
 			<p>Note that there is no default value.</p>
 			<p><strong>For example:</strong></p>
@@ -561,34 +575,40 @@ mpairments</li>
 			</pre>
 			<pre>&lt;span coga-numberfree=&quot;hat and coat weather&quot;&gt;The weather is <span>9 degrees&lt;/span&gt;</span>
 			</pre>
-			</section>
+			  </div>
+			</div>
 		</section>
 		<section>
 			<h2>Non-literal text and images</h2>
 			<p><strong>Requirement: </strong>Not everyone can understand non-literal text and icons such as metaphors, idioms etc. We need a tag that identifies text or images as non literal and  allows the author to explain non-literal text and images to users.</p>
 			<p><strong>User experience:</strong></p>
 			<p>A suggested user experience would be: Non literal content could be rendered by the user agent slightly differently so that the user knows that this content should not be taken literally and that a literal explanation is available. The user can then mouse over the content and a tooltips would give the literal value.</p>
-			<section>
-			<h3>Proposed attribute: <code>coga-literal</code> </h3>
+			<div class="property">
+			<pdef>coga-literal</pdef> 
+			  <div class="property-description">
 			<p><strong>Supported value: </strong>String</p>
 			<p>Note that there is no default value.</p>
 			<p><strong>Examples:</strong></p>
 			<pre>&lt;span coga-literal=&quot;it is raining hard&quot;&gt; It is <span>raining cats and dogs</span> &lt;/span&gt;</pre>
 			<p> User agents can render non-literal text in a different way so that users will know that this is non literal. They can then use a mouse over or other technique to receive the translation.
 			</p>
-			</section>
+			  </div>
+			</div>
 		</section>
 		<section>
                  	<h2>Explain and feedback</h2>
                         <p><strong>Requirement: </strong></p>
 <p>Some users need additional help. We request an attribute where the author can provide additional information.or what just happened.</p>
-			<section>
-				<h3>Proposed attribute: <code>coga-feedback</code></h3>
+			<div class="property" id="coga-feedback">
+				<pdef>coga-feedback</pdef>
+			<div class="property-description">  
 <p>This attribute provides immediate feedback that can be shown or spoken when any event is triggered on a control.</p>
                         <p><strong>User experience: </strong>This can be rendered as text at the top of the page and read immediately. Most users will not want this text rendered and spoken. Other users however will need it to know what has just happened. </p>
-			</section>
-			<section>
-				<h3>Proposed attribute: <code>coga-explain</code></h3>
+			</div>
+		  </div>
+			<div class="property" id="coga-explain">
+				<pdef>coga-explain</pdef>
+			  <div class="property-description">
 <p> 
 This attribute provides  any information that helps the user anticipate the  functionality, such as letting the user know what behavior will trigger an  event. This is most important if the mechanism is not standard. </p>
 <p> User experience: This help can be rendered as a tool tip, help link or read when the control or link is read. Most users will not want this text rendered or spoken, but other users however will need it to understand the behavior of the  element.</p>
@@ -597,25 +617,31 @@ This attribute provides  any information that helps the user anticipate the  fun
 		<pre>coga-explain="press enter to send the email" </pre>
 		<pre>coga-feedback="your email on birthdays was sent" </pre>
 		<p>These values will change when the email is sent.</p>
-			</section>
+			  </div>
+			</div>
 	</section>
     
     
 <section>
 <h3>More Help</h3>
 <p><strong>Requirement: </strong>Some users may need additional information or specifically additional help inforamtion. We request additonal attributes so that an author can indicate the existence of this additional information.</p>
-	<section>
-<h3>Proposed attribute: <code>coga-moreinfo</code></h3>
+	<div class="property" id="coga-moreinfo">
+<pdef>coga-moreinfo</pdef>
+	  <div class="property-description">
 <p><strong>Supported values: </strong>URI</p>
 <p>Note that there is no default value.</p>
-	</section>
-	<section>
-<h3>Proposed attribute: <code>coga-extrahelp</code></h3>
+	  </div>
+	</div>
+	<div class="property" id="coga-extrahelp">
+<pdef>coga-extrahelp</pdef>
+	  <div class="property-description">
 <p><strong>Supported values: </strong>URI</p>
 <p>Note that there is no default value.</p>
-	</section>
-	<section>
-<h3>Proposed attribute: <code>coga-helptype</code></h3>
+	  </div>
+	</div>
+	<div class="property" id="coga-helptype">
+<pdef>coga-helptype</pdef>
+	  <div class="property-description">
 <p><strong>Supported values: </strong>  tooltips/humanhelp/morehelp/topicsearch/automated/faqs/helpform/simplified/glossary/dictionary/thesaurus</p>
 <p><strong>Example:</strong></p>
 <pre>&lt;button type="button" coga-extrahelp=&quot;uri2 uri3&quot; &gt;undo&lt;/button&gt;</pre>
@@ -638,7 +664,8 @@ This attribute provides  any information that helps the user anticipate the  fun
     coga-extrahelp=&quot;glossary&quot; 
     coga-hidden=&quot;true&quot;&gt;
 </pre>
-	</section>
+	  </div>
+	</div>
 </section>
                 <section>
                  <h2>Potential Features</h2>
@@ -655,10 +682,11 @@ This attribute provides  any information that helps the user anticipate the  fun
 		<section>
 			<h2>Language type support</h2>
 			<p><strong>Requirement: </strong>Sometimes you may want to provide a simplified version of a section of a page. For example, you may wish to provide a simplified summary of legal document, but still have a longer version for other users. These alternative versions may not be identical in content but maintain the gist of the original content.</p>
-			<section>
-			<h3>Proposed attribute: <code>coga-alternative</code></h3>
+			<div class="property" id="coga-alternative">
+			<pdef>coga-alternative</pdef>
+			  
 				<p>Would be used on an alternitive content as an alternative to more detailed or difficult to understand content. coga-alternative can be used on a span, div, link or image that servers as alternitive content to it's direct parent element.</p>
-
+<div class="property-description">
 			<p><strong>Supported values:</strong> </p>
 			<ul>
  				<li>On text: easylang, explain, more, vocab500, vocab1000, vocab2000, active, literal, numberfree, smallsentences, chunks, General: lessoptions. Whitespace, largefont </li>
@@ -677,16 +705,18 @@ This attribute provides  any information that helps the user anticipate the  fun
   with 56% claiming there preferred the simplified text , 
   with the remainder unsure or stated it depends on the context.
 &lt;/div&gt;</pre>
-			</section>
-		<section>
-			<h3>Proposed attribute: <code>coga-easylang</code> </h3>
+			  </div>
+			</div>
+		<div class="property" id="coga-easylang">
+			<pdef>coga-easylang</pdef>
+		  <div class="property-description">
 			<p><code>coga-easylang</code> will contain a version of the content that is easier to read and understand. Note that this only works on small sections of text as the easylang attribute does not support full HTML, such as lists and sections.</p>
 
 			<p><strong>Supported values:</strong> String</p>
 			<pre>&lt;span coga-easylang=&quot;some text that is easy to read&quot;&gt; some convoluted obtuse text&lt;/span&gt;</pre>
 			<p>Where coga-easylang should use as simple well-known words as possible, and active voicing, literal text, small simple sentences. Acronyms and abbreviations should be avoided, unless they are the common way to refer to an item.</p>
-			<p> </p>
-		</section>
+			</div>
+		</div>
 		</section>
   <section>
         <h3 id="logs">Logs</h3>
@@ -724,8 +754,9 @@ This attribute provides  any information that helps the user anticipate the  fun
 			<h3>Reminders and messages</h3>
 			<p><strong>Requirement: </strong>We require an attribute that enables different users to experience different amount of reminders and messages based on personal preferences. Reminders are a wonderful tool for many people with cognitive disabilities. However too many reminders will be annoying or distracting for some other users. Currently people can turn off  distractions such   as skype,  and facebook, across different devices, and then may forget   to turn them back on.</p>
 			<p>These semantics allow for different solutions so that users are  able to focus without missing important messages. Users need to manage all distractions by forming a   cross application and cross device distraction matrix that manages all   distractions in one setting. It is based on a matrix for distractions at the operating system ,   browser or cloud level. People and users can be clustered in terms of importance or groups. For   example, the CEO and your child's care giver could both be considered   critical contacts. So even if they do not feel the message is urgent   they can sometimes disrupt the user anyway. Some family members and   important colleagues can be in another group, friends and extended   family in a third group, system messages from the compliance system can   be a different group again. </p>
-			<section>
-			<h3>Proposed attribute: <code>coga-messageimportance</code></h3>
+			<div class="property" id="coga-messageimportance">
+			<pdef>coga-messageimportance</pdef>
+			  <div class="property-description">
 <p><strong>Supported values: </strong></p>
 			<p><strong>critical: </strong>To be critical a message needs to be both urgent and content that the user is very likely to consider important.  For example, a system may send a message that it is going to reboot in one miunet to install updates. </p>
 			<p><strong>medium: </strong>Important messages that  needs the user's attention at their convenience. For example, a relatively important  chat message. Note that this is the default value.</p>
@@ -735,9 +766,11 @@ This attribute provides  any information that helps the user anticipate the  fun
     coga-messageimportance=&quot;medium&quot;&gt;
   It is your daughter's birthday tomorrow
 &lt;/div&gt;</pre>
-			</section>
-			<section>
-			<h3>Proposed attribute: <code>coga-messagefrom</code></h3>
+			  </div>
+			</div>
+			<div class="property" id="coga-messagefrom">
+			<pdef>coga-messagefrom</pdef>
+			  <div class="property-description">
             <p><strong>Supported values: </strong>a string value that identifies the sender of the message. If multiple names are used they can be separated by a coma.</p>
             <p>Note that there is no default value.</p>
             <p><strong>Example:</strong></p>
@@ -746,9 +779,11 @@ This attribute provides  any information that helps the user anticipate the  fun
     coga-messagefrom=&quot;lisa seeman, lseeman&quot;&gt;
   I posted a new version on github for you to review
 &lt;/div&gt;</pre>
-			</section>
-			<section>
-            <h3>Proposed attribute: <code>coga-messagecontext</code></h3>
+			  </div>
+			</div>
+			<div class="property" id="coga-messagecontext">
+            <pdef>coga-messagecontext</pdef>
+			  <div class="property-description">
             <p><strong>Supported values: </strong><strong> </strong>a string value that identifies the locaction that makes this message relevent. Typical values are &quot;home&quot; nd &quot;work&quot;. If multiple locations are relivent they can be separated by a coma.</p>
             <p>Note that there is no default value.</p>
             <p><strong>Example:</strong></p>
@@ -758,9 +793,11 @@ This attribute provides  any information that helps the user anticipate the  fun
    coga-messagecontext=&quot;work&quot;&gt;
   I posted a new version on github for you to review
 &lt;/div&gt;</pre>
-			</section>
-			<section>
-            <h3>Proposed attribute: <code>coga-messagetime</code></h3>
+			  </div>
+			</div>
+			<div class="property" id="coga-messagetime">
+            <pdef>coga-messagetime</pdef>
+			  <div class="property-description">
             <p><strong>Supported values: </strong><strong> </strong>24 hour date time format. DD.MM.YEAR.HOUR.MM - DD.MM.YEAR.HOUR.MM where the second date is an optional exclusive expiry date.</p>
             <p>Note that there is no default value.</p>
             <p><strong>Example:</strong></p>
@@ -778,14 +815,16 @@ This attribute provides  any information that helps the user anticipate the  fun
     coga-messagetime=&quot;16.02.2017.00.00&quot;&gt;
   Renew your driving license ASAP
 &lt;/div&gt;</pre>
-			</section>
+			  </div>
+			</div>
 		</section>
 		<section>
 			<h2>Distractions</h2>
 			<p><strong>Requirement: </strong> We require an attribute that indicates a distraction so that
 some users may be able to remove them from content.</p> 
-			<section>
-			<h3>Proposed attribute: <code> coga-distraction</code></h3>
+			<div class="property" id="coga-distraction">
+			<pdef> coga-distraction</pdef>
+			  <div class="property-description">
 			<p>This attribute should be used on non essential, detracting content, so that people who have problems keeping focus can turn them off. An example user experiences would be to hide all distraction content.</p>
 			<p><strong>Example: </strong></p>
 			<pre>coga-distraction=&quot;moving ad&quot;</pre>
@@ -794,7 +833,8 @@ some users may be able to remove them from content.</p>
 		    ( includes suggestions).</p>
 			<p>Note that there is no default value.</p>
 			<p>Note that elements with the coga-distraction attribute should also have a lable or  accessible name.</p>
-			</section>
+			  </div>
+			</div>
 </section>
 		<section>
 			<h2>New Misc.</h2>
