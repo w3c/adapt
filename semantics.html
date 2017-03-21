@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <title>Proposal: COGA Semantics to Enable Personalization</title>
-    <script src="https://www.w3.org/Tools/respec/respec-w3c-common" class="remove"></script>
-    <script src="common/script/resolveReferences.js" class="remove"></script>
-    <script class="remove" src="common/script/ariaChild.js"></script>
-    <script class="remove" src="common/script/roleInfo.js"></script>
-    <script src="common/biblio.js" class="remove"></script>
-    <script class="remove">
+	<head>
+		<title>Proposal: COGA Semantics to Enable Personalization</title>
+		<script src="https://www.w3.org/Tools/respec/respec-w3c-common" class="remove"></script>
+		<script src="common/script/resolveReferences.js" class="remove"></script>
+		<script class="remove" src="common/script/ariaChild.js"></script>
+		<script class="remove" src="common/script/roleInfo.js"></script>
+		<script src="common/biblio.js" class="remove"></script>
+		<script class="remove">
 	var respecConfig = {
 		// embed RDFa data in the output
 		trace:  true,
@@ -122,385 +122,376 @@
         },
 	};
 		</script>
-    <link href="common/css/common.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
+		<link href="common/css/common.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		<section id="abstract">
+			<p>Personalization involves tailoring aspects of the user experience to meet the needs and prefences of the user. For example, having familiar terms and symbols is key to many users being able to use the web. However, what is familiar for one user may be unfamiliar to another requiring them to learn new symbols. The challenge has been the ability to identify the types of content in a document that should be adapted to the preferred user experience. The introduction of standardized semantics allows web applications to customize the exposure of that content to one that is familiar to individuals based on their needs and preferences. This specification defines standard semantics to enable user driven personalization such as the association of a user-preferred symbols to elements having those semantics. This ensures that users can quickly find familiar icons, such as a help icon, that apply to user interface elements.</p>
+		</section>
+		<section id="sotd"> </section>
+		<section class="informative" id="introduction">
+			<h1>Introduction</h1>
+			<p>The goals of this specification include:</p>
+			<ul>
+				<li> expanding the accessibility information that may be supplied by the author;</li>
+				<li> facilitate preference driven individual personalization;</li>
+				<li> enable the author to specify key semantics needed to support users with cognitive i mpairments</li>
+			</ul>
+			<p>This is a proposal to define syntax for adaptable content such as: links, buttons, symbols, help and keyboard. This may be an WAI-ARIA COGA Extension.</p>
+			<p>Personalization involves tailoring aspects of the user experience to meet the preferences or needs of the user. For example, having familiar terms and symbols is key to being able to use the web. However what is familiar for one user may be new for another requiring them to learn new symbols. Personalization could include loading a set of symbols that is appropriate for the specific user, ensuring that all users find the icons simple and familiar.</p>
+			<p>Technology holds the promise of being extremely flexible and the design of many systems includes the expectation that users will be able to optimise their interaction experience according to their personal preferences or accessibility requirements (needs). </p>
 
-    <section id="abstract">
-      <p>Personalization involves tailoring aspects of the user experience to meet the needs and prefences of the user. For example, having familiar terms and symbols is key to many users being able to use the web. However, what is familiar for one user may be unfamiliar to another requiring them to learn new symbols. The challenge has been the ability to identify the types of content in a document that should be adapted to the preferred user experience. The introduction of standardized semantics allows web applications to customize the exposure of that content to one that is familiar to individuals based on their needs and preferences. This specification defines standard semantics to enable user driven personalization such as the association of a user-preferred symbols to elements having those semantics. This ensures that users can quickly find familiar icons, such as a help icon, that apply to user interface elements.</p>
-    </section>
+			<section class="section" id="why_accessibility">
+				<h2>Why We Need Personalization</h2>
+				<p>We need personalization because: </p>
+				<ul>
+					<li>Different user needs can conflict</li>
+					<li>Learning new design patterns (and widgets) can be confusing - we want to allow users to stick with what works for them </li>
+					<li>Extra support can be annoying to people who do not need it </li>
+					<li>Making content predictable is necessary for accessibility but can often be considered boring design </li>
+					<li>Ability to change levels of complexity (increase or decrease) - As people skills improve or decrease over time or context. </li>
+					<li>Enable us to really meet the user needs </li>
+				</ul>
+				<p>Some users need extra support. This can include: </p>
+				<ul>
+					<li> Symbols and graphics that they are familiar with </li>
+					<li> Tool tips </li>
+					<li> Language they understand </li>
+					<li> Less features </li>
+					<li> Separating advertisements, so they do not confuse them with native content </li>
+					<li> Keyboard short cuts </li>
+				</ul>
+				<p>For this we need standardized terms and supportive syntax that can be linked to associated symbols, terms, translations and explanations for the individual use via an attribute and personal preferences. </p>
+				<p>For example, assume an author can make it programanticaly known that a button is used to send an email. At at the user end, the button could be renderer with a symbol, term, and/or tooltips that is understandable for this particular user. It could automatically imply F1 help that explains the send function in simple terms. It could be identified with a keyboard short cut that will always be used for send. In addition it could be identified as important and always rendered, or rendered as a large button. </p>
+				<p>Working examples of how this could be used in practice, with user preferences, are available at <a href="https://github.com/ayelet-seeman/coga.personalisation">https://github.com/ayelet-seeman/coga.personalisation</a>. This is a project to help personalization for any use - including people with learning and memory issues. It is described more at: <a href="https://www.w3.org/WAI/PF/cognitive-a11y-tf/wiki/Easy_Personalization">https://www.w3.org/WAI/PF/cognitive-a11y-tf/wiki/Easy_Personalization</a>. </p>
+				<p>This project consists of 4 parts:</p>
+				<ol>
+					<li><a href="https://github.com/ayelet-seeman/coga.personalisation/tree/JSON-Script">JSON files for user setting</a></li>
+					<li>Proposal for new syntax: (This document) <br /></li>
+					<li>An HTML page that uses some of the new syntax: <a href="https://github.com/ayelet-seeman/coga.personalisation/tree/ExampleWebPage/">https://github.com/ayelet-seeman/coga.personalisation/tree/ExampleWebPage/</a></li>
+					<li>Scripts that a web author can use or include that read the user settings in the JSON files and adapt the page for the user needs: <a href="https://github.com/ayelet-seeman/coga.personalisation/tree/Script-Options">https://github.com/ayelet-seeman/coga.personalisation/tree/Script-Options</a></li>
+				</ol>
+				<p>This is one example of personalization based on semantics. Others may follow. It is also worth noting that the GPII project is working on making user preferences portable which would also enhance this work.</p>
+				<p>In another use-case we would like to see interoperable symbol set codes for non-verbal people. Products for people who are non vocal often use symbols to help users communicate. These symbols are in fact peoples language. Unfortunately many of these symbols are both subject to copy write and are not interoperable. That means end-users can only use one device, and can not use apps or AT from a different company. An open set of references for symbol codes for these symbol sets however, could be interoperable. That means the end user could use an open source symbol set or buy the symbols and use them across different devices or applications. Symbols could still be proprietary but they would also be interoperable. </p>
+			</section>
 
-    <section id="sotd"> </section>
+			<section class="section" id="intro_context">
+				<h2>Contextual Personalization</h2>
+				<p>One important factor in optimizing the personalization of a product or service is to ensure that the personalization is appropriate for the current context of use. For example, settings that will suit the user of a mobile phone in their office or home will not be well suited to that user when they are driving a car. In a home or office, the typical user would probably prefer to send and receive text messages using the keyboard and screen of the mobile phone. However, in the car, voice input and text to speech output would be the most appropriate. In this car context, the profile settings of a typical user might be very similar to those that a blind user would use in all contexts.</p>
+			</section>
+		</section>
+		<section class="informative" id="terms">
+			<h1>Important Terms</h1>
+			<div data-include="common/terms.html" data-oninclude="restrictReferences"></div>
+		</section>
+		<section class="normative" id="semanticProperties">
+			<h1>Semantic Properties</h1> This Section covers semantic properties. <section id="characteristics_semanticproperties">
+				<h2>Characteristics of Semantic Properties</h2>
+				<p>Semantic properties have the characteristics described in the following sections.</p>
 
-    <section class="informative" id="introduction">
-      <h1>Introduction</h1>
-      <p>The goals of this specification include:</p>
-      <ul>
-        <li> expanding the accessibility information that may be supplied by the author;</li>
-        <li> facilitate preference driven individual personalization;</li>
-        <li> enable the author to specify key semantics needed to support users with cognitive i mpairments</li>
-      </ul>
-      <p>This is a proposal to define syntax for adaptable content such as: links, buttons, symbols, help and keyboard. This may be an WAI-ARIA COGA Extension.</p>
-      <p>Personalization involves tailoring aspects of the user experience to meet the preferences or needs of the user. For example, having familiar terms and symbols is key to being able to use the web. However what is familiar for one user may be new for another requiring them to learn new symbols. Personalization could include loading a set of symbols that is appropriate for the specific user, ensuring that all users find the icons simple and familiar.</p>
-      <p>Technology holds the promise of being extremely flexible and the design of many systems includes the expectation that users will be able to optimise their interaction experience according to their personal preferences or accessibility requirements (needs). </p>
+				<section id="propcharacteristic_relatedconcept">
+					<h3>Related Concepts</h3>
+					<p>Advisory information about features from this or other languages that correspond to this <a>property</a>. While the correspondence may not be exact, it is useful to help understand the intent of the state or property.</p>
+				</section>
 
-      <section class="section" id="why_accessibility">
-        <h2>Why We Need Personalization</h2>
-        <p>We need personalization because: </p>
-        <ul>
-          <li>Different user needs can conflict</li>
-          <li>Learning new design patterns (and widgets) can be confusing - we want to allow users to stick with what works for them </li>
-          <li>Extra support can be annoying to people who do not need it </li>
-          <li>Making content predictable is necessary for accessibility but can often be considered boring design </li>
-          <li>Ability to change levels of complexity (increase or decrease) - As people skills improve or decrease over time or context. </li>
-          <li>Enable us to really meet the user needs </li>
-        </ul>
-        <p>Some users need extra support. This can include: </p>
-        <ul>
-          <li> Symbols and graphics that they are familiar with </li>
-          <li> Tool tips </li>
-          <li> Language they understand </li>
-          <li> Less features </li>
-          <li> Separating advertisements, so they do not confuse them with native content </li>
-          <li> Keyboard short cuts </li>
-        </ul>
-        <p>For this we need standardized terms and supportive syntax that can be linked to associated symbols, terms, translations and explanations for the individual use via an attribute and personal preferences. </p>
-        <p>For example, assume an author can make it programanticaly known that a button is used to send an email. At at the user end, the button could be renderer with a symbol, term, and/or tooltips that is understandable for this particular user. It could automatically imply F1 help that explains the send function in simple terms. It could be identified with a keyboard short cut that will always be used for send. In addition it could be identified as important and always rendered, or rendered as a large button. </p>
-        <p>Working examples of how this could be used in practice, with user preferences, are available at <a href="https://github.com/ayelet-seeman/coga.personalisation">https://github.com/ayelet-seeman/coga.personalisation</a>. This is a project to help personalization for any use - including people with learning and memory issues. It is described more at: <a href="https://www.w3.org/WAI/PF/cognitive-a11y-tf/wiki/Easy_Personalization">https://www.w3.org/WAI/PF/cognitive-a11y-tf/wiki/Easy_Personalization</a>. </p>
-        <p>This project consists of 4 parts:</p>
-        <ol>
-          <li><a href="https://github.com/ayelet-seeman/coga.personalisation/tree/JSON-Script">JSON files for user setting</a></li>
-          <li>Proposal for new syntax: (This document) <br /></li>
-          <li>An HTML page that uses some of the new syntax: <a href="https://github.com/ayelet-seeman/coga.personalisation/tree/ExampleWebPage/">https://github.com/ayelet-seeman/coga.personalisation/tree/ExampleWebPage/</a></li>
-          <li>Scripts that a web author can use or include that read the user settings in the JSON files and adapt the page for the user needs: <a href="https://github.com/ayelet-seeman/coga.personalisation/tree/Script-Options">https://github.com/ayelet-seeman/coga.personalisation/tree/Script-Options</a></li>
-        </ol>
-        <p>This is one example of personalization based on semantics. Others may follow. It is also worth noting that the GPII project is working on making user preferences portable which would also enhance this work.</p>
-        <p>In another use-case we would like to see interoperable symbol set codes for non-verbal people. Products for people who are non vocal often use symbols to help users communicate. These symbols are in fact peoples language. Unfortunately many of these symbols are both subject to copy write and are not interoperable. That means end-users can only use one device, and can not use apps or AT from a different company. An open set of references for symbol codes for these symbol sets however, could be interoperable. That means the end user could use an open source symbol set or buy the symbols and use them across different devices or applications. Symbols could still be proprietary but they would also be interoperable. </p>
-      </section>
+				<section id="propcharacteristic_value">
+					<h3>Value</h3>
+					<p>Value type of the semantic <a>property</a>. The value may be one of the following types:</p>
+					<dl>
+						<dt id="valuetype_true-false">true/false</dt>
+						<dd>Value representing either true or false, with a default &quot;false&quot; value.</dd>
+						<dt id="valuetype_true-false-undefined">true/false/undefined</dt>
+						<dd>Value representing true or false, with a default &quot;undefined&quot; value indicating the state or property is not relevant.</dd>
+						<dt id="valuetype_idref">ID reference</dt>
+						<dd>Reference to the ID of another <a>element</a> in the same document</dd>
+						<dt id="valuetype_idref_list">ID reference list</dt>
+						<dd>A list of one or more ID references.</dd>
+						<dt id="valuetype_integer">integer</dt>
+						<dd>A numerical value without a fractional component.</dd>
+						<dt id="valuetype_number">number</dt>
+						<dd>Any real numerical value.</dd>
+						<dt id="valuetype_string">string</dt>
+						<dd>Unconstrained value type.</dd>
+						<dt id="valuetype_token">token</dt>
+						<dd>One of a limited set of allowed values.</dd>
+						<dt id="valuetype_token_list">token list</dt>
+						<dd>A list of one or more tokens.</dd>
+						<dt id="valuetype_uri">URI</dt>
+						<dd>A Uniform Resource Identifier as defined by <cite><a href="http://www.ietf.org/rfc/rfc3986.txt">RFC 3986</a></cite> [[RFC3986]]. It may reference a separate document, or a content fragment identifier in a separate document, or a content fragment identifier within the same document.</dd>
+					</dl>
+					<p>The "undefined" value, when allowed on a state or property, is an explicit indication that the state or property is not set. The value is used on states and properties that support tokens, and the &quot;undefined&quot; value is a string that is one of the allowed tokens. It is also used on some states and properties that accept true/false values, when &quot;undefined&quot; has a different meaning than &quot;false&quot;.</p>
+					<p>These are generic types for states and properties, but do not define specific representation. See <a href="#state_property_processing">State and Property Attribute Processing</a> for details on how these values are expressed and handled in host languages.</p>
+				</section>
 
-      <section class="section" id="intro_context">
-        <h2>Contextual Personalization</h2>
-        <p>One important factor in optimizing the personalization of a product or service is to ensure that the personalization is appropriate for the current context of use. For example, settings that will suit the user of a mobile phone in their office or home will not be well suited to that user when they are driving a car. In a home or office, the typical user would probably prefer to send and receive text messages using the keyboard and screen of the mobile phone. However, in the car, voice input and text to speech output would be the most appropriate. In this car context, the profile settings of a typical user might be very similar to those that a blind user would use in all contexts.</p>
-      </section>
-    </section>
+				<section id="semantic_prop_taxonomy">
+					<h2>Taxonomy of Semantic Properties</h2> Semantic properties are categorized as follows: <ol>
+						<li><a href="#generalSemantics">General Semantics</a></li>
+					</ol>
+				</section>
 
-    <section class="informative" id="terms">
-      <h1>Important Terms</h1>
-      <div data-include="common/terms.html" data-oninclude="restrictReferences"></div>
-    </section>
+				<section id="generalSemantics">
+					<h3>General Semantic Properties</h3> The following are general semantic properties used for personalization: <ul>
+						<li><code>coga-simplification</code></li>
+					</ul>
+				</section>
 
-    <section class="normative" id="semanticProperties">
-      <h1>Semantic Properties</h1> This Section covers semantic properties.
- <section id="characteristics_semanticproperties">
-        <h2>Characteristics of Semantic Properties</h2>
-        <p>Semantic properties have the characteristics described in the following sections.</p>
-
-        <section id="propcharacteristic_relatedconcept">
-          <h3>Related Concepts</h3>
-          <p>Advisory information about features from this or other languages that correspond to this <a>property</a>. While the correspondence may not be exact, it is useful to help understand the intent of the state or property.</p>
-        </section>
-
-        <section id="propcharacteristic_value">
-          <h3>Value</h3>
-          <p>Value type of the semantic <a>property</a>. The value may be one of the following types:</p>
-          <dl>
-            <dt id="valuetype_true-false">true/false</dt>
-            <dd>Value representing either true or false, with a default &quot;false&quot; value.</dd>
-            <dt id="valuetype_true-false-undefined">true/false/undefined</dt>
-            <dd>Value representing true or false, with a default &quot;undefined&quot; value indicating the state or property is not relevant.</dd>
-            <dt id="valuetype_idref">ID reference</dt>
-            <dd>Reference to the ID of another <a>element</a> in the same document</dd>
-            <dt id="valuetype_idref_list">ID reference list</dt>
-            <dd>A list of one or more ID references.</dd>
-            <dt id="valuetype_integer">integer</dt>
-            <dd>A numerical value without a fractional component.</dd>
-            <dt id="valuetype_number">number</dt>
-            <dd>Any real numerical value.</dd>
-            <dt id="valuetype_string">string</dt>
-            <dd>Unconstrained value type.</dd>
-            <dt id="valuetype_token">token</dt>
-            <dd>One of a limited set of allowed values.</dd>
-            <dt id="valuetype_token_list">token list</dt>
-            <dd>A list of one or more tokens.</dd>
-            <dt id="valuetype_uri">URI</dt>
-            <dd>A Uniform Resource Identifier as defined by <cite><a href="http://www.ietf.org/rfc/rfc3986.txt">RFC 3986</a></cite> [[RFC3986]]. It may reference a separate document, or a content fragment identifier in a separate document, or a content fragment identifier within the same document.</dd>
-          </dl>
-          <p>The "undefined" value, when allowed on a state or property, is an explicit indication that the state or property is not set. The value is used on states and properties that support tokens, and the &quot;undefined&quot; value is a string that is one of the allowed tokens. It is also used on some states and properties that accept true/false values, when &quot;undefined&quot; has a different meaning than &quot;false&quot;.</p>
-          <p>These are generic types for states and properties, but do not define specific representation. See <a href="#state_property_processing">State and Property Attribute Processing</a> for details on how these values are expressed and handled in host languages.</p>
-        </section>
-
-        <section id="semantic_prop_taxonomy">
-          <h2>Taxonomy of Semantic Properties</h2> Semantic properties are categorized as follows: <ol>
-            <li><a href="#generalSemantics">General Semantics</a></li>
-          </ol>
-        </section>
-
-        <section id="generalSemantics">
-          <h3>General Semantic Properties</h3> The following are general semantic properties used for personalization: <ul>
-            <li><code>coga-simplification</code></li>
-          </ul>
-        </section>
-
-        <section id="prop_def">
-          <h2>Definitions of Semantic Properties (all coga-* attributes)</h2>
-          <p id="index_role" class="placeholder">Placeholder for roles</p>
-          <p id="index_state_prop" class="placeholder"> Placeholder for index of states and properties </p>
-          <!--
+				<section id="prop_def">
+					<h2>Definitions of Semantic Properties (all coga-* attributes)</h2>
+					<p id="index_role" class="placeholder">Placeholder for roles</p>
+					<p id="index_state_prop" class="placeholder"> Placeholder for index of states and properties </p>
+					<!--
 					<div class="property" id="coga-simplification">
 				  		<pdef>coga-simplification</pdef>
                                 		
                         		</div>
 -->
-          <table class="property-features">
-            <caption>Characteristics:</caption>
-            <thead>
-              <tr>
-                <th scope="col">Characteristic</th>
-                <th scope="col">Value</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th class="property-related-head" scope="row">Related Concepts:</th>
-                <td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
-              </tr>
-              <tr>
-                <th class="property-applicability-head" scope="row">Used in Roles:</th>
-                <td class="property-applicability">Placeholder</td>
-              </tr>
-              <tr>
-                <th class="property-descendants-head" scope="row">Inherits into Roles:</th>
-                <td class="property-descendants">Placeholder</td>
-              </tr>
-              <tr>
-                <th class="property-value-head" scope="row">Value:</th>
-                <td class="property-value"><a href="#valuetype_idref">ID reference</a></td>
-              </tr>
-            </tbody>
-          </table>
-          <!--</div>-->
-        </section>
-      </section>
+					<table class="property-features">
+						<caption>Characteristics:</caption>
+						<thead>
+							<tr>
+								<th scope="col">Characteristic</th>
+								<th scope="col">Value</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th class="property-related-head" scope="row">Related Concepts:</th>
+								<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
+							</tr>
+							<tr>
+								<th class="property-applicability-head" scope="row">Used in Roles:</th>
+								<td class="property-applicability">Placeholder</td>
+							</tr>
+							<tr>
+								<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+								<td class="property-descendants">Placeholder</td>
+							</tr>
+							<tr>
+								<th class="property-value-head" scope="row">Value:</th>
+								<td class="property-value"><a href="#valuetype_idref">ID reference</a></td>
+							</tr>
+						</tbody>
+					</table>
+					<!--</div>-->
+				</section>
+			</section>
+			<section>
+				<h2>Simplification</h2>
+				<p><strong>Requirement</strong>: The user must be able to request a way to identify and differentiate between critical features, medium features and less important features. These need to be defined as important from a user perspective in the content. Typically, critical features may be used by many or most users, 90% of the time or more. High important features would be above 60% use. Medium important features would be 20% of users use it 20% of the time . Under 20% usage would be of low importance.</p>
+				<p><strong>User experience</strong>: Based on personalization setting the user can see less options. A sample user experience is available at <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html">https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html </a></p>
+				<div class="property" id="coga-simplification">
+					<pdef>coga-simplification</pdef>
+					<div class="property-description">
+						<p>(formerly coga-importance).</p>
+						<p>Having the following values: (main task such as send for an email) </p>
+						<ul>
+							<li><code>coga-simplification="simplest"</code>. This setting should be used on: <ul>
+									<li> Elements that are essential for the key function (from the user perspective) of the page (Example: The send button for an email draft) or</li>
+									<li> Elements that are sometimes critical to a user being able to use the site, such as &quot;save my work&quot; or &quot;emergency instructions&quot; or</li>
+									<li> Elements that are used by over 90% of a user group (such as parents or teachers) use this element most times they use the content<br />
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<p>Typically 3 links or buttons would be considered &quot;simplest&quot;</p>
+						<ul>
+							<li>
+								<code>coga-simplification="high"</code>. This setting should be used on: <ul>
+									<li> Elements that are used frequent (Example: The delete button for an email draft) or</li>
+									<li> Elements that are sometimes important to a user being able to use the site, such as settings or</li>
+									<li> Elements that are used by frequently (over 60%) by a user group (such as parents or teachers) use this element most times they use the content</li>
+								</ul>
+							</li>
+							<li>
+								<code>coga-simplification= "med"</code>. This setting should be used on elements that are not typically used. This is the default value.</li>
+							<li>
+								<code>coga-simplification="low"</code>. This setting should be used on elements that are rarely used or only used by advanced users. (Example: The terms and services or the archive button for an email draft) </li>
+						</ul>
+						<div class="note">
+							<p>These semantics aid simplification. But what content is most useful to a user varies from user to user. For example, men may be more interested in mens clothing, and may not be interested in the more frequently use womens clothing option. For that reason we may add context for elements that will help the personalization agent select the most useful content for a given user. This is also necessary for reminders (see bellow). RDFa may be the best way forward for this aspect.</p>
+							<p>It is worth mentioning that a lot of this information is known for personalization of advertisements and content optimization. </p>
+						</div>
+					</div>
+					<table class="property-features">
+						<caption>Characteristics:</caption>
+						<thead>
+							<tr>
+								<th scope="col">Characteristic</th>
+								<th scope="col">Value</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th class="property-related-head" scope="row">Related Concepts:</th>
+								<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
+							</tr>
+							<tr>
+								<th class="property-applicability-head" scope="row">Used in Roles:</th>
+								<td class="property-applicability">Placeholder</td>
+							</tr>
+							<tr>
+								<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+								<td class="property-descendants">Placeholder</td>
+							</tr>
+							<tr>
+								<th class="property-value-head" scope="row">Value:</th>
+								<td class="property-value"><a href="#valuetype_idref">ID reference</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+			<section>
+				<h2>Adding Context </h2>
+				<p><strong>Requirement:</strong> Having familiar terms and symbols is key to being able to use the web. However what is familiar for one user may be strange for another requiring them to learn new symbols. If a user agent or script knows the context of links, buttons, and other page elements then symbols and text used can be ones that the user understands. This can include: </p>
+				<ul>
+					<li> Symbols and graphics that they are familiar with </li>
+					<li> Tool tips </li>
+					<li> Language the use can understand </li>
+					<li> Keyboard short cuts </li>
+				</ul>
+				<p></p>
+				<p>For that we need to standardize supportive syntax and terms that can be linked to associated symbols, terms, translations and explanations, for the individual, via an attribute.</p>
+				<p></p>
+				<p><strong>Example user experience:</strong>, if an author gives to a button a role "send" then, without any work by the author, the button could be automatically rendered with a symbol, term, and/or tooltips that is understandable by a particular user. It could automatically imply F1 help that explains the send function in simple terms. It could be identified with a keyboard short cut that will always be used for send. In addition it could be identified as important and always rendered, or rendered as a large button. This would enable a consistent UI experience across applications and websites.</p>
+				<div class="property" id="coga-action">
+					<pdef>coga-action</pdef>
+					<div class="property-description">
+						<p>For example: &lt;button coga-action=&quot;undo&quot; &gt;default&lt;/button&gt;</p>
+						<p>The user experience may be simply replacing the text for the term &quot;undo&quot;. Note that there is no default value.</p>
+						<p><strong>Supported Values: </strong></p>
+						<p>The following could be supported values of <code>coga-action</code> for buttons:</p>
+						<ul>
+							<li>compose(default importance = "critical") </li>
+							<li>delete </li>
+							<li>next </li>
+							<li>previous </li>
+							<li>submit (default importance = "critical") </li>
+							<li>undo </li>
+							<li>cancel </li>
+							<li>buy</li>
+							<li>add label </li>
+							<li>move </li>
+							<li>view </li>
+							<li>save (default importance = "critical") </li>
+							<li>send (default importance = "critical") </li>
+							<li>received </li>
+							<li>sent </li>
+							<li>edit </li>
+							<li>reply </li>
+							<li>forward </li>
+							<li>my profile </li>
+							<li>upload </li>
+							<li>close </li>
+							<li>more </li>
+							<li>calendar </li>
+							<li>add entry </li>
+							<li>expand </li>
+							<li>unexpanded </li>
+							<li>open </li>
+							<li>new </li>
+							<li>print </li>
+							<li>settings </li>
+							<li>mode</li>
+							<li>higher</li>
+							<li>lower</li>
+						</ul>
+					</div>
+				</div>
+				<div class="property" id="coga-destination">
+					<pdef>coga-destination</pdef>
+					<div class="property-description">
+						<p>The <code>coga-destination</code> attribute provides the context of a link. It should be used on a link element or element with role="link".</p>
+						<p>For example: &lt;a href=&quot;home.html&quot; coga-destination=&quot;home&quot; &gt;our main page&lt;/a&gt;</p>
+						<p>The user experience may be simply replacing the text for the term &quot;home&quot; and adding an icon. Based on personalization setting the user can see diffrent icons. A sample user experience is available at <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html">https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html </a></p>
+						<p>It may also position this button to a location on the screen where the user is expecting the home page link. Note that there is no default value.</p>
+						<p><strong>Supported Values: </strong></p>
+						<p>The following could be supported values of <code>coga-destination</code>. </p>
+						<ul>
+							<li>home </li>
+							<li>contact us </li>
+							<li>our phone </li>
+							<li>our email </li>
+							<li>site map </li>
+							<li>help </li>
+							<li>about us </li>
+							<li>terms </li>
+							<li>tools </li>
+							<li>comment </li>
+							<li>language (English) </li>
+							<li>sign in </li>
+							<li>sign up </li>
+							<li>product </li>
+							<li>services </li>
+							<li>social (provide label ) </li>
+							<li>post </li>
+							<li>contactus </li>
+							<li>help </li>
+							<li>chat help </li>
+						</ul>
+					</div>
+				</div>
+				<div class="property" id="coga-field">
+					<pdef>coga-field</pdef>
+					<div class="property-description">
+						<p><code>coga-field</code> provides the context of a text input field such as a text box. It should be used on an input, text a responding role.</p>
+						<p>For example: &lt;input type="text" name="fname" coga-field=&quot;phone&quot;/&gt;</p>
+						<p>The user experience may include filling in the field and adding an icon.</p>
+						<p>coga-field values that would typically be on form controls and would have a user context - for example phone would relate to the user's phone. Note that there is no default value.</p>
+						<p>Note they can be concatenated such as coga-field=&quot;birthdate month&quot;</p>
+						<ul>
+							<li>name (corresponds to both first and family)</li>
+							<li>first name </li>
+							<li>family name </li>
+							<li>initial </li>
+							<li>phone (corresponds to a user phone number)</li>
+							<li>cell phone </li>
+							<li>address 1 </li>
+							<li>city </li>
+							<li>state </li>
+							<li>country </li>
+							<li>post code </li>
+							<li>phone </li>
+							<li>credit card </li>
+							<li>expiry </li>
+							<li>birth date</li>
+							<li>day, *month *year </li>
+							<li>expiry date</li>
+							<li>todays date</li>
+							<li>credit card code </li>
+							<li>date start </li>
+							<li>date end</li>
+						</ul>
+						<p><code>coga-field</code> can also give the context for text elements.</p>
+						<p><code>coga-field</code> values on text are:</p>
+						<ul>
+							<li>our-phone </li>
+							<li>our-address </li>
+							<li>our-email </li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section>
+				<h2>General context</h2>
+				<p><strong>Requirement: </strong> One important factor in optimizing the personalization of a product or service is to ensure that the personalization is appropriate for the current context of use as well as what is relevant for the user. For example a female user with a cognitive disability may need less options, and options that are for men are less likely to be relevant for her and may be demoted to bellow the scroll or placed under a &quot;more option&quot; button.</p>
+				<div class="property" id="coga-context">
+					<pdef>coga-context</pdef>
+					<div class="property-description">
+						<p>Coga-context would let the author give additional contextual information about the content.</p>
+						<p>Coga-context accepts the values of a URI or shortened URI. Note that there is no default value.</p>
+						<pre>&lt;a href=&quot;women.html&quot; coga-context=&quot;openref:gender#femail&quot;&gt;women&lt;/a&gt; </pre>
+						<p>To make this work without an RDF parser we recommend maintaining a list of recommended ontologies. </p>
+					</div>
+				</div>
 
-      <section>
-        <h2>Simplification</h2>
-        <p><strong>Requirement</strong>: The user must be able to request a way to identify and differentiate between critical features, medium features and less important features. These need to be defined as important from a user perspective in the content. Typically, critical features may be used by many or most users, 90% of the time or more. High important features would be above 60% use. Medium important features would be 20% of users use it 20% of the time . Under 20% usage would be of low importance.</p>
-        <p><strong>User experience</strong>: Based on personalization setting the user can see less options. A sample user experience is available at <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html">https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html </a></p>
-        <div class="property" id="coga-simplification">
-          <pdef>coga-simplification</pdef>
-          <div class="property-description">
-            <p>(formerly coga-importance).</p>
-            <p>Having the following values: (main task such as send for an email) </p>
-            <ul>
-              <li><code>coga-simplification="simplest"</code>. This setting should be used on: <ul>
-                  <li> Elements that are essential for the key function (from the user perspective) of the page (Example: The send button for an email draft) or</li>
-                  <li> Elements that are sometimes critical to a user being able to use the site, such as &quot;save my work&quot; or &quot;emergency instructions&quot; or</li>
-                  <li> Elements that are used by over 90% of a user group (such as parents or teachers) use this element most times they use the content<br />
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            <p>Typically 3 links or buttons would be considered &quot;simplest&quot;</p>
-            <ul>
-              <li>
-                <code>coga-simplification="high"</code>. This setting should be used on: <ul>
-                  <li> Elements that are used frequent (Example: The delete button for an email draft) or</li>
-                  <li> Elements that are sometimes important to a user being able to use the site, such as settings or</li>
-                  <li> Elements that are used by frequently (over 60%) by a user group (such as parents or teachers) use this element most times they use the content</li>
-                </ul>
-              </li>
-              <li>
-                <code>coga-simplification= "med"</code>. This setting should be used on elements that are not typically used. This is the default value.</li>
-              <li>
-                <code>coga-simplification="low"</code>. This setting should be used on elements that are rarely used or only used by advanced users. (Example: The terms and services or the archive button for an email draft) </li>
-            </ul>
-            <div class="note">
-              <p>These semantics aid simplification. But what content is most useful to a user varies from user to user. For example, men may be more interested in mens clothing, and may not be interested in the more frequently use womens clothing option. For that reason we may add context for elements that will help the personalization agent select the most useful content for a given user. This is also necessary for reminders (see bellow). RDFa may be the best way forward for this aspect.</p>
-              <p>It is worth mentioning that a lot of this information is known for personalization of advertisements and content optimization. </p>
-            </div>
-          </div>
-          <table class="property-features">
-            <caption>Characteristics:</caption>
-            <thead>
-              <tr>
-                <th scope="col">Characteristic</th>
-                <th scope="col">Value</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th class="property-related-head" scope="row">Related Concepts:</th>
-                <td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
-              </tr>
-              <tr>
-                <th class="property-applicability-head" scope="row">Used in Roles:</th>
-                <td class="property-applicability">Placeholder</td>
-              </tr>
-              <tr>
-                <th class="property-descendants-head" scope="row">Inherits into Roles:</th>
-                <td class="property-descendants">Placeholder</td>
-              </tr>
-              <tr>
-                <th class="property-value-head" scope="row">Value:</th>
-                <td class="property-value"><a href="#valuetype_idref">ID reference</a></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <section>
-        <h2>Adding Context </h2>
-        <p><strong>Requirement:</strong> Having familiar terms and symbols is key to being able to use the web. However what is familiar for one user may be strange for another requiring them to learn new symbols. If a user agent or script knows the context of links, buttons, and other page elements then symbols and text used can be ones that the user understands. This can include: </p>
-        <ul>
-          <li> Symbols and graphics that they are familiar with </li>
-          <li> Tool tips </li>
-          <li> Language the use can understand </li>
-          <li> Keyboard short cuts </li>
-        </ul>
-        <p></p>
-        <p>For that we need to standardize supportive syntax and terms that can be linked to associated symbols, terms, translations and explanations, for the individual, via an attribute.</p>
-        <p></p>
-        <p><strong>Example user experience:</strong>, if an author gives to a button a role "send" then, without any work by the author, the button could be automatically rendered with a symbol, term, and/or tooltips that is understandable by a particular user. It could automatically imply F1 help that explains the send function in simple terms. It could be identified with a keyboard short cut that will always be used for send. In addition it could be identified as important and always rendered, or rendered as a large button. This would enable a consistent UI experience across applications and websites.</p>
-        <div class="property" id="coga-action">
-          <pdef>coga-action</pdef>
-          <div class="property-description">
-            <p>For example: &lt;button coga-action=&quot;undo&quot; &gt;default&lt;/button&gt;</p>
-            <p>The user experience may be simply replacing the text for the term &quot;undo&quot;. Note that there is no default value.</p>
-            <p><strong>Supported Values: </strong></p>
-            <p>The following could be supported values of <code>coga-action</code> for buttons:</p>
-            <ul>
-              <li>compose(default importance = "critical") </li>
-              <li>delete </li>
-              <li>next </li>
-              <li>previous </li>
-              <li>submit (default importance = "critical") </li>
-              <li>undo </li>
-              <li>cancel </li>
-              <li>buy</li>
-              <li>add label </li>
-              <li>move </li>
-              <li>view </li>
-              <li>save (default importance = "critical") </li>
-              <li>send (default importance = "critical") </li>
-              <li>received </li>
-              <li>sent </li>
-              <li>edit </li>
-              <li>reply </li>
-              <li>forward </li>
-              <li>my profile </li>
-              <li>upload </li>
-              <li>close </li>
-              <li>more </li>
-              <li>calendar </li>
-              <li>add entry </li>
-              <li>expand </li>
-              <li>unexpanded </li>
-              <li>open </li>
-              <li>new </li>
-              <li>print </li>
-              <li>settings </li>
-              <li>mode</li>
-              <li>higher</li>
-              <li>lower</li>
-            </ul>
-          </div>
-        </div>
-        <div class="property" id="coga-destination">
-          <pdef>coga-destination</pdef>
-          <div class="property-description">
-            <p>The <code>coga-destination</code> attribute provides the context of a link. It should be used on a link element or element with role="link".</p>
-            <p>For example: &lt;a href=&quot;home.html&quot; coga-destination=&quot;home&quot; &gt;our main page&lt;/a&gt;</p>
-            <p>The user experience may be simply replacing the text for the term &quot;home&quot; and adding an icon. Based on personalization setting the user can see diffrent icons. A sample user experience is available at <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html">https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html </a></p>
-            <p>It may also position this button to a location on the screen where the user is expecting the home page link. Note that there is no default value.</p>
-            <p><strong>Supported Values: </strong></p>
-            <p>The following could be supported values of <code>coga-destination</code>. </p>
-            <ul>
-              <li>home </li>
-              <li>contact us </li>
-              <li>our phone </li>
-              <li>our email </li>
-              <li>site map </li>
-              <li>help </li>
-              <li>about us </li>
-              <li>terms </li>
-              <li>tools </li>
-              <li>comment </li>
-              <li>language (English) </li>
-              <li>sign in </li>
-              <li>sign up </li>
-              <li>product </li>
-              <li>services </li>
-              <li>social (provide label ) </li>
-              <li>post </li>
-              <li>contactus </li>
-              <li>help </li>
-              <li>chat help </li>
-            </ul>
-          </div>
-        </div>
-        <div class="property" id="coga-field">
-          <pdef>coga-field</pdef>
-          <div class="property-description">
-            <p><code>coga-field</code> provides the context of a text input field such as a text box. It should be used on an input, text a responding role.</p>
-            <p>For example: &lt;input type="text" name="fname" coga-field=&quot;phone&quot;/&gt;</p>
-            <p>The user experience may include filling in the field and adding an icon.</p>
-            <p>coga-field values that would typically be on form controls and would have a user context - for example phone would relate to the user's phone. Note that there is no default value.</p>
-            <p>Note they can be concatenated such as coga-field=&quot;birthdate month&quot;</p>
-            <ul>
-              <li>name (corresponds to both first and family)</li>
-              <li>first name </li>
-              <li>family name </li>
-              <li>initial </li>
-              <li>phone (corresponds to a user phone number)</li>
-              <li>cell phone </li>
-              <li>address 1 </li>
-              <li>city </li>
-              <li>state </li>
-              <li>country </li>
-              <li>post code </li>
-              <li>phone </li>
-              <li>credit card </li>
-              <li>expiry </li>
-              <li>birth date</li>
-              <li>day, *month *year </li>
-              <li>expiry date</li>
-              <li>todays date</li>
-              <li>credit card code </li>
-              <li>date start </li>
-              <li>date end</li>
-            </ul>
-            <p><code>coga-field</code> can also give the context for text elements.</p>
-            <p><code>coga-field</code> values on text are:</p>
-            <ul>
-              <li>our-phone </li>
-              <li>our-address </li>
-              <li>our-email </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h2>General context</h2>
-        <p><strong>Requirement: </strong> One important factor in optimizing the personalization of a product or service is to ensure that the personalization is appropriate for the current context of use as well as what is relevant for the user. For example a female user with a cognitive disability may need less options, and options that are for men are less likely to be relevant for her and may be demoted to bellow the scroll or placed under a &quot;more option&quot; button.</p>
-        <div class="property" id="coga-context">
-          <pdef>coga-context</pdef>
-          <div class="property-description">
-            <p>Coga-context would let the author give additional contextual information about the content.</p>
-            <p>Coga-context accepts the values of a URI or shortened URI. Note that there is no default value.</p>
-            <pre>&lt;a href=&quot;women.html&quot; coga-context=&quot;openref:gender#femail&quot;&gt;women&lt;/a&gt; </pre>
-            <p>To make this work without an RDF parser we recommend maintaining a list of recommended ontologies. </p>
-          </div>
-        </div>
-
-        <section>
-          <h3>Should we be using RDFa?</h3>
-          <p>The context based properties should be convertible to RDFa. (see <a href="https://www.w3.org/TR/xhtml-rdfa-primer/">RDFa Primer</a>) and the task force should create this mapping.</p>
-          <p>Note that a lot of this can be done using RDFa. However it is easy to change the meaning with RDFa and a very basic parser will misinterpret the result. The coga work needs to be usable by as many authors as possible, and not only thoughs who can implement RDF logic.</p>
-          <p>Further , personalization setting need to be limited, and RDF can give an unlimited number of potential options which will make the system unusable. (This is unless we create restrictions and controls on an ontology uses - such as mapping to know ontologies.)</p>
-          <p>For example, in the code below the property homepage does not refer to the home page of the site but of the person being references. Beyond declaring the type of data we are dealing with, each typeof creates a new blank node with its own distinct properties. </p>
-          <pre>
+				<section>
+					<h3>Should we be using RDFa?</h3>
+					<p>The context based properties should be convertible to RDFa. (see <a href="https://www.w3.org/TR/xhtml-rdfa-primer/">RDFa Primer</a>) and the task force should create this mapping.</p>
+					<p>Note that a lot of this can be done using RDFa. However it is easy to change the meaning with RDFa and a very basic parser will misinterpret the result. The coga work needs to be usable by as many authors as possible, and not only thoughs who can implement RDF logic.</p>
+					<p>Further , personalization setting need to be limited, and RDF can give an unlimited number of potential options which will make the system unusable. (This is unless we create restrictions and controls on an ontology uses - such as mapping to know ontologies.)</p>
+					<p>For example, in the code below the property homepage does not refer to the home page of the site but of the person being references. Beyond declaring the type of data we are dealing with, each typeof creates a new blank node with its own distinct properties. </p>
+					<pre>
 &lt;div vocab="http://xmlns.com/foaf/0.1/"&gt;
 &lt;ul&gt;        
    &lt;li typeof="Person"&gt;          
@@ -514,9 +505,9 @@
    &lt;/li&gt;     
 &lt;/ul&gt;
 				</pre>
-          <p></p>
-          <p>We may recommend adding RDFA that describe the role of the item (see <a href="https://www.w3.org/TR/xhtml-rdfa-primer/">RDFa Primer</a>):</p>
-          <pre>
+					<p></p>
+					<p>We may recommend adding RDFA that describe the role of the item (see <a href="https://www.w3.org/TR/xhtml-rdfa-primer/">RDFa Primer</a>):</p>
+					<pre>
 &lt;div resource="/alice/posts/jos_barbecue"&gt;
 	&lt;h2 property="title"&gt;Jo's Barbecue&lt;/h2&gt;
 	&lt;p&gt;Date: &lt;span property="created"&gt;2011-09-14&lt;/span&gt;&lt;/p&gt;
@@ -524,129 +515,123 @@
 	...     
 &lt;/div&gt;
 			</pre>
-        </section>
-      </section>
-
-      <section>
-        <h2>Concept codes</h2>
-        <p><strong>Requirement: </strong>We would like to enable interoperable symbol set codes for Non verbal people. Products for people who are non vocal often use symbols to help users communicate. These symbols are in fact peoples language. Unfortunately many of these symbols are both subject to copy write AND not interoperable. That means end-users can only use one device, and can not use apps or AT from a different company. There are open set of symbol codes for these symbol sets, that could be referenced then they can be interoperable. alternatively wordnet nodes could be referenced. If the users symbols are mapped to the same nodes then users agents will be able to load the user understandable symbol. That means the end use could buy the symbols and use them across different devices or applications. They would still be proprietary but they would also be interoperable. </p>
-        <p>User experience: AAC users will load symbols that they understand in different applications that are made by a different provider.</p>
-        <div class="property" id="coga-concept">
-          <pdef>coga-concept</pdef>
-          <div class="property-description">
-            <p><strong>Supported Values:</strong> URL </p>
-            <p>Note that there is no default value.</p>
-            <p><strong>Examples:</strong></p>
-            <pre>&lt;img coga-concept="http//wordnet.com/node/girl&quot; href=&quot;mygirlsy.bmp/&gt; </pre>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h2>Potential parts of a page</h2>
-        <p><strong>Requirement:</strong> The following could be extensions for aria landmarks or ePub </p>
-        <p><strong>User experience:</strong> symbols and colors could be used consistently across different content. </p>
-        <p>Links (such as ePub nav maps) can be automatically generated for people learn via keypoints or examples.</p>
-        <p><strong>Examples:</strong>
-        </p>
-        <ul>
-          <li>key points </li>
-          <li>example </li>
-          <li>note </li>
-          <li>warning </li>
-          <li>step </li>
-          <li>external - for external content, such as sponsored or advertising </li>
-          <li>offers - for special offers that are complementary to the main content or task </li>
-          <li>advertisement - advertisement or sponsored content </li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Number free</h2>
-        <p><strong>Requirement</strong>: Not everyone can understand numbers. We therefor suggest coga-numberfree for alternative text for people who can not understand the main content</p>
-        <p><strong>User experience:</strong></p>
-        <p>A suggested user experience would be: Numerical concepts could be rendered by the user agent slightly different so that the user knows a number free explanation is available. The user can then mouse over the content and a tooltips would give the number free value</p>
-        <div class="property" id="coga-numberfree">
-          <pdef>coga-numberfree</pdef>
-          <div class="property-description">
-            <p><strong>Supported value : </strong> String</p>
-            <p>Note that there is no default value.</p>
-            <p><strong>For example:</strong></p>
-            <pre>&lt;span coga-numberfree=&quot;almost all&quot;&gt;9 out of 10 &lt;/span&gt;
+				</section>
+			</section>
+			<section>
+				<h2>Concept codes</h2>
+				<p><strong>Requirement: </strong>We would like to enable interoperable symbol set codes for Non verbal people. Products for people who are non vocal often use symbols to help users communicate. These symbols are in fact peoples language. Unfortunately many of these symbols are both subject to copy write AND not interoperable. That means end-users can only use one device, and can not use apps or AT from a different company. There are open set of symbol codes for these symbol sets, that could be referenced then they can be interoperable. alternatively wordnet nodes could be referenced. If the users symbols are mapped to the same nodes then users agents will be able to load the user understandable symbol. That means the end use could buy the symbols and use them across different devices or applications. They would still be proprietary but they would also be interoperable. </p>
+				<p>User experience: AAC users will load symbols that they understand in different applications that are made by a different provider.</p>
+				<div class="property" id="coga-concept">
+					<pdef>coga-concept</pdef>
+					<div class="property-description">
+						<p><strong>Supported Values:</strong> URL </p>
+						<p>Note that there is no default value.</p>
+						<p><strong>Examples:</strong></p>
+						<pre>&lt;img coga-concept="http//wordnet.com/node/girl&quot; href=&quot;mygirlsy.bmp/&gt; </pre>
+					</div>
+				</div>
+			</section>
+			<section>
+				<h2>Potential parts of a page</h2>
+				<p><strong>Requirement:</strong> The following could be extensions for aria landmarks or ePub </p>
+				<p><strong>User experience:</strong> symbols and colors could be used consistently across different content. </p>
+				<p>Links (such as ePub nav maps) can be automatically generated for people learn via keypoints or examples.</p>
+				<p><strong>Examples:</strong>
+				</p>
+				<ul>
+					<li>key points </li>
+					<li>example </li>
+					<li>note </li>
+					<li>warning </li>
+					<li>step </li>
+					<li>external - for external content, such as sponsored or advertising </li>
+					<li>offers - for special offers that are complementary to the main content or task </li>
+					<li>advertisement - advertisement or sponsored content </li>
+				</ul>
+			</section>
+			<section>
+				<h2>Number free</h2>
+				<p><strong>Requirement</strong>: Not everyone can understand numbers. We therefor suggest coga-numberfree for alternative text for people who can not understand the main content</p>
+				<p><strong>User experience:</strong></p>
+				<p>A suggested user experience would be: Numerical concepts could be rendered by the user agent slightly different so that the user knows a number free explanation is available. The user can then mouse over the content and a tooltips would give the number free value</p>
+				<div class="property" id="coga-numberfree">
+					<pdef>coga-numberfree</pdef>
+					<div class="property-description">
+						<p><strong>Supported value : </strong> String</p>
+						<p>Note that there is no default value.</p>
+						<p><strong>For example:</strong></p>
+						<pre>&lt;span coga-numberfree=&quot;almost all&quot;&gt;9 out of 10 &lt;/span&gt;
 			</pre>
-            <pre>&lt;span coga-numberfree=&quot;hat and coat weather&quot;&gt;The weather is <span>9 degrees&lt;/span&gt;</span>
+						<pre>&lt;span coga-numberfree=&quot;hat and coat weather&quot;&gt;The weather is <span>9 degrees&lt;/span&gt;</span>
 			</pre>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h2>Non-literal text and images</h2>
-        <p><strong>Requirement: </strong>Not everyone can understand non-literal text and icons such as metaphors, idioms etc. We need a tag that identifies text or images as non literal and allows the author to explain non-literal text and images to users.</p>
-        <p><strong>User experience:</strong></p>
-        <p>A suggested user experience would be: Non literal content could be rendered by the user agent slightly differently so that the user knows that this content should not be taken literally and that a literal explanation is available. The user can then mouse over the content and a tooltips would give the literal value.</p>
-        <div class="property">
-          <pdef>coga-literal</pdef>
-          <div class="property-description">
-            <p><strong>Supported value: </strong>String</p>
-            <p>Note that there is no default value.</p>
-            <p><strong>Examples:</strong></p>
-            <pre>&lt;span coga-literal=&quot;it is raining hard&quot;&gt; It is <span>raining cats and dogs</span> &lt;/span&gt;</pre>
-            <p>User agents can render non-literal text in a different way so that users will know that this is non literal. They can then use a mouse over or other technique to receive the translation. </p>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h2>Explain and feedback</h2>
-        <p><strong>Requirement: </strong></p>
-        <p>Some users need additional help. We request an attribute where the author can provide additional information.or what just happened.</p>
-        <div class="property" id="coga-feedback">
-          <pdef>coga-feedback</pdef>
-          <div class="property-description">
-            <p>This attribute provides immediate feedback that can be shown or spoken when any event is triggered on a control.</p>
-            <p><strong>User experience: </strong>This can be rendered as text at the top of the page and read immediately. Most users will not want this text rendered and spoken. Other users however will need it to know what has just happened. </p>
-          </div>
-        </div>
-        <div class="property" id="coga-explain">
-          <pdef>coga-explain</pdef>
-          <div class="property-description">
-            <p>This attribute provides any information that helps the user anticipate the functionality, such as letting the user know what behavior will trigger an event. This is most important if the mechanism is not standard. </p>
-            <p>User experience: This help can be rendered as a tool tip, help link or read when the control or link is read. Most users will not want this text rendered or spoken, but other users however will need it to understand the behavior of the element.</p>
-            <p>Note that there is no default value.</p>
-            <p><strong>Examples:</strong></p>
-            <pre>coga-explain="press enter to send the email" </pre>
-            <pre>coga-feedback="your email on birthdays was sent" </pre>
-            <p>These values will change when the email is sent.</p>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h3>More Help</h3>
-        <p><strong>Requirement: </strong>Some users may need additional information or specifically additional help inforamtion. We request additonal attributes so that an author can indicate the existence of this additional information.</p>
-        <div class="property" id="coga-moreinfo">
-          <pdef>coga-moreinfo</pdef>
-          <div class="property-description">
-            <p><strong>Supported values: </strong>URI</p>
-            <p>Note that there is no default value.</p>
-          </div>
-        </div>
-        <div class="property" id="coga-extrahelp">
-          <pdef>coga-extrahelp</pdef>
-          <div class="property-description">
-            <p><strong>Supported values: </strong>URI</p>
-            <p>Note that there is no default value.</p>
-          </div>
-        </div>
-        <div class="property" id="coga-helptype">
-          <pdef>coga-helptype</pdef>
-          <div class="property-description">
-            <p><strong>Supported values: </strong> tooltips/humanhelp/morehelp/topicsearch/automated/faqs/helpform/simplified/glossary/dictionary/thesaurus</p>
-            <p><strong>Example:</strong></p>
-            <pre>&lt;button type="button" coga-extrahelp=&quot;uri2 uri3&quot; &gt;undo&lt;/button&gt;</pre>
-            <p>URI 2 may read: </p>
-            <pre>&lt;div id=&quot;uri2&quot; 
+					</div>
+				</div>
+			</section>
+			<section>
+				<h2>Non-literal text and images</h2>
+				<p><strong>Requirement: </strong>Not everyone can understand non-literal text and icons such as metaphors, idioms etc. We need a tag that identifies text or images as non literal and allows the author to explain non-literal text and images to users.</p>
+				<p><strong>User experience:</strong></p>
+				<p>A suggested user experience would be: Non literal content could be rendered by the user agent slightly differently so that the user knows that this content should not be taken literally and that a literal explanation is available. The user can then mouse over the content and a tooltips would give the literal value.</p>
+				<div class="property">
+					<pdef>coga-literal</pdef>
+					<div class="property-description">
+						<p><strong>Supported value: </strong>String</p>
+						<p>Note that there is no default value.</p>
+						<p><strong>Examples:</strong></p>
+						<pre>&lt;span coga-literal=&quot;it is raining hard&quot;&gt; It is <span>raining cats and dogs</span> &lt;/span&gt;</pre>
+						<p>User agents can render non-literal text in a different way so that users will know that this is non literal. They can then use a mouse over or other technique to receive the translation. </p>
+					</div>
+				</div>
+			</section>
+			<section>
+				<h2>Explain and feedback</h2>
+				<p><strong>Requirement: </strong></p>
+				<p>Some users need additional help. We request an attribute where the author can provide additional information.or what just happened.</p>
+				<div class="property" id="coga-feedback">
+					<pdef>coga-feedback</pdef>
+					<div class="property-description">
+						<p>This attribute provides immediate feedback that can be shown or spoken when any event is triggered on a control.</p>
+						<p><strong>User experience: </strong>This can be rendered as text at the top of the page and read immediately. Most users will not want this text rendered and spoken. Other users however will need it to know what has just happened. </p>
+					</div>
+				</div>
+				<div class="property" id="coga-explain">
+					<pdef>coga-explain</pdef>
+					<div class="property-description">
+						<p>This attribute provides any information that helps the user anticipate the functionality, such as letting the user know what behavior will trigger an event. This is most important if the mechanism is not standard. </p>
+						<p>User experience: This help can be rendered as a tool tip, help link or read when the control or link is read. Most users will not want this text rendered or spoken, but other users however will need it to understand the behavior of the element.</p>
+						<p>Note that there is no default value.</p>
+						<p><strong>Examples:</strong></p>
+						<pre>coga-explain="press enter to send the email" </pre>
+						<pre>coga-feedback="your email on birthdays was sent" </pre>
+						<p>These values will change when the email is sent.</p>
+					</div>
+				</div>
+			</section>
+			<section>
+				<h3>More Help</h3>
+				<p><strong>Requirement: </strong>Some users may need additional information or specifically additional help inforamtion. We request additonal attributes so that an author can indicate the existence of this additional information.</p>
+				<div class="property" id="coga-moreinfo">
+					<pdef>coga-moreinfo</pdef>
+					<div class="property-description">
+						<p><strong>Supported values: </strong>URI</p>
+						<p>Note that there is no default value.</p>
+					</div>
+				</div>
+				<div class="property" id="coga-extrahelp">
+					<pdef>coga-extrahelp</pdef>
+					<div class="property-description">
+						<p><strong>Supported values: </strong>URI</p>
+						<p>Note that there is no default value.</p>
+					</div>
+				</div>
+				<div class="property" id="coga-helptype">
+					<pdef>coga-helptype</pdef>
+					<div class="property-description">
+						<p><strong>Supported values: </strong> tooltips/humanhelp/morehelp/topicsearch/automated/faqs/helpform/simplified/glossary/dictionary/thesaurus</p>
+						<p><strong>Example:</strong></p>
+						<pre>&lt;button type="button" coga-extrahelp=&quot;uri2 uri3&quot; &gt;undo&lt;/button&gt;</pre>
+						<p>URI 2 may read: </p>
+						<pre>&lt;div id=&quot;uri2&quot; 
     coga-helptype=&quot;morehelp&quot; 
     coga-hidden=&quot;true&quot;&gt;
   pressing the undo button will erase all your work on this page. 
@@ -664,42 +649,40 @@
     coga-extrahelp=&quot;glossary&quot; 
     coga-hidden=&quot;true&quot;&gt;
 </pre>
-          </div>
-        </div>
-      </section>
+					</div>
+				</div>
+			</section>
+			<section>
+				<h2>Potential Features</h2>
+				<p>The following may not be necessary </p>
+				<ul>
+					<li>Views </li>
+					<li>ascending. descending </li>
+					<li>day, week month </li>
+					<li>this week </li>
+					<li>this month </li>
+					<li>today </li>
+				</ul>
+			</section>
+			<section>
+				<h2>Language type support</h2>
+				<p><strong>Requirement: </strong>Sometimes you may want to provide a simplified version of a section of a page. For example, you may wish to provide a simplified summary of legal document, but still have a longer version for other users. These alternative versions may not be identical in content but maintain the gist of the original content.</p>
+				<div class="property" id="coga-alternative">
+					<pdef>coga-alternative</pdef>
 
-      <section>
-        <h2>Potential Features</h2>
-        <p>The following may not be necessary </p>
-        <ul>
-          <li>Views </li>
-          <li>ascending. descending </li>
-          <li>day, week month </li>
-          <li>this week </li>
-          <li>this month </li>
-          <li>today </li>
-        </ul>
-      </section>
+					<p>Would be used on an alternitive content as an alternative to more detailed or difficult to understand content. coga-alternative can be used on a span, div, link or image that servers as alternitive content to it's direct parent element.</p>
+					<div class="property-description">
+						<p><strong>Supported values:</strong>
+						</p>
+						<ul>
+							<li>On text: easylang, explain, more, vocab500, vocab1000, vocab2000, active, literal, numberfree, smallsentences, chunks, General: lessoptions. Whitespace, largefont </li>
+							<li>Images: symbolic , realistic</li>
+							<li>p0, p1, p1, p2, p3 Where p0 are images with true content, p1 is a symbol or illustration that is typically shown with alt=&quot;&quot;, P2 are extra illustration that most people will not mind such as at the start of a paragraph or option. p3 are for disability centric illustrations that can disturb other people and may be mid sentence. </li>
+						</ul>
+						<p>Note that there is no default value.</p>
 
-      <section>
-        <h2>Language type support</h2>
-        <p><strong>Requirement: </strong>Sometimes you may want to provide a simplified version of a section of a page. For example, you may wish to provide a simplified summary of legal document, but still have a longer version for other users. These alternative versions may not be identical in content but maintain the gist of the original content.</p>
-        <div class="property" id="coga-alternative">
-          <pdef>coga-alternative</pdef>
-
-          <p>Would be used on an alternitive content as an alternative to more detailed or difficult to understand content. coga-alternative can be used on a span, div, link or image that servers as alternitive content to it's direct parent element.</p>
-          <div class="property-description">
-            <p><strong>Supported values:</strong>
-            </p>
-            <ul>
-              <li>On text: easylang, explain, more, vocab500, vocab1000, vocab2000, active, literal, numberfree, smallsentences, chunks, General: lessoptions. Whitespace, largefont </li>
-              <li>Images: symbolic , realistic</li>
-              <li>p0, p1, p1, p2, p3 Where p0 are images with true content, p1 is a symbol or illustration that is typically shown with alt=&quot;&quot;, P2 are extra illustration that most people will not mind such as at the start of a paragraph or option. p3 are for disability centric illustrations that can disturb other people and may be mid sentence. </li>
-            </ul>
-            <p>Note that there is no default value.</p>
-
-            <strong>Example:</strong>
-            <pre>&lt;div&gt;
+						<strong>Example:</strong>
+						<pre>&lt;div&gt;
   &lt;span coga-alternative="easylang numberfree vocab1000" class="hidden"&gt;>
     most people prefer simple text
   &lt;/span&gt;
@@ -708,29 +691,28 @@
   with 56% claiming there preferred the simplified text , 
   with the remainder unsure or stated it depends on the context.
 &lt;/div&gt;</pre>
-          </div>
-        </div>
-        <div class="property" id="coga-easylang">
-          <pdef>coga-easylang</pdef>
-          <div class="property-description">
-            <p><code>coga-easylang</code> will contain a version of the content that is easier to read and understand. Note that this only works on small sections of text as the easylang attribute does not support full HTML, such as lists and sections.</p>
-            <p><strong>Supported values:</strong> String</p>
-            <pre>&lt;span coga-easylang=&quot;some text that is easy to read&quot;&gt; some convoluted obtuse text&lt;/span&gt;</pre>
-            <p>Where coga-easylang should use as simple well-known words as possible, and active voicing, literal text, small simple sentences. Acronyms and abbreviations should be avoided, unless they are the common way to refer to an item.</p>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h3 id="logs">Logs</h3>
-      </section>
-      <div> This proposal is to track the tasks that a user has done, so that they can be reminded of them, and return to or fix a task. The suggested syntax should allow the author to transform some of the information into breadcrumbs via CSS, and  the user system can read and present more or less information to the user as per their preferences. <p>Preferably this should be in the header so that the user agent can build a cross application log of user tasks.</p>
-        <p>Note that there is no default value.</p>
-        <p>Notes: </p>
-        <p>This is just a proposed syntax. Other syntax may be better.</p>
-        <p>For protection of privacy ,it must be easy for the user to delete the log, and prevent the log from being stored. </p>
-      </div>
-      <pre>&lt;log name="booking trip"&gt; 
+					</div>
+				</div>
+				<div class="property" id="coga-easylang">
+					<pdef>coga-easylang</pdef>
+					<div class="property-description">
+						<p><code>coga-easylang</code> will contain a version of the content that is easier to read and understand. Note that this only works on small sections of text as the easylang attribute does not support full HTML, such as lists and sections.</p>
+						<p><strong>Supported values:</strong> String</p>
+						<pre>&lt;span coga-easylang=&quot;some text that is easy to read&quot;&gt; some convoluted obtuse text&lt;/span&gt;</pre>
+						<p>Where coga-easylang should use as simple well-known words as possible, and active voicing, literal text, small simple sentences. Acronyms and abbreviations should be avoided, unless they are the common way to refer to an item.</p>
+					</div>
+				</div>
+			</section>
+			<section>
+				<h3 id="logs">Logs</h3>
+			</section>
+			<div> This proposal is to track the tasks that a user has done, so that they can be reminded of them, and return to or fix a task. The suggested syntax should allow the author to transform some of the information into breadcrumbs via CSS, and  the user system can read and present more or less information to the user as per their preferences. <p>Preferably this should be in the header so that the user agent can build a cross application log of user tasks.</p>
+				<p>Note that there is no default value.</p>
+				<p>Notes: </p>
+				<p>This is just a proposed syntax. Other syntax may be better.</p>
+				<p>For protection of privacy ,it must be easy for the user to delete the log, and prevent the log from being stored. </p>
+			</div>
+			<pre>&lt;log name="booking trip"&gt; 
   &lt;step status ="done"&gt; 
     &lt;name&gt;buy ticket&lt;/name&gt;
     &lt;actiontaken&gt;bought ticket to NY return&lt;/actiontaken&gt;
@@ -746,611 +728,605 @@
     &lt;view current changepossible="yes"/&gt; 
   &lt;/step&gt;
 &lt;/log&gt;</pre>
-      <p>Note that status can have values of : done, pending , current. Where pending is a step that has not yet been completed but is not the current step.</p>
-      <p>An alternative syntax could be:</p>
-      <pre>&lt;div role="log" aria-label=&quot;booking trip&quot; aria-hidden="true"/&gt;
+			<p>Note that status can have values of : done, pending , current. Where pending is a step that has not yet been completed but is not the current step.</p>
+			<p>An alternative syntax could be:</p>
+			<pre>&lt;div role="log" aria-label=&quot;booking trip&quot; aria-hidden="true"/&gt;
 </pre>
-      <p>Open questions: Should the application name be in the log?</p>
-
-      <section>
-        <h3>Reminders and messages</h3>
-        <p><strong>Requirement: </strong>We require an attribute that enables different users to experience different amount of reminders and messages based on personal preferences. Reminders are a wonderful tool for many people with cognitive disabilities. However too many reminders will be annoying or distracting for some other users. Currently people can turn off distractions such as skype, and facebook, across different devices, and then may forget to turn them back on.</p>
-        <p>These semantics allow for different solutions so that users are able to focus without missing important messages. Users need to manage all distractions by forming a cross application and cross device distraction matrix that manages all distractions in one setting. It is based on a matrix for distractions at the operating system , browser or cloud level. People and users can be clustered in terms of importance or groups. For example, the CEO and your child's care giver could both be considered critical contacts. So even if they do not feel the message is urgent they can sometimes disrupt the user anyway. Some family members and important colleagues can be in another group, friends and extended family in a third group, system messages from the compliance system can be a different group again. </p>
-        <div class="property" id="coga-messageimportance">
-          <pdef>coga-messageimportance</pdef>
-          <div class="property-description">
-            <p><strong>Supported values: </strong></p>
-            <p><strong>critical: </strong>To be critical a message needs to be both urgent and content that the user is very likely to consider important. For example, a system may send a message that it is going to reboot in one miunet to install updates. </p>
-            <p><strong>medium: </strong>Important messages that needs the user's attention at their convenience. For example, a relatively important chat message. Note that this is the default value.</p>
-            <p><strong>low</strong>: A message that does not need time sensitive attention. For example, a typical chat message</p>
-            <p><strong>Example:</strong></p>
-            <pre>&lt;div role=&quot;alert&quot; 
+			<p>Open questions: Should the application name be in the log?</p>
+			<section>
+				<h3>Reminders and messages</h3>
+				<p><strong>Requirement: </strong>We require an attribute that enables different users to experience different amount of reminders and messages based on personal preferences. Reminders are a wonderful tool for many people with cognitive disabilities. However too many reminders will be annoying or distracting for some other users. Currently people can turn off distractions such as skype, and facebook, across different devices, and then may forget to turn them back on.</p>
+				<p>These semantics allow for different solutions so that users are able to focus without missing important messages. Users need to manage all distractions by forming a cross application and cross device distraction matrix that manages all distractions in one setting. It is based on a matrix for distractions at the operating system , browser or cloud level. People and users can be clustered in terms of importance or groups. For example, the CEO and your child's care giver could both be considered critical contacts. So even if they do not feel the message is urgent they can sometimes disrupt the user anyway. Some family members and important colleagues can be in another group, friends and extended family in a third group, system messages from the compliance system can be a different group again. </p>
+				<div class="property" id="coga-messageimportance">
+					<pdef>coga-messageimportance</pdef>
+					<div class="property-description">
+						<p><strong>Supported values: </strong></p>
+						<p><strong>critical: </strong>To be critical a message needs to be both urgent and content that the user is very likely to consider important. For example, a system may send a message that it is going to reboot in one miunet to install updates. </p>
+						<p><strong>medium: </strong>Important messages that needs the user's attention at their convenience. For example, a relatively important chat message. Note that this is the default value.</p>
+						<p><strong>low</strong>: A message that does not need time sensitive attention. For example, a typical chat message</p>
+						<p><strong>Example:</strong></p>
+						<pre>&lt;div role=&quot;alert&quot; 
     coga-messageimportance=&quot;medium&quot;&gt;
   It is your daughter's birthday tomorrow
 &lt;/div&gt;</pre>
-          </div>
-        </div>
-        <div class="property" id="coga-messagefrom">
-          <pdef>coga-messagefrom</pdef>
-          <div class="property-description">
-            <p><strong>Supported values: </strong>a string value that identifies the sender of the message. If multiple names are used they can be separated by a coma.</p>
-            <p>Note that there is no default value.</p>
-            <p><strong>Example:</strong></p>
-            <pre>&lt;div role=&quot;alert&quot; 
+					</div>
+				</div>
+				<div class="property" id="coga-messagefrom">
+					<pdef>coga-messagefrom</pdef>
+					<div class="property-description">
+						<p><strong>Supported values: </strong>a string value that identifies the sender of the message. If multiple names are used they can be separated by a coma.</p>
+						<p>Note that there is no default value.</p>
+						<p><strong>Example:</strong></p>
+						<pre>&lt;div role=&quot;alert&quot; 
     coga-messageimportance=&quot;low&quot; 
     coga-messagefrom=&quot;lisa seeman, lseeman&quot;&gt;
   I posted a new version on github for you to review
 &lt;/div&gt;</pre>
-          </div>
-        </div>
-        <div class="property" id="coga-messagecontext">
-          <pdef>coga-messagecontext</pdef>
-          <div class="property-description">
-            <p><strong>Supported values: </strong><strong> </strong>a string value that identifies the locaction that makes this message relevent. Typical values are &quot;home&quot; nd &quot;work&quot;. If multiple locations are relivent they can be separated by a coma.</p>
-            <p>Note that there is no default value.</p>
-            <p><strong>Example:</strong></p>
-            <pre>&lt;div role=&quot;alert&quot;
+					</div>
+				</div>
+				<div class="property" id="coga-messagecontext">
+					<pdef>coga-messagecontext</pdef>
+					<div class="property-description">
+						<p><strong>Supported values: </strong><strong> </strong>a string value that identifies the locaction that makes this message relevent. Typical values are &quot;home&quot; nd &quot;work&quot;. If multiple locations are relivent they can be separated by a coma.</p>
+						<p>Note that there is no default value.</p>
+						<p><strong>Example:</strong></p>
+						<pre>&lt;div role=&quot;alert&quot;
    coga-messageimportance=&quot;low&quot; 
    coga-messagefrom=&quot;lisa seeman, lseeman&quot; 
    coga-messagecontext=&quot;work&quot;&gt;
   I posted a new version on github for you to review
 &lt;/div&gt;</pre>
-          </div>
-        </div>
-        <div class="property" id="coga-messagetime">
-          <pdef>coga-messagetime</pdef>
-          <div class="property-description">
-            <p><strong>Supported values: </strong><strong> </strong>24 hour date time format. DD.MM.YEAR.HOUR.MM - DD.MM.YEAR.HOUR.MM where the second date is an optional exclusive expiry date.</p>
-            <p>Note that there is no default value.</p>
-            <p><strong>Example:</strong></p>
-            <pre>&lt;div role=&quot;alert&quot; 
+					</div>
+				</div>
+				<div class="property" id="coga-messagetime">
+					<pdef>coga-messagetime</pdef>
+					<div class="property-description">
+						<p><strong>Supported values: </strong><strong> </strong>24 hour date time format. DD.MM.YEAR.HOUR.MM - DD.MM.YEAR.HOUR.MM where the second date is an optional exclusive expiry date.</p>
+						<p>Note that there is no default value.</p>
+						<p><strong>Example:</strong></p>
+						<pre>&lt;div role=&quot;alert&quot; 
     coga-messageimportance=&quot;medium&quot; 
     coga-messagefrom=&quot;my calender&quot; 
     coga-messagecontext=&quot;work&quot; 
     coga-messagetime=&quot;10.02.2017.00.00-16.02.2017.00.00&quot;&gt;
   Renew your driving license this week
 &lt;/div&gt;</pre>
-            <pre>&lt;div role=&quot;alert&quot; 
+						<pre>&lt;div role=&quot;alert&quot; 
     coga-messageimportance=&quot;critical&quot; 
     coga-messagefrom=&quot;my calender&quot; 
     coga-messagecontext=&quot;work&quot; 
     coga-messagetime=&quot;16.02.2017.00.00&quot;&gt;
   Renew your driving license ASAP
 &lt;/div&gt;</pre>
-          </div>
-        </div>
-      </section>
+					</div>
+				</div>
+			</section>
+			<section>
+				<h2>Distractions</h2>
+				<p><strong>Requirement: </strong> We require an attribute that indicates a distraction so that some users may be able to remove them from content.</p>
+				<div class="property" id="coga-distraction">
+					<pdef> coga-distraction</pdef>
+					<div class="property-description">
+						<p>This attribute should be used on non essential, detracting content, so that people who have problems keeping focus can turn them off. An example user experiences would be to hide all distraction content.</p>
+						<p><strong>Example: </strong></p>
+						<pre>coga-distraction=&quot;moving ad&quot;</pre>
+						<p><strong>Supported values: </strong>animations, auto-starting, moving, ad, message, chat , overlay, popup<br /> Auto-changing (logs) third-party, offer ( includes suggestions).</p>
+						<p>Note that there is no default value.</p>
+						<p>Note that elements with the coga-distraction attribute should also have a lable or accessible name.</p>
+					</div>
+				</div>
+			</section>
+			<section>
+				<h2>New Misc.</h2> Triggers: for emotional support. coga-trigger: violent, racism, etc. coga-keyparts of the page: key points, example, note, warningi, external (content), advertisements, (some may be in digital publishing) coga-dates - (cancellation, return) </section>
+			<section>
+				<h2>Additional WAI-ARIA roles</h2>
+				<p><strong>Requirement: </strong> We may want to add roles for sections a page such as: contact us - for a contact us form  </p>
+				<p><strong>User experience: </strong>symbols and colors could be used consistently across different content.</p>
+				<p>Nav maps can be automatically generated for people learn via key-points or examples.</p>
+				<p>Further these sections could be hidden in the normal rendering of a page or rendered the top of page depending on user preferences. The location of these sections can also be changed, based on the user preference, enabling the user to find them easily.</p>
+				<p>Values:</p>
+				<ul>
+					<li>summary</li>
+					<li>keypoints</li>
+					<li>example</li>
+					<li>note</li>
+					<li>warning</li>
+					<li>step</li>
+					<li>external - for external content, such as sponsored or advertising</li>
+					<li>offers - for special offers that are complementary to the main content or task</li>
+					<li>advertisement - advertisement or sponsored content</li>
+					<li>contactus</li>
+					<li>aboutus</li>
+				</ul>
+				<p></p>
+			</section>
+		</section>
+		<section>
+			<h2>User Settings</h2>
+			<p class="ednote">This section is not yet developed. It is included to describe the concept.</p>
+			<p>User settings describe the user preferences. </p>
+			<p>User settings should be restricted to the expected values. User setting must conform to the supported values. Authors are expected to test their content against the expected values of each item. </p>
+			<p>User setting might be encoded in JSON or XML. Example code may be:</p>
+			<code>&quot;@coga-simplification&quot;: [{ &quot;critical&quot;: { &quot;settings&quot;: [{ &quot;@aria-hidden&quot;: &quot;false&quot;, &quot;css&quot;: &quot;visibility:visible;&quot; }]</code>
 
-      <section>
-        <h2>Distractions</h2>
-        <p><strong>Requirement: </strong> We require an attribute that indicates a distraction so that some users may be able to remove them from content.</p>
-        <div class="property" id="coga-distraction">
-          <pdef> coga-distraction</pdef>
-          <div class="property-description">
-            <p>This attribute should be used on non essential, detracting content, so that people who have problems keeping focus can turn them off. An example user experiences would be to hide all distraction content.</p>
-            <p><strong>Example: </strong></p>
-            <pre>coga-distraction=&quot;moving ad&quot;</pre>
-            <p><strong>Supported values: </strong>animations, auto-starting, moving, ad, message, chat , overlay, popup<br /> Auto-changing (logs) third-party, offer ( includes suggestions).</p>
-            <p>Note that there is no default value.</p>
-            <p>Note that elements with the coga-distraction attribute should also have a lable or accessible name.</p>
-          </div>
-        </div>
-      </section>
+			<section>
+				<h3>Base values for contextual elements </h3>
+				<table>
+					<tbody>
+						<tr>
+							<th>Property</th>
+							<th>supported values / types</th>
+							<th>expected values</th>
+							<th></th>
+						</tr>
+						<tr>
+							<td>@aria-hidden</td>
+							<td>
+								<p>false/true</p>
+							</td>
+							<td><p>false</p>
+								<p>true</p>
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>tooltip</td>
+							<td>text (UTF8)</td>
+							<td>between 1 - 25 characters </td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>CSS</td>
+							<td><p>string</p>
+								<p>any CSS style </p></td>
+							<td><p>CSS = </p>
+								<p>visibility:visible , non visible</p>
+								<p>position: fixed; relative,</p>
+								<p>left: 0, (valid is not overlapping)<br /> bottom: 0;</p>
+								<p>top:0<br /> right: 0;<br />
+								</p>
+								<p>float: right left<br /> border: 1 -5 px solid ;</p>
+								<p>width: 20 px - 300px;</p>
+								<p>Colors: black <a target="_blank" href="http://www.w3schools.com/colors/color_tryit.asp?color=MidnightBlue">MidnightBlue</a> , <a target="_blank" href="http://www.w3schools.com/colors/color_tryit.asp?color=DarkRed">DarkRed</a> with bgcolor: ,Beige, <a target="_blank" href="http://www.w3schools.com/colors/color_tryit.asp?color=Cornsilk">Cornsilk</a> , <a target="_blank" href="http://www.w3schools.com/colors/color_tryit.asp?color=Linen">Linen</a> , white, </p>
+								<p>or</p>
+								<p>colors: ,Beige, <a target="_blank" href="http://www.w3schools.com/colors/color_tryit.asp?color=Cornsilk">Cornsilk</a> , <a target="_blank" href="http://www.w3schools.com/colors/color_tryit.asp?color=Linen">Linen</a> , white, WITH bgcolor: black, <a target="_blank" href="http://www.w3schools.com/colors/color_tryit.asp?color=MidnightBlue">MidnightBlue</a> , <a target="_blank" href="http://www.w3schools.com/colors/color_tryit.asp?color=DarkRed">DarkRed</a></p>
+								<p>font-size: 12, 14, 18, 22, 24, 26</p>
+								<p>Line-spacing: 1.5, 2</p>
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>long desc</td>
+							<td><p>text (UTF8)</p>
+								<p>15 - 800 characters</p></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>more</td>
+							<td>URI</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td> shortcut </td>
+							<td>string</td>
+							<td>SHIFT / CTRL / ALT + SHIFT / CTRL / ALT + alpha numeric </td>
+							<td></td>
+						</tr>
+						<tr>
+							<td> Symbol </td>
+							<td><p>URI </p>
+								<p>or sub-containor URL, creator license using DC notation</p>
+								<p>Formats : pg, SVG, JMEG, GIF, bmp</p>
+								<p>Size: </p>
+							</td>
+							<td>
+								<p>Sizes tested are: Xpx, Xpx, and Xpx</p></td>
+							<td><p>&quot;Symbol&quot;: &quot;https://d30y9cdsu7xlg0.cloudfront.net/pg/32455-200.png&quot;</p>
+								<p>Or</p>
+								<p>&quot;Symbol&quot;: [{ &quot;URL&quot;: &quot;https://d30y9cdsu7xlg0.cloudfront.net/pg/32455-200.png&quot;, &quot;creator&quot;: { &quot;name&quot;: &quot;Christopher Smith&quot;, &quot;URL&quot;: &quot;https://thenounproject.com/oneafternine/&quot; }, &quot;license&quot;: [{ &quot;name&quot;: &quot;Creative Commons&quot;, &quot;URL&quot;: &quot;http://creativecommons.org/licenses/by/3.0/us/&quot; }] }],</p></td>
+						</tr>
+						<tr>
+							<td> image </td>
+							<td><p>URI </p>
+								<p>or sub-container URL, creator license using DC notation</p>
+								<p>Formats : pg, SVG, JMEG, GIF, bmp</p></td>
+							<td>
+								<p>Sizes tested are: Xpx, Xpx, and Xpx</p></td>
+							<td><p>&quot;image&quot;: &quot;https://d30y9cdsu7xlg0.cloudfront.net/pg/32455-200.png&quot;</p>
+								<p>Or</p>
+								<p>&quot;image&quot;: [{ &quot;URL&quot;: &quot;https://d30y9cdsu7xlg0.cloudfront.net/pg/32455-200.png&quot;, &quot;creator&quot;: { &quot;name&quot;: &quot;Christopher Smith&quot;, &quot;URL&quot;: &quot;https://thenounproject.com/oneafternine/&quot; }, &quot;license&quot;: [{ &quot;name&quot;: &quot;Creative Commons&quot;, &quot;URL&quot;: &quot;http://creativecommons.org/licenses/by/3.0/us/&quot; }] }]</p></td>
+						</tr>
+						<tr>
+							<td> inherits </td>
+							<td>URI</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td> name </td>
+							<td>text</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>text</td>
+							<td>text</td>
+							<td>between 1 - 15 characters UTF8</td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
 
-      <section>
-        <h2>New Misc.</h2> Triggers: for emotional support. coga-trigger: violent, racism, etc. coga-keyparts of the page: key points, example, note, warningi, external (content), advertisements, (some may be in digital publishing) coga-dates - (cancellation, return) </section>
+			<section>
+				<h3>Untitled section</h3>
+				<table>
+					<tbody>
+						<tr>
+							<th>Property</th>
+							<th>Attribute Values</th>
+							<th>Expected Type (Settings)</th>
+							<th>Expected Settings</th>
+							<th><p>Example (JSON)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>coga-simplification</td>
+							<td><p>Critical</p>
+								<p>High</p>
+								<p>Med</p>
+								<p>Low</p></td>
+							<td>aria-hidden</td>
+							<td><p>@aria-hidden&quot;: &quot;false&quot;</p>
+								<p>@aria-hidden&quot;: &quot;true&quot;</p></td>
+							<td><p>&quot;@aria-importance&quot;: [{ &quot;critical&quot;: { &quot;settings&quot;: [{ &quot;@aria-hidden&quot;: &quot;false&quot;, &quot;CSS&quot;: &quot;visibility:visible;&quot; }]</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
 
-      <section>
-        <h2>Additional WAI-ARIA roles</h2>
-        <p><strong>Requirement: </strong> We may want to add roles for sections a page such as: contact us - for a contact us form  </p>
-        <p><strong>User experience: </strong>symbols and colors could be used consistently across different content.</p>
-        <p>Nav maps can be automatically generated for people learn via key-points or examples.</p>
-        <p>Further these sections could be hidden in the normal rendering of a page or rendered the top of page depending on user preferences. The location of these sections can also be changed, based on the user preference, enabling the user to find them easily.</p>
-        <p>Values:</p>
-        <ul>
-          <li>summary</li>
-          <li>keypoints</li>
-          <li>example</li>
-          <li>note</li>
-          <li>warning</li>
-          <li>step</li>
-          <li>external - for external content, such as sponsored or advertising</li>
-          <li>offers - for special offers that are complementary to the main content or task</li>
-          <li>advertisement - advertisement or sponsored content</li>
-          <li>contactus</li>
-          <li>aboutus</li>
-        </ul>
-        <p></p>
-      </section>
-    </section>
+			<section>
+				<h3>Features</h3>
+				<p>Taken from smart4MD funded by the European commission horizon 2020 projects.</p>
+				<table>
+					<tr>
+						<td><p>Text and icons</p></td>
+						<td><p>Text can be displayed under icon</p></td>
+						<td><p>Text can be changed. The text is associated with the icon role and is changed consistently for</p></td>
+					</tr>
+					<tr>
+						<td colspan="3"><p><strong>Contrast and display</strong><br />
+							</p></td>
+					</tr>
+					<tr>
+						<td><p>Contrast</p></td>
+						<td><p>Medium<br /> Contrast ratio of at least 4.5:1<br /> High: 7:1</p></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><p>Text size</p></td>
+						<td><p>Basic text <br /> Normal <br /> Large.<br /> V large</p></td>
+						<td><p>Normal: 14 pt <br /> Large: 18 pt.<br /> V large:22 pt</p></td>
+					</tr>
+					<tr>
+						<td><p>Buttons</p></td>
+						<td><p>text only <br /> images only<br /> text and images<br />
+							</p></td>
+						<td><p>(Note that Icons  on buttons with different roles should be settable)</p></td>
+					</tr>
+					<tr>
+						<td colspan="3"><p><strong>Feedback and orientation</strong></p></td>
+					</tr>
+					<tr>
+						<td>Spoken feedback</td>
+						<td>always/sometimes/off</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Text feedback</td>
+						<td>always/sometimes/off</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><p>Failure icon</p></td>
+						<td><p>URI</p></td>
+						<td><p>Need to specify expected format/ allowed format / expected sizes</p></td>
+					</tr>
+					<tr>
+						<td><p>Success Icons </p></td>
+						<td><p>URI</p></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td colspan="3"><p><strong>Interaction</strong></p></td>
+					</tr>
+					<tr>
+						<td><p>Allow scroll</p></td>
+						<td><p>On / off/ URI</p></td>
+						<td><p>URI is a widget that handles scroll</p></td>
+					</tr>
+					<tr>
+						<td><p>Allow gestures</p></td>
+						<td><p>terms for allowed gestures</p></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td colspan="3"><p><strong>Support</strong></p></td>
+					</tr>
+					<tr>
+						<td><p>Text to speech (with synchronized highlighting)</p></td>
+						<td><p>Automatic<br /> When an icon is pressed<br /> Never</p></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><p>Tooltips</p></td>
+						<td><p>On/off</p></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><p>Help panel</p></td>
+						<td><p>When I click an icon/text<br /> Never<br /> Always open</p>
+							<p>URI</p></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><p>Chat support?</p></td>
+						<td><p>Always </p>
+							<p>When I click an icon/text<br /> Never</p></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td colspan="3"><p><strong>Text</strong> Settings</p></td>
+					</tr>
+					<tr>
+						<td><p>Avoidnumbers</p></td>
+						<td><p>On /off</p></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><p>Readinglevel</p></td>
+						<td><p>Easiest<br /> Medium <br /> High<br /> Any</p></td>
+						<td><p>Medium (8th grade)<br /> High (12th grade)</p></td>
+					</tr>
+					<tr>
+						<td><p>Clarity</p></td>
+						<td><p>Normal<br /> Specific </p></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td colspan="3"><p><strong>Finding content </strong></p></td>
+					</tr>
+					<tr>
+						<td><p>Search</p></td>
+						<td><p>Have a search option when ever possible </p></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><p>Site map </p></td>
+						<td><p>Always</p>
+							<p>Sometimes</p></td>
+						<td><p>when to show link to the site mape</p></td>
+					</tr>
+					<tr>
+						<td><p>Menu bars</p></td>
+						<td><p>Use menu bars with sub menus</p>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><p>Location of navigational elements</p></td>
+						<td></td>
+						<td>should these be handled as contextual elements</td>
+					</tr>
+					<tr>
+						<td>Search location</td>
+						<td>top right, top right , bottom left , bottom right</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>sitmap location</td>
+						<td>top right, top right , bottom left , bottom right</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>GetHelp location</td>
+						<td>top right, top right , bottom left , bottom right</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Next location</td>
+						<td>top right, top right , bottom left , bottom right</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Prev location</td>
+						<td>top right, top right , bottom left , bottom right</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Critical elements toolbar</td>
+						<td>top right, top right , bottom left , bottom right</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Video</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>show control bar </td>
+						<td>always/sometime</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>show captions</td>
+						<td>on /off</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Show navigation points ( videos)</td>
+						<td>on/off</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><p>Video icons with text</p></td>
+						<td><p>Iconsonly/icons with text/text only<br />
+							</p></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><p>Back button</p></td>
+						<td><p>Always show back button <br /> (on off)</p></td>
+						<td><p>do not rely on the tablet default for navigation as some people will not know how to use it</p></td>
+					</tr>
+					<tr>
+						<td><p>Links</p></td>
+						<td><p><strong>CSS</strong><br />
+							</p></td>
+						<td><p>expected values will be CSS values for :</p>
+							<p>blue and underline <br /> Hover affect<br /> Always have a link icon next to links<br /> links as a button</p></td>
+					</tr>
+					<tr>
+						<td><p>Breadcrumbs</p></td>
+						<td><p><strong>Options</strong><br /> -None<br /> -Normal<br /> -With data</p></td>
+						<td><p>With data will have a summary of what was submitted at each step so people can know exactly what they did</p></td>
+					</tr>
+					<tr>
+						<td colspan="3"><p>Distractions</p></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><ul>
+								<li>Turn off all non critical features (on off)</li>
+								<li>Turn off messages(on off)</li>
+								<li>Turn off messages accept for specific people</li>
+							</ul></td>
+						<td><p>TBD</p></td>
+					</tr>
+					<tr>
+						<td colspan="3"><p>Conformation</p></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><ul>
+								<li>Always show a conformation screen before submitting data</li>
+							</ul>
+						</td>
+						<td><p>TBD</p></td>
+					</tr>
+				</table>
+				<p>include user settings to match the accessibility terms and address how accessibility features should be handled </p>
+				<p>Example code may be:</p>
+				<code>&quot;@accessibilityFeature&quot;: [{ &quot;alternativeText&quot;: { &quot;settings&quot;: [{ &quot;replaceimage&quot;: &quot;true&quot;, &quot;css&quot;: &quot;visibility:visible;&quot; }]</code>
+				<p>The full accessibility terms are available at: https://www.w3.org/wiki/WebSchemas/Accessibility</p>
+			</section>
 
-    <section>
-      <h2>User Settings</h2>
-      <p class="ednote">This section is not yet developed. It is included to describe the concept.</p>
-      <p>User settings describe the user preferences. </p>
-      <p>User settings should be restricted to the expected values. User setting must conform to the supported values. Authors are expected to test their content against the expected values of each item. </p>
-      <p>User setting might be encoded in JSON or XML. Example code may be:</p>
-      <code>&quot;@coga-simplification&quot;: [{ &quot;critical&quot;: { &quot;settings&quot;: [{ &quot;@aria-hidden&quot;: &quot;false&quot;, &quot;css&quot;: &quot;visibility:visible;&quot; }]</code>
-
-      <section>
-        <h3>Base values for contextual elements </h3>
-        <table>
-          <tbody>
-            <tr>
-              <th>Property</th>
-              <th>supported values / types</th>
-              <th>expected values</th>
-              <th></th>
-            </tr>
-            <tr>
-              <td>@aria-hidden</td>
-              <td>
-                <p>false/true</p>
-              </td>
-              <td><p>false</p>
-                <p>true</p>
-              </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>tooltip</td>
-              <td>text (UTF8)</td>
-              <td>between 1 - 25 characters </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>CSS</td>
-              <td><p>string</p>
-                <p>any CSS style </p></td>
-              <td><p>CSS = </p>
-                <p>visibility:visible , non visible</p>
-                <p>position: fixed; relative,</p>
-                <p>left: 0, (valid is not overlapping)<br /> bottom: 0;</p>
-                <p>top:0<br /> right: 0;<br />
-                </p>
-                <p>float: right left<br /> border: 1 -5 px solid ;</p>
-                <p>width: 20 px - 300px;</p>
-                <p>Colors: black <a target="_blank" href="http://www.w3schools.com/colors/color_tryit.asp?color=MidnightBlue">MidnightBlue</a> , <a target="_blank" href="http://www.w3schools.com/colors/color_tryit.asp?color=DarkRed">DarkRed</a> with bgcolor: ,Beige, <a target="_blank" href="http://www.w3schools.com/colors/color_tryit.asp?color=Cornsilk">Cornsilk</a> , <a target="_blank" href="http://www.w3schools.com/colors/color_tryit.asp?color=Linen">Linen</a> , white, </p>
-                <p>or</p>
-                <p>colors: ,Beige, <a target="_blank" href="http://www.w3schools.com/colors/color_tryit.asp?color=Cornsilk">Cornsilk</a> , <a target="_blank" href="http://www.w3schools.com/colors/color_tryit.asp?color=Linen">Linen</a> , white, WITH bgcolor: black, <a target="_blank" href="http://www.w3schools.com/colors/color_tryit.asp?color=MidnightBlue">MidnightBlue</a> , <a target="_blank" href="http://www.w3schools.com/colors/color_tryit.asp?color=DarkRed">DarkRed</a></p>
-                <p>font-size: 12, 14, 18, 22, 24, 26</p>
-                <p>Line-spacing: 1.5, 2</p>
-              </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>long desc</td>
-              <td><p>text (UTF8)</p>
-                <p>15 - 800 characters</p></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>more</td>
-              <td>URI</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td> shortcut </td>
-              <td>string</td>
-              <td>SHIFT / CTRL / ALT + SHIFT / CTRL / ALT + alpha numeric </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td> Symbol </td>
-              <td><p>URI </p>
-                <p>or sub-containor URL, creator license using DC notation</p>
-                <p>Formats : pg, SVG, JMEG, GIF, bmp</p>
-                <p>Size: </p>
-              </td>
-              <td>
-                <p>Sizes tested are: Xpx, Xpx, and Xpx</p></td>
-              <td><p>&quot;Symbol&quot;: &quot;https://d30y9cdsu7xlg0.cloudfront.net/pg/32455-200.png&quot;</p>
-                <p>Or</p>
-                <p>&quot;Symbol&quot;: [{ &quot;URL&quot;: &quot;https://d30y9cdsu7xlg0.cloudfront.net/pg/32455-200.png&quot;, &quot;creator&quot;: { &quot;name&quot;: &quot;Christopher Smith&quot;, &quot;URL&quot;: &quot;https://thenounproject.com/oneafternine/&quot; }, &quot;license&quot;: [{ &quot;name&quot;: &quot;Creative Commons&quot;, &quot;URL&quot;: &quot;http://creativecommons.org/licenses/by/3.0/us/&quot; }] }],</p></td>
-            </tr>
-            <tr>
-              <td> image </td>
-              <td><p>URI </p>
-                <p>or sub-container URL, creator license using DC notation</p>
-                <p>Formats : pg, SVG, JMEG, GIF, bmp</p></td>
-              <td>
-                <p>Sizes tested are: Xpx, Xpx, and Xpx</p></td>
-              <td><p>&quot;image&quot;: &quot;https://d30y9cdsu7xlg0.cloudfront.net/pg/32455-200.png&quot;</p>
-                <p>Or</p>
-                <p>&quot;image&quot;: [{ &quot;URL&quot;: &quot;https://d30y9cdsu7xlg0.cloudfront.net/pg/32455-200.png&quot;, &quot;creator&quot;: { &quot;name&quot;: &quot;Christopher Smith&quot;, &quot;URL&quot;: &quot;https://thenounproject.com/oneafternine/&quot; }, &quot;license&quot;: [{ &quot;name&quot;: &quot;Creative Commons&quot;, &quot;URL&quot;: &quot;http://creativecommons.org/licenses/by/3.0/us/&quot; }] }]</p></td>
-            </tr>
-            <tr>
-              <td> inherits </td>
-              <td>URI</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td> name </td>
-              <td>text</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>text</td>
-              <td>text</td>
-              <td>between 1 - 15 characters UTF8</td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-      
-      <section>
-        <h3>Untitled section</h3>
-        <table>
-          <tbody>
-            <tr>
-              <th>Property</th>
-              <th>Attribute Values</th>
-              <th>Expected Type (Settings)</th>
-              <th>Expected Settings</th>
-              <th><p>Example (JSON)</p>
-              </th>
-            </tr>
-            <tr>
-              <td>coga-simplification</td>
-              <td><p>Critical</p>
-                <p>High</p>
-                <p>Med</p>
-                <p>Low</p></td>
-              <td>aria-hidden</td>
-              <td><p>@aria-hidden&quot;: &quot;false&quot;</p>
-                <p>@aria-hidden&quot;: &quot;true&quot;</p></td>
-              <td><p>&quot;@aria-importance&quot;: [{ &quot;critical&quot;: { &quot;settings&quot;: [{ &quot;@aria-hidden&quot;: &quot;false&quot;, &quot;CSS&quot;: &quot;visibility:visible;&quot; }]</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
-      <section>
-        <h3>Features</h3>
-        <p>Taken from smart4MD funded by the European commission horizon 2020 projects.</p>
-        <table>
-          <tr>
-            <td><p>Text and icons</p></td>
-            <td><p>Text can be displayed under icon</p></td>
-            <td><p>Text can be changed. The text is associated with the icon role and is changed consistently for</p></td>
-          </tr>
-          <tr>
-            <td colspan="3"><p><strong>Contrast and display</strong><br />
-              </p></td>
-          </tr>
-          <tr>
-            <td><p>Contrast</p></td>
-            <td><p>Medium<br /> Contrast ratio of at least 4.5:1<br /> High: 7:1</p></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><p>Text size</p></td>
-            <td><p>Basic text <br /> Normal <br /> Large.<br /> V large</p></td>
-            <td><p>Normal: 14 pt <br /> Large: 18 pt.<br /> V large:22 pt</p></td>
-          </tr>
-          <tr>
-            <td><p>Buttons</p></td>
-            <td><p>text only <br /> images only<br /> text and images<br />
-              </p></td>
-            <td><p>(Note that Icons  on buttons with different roles should be settable)</p></td>
-          </tr>
-          <tr>
-            <td colspan="3"><p><strong>Feedback and orientation</strong></p></td>
-          </tr>
-          <tr>
-            <td>Spoken feedback</td>
-            <td>always/sometimes/off</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Text feedback</td>
-            <td>always/sometimes/off</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><p>Failure icon</p></td>
-            <td><p>URI</p></td>
-            <td><p>Need to specify expected format/ allowed format / expected sizes</p></td>
-          </tr>
-          <tr>
-            <td><p>Success Icons </p></td>
-            <td><p>URI</p></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td colspan="3"><p><strong>Interaction</strong></p></td>
-          </tr>
-          <tr>
-            <td><p>Allow scroll</p></td>
-            <td><p>On / off/ URI</p></td>
-            <td><p>URI is a widget that handles scroll</p></td>
-          </tr>
-          <tr>
-            <td><p>Allow gestures</p></td>
-            <td><p>terms for allowed gestures</p></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td colspan="3"><p><strong>Support</strong></p></td>
-          </tr>
-          <tr>
-            <td><p>Text to speech (with synchronized highlighting)</p></td>
-            <td><p>Automatic<br /> When an icon is pressed<br /> Never</p></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><p>Tooltips</p></td>
-            <td><p>On/off</p></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><p>Help panel</p></td>
-            <td><p>When I click an icon/text<br /> Never<br /> Always open</p>
-              <p>URI</p></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><p>Chat support?</p></td>
-            <td><p>Always </p>
-              <p>When I click an icon/text<br /> Never</p></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td colspan="3"><p><strong>Text</strong> Settings</p></td>
-          </tr>
-          <tr>
-            <td><p>Avoidnumbers</p></td>
-            <td><p>On /off</p></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><p>Readinglevel</p></td>
-            <td><p>Easiest<br /> Medium <br /> High<br /> Any</p></td>
-            <td><p>Medium (8th grade)<br /> High (12th grade)</p></td>
-          </tr>
-          <tr>
-            <td><p>Clarity</p></td>
-            <td><p>Normal<br /> Specific </p></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td colspan="3"><p><strong>Finding content </strong></p></td>
-          </tr>
-          <tr>
-            <td><p>Search</p></td>
-            <td><p>Have a search option when ever possible </p></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><p>Site map </p></td>
-            <td><p>Always</p>
-              <p>Sometimes</p></td>
-            <td><p>when to show link to the site mape</p></td>
-          </tr>
-          <tr>
-            <td><p>Menu bars</p></td>
-            <td><p>Use menu bars with sub menus</p>
-            </td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><p>Location of navigational elements</p></td>
-            <td></td>
-            <td>should these be handled as contextual elements</td>
-          </tr>
-          <tr>
-            <td>Search location</td>
-            <td>top right, top right , bottom left , bottom right</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>sitmap location</td>
-            <td>top right, top right , bottom left , bottom right</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>GetHelp location</td>
-            <td>top right, top right , bottom left , bottom right</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Next location</td>
-            <td>top right, top right , bottom left , bottom right</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Prev location</td>
-            <td>top right, top right , bottom left , bottom right</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Critical elements toolbar</td>
-            <td>top right, top right , bottom left , bottom right</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Video</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>show control bar </td>
-            <td>always/sometime</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>show captions</td>
-            <td>on /off</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Show navigation points ( videos)</td>
-            <td>on/off</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><p>Video icons with text</p></td>
-            <td><p>Iconsonly/icons with text/text only<br />
-              </p></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><p>Back button</p></td>
-            <td><p>Always show back button <br /> (on off)</p></td>
-            <td><p>do not rely on the tablet default for navigation as some people will not know how to use it</p></td>
-          </tr>
-          <tr>
-            <td><p>Links</p></td>
-            <td><p><strong>CSS</strong><br />
-              </p></td>
-            <td><p>expected values will be CSS values for :</p>
-              <p>blue and underline <br /> Hover affect<br /> Always have a link icon next to links<br /> links as a button</p></td>
-          </tr>
-          <tr>
-            <td><p>Breadcrumbs</p></td>
-            <td><p><strong>Options</strong><br /> -None<br /> -Normal<br /> -With data</p></td>
-            <td><p>With data will have a summary of what was submitted at each step so people can know exactly what they did</p></td>
-          </tr>
-          <tr>
-            <td colspan="3"><p>Distractions</p></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td><ul>
-                <li>Turn off all non critical features (on off)</li>
-                <li>Turn off messages(on off)</li>
-                <li>Turn off messages accept for specific people</li>
-              </ul></td>
-            <td><p>TBD</p></td>
-          </tr>
-          <tr>
-            <td colspan="3"><p>Conformation</p></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td><ul>
-                <li>Always show a conformation screen before submitting data</li>
-              </ul>
-            </td>
-            <td><p>TBD</p></td>
-          </tr>
-        </table>
-        <p>include user settings to match the accessibility terms and address how accessibility features should be handled </p>
-        <p>Example code may be:</p>
-        <code>&quot;@accessibilityFeature&quot;: [{ &quot;alternativeText&quot;: { &quot;settings&quot;: [{ &quot;replaceimage&quot;: &quot;true&quot;, &quot;css&quot;: &quot;visibility:visible;&quot; }]</code>
-        <p>The full accessibility terms are available at: https://www.w3.org/wiki/WebSchemas/Accessibility</p>
-      </section>
-
-      <section>
-        <h3>Accessibility term example</h3>
-        <table>
-          <tbody>
-            <tr>
-              <th>Property</th>
-              <th>Expected Type</th>
-              <th>Expected Values</th>
-              <th>Description</th>
-            </tr>
-            <tr>
-              <td>accessibilityFeature</td>
-              <td><a rel="nofollow" href="http://schema.org/Text">Text</a></td>
-              <td><ul>
-                  <li>alternativeText</li>
-                  <li>annotations</li>
-                  <li>audioDescription</li>
-                  <li>bookmarks</li>
-                  <li>braille</li>
-                  <li>captions</li>
-                  <li>ChemML</li>
-                  <li>describedMath</li>
-                  <li>displayTransformability</li>
-                  <li>highContrastAudio</li>
-                  <li>highContrastDisplay</li>
-                  <li>index</li>
-                  <li>largePrint</li>
-                  <li>latex</li>
-                  <li>longDescription</li>
-                  <li>MathML</li>
-                  <li>none</li>
-                  <li>printPageNumbers</li>
-                  <li>readingOrder</li>
-                  <li>rubyAnnotations</li>
-                  <li>signLanguage</li>
-                  <li>structuralNavigation</li>
-                  <li>synchronizedAudioText</li>
-                  <li>tableOfContents</li>
-                  <li>taggedPDF</li>
-                  <li>tactileGraphic</li>
-                  <li>tactileObject</li>
-                  <li>timingControl</li>
-                  <li>transcript</li>
-                  <li>ttsMarkup</li>
-                  <li>unlocked</li>
-                </ul></td>
-              <td>Content features of the resource, such as accessible media, supported enhancements for accessibility and alternatives. <p>See the accessibilityFeature in detail section below for more information.</p></td>
-            </tr>
-            <tr>
-              <td>accessibilityHazard</td>
-              <td><a rel="nofollow" href="http://schema.org/Text">Text</a></td>
-              <td><ul>
-                  <li>flashing</li>
-                  <li>noFlashingHazard</li>
-                  <li>motionSimulation</li>
-                  <li>noMotionSimulationHazard</li>
-                  <li>sound</li>
-                  <li>noSoundHazard</li>
-                  <li>unknown</li>
-                </ul></td>
-              <td>A characteristic of the described resource that is physiologically dangerous to some users. Related to <a rel="nofollow" href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/seizure.html">WCAG 2.0 guideline 2.3</a>. <p>All three of the negative properties should be set if none of the hazards are known to exist. If the content has hazard(s), include positive assertions for the hazards it has and negative assertions for the others.</p>
-                <p>If the property is not set in the positive or negative or is specifically set to unknown, the state of hazards is not known.</p></td>
-            </tr>
-            <tr>
-              <td>accessibilityAPI</td>
-              <td><a rel="nofollow" href="http://schema.org/Text">Text</a></td>
-              <td><ul>
-                  <li>AndroidAccessibility</li>
-                  <li>ARIA</li>
-                  <li>ATK</li>
-                  <li>AT-SPI</li>
-                  <li>BlackberryAccessibility</li>
-                  <li>iAccessible2</li>
-                  <li>iOSAccessibility</li>
-                  <li>JavaAccessibility</li>
-                  <li>MacOSXAccessibility</li>
-                  <li>MSAA</li>
-                  <li>UIAutomation</li>
-                </ul></td>
-              <td>Indicates that the resource is compatible with the referenced accessibility API.</td>
-            </tr>
-            <tr>
-              <td>accessibilityControl</td>
-              <td><a rel="nofollow" href="http://schema.org/Text">Text</a></td>
-              <td><ul>
-                  <li>fullKeyboardControl</li>
-                  <li>fullMouseControl</li>
-                  <li>fullSwitchControl</li>
-                  <li>fullTouchControl</li>
-                  <li>fullVideoControl</li>
-                  <li>fullVoiceControl</li>
-                </ul></td>
-              <td>Identifies one or more input methods that allow access to all of the application functionality.</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-    </section>
-
-    <section>
-      <h2>accessibilityFeature in detail</h2>
-      <p class="ednote">There was no content under this heading.</p>
-    </section>
-    <!--
+			<section>
+				<h3>Accessibility term example</h3>
+				<table>
+					<tbody>
+						<tr>
+							<th>Property</th>
+							<th>Expected Type</th>
+							<th>Expected Values</th>
+							<th>Description</th>
+						</tr>
+						<tr>
+							<td>accessibilityFeature</td>
+							<td><a rel="nofollow" href="http://schema.org/Text">Text</a></td>
+							<td><ul>
+									<li>alternativeText</li>
+									<li>annotations</li>
+									<li>audioDescription</li>
+									<li>bookmarks</li>
+									<li>braille</li>
+									<li>captions</li>
+									<li>ChemML</li>
+									<li>describedMath</li>
+									<li>displayTransformability</li>
+									<li>highContrastAudio</li>
+									<li>highContrastDisplay</li>
+									<li>index</li>
+									<li>largePrint</li>
+									<li>latex</li>
+									<li>longDescription</li>
+									<li>MathML</li>
+									<li>none</li>
+									<li>printPageNumbers</li>
+									<li>readingOrder</li>
+									<li>rubyAnnotations</li>
+									<li>signLanguage</li>
+									<li>structuralNavigation</li>
+									<li>synchronizedAudioText</li>
+									<li>tableOfContents</li>
+									<li>taggedPDF</li>
+									<li>tactileGraphic</li>
+									<li>tactileObject</li>
+									<li>timingControl</li>
+									<li>transcript</li>
+									<li>ttsMarkup</li>
+									<li>unlocked</li>
+								</ul></td>
+							<td>Content features of the resource, such as accessible media, supported enhancements for accessibility and alternatives. <p>See the accessibilityFeature in detail section below for more information.</p></td>
+						</tr>
+						<tr>
+							<td>accessibilityHazard</td>
+							<td><a rel="nofollow" href="http://schema.org/Text">Text</a></td>
+							<td><ul>
+									<li>flashing</li>
+									<li>noFlashingHazard</li>
+									<li>motionSimulation</li>
+									<li>noMotionSimulationHazard</li>
+									<li>sound</li>
+									<li>noSoundHazard</li>
+									<li>unknown</li>
+								</ul></td>
+							<td>A characteristic of the described resource that is physiologically dangerous to some users. Related to <a rel="nofollow" href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/seizure.html">WCAG 2.0 guideline 2.3</a>. <p>All three of the negative properties should be set if none of the hazards are known to exist. If the content has hazard(s), include positive assertions for the hazards it has and negative assertions for the others.</p>
+								<p>If the property is not set in the positive or negative or is specifically set to unknown, the state of hazards is not known.</p></td>
+						</tr>
+						<tr>
+							<td>accessibilityAPI</td>
+							<td><a rel="nofollow" href="http://schema.org/Text">Text</a></td>
+							<td><ul>
+									<li>AndroidAccessibility</li>
+									<li>ARIA</li>
+									<li>ATK</li>
+									<li>AT-SPI</li>
+									<li>BlackberryAccessibility</li>
+									<li>iAccessible2</li>
+									<li>iOSAccessibility</li>
+									<li>JavaAccessibility</li>
+									<li>MacOSXAccessibility</li>
+									<li>MSAA</li>
+									<li>UIAutomation</li>
+								</ul></td>
+							<td>Indicates that the resource is compatible with the referenced accessibility API.</td>
+						</tr>
+						<tr>
+							<td>accessibilityControl</td>
+							<td><a rel="nofollow" href="http://schema.org/Text">Text</a></td>
+							<td><ul>
+									<li>fullKeyboardControl</li>
+									<li>fullMouseControl</li>
+									<li>fullSwitchControl</li>
+									<li>fullTouchControl</li>
+									<li>fullVideoControl</li>
+									<li>fullVoiceControl</li>
+								</ul></td>
+							<td>Identifies one or more input methods that allow access to all of the application functionality.</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+		</section>
+		<section>
+			<h2>accessibilityFeature in detail</h2>
+			<p class="ednote">There was no content under this heading.</p>
+		</section>
+		<!--
 
 		<section class="appendix" id="changelog">
 			<h2>Change Log</h2>
@@ -1374,6 +1350,6 @@
         
         
 		-->
-    <div data-include="common/acknowledgements.html" data-oninclude="fixIncludes" data-include-replace="true">Acknowledgements placeholder</div>
-  </body>
+		<div data-include="common/acknowledgements.html" data-oninclude="fixIncludes" data-include-replace="true">Acknowledgements placeholder</div>
+	</body>
 </html>
