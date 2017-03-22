@@ -190,18 +190,13 @@
 		</section>
 
 		<section class="normative" id="semanticProperties">
-			<h1>Semantic Properties</h1> This Section covers semantic properties.
- <section id="characteristics_semanticproperties">
+			<h1>Semantic Properties</h1> This Section covers semantic properties. <section id="characteristics_semanticproperties">
 				<h2>Characteristics of Semantic Properties</h2>
 				<p>Semantic properties have the characteristics described in the following sections.</p>
-
-
 				<section id="propcharacteristic_relatedconcept">
 					<h3>Related Concepts</h3>
 					<p>Advisory information about features from this or other languages that correspond to this <a>property</a>. While the correspondence may not be exact, it is useful to help understand the intent of the state or property.</p>
 				</section>
-
-
 				<section id="propcharacteristic_value">
 					<h3>Value</h3>
 					<p>Value type of the semantic <a>property</a>. The value may be one of the following types:</p>
@@ -230,30 +225,22 @@
 					<p>The "undefined" value, when allowed on a state or property, is an explicit indication that the state or property is not set. The value is used on states and properties that support tokens, and the &quot;undefined&quot; value is a string that is one of the allowed tokens. It is also used on some states and properties that accept true/false values, when &quot;undefined&quot; has a different meaning than &quot;false&quot;.</p>
 					<p>These are generic types for states and properties, but do not define specific representation. See <a href="#state_property_processing">State and Property Attribute Processing</a> for details on how these values are expressed and handled in host languages.</p>
 				</section>
-
-
 				<section id="semantic_prop_taxonomy">
 					<h2>Taxonomy of Semantic Properties</h2> Semantic properties are categorized as follows: <ol>
 						<li><a href="#generalSemantics">General Semantics</a></li>
 					</ol>
 				</section>
-
-
 				<section id="generalSemantics">
 					<h3>General Semantic Properties</h3> The following are general semantic properties used for personalization: <ul>
 						<li><code>coga-simplification</code></li>
 					</ul>
 				</section>
-
-
 				<section id="prop_def">
 					<h2>Definitions of Semantic Properties (all coga-* attributes)</h2>
 					<p id="index_role" class="placeholder">Placeholder for roles</p>
 					<p id="index_state_prop" class="placeholder"> Placeholder for index of states and properties </p>
 				</section>
 			</section>
-
-
 			<section>
 				<h2>Simplification</h2>
 				<p><strong>Requirement</strong>: The user must be able to request a way to identify and differentiate between critical features, medium features and less important features. These need to be defined as important from a user perspective in the content. Typically, critical features may be used by many or most users, 90% of the time or more. High important features would be above 60% use. Medium important features would be 20% of users use it 20% of the time . Under 20% usage would be of low importance.</p>
@@ -262,7 +249,9 @@
 					<pdef>coga-simplification</pdef>
 					<div class="property-description">
 						<p>(formerly coga-importance).</p>
+						<p>@@description</p>
 						<p>Having the following values: (main task such as send for an email) </p>
+						<p class="ednote">I can't figure out from the description here what the intended list of properties are.</p>
 						<ul>
 							<li><code>coga-simplification="simplest"</code>. This setting should be used on: <ul>
 									<li> Elements that are essential for the key function (from the user perspective) of the page (Example: The send button for an email draft) or</li>
@@ -282,7 +271,7 @@
 								</ul>
 							</li>
 							<li>
-								<code>coga-simplification= "med"</code>. This setting should be used on elements that are not typically used. This is the default value.</li>
+								<code>coga-simplification= "med"</code>.  This is the default value.</li>
 							<li>
 								<code>coga-simplification="low"</code>. This setting should be used on elements that are rarely used or only used by advanced users. (Example: The terms and services or the archive button for an email draft) </li>
 						</ul>
@@ -314,13 +303,39 @@
 							</tr>
 							<tr>
 								<th class="property-value-head" scope="row">Value:</th>
-								<td class="property-value"><a href="#valuetype_idref">ID reference</a></td>
+								<td class="property-value"><a href="#valuetype_token">token</a></td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="value-descriptions">
+						<caption>Values:</caption>
+						<thead>
+							<tr>
+								<th scope="col">Value</th>
+								<th scope="col">Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th class="value-name" scope="row"><strong class="default">medium (default)</strong></th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">high</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">low</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">simplest</th>
+								<td class="value-description"></td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 			</section>
-
 			<section>
 				<h2>Adding Context </h2>
 				<p><strong>Requirement:</strong> Having familiar terms and symbols is key to being able to use the web. However what is familiar for one user may be strange for another requiring them to learn new symbols. If a user agent or script knows the context of links, buttons, and other page elements then symbols and text used can be ones that the user understands. This can include: </p>
@@ -400,7 +415,7 @@
 							</tr>
 							<tr>
 								<th class="property-value-head" scope="row">Value:</th>
-								<td class="property-value"><a href="#valuetype_idref">ID reference</a></td>
+								<td class="property-value"><a href="#valuetype_string">string</a></td>
 							</tr>
 						</tbody>
 					</table>
@@ -460,7 +475,7 @@
 							</tr>
 							<tr>
 								<th class="property-value-head" scope="row">Value:</th>
-								<td class="property-value"><a href="#valuetype_idref">ID reference</a></td>
+								<td class="property-value"><a href="#valuetype_string">string</a></td>
 							</tr>
 						</tbody>
 					</table>
@@ -527,13 +542,12 @@
 							</tr>
 							<tr>
 								<th class="property-value-head" scope="row">Value:</th>
-								<td class="property-value"><a href="#valuetype_idref">ID reference</a></td>
+								<td class="property-value"><a href="#valuetype_string">string</a></td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 			</section>
-
 			<section>
 				<h2>General context</h2>
 				<p><strong>Requirement: </strong> One important factor in optimizing the personalization of a product or service is to ensure that the personalization is appropriate for the current context of use as well as what is relevant for the user. For example a female user with a cognitive disability may need less options, and options that are for men are less likely to be relevant for her and may be demoted to bellow the scroll or placed under a &quot;more option&quot; button.</p>
@@ -568,13 +582,11 @@
 							</tr>
 							<tr>
 								<th class="property-value-head" scope="row">Value:</th>
-								<td class="property-value"><a href="#valuetype_idref">ID reference</a></td>
+								<td class="property-value"><a href="#valuetype_uri">URI</a></td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
-
-
 				<section>
 					<h3>Should we be using RDFa?</h3>
 					<p>The context based properties should be convertible to RDFa. (see <a href="https://www.w3.org/TR/xhtml-rdfa-primer/">RDFa Primer</a>) and the task force should create this mapping.</p>
@@ -595,7 +607,6 @@
    &lt;/li&gt;     
 &lt;/ul&gt;
 				</pre>
-					<p></p>
 					<p>We may recommend adding RDFA that describe the role of the item (see <a href="https://www.w3.org/TR/xhtml-rdfa-primer/">RDFa Primer</a>):</p>
 					<pre>
 &lt;div resource="/alice/posts/jos_barbecue"&gt;
@@ -607,7 +618,6 @@
 			</pre>
 				</section>
 			</section>
-
 			<section>
 				<h2>Concept codes</h2>
 				<p><strong>Requirement: </strong>We would like to enable interoperable symbol set codes for Non verbal people. Products for people who are non vocal often use symbols to help users communicate. These symbols are in fact peoples language. Unfortunately many of these symbols are both subject to copy write AND not interoperable. That means end-users can only use one device, and can not use apps or AT from a different company. There are open set of symbol codes for these symbol sets, that could be referenced then they can be interoperable. alternatively wordnet nodes could be referenced. If the users symbols are mapped to the same nodes then users agents will be able to load the user understandable symbol. That means the end use could buy the symbols and use them across different devices or applications. They would still be proprietary but they would also be interoperable. </p>
@@ -643,13 +653,12 @@
 							</tr>
 							<tr>
 								<th class="property-value-head" scope="row">Value:</th>
-								<td class="property-value"><a href="#valuetype_idref">ID reference</a></td>
+								<td class="property-value"><a href="#valuetype_uri">URI</a></td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 			</section>
-
 			<section>
 				<h2>Potential parts of a page</h2>
 				<p><strong>Requirement:</strong> The following could be extensions for aria landmarks or ePub </p>
@@ -668,7 +677,6 @@
 					<li>advertisement - advertisement or sponsored content </li>
 				</ul>
 			</section>
-
 			<section>
 				<h2>Number free</h2>
 				<p><strong>Requirement</strong>: Not everyone can understand numbers. We therefor suggest coga-numberfree for alternative text for people who can not understand the main content</p>
@@ -708,13 +716,12 @@
 							</tr>
 							<tr>
 								<th class="property-value-head" scope="row">Value:</th>
-								<td class="property-value"><a href="#valuetype_idref">ID reference</a></td>
+								<td class="property-value"><a href="#valuetype_string">string</a></td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 			</section>
-
 			<section>
 				<h2>Non-literal text and images</h2>
 				<p><strong>Requirement: </strong>Not everyone can understand non-literal text and icons such as metaphors, idioms etc. We need a tag that identifies text or images as non literal and allows the author to explain non-literal text and images to users.</p>
@@ -752,13 +759,12 @@
 							</tr>
 							<tr>
 								<th class="property-value-head" scope="row">Value:</th>
-								<td class="property-value"><a href="#valuetype_idref">ID reference</a></td>
+								<td class="property-value"><a href="#valuetype_string">string</a></td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 			</section>
-
 			<section>
 				<h2>Explain and feedback</h2>
 				<p><strong>Requirement: </strong></p>
@@ -792,7 +798,7 @@
 							</tr>
 							<tr>
 								<th class="property-value-head" scope="row">Value:</th>
-								<td class="property-value"><a href="#valuetype_idref">ID reference</a></td>
+								<td class="property-value"><a href="#valuetype_string">string</a></td>
 							</tr>
 						</tbody>
 					</table>
@@ -831,13 +837,12 @@
 							</tr>
 							<tr>
 								<th class="property-value-head" scope="row">Value:</th>
-								<td class="property-value"><a href="#valuetype_idref">ID reference</a></td>
+								<td class="property-value"><a href="#valuetype_string">string</a></td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 			</section>
-
 			<section>
 				<h3>More Help</h3>
 				<p><strong>Requirement: </strong>Some users may need additional information or specifically additional help inforamtion. We request additonal attributes so that an author can indicate the existence of this additional information.</p>
@@ -870,7 +875,7 @@
 							</tr>
 							<tr>
 								<th class="property-value-head" scope="row">Value:</th>
-								<td class="property-value"><a href="#valuetype_idref">ID reference</a></td>
+								<td class="property-value"><a href="#valuetype_uri">URI</a></td>
 							</tr>
 						</tbody>
 					</table>
@@ -904,7 +909,7 @@
 							</tr>
 							<tr>
 								<th class="property-value-head" scope="row">Value:</th>
-								<td class="property-value"><a href="#valuetype_idref">ID reference</a></td>
+								<td class="property-value"><a href="#valuetype_uri">URI</a></td>
 							</tr>
 						</tbody>
 					</table>
@@ -912,7 +917,7 @@
 				<div class="property" id="coga-helptype">
 					<pdef>coga-helptype</pdef>
 					<div class="property-description">
-						<p><strong>Supported values: </strong> tooltips/humanhelp/morehelp/topicsearch/automated/faqs/helpform/simplified/glossary/dictionary/thesaurus</p>
+						<p>@@description</p>
 						<p><strong>Example:</strong></p>
 						<pre>&lt;button type="button" coga-extrahelp=&quot;uri2 uri3&quot; &gt;undo&lt;/button&gt;</pre>
 						<p>URI 2 may read: </p>
@@ -958,13 +963,67 @@
 							</tr>
 							<tr>
 								<th class="property-value-head" scope="row">Value:</th>
-								<td class="property-value"><a href="#valuetype_idref">ID reference</a></td>
+								<td class="property-value"><a href="#valuetype_token">token</a></td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="value-descriptions">
+						<caption>Values:</caption>
+						<thead>
+							<tr>
+								<th scope="col">Value</th>
+								<th scope="col">Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th class="value-name" scope="row">automated</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">dictionary</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">faqs</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">glossary</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">helpform</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">humanhelp</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">morehelp</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">simplified</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">thesaurus</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">tooltips</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">topicsearch</th>
+								<td class="value-description"></td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 			</section>
-
 			<section>
 				<h2>Potential Features</h2>
 				<p>The following may not be necessary </p>
@@ -977,24 +1036,23 @@
 					<li>today </li>
 				</ul>
 			</section>
-
 			<section>
 				<h2>Language type support</h2>
 				<p><strong>Requirement: </strong>Sometimes you may want to provide a simplified version of a section of a page. For example, you may wish to provide a simplified summary of legal document, but still have a longer version for other users. These alternative versions may not be identical in content but maintain the gist of the original content.</p>
 				<div class="property" id="coga-alternative">
 					<pdef>coga-alternative</pdef>
-
 					<p>Would be used on an alternitive content as an alternative to more detailed or difficult to understand content. coga-alternative can be used on a span, div, link or image that servers as alternitive content to it's direct parent element.</p>
 					<div class="property-description">
 						<p><strong>Supported values:</strong>
 						</p>
 						<ul>
-							<li>On text: easylang, explain, more, vocab500, vocab1000, vocab2000, active, literal, numberfree, smallsentences, chunks, General: lessoptions. Whitespace, largefont </li>
+							<li>On text: easylang, explain, more, vocab500, vocab1000, vocab2000, active, literal, numberfree, smallsentences, chunks</li>
+							<li>General: lessoptions. Whitespace, largefont </li>
 							<li>Images: symbolic , realistic</li>
 							<li>p0, p1, p1, p2, p3 Where p0 are images with true content, p1 is a symbol or illustration that is typically shown with alt=&quot;&quot;, P2 are extra illustration that most people will not mind such as at the start of a paragraph or option. p3 are for disability centric illustrations that can disturb other people and may be mid sentence. </li>
 						</ul>
 						<p>Note that there is no default value.</p>
-
+						<p class="ednote">This makes too complicated of a data model for this property.</p>
 						<strong>Example:</strong>
 						<pre>&lt;div&gt;
   &lt;span coga-alternative="easylang numberfree vocab1000" class="hidden"&gt;>
@@ -1029,7 +1087,106 @@
 							</tr>
 							<tr>
 								<th class="property-value-head" scope="row">Value:</th>
-								<td class="property-value"><a href="#valuetype_idref">ID reference</a></td>
+								<td class="property-value"><a href="#valuetype_token_list">token list</a></td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="value-descriptions">
+						<caption>Values:</caption>
+						<thead>
+							<tr>
+								<th scope="col">Value</th>
+								<th scope="col">Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							
+							<tr>
+								<th class="value-name" scope="row">active</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">chunks</th>
+								<td class="value-description"></td>
+							</tr><tr>
+								<th class="value-name" scope="row"></th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">easylang</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">explain</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">largefont</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">lessoptions</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">literal</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">more</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">numberfree</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">p0</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">p1</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">p1</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">p2</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">p3</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">realistic</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">smallsentences</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">symbolic </th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">vocab1000</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">vocab2000</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">vocab500</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">whitespace</th>
+								<td class="value-description"></td>
 							</tr>
 						</tbody>
 					</table>
@@ -1065,23 +1222,16 @@
 							</tr>
 							<tr>
 								<th class="property-value-head" scope="row">Value:</th>
-								<td class="property-value"><a href="#valuetype_idref">ID reference</a></td>
+								<td class="property-value"><a href="#valuetype_string">string</a></td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 			</section>
-
 			<section>
 				<h3 id="logs">Logs</h3>
 			</section>
-			<div> This proposal is to track the tasks that a user has done, so that they can be reminded of them, and return to or fix a task. The suggested syntax should allow the author to transform some of the information into breadcrumbs via CSS, and  the user system can read and present more or less information to the user as per their preferences. <p>Preferably this should be in the header so that the user agent can build a cross application log of user tasks.</p>
-				<p>Note that there is no default value.</p>
-				<p>Notes: </p>
-				<p>This is just a proposed syntax. Other syntax may be better.</p>
-				<p>For protection of privacy ,it must be easy for the user to delete the log, and prevent the log from being stored. </p>
-			</div>
-			<pre>&lt;log name="booking trip"&gt; 
+			<div> This proposal is to track the tasks that a user has done, so that they can be reminded of them, and return to or fix a task. The suggested syntax should allow the author to transform some of the information into breadcrumbs via CSS, and  the user system can read and present more or less information to the user as per their preferences. <p>Preferably this should be in the header so that the user agent can build a cross application log of user tasks.</p><p>Note that there is no default value.</p><p class="ednote">There appears to be a property proposal here but it isn't defined.</p><p>Notes: </p><p>This is just a proposed syntax. Other syntax may be better.</p><p>For protection of privacy ,it must be easy for the user to delete the log, and prevent the log from being stored. </p></div><pre>&lt;log name="booking trip"&gt; 
   &lt;step status ="done"&gt; 
     &lt;name&gt;buy ticket&lt;/name&gt;
     &lt;actiontaken&gt;bought ticket to NY return&lt;/actiontaken&gt;
@@ -1096,24 +1246,15 @@
     &lt;name&gt;car rental&lt;/name&gt;
     &lt;view current changepossible="yes"/&gt; 
   &lt;/step&gt;
-&lt;/log&gt;</pre>
-			<p>Note that status can have values of : done, pending , current. Where pending is a step that has not yet been completed but is not the current step.</p>
-			<p>An alternative syntax could be:</p>
-			<pre>&lt;div role="log" aria-label=&quot;booking trip&quot; aria-hidden="true"/&gt;
-</pre>
-			<p>Open questions: Should the application name be in the log?</p>
-
-			<section>
+&lt;/log&gt;</pre><p>Note that status can have values of : done, pending , current. Where pending is a step that has not yet been completed but is not the current step.</p><p>An alternative syntax could be:</p><pre>&lt;div role="log" aria-label=&quot;booking trip&quot; aria-hidden="true"/&gt;
+</pre><p>Open questions: Should the application name be in the log?</p><section>
 				<h3>Reminders and messages</h3>
 				<p><strong>Requirement: </strong>We require an attribute that enables different users to experience different amount of reminders and messages based on personal preferences. Reminders are a wonderful tool for many people with cognitive disabilities. However too many reminders will be annoying or distracting for some other users. Currently people can turn off distractions such as skype, and facebook, across different devices, and then may forget to turn them back on.</p>
 				<p>These semantics allow for different solutions so that users are able to focus without missing important messages. Users need to manage all distractions by forming a cross application and cross device distraction matrix that manages all distractions in one setting. It is based on a matrix for distractions at the operating system , browser or cloud level. People and users can be clustered in terms of importance or groups. For example, the CEO and your child's care giver could both be considered critical contacts. So even if they do not feel the message is urgent they can sometimes disrupt the user anyway. Some family members and important colleagues can be in another group, friends and extended family in a third group, system messages from the compliance system can be a different group again. </p>
 				<div class="property" id="coga-messageimportance">
 					<pdef>coga-messageimportance</pdef>
 					<div class="property-description">
-						<p><strong>Supported values: </strong></p>
-						<p><strong>critical: </strong>To be critical a message needs to be both urgent and content that the user is very likely to consider important. For example, a system may send a message that it is going to reboot in one miunet to install updates. </p>
-						<p><strong>medium: </strong>Important messages that needs the user's attention at their convenience. For example, a relatively important chat message. Note that this is the default value.</p>
-						<p><strong>low</strong>: A message that does not need time sensitive attention. For example, a typical chat message</p>
+						<p>@@description</p>
 						<p><strong>Example:</strong></p>
 						<pre>&lt;div role=&quot;alert&quot; 
     coga-messageimportance=&quot;medium&quot;&gt;
@@ -1143,7 +1284,30 @@
 							</tr>
 							<tr>
 								<th class="property-value-head" scope="row">Value:</th>
-								<td class="property-value"><a href="#valuetype_idref">ID reference</a></td>
+								<td class="property-value"><a href="#valuetype_token">token</a></td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="value-descriptions">
+						<caption>Values:</caption>
+						<thead>
+							<tr>
+								<th scope="col">Value</th>
+								<th scope="col">Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th class="value-name" scope="row">critical</th>
+								<td class="value-description">To be critical a message needs to be both urgent and content that the user is very likely to consider important. For example, a system may send a message that it is going to reboot in one miunet to install updates. </td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row"><strong class="default">medium (default)</strong></th>
+								<td class="value-description">Important messages that needs the user's attention at their convenience. For example, a relatively important chat message.</td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">low</th>
+								<td class="value-description">A message that does not need time sensitive attention. For example, a typical chat message.</td>
 							</tr>
 						</tbody>
 					</table>
@@ -1183,7 +1347,7 @@
 							</tr>
 							<tr>
 								<th class="property-value-head" scope="row">Value:</th>
-								<td class="property-value"><a href="#valuetype_idref">ID reference</a></td>
+								<td class="property-value"><a href="#valuetype_string">string</a></td>
 							</tr>
 						</tbody>
 					</table>
@@ -1224,7 +1388,7 @@
 							</tr>
 							<tr>
 								<th class="property-value-head" scope="row">Value:</th>
-								<td class="property-value"><a href="#valuetype_idref">ID reference</a></td>
+								<td class="property-value"><a href="#valuetype_string">string</a></td>
 							</tr>
 						</tbody>
 					</table>
@@ -1273,13 +1437,12 @@
 							</tr>
 							<tr>
 								<th class="property-value-head" scope="row">Value:</th>
-								<td class="property-value"><a href="#valuetype_idref">ID reference</a></td>
+								<td class="property-value"><a href="#valuetype_string">string</a></td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 			</section>
-
 			<section>
 				<h2>Distractions</h2>
 				<p><strong>Requirement: </strong> We require an attribute that indicates a distraction so that some users may be able to remove them from content.</p>
@@ -1316,16 +1479,69 @@
 							</tr>
 							<tr>
 								<th class="property-value-head" scope="row">Value:</th>
-								<td class="property-value"><a href="#valuetype_idref">ID reference</a></td>
+								<td class="property-value"><a href="#valuetype_token_list">token list</a></td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="value-descriptions">
+						<caption>Values:</caption>
+						<thead>
+							<tr>
+								<th scope="col">Value</th>
+								<th scope="col">Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th class="value-name" scope="row">ad</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">animations</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">auto-changing</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">auto-starting</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">chat</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">message</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">moving</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">offer</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">overlay</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">popup</th>
+								<td class="value-description"></td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">third-party</th>
+								<td class="value-description"></td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 			</section>
-
 			<section>
 				<h2>New Misc.</h2> Triggers: for emotional support. coga-trigger: violent, racism, etc. coga-keyparts of the page: key points, example, note, warningi, external (content), advertisements, (some may be in digital publishing) coga-dates - (cancellation, return) </section>
-
 			<section>
 				<h2>Additional WAI-ARIA roles</h2>
 				<p><strong>Requirement: </strong> We may want to add roles for sections a page such as: contact us - for a contact us form  </p>
@@ -1346,7 +1562,6 @@
 					<li>contactus</li>
 					<li>aboutus</li>
 				</ul>
-				<p></p>
 			</section>
 		</section>
 
