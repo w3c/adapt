@@ -271,7 +271,7 @@
 								</ul>
 							</li>
 							<li>
-								<code>coga-simplification= "med"</code>.  This is the default value.</li>
+								<code>coga-simplification= "med"</code>. This is the default value.</li>
 							<li>
 								<code>coga-simplification="low"</code>. This setting should be used on elements that are rarely used or only used by advanced users. (Example: The terms and services or the archive button for an email draft) </li>
 						</ul>
@@ -423,7 +423,7 @@
 					<div class="property-description">
 						<p>The <code>coga-destination</code> attribute provides the context of a link. It should be used on a link element or element with role="link".</p>
 						<p>For example: &lt;a href=&quot;home.html&quot; coga-destination=&quot;home&quot; &gt;our main page&lt;/a&gt;</p>
-						<p>The user experience may be simply replacing the text for the term &quot;home&quot; and adding an icon. Based on personalization setting the user can see diffrent icons. A sample user experience is available at <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html">https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html </a></p>
+						<p>The user experience may be simply replacing the text for the term &quot;home&quot; and adding an icon. Based on personalization setting the user can see different icons. A sample user experience is available at <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html">https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html </a></p>
 						<p>It may also position this button to a location on the screen where the user is expecting the home page link. Note that there is no default value.</p>
 						<p><strong>Supported Values: </strong></p>
 						<p>The following could be supported values of <code>coga-destination</code>. </p>
@@ -588,7 +588,7 @@
 				<section>
 					<h3>Should we be using RDFa?</h3>
 					<p>The context based properties should be convertible to RDFa. (see <a href="https://www.w3.org/TR/xhtml-rdfa-primer/">RDFa Primer</a>) and the task force should create this mapping.</p>
-					<p>Note that a lot of this can be done using RDFa. However it is easy to change the meaning with RDFa and a very basic parser will misinterpret the result. The coga work needs to be usable by as many authors as possible, and not only thoughs who can implement RDF logic.</p>
+					<p>Note that a lot of this can be done using RDFa. However it is easy to change the meaning with RDFa and a very basic parser will misinterpret the result. The coga work needs to be usable by as many authors as possible, and not only those who can implement RDF logic.</p>
 					<p>Further , personalization setting need to be limited, and RDF can give an unlimited number of potential options which will make the system unusable. (This is unless we create restrictions and controls on an ontology uses - such as mapping to know ontologies.)</p>
 					<p>For example, in the code below the property homepage does not refer to the home page of the site but of the person being references. Beyond declaring the type of data we are dealing with, each typeof creates a new blank node with its own distinct properties. </p>
 					<pre>
@@ -766,7 +766,7 @@
 			<section>
 				<h2>Explain and feedback</h2>
 				<p><strong>Requirement: </strong></p>
-				<p>Some users need additional help. We request an attribute where the author can provide additional information.or what just happened.</p>
+				<p>Some users need additional help. We request an attribute where the author can provide additional information or what just happened.</p>
 				<div class="property" id="coga-feedback">
 					<pdef>coga-feedback</pdef>
 					<div class="property-description">
@@ -843,7 +843,7 @@
 			</section>
 			<section>
 				<h3>More Help</h3>
-				<p><strong>Requirement: </strong>Some users may need additional information or specifically additional help inforamtion. We request additonal attributes so that an author can indicate the existence of this additional information.</p>
+				<p><strong>Requirement: </strong>Some users may need additional information or specifically additional help information. We request additional attributes so that an author can indicate the existence of this additional information.</p>
 				<div class="property" id="coga-moreinfo">
 					<pdef>coga-moreinfo</pdef>
 					<div class="property-description">
@@ -1039,7 +1039,7 @@
 				<p><strong>Requirement: </strong>Sometimes you may want to provide a simplified version of a section of a page. For example, you may wish to provide a simplified summary of legal document, but still have a longer version for other users. These alternative versions may not be identical in content but maintain the gist of the original content.</p>
 				<div class="property" id="coga-alternative">
 					<pdef>coga-alternative</pdef>
-					<p>Would be used on an alternitive content as an alternative to more detailed or difficult to understand content. coga-alternative can be used on a span, div, link or image that servers as alternitive content to it's direct parent element.</p>
+					<p>Would be used on an alternative content as an alternative to more detailed or difficult to understand content. coga-alternative can be used on a span, div, link or image that servers as alternative content to it's direct parent element.</p>
 					<div class="property-description">
 						<p><strong>Supported values:</strong>
 						</p>
@@ -1098,7 +1098,6 @@
 							</tr>
 						</thead>
 						<tbody>
-							
 							<tr>
 								<th class="value-name" scope="row">active</th>
 								<td class="value-description"></td>
@@ -1106,7 +1105,8 @@
 							<tr>
 								<th class="value-name" scope="row">chunks</th>
 								<td class="value-description"></td>
-							</tr><tr>
+							</tr>
+							<tr>
 								<th class="value-name" scope="row"></th>
 								<td class="value-description"></td>
 							</tr>
@@ -1247,7 +1247,7 @@
 &lt;/log&gt;</pre><p>Note that status can have values of : done, pending , current. Where pending is a step that has not yet been completed but is not the current step.</p><p>An alternative syntax could be:</p><pre>&lt;div role="log" aria-label=&quot;booking trip&quot; aria-hidden="true"/&gt;
 </pre><p>Open questions: Should the application name be in the log?</p><section>
 				<h3>Reminders and messages</h3>
-				<p><strong>Requirement: </strong>We require an attribute that enables different users to experience different amount of reminders and messages based on personal preferences. Reminders are a wonderful tool for many people with cognitive disabilities. However too many reminders will be annoying or distracting for some other users. Currently people can turn off distractions such as skype, and facebook, across different devices, and then may forget to turn them back on.</p>
+				<p><strong>Requirement: </strong>We require an attribute that enables different users to experience different amount of reminders and messages based on personal preferences. Reminders are a wonderful tool for many people with cognitive disabilities. However too many reminders will be annoying or distracting for some other users. Currently people can turn off distractions such as Skype, and Facebook, across different devices, and then may forget to turn them back on.</p>
 				<p>These semantics allow for different solutions so that users are able to focus without missing important messages. Users need to manage all distractions by forming a cross application and cross device distraction matrix that manages all distractions in one setting. It is based on a matrix for distractions at the operating system , browser or cloud level. People and users can be clustered in terms of importance or groups. For example, the CEO and your child's care giver could both be considered critical contacts. So even if they do not feel the message is urgent they can sometimes disrupt the user anyway. Some family members and important colleagues can be in another group, friends and extended family in a third group, system messages from the compliance system can be a different group again. </p>
 				<div class="property" id="coga-messageimportance">
 					<pdef>coga-messageimportance</pdef>
@@ -1297,7 +1297,7 @@
 						<tbody>
 							<tr>
 								<th class="value-name" scope="row">critical</th>
-								<td class="value-description">To be critical a message needs to be both urgent and content that the user is very likely to consider important. For example, a system may send a message that it is going to reboot in one miunet to install updates. </td>
+								<td class="value-description">To be critical a message needs to be both urgent and content that the user is very likely to consider important. For example, a system may send a message that it is going to reboot in one minute to install updates. </td>
 							</tr>
 							<tr>
 								<th class="value-name" scope="row"><strong class="default">medium (default)</strong></th>
@@ -1319,7 +1319,7 @@
 						<pre>&lt;div role=&quot;alert&quot; 
     coga-messageimportance=&quot;low&quot; 
     coga-messagefrom=&quot;lisa seeman, lseeman&quot;&gt;
-  I posted a new version on github for you to review
+  I posted a new version on GitHub for you to review
 &lt;/div&gt;</pre>
 					</div>
 					<table class="property-features">
@@ -1353,14 +1353,14 @@
 				<div class="property" id="coga-messagecontext">
 					<pdef>coga-messagecontext</pdef>
 					<div class="property-description">
-						<p><strong>Supported values: </strong><strong> </strong>a string value that identifies the locaction that makes this message relevent. Typical values are &quot;home&quot; nd &quot;work&quot;. If multiple locations are relivent they can be separated by a coma.</p>
+						<p><strong>Supported values: </strong><strong> </strong>a string value that identifies the location that makes this message relevant. Typical values are &quot;home&quot; and &quot;work&quot;. If multiple locations are relevant they can be separated by a coma.</p>
 						<p>Note that there is no default value.</p>
 						<p><strong>Example:</strong></p>
 						<pre>&lt;div role=&quot;alert&quot;
    coga-messageimportance=&quot;low&quot; 
    coga-messagefrom=&quot;lisa seeman, lseeman&quot; 
    coga-messagecontext=&quot;work&quot;&gt;
-  I posted a new version on github for you to review
+  I posted a new version on GitHub for you to review
 &lt;/div&gt;</pre>
 					</div>
 					<table class="property-features">
@@ -1452,7 +1452,7 @@
 						<pre>coga-distraction=&quot;moving ad&quot;</pre>
 						<p><strong>Supported values: </strong>animations, auto-starting, moving, ad, message, chat , overlay, popup<br /> Auto-changing (logs) third-party, offer ( includes suggestions).</p>
 						<p>Note that there is no default value.</p>
-						<p>Note that elements with the coga-distraction attribute should also have a lable or accessible name.</p>
+						<p>Note that elements with the coga-distraction attribute should also have a label or accessible name.</p>
 					</div>
 					<table class="property-features">
 						<caption>Characteristics:</caption>
@@ -1539,7 +1539,7 @@
 				</div>
 			</section>
 			<section>
-				<h2>New Misc.</h2> Triggers: for emotional support. coga-trigger: violent, racism, etc. coga-keyparts of the page: key points, example, note, warningi, external (content), advertisements, (some may be in digital publishing) coga-dates - (cancellation, return) </section>
+				<h2>New Misc.</h2> Triggers: for emotional support. coga-trigger: violent, racism, etc. coga-keyparts of the page: key points, example, note, warning, external (content), advertisements, (some may be in digital publishing) coga-dates - (cancellation, return) </section>
 			<section>
 				<h2>Additional WAI-ARIA roles</h2>
 				<p><strong>Requirement: </strong> We may want to add roles for sections a page such as: contact us - for a contact us form  </p>
@@ -1640,7 +1640,7 @@
 						<tr>
 							<td> Symbol </td>
 							<td><p>URI </p>
-								<p>or sub-containor URL, creator license using DC notation</p>
+								<p>or sub-container URL, creator license using DC notation</p>
 								<p>Formats : pg, SVG, JMEG, GIF, bmp</p>
 								<p>Size: </p>
 							</td>
@@ -1833,7 +1833,7 @@
 						<td><p>Site map </p></td>
 						<td><p>Always</p>
 							<p>Sometimes</p></td>
-						<td><p>when to show link to the site mape</p></td>
+						<td><p>when to show link to the site map</p></td>
 					</tr>
 					<tr>
 						<td><p>Menu bars</p></td>
@@ -1852,7 +1852,7 @@
 						<td></td>
 					</tr>
 					<tr>
-						<td>sitmap location</td>
+						<td>sitemap location</td>
 						<td>top right, top right , bottom left , bottom right</td>
 						<td></td>
 					</tr>
