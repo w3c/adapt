@@ -318,6 +318,28 @@ require(["core/pubsubhub"], function( respecEvents ) {
                         }
                     }
 
+                    // we have all the properties and states - spit out the
+                    // index
+                    var propIndex = "";
+                    var sortedList = [];
+                    $.each(propList, function(i) {
+                        sortedList.push(i);
+                    });
+                    sortedList = sortedList.sort();
+
+                    for (var i = 0; i < sortedList.length; i++) {
+                        var item = propList[sortedList[i]];
+                        propIndex += "<dt><a href=\"#" + item.title + "\" class=\"" + item.is + "-reference\">" + item.name + "</a></dt>\n";
+                        propIndex += "<dd>" + item.desc + "</dd>\n";
+                    }
+                    var node = document.getElementById("index_state_prop");
+                    var parentNode = node.parentNode;
+                    var l = document.createElement("dl");
+                    l.id = "index_state_prop";
+                    l.className = "compact";
+                    l.innerHTML = propIndex;
+                    parentNode.replaceChild(l, node);
+
                 }
 
                 updateReferences(document);
