@@ -226,14 +226,17 @@
 					<p>These are generic types for states and properties, but do not define specific representation. See <a href="#state_property_processing">State and Property Attribute Processing</a> for details on how these values are expressed and handled in host languages.</p>
 				</section>
 				<section id="semantic_prop_taxonomy">
-					<h2>Taxonomy of Semantic Properties</h2> Semantic properties are categorized as follows: <ol>
+					<h2>Taxonomy of Semantic Properties</h2> 
+					<p class="ednote">Is this section needed for this spec?</p>
+					<p>Semantic properties are categorized as follows:</p>
+					<ol>
 						<li><a href="#generalSemantics">General Semantics</a></li>
 					</ol>
-				</section>
-				<section id="generalSemantics">
-					<h3>General Semantic Properties</h3> The following are general semantic properties used for personalization: <ul>
-						<li><code>coga-simplification</code></li>
-					</ul>
+					<section id="generalSemantics">
+						<h3>General Semantic Properties</h3> The following are general semantic properties used for personalization: <ul>
+							<li><code>coga-simplification</code></li>
+						</ul>
+					</section>
 				</section>
 				<section id="prop_def">
 					<h2>Definitions of Semantic Properties (all coga-* attributes)</h2>
@@ -1045,30 +1048,28 @@
 				<p><strong>Requirement: </strong>Sometimes you may want to provide a simplified version of a section of a page. For example, you may wish to provide a simplified summary of legal document, but still have a longer version for other users. These alternative versions may not be identical in content but maintain the gist of the original content.</p>
 				<div class="property" id="coga-alternative">
 					<pdef>coga-alternative</pdef>
-						<div class="property-description">
-						<div class="property-description">
-							<p>Would be used on an alternative content as an alternative to more detailed or difficult to understand content. coga-alternative can be used on a span, div, link or image that servers as alternative content to it's direct parent element.</p>
-							<p><strong>Supported values:</strong>
-							</p>
-							<ul>
-								<li>On text: easylang, explain, more, vocab500, vocab1000, vocab2000, active, literal, numberfree, smallsentences, chunks</li>
-								<li>General: lessoptions. Whitespace, largefont </li>
-								<li>Images: symbolic , realistic</li>
-								<li>p0, p1, p1, p2, p3 Where p0 are images with true content, p1 is a symbol or illustration that is typically shown with alt=&quot;&quot;, P2 are extra illustration that most people will not mind such as at the start of a paragraph or option. p3 are for disability centric illustrations that can disturb other people and may be mid sentence. </li>
-							</ul>
-							<p>Note that there is no default value.</p>
-							<p class="ednote">This makes too complicated of a data model for this property.</p>
-							<strong>Example:</strong>
-							<pre>&lt;div&gt;
-	  &lt;span coga-alternative="easylang numberfree vocab1000" class="hidden"&gt;>
-	    most people prefer simple text
-	  &lt;/span&gt;
-	  In studies it was found that only 30% of users prefer long convoluted text 
-	  with obtuse words and lots of numbers, 
-	  with 56% claiming there preferred the simplified text , 
-	  with the remainder unsure or stated it depends on the context.
-	&lt;/div&gt;</pre>
-						</div>
+					<div class="property-description">
+						<p>Would be used on an alternative content as an alternative to more detailed or difficult to understand content. coga-alternative can be used on a span, div, link or image that servers as alternative content to it's direct parent element.</p>
+						<p><strong>Supported values:</strong>
+						</p>
+						<ul>
+							<li>On text: easylang, explain, more, vocab500, vocab1000, vocab2000, active, literal, numberfree, smallsentences, chunks</li>
+							<li>General: lessoptions. Whitespace, largefont </li>
+							<li>Images: symbolic , realistic</li>
+							<li>p0, p1, p1, p2, p3 Where p0 are images with true content, p1 is a symbol or illustration that is typically shown with alt=&quot;&quot;, P2 are extra illustration that most people will not mind such as at the start of a paragraph or option. p3 are for disability centric illustrations that can disturb other people and may be mid sentence. </li>
+						</ul>
+						<p>Note that there is no default value.</p>
+						<p class="ednote">This makes too complicated of a data model for this property.</p>
+						<strong>Example:</strong>
+						<pre>&lt;div&gt;
+  &lt;span coga-alternative="easylang numberfree vocab1000" class="hidden"&gt;>
+    most people prefer simple text
+  &lt;/span&gt;
+  In studies it was found that only 30% of users prefer long convoluted text 
+  with obtuse words and lots of numbers, 
+  with 56% claiming there preferred the simplified text , 
+  with the remainder unsure or stated it depends on the context.
+&lt;/div&gt;</pre>
 					</div>
 					<table class="property-features">
 						<caption>Characteristics:</caption>
