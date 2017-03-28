@@ -18,6 +18,8 @@ before_install:
   - "export DISPLAY=:99.0"
   - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16 -extension RANDR"
   - sh -e /etc/init.d/xvfb start
+  - sed -i "s|src=\"/common/|src=\"file://`pwd`/common/|g" "semantics.html"
+  - sed -i "s|data-include=\"|data-include=\"file://`pwd`/|g" "semantics.html"
 
 install:
   - cd ../..
@@ -32,8 +34,6 @@ script:
   - cd gh-pages
   - git clone --depth=1 --branch=gh-pages https://github.com/w3c/personalization-semantics.git
   - cd personalization-semantics
-  - sed -i "s|src=\"/common/|src=\"file://`pwd`/common/|g" "../../w3c/personalization-semantics/semantics.html"
-  - sed -i "s|data-include=\"|data-include=\"file://`pwd`/|g" "../../w3c/personalization-semantics/semantics.html"
   - node ../../node_modules/respec/tools/respec2html.js --src file://`pwd`/../../w3c/personalization-semantics/semantics.html --out index.html
 
 after_success:
