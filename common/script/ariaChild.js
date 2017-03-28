@@ -76,7 +76,219 @@ require(["core/pubsubhub"], function( respecEvents ) {
                 var subRoles = [];
                 var roleIndex = "";
 
+                $.each(document.querySelectorAll("rdef"), function(i,item) {
+                    var container = item.parentNode;
+                    var $pn = $(container) ;
+                    var content = item.innerHTML;
+                    var sp = document.createElement("h3");
+                    var title = item.getAttribute("title");
+                    if (!title) {
+                        title = content;
+                    }
+                    var pnID = $pn.makeID("", title) ;
+                    sp.className = "role-name";
+                    sp.title = title;
+                    // is this a role or an abstract role
+                    var type = "role";
+                    var abstract = container.querySelectorAll(".role-abstract");
+                    if ($(abstract).text() === "True") {
+                        type = "abstract role";
+                    }
+                    sp.innerHTML = "<code>" + content + "</code> <span class=\"type-indicator\">(" + type + ")</span>";
+                    // sp.id = title;
+                    sp.setAttribute("aria-describedby", "desc-" + title);
+                    var dRef = item.nextElementSibling;
+                    var desc = dRef.firstElementChild.innerHTML;
+                    dRef.id = "desc-" + title;
+                    dRef.setAttribute("role", "definition");
+                    container.replaceChild(sp, item);
+                    roleIndex += "<dt><a href=\"#" + pnID + "\" class=\"role-reference\">" + content + "</a></dt>\n";
+                    roleIndex += "<dd>" + desc + "</dd>\n";
+                    // grab info about this role
+                    // do we have a parent class?  if so, put us in that parents list
+                    var node = container.querySelectorAll(".role-parent rref");
+                    // s will hold the name of the parent role if any
+                    var s = null;
+                    var parentRoles = [];
+                    if (node) {
+                        $.each(node, function(foo, roleref) {
+                            s = roleref.textContent || roleref.innerText;
+
+                            if (!subRoles[s]) {
+                                subRoles.push(s);
+                                subRoles[s] = [];
+                            }
+                            subRoles[s].push(title);
+                            parentRoles.push(s);
+                        });
+                    }
+                    // are there supported states / properties in this role?  
+                    var attrs = [];
+                    $.each(container.querySelectorAll(".role-properties, .role-required-properties"), function(i, node) {
+                        if (node && ((node.textContent && node.textContent.length !== 1) || (node.innerText && node.innerText.length !== 1))) {
+                            // looks like we do
+                            $.each(node.querySelectorAll("pref,sref"), function(i, item) {
+                                var name = item.getAttribute("title");
+                                if (!name) {
+                                    name = item.textContent || item.innerText;
+                                }
+                                var type = (item.localName === "pref" ? "property" : "state");
+                                var req = ($(node).hasClass("role-required-properties") ? true : false );
+                                attrs.push( { is: type, name: name, required: req } );
+                                // remember that the state or property is
+                                // referenced by this role
+                                propList[name].roles.push(title);
+                            });
+                        }
+                    });
+                    localRoleInfo[title] = { "name": title, "fragID": pnID, "parentRoles": parentRoles, "localprops": attrs };
+                    if (container.nodeName.toLowerCase() == "div") {
+                        // change the enclosing DIV to a section with notoc
+                        var sec = document.createElement("section") ;
+                        $.each(container.attributes, function(i, attr) {
+                            sec.setAttribute(attr.name, attr.value);
+                        });
+                        $(sec).addClass("notoc");
+                        var theContents = container.innerHTML;
+                        sec.innerHTML = theContents;
+                        container.parentNode.replaceChild(sec, container) ;
+                    }
+                });
+
+                var getStates = function(role) {
+                    var ref = localRoleInfo[role];
+                    if (!ref) {
+                        ref = roleInfo[role];
+                    }
+                    if (!ref) {
+                        msg.pub("error", "No role definition for " + role);
+                    } else if (ref.allprops) {
+                        return ref.allprops;
+                    } else {
+                        var myList = [];
+                        $.merge(myList, ref.localprops);
+                        $.each(ref.parentRoles, function(i, item) {
+                            var pList = getStates(item);
+                            $.merge(myList, pList);
+                        });
+                        ref.allprops = myList;
+                        return myList;
+                    }
+                };
+                    
                 if (!skipIndex) {
+                    // build up the complete inherited SP lists for each role
+                    $.each(localRoleInfo, function(i, item) {
+                        var output = "";
+                        var placeholder = document.querySelector("#" + item.fragID + " .role-inherited");
+                        if (placeholder) {
+                            var myList = [];
+                            $.each(item.parentRoles, function(j, role) {
+                                $.merge(myList, getStates(role));
+                            });
+                            // strip out any items that we have locally
+                            /* jshint loopfunc: true */
+                            if (item.localprops.length && myList.length) {
+                                for (var j = myList.length - 1; j >=0; j--) {
+                                    item.localprops.forEach(function(x) {
+                                        if (x.name == myList[j].name) {
+                                            myList.splice(j, 1);
+                                        }
+                                    });
+                                }
+                            }
+                            var sortedList = [];
+                            sortedList = myList.sort(function(a,b) { return a.name < b.name ? -1 : a.name > b.name ? 1 : 0; });
+                            var prev;
+                            for (var k = 0; k < sortedList.length; k++) {
+                                var role = sortedList[k];
+                                var req = "";
+                                if (role.required) {
+                                    req = " <strong>(required)</strong>";
+                                }
+                                if (prev != role.name) {
+                                    output += "<li>";
+                                    if (role.is === "state") {
+                                        output += "<sref title=\"" + role.name + "\">" + role.name + " (state)</sref>" + req;
+                                    } else {
+                                        output += "<pref>" + role.name + "</pref>" + req;
+                                    }
+                                    output += "</li>\n";
+                                    prev = role.name;
+                                }
+                            }
+                            if (output !== "") {
+                                output = "<ul>\n" + output + "</ul>\n";
+                                placeholder.innerHTML = output;
+                            }
+                        }
+                    });
+                    
+                    // Update state and property role references
+                    var getAllSubRoles = function(role) {
+                        var ref = subRoles[role];
+                        if (ref && ref.length) {
+                            var myList = [];
+                            $.each(ref, function(j, item) {
+                                if (!myList.item) {
+                                    myList[item] = 1;
+                                    myList.push(item);
+                                    var childList = getAllSubRoles(item);
+                                    $.merge(myList, childList);
+                                }
+                            });
+                            return myList;
+                        } else {
+                            return [];
+                        }
+                    };
+                        
+                    $.each(propList, function(i, item) {
+                        var output = "";
+                        var section = document.querySelector("#" + item.name);
+                        var placeholder = section.querySelector(".state-applicability, .property-applicability");
+                        if (placeholder && ((placeholder.textContent || placeholder.innerText) === "Placeholder") && item.roles.length) {
+                            // update the used in roles list
+                            var sortedList = [];
+                            sortedList = item.roles.sort();
+                            for (var j = 0; j < sortedList.length; j++) {
+                                output += "<li><rref>" + sortedList[j] + "</rref></li>\n";
+                            }
+                            if (output !== "") {
+                                output = "<ul>\n" + output + "</ul>\n";
+                            }
+                            placeholder.innerHTML = output;
+                            // also update any inherited roles
+                            var myList = [];
+                            $.each(item.roles, function(j, role) {
+                                var children = getAllSubRoles(role);
+                                // Some subroles have required properties which are also required by the superclass.
+                                // Example: The checked state of radio, which is also required by superclass checkbox.
+                                // We only want to include these one time, so filter out the subroles.
+                                children = jQuery.grep(children, function(subrole) {
+                                    return jQuery.inArray(subrole, propList[item.name].roles) == -1;
+                                });
+                                $.merge(myList, children);
+                            });
+                            placeholder = section.querySelector(".state-descendants, .property-descendants");
+                            if (placeholder && myList.length) {
+                                sortedList = myList.sort();
+                                output = "";
+                                var last = "";
+                                for (var k = 0; k < sortedList.length; k++) {
+                                    var lItem = sortedList[k];
+                                    if (last != lItem) {
+                                        output += "<li><rref>" + lItem + "</rref></li>\n";
+                                        last = lItem;
+                                    }
+                                }
+                                if (output !== "") {
+                                    output = "<ul>\n" + output + "</ul>\n";
+                                }
+                                placeholder.innerHTML = output;
+                            }
+                        }
+                    });
                     
                     // spit out the index
                     var node = document.getElementById("index_role");
