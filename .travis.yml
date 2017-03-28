@@ -33,6 +33,7 @@ script:
   - git clone --depth=1 --branch=gh-pages https://github.com/w3c/personalization-semantics.git
   - cd personalization-semantics
   - sed -i "s|src=\"/common/|src=\"file://`pwd`/common/|g" "../../w3c/personalization-semantics/semantics.html"
+  - sed -i "s|data-include=\"|data-include=\"file://`pwd`/|g" "../../w3c/personalization-semantics/semantics.html"
   - node ../../node_modules/respec/tools/respec2html.js --src file://`pwd`/../../w3c/personalization-semantics/semantics.html --out index.html
 
 after_success:
