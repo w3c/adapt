@@ -1237,24 +1237,255 @@
 			</section>
 			<section>
 				<h3 id="logs">Logs</h3>
+				<p>This proposal is to track the tasks that a user has done, so that they can be reminded of them, and return to or fix a task. The suggested syntax should allow the author to transform some of the information into breadcrumbs via CSS, and  the user system can read and present more or less information to the user as per their preferences.</p>
+				<p>Preferably this should be in the header so that the user agent can build a cross application log of user tasks.</p>
+				<p>Note that there is no default value.</p>
+				<div class="property" id="coga-log">
+					<pdef>coga-log</pdef>
+					<div class="property-description">
+						<p>Contains a label or name for the log that reflects the process or task purpose.</p>
+					</div>
+					<table class="property-features">
+						<caption>Characteristics:</caption>
+						<thead>
+							<tr>
+								<th scope="col">Characteristic</th>
+								<th scope="col">Value</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th class="property-related-head" scope="row">Related Concepts:</th>
+								<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
+							</tr>
+							<tr>
+								<th class="property-applicability-head" scope="row">Used in Roles:</th>
+								<td class="property-applicability">All elements of the base markup</td>
+							</tr>
+							<tr>
+								<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+								<td class="property-descendants">Placeholder</td>
+							</tr>
+							<tr>
+								<th class="property-value-head" scope="row">Value:</th>
+								<td class="property-value"><a href="#valuetype_string">string</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="property" id="coga-step">
+					<pdef>coga-step</pdef>
+					<div class="property-description">
+						<p>Contains the number of the step in the process or task.</p>
+						<p>This can sometimes be implied via the DOM.</p>
+					</div>
+					<table class="property-features">
+						<caption>Characteristics:</caption>
+						<thead>
+							<tr>
+								<th scope="col">Characteristic</th>
+								<th scope="col">Value</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th class="property-related-head" scope="row">Related Concepts:</th>
+								<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
+							</tr>
+							<tr>
+								<th class="property-applicability-head" scope="row">Used in Roles:</th>
+								<td class="property-applicability">All elements of the base markup</td>
+							</tr>
+							<tr>
+								<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+								<td class="property-descendants">Placeholder</td>
+							</tr>
+							<tr>
+								<th class="property-value-head" scope="row">Value:</th>
+								<td class="property-value"><a href="#valuetype_integer">integer</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="property" id="coga-actiontaken">
+					<pdef>coga-actiontaken</pdef>
+					<div class="property-description">
+						<p>Contains a summary of key actions taken during a step of a process.</p>
+					</div>
+					<table class="property-features">
+						<caption>Characteristics:</caption>
+						<thead>
+							<tr>
+								<th scope="col">Characteristic</th>
+								<th scope="col">Value</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th class="property-related-head" scope="row">Related Concepts:</th>
+								<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
+							</tr>
+							<tr>
+								<th class="property-applicability-head" scope="row">Used in Roles:</th>
+								<td class="property-applicability">All elements of the base markup</td>
+							</tr>
+							<tr>
+								<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+								<td class="property-descendants">Placeholder</td>
+							</tr>
+							<tr>
+								<th class="property-value-head" scope="row">Value:</th>
+								<td class="property-value"><a href="#valuetype_string">string</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="property" id="coga-steplocation">
+					<pdef>coga-steplocation</pdef>
+					<div class="property-description">
+						<p>Contains a link to the location of the step for editing and review. The referenced location should support editing.</p>
+						<p>An embedded link inside a step can serve the same function as coga-steplocation.</p>
+					</div>
+					<table class="property-features">
+						<caption>Characteristics:</caption>
+						<thead>
+							<tr>
+								<th scope="col">Characteristic</th>
+								<th scope="col">Value</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th class="property-related-head" scope="row">Related Concepts:</th>
+								<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
+							</tr>
+							<tr>
+								<th class="property-applicability-head" scope="row">Used in Roles:</th>
+								<td class="property-applicability">All elements of the base markup</td>
+							</tr>
+							<tr>
+								<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+								<td class="property-descendants">Placeholder</td>
+							</tr>
+							<tr>
+								<th class="property-value-head" scope="row">Value:</th>
+								<td class="property-value"><a href="#valuetype_uri">URI</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="property" id="coga-status">
+					<pdef>coga-status</pdef>
+					<div class="property-description">
+						<p>Describe whether a step in a process is done, pending, current, or not done.</p>
+						<p class="ednote">Need a better token for "not done", or is that value actually needed given the presence of prending and current?</p>
+						<p class="ednote">Not clear how the true and false values below relate to the done/pending/current/not-done values above.</p>
+						<p>When <pref>coga-actiontaken</pref> is not null it implies that <code>coga-status</code> is true. </p>
+						<p>When <pref>coga-actiontaken</pref> is null it implies that <code>coga-status</code> is false.</p>
+					</div>
+					<table class="property-features">
+						<caption>Characteristics:</caption>
+						<thead>
+							<tr>
+								<th scope="col">Characteristic</th>
+								<th scope="col">Value</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th class="property-related-head" scope="row">Related Concepts:</th>
+								<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
+							</tr>
+							<tr>
+								<th class="property-applicability-head" scope="row">Used in Roles:</th>
+								<td class="property-applicability">All elements of the base markup</td>
+							</tr>
+							<tr>
+								<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+								<td class="property-descendants">Placeholder</td>
+							</tr>
+							<tr>
+								<th class="property-value-head" scope="row">Value:</th>
+								<td class="property-value"><a href="#valuetype_token">token</a></td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="value-descriptions">
+						<caption>Values:</caption>
+						<thead>
+							<tr>
+								<th scope="col">Value</th>
+								<th scope="col">Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th class="value-name" scope="row">done</th>
+								<td class="value-description">@@</td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">pending</th>
+								<td class="value-description">A step has not yet been completed but is not the current step. It is used <pref>coga-actiontaken</pref> when has not been used.</td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">current</th>
+								<td class="value-description">@@</td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">not-done</th>
+								<td class="value-description">@@</td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">true</th>
+								<td class="value-description">@@</td>
+							</tr>
+							<tr>
+								<th class="value-name" scope="row">false</th>
+								<td class="value-description">@@</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<section>
+					<h4>Log usage examples</h4>
+					<pre>&lt;div coga-log="booking trip" coga-step="1" aria-label="buy ticket" aria-hidden="true" 
+    coga-actiontaken="bought ticket to NY return" steplocation ="uri" /></pre>
+					<p>or</p>
+					<pre>&lt;div coga-log="booking trip" coga-step="1" coga-actiontaken="bought ticket to NY return">
+  buy ticket
+  &lt;a href="uri">change&lt;/a>
+&lt;/div></pre>
+					<p>or the step number can be implied by the DOM</p>
+					<pre>&lt;div coga-log="booking trip">
+  &lt;div coga-actiontaken="bought ticket to NY return">
+    buy ticket 
+    &lt;a href="uri">change&lt;/a>
+  &lt;/div>
+&lt;/div></pre>
+				</section>
+				<section>
+					<h4>Alternative syntax for log</h4>
+					<p>Note we are considering supporting an alternative syntax such as:</p>
+					<pre>&lt;log name="booking trip"> 
+  &lt;step status ="done"> 
+    &lt;name>buy ticket&lt;/name>
+    &lt;actiontaken>bought ticket to NY return&lt;/actiontaken>
+    &lt;view changepossible="yes">url &lt;/view>
+  &lt;/step>
+  &lt;step  status ="done"> 
+    &lt;name>hotel&lt;/name>
+    &lt;actiontaken>booked Sheraton single room&lt;/actiontaken>
+    &lt;view changepossible="yes">url &lt;/view>
+  &lt;/step>
+  &lt;step  status ="current"> 
+    &lt;name>car rental&lt;/name>
+    &lt;view current changepossible="yes"/> 
+  &lt;/step>
+&lt;/log>
+</pre>
+				</section>
 			</section>
-			<div> This proposal is to track the tasks that a user has done, so that they can be reminded of them, and return to or fix a task. The suggested syntax should allow the author to transform some of the information into breadcrumbs via CSS, and  the user system can read and present more or less information to the user as per their preferences. <p>Preferably this should be in the header so that the user agent can build a cross application log of user tasks.</p><p>Note that there is no default value.</p><p class="ednote">There appears to be a property proposal here but it isn't defined.</p><p>Notes: </p><p>This is just a proposed syntax. Other syntax may be better.</p><p>For protection of privacy ,it must be easy for the user to delete the log, and prevent the log from being stored. </p></div><pre>&lt;log name="booking trip"&gt; 
-  &lt;step status ="done"&gt; 
-    &lt;name&gt;buy ticket&lt;/name&gt;
-    &lt;actiontaken&gt;bought ticket to NY return&lt;/actiontaken&gt;
-    &lt;view changepossible="yes"&gt;url &lt;/view&gt;
-  &lt;/step&gt;
-  &lt;step  status ="done"&gt; 
-    &lt;name&gt;hotel&lt;/name&gt;
-    &lt;actiontaken&gt;booked Sheraton single room&lt;/actiontaken&gt;
-    &lt;view changepossible="yes"&gt;url &lt;/view&gt;
-  &lt;/step&gt;
-  &lt;step  status ="current"&gt; 
-    &lt;name&gt;car rental&lt;/name&gt;
-    &lt;view current changepossible="yes"/&gt; 
-  &lt;/step&gt;
-&lt;/log&gt;</pre><p>Note that status can have values of : done, pending , current. Where pending is a step that has not yet been completed but is not the current step.</p><p>An alternative syntax could be:</p><pre>&lt;div role="log" aria-label=&quot;booking trip&quot; aria-hidden="true"/&gt;
-</pre><p>Open questions: Should the application name be in the log?</p><section>
+			<section>
 				<h3>Reminders and messages</h3>
 				<p><strong>Requirement: </strong>We require an attribute that enables different users to experience different amount of reminders and messages based on personal preferences. Reminders are a wonderful tool for many people with cognitive disabilities. However too many reminders will be annoying or distracting for some other users. Currently people can turn off distractions such as Skype, and Facebook, across different devices, and then may forget to turn them back on.</p>
 				<p>These semantics allow for different solutions so that users are able to focus without missing important messages. Users need to manage all distractions by forming a cross application and cross device distraction matrix that manages all distractions in one setting. It is based on a matrix for distractions at the operating system , browser or cloud level. People and users can be clustered in terms of importance or groups. For example, the CEO and your child's care giver could both be considered critical contacts. So even if they do not feel the message is urgent they can sometimes disrupt the user anyway. Some family members and important colleagues can be in another group, friends and extended family in a third group, system messages from the compliance system can be a different group again. </p>
