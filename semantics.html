@@ -549,46 +549,46 @@
 						</tbody>
 					</table>
 				</div>
-			</section>
-			<section>
-				<h2>General context</h2>
-				<p><strong>Requirement: </strong> One important factor in optimizing the personalization of a product or service is to ensure that the personalization is appropriate for the current context of use as well as what is relevant for the user. For example a female user with a cognitive disability may need less options, and options that are for men are less likely to be relevant for her and may be demoted to bellow the scroll or placed under a &quot;more option&quot; button.</p>
-				<div class="property" id="coga-context">
-					<pdef>coga-context</pdef>
-					<div class="property-description">
-						<p>Coga-context would let the author give additional contextual information about the content.</p>
-						<p>Coga-context accepts the values of a URI or shortened URI. Note that there is no default value.</p>
-						<pre>&lt;a href=&quot;women.html&quot; coga-context=&quot;openref:gender#femail&quot;&gt;women&lt;/a&gt; </pre>
-						<p>To make this work without an RDF parser we recommend maintaining a list of recommended ontologies. </p>
+				<section>
+					<h2>General context</h2>
+					<p><strong>Requirement: </strong> One important factor in optimizing the personalization of a product or service is to ensure that the personalization is appropriate for the current context of use as well as what is relevant for the user. For example a female user with a cognitive disability may need less options, and options that are for men are less likely to be relevant for her and may be demoted to bellow the scroll or placed under a &quot;more option&quot; button.</p>
+					<div class="property" id="coga-context">
+						<pdef>coga-context</pdef>
+						<div class="property-description">
+							<p>Coga-context would let the author give additional contextual information about the content.</p>
+							<p>Coga-context accepts the values of a URI or shortened URI. Note that there is no default value.</p>
+							<pre>&lt;a href=&quot;women.html&quot; coga-context=&quot;openref:gender#femail&quot;&gt;women&lt;/a&gt; </pre>
+							<p>To make this work without an RDF parser we recommend maintaining a list of recommended ontologies. </p>
+						</div>
+						<table class="property-features">
+							<caption>Characteristics:</caption>
+							<thead>
+								<tr>
+									<th scope="col">Characteristic</th>
+									<th scope="col">Value</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th class="property-related-head" scope="row">Related Concepts:</th>
+									<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
+								</tr>
+								<tr>
+									<th class="property-applicability-head" scope="row">Used in Roles:</th>
+									<td class="property-applicability">All elements of the base markup</td>
+								</tr>
+								<tr>
+									<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+									<td class="property-descendants">Placeholder</td>
+								</tr>
+								<tr>
+									<th class="property-value-head" scope="row">Value:</th>
+									<td class="property-value"><a href="#valuetype_uri">URI</a></td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
-					<table class="property-features">
-						<caption>Characteristics:</caption>
-						<thead>
-							<tr>
-								<th scope="col">Characteristic</th>
-								<th scope="col">Value</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<th class="property-related-head" scope="row">Related Concepts:</th>
-								<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
-							</tr>
-							<tr>
-								<th class="property-applicability-head" scope="row">Used in Roles:</th>
-								<td class="property-applicability">All elements of the base markup</td>
-							</tr>
-							<tr>
-								<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
-								<td class="property-descendants">Placeholder</td>
-							</tr>
-							<tr>
-								<th class="property-value-head" scope="row">Value:</th>
-								<td class="property-value"><a href="#valuetype_uri">URI</a></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+				</section>
 				<section>
 					<h3>Should we be using RDFa?</h3>
 					<p>The context based properties should be convertible to RDFa. (see <a href="https://www.w3.org/TR/xhtml-rdfa-primer/">RDFa Primer</a>) and the task force should create this mapping.</p>
@@ -619,48 +619,48 @@
 &lt;/div&gt;
 			</pre>
 				</section>
-			</section>
-			<section>
-				<h2>Concept codes</h2>
-				<p><strong>Requirement: </strong>We would like to enable interoperable symbol set codes for Non verbal people. Products for people who are non vocal often use symbols to help users communicate. These symbols are in fact peoples language. Unfortunately many of these symbols are both subject to copy write AND not interoperable. That means end-users can only use one device, and can not use apps or AT from a different company. There are open set of symbol codes for these symbol sets, that could be referenced then they can be interoperable. alternatively wordnet nodes could be referenced. If the users symbols are mapped to the same nodes then users agents will be able to load the user understandable symbol. That means the end use could buy the symbols and use them across different devices or applications. They would still be proprietary but they would also be interoperable. </p>
-				<p>User experience: AAC users will load symbols that they understand in different applications that are made by a different provider.</p>
-				<div class="property" id="coga-concept">
-					<pdef>coga-concept</pdef>
-					<div class="property-description">
-						<p>@@1-line description</p>
-						<p><strong>Supported Values:</strong> URL </p>
-						<p>Note that there is no default value.</p>
-						<p><strong>Examples:</strong></p>
-						<pre>&lt;img coga-concept="http//wordnet.com/node/girl&quot; href=&quot;mygirlsy.bmp/&gt; </pre>
+				<section>
+					<h2>Concept codes</h2>
+					<p><strong>Requirement: </strong>We would like to enable interoperable symbol set codes for Non verbal people. Products for people who are non vocal often use symbols to help users communicate. These symbols are in fact peoples language. Unfortunately many of these symbols are both subject to copy write AND not interoperable. That means end-users can only use one device, and can not use apps or AT from a different company. There are open set of symbol codes for these symbol sets, that could be referenced then they can be interoperable. alternatively wordnet nodes could be referenced. If the users symbols are mapped to the same nodes then users agents will be able to load the user understandable symbol. That means the end use could buy the symbols and use them across different devices or applications. They would still be proprietary but they would also be interoperable. </p>
+					<p>User experience: AAC users will load symbols that they understand in different applications that are made by a different provider.</p>
+					<div class="property" id="coga-concept">
+						<pdef>coga-concept</pdef>
+						<div class="property-description">
+							<p>@@1-line description</p>
+							<p><strong>Supported Values:</strong> URL </p>
+							<p>Note that there is no default value.</p>
+							<p><strong>Examples:</strong></p>
+							<pre>&lt;img coga-concept="http//wordnet.com/node/girl&quot; href=&quot;mygirlsy.bmp/&gt; </pre>
+						</div>
+						<table class="property-features">
+							<caption>Characteristics:</caption>
+							<thead>
+								<tr>
+									<th scope="col">Characteristic</th>
+									<th scope="col">Value</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th class="property-related-head" scope="row">Related Concepts:</th>
+									<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
+								</tr>
+								<tr>
+									<th class="property-applicability-head" scope="row">Used in Roles:</th>
+									<td class="property-applicability">All elements of the base markup</td>
+								</tr>
+								<tr>
+									<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+									<td class="property-descendants">Placeholder</td>
+								</tr>
+								<tr>
+									<th class="property-value-head" scope="row">Value:</th>
+									<td class="property-value"><a href="#valuetype_uri">URI</a></td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
-					<table class="property-features">
-						<caption>Characteristics:</caption>
-						<thead>
-							<tr>
-								<th scope="col">Characteristic</th>
-								<th scope="col">Value</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<th class="property-related-head" scope="row">Related Concepts:</th>
-								<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
-							</tr>
-							<tr>
-								<th class="property-applicability-head" scope="row">Used in Roles:</th>
-								<td class="property-applicability">All elements of the base markup</td>
-							</tr>
-							<tr>
-								<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
-								<td class="property-descendants">Placeholder</td>
-							</tr>
-							<tr>
-								<th class="property-value-head" scope="row">Value:</th>
-								<td class="property-value"><a href="#valuetype_uri">URI</a></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+				</section>
 			</section>
 			<section>
 				<h2>Potential parts of a page</h2>
