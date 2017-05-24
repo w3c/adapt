@@ -47,6 +47,32 @@ var biblio = {
 		"title": "Accessibility Programming Guide for OS X",
 		"publisher": "Apple Corporation"
 	},
+	"coga-gap-analysis": {
+		"title": "Cognitive Accessibility Roadmap and Gap Analysis",
+		"href": "https://w3c.github.io/coga/gap-analysis/",
+		"publisher": "W3C",
+		"editors":
+		[
+			"Lisa Seeman",
+			"Michael Cooper"
+		],
+		"etAl": "false",
+		"deliveredBy": "https://www.w3.org/WAI/PF/cognitive-a11y-tf/"
+	},
+	
+	"coga-issue-papers": {
+		"title": "Issue Papers for the The Cognitive and Learning Disabilities Accessibility Task Force (COGA)",
+		"href": "https://w3c.github.io/coga/issue-papers/",
+		"publisher": "W3C",
+		"editors":
+		[
+			"Lisa Seeman",
+			"Michael Cooper"
+		],
+		"etAl": "false",
+		"deliveredBy": "https://www.w3.org/WAI/PF/cognitive-a11y-tf/"
+	},
+							
 	"CORE-AAM": {
 		"title": "Core Accessibility API Mappings 1.1",
 		"href": "http://www.w3.org/TR/core-aam-1.1/",
