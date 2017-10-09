@@ -429,9 +429,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             font-weight: bold;
         }
     </style>
-    <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-WD">
+    <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED">
     <link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-1.0/">
-    <meta name="generator" content="ReSpec 17.0.0">
     <script id="initialUserConfig" type="application/json">
         {
             "trace": true,
@@ -440,10 +439,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             "permalinkEdge": true,
             "permalinkHide": false,
             "tocIntroductory": true,
-            "specStatus": "FPWD",
+            "specStatus": "ED",
             "noRecTrack": true,
             "shortName": "personalization-semantics-1.0",
-            "publishDate": "2017-05-09",
             "copyrightStart": "2017",
             "edDraftURI": "https://w3c.github.io/personalization-semantics/",
             "editors": [{
@@ -764,10 +762,12 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             "preProcess": [
                 null
             ],
-            "publishISODate": "2017-05-09T00:00:00.000Z",
-            "generatedSubtitle": "First Public Working Draft 09 May 2017"
+            "publishISODate": "2017-10-09T00:00:00.000Z",
+            "generatedSubtitle": "Editor's Draft 09 October 2017"
         }
     </script>
+    <meta name="generator" content="ReSpec 17.0.0">
+    <meta name="description" content="Personalization involves tailoring aspects of the user experience to meet the needs and preferences of the user. For example, having familiar terms and symbols is key to many users being able to use the web. However, what is familiar for one user may be unfamiliar to another requiring them to learn new symbols. The challenge has been the ability to identify the types of content in a document that should be adapted to the preferred user experience. The introduction of standardized semantics allows web applications to customize the exposure of that content to one that is familiar to individuals based on their needs and preferences. This specification defines standard semantics to enable user driven personalization such as the association of a user-preferred symbols to elements having those semantics. This ensures that users can quickly find familiar icons, such as a help icon, that apply to user interface elements.">
 </head>
 
 <body aria-busy="false" class="h-entry toc-inline" id="respecDocument">
@@ -777,12 +777,12 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         </p>
         <p></p>
         <h1 class="title p-name" id="title" property="dcterms:title">Personalization Semantics 1.0</h1>
-        <h2 id="w3c-first-public-working-draft-09-may-2017"><abbr title="World Wide Web Consortium">W3C</abbr> First Public Working Draft <time property="dcterms:issued" class="dt-published" datetime="2017-05-09">09 May 2017</time><span class="permalink" typeof="bookmark"><a href="#undefined" aria-label="Permalink for W3C First Public Working Draft 09 May 2017" title="Permalink for W3C First Public Working Draft 09 May 2017" property="url"><span property="title" content="W3C First Public Working Draft 09 May 2017">§</span></a>
+        <h2 id="w3c-editor-s-draft-09-october-2017"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time property="dcterms:issued" class="dt-published" datetime="2017-10-09">09 October 2017</time><span class="permalink" typeof="bookmark"><a href="#undefined" aria-label="Permalink for W3C Editor's Draft 09 October 2017" title="Permalink for W3C Editor's Draft 09 October 2017" property="url"><span property="title" content="W3C Editor's Draft 09 October 2017">§</span></a>
             </span>
         </h2>
         <dl>
             <dt>This version:</dt>
-            <dd><a class="u-url" href="https://www.w3.org/TR/2017/WD-personalization-semantics-1.0-20170509/">https://www.w3.org/TR/2017/WD-personalization-semantics-1.0-20170509/</a></dd>
+            <dd><a class="u-url" href="https://w3c.github.io/personalization-semantics/">https://w3c.github.io/personalization-semantics/</a></dd>
             <dt>Latest published version:</dt>
             <dd><a href="https://www.w3.org/TR/personalization-semantics-1.0/">https://www.w3.org/TR/personalization-semantics-1.0/</a></dd>
             <dt>Latest editor's draft:</dt>
@@ -829,18 +829,18 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         </p>
 
         <p>
-            This document was published by the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> as a First Public Working Draft. Comments regarding this document are welcome. Please send them to
+            This document was published by the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> as an Editor's Draft. Comments regarding this document are welcome. Please send them to
             <a href="mailto:public-aria@w3.org">public-aria@w3.org</a> (<a href="mailto:public-aria-request@w3.org?subject=subscribe">subscribe</a>,
             <a href="https://lists.w3.org/Archives/Public/public-aria/">archives</a>).
         </p>
         <p>
-            Publication as a First Public Working Draft does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr> Membership. This is a draft document and may be updated, replaced or obsoleted by other documents at any time.
-            It is inappropriate to cite this document as other than work in progress.
+            Publication as an Editor's Draft does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr> Membership. This is a draft document and may be updated, replaced or obsoleted by other documents at any time. It is inappropriate
+            to cite this document as other than work in progress.
         </p>
         <p>
             This document was produced by a group operating under the
             <a id="sotd_patent" property="w3p:patentRules" href="https://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 <abbr title="World Wide Web Consortium">W3C</abbr> Patent
-            Policy</a>. The group does not expect this document to become a <abbr title="World Wide Web Consortium">W3C</abbr> Recommendation.
+            Policy</a>.
             <abbr title="World Wide Web Consortium">W3C</abbr> maintains a <a href="https://www.w3.org/2004/01/pp-impl/83726/status" rel="disclosure">public list of any patent
               disclosures</a> made in connection with the deliverables of the group; that page also includes instructions for disclosing a patent. An individual who has actual knowledge of a patent which the individual believes contains
             <a href="https://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential
@@ -999,7 +999,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             </span>
         </h2>
         <p><em>This section is non-normative.</em></p>
-        <div data-include="file:///home/travis/build/w3c/personalization-semantics/common/terms.html" data-oninclude="restrictReferences" data-include-id="include-6156235212942944"></div>
+        <div data-include="file:///home/travis/build/w3c/personalization-semantics/common/terms.html" data-oninclude="restrictReferences" data-include-id="include-29021326719340723"></div>
     </section>
 
     <section class="normative" id="semanticProperties" typeof="bibo:Chapter" resource="#semanticProperties" property="bibo:hasPart">
@@ -1053,8 +1053,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 </dl>
                 <p>The "undefined" value, when allowed on a state or property, is an explicit indication that the state or property is not set. The value is used on states and properties that support tokens, and the "undefined" value is a string that is
                     one of the allowed tokens. It is also used on some states and properties that accept true/false values, when "undefined" has a different meaning than "false".</p>
-                <p>These are generic types for states and properties, but do not define specific representation. See <a href="https://www.w3.org/TR/wai-aria-1.1/#state_property_processing" class="specref">State and Property Attribute Processing</a> for details
-                    on how these values are expressed and handled in host languages.</p>
+                <p>These are generic types for states and properties, but do not define specific representation. See <a href="https://w3c.github.io/aria/aria/aria#state_property_processing" class="specref">State and Property Attribute Processing</a> for
+                    details on how these values are expressed and handled in host languages.</p>
             </section>
             <section id="semantic_prop_taxonomy" typeof="bibo:Chapter" resource="#semantic_prop_taxonomy" property="bibo:hasPart">
                 <h4 id="x3-1-3-taxonomy-of-semantic-properties" resource="#x3-1-3-taxonomy-of-semantic-properties"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.1.3 </span>Taxonomy of Semantic Properties<span class="permalink" typeof="bookmark"><a href="#semantic_prop_taxonomy" aria-label="Permalink for 3.1.3 Taxonomy of Semantic Properties" title="Permalink for 3.1.3 Taxonomy of Semantic Properties" property="url"><span property="title" content="3.1.3 Taxonomy of Semantic Properties">§</span></a>
@@ -2784,7 +2784,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 		</section>
         
 		-->
-    <div data-include="file:///home/travis/build/w3c/personalization-semantics/common/acknowledgements.html" data-oninclude="fixIncludes" data-include-replace="true" data-include-id="include-5882727878683609">Acknowledgements placeholder</div>
+    <div data-include="file:///home/travis/build/w3c/personalization-semantics/common/acknowledgements.html" data-oninclude="fixIncludes" data-include-replace="true" data-include-id="include-4386642558877356">Acknowledgements placeholder</div>
 
 
     <section id="references" class="appendix" typeof="bibo:Chapter" resource="#references" property="bibo:hasPart">
