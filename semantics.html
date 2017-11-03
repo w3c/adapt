@@ -462,103 +462,18 @@
 					</tbody>
 				</table>
 			</section>
+             
 			<section class="property">
 				<h3>action</h3>
 				<div class="property-description">
-					<p>The <code>action</code> attribute provides the context of a button. It is typically be used on a button element or element with role="button".</p>
-
-					<p>For example: &lt;button coga-action=&quot;undo&quot; &gt;default&lt;/button&gt;</p>
-					<p>The user experience may be simply replacing the text for the term &quot;undo&quot;. Note that there is no default value.</p>
-					<p><strong>Supported Values: </strong></p>
-					<p>The following could be supported values of <code>coga-action</code> for buttons:</p>
-					<dl>
-		<dt>compose</dt>
-		<dd>compose new item such as an email. (Default importance = "critical".) </dd>
-		<dt>next</dt>
-		<dd>move to the next item in the series. (Default importance = "critical".) </dd>
-		<dt> delete </dt>
-		<dd>delete current item, selected control or text </dd>
-		<dt> previous </dt>
-		<dd> move to the previous item in the series. (Default importance = "critical".) </dd>
-		<dt> toc </dt>
-		<dd> opens a table of content </dd>
-		<dt> submit </dt>
-		<dd> submits the form data or request to the server. (Default importance = "critical".) </dd>
-		<dt> undo </dt>
-		<dd> revert to the state before the user's most recent changes </dd>
-		<dt> cancel </dt>
-		<dd> closes the dialog and discards any changes the user may have made within that dialog. (Default importance = "critical".) </dd>
-		<dt>reset</dt>
-		<dd> resets all the controls to their initial values </dd>
-		<dt> label </dt>
-		<dd> add label to the selected item or the item at the current location. </dd>
-		<dt> buy</dt>
-		<dd> buy the selected item or buy the item at the current location. Often involves adding the current item into a shopping cart. (Default importance = "critical".)</dd>
-		<dt> add </dt>
-		<dd> add the selected item or the item at the current location to a list</dd>
-		<dt> move </dt>
-		<dd> move the selected item</dd>
-		<dt> save </dt>
-		<dd>save the current content. (Default importance = "critical".) </dd>
-		<dt> send </dt>
-		<dd> send a form, email or request. (Default importance = "critical".)</dd>
-		<dt> close </dt>
-		<dd> close current dialog. (Default importance = "critical".)</dd>
-		<dt> more </dt>
-		<dd> show more information</dd>
-		<dt> print </dt>
-		<dd> print current page, selection or the item at the current location </dd>
-		<dt> received </dt>
-		<dd> open received folder</dd>
-		<dt> sent </dt>
-		<dd> open sent folder</dd>
-		<dt> edit </dt>
-		<dd> edit current item, selection or the item at the current location </dd>
-		<dt> forward </dt>
-		<dd> forward to current item such as an email</dd>
-		<dt> reply </dt>
-		<dd> reply to current item such as an email. (Default importance = "critical".)</dd>
-		<dt> upload </dt>
-		<dd> upload file to the server </dd>
-		<dt>open </dt>
-		<dd>open  item. (Default importance = "critical".) </dd>
-		<dt> new </dt>
-		<dd> open new item. (Default importance = "critical".)</dd>
-		<dt> settings </dt>
-		<dd> open settings and options</dd>
-		<dt> mode </dt>
-		<dd> change the mode or functionality. (Default importance = "critical".) </dd>
-		<dt> higher </dt>
-		<dd> increases the level of the relevant setting. (Default importance = "critical".) </dd>
-		<dt>lower </dt>
-		<dd> increases the level of the relevant setting. (Default importance = "critical".) </dd>
-		<dt> my profile </dt>
-		<dd>opens the user’s profile page </dd>
-		<dt> expand </dt>
-		<dd> expand or unexpand the current item</dd>
-		<dt> refresh</dt>
-		<dd> manually refresh the current contents of the screen </dd>
-		<dt> properties </dt>
-		<dd> shows the properties of the item </dd>
-		<dt> help</dt>
-		<dd> opens a help function. (Default importance = "critical".) </dd>
-		<dt> cut</dt>
-		<dd> removes the selected control, item or text and places it on the Clipboard</dd>
-		<dt> copy </dt>
-		<dd> copies the selected control, item or text onto the Clipboard</dd>
-		<dt> color </dt>
-		<dd> opens a color picker </dd>
-		<dt> date </dt>
-		<dd> opens a date control. (Default importance = "critical".) </dd>
-		<dt> remove </dt>
-		<dd> remove an item from a list </dd>
-		<dt>right </dt>
-		<dd> moves a selected item to the right to another column or list </dd>
-		<dt>left </dt>
-		<dd> moves a selected item to the left to another column or list </dd>
-	</dl>
-
-				</div>
+				    <p>The <code>action</code> attribute provides the context of a button. It is typically be used on a button element or element with role="button".</p>
+					
+ 					<pre class="example" title="Action Using ARIA">
+					   <p>For example: &lt;button coga-action=&quot;undo&quot; &gt;default&lt;/button&gt;</p>
+					   <p>The user experience may be simply replacing the text for the term &quot;undo&quot;. Note that there is no default value.</p>
+                    </pre>
+                </div>
+                
 				<table class="property-features">
 					<caption>Characteristics:</caption>
 					<thead>
@@ -582,11 +497,192 @@
 						</tr>
 						<tr>
 							<th class="property-value-head" scope="row">Value:</th>
-							<td class="property-value"><a href="#valuetype_string">string</a></td>
+							<td class="property-value"><a href="#valuetype_token">token</a></td>
 						</tr>
 					</tbody>
 				</table>
-			</section>
+                <p>The following could be supported values of <code>coga-action</code> for buttons:</p>
+				<table class="value-descriptions">
+					<caption>Values:</caption>
+					<thead>
+						<tr>
+							<th scope="col">Value</th>
+							<th scope="col">Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="value-name" scope="row">compose</th>
+							<td class="value-description">compose new item such as an email. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">next</th>
+							<td class="value-description">move to the next item in the series. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">delete</th>
+							<td class="value-description">delete current item, selected control or text</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">previous</th>
+							<td class="value-description">move to the previous item in the series. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">toc</th>
+							<td class="value-description">opens a table of content</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">submit</th>
+							<td class="value-description">submits the form data or request to the server. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">undo</th>
+							<td class="value-description">revert to the state before the user's most recent changes</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">cancel</th>
+							<td class="value-description">closes the dialog and discards any changes the user may have made within that dialog. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">reset</th>
+							<td class="value-description">resets all the controls to their initial values</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">label</th>
+							<td class="value-description">add label to the selected item or the item at the current location.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">buy</th>
+							<td class="value-description">buy the selected item or buy the item at the current location. Often involves adding the current item into a shopping cart. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">add</th>
+							<td class="value-description">add the selected item or the item at the current location to a list</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">move</th>
+							<td class="value-description">move the selected item</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">save</th>
+							<td class="value-description">save the current content. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">send</th>
+							<td class="value-description">send a form, email or request. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">close</th>
+							<td class="value-description">close current dialog. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">more</th>
+							<td class="value-description">show more information</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">print</th>
+							<td class="value-description">print current page, selection or the item at the current location</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">received</th>
+							<td class="value-description">open received folder</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">sent</th>
+							<td class="value-description">open sent folder</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">edit</th>
+							<td class="value-description">edit current item, selection or the item at the current location</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">forward</th>
+							<td class="value-description">forward to current item such as an email</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">reply</th>
+							<td class="value-description">reply to current item such as an email. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">upload</th>
+							<td class="value-description">upload file to the server</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">open</th>
+							<td class="value-description">open item. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">new</th>
+							<td class="value-description">open new item. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">settings</th>
+							<td class="value-description">open settings and options</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">mode</th>
+							<td class="value-description">change the mode or functionality. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">higher</th>
+							<td class="value-description">increases the level of the relevant setting. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">lower</th>
+							<td class="value-description">increases the level of the relevant setting. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">my profile</th>
+							<td class="value-description">opens the user’s profile page</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">expand</th>
+							<td class="value-description">expand or unexpand the current item</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">refresh</th>
+							<td class="value-description">manually refresh the current contents of the screen</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">properties</th>
+							<td class="value-description">shows the properties of the item</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">help</th>
+							<td class="value-description">opens a help function. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">cut</th>
+							<td class="value-description">removes the selected control, item or text and places it on the Clipboard</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">copy</th>
+							<td class="value-description">copies the selected control, item or text onto the Clipboard</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">color</th>
+							<td class="value-description">opens a color picker</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">date</th>
+							<td class="value-description">opens a date control. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">remove</th>
+							<td class="value-description">remove an item from a list</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">right</th>
+							<td class="value-description">moves a selected item to the right to another column or list</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">left</th>
+							<td class="value-description">moves a selected item to the left to another column or list</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>      
+            
 			<section class="property">
 				<h3>destination</h3>
 				<div class="property-description">
@@ -711,6 +807,8 @@
 					</tbody>
 				</table>
 			</section>
+            
+
 			<section class="property">
 				<h3>field</h3>
 				<div class="property-description">
