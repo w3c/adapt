@@ -725,17 +725,17 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     "CR": "https://www.w3.org/TR/wai-aria-1.1/",
     "REC": "https://www.w3.org/TR/wai-aria-1.1/"
   },
-  "publishDate": "2017-11-02",
-  "publishISODate": "2017-11-02T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 02 November 2017"
+  "publishDate": "2017-11-03",
+  "publishISODate": "2017-11-03T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 03 November 2017"
 }</script></head>
 	<body aria-busy="false" class="h-entry toc-inline"><div class="head">
     <p>
       <a class="logo" href="https://www.w3.org/"><img width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt="W3C"></a>
     </p>
-  <p><!--_hyper: 748585939;--></p>
+  <p><!--_hyper: -376707904;--></p>
   <h1 class="title p-name" id="title" property="dcterms:title">Personalization Semantics 1.0</h1>
-  <h2 id="w3c-editor-s-draft-02-november-2017"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time property="dcterms:issued" class="dt-published" datetime="2017-11-02">02 November 2017</time><span class="permalink" typeof="bookmark"><a href="#undefined" aria-label="Permalink for W3C Editor's Draft 02 November 2017" title="Permalink for W3C Editor's Draft 02 November 2017" property="url"><span property="title" content="W3C Editor's Draft 02 November 2017">§</span></a></span></h2>
+  <h2 id="w3c-editor-s-draft-03-november-2017"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time property="dcterms:issued" class="dt-published" datetime="2017-11-03">03 November 2017</time><span class="permalink" typeof="bookmark"><a href="#undefined" aria-label="Permalink for W3C Editor's Draft 03 November 2017" title="Permalink for W3C Editor's Draft 03 November 2017" property="url"><span property="title" content="W3C Editor's Draft 03 November 2017">§</span></a></span></h2>
   <dl>
       <dt>This version:</dt>
       <dd><a class="u-url" href="https://w3c.github.io/personalization-semantics/">https://w3c.github.io/personalization-semantics/</a></dd>
@@ -1357,103 +1357,16 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 					</tbody>
 				</table>
 			</section>
+             
 			<section class="property" id="action" typeof="bibo:Chapter" resource="#action" property="bibo:hasPart">
 				<h3 id="x5-2-action" resource="#x5-2-action"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.2 </span>action<span class="permalink" typeof="bookmark"><a href="#action" aria-label="Permalink for 5.2 action" title="Permalink for 5.2 action" property="url"><span property="title" content="5.2 action">§</span></a></span></span></h3>
 				<div class="property-description">
-					<p>The <code>action</code> attribute provides the context of a button. It is typically be used on a button element or element with role="button".</p>
-
-					<p>For example: &lt;button coga-action="undo" &gt;default&lt;/button&gt;</p>
-					<p>The user experience may be simply replacing the text for the term "undo". Note that there is no default value.</p>
-					<p><strong>Supported Values: </strong></p>
-					<p>The following could be supported values of <code>coga-action</code> for buttons:</p>
-					<dl>
-		<dt>compose</dt>
-		<dd>compose new item such as an email. (Default importance = "critical".) </dd>
-		<dt>next</dt>
-		<dd>move to the next item in the series. (Default importance = "critical".) </dd>
-		<dt> delete </dt>
-		<dd>delete current item, selected control or text </dd>
-		<dt> previous </dt>
-		<dd> move to the previous item in the series. (Default importance = "critical".) </dd>
-		<dt> toc </dt>
-		<dd> opens a table of content </dd>
-		<dt> submit </dt>
-		<dd> submits the form data or request to the server. (Default importance = "critical".) </dd>
-		<dt> undo </dt>
-		<dd> revert to the state before the user's most recent changes </dd>
-		<dt> cancel </dt>
-		<dd> closes the dialog and discards any changes the user may have made within that dialog. (Default importance = "critical".) </dd>
-		<dt>reset</dt>
-		<dd> resets all the controls to their initial values </dd>
-		<dt> label </dt>
-		<dd> add label to the selected item or the item at the current location. </dd>
-		<dt> buy</dt>
-		<dd> buy the selected item or buy the item at the current location. Often involves adding the current item into a shopping cart. (Default importance = "critical".)</dd>
-		<dt> add </dt>
-		<dd> add the selected item or the item at the current location to a list</dd>
-		<dt> move </dt>
-		<dd> move the selected item</dd>
-		<dt> save </dt>
-		<dd>save the current content. (Default importance = "critical".) </dd>
-		<dt> send </dt>
-		<dd> send a form, email or request. (Default importance = "critical".)</dd>
-		<dt> close </dt>
-		<dd> close current dialog. (Default importance = "critical".)</dd>
-		<dt> more </dt>
-		<dd> show more information</dd>
-		<dt> print </dt>
-		<dd> print current page, selection or the item at the current location </dd>
-		<dt> received </dt>
-		<dd> open received folder</dd>
-		<dt> sent </dt>
-		<dd> open sent folder</dd>
-		<dt> edit </dt>
-		<dd> edit current item, selection or the item at the current location </dd>
-		<dt> forward </dt>
-		<dd> forward to current item such as an email</dd>
-		<dt> reply </dt>
-		<dd> reply to current item such as an email. (Default importance = "critical".)</dd>
-		<dt> upload </dt>
-		<dd> upload file to the server </dd>
-		<dt>open </dt>
-		<dd>open  item. (Default importance = "critical".) </dd>
-		<dt> new </dt>
-		<dd> open new item. (Default importance = "critical".)</dd>
-		<dt> settings </dt>
-		<dd> open settings and options</dd>
-		<dt> mode </dt>
-		<dd> change the mode or functionality. (Default importance = "critical".) </dd>
-		<dt> higher </dt>
-		<dd> increases the level of the relevant setting. (Default importance = "critical".) </dd>
-		<dt>lower </dt>
-		<dd> increases the level of the relevant setting. (Default importance = "critical".) </dd>
-		<dt> my profile </dt>
-		<dd>opens the user’s profile page </dd>
-		<dt> expand </dt>
-		<dd> expand or unexpand the current item</dd>
-		<dt> refresh</dt>
-		<dd> manually refresh the current contents of the screen </dd>
-		<dt> properties </dt>
-		<dd> shows the properties of the item </dd>
-		<dt> help</dt>
-		<dd> opens a help function. (Default importance = "critical".) </dd>
-		<dt> cut</dt>
-		<dd> removes the selected control, item or text and places it on the Clipboard</dd>
-		<dt> copy </dt>
-		<dd> copies the selected control, item or text onto the Clipboard</dd>
-		<dt> color </dt>
-		<dd> opens a color picker </dd>
-		<dt> date </dt>
-		<dd> opens a date control. (Default importance = "critical".) </dd>
-		<dt> remove </dt>
-		<dd> remove an item from a list </dd>
-		<dt>right </dt>
-		<dd> moves a selected item to the right to another column or list </dd>
-		<dt>left </dt>
-		<dd> moves a selected item to the left to another column or list </dd>
-	</dl>
-
-				</div>
+				    <p>The <code>action</code> attribute provides the context of a button. It is typically be used on a button element or element with role="button".</p>
+					
+ 					<div class="example"><div class="example-title marker"><span>Example 1</span><span style="text-transform: none">: Action Using ARIA</span></div><pre class="hljs javascript" aria-busy="false" aria-live="polite">For example: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">coga-action</span>=<span class="hljs-string">"undo"</span> &gt;</span>default<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>
+The user experience may be simply replacing the text <span class="hljs-keyword">for</span> the term <span class="hljs-string">"undo"</span>. Note that there is no <span class="hljs-keyword">default</span> value.</pre></div>
+                </div>
+                
 				<table class="property-features">
 					<caption>Characteristics:</caption>
 					<thead>
@@ -1477,17 +1390,198 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 						</tr>
 						<tr>
 							<th class="property-value-head" scope="row">Value:</th>
-							<td class="property-value"><a href="#valuetype_string">string</a></td>
+							<td class="property-value"><a href="#valuetype_token">token</a></td>
 						</tr>
 					</tbody>
 				</table>
-			</section>
+                <p>The following could be supported values of <code>coga-action</code> for buttons:</p>
+				<table class="value-descriptions">
+					<caption>Values:</caption>
+					<thead>
+						<tr>
+							<th scope="col">Value</th>
+							<th scope="col">Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="value-name" scope="row">compose</th>
+							<td class="value-description">compose new item such as an email. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">next</th>
+							<td class="value-description">move to the next item in the series. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">delete</th>
+							<td class="value-description">delete current item, selected control or text</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">previous</th>
+							<td class="value-description">move to the previous item in the series. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">toc</th>
+							<td class="value-description">opens a table of content</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">submit</th>
+							<td class="value-description">submits the form data or request to the server. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">undo</th>
+							<td class="value-description">revert to the state before the user's most recent changes</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">cancel</th>
+							<td class="value-description">closes the dialog and discards any changes the user may have made within that dialog. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">reset</th>
+							<td class="value-description">resets all the controls to their initial values</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">label</th>
+							<td class="value-description">add label to the selected item or the item at the current location.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">buy</th>
+							<td class="value-description">buy the selected item or buy the item at the current location. Often involves adding the current item into a shopping cart. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">add</th>
+							<td class="value-description">add the selected item or the item at the current location to a list</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">move</th>
+							<td class="value-description">move the selected item</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">save</th>
+							<td class="value-description">save the current content. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">send</th>
+							<td class="value-description">send a form, email or request. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">close</th>
+							<td class="value-description">close current dialog. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">more</th>
+							<td class="value-description">show more information</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">print</th>
+							<td class="value-description">print current page, selection or the item at the current location</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">received</th>
+							<td class="value-description">open received folder</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">sent</th>
+							<td class="value-description">open sent folder</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">edit</th>
+							<td class="value-description">edit current item, selection or the item at the current location</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">forward</th>
+							<td class="value-description">forward to current item such as an email</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">reply</th>
+							<td class="value-description">reply to current item such as an email. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">upload</th>
+							<td class="value-description">upload file to the server</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">open</th>
+							<td class="value-description">open item. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">new</th>
+							<td class="value-description">open new item. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">settings</th>
+							<td class="value-description">open settings and options</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">mode</th>
+							<td class="value-description">change the mode or functionality. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">higher</th>
+							<td class="value-description">increases the level of the relevant setting. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">lower</th>
+							<td class="value-description">increases the level of the relevant setting. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">my profile</th>
+							<td class="value-description">opens the user’s profile page</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">expand</th>
+							<td class="value-description">expand or unexpand the current item</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">refresh</th>
+							<td class="value-description">manually refresh the current contents of the screen</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">properties</th>
+							<td class="value-description">shows the properties of the item</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">help</th>
+							<td class="value-description">opens a help function. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">cut</th>
+							<td class="value-description">removes the selected control, item or text and places it on the Clipboard</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">copy</th>
+							<td class="value-description">copies the selected control, item or text onto the Clipboard</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">color</th>
+							<td class="value-description">opens a color picker</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">date</th>
+							<td class="value-description">opens a date control. (Default importance = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">remove</th>
+							<td class="value-description">remove an item from a list</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">right</th>
+							<td class="value-description">moves a selected item to the right to another column or list</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">left</th>
+							<td class="value-description">moves a selected item to the left to another column or list</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>      
+            
 			<section class="property" id="destination" typeof="bibo:Chapter" resource="#destination" property="bibo:hasPart">
 				<h3 id="x5-3-destination" resource="#x5-3-destination"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.3 </span>destination<span class="permalink" typeof="bookmark"><a href="#destination" aria-label="Permalink for 5.3 destination" title="Permalink for 5.3 destination" property="url"><span property="title" content="5.3 destination">§</span></a></span></span></h3>
 				<div class="property-description">
 					<p>The <code>destination</code> term categorizes the target of a hyperlink.</p>
 					<p>Links with the <code>destination</code> term present can have additional familiar user interface features to help users understand the link and follow the right one easily. User agents might add a familiar customized icon to the link, or style the link in a customized way, or position the link on the page in a location that the user generally expects to find a link of the particular type.</p>
-					<div class="example"><div class="example-title marker"><span>Example 1</span><span style="text-transform: none">: Destination Using ARIA</span></div><pre class="hljs xml" aria-busy="false" aria-live="polite"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"home.html"</span> <span class="hljs-attr">coga-destination</span>=<span class="hljs-string">"home"</span>&gt;</span>our main page<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></pre></div>
+					<div class="example"><div class="example-title marker"><span>Example 2</span><span style="text-transform: none">: Destination Using ARIA</span></div><pre class="hljs xml" aria-busy="false" aria-live="polite"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"home.html"</span> <span class="hljs-attr">coga-destination</span>=<span class="hljs-string">"home"</span>&gt;</span>our main page<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></pre></div>
 					<p>See the <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html">destination sample user experience</a>.</p>
 
 				</div>
@@ -1606,6 +1700,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 					</tbody>
 				</table>
 			</section>
+            
+
 			<section class="property" id="field" typeof="bibo:Chapter" resource="#field" property="bibo:hasPart">
 				<h3 id="x5-4-field" resource="#x5-4-field"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.4 </span>field<span class="permalink" typeof="bookmark"><a href="#field" aria-label="Permalink for 5.4 field" title="Permalink for 5.4 field" property="url"><span property="title" content="5.4 field">§</span></a></span></span></h3>
 				<div class="property-description">
