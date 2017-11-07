@@ -459,11 +459,11 @@
 			<section class="property">
 				<h3>action</h3>
 				<div class="property-description">
-				    <p>The <code>action</code> attribute provides the context of a button. It is typically be used on a button element or element with role="button".</p>
+				    <p>The <code>action</code> attribute provides the context of a button. It is typically used on a button element or element with role="button".</p>
 
  					<pre class="example" title="Action Using ARIA">
-					   <p>For example: &lt;button coga-action=&quot;undo&quot; &gt;default&lt;/button&gt;</p>
-					   <p>The user experience may be simply replacing the text for the term &quot;undo&quot;. Note that there is no default value.</p>
+					   <p>For example: &lt;button coga-action=&quot;undo&quot; &gt;Revert&lt;/button&gt;</p>
+					   <p>A personalization agent may add a symbol, replace the text with a more familiar term, or give it a specific presentation. Note that there is no default value.</p>
                     </pre>
                 </div>
 
@@ -478,7 +478,7 @@
 					<tbody>
 						<tr>
 							<th class="property-related-head" scope="row">Related Concepts:</th>
-							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/html5/links.html#linkTypes">link types</a></cite> [[Links]] and <cite><a href="https://www.w3.org/TR/html5/forms.html#states-of-the-type-attribute"><abbr title="Hypertext Markup Language ">HTML </abbr> types</a></cite> [[Types]]</td>
 						</tr>
 						<tr>
 							<th class="property-applicability-head" scope="row">Used in Roles:</th>
@@ -506,11 +506,11 @@
 					<tbody>
 						<tr>
 							<th class="value-name" scope="row">compose</th>
-							<td class="value-description">compose new item such as an email. (Default importance = "critical".)</td>
+							<td class="value-description">compose new item such as an email. (Implied simplification = "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">next</th>
-							<td class="value-description">move to the next item in the series. (Default importance = "critical".)</td>
+							<td class="value-description">move to the next item in the series. (Implied simplification  = "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">delete</th>
@@ -518,7 +518,7 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">previous</th>
-							<td class="value-description">move to the previous item in the series. (Default importance = "critical".)</td>
+							<td class="value-description">move to the previous item in the series. (Implied simplification  = "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">toc</th>
@@ -526,7 +526,7 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">submit</th>
-							<td class="value-description">submits the form data or request to the server. (Default importance = "critical".)</td>
+							<td class="value-description">submits the form data or request to the server. (Implied simplification  = "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">undo</th>
@@ -534,7 +534,7 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">cancel</th>
-							<td class="value-description">closes the dialog and discards any changes the user may have made within that dialog. (Default importance = "critical".)</td>
+							<td class="value-description">closes the dialog and discards any changes the user may have made within that dialog. (Implied simplification  = "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">reset</th>
@@ -546,7 +546,7 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">buy</th>
-							<td class="value-description">buy the selected item or buy the item at the current location. Often involves adding the current item into a shopping cart. (Default importance = "critical".)</td>
+							<td class="value-description">buy the selected item or buy the item at the current location. Often involves adding the current item into a shopping cart. (Implied simplification  = "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">add</th>
@@ -554,23 +554,23 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">move</th>
-							<td class="value-description">move the selected item</td>
+							<td class="value-description">move the selected item <p class</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">save</th>
-							<td class="value-description">save the current content. (Default importance = "critical".)</td>
+							<td class="value-description">save the current content. (Implied simplification = "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">send</th>
-							<td class="value-description">send a form, email or request. (Default importance = "critical".)</td>
+							<td class="value-description">send a form, email or request. (Implied simplification = "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">close</th>
-							<td class="value-description">close current dialog. (Default importance = "critical".)</td>
+							<td class="value-description">close current dialog. (Implied simplification = "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">more</th>
-							<td class="value-description">show more information</td>
+							<td class="value-description">show more information <p class="ednote" > We may need more work to identify the dirction (up left degree etc) but there may be a way to do that already </p></td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">print</th>
@@ -594,7 +594,7 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">reply</th>
-							<td class="value-description">reply to current item such as an email. (Default importance = "critical".)</td>
+							<td class="value-description">reply to current item such as an email. (Implied simplification = "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">upload</th>
@@ -602,11 +602,11 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">open</th>
-							<td class="value-description">open item. (Default importance = "critical".)</td>
+							<td class="value-description">open item. (Implied simplification = "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">new</th>
-							<td class="value-description">open new item. (Default importance = "critical".)</td>
+							<td class="value-description">open new item. (Implied simplification= "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">settings</th>
@@ -614,19 +614,19 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">mode</th>
-							<td class="value-description">change the mode or functionality. (Default importance = "critical".)</td>
+							<td class="value-description">change the mode or functionality. (Implied simplification= "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">higher</th>
-							<td class="value-description">increases the level of the relevant setting. (Default importance = "critical".)</td>
+							<td class="value-description">increases the level of the relevant setting. (Implied simplification= "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">lower</th>
-							<td class="value-description">increases the level of the relevant setting. (Default importance = "critical".)</td>
+							<td class="value-description">increases the level of the relevant setting. (Implied simplification= "critical".)</td>
 						</tr>
 						<tr>
-							<th class="value-name" scope="row">my profile</th>
-							<td class="value-description">opens the userâ€™s profile page</td>
+							<th class="value-name" scope="row">profile</th>
+							<td class="value-description">opens the userâ's profile page</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">expand</th>
@@ -642,7 +642,7 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">help</th>
-							<td class="value-description">opens a help function. (Default importance = "critical".)</td>
+							<td class="value-description">opens a help function. (Implied simplification= "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">cut</th>
@@ -658,7 +658,7 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">date</th>
-							<td class="value-description">opens a date control. (Default importance = "critical".)</td>
+							<td class="value-description">opens a date control. (Implied simplification= "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">remove</th>
@@ -680,7 +680,7 @@
 				<h3>destination</h3>
 				<div class="property-description">
 					<p>The <code>destination</code> term categorizes the target of a hyperlink.</p>
-					<p>Links with the <code>destination</code> term present can have additional familiar user interface features to help users understand the link and follow the right one easily. User agents might add a familiar customized icon to the link, or style the link in a customized way, or position the link on the page in a location that the user generally expects to find a link of the particular type.</p>
+					<p>A personalization agent or user agent may add additional familiar user interface features to help users understand the link and follow the right one easily. User agents might add a familiar customized icon to the link, or style the link in a customized way, or position the link on the page in a location that the user generally expects to find a link of the particular type.</p>
 					<pre class="example" title="Destination Using ARIA">&lt;a href=&quot;home.html&quot; coga-destination=&quot;home&quot;&gt;our main page&lt;/a&gt;</pre>
 					<p>See the <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html">destination sample user experience</a>.</p>
 
@@ -696,7 +696,7 @@
 					<tbody>
 						<tr>
 							<th class="property-related-head" scope="row">Related Concepts:</th>
-							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/html5/links.html#linkTypes">link types</a></cite> [[Links]] and <cite><a href="https://www.w3.org/TR/html5/forms.html#autofilling-form-controls:-the-autocomplete-attribute"><abbr title="Hypertext Markup Language ">HTML </abbr> autocomplete</a></cite> [[Autocomplete]] </td>
 						</tr>
 						<tr>
 							<th class="property-applicability-head" scope="row">Used in Roles:</th>
@@ -726,8 +726,8 @@
 							<td class="value-description">initial or main page of a website or application</td>
 						</tr>
 						<tr>
-							<th class="value-name" scope="row">contact </th>
-							<td class="value-description">opes contact information for content owner or producer</td>
+							<th class="value-name" scope="row">contact</th>
+							<td class="value-description">opens contact information for content owner or producer</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">phone</th>
@@ -809,9 +809,9 @@
 					<pre class="example" title="Fields Using ARIA">
               <p>&lt;input type="text" name="fname" coga-field=&quot;phone&quot;/&gt;</p>
 					</pre>
-					<p>The user experience may include filling in the field and adding an icon.</p>
+					<p>A personalization agent may add a symbol, replace the text with a more familiar term, or give it a specific presentation. Note that there is no default value.</p><p>The user experience may include filling in the field and adding an icon.</p>
 					<p>coga-field values that would typically be on form controls and would have a user context - for example phone would relate to the user's phone. Note that there is no default value.</p>
-					<p>Note they can be concatenated such as coga-field=&quot;birthdate month&quot;</p>
+					<p>Note they can be more then one value for a field, such as <code>coga-field=&quot;country postcode&quot;</code></p>
 				</div>
 				<table class="property-features">
 					<caption>Characteristics:</caption>
@@ -824,7 +824,7 @@
 					<tbody>
 						<tr>
 							<th class="property-related-head" scope="row">Related Concepts:</th>
-							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/html5/links.html#linkTypes">link types</a></cite> [[Links]] and <cite><a href="https://www.w3.org/TR/html5/forms.html#states-of-the-type-attribute"><abbr title="Hypertext Markup Language ">HTML </abbr> types</a></cite> [[Types]]</td>
 						</tr>
 						<tr>
 							<th class="property-applicability-head" scope="row">Used in Roles:</th>
@@ -898,7 +898,7 @@
 							<td class="value-description">third line of street address</td>
 						</tr>
 						<tr>
-							<th class="value-name" scope="row">city or locality</th>
+							<th class="value-name" scope="row">city</th>
 							<td class="value-description">locality or city</td>
 						</tr>
 						<tr>
@@ -906,7 +906,7 @@
 							<td class="value-description">administrative area, state, province, or region</td>
 						</tr>
 						<tr>
-							<th class="value-name" scope="row">postal-code</th>
+							<th class="value-name" scope="row">postalcode</th>
 							<td class="value-description">postal or ZIP code</td>
 						</tr>
 						<tr>
