@@ -207,7 +207,7 @@
 					<p>Relevant properties: <a href="#context">context</a></p>
 				</section>
 				<section>
-					<h2>Concept codes</h2>
+					<h2>Interoperable symbols</h2>
 					<p><strong>Requirement: </strong>We would like to enable interoperable symbol set codes for Non verbal people. Products for people who are non vocal often use symbols to help users communicate. These symbols are in fact peoples language. Unfortunately many of these symbols are both subject to copy write AND not interoperable. That means end-users can only use one device, and can not use apps or AT from a different company. There are open set of symbol codes for these symbol sets, that could be referenced then they can be interoperable. alternatively wordnet nodes could be referenced. If the users symbols are mapped to the same nodes then users agents will be able to load the user understandable symbol. That means the end use could buy the symbols and use them across different devices or applications. They would still be proprietary but they would also be interoperable. </p>
 					<p>User experience: AAC users will load symbols that they understand in different applications that are made by a different provider.</p>
 					<p>Relevant properties: <a href="#concept">concept</a></p>
@@ -1138,14 +1138,17 @@
 			<section class="property">
 				<h3>numberfree</h3>
 				<div class="property-description">
-					<p>@@1-line description</p>
-					<p><strong>Supported value : </strong> String</p>
+					<p><code>numberfree</code> provides alternative text for people who prefer content that does not use numerical concepts.</p>
+					<p>A personalization agent may replace the content with the number free alternative, or it may put the number free alternative in a tooltip or sidebar. The content must still be understandable when a user agent replaces the original content with the number free alternative.</p> </p>
+
+					<p><strong>Supported value: </strong> String</p>
 					<p>Note that there is no default value.</p>
-					<p><strong>For example:</strong></p>
+					<div class="example"><div class="example-title marker"><span>Example 1</span><span style="text-transform: none">: Numberfree Using ARIA</span></div>
 					<pre>&lt;span coga-numberfree=&quot;almost all&quot;&gt;9 out of 10 &lt;/span&gt;
-			</pre>
-					<pre>&lt;span coga-numberfree=&quot;hat and coat weather&quot;&gt;The weather is <span>9 degrees&lt;/span&gt;</span>
-			</pre>
+			</div>
+			<div class="example"><div class="example-title marker"><span>Example 2</span><span style="text-transform: none">: Numberfree Using ARIA</span></div>
+			<pre>&lt;span coga-numberfree=&quot;hat and coat weather&quot;&gt;The weather is 9 degrees&lt;/span&gt;</pre>
+			</div>
 				</div>
 				<table class="property-features">
 					<caption>Characteristics:</caption>
@@ -1158,7 +1161,7 @@
 					<tbody>
 						<tr>
 							<th class="property-related-head" scope="row">Related Concepts:</th>
-							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
+							<td class="property-related">Alt text </td>
 						</tr>
 						<tr>
 							<th class="property-applicability-head" scope="row">Used in Roles:</th>
@@ -1178,12 +1181,16 @@
 			<section class="property">
 				<h3>literal</h3>
 				<div class="property-description">
-					<p>@@1-line description</p>
+					<p><code>literal</code> provides alternative text for people who prefer content that does not use non literal text, such as metaphors.</p>
+					<p>A personalization agent may replace the content with the literal alternative, or it may put the literal alternative in a tooltip.</p>
+					<p>User agents may also render non-literal text in a different way so that users will be able to identify non literal content. They can then use a mouse over or other technique to receive the alternative. </p>
+					<p>A user agent must be able to replace the non literal content with the literal alternative without loss of meaning.</p>
 					<p><strong>Supported value: </strong>String</p>
 					<p>Note that there is no default value.</p>
-					<p><strong>Examples:</strong></p>
-					<pre>&lt;span coga-literal=&quot;it is raining hard&quot;&gt; It is <span>raining cats and dogs</span> &lt;/span&gt;</pre>
-					<p>User agents can render non-literal text in a different way so that users will know that this is non literal. They can then use a mouse over or other technique to receive the translation. </p>
+					<div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: Literal Using ARIA</span></div>
+					<pre>It is &lt;span coga-literal=&quot;raining hard&quot;&gt;raining cats and dogs&lt;/span&gt;</pre>
+					</div>
+
 				</div>
 				<table class="property-features">
 					<caption>Characteristics:</caption>
@@ -1196,7 +1203,7 @@
 					<tbody>
 						<tr>
 							<th class="property-related-head" scope="row">Related Concepts:</th>
-							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
+							<td class="property-related">Alt text</td>
 						</tr>
 						<tr>
 							<th class="property-applicability-head" scope="row">Used in Roles:</th>
@@ -1213,6 +1220,48 @@
 					</tbody>
 				</table>
 			</section>
+			<section class="property">
+							<h3>easylang</h3>
+							<div class="property-description">
+								<p><code>easylang</code> provides an alternative text of the content that is easier to read and understand. Note that this only works on small sections of text as the easylang attribute does not support full HTML, such as lists and sections.</p>
+								<p>
+								A personalization agent may replace the content with the simpler alternative, or it may put the  alternative in a tooltip or help panel.</p>
+								<p>
+								User agents may also render hard text in a different way so that users will be able to identify text that has an alternative provided. </p>
+								<p>The content must still be understandable when a user agent replaces the original content with the simpler alternative.</p>
+								<p><strong>Supported values:</strong> String</p>
+								<div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: Easylang Using ARIA</span></div>
+								<pre>&lt;span coga-easylang=&quot;some text that is easy to read&quot;&gt; some convoluted obtuse text&lt;/span&gt;</pre></div>
+								<p>Where coga-easylang should use as simple well-known words as possible, and active voicing, literal text, small simple sentences. Acronyms and abbreviations should be avoided, unless they are the common way to refer to an item.</p>
+							</div>
+							<table class="property-features">
+								<caption>Characteristics:</caption>
+								<thead>
+									<tr>
+										<th scope="col">Characteristic</th>
+										<th scope="col">Value</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th class="property-related-head" scope="row">Related Concepts:</th>
+										<td class="property-related"> Alt text</td>
+									</tr>
+									<tr>
+										<th class="property-applicability-head" scope="row">Used in Roles:</th>
+										<td class="property-applicability">All elements of the base markup</td>
+									</tr>
+									<tr>
+										<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+										<td class="property-descendants">Placeholder</td>
+									</tr>
+									<tr>
+										<th class="property-value-head" scope="row">Value:</th>
+										<td class="property-value"><a href="#valuetype_string">string</a></td>
+									</tr>
+								</tbody>
+							</table>
+
 			<section class="property">
 				<h3>feedback</h3>
 				<div class="property-description">
@@ -1613,41 +1662,6 @@
 					</tbody>
 				</table>
 			</section>
-			<section class="property">
-				<h3>easylang</h3>
-				<div class="property-description">
-					<p><code>coga-easylang</code> will contain a version of the content that is easier to read and understand. Note that this only works on small sections of text as the easylang attribute does not support full HTML, such as lists and sections.</p>
-					<p><strong>Supported values:</strong> String</p>
-					<pre>&lt;span coga-easylang=&quot;some text that is easy to read&quot;&gt; some convoluted obtuse text&lt;/span&gt;</pre>
-					<p>Where coga-easylang should use as simple well-known words as possible, and active voicing, literal text, small simple sentences. Acronyms and abbreviations should be avoided, unless they are the common way to refer to an item.</p>
-				</div>
-				<table class="property-features">
-					<caption>Characteristics:</caption>
-					<thead>
-						<tr>
-							<th scope="col">Characteristic</th>
-							<th scope="col">Value</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<th class="property-related-head" scope="row">Related Concepts:</th>
-							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
-						</tr>
-						<tr>
-							<th class="property-applicability-head" scope="row">Used in Roles:</th>
-							<td class="property-applicability">All elements of the base markup</td>
-						</tr>
-						<tr>
-							<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
-							<td class="property-descendants">Placeholder</td>
-						</tr>
-						<tr>
-							<th class="property-value-head" scope="row">Value:</th>
-							<td class="property-value"><a href="#valuetype_string">string</a></td>
-						</tr>
-					</tbody>
-				</table>
 			</section>
 			<section class="property">
 				<h3>log</h3>
