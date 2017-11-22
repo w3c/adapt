@@ -1,0 +1,54 @@
+<section>
+	<h3>All the log properties </h3>
+	
+	<section class="property-explanation">
+  <h4>Log usage</h4>
+	<p>Note we are considering supporting a log such as</p>
+    <div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: </span></div>
+			<pre>&lt;div coga-log="booking trip" coga-step="1" aria-label="buy ticket" aria-hidden="true"
+    coga-actiontaken="bought ticket to NY return" steplocation ="uri" /></pre>
+					<p>or</p>
+					<pre>&lt;div coga-log="booking trip" coga-step="1" coga-actiontaken="bought ticket to NY return">
+  buy ticket
+  &lt;a href="uri">change&lt;/a>
+&lt;/div></pre>
+					<p>or the step number can be implied by the DOM</p>
+					<pre>&lt;div coga-log="booking trip">
+  &lt;div coga-actiontaken="bought ticket to NY return">
+    buy ticket
+    &lt;a href="uri">change&lt;/a>
+  &lt;/div>
+&lt;/div></pre>
+			</div>
+
+    </section>
+    
+  <section class="property-explanation">
+  <h4>Alternative syntax for log</h4>
+	<p>Note we are considering supporting an alternative syntax such as:</p>
+    <div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: </span></div>
+		<pre>&lt;log name="booking trip">
+  &lt;step status ="done">
+    &lt;name>buy ticket&lt;/name>
+    &lt;actiontaken>bought ticket to NY return&lt;/actiontaken>
+    &lt;view changepossible="yes">url &lt;/view>
+  &lt;/step>
+  &lt;step  status ="done">
+    &lt;name>hotel&lt;/name>
+    &lt;actiontaken>booked Sheraton single room&lt;/actiontaken>
+    &lt;view changepossible="yes">url &lt;/view>
+  &lt;/step>
+  &lt;step  status ="current">
+    &lt;name>car rental&lt;/name>
+    &lt;view current changepossible="yes"/>
+  &lt;/step>
+&lt;/log>
+</pre>	
+			</div>
+
+    </section>
+</section>
+
+
+
+

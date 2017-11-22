@@ -5,122 +5,14 @@
 		<meta charset="utf-8"/>
 		<script src="https://www.w3.org/Tools/respec/respec-w3c-common" class="remove"></script>
 		<script src="../common/biblio.js" class="remove"></script>
-		<script class="remove">
-	var respecConfig = {
-		// embed RDFa data in the output
-		trace:  true,
-		doRDFa: '1.0',
-		includePermalinks: true,
-		permalinkEdge:     true,
-		permalinkHide:     false,
-		tocIntroductory: true,
-		// specification status (e.g., WD, LC, NOTE, etc.). If in doubt use ED.
-		specStatus:           "ED",
-		noRecTrack: true,
-		//crEnd:                "2012-04-30",
-		//perEnd:               "2013-07-23",
-		//publishDate:          "2013-08-22",
-		//diffTool:             "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
-
-		// the specifications short name, as in http://www.w3.org/TR/short-name/
-		shortName:            "personalization-explainer-1.0",
-
-
-		// if you wish the publication date to be other than today, set this
-		//publishDate:  "2017-05-09",
-		copyrightStart:  "2017",
-
-		// if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
-		// and its maturity status
-		//previousPublishDate:  "",
-		//previousMaturity:  "",
-		//prevRecURI: "",
-		//previousDiffURI: "",
-
-		// if there a publicly available Editors Draft, this is the link
-		edDraftURI: "http://w3c.github.io/w3c/personalization-semantics/explainer/explainer.html",
-
-		// if this is a LCWD, uncomment and set the end of its review period
-		// lcEnd: "2012-02-21",
-
-		// editors, add as many as you like
-		// only "name" is required
-		editors: [
-			{
-				name: "Lisa Seeman",
-				url: 'http://athena-ict.com',
-				mailto: "lisa.seeman@zoho.com",
-				w3cid: 16320
-			},
-			{
-				name: "Rich Schwerdtfeger",
-				w3cid: 2460
-			},
-			{
-				name: "Michael Cooper",
-				url: 'https://www.w3.org',
-				mailto: "cooper@w3.org",
-				company: "W3C",
-				companyURI: "http://www.w3.org",
-				w3cid: 34017
-			}
-		],
-
-		// authors, add as many as you like.
-		// This is optional, uncomment if you have authors as well as editors.
-		// only "name" is required. Same format as editors.
-
-		//authors:  [
-		//    { name: "Your Name", url: "http://example.org/",
-		//      company: "Your Company", companyURI: "http://example.com/" },
-		//],
-
-		/*
-		alternateFormats: [
-			{ uri: 'aria-diff.html', label: "Diff from Previous Recommendation" } ,
-			{ uri: 'aria.ps', label: "PostScript version" },
-			{ uri: 'aria.pdf', label: "PDF version" }
-		],
-		*/
-
-		// errata: 'http://www.w3.org/2010/02/rdfa/errata.html',
-
-		// name of the WG
-		wg:           "Accessible Rich Internet Applications Working Group",
-
-		// URI of the public WG page
-		wgURI:        "https://www.w3.org/WAI/ARIA/",
-
-		// name (with the @w3c.org) of the public mailing to which comments are due
-		wgPublicList: "public-personalization-tf",
-
-		// URI of the patent status for this WG, for Rec-track documents
-		// !!!! IMPORTANT !!!!
-		// This is important for Rec-track documents, do not copy a patent URI from a random
-		// document unless you know what you're doing. If in doubt ask your friendly neighbourhood
-		// Team Contact.
-		wgPatentURI:  "https://www.w3.org/2004/01/pp-impl/83726/status",
-		//maxTocLevel: 2,
-
-		localBiblio: biblio,
-
-		// Spec URLs
-        ariaSpecURLs: {
-          "ED": "https://w3c.github.io/aria/aria/aria",
-          "FPWD": "https://www.w3.org/TR/wai-aria-1.1/",
-          "WD" : "https://www.w3.org/TR/wai-aria-1.1/",
-          "CR": "https://www.w3.org/TR/wai-aria-1.1/",
-          "REC": "https://www.w3.org/TR/wai-aria-1.1/"
-        },
-
-	};
-		</script>
+		<script src="respec-config.js" class="remove"></script>
+	
 		<link href="../common/css/common.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
 
 		<section id="abstract">
-			<p>abstract</p>
+			<p>Personalization involves tailoring aspects of the user experience to meet the needs and preferences of the user. For example, having familiar terms and symbols is key to many users being able to use the web. However, what is familiar for one user may be unfamiliar to another requiring them to learn new symbols. The challenge has been the ability to identify the types of content in a document that should be adapted to the preferred user experience. The introduction of standardized semantics allows web applications to customize the exposure of that content to one that is familiar to individuals based on their needs and preferences. This specification defines standard semantics to enable user driven personalization such as the association of a user-preferred symbols to elements having those semantics. This ensures that users can quickly find familiar icons, such as a help icon, that apply to user interface elements.</p>
 		</section>
 
 		<section id="sotd"></section>
@@ -128,26 +20,1773 @@
 		<section class="informative" id="introduction">
 
 			<h1>Introduction</h1>
+			<p>The goals of this specification include:</p>
+			<ul>
+				<li> expanding the accessibility information that may be supplied by the author;</li>
+				<li> facilitate preference driven individual personalization;</li>
+				<li> enable the author to specify key semantics needed to support users with cognitive impairments</li>
+			</ul>
+			<p>This is a proposal to define syntax for adaptable content such as: links, buttons, symbols, help and keyboard. This may be an WAI-ARIA COGA Extension.</p>
+			<p>Personalization involves tailoring aspects of the user experience to meet the preferences or needs of the user. For example, having familiar terms and symbols is key to being able to use the web. However what is familiar for one user may be new for another requiring them to learn new symbols. Personalization could include loading a set of symbols that is appropriate for the specific user, ensuring that all users find the icons simple and familiar.</p>
+			<p>Technology holds the promise of being extremely flexible and the design of many systems includes the expectation that users will be able to optimize their interaction experience according to their personal preferences or accessibility requirements (needs). </p>
 			
 
 		</section>
 
 		<section class="informative" id="content">
 			<h1>Content</h1>
-			<section data-include="content/content.html" data-include-replace="true"></section>
+			<section class="property">
+				<h2>coga-action</h2>
+				<div class="property-description">
+				    <p>The <code>action</code> attribute provides the context of a button. It is typically used on a button element or element with role="button".</p>
+                </div>
+
+                <div class="property-example">
+                	<p><strong>Examples:</strong></p>
+                	<ul>
+                		<li>
+                			<a href="content/content.html#coga-action">Examples of coga-action</a>:
+                		</li>
+                	</ul>
+                </div>
+
+                
+
+				<table class="property-features">
+				<p><strong>Characteristics:</strong></p>	
+					<thead>
+						<tr>
+							<th scope="col">Characteristic</th>
+							<th scope="col">Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="property-related-head" scope="row">Related Concepts:</th>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/html5/links.html#linkTypes">link types</a></cite> [[Links]] and <cite><a href="https://www.w3.org/TR/html5/forms.html#states-of-the-type-attribute"><abbr title="Hypertext Markup Language ">HTML </abbr> types</a></cite> [[Types]]</td>
+						</tr>
+						<tr>
+							<th class="property-applicability-head" scope="row">Used in Roles:</th>
+							<td class="property-applicability">All elements of the base markup</td>
+						</tr>
+						<tr>
+							<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+							<td class="property-descendants">Placeholder</td>
+						</tr>
+						<tr>
+							<th class="property-value-head" scope="row">Value:</th>
+							<td class="property-value"><a href="#valuetype_token">token</a></td>
+						</tr>
+					</tbody>
+				</table>
+                <p>The following could be supported values of <code>coga-action</code> for buttons:</p>
+
+                
+				<table class="value-descriptions">
+					<p><strong>Values:</strong></p>
+					<thead>
+						<tr>
+							<th scope="col">Value</th>
+							<th scope="col">Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="value-name" scope="row">compose</th>
+							<td class="value-description">compose new item such as an email. (Implied simplification = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">next</th>
+							<td class="value-description">move to the next item in the series. (Implied simplification  = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">delete</th>
+							<td class="value-description">delete current item, selected control or text</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">previous</th>
+							<td class="value-description">move to the previous item in the series. (Implied simplification  = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">toc</th>
+							<td class="value-description">opens a table of content</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">submit</th>
+							<td class="value-description">submits the form data or request to the server. (Implied simplification  = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">undo</th>
+							<td class="value-description">revert to the state before the user's most recent changes</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">cancel</th>
+							<td class="value-description">closes the dialog and discards any changes the user may have made within that dialog. (Implied simplification  = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">reset</th>
+							<td class="value-description">resets all the controls to their initial values</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">label</th>
+							<td class="value-description">add label to the selected item or the item at the current location.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">buy</th>
+							<td class="value-description">buy the selected item or buy the item at the current location. Often involves adding the current item into a shopping cart. (Implied simplification  = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">add</th>
+							<td class="value-description">add the selected item or the item at the current location to a list</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">move</th>
+							<td class="value-description">move the selected item <p class</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">save</th>
+							<td class="value-description">save the current content. (Implied simplification = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">send</th>
+							<td class="value-description">send a form, email or request. (Implied simplification = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">close</th>
+							<td class="value-description">close current dialog. (Implied simplification = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">more</th>
+							<td class="value-description">show more information <p class="ednote" > We may need more work to identify the dirction (up left degree etc) but there may be a way to do that already </p></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">print</th>
+							<td class="value-description">print current page, selection or the item at the current location</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">received</th>
+							<td class="value-description">open received folder</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">sent</th>
+							<td class="value-description">open sent folder</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">edit</th>
+							<td class="value-description">edit current item, selection or the item at the current location</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">forward</th>
+							<td class="value-description">forward to current item such as an email</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">reply</th>
+							<td class="value-description">reply to current item such as an email. (Implied simplification = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">upload</th>
+							<td class="value-description">upload file to the server</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">open</th>
+							<td class="value-description">open item. (Implied simplification = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">new</th>
+							<td class="value-description">open new item. (Implied simplification= "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">settings</th>
+							<td class="value-description">open settings and options</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">mode</th>
+							<td class="value-description">change the mode or functionality. (Implied simplification= "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">higher</th>
+							<td class="value-description">increases the level of the relevant setting. (Implied simplification= "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">lower</th>
+							<td class="value-description">increases the level of the relevant setting. (Implied simplification= "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">profile</th>
+							<td class="value-description">opens the userâ's profile page</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">expand</th>
+							<td class="value-description">expand or unexpand the current item</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">refresh</th>
+							<td class="value-description">manually refresh the current contents of the screen</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">properties</th>
+							<td class="value-description">shows the properties of the item</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">help</th>
+							<td class="value-description">opens a help function. (Implied simplification= "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">cut</th>
+							<td class="value-description">removes the selected control, item or text and places it on the Clipboard</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">copy</th>
+							<td class="value-description">copies the selected control, item or text onto the Clipboard</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">color</th>
+							<td class="value-description">opens a color picker</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">date</th>
+							<td class="value-description">opens a date control. (Implied simplification= "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">remove</th>
+							<td class="value-description">remove an item from a list</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">right</th>
+							<td class="value-description">moves a selected item to the right to another column or list</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">left</th>
+							<td class="value-description">moves a selected item to the left to another column or list</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			<section class="property">
+				<h2>destination</h2>
+				<div class="property-description">
+					<p>The <code>destination</code> term categorizes the target of a hyperlink.</p>
+					<p>A personalization agent or user agent may add additional familiar user interface features to help users understand the link and follow the right one easily. User agents might add a familiar customized icon to the link, or style the link in a customized way, or position the link on the page in a location that the user generally expects to find a link of the particular type.</p>
+				</div>
+
+				<div class="property-example">
+  				  <p><strong>Examples:</strong></p>
+    			   <ul>
+    			     <li>
+       			        <a href="content/content.html#coga-destination">Examples of coga-destination</a>:
+      				 </li>
+      			   </ul>
+				</div>
+				<table class="property-features">
+					<p><strong>Characteristics:</strong></p>
+					<caption>Characteristics:</caption>
+					<thead>
+						<tr>
+							<th scope="col">Characteristic</th>
+							<th scope="col">Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="property-related-head" scope="row">Related Concepts:</th>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/html5/links.html#linkTypes">link types</a></cite> [[Links]] and <cite><a href="https://www.w3.org/TR/html5/forms.html#autofilling-form-controls:-the-autocomplete-attribute"><abbr title="Hypertext Markup Language ">HTML </abbr> autocomplete</a></cite> [[Autocomplete]] </td>
+						</tr>
+						<tr>
+							<th class="property-applicability-head" scope="row">Used in Roles:</th>
+							<td class="property-applicability">All elements of the base markup</td>
+						</tr>
+						<tr>
+							<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+							<td class="property-descendants">Placeholder</td>
+						</tr>
+						<tr>
+							<th class="property-value-head" scope="row">Value:</th>
+							<td class="property-value"><a href="#valuetype_token">token</a></td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="value-descriptions">
+					<p><strong>Values:</strong></p>
+					<caption>Values:</caption>
+					<thead>
+						<tr>
+							<th scope="col">Value</th>
+							<th scope="col">Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="value-name" scope="row">home</th>
+							<td class="value-description">initial or main page of a website or application</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">contact</th>
+							<td class="value-description">opens contact information for content owner or producer</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">phone</th>
+							<td class="value-description">phone content owner or producer</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">email</th>
+							<td class="value-description">email content owner or producer</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">sitemap</th>
+							<td class="value-description">content containing a list of pages in a web site</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">help</th>
+							<td class="value-description">a help function, support or instructions</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">chat</th>
+							<td class="value-description">Human help or a dialog help function such as a chat bot</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">about</th>
+							<td class="value-description">information about the content owner or producer</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">terms</th>
+							<td class="value-description">terms and conditions</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">tools</th>
+							<td class="value-description">available tools for the current content</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">services</th>
+							<td class="value-description">services available from the content provider</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">products</th>
+							<td class="value-description">products available from the content provider</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">comment</th>
+							<td class="value-description">submit a comment on the current item</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">language</th>
+							<td class="value-description">language options</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">signin</th>
+							<td class="value-description">sign in to current web site or application</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">signout</th>
+							<td class="value-description">sign out current web site or application</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">register</th>
+							<td class="value-description">register for the current web site or application</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">social</th>
+							<td class="value-description">content provider on social media</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">post</th>
+							<td class="value-description">post current item. Item will be visible to other parties.</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			<section class="property">
+				<h2>field</h2>
+				<div class="property-description">
+					<p><code>field</code> provides the context of a text input field such as a text box. It is typically used on an input of type text, or element with a responding role.</p>
+					<p>A personalization agent may add a symbol, replace the text with a more familiar term, or give it a specific presentation. Note that there is no default value.</p><p>The user experience may include filling in the field and adding an icon.</p>
+					<p>coga-field values that would typically be on form controls and would have a user context - for example phone would relate to the user's phone. Note that there is no default value.</p>
+					<p>Note they can be more then one value for a field, such as <code>coga-field=&quot;country postcode&quot;</code></p>
+				</div>
+				<div class="property-example">
+      				<p><strong>Examples:</strong></p>
+   				     <ul>
+   				       <li>
+    			         <a href="content/content.html#coga-field">Examples of coga-field</a>:
+  				        </li>
+ 				     </ul>
+ 			    </div>
+				<table class="property-features">
+					<p><strong>Characteristics:</strong></p>
+					<caption>Characteristics:</caption>
+					<thead>
+						<tr>
+							<th scope="col">Characteristic</th>
+							<th scope="col">Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="property-related-head" scope="row">Related Concepts:</th>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/html5/links.html#linkTypes">link types</a></cite> [[Links]] and <cite><a href="https://www.w3.org/TR/html5/forms.html#states-of-the-type-attribute"><abbr title="Hypertext Markup Language ">HTML </abbr> types</a></cite> [[Types]]</td>
+						</tr>
+						<tr>
+							<th class="property-applicability-head" scope="row">Used in Roles:</th>
+							<td class="property-applicability">All elements of the base markup</td>
+						</tr>
+						<tr>
+							<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+							<td class="property-descendants">Placeholder</td>
+						</tr>
+						<tr>
+							<th class="property-value-head" scope="row">Value:</th>
+							<td class="property-value"><a href="#valuetype_token">token</a></td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="value-descriptions">
+					<p><strong>Values:</strong></p>
+					<caption>Values:</caption>
+					<thead>
+						<tr>
+							<th scope="col">Value</th>
+							<th scope="col">Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="value-name" scope="row">name</th>
+							<td class="value-description">full name</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">honorific-prefix</th>
+							<td class="value-description">prefix or title (Mr., Mrs. Dr., etc.) </td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">given-name</th>
+							<td class="value-description">given or first name</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">additional-name</th>
+							<td class="value-description">additional or middle name</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">additional-name-initial</th>
+							<td class="value-description">additional or middle name initial</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">family-name</th>
+							<td class="value-description">family name, surname, or last name</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">honorific-suffix</th>
+							<td class="value-description">suffix (Jr., II, etc.)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">nickname</th>
+							<td class="value-description">nickname</td>
+						</tr>
+                        <tr>
+                            <th class="value-name" scope="row">street-address</th>
+                            <td class="value-description">full street address condensed into one line</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">address-line1</th>
+							<td class="value-description">first line of street address </td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">address-line2</th>
+							<td class="value-description">second line of street address</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">address-line3</th>
+							<td class="value-description">third line of street address</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">city</th>
+							<td class="value-description">locality or city</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">area</th>
+							<td class="value-description">administrative area, state, province, or region</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">postalcode</th>
+							<td class="value-description">postal or ZIP code</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">country</th>
+							<td class="value-description">country name</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">fax</th>
+							<td class="value-description">full fax number, including country code</td>
+						</tr>
+                        <tr>
+							<th class="value-name" scope="row">fax-country-code</th>
+							<td class="value-description">international country code</td>
+						</tr>
+
+                        <tr>
+							<th class="value-name" scope="row">fax-national</th>
+							<td class="value-description">national fax number: full number minus country code</td>
+						</tr>
+                        <tr>
+                            <th class="value-name" scope="row">fax-area-code</th>
+                            <td class="value-description">area code</td>
+                        </tr>
+                        <tr>
+							<th class="value-name" scope="row">fax-local</th>
+							<td class="value-description">local fax number: full number minus country and area codes</td>
+						</tr>
+                        <tr>
+							<th class="value-name" scope="row">fax-extension</th>
+							<td class="value-description">fax extension number</td>
+						</tr>
+                        <tr>
+							<th class="value-name" scope="row">email</th>
+							<td class="value-description">email address</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">tel</th>
+							<td class="value-description">full phone number, including country code</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">tel-country-code</th>
+							<td class="value-description">international country code</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">tel-national</th>
+							<td class="value-description">national phone number: full number minus country code</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">tel-area-code</th>
+							<td class="value-description">area code</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">tel-local</th>
+							<td class="value-description">local phone number: full number minus country and area codes</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">tel-extension</th>
+							<td class="value-description">phone extension number</td>
+						</tr>
+				        <tr>
+							<th class="value-name" scope="row">cc-name</th>
+							<td class="value-description">full name, as it appears on credit card</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">cc-number</th>
+							<td class="value-description">credit card number</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">cc-exp-month</th>
+							<td class="value-description">month of expiration of credit card</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">cc-exp-year</th>
+							<td class="value-description">year of expiration of credit card</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">cc-exp</th>
+							<td class="value-description">date of expiration of credit card</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">cc-csc</th>
+							<td class="value-description">credit card security code</td>
+						</tr>
+                        <tr>
+							<th class="value-name" scope="row">language</th>
+							<td class="value-description">preferred language</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">bday</th>
+							<td class="value-description">birthday</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">bday-year</th>
+							<td class="value-description">year of birthday</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">bday-month</th>
+							<td class="value-description">month of birthday</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">bday-day</th>
+							<td class="value-description">day of birthday</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">topic</th>
+							<td class="value-description">Topic for the form. Typically selected from a list of reserved words</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">comment</th>
+							<td class="value-description">comment section. Typically a free text field</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">subject</th>
+							<td class="value-description">form subject. Typically a free text field</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">answer</th>
+							<td class="value-description">answer to a section question</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">org</th>
+							<td class="value-description">company or organization</td>
+						</tr>
+                        <tr>
+							<th class="value-name" scope="row">organization-title</th>
+							<td class="value-description">user's position or title within company or organization</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">sex</th>
+							<td class="value-description">sex or gender</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">gender</th>
+							<td class="value-description">gender identity</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">url</th>
+							<td class="value-description">Website URL</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">photo</th>
+							<td class="value-description">photo or avatar</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">section-*****</th>
+							<td class="value-description">used to group forms together</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			<section class="property">
+				<h2>simplification</h2>
+				<div class="property-description">
+							<p>The <code>simplification</code> attribute differentiates between critical features and less important features for simplification.</p>
+							<p>This allows simplified interfaces with less options or interfaces that emphasize critical features. Adaptations can be based on personalization settings. </p>
+						
+
+							 <p class="ednote">This was formerly coga-importance. However different people may feel that sections that would be hidden in a simplified version are still very important, such as marketing content or legal terms.)</p>
+
+							<div class="note">
+								<p>These semantics aid simplification. But what content is most useful to a user varies from user to user. For example, men may be more interested in mens clothing, and may not be interested in the more frequently use womens clothing option. For that reason we may add context for elements that will help the personalization agent select the most useful content for a given user (see the <a href="#context">context</a> attribute). This is also necessary for reminders (see bellow).</p>
+								<p>It is worth mentioning that a lot of this information is known for personalization of advertisements and content optimization. </p>
+							</div>
+				</div>
+				<div class="property-example">
+                	<p><strong>Examples:</strong></p>
+                	<ul>
+                		<li>
+                			<a href="content/content.html#coga-simplification">Examples of coga-simplification</a>:
+                		</li>
+                	</ul>
+                </div>
+				<table class="property-features">
+							<p><strong>Characteristics:</strong></p>
+							<caption>Characteristics:</caption>
+							<thead>
+								<tr>
+									<th scope="col">Characteristic</th>
+									<th scope="col">Value</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th class="property-related-head" scope="row">Related Concepts:</th>
+									<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
+								</tr>
+								<tr>
+									<th class="property-applicability-head" scope="row">Used in Roles:</th>
+									<td class="property-applicability">All elements of the base markup</td>
+								</tr>
+								<tr>
+									<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+									<td class="property-descendants">Placeholder</td>
+								</tr>
+								<tr>
+									<th class="property-value-head" scope="row">Value:</th>
+									<td class="property-value"><a href="#valuetype_token">token</a></td>
+								</tr>
+							</tbody>
+				</table>
+				<table class="value-descriptions">
+					<p><strong>Values:</strong></p>
+					<caption>Values:</caption>
+							<thead>
+								<tr>
+									<th scope="col">Value</th>
+									<th scope="col">Description</th>
+								</tr>
+							</thead>
+							<tbody>
+							<tr>
+														<th class="value-name" scope="row">simplest</th>
+														<td class="value-description">This setting should be used on: <ul>
+															<li> Elements that are essential for the key function (from the user perspective) of the page (Example: The send button for an email draft in an email application) or</li>
+															<li> Elements that are sometimes critical to a user being able to use the site, such as &quot;save my work&quot; or &quot;emergency instructions&quot; or</li>
+															<li> Elements that are used by over 90% of a user group (such as parents or teachers) use this element most times they use the content<br />
+															</li>
+														</ul>
+
+								<p>Typically 3 links or buttons would be considered &quot;simplest&quot;</p></td>
+							</tr>
+								<tr>
+									<th class="value-name" scope="row"><strong class="default">medium (default)</strong></th>
+									<td class="value-description">
+									 This setting should be used on: <ul>
+										<li> Elements that are used frequent but are not essential for the key functioning pf the application. (Example: The delete button for an email draft in an email application) or</li>
+										<li> Elements that are sometimes important to a user being able to use the site, such as settings or</li>
+										<li> Elements that are used by frequently (over 60%) by a user group (such as parents or teachers) use this element most times they use the content</li>
+									</ul></td>
+								</tr>
+
+								<tr>
+									<th class="value-name" scope="row">low</th>
+									<td class="value-description">This setting should be used on elements that are rarely used or only used by advanced users. (Example: The terms and services or the archive button for an email application.) </li>
+							</td>
+								</tr>
+
+							</tbody>
+						</table>
+			</section>
+			<section class="property">
+				<h2>distraction</h2>
+				<div class="property-description">
+					<p>This attribute should be used on non essential, detracting content, so that people who have problems keeping focus can turn them off. An example user experiences would be to hide all distraction content.</p>
+					<p><strong>Supported values: </strong>animations, auto-starting, moving, ad, message, chat , overlay, popup<br /> Auto-changing (logs) third-party, offer ( includes suggestions).</p>
+					<p>Note that there is no default value.</p>
+					<p>Note that elements with the coga-distraction attribute should also have a label or accessible name.</p>
+				</div>
+				<div class="property-example">
+                	<p><strong>Examples:</strong></p>
+                	<ul>
+                		<li>
+                			<a href="content/content.html#coga-distraction">Examples of coga-distraction</a>:
+                		</li>
+                	</ul>
+                </div>
+				<table class="property-features">
+					<p><strong>Characteristics:</strong></p>
+					<caption>Characteristics:</caption>
+					<thead>
+						<tr>
+							<th scope="col">Characteristic</th>
+							<th scope="col">Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="property-related-head" scope="row">Related Concepts:</th>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
+						</tr>
+						<tr>
+							<th class="property-applicability-head" scope="row">Used in Roles:</th>
+							<td class="property-applicability">All elements of the base markup</td>
+						</tr>
+						<tr>
+							<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+							<td class="property-descendants">Placeholder</td>
+						</tr>
+						<tr>
+							<th class="property-value-head" scope="row">Value:</th>
+							<td class="property-value"><a href="#valuetype_token_list">token list</a></td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="value-descriptions">
+					<p><strong>Values:</strong></p>
+					<caption>Values:</caption>
+					<thead>
+						<tr>
+							<th scope="col">Value</th>
+							<th scope="col">Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="value-name" scope="row">ad</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">animations</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">auto-changing</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">auto-starting</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">chat</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">message</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">moving</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">offer</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">overlay</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">popup</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">third-party</th>
+							<td class="value-description"></td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			<section class="property">
+				<h2>symbol</h2>
+				<div class="property-description">
+				<p><code>symbol</code> identifies the concept for symbols.</p>
+				<p><code>symbol</code> accepts the values of a URI or shortened URI. Note that namespaces are the only additional parsing that maybe required to identify the concept.</p>
+				<p>A personalization agent can then load alternative symbols that the user is familiar with and they do not have to learn new symbols for different applications. </p>
+				<p class="note">To help this be interoperable without an RDF parser we  recommend referencing the most commonly used ontologies and the highest level concept. (For example, reference "girl" and not "young girl" .) </p>
+				<p class="ednote">We should have a note of common suggested terms and references. (Maybe with links to http://www.arasaac.org/) </p>
+				</div>
+				<div class="property-example">
+                	<p><strong>Examples:</strong></p>
+                	<ul>
+                		<li>
+                			<a href="content/content.html#coga-symbol">Examples of coga-symbol</a>:
+                		</li>
+                	</ul>
+                </div>
+				<table class="property-features">
+										<p><strong>Characteristics:</strong></p>
+										<caption>Characteristics:</caption>
+										<thead>
+											<tr>
+												<th scope="col">Characteristic</th>
+												<th scope="col">Value</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th class="property-related-head" scope="row">Related Concepts:</th>
+												<td class="property-related"><cite><a href="https://www.w3.org/TR/microdata/#the-basic-syntax">microdate</a></cite> [[microdate]], <cite><a href="http://www.w3.org/TR/2005/WD-swbp-skos-core-guide-20051102">SKOS Core Guide</a></cite> [[SKOS]] and <cite><a href="https://www.w3.org/TR/rdfa/">RDFa [[RDFa]]</td>
+											</tr>
+											<tr>
+												<th class="property-applicability-head" scope="row">Used in Roles:</th>
+												<td class="property-applicability">All elements of the base markup</td>
+											</tr>
+											<tr>
+												<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+												<td class="property-descendants">Placeholder</td>
+											</tr>
+											<tr>
+												<th class="property-value-head" scope="row">Value:</th>
+												<td class="property-value"><a href="#valuetype_uri">URI</a></td>
+											</tr>
+										</tbody>
+				</table>
+			</section>
 			
 		</section>
 
 		<section class="informative" id="help ">
 			<h1>Help and support</h1>
-			<section data-include="help/help.html" data-include-replace="true"></section>
+			<section class="property">
+				<h2>literal</h2>
+				<div class="property-description">
+					<p><code>literal</code> provides alternative text for people who prefer content that does not use non literal text, such as metaphors.</p>
+					<p>A personalization agent may replace the content with the literal alternative, or it may put the literal alternative in a tooltip.</p>
+					<p>User agents may also render non-literal text in a different way so that users will be able to identify non literal content. They can then use a mouse over or other technique to receive the alternative. </p>
+					<p>A user agent must be able to replace the non literal content with the literal alternative without loss of meaning.</p>
+					<p><strong>Supported value: </strong>String</p>
+					<p>Note that there is no default value.</p>
+					</div>
+
+				</div>
+				<div class="property-example">
+                	<p><strong>Examples:</strong></p>
+                	<ul>
+                		<li>
+                			<a href="help/help.html#coga-literal">Examples of coga-literal</a>:
+                		</li>
+                	</ul>
+                </div>
+				<table class="property-features">
+					<p><strong>Characteristics:</strong></p>
+					<caption>Characteristics:</caption>
+					<thead>
+						<tr>
+							<th scope="col">Characteristic</th>
+							<th scope="col">Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="property-related-head" scope="row">Related Concepts:</th>
+							<td class="property-related">Alt text</td>
+						</tr>
+						<tr>
+							<th class="property-applicability-head" scope="row">Used in Roles:</th>
+							<td class="property-applicability">All elements of the base markup</td>
+						</tr>
+						<tr>
+							<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+							<td class="property-descendants">Placeholder</td>
+						</tr>
+						<tr>
+							<th class="property-value-head" scope="row">Value:</th>
+							<td class="property-value"><a href="#valuetype_string">string</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			<section class="property">
+				<h2>numberfree</h2>
+				<div class="property-description">
+					<p><code>numberfree</code> provides alternative text for people who prefer content that does not use numerical concepts.</p>
+					<p>A personalization agent may replace the content with the number free alternative, or it may put the number free alternative in a tooltip or sidebar. The content must still be understandable when a user agent replaces the original content with the number free alternative.</p> </p>
+
+					<p><strong>Supported value: </strong> String</p>
+					<p>Note that there is no default value.</p>
+				
+				</div>
+				<div class="property-example">
+                	<p><strong>Examples:</strong></p>
+                	<ul>
+                		<li>
+                			<a href="help/help.html#coga-numberfree">Examples of coga-numberfree</a>:
+                		</li>
+                	</ul>
+                </div>
+				<table class="property-features">
+					<p><strong>Characteristics:</strong></p>
+					<caption>Characteristics:</caption>
+					<thead>
+						<tr>
+							<th scope="col">Characteristic</th>
+							<th scope="col">Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="property-related-head" scope="row">Related Concepts:</th>
+							<td class="property-related">Alt text </td>
+						</tr>
+						<tr>
+							<th class="property-applicability-head" scope="row">Used in Roles:</th>
+							<td class="property-applicability">All elements of the base markup</td>
+						</tr>
+						<tr>
+							<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+							<td class="property-descendants">Placeholder</td>
+						</tr>
+						<tr>
+							<th class="property-value-head" scope="row">Value:</th>
+							<td class="property-value"><a href="#valuetype_string">string</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			<section class="property">
+				<h2>easylang</h2>
+				<div class="property-description">
+				<p><code>easylang</code> provides an alternative text of the content that is easier to read and understand. Note that this only works on small sections of text as the easylang attribute does not support full HTML, such as lists and sections.</p>
+				<p>A personalization agent may replace the content with the simpler alternative, or it may put the  alternative in a tooltip or help panel.</p>
+				<p>User agents may also render hard text in a different way so that users will be able to identify text that has an alternative provided. </p>
+				<p>The content must still be understandable when a user agent replaces the original content with the simpler alternative.</p>
+				<p><strong>Supported values:</strong> String</p>
+				<p>Where coga-easylang should use as simple well-known words as possible, and active voicing, literal text, small simple sentences.Â Acronyms and abbreviations should be avoided, unless they are the common way to refer to an item.</p>
+				</div>
+
+				<div class="property-example">
+                	<p><strong>Examples:</strong></p>
+                	<ul>
+                		<li>
+                			<a href="help/help.html#coga-easylang">Examples of coga-easylang</a>:
+                		</li>
+                	</ul>
+                </div>
+							<table class="property-features">
+								<p><strong>Characteristics:</strong></p>
+								<caption>Characteristics:</caption>
+								<thead>
+									<tr>
+										<th scope="col">Characteristic</th>
+										<th scope="col">Value</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th class="property-related-head" scope="row">Related Concepts:</th>
+										<td class="property-related"> Alt text</td>
+									</tr>
+									<tr>
+										<th class="property-applicability-head" scope="row">Used in Roles:</th>
+										<td class="property-applicability">All elements of the base markup</td>
+									</tr>
+									<tr>
+										<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+										<td class="property-descendants">Placeholder</td>
+									</tr>
+									<tr>
+										<th class="property-value-head" scope="row">Value:</th>
+										<td class="property-value"><a href="#valuetype_string">string</a></td>
+									</tr>
+								</tbody>
+							</table>
+			</section>
+			<section class="property">
+				<h2>alternative</h2>
+				<div class="property-description">
+					<p>Would be used on an alternative content as an alternative to more detailed or difficult to understand content. coga-alternative can be used on a span, div, link or image that servers as alternative content to it's direct parent element.</p>
+					<p class="ednote">This data model may be too complex, so this property could undergo substantial changes.</p>
+					<p><strong>Supported values:</strong>
+					</p>
+					<ul>
+						<li>On text: easylang, explain, more, vocab500, vocab1000, vocab2000, active, literal, numberfree, smallsentences, chunks</li>
+						<li>General: lessoptions. Whitespace, largefontÂ </li>
+						<li>Images: symbolic , realistic</li>
+						<li>p0, p1, p1, p2, p3 Where p0 are images with true content, p1 is a symbol or illustration that is typically shown with alt=&quot;&quot;, P2 are extra illustration that most people will not mind such as at the start of a paragraph or option. p3 are for disability centric illustrations that can disturb other people and may be mid sentence.Â </li>
+					</ul>
+					<p>Note that there is no default value.</p>					
+				</div>
+				<div class="property-example">
+                	<p><strong>Examples:</strong></p>
+                	<ul>
+                		<li>
+                			<a href="help/help.html#coga-alternative">Examples of coga-alternative</a>:
+                		</li>
+                	</ul>
+                </div>
+				<table class="property-features">
+					<p><strong>Characteristics:</strong></p>
+					<caption>Characteristics:</caption>
+					<thead>
+						<tr>
+							<th scope="col">Characteristic</th>
+							<th scope="col">Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="property-related-head" scope="row">Related Concepts:</th>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
+						</tr>
+						<tr>
+							<th class="property-applicability-head" scope="row">Used in Roles:</th>
+							<td class="property-applicability">All elements of the base markup</td>
+						</tr>
+						<tr>
+							<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+							<td class="property-descendants">Placeholder</td>
+						</tr>
+						<tr>
+							<th class="property-value-head" scope="row">Value:</th>
+							<td class="property-value"><a href="#valuetype_token_list">token list</a></td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="value-descriptions">
+					<p><strong>Values:</strong></p>
+					<caption>Values:</caption>
+					<thead>
+						<tr>
+							<th scope="col">Value</th>
+							<th scope="col">Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="value-name" scope="row">active</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">chunks</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">easylang</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">explain</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">largefont</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">lessoptions</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">literal</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">more</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">numberfree</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">p0</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">p1</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">p1</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">p2</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">p3</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">realistic</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">smallsentences</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">symbolic </th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">vocab1000</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">vocab2000</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">vocab500</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">whitespace</th>
+							<td class="value-description"></td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			<section class="property">
+				<h2>explain</h2>
+				<div class="property-description">
+					<p>This attribute provides any information that helps the user anticipate the functionality, such as letting the user know what behavior will trigger an event. This is most important if the mechanism is not standard. </p>
+					<p>User experience: This help can be rendered as a tool tip, help link or read when the control or link is read. Most users will not want this text rendered or spoken, but other users however will need it to understand the behavior of the element.</p>
+					<p>Note that there is no default value.</p>
+					<p>These values will change when the email is sent.</p>
+				</div>
+				<div class="property-example">
+                	<p><strong>Examples:</strong></p>
+                	<ul>
+                		<li>
+                			<a href="help/help.html#coga-explain">Examples of coga-explain</a>:
+                		</li>
+                	</ul>
+                </div>
+				<table class="property-features">
+					<p><strong>Characteristics:</strong></p>
+					<caption>Characteristics:</caption>
+					<thead>
+						<tr>
+							<th scope="col">Characteristic</th>
+							<th scope="col">Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="property-related-head" scope="row">Related Concepts:</th>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
+						</tr>
+						<tr>
+							<th class="property-applicability-head" scope="row">Used in Roles:</th>
+							<td class="property-applicability">All elements of the base markup</td>
+						</tr>
+						<tr>
+							<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+							<td class="property-descendants">Placeholder</td>
+						</tr>
+						<tr>
+							<th class="property-value-head" scope="row">Value:</th>
+							<td class="property-value"><a href="#valuetype_string">string</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			<section class="property">
+				<h2>feedback</h2>
+				<div class="property-description">
+					<p>This attribute provides immediate feedback that can be shown or spoken when any event is triggered on a control.</p>
+					<p><strong>User experience: </strong>This can be rendered as text at the top of the page and read immediately. Most users will not want this text rendered and spoken. Other users however will need it to know what has just happened. </p>
+				</div>
+				<div class="property-example">
+                	<p><strong>Examples:</strong></p>
+                	<ul>
+                		<li>
+                			<a href="help/help.html#coga-feedback">Examples of coga-feedback</a>:
+                		</li>
+                	</ul>
+                </div>
+				<table class="property-features">
+					<p><strong>Characteristics:</strong></p>
+					<caption>Characteristics:</caption>
+					<thead>
+						<tr>
+							<th scope="col">Characteristic</th>
+							<th scope="col">Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="property-related-head" scope="row">Related Concepts:</th>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
+						</tr>
+						<tr>
+							<th class="property-applicability-head" scope="row">Used in Roles:</th>
+							<td class="property-applicability">All elements of the base markup</td>
+						</tr>
+						<tr>
+							<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+							<td class="property-descendants">Placeholder</td>
+						</tr>
+						<tr>
+							<th class="property-value-head" scope="row">Value:</th>
+							<td class="property-value"><a href="#valuetype_string">string</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			<section class="property">
+				<h2>moreinfo</h2>
+				<div class="property-description">
+					<p>@@1-line description</p>
+					<p><strong>Supported values: </strong>URI</p>
+					<p>Note that there is no default value.</p>
+				</div>
+				<div class="property-example">
+                	<p><strong>Examples:</strong></p>
+                	<ul>
+                		<li>
+                			<a href="help/help.html#coga-moreinfo">Examples of coga-moreinfo</a>:
+                		</li>
+                	</ul>
+                </div>
+				<table class="property-features">
+					<p><strong>Examples:</strong></p>
+					<caption>Characteristics:</caption>
+					<thead>
+						<tr>
+							<th scope="col">Characteristic</th>
+							<th scope="col">Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="property-related-head" scope="row">Related Concepts:</th>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
+						</tr>
+						<tr>
+							<th class="property-applicability-head" scope="row">Used in Roles:</th>
+							<td class="property-applicability">All elements of the base markup</td>
+						</tr>
+						<tr>
+							<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+							<td class="property-descendants">Placeholder</td>
+						</tr>
+						<tr>
+							<th class="property-value-head" scope="row">Value:</th>
+							<td class="property-value"><a href="#valuetype_uri">URI</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			<section class="property">
+				<h2>extrahelp</h2>
+				<div class="property-description">
+					<p>@@1-line description</p>
+					<p><strong>Supported values: </strong>URI</p>
+					<p>Note that there is no default value.</p>
+				</div>
+				<div class="property-example">
+                	<p><strong>Examples:</strong></p>
+                	<ul>
+                		<li>
+                			<a href="help/help.html#coga-extrahelp">Examples of coga-extrahelp</a>:
+                		</li>
+                	</ul>
+                </div>
+				<table class="property-features">
+					<p><strong>Characteristics:</strong></p>
+					<caption>Characteristics:</caption>
+					<thead>
+						<tr>
+							<th scope="col">Characteristic</th>
+							<th scope="col">Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="property-related-head" scope="row">Related Concepts:</th>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
+						</tr>
+						<tr>
+							<th class="property-applicability-head" scope="row">Used in Roles:</th>
+							<td class="property-applicability">All elements of the base markup</td>
+						</tr>
+						<tr>
+							<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+							<td class="property-descendants">Placeholder</td>
+						</tr>
+						<tr>
+							<th class="property-value-head" scope="row">Value:</th>
+							<td class="property-value"><a href="#valuetype_uri">URI</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			<section class="property">
+				<h2>helptype</h2>
+				<div class="property-description">
+					<p>@@1-line description</p>
+				</div>
+				<div class="property-example">
+                	<p><strong>Examples:</strong></p>
+                	<ul>
+                		<li>
+                			<a href="help/help.html#coga-helptype">Examples of coga-helptype</a>:
+                		</li>
+                	</ul>
+                </div>
+				<table class="property-features">
+					<caption>Characteristics:</caption>
+					<thead>
+						<tr>
+							<th scope="col">Characteristic</th>
+							<th scope="col">Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="property-related-head" scope="row">Related Concepts:</th>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
+						</tr>
+						<tr>
+							<th class="property-applicability-head" scope="row">Used in Roles:</th>
+							<td class="property-applicability">All elements of the base markup</td>
+						</tr>
+						<tr>
+							<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+							<td class="property-descendants">Placeholder</td>
+						</tr>
+						<tr>
+							<th class="property-value-head" scope="row">Value:</th>
+							<td class="property-value"><a href="#valuetype_token">token</a></td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="value-descriptions">
+					<caption>Values:</caption>
+					<thead>
+						<tr>
+							<th scope="col">Value</th>
+							<th scope="col">Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="value-name" scope="row">automated</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">dictionary</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">faqs</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">glossary</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">helpform</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">humanhelp</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">morehelp</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">simplified</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">thesaurus</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">tooltips</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">topicsearch</th>
+							<td class="value-description"></td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
 		</section>
 
 		<section class="informative" id="tools ">
 			<h1>Tools</h1>
-			<section data-include="tools/tools.html" data-include-replace="true"></section>
+			<section>
+				<h2>All the log properties</h2>
+				<p>This proposal is to track the tasks that a user has done, so that they can be reminded of them, and return to or fix a task. The suggested syntax should allow the author to transform some of the information into breadcrumbs via CSS, and the user system can read and present more or less information to the user as per their preferences.</p>
+				<p>Preferably this should be in the header so that the user agent can build a cross application log of user tasks.</p>
+				<p>Note that there is no default value.</p>
+				<p>Relevant properties: <a href="#log">log</a>, <a href="#step">step</a>, <a href="#actiontaken">actiontaken</a>, <a href="#steplocation">steplocation</a>, <a href="#status">status</a></p>
+				<section>
+					<h3>Log usage examples</h3>
+					<div class="property-example">
+                	<p><strong>Examples:</strong></p>
+                	<ul>
+                		<li>
+                			<a href="tools/tools.html#log-usage">Examples of Log usage</a>:
+                		</li>
+                	</ul>
+                	</div>
+                	<h3>Alternative syntax for log</h3>
+                	<div class="property-example">
+                	<p><strong>Examples:</strong></p>
+                	<ul>
+                		<li>
+                			<a href="tools/tools.html#alternative-syntax-for-log">Examples of Alternative syntax for log</a>:
+                		</li>
+                	</ul>
+                	</div>
+
+				</section>
+			</section>
+            <section>
+				<h2>All the message properties</h2>
+				<section class="property">
+					<h3>messageimportance</h3>
+					<div class="property-description">
+					<p>@@1-line description</p>
+					</div>
+					<div class="property-example">
+                	<p><strong>Examples:</strong></p>
+                	<ul>
+                		<li>
+                			<a href="tools/tools.html#messageimportance">Examples of messageimportance</a>:
+                		</li>
+                	</ul>
+               	 	</div>
+					<table class="property-features">
+					<p><strong>Characteristics:</strong></p>
+					<caption>Characteristics:</caption>
+					<thead>
+						<tr>
+							<th scope="col">Characteristic</th>
+							<th scope="col">Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="property-related-head" scope="row">Related Concepts:</th>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
+						</tr>
+						<tr>
+							<th class="property-applicability-head" scope="row">Used in Roles:</th>
+							<td class="property-applicability">All elements of the base markup</td>
+						</tr>
+						<tr>
+							<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+							<td class="property-descendants">Placeholder</td>
+						</tr>
+						<tr>
+							<th class="property-value-head" scope="row">Value:</th>
+							<td class="property-value"><a href="#valuetype_token">token</a></td>
+						</tr>
+					</tbody>
+					</table>
+					<table class="value-descriptions">
+					<caption>Values:</caption>
+					<thead>
+						<tr>
+							<th scope="col">Value</th>
+							<th scope="col">Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="value-name" scope="row">critical</th>
+							<td class="value-description">To be critical a message needs to be both urgent and content that the user is very likely to consider important. For example, a system may send a message that it is going to reboot in one minute to install updates. </td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row"><strong class="default">medium (default)</strong></th>
+							<td class="value-description">Important messages that needs the user's attention at their convenience. For example, a relatively important chat message.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">low</th>
+							<td class="value-description">A message that does not need time sensitive attention. For example, a typical chat message.</td>
+						</tr>
+					</tbody>
+					</table>
+				</section>
+				<section class="property">
+					<h3>messagefrom</h3>
+					<div class="property-description">
+					<p>@@1-line description</p>
+					<p><strong>Supported values: </strong>a string value that identifies the sender of the message. If multiple names are used they can be separated by a coma.</p>
+					<p>Note that there is no default value.</p>
+					</div>
+					<div class="property-example">
+                	<p><strong>Examples:</strong></p>
+                	<ul>
+                		<li>
+                			<a href="tools/tools.html#messagefrom">Examples of messagefrom</a>:
+                		</li>
+                	</ul>
+               	 	</div>
+					<table class="property-features">
+						<p><strong>Characteristics:</strong></p>
+						<caption>Characteristics:</caption>
+						<thead>
+						<tr>
+							<th scope="col">Characteristic</th>
+							<th scope="col">Value</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<th class="property-related-head" scope="row">Related Concepts:</th>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
+						</tr>
+						<tr>
+							<th class="property-applicability-head" scope="row">Used in Roles:</th>
+							<td class="property-applicability">All elements of the base markup</td>
+						</tr>
+						<tr>
+							<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+							<td class="property-descendants">Placeholder</td>
+						</tr>
+						<tr>
+							<th class="property-value-head" scope="row">Value:</th>
+							<td class="property-value"><a href="#valuetype_string">string</a></td>
+						</tr>
+					</tbody>
+					</table>
+				</section>
+				<section class="property">
+					<h3>messagecontext</h3>
+					<div class="property-description">
+					<p>@@1-line description</p>
+					<p><strong>Supported values: </strong><strong> </strong>a string value that identifies the location that makes this message relevant. Typical values are &quot;home&quot; and &quot;work&quot;. If multiple locations are relevant they can be separated by a coma.</p>
+					<p>Note that there is no default value.</p>
+					</div>
+					<div class="property-example">
+                	<p><strong>Examples:</strong></p>
+                	<ul>
+                		<li>
+                			<a href="tools/tools.html#messagecontext">Examples of messagecontext</a>:
+                		</li>
+                	</ul>
+               		</div>
+					<table class="property-features">
+						<p><strong>Characteristics:</strong></p>
+						<caption>Characteristics:</caption>
+						<thead>
+						<tr>
+							<th scope="col">Characteristic</th>
+							<th scope="col">Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="property-related-head" scope="row">Related Concepts:</th>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
+						</tr>
+						<tr>
+							<th class="property-applicability-head" scope="row">Used in Roles:</th>
+							<td class="property-applicability">All elements of the base markup</td>
+						</tr>
+						<tr>
+							<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+							<td class="property-descendants">Placeholder</td>
+						</tr>
+						<tr>
+							<th class="property-value-head" scope="row">Value:</th>
+							<td class="property-value"><a href="#valuetype_string">string</a></td>
+						</tr>
+					</tbody>
+					</table>
+				</section>
+				<section class="property">
+					<h3>messagetime</h3>
+					<div class="property-description">
+					<p>@@1-line description</p>
+					<p><strong>Supported values: </strong><strong> </strong>24 hour date time format. DD.MM.YEAR.HOUR.MM - DD.MM.YEAR.HOUR.MM where the second date is an optional exclusive expiry date.</p>
+					<p>Note that there is no default value.</p>
+					</div>
+					<div class="property-example">
+                	<p><strong>Examples:</strong></p>
+                	<ul>
+                		<li>
+                			<a href="tools/tools.html#messagetime">Examples of messagetime</a>:
+                		</li>
+                	</ul>
+              	 	</div>
+					<table class="property-features">
+					<p><strong>Examples:</strong></p>
+					<caption>Characteristics:</caption>
+					<thead>
+						<tr>
+							<th scope="col">Characteristic</th>
+							<th scope="col">Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="property-related-head" scope="row">Related Concepts:</th>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
+						</tr>
+						<tr>
+							<th class="property-applicability-head" scope="row">Used in Roles:</th>
+							<td class="property-applicability">All elements of the base markup</td>
+						</tr>
+						<tr>
+							<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+							<td class="property-descendants">Placeholder</td>
+						</tr>
+						<tr>
+							<th class="property-value-head" scope="row">Value:</th>
+							<td class="property-value"><a href="#valuetype_string">string</a></td>
+						</tr>
+						</tbody>
+					</table>
+			</section>
+			</section>
+			
 			
 		</section>
+
+
+		<section class="appendix">
+			<h2>Vocabulary Implementations</h2>
+			<section>
+				<h3>RDFa</h3>
+				<p>The context based properties should be convertible to RDFa. (see <a href="https://www.w3.org/TR/xhtml-rdfa-primer/">RDFa Primer</a>) and the task force should create this mapping.</p>
+				<p>Note that a lot of this can be done using RDFa. However it is easy to change the meaning with RDFa and a very basic parser will misinterpret the result. The coga work needs to be usable by as many authors as possible, and not only those who can implement RDF logic.</p>
+				<p>Further , personalization setting need to be limited, and RDF can give an unlimited number of potential options which will make the system unusable. (This is unless we create restrictions and controls on an ontology uses - such as mapping to know ontologies.)</p>
+				<p>For example, in the code below the property homepage does not refer to the home page of the site but of the person being references. Beyond declaring the type of data we are dealing with, each typeof creates a new blank node with its own distinct properties. </p>
+				<pre>
+&lt;div vocab="http://xmlns.com/foaf/0.1/"&gt;
+&lt;ul&gt;
+   &lt;li typeof="Person"&gt;
+      &lt;a property="homepage" href="http://example.com/bob/"&gt;Bob&lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li typeof="Person"&gt;
+      &lt;a property="homepage" href="http://example.com/eve/"&gt;Eve&lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li typeof="Person"&gt;
+      &lt;a property="homepage" href="http://example.com/manu/"&gt;Manu&lt;/a&gt;
+   &lt;/li&gt;
+&lt;/ul&gt;
+				</pre>
+				<p>We may recommend adding RDFA that describe the role of the item (see <a href="https://www.w3.org/TR/xhtml-rdfa-primer/">RDFa Primer</a>):</p>
+				<pre>
+&lt;div resource="/alice/posts/jos_barbecue"&gt;
+	&lt;h2 property="title"&gt;Jo's Barbecue&lt;/h2&gt;
+	&lt;p&gt;Date: &lt;span property="created"&gt;2011-09-14&lt;/span&gt;&lt;/p&gt;
+	&lt;h3 property="creator"&gt;Eve&lt;/h3&gt;
+	...
+&lt;/div&gt;
+			</pre>
+			</section>
+			<section>
+				<h3>WAI-ARIA</h3>
+				<p>Properties in this case can be represented as WAI-ARIA properties by adding the prefix "aria-" to the attribute name, and the property value as the attribute value.</p>
+				<p class="ednote">The prefix above is not yet accepted by the ARIA Working Group.</p>
+				<section>
+					<h2>Additional WAI-ARIA roles</h2>
+					<p><strong>Requirement: </strong> We may want to add roles for sections a page such as: contact us - for a contact us formÂ  </p>
+					<p><strong>User experience: </strong>symbols and colors could be used consistently across different content.</p>
+					<p>Nav maps can be automatically generated for people learn via key-points or examples.</p>
+					<p>Further these sections could be hidden in the normal rendering of a page or rendered the top of page depending on user preferences. The location of these sections can also be changed, based on the user preference, enabling the user to find them easily.</p>
+					<p>Values:</p>
+					<ul>
+						<li>summary</li>
+						<li>keypoints</li>
+						<li>example</li>
+						<li>note</li>
+						<li>warning</li>
+						<li>step</li>
+						<li>external - for external content, such as sponsored or advertising</li>
+						<li>offers - for special offers that are complementary to the main content or task</li>
+						<li>advertisement - advertisement or sponsored content</li>
+						<li>contact us</li>
+						<li>about us</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<h3>HTML Microdata</h3>
+				<p>Properties in this vocabulary can be used in <a href="https://www.w3.org/TR/microdata/">HTML Microdata</a> [[microdata]]. The property name is uses as the item name, the property value as the item value. Authors SHOULD use the itemtype property to express to the <a href="#propcharacteristic_value">value type</a> defined in this specification.</p>
+			</section>
+		</section>
+
+		<!--
+
+		<section class="appendix" id="changelog">
+			<h2>Change Log</h2>
+
+			<section>
+				<h2>Substantive changes since the <a href="@@">last public working draft</a></h2>
+				<ul>
+					<li>@@</li>
+					<!- EdNote: After each WD publish, move contents of this list into the next one below. ->
+				</ul>
+			</section>
+
+			<section>
+				<h2>Other substantive changes since the <a href="@@">First Public Working Draft</a></h2>
+				<ul>
+					<li>@@</li>
+					<!- EdNote: After each WD publish, move previous list into this one. ->
+				</ul>
+			</section>
+		</section>
+
+		-->
+		<div data-include="../common/acknowledgements.html" data-oninclude="fixIncludes" data-include-replace="true">Acknowledgements placeholder</div>
 
 	</body>
 </html>
