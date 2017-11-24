@@ -32,8 +32,206 @@
 				<li> Personalized Tools</li>
 			</ul>
 			<p><a href="content/content.html">Personalization Content</a>,<a href="help/help.html">Personalization Help and support</a> and <a href="tools/tools.html">Personalization Tools</a> provide examples for each Personalization properties.</p>
+			<section class="section" id="why_accessibility">
+				<h2>Why We Need Personalization</h2>
+				<p>We need personalization because: </p>
+				<ul>
+					<li>Different user needs can conflict</li>
+					<li>Learning new design patterns (and widgets) can be confusing - we want to allow users to stick with what works for them </li>
+					<li>Extra support can be annoying to people who do not need it </li>
+					<li>Making content predictable is necessary for accessibility but can often be considered boring design </li>
+					<li>Ability to change levels of complexity (increase or decrease) - As people skills improve or decrease over time or context. </li>
+					<li>Enable us to really meet the user needs </li>
+				</ul>
+				<p>Some users need extra support. This can include: </p>
+				<ul>
+					<li> Symbols and graphics that they are familiar with </li>
+					<li> Tool tips </li>
+					<li> Language they understand </li>
+					<li> Less features </li>
+					<li> Separating advertisements, so they do not confuse them with native content </li>
+					<li> Keyboard short cuts </li>
+				</ul>
+				<p>For this we need standardized terms and supportive syntax that can be linked to associated symbols, terms, translations and explanations for the individual use via an attribute and personal preferences. </p>
+				<p>For example, assume an author can make it programanticaly known that a button is used to send an email. At at the user end, the button could be renderer with a symbol, term, and/or tooltips that is understandable for this particular user. It could automatically imply F1 help that explains the send function in simple terms. It could be identified with a keyboard short cut that will always be used for send. In addition it could be identified as important and always rendered, or rendered as a large button. </p>
+				<p>Working examples of how this could be used in practice, with user preferences, are available at <a href="https://github.com/ayelet-seeman/coga.personalisation">https://github.com/ayelet-seeman/coga.personalisation</a>. This is a project to help personalization for any use - including people with learning and memory issues. It is described more at: <a href="https://www.w3.org/WAI/PF/cognitive-a11y-tf/wiki/Easy_Personalization">https://www.w3.org/WAI/PF/cognitive-a11y-tf/wiki/Easy_Personalization</a>. </p>
+				<p>This project consists of 4 parts:</p>
+				<ol>
+					<li><a href="https://github.com/ayelet-seeman/coga.personalisation/tree/JSON-Script">JSON files for user setting</a></li>
+					<li>Proposal for new syntax: (This document) <br /></li>
+					<li>An HTML page that uses some of the new syntax: <a href="https://github.com/ayelet-seeman/coga.personalisation/tree/ExampleWebPage/">https://github.com/ayelet-seeman/coga.personalisation/tree/ExampleWebPage/</a></li>
+					<li>Scripts that a web author can use or include that read the user settings in the JSON files and adapt the page for the user needs: <a href="https://github.com/ayelet-seeman/coga.personalisation/tree/Script-Options">https://github.com/ayelet-seeman/coga.personalisation/tree/Script-Options</a></li>
+				</ol>
+				<p>This is one example of personalization based on semantics. Others may follow. It is also worth noting that the GPII project is working on making user preferences portable which would also enhance this work.</p>
+				<p>In another use-case we would like to see interoperable symbol set codes for non-verbal people. Products for people who are non vocal often use symbols to help users communicate. These symbols are in fact peoples language. Unfortunately many of these symbols are both subject to copy write and are not interoperable. That means end-users can only use one device, and can not use apps or AT from a different company. An open set of references for symbol codes for these symbol sets however, could be interoperable. That means the end user could use an open source symbol set or buy the symbols and use them across different devices or applications. Symbols could still be proprietary but they would also be interoperable. </p>
+			</section>
 
+			<section class="section" id="intro_context">
+				<h2>Contextual Personalization</h2>
+				<p>One important factor in optimizing the personalization of a product or service is to ensure that the personalization is appropriate for the current context of use. For example, settings that will suit the user of a mobile phone in their office or home will not be well suited to that user when they are driving a car. In a home or office, the typical user would probably prefer to send and receive text messages using the keyboard and screen of the mobile phone. However, in the car, voice input and text to speech output would be the most appropriate. In this car context, the profile settings of a typical user might be very similar to those that a blind user would use in all contexts.</p>
+			</section>
 		</section>
+
+		<section class="informative" id="terms">
+			<h1>Important Terms</h1>
+			<div data-include="../common/terms.html" data-oninclude="restrictReferences"></div>
+		</section>
+
+		<section class="normative" id="semanticProperties">
+			<h1>Personalization Use Cases</h1> This Section covers use cases that can be addressed by personalization, and references the vocabulary items that help meet the use cases.<section>
+				<h2>Simplification</h2>
+				<p><strong>Requirement</strong>: The user must be able to request a way to identify and differentiate between critical features, medium features and less important features. These need to be defined as important from a user perspective in the content. Typically, critical features may be used by many or most users, 90% of the time or more. High important features would be above 60% use. Medium important features would be 20% of users use it 20% of the time . Under 20% usage would be of low importance.</p>
+				<p><strong>User experience</strong>: Based on personalization setting the user can see less options. A sample user experience is available at <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html">https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html </a></p>
+				<p>Relevant properties: <a href="#simplification">simplification</a></p>
+			</section>
+			<section>
+				<h2>Adding Context </h2>
+				<p><strong>Requirement:</strong> Having familiar terms and symbols is key to being able to use the web. However what is familiar for one user may be strange for another requiring them to learn new symbols. If a user agent or script knows the context of links, buttons, and other page elements then symbols and text used can be ones that the user understands. This can include: </p>
+				<ul>
+					<li> Symbols and graphics that they are familiar with </li>
+					<li> Tool tips </li>
+					<li> Language the use can understand </li>
+					<li> Keyboard short cuts </li>
+				</ul>
+				<p>For that we need to standardize supportive syntax and terms that can be linked to associated symbols, terms, translations and explanations, for the individual, via an attribute.</p>
+				<p><strong>Example user experience:</strong>, if an author gives to a button a role "send" then, without any work by the author, the button could be automatically rendered with a symbol, term, and/or tooltips that is understandable by a particular user. It could automatically imply F1 help that explains the send function in simple terms. It could be identified with a keyboard short cut that will always be used for send. In addition it could be identified as important and always rendered, or rendered as a large button. This would enable a consistent UI experience across applications and websites.</p>
+				<p>Relevant properties: <a href="#action">action</a>, <a href="#destination">destination</a>, <a href="#field">field</a></p>
+				<section>
+					<h2>General context</h2>
+					<p><strong>Requirement: </strong> One important factor in optimizing the personalization of a product or service is to ensure that the personalization is appropriate for the current context of use as well as what is relevant for the user. For example a female user with a cognitive disability may need less options, and options that are for men are less likely to be relevant for her and may be demoted to bellow the scroll or placed under a &quot;more option&quot; button.</p>
+					<p>Relevant properties: <a href="#context">context</a></p>
+				</section>
+				<section>
+					<h2>Interoperable symbols</h2>
+					<p><strong>Requirement: </strong>We would like to enable interoperable symbol set codes for Non verbal people. Products for people who are non vocal often use symbols to help users communicate. These symbols are in fact peoples language. Unfortunately many of these symbols are both subject to copy write AND not interoperable. That means end-users can only use one device, and can not use apps or AT from a different company. There are open set of symbol codes for these symbol sets, that could be referenced then they can be interoperable. alternatively wordnet nodes could be referenced. If the users symbols are mapped to the same nodes then users agents will be able to load the user understandable symbol. That means the end use could buy the symbols and use them across different devices or applications. They would still be proprietary but they would also be interoperable. </p>
+					<p>User experience: AAC users will load symbols that they understand in different applications that are made by a different provider.</p>
+					<p>Relevant properties: <a href="#concept">concept</a></p>
+				</section>
+			</section>
+			<section>
+				<h2>Potential parts of a page</h2>
+				<p><strong>Requirement:</strong> The following could be extensions for aria landmarks or ePub </p>
+				<p><strong>User experience:</strong> symbols and colors could be used consistently across different content. </p>
+				<p>Links (such as ePub nav maps) can be automatically generated for people learn via keypoints or examples.</p>
+				<p><strong>Examples:</strong>
+				</p>
+				<ul>
+					<li>key points </li>
+					<li>example </li>
+					<li>note </li>
+					<li>warning </li>
+					<li>step </li>
+					<li>external - for external content, such as sponsored or advertising </li>
+					<li>offers - for special offers that are complementary to the main content or task </li>
+					<li>advertisement - advertisement or sponsored content </li>
+				</ul>
+				<p>Relevant properties: @@</p>
+			</section>
+			<section>
+				<h2>Number free</h2>
+				<p><strong>Requirement</strong>: Not everyone can understand numbers. We therefor suggest coga-numberfree for alternative text for people who can not understand the main content</p>
+				<p><strong>User experience:</strong></p>
+				<p>A suggested user experience would be: Numerical concepts could be rendered by the user agent slightly different so that the user knows a number free explanation is available. The user can then mouse over the content and a tooltips would give the number free value</p>
+				<p>Relevant properties: <a href="#numberfree">numberfree</a></p>
+			</section>
+			<section>
+				<h2>Non-literal text and images</h2>
+				<p><strong>Requirement: </strong>Not everyone can understand non-literal text and icons such as metaphors, idioms etc. We need a tag that identifies text or images as non literal and allows the author to explain non-literal text and images to users.</p>
+				<p><strong>User experience:</strong></p>
+				<p>A suggested user experience would be: Non literal content could be rendered by the user agent slightly differently so that the user knows that this content should not be taken literally and that a literal explanation is available. The user can then mouse over the content and a tooltips would give the literal value.</p>
+				<p>Relevant properties: <a href="#literal">literal</a></p>
+			</section>
+			<section>
+				<h2>Explain and feedback</h2>
+				<p><strong>Requirement: </strong></p>
+				<p>Some users need additional help. We request an attribute where the author can provide additional information or what just happened.</p>
+				<p>Relevant properties: <a href="#feedback">feedback</a>, <a href="#explain">explain</a></p>
+			</section>
+			<section>
+				<h3>More Help</h3>
+				<p><strong>Requirement: </strong>Some users may need additional information or specifically additional help information. We request additional attributes so that an author can indicate the existence of this additional information.</p>
+				<p>Relevant properties: <a href="#moreinfo">moreinfo</a>, <a href="#extrahelp">extrahelp</a>, <a href="#helptype">helptype</a></p>
+			</section>
+			<section>
+				<h2>Potential Features</h2>
+				<p>The following may not be necessary </p>
+				<ul>
+					<li>Views </li>
+					<li>ascending. descending </li>
+					<li>day, week month </li>
+					<li>this week </li>
+					<li>this month </li>
+					<li>today </li>
+				</ul>
+			</section>
+			<section>
+				<h2>Language type support</h2>
+				<p><strong>Requirement: </strong>Sometimes you may want to provide a simplified version of a section of a page. For example, you may wish to provide a simplified summary of legal document, but still have a longer version for other users. These alternative versions may not be identical in content but maintain the gist of the original content.</p>
+				<p>Relevant properties: <a href="#alternative">alternative</a>, <a href="#easylang">easylang</a></p>
+			</section>
+			<section>
+				<h3 id="logs">Logs</h3>
+				<p>This proposal is to track the tasks that a user has done, so that they can be reminded of them, and return to or fix a task. The suggested syntax should allow the author to transform some of the information into breadcrumbs via CSS, and the user system can read and present more or less information to the user as per their preferences.</p>
+				<p>Preferably this should be in the header so that the user agent can build a cross application log of user tasks.</p>
+				<p>Note that there is no default value.</p>
+				<p>Relevant properties: <a href="#log">log</a>, <a href="#step">step</a>, <a href="#actiontaken">actiontaken</a>, <a href="#steplocation">steplocation</a>, <a href="#status">status</a></p>
+				<section>
+					<h4>Log usage examples</h4>
+					<pre>&lt;div coga-log="booking trip" coga-step="1" aria-label="buy ticket" aria-hidden="true"
+    				coga-actiontaken="bought ticket to NY return" steplocation ="uri" /></pre>
+					<p>or</p>
+					<pre>&lt;div coga-log="booking trip" coga-step="1" coga-actiontaken="bought ticket to NY return">
+ 					buy ticket
+ 					&lt;a href="uri">change&lt;/a>
+					&lt;/div></pre>
+					<p>or the step number can be implied by the DOM</p>
+					<pre>&lt;div coga-log="booking trip">
+  					&lt;div coga-actiontaken="bought ticket to NY return">
+    				buy ticket
+    				&lt;a href="uri">change&lt;/a>
+  					&lt;/div>
+					&lt;/div></pre>
+				</section>
+				<section>
+					<h4>Alternative syntax for log</h4>
+					<p>Note we are considering supporting an alternative syntax such as:</p>
+					<pre>&lt;log name="booking trip">
+  					&lt;step status ="done">
+    				&lt;name>buy ticket&lt;/name>
+    				&lt;actiontaken>bought ticket to NY return&lt;/actiontaken>
+    				&lt;view changepossible="yes">url &lt;/view>
+  					&lt;/step>
+  					&lt;step  status ="done">
+    				&lt;name>hotel&lt;/name>
+    				&lt;actiontaken>booked Sheraton single room&lt;/actiontaken>
+    				&lt;view changepossible="yes">url &lt;/view>
+  					&lt;/step>
+  					&lt;step  status ="current">
+    				&lt;name>car rental&lt;/name>
+    				&lt;view current changepossible="yes"/>
+  					&lt;/step>
+					&lt;/log>
+					</pre>
+				</section>
+			</section>
+			<section>
+				<h3>Reminders and messages</h3>
+				<p><strong>Requirement: </strong>We require an attribute that enables different users to experience different amount of reminders and messages based on personal preferences. Reminders are a wonderful tool for many people with cognitive disabilities. However too many reminders will be annoying or distracting for some other users. Currently people can turn off distractions such as Skype, and Facebook, across different devices, and then may forget to turn them back on.</p>
+				<p>These semantics allow for different solutions so that users are able to focus without missing important messages. Users need to manage all distractions by forming a cross application and cross device distraction matrix that manages all distractions in one setting. It is based on a matrix for distractions at the operating system , browser or cloud level. People and users can be clustered in terms of importance or groups. For example, the CEO and your child's care giver could both be considered critical contacts. So even if they do not feel the message is urgent they can sometimes disrupt the user anyway. Some family members and important colleagues can be in another group, friends and extended family in a third group, system messages from the compliance system can be a different group again. </p>
+				<p>Relevant properties: <a href="#messageimportance">messageimportance</a>, <a href="#messagefrom">messagefrom</a>, <a href="#messagecontext">messagecontext</a>, <a href="#messagetime">messagetime</a></p>
+			</section>
+			<section>
+				<h2>Distractions</h2>
+				<p><strong>Requirement: </strong> We require an attribute that indicates a distraction so that some users may be able to remove them from content.</p>
+				<p>Relevant properties: <a href="#distraction">distraction</a></p>
+			</section>
+			<section>
+				<h2>New Misc.</h2> Triggers: for emotional support. coga-trigger: violent, racism, etc. coga-keyparts of the page: key points, example, note, warning, external (content), advertisements, (some may be in digital publishing) coga-dates - (cancellation, return) </section>
+		</section>
+
+
+
+
 
 		<section class="informative" id="content">
 			<h1>Content</h1>
