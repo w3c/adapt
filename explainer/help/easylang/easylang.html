@@ -1,11 +1,52 @@
 <section>
-	<h3>coga-easylang</h3>
-	<section class="property-explanation">
-	<p>The below example section show how <code>coga-easylang</code> used when coding.</p>
-    <div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: Easylang Using ARIA</span></div>
+	<h2>coga-easylang</h2>
+	<section>
+		<h3>Description</h3>
+		<div class="property-description">
+				<p><code>easylang</code> provides an alternative text of the content that is easier to read and understand. Note that this only works on small sections of text as the easylang attribute does not support full HTML, such as lists and sections.</p>
+				<p>A personalization agent may replace the content with the simpler alternative, or it may put the  alternative in a tooltip or help panel.</p>
+				<p>User agents may also render hard text in a different way so that users will be able to identify text that has an alternative provided. </p>
+				<p>The content must still be understandable when a user agent replaces the original content with the simpler alternative.</p>
+				<p><strong>Supported values:</strong> String</p>
+				<p>Where coga-easylang should use as simple well-known words as possible, and active voicing, literal text, small simple sentences.Â Acronyms and abbreviations should be avoided, unless they are the common way to refer to an item.</p>
+		</div>
+	</section>
+	<section id="easylang-example">
+		<h3>Example</h3>
+		<p>The below example section show how <code>coga-easylang</code> used when coding.</p>
+   		<div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: Easylang Using ARIA</span></div>
 			<pre>&lt;span coga-easylang="some text that is easy to read"> some convoluted obtuse text&lt;/span>&gt;</pre>
 			</div>
-
+    </section>
+    <section>
+    	<h3>Characteristics</h3>
+    	<table class="property-features">
+								<caption>Characteristics:</caption>
+								<thead>
+									<tr>
+										<th scope="col">Characteristic</th>
+										<th scope="col">Value</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th class="property-related-head" scope="row">Related Concepts:</th>
+										<td class="property-related"> Alt text</td>
+									</tr>
+									<tr>
+										<th class="property-applicability-head" scope="row">Used in Roles:</th>
+										<td class="property-applicability">All elements of the base markup</td>
+									</tr>
+									<tr>
+										<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+										<td class="property-descendants">Placeholder</td>
+									</tr>
+									<tr>
+										<th class="property-value-head" scope="row">Value:</th>
+										<td class="property-value"><a href="#valuetype_string">string</a></td>
+									</tr>
+								</tbody>
+		</table>
     </section>
 </section>
 
