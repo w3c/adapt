@@ -1,0 +1,241 @@
+
+<section class="property">
+	<h2>coga-action</h2>
+	<section>
+		<h3>Description</h3>
+    	<div class="property-description">
+					
+				    <p>The <code>action</code> attribute provides the context of a button. It is typically used on a button element or element with role="button".</p>
+    </div>
+    </section>
+    <section id="action-example">
+    	<h3>Example</h3>
+    	<div class="property-example" >               	
+                	<p>The below example section show how coga-action used when coding.</p>
+    				<pre class="example" title="Action Using ARIA">
+       				<p>For example: &lt;button coga-action=&quot;undo&quot; &gt;Revert&lt;/button&gt;</p></pre>
+        			<p>A personalization agent may add a symbol, replace the text with a more familiar term, or give it a specific presentation. Note that there is no default value.</p>			
+    	</div>
+    </section>
+
+                
+    <section>
+    	<h3>Characteristics</h3>	
+		<table class="property-features">
+					
+					<thead>
+						<tr>
+							<th scope="col">Characteristic</th>
+							<th scope="col">Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="property-related-head" scope="row">Related Concepts:</th>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/html52/links.html#sec-link-types">link types</a></cite> [[HTML52]] and <cite><a href="https://www.w3.org/TR/html5/forms.html#states-of-the-type-attribute"><abbr title="Hypertext Markup Language ">HTML </abbr> types</a></cite> [[HTML5]]</td>
+						</tr>
+						<tr>
+							<th class="property-applicability-head" scope="row">Used in Roles:</th>
+							<td class="property-applicability">All elements of the base markup</td>
+						</tr>
+						<tr>
+							<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+							<td class="property-descendants">Placeholder</td>
+						</tr>
+						<tr>
+							<th class="property-value-head" scope="row">Value:</th>
+							<td class="property-value"><a href="#valuetype_token">token</a></td>
+						</tr>
+					</tbody>
+		</table>
+    	<p>The following could be supported values of <code>coga-action</code> for buttons:</p>
+    </section>
+
+    <section>
+    	<h3>Values</h3>           
+		<table class="value-descriptions">
+				
+		<thead>
+						<tr>
+							<th scope="col">Value</th>
+							<th scope="col">Description</th>
+						</tr>
+		</thead>
+		<tbody>
+						<tr>
+							<th class="value-name" scope="row">compose</th>
+							<td class="value-description">compose new item such as an email. (Implied simplification = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">next</th>
+							<td class="value-description">move to the next item in the series. (Implied simplification  = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">delete</th>
+							<td class="value-description">delete current item, selected control or text</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">previous</th>
+							<td class="value-description">move to the previous item in the series. (Implied simplification  = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">toc</th>
+							<td class="value-description">opens a table of content</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">submit</th>
+							<td class="value-description">submits the form data or request to the server. (Implied simplification  = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">undo</th>
+							<td class="value-description">revert to the state before the user's most recent changes</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">cancel</th>
+							<td class="value-description">closes the dialog and discards any changes the user may have made within that dialog. (Implied simplification  = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">reset</th>
+							<td class="value-description">resets all the controls to their initial values</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">label</th>
+							<td class="value-description">add label to the selected item or the item at the current location.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">buy</th>
+							<td class="value-description">buy the selected item or buy the item at the current location. Often involves adding the current item into a shopping cart. (Implied simplification  = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">add</th>
+							<td class="value-description">add the selected item or the item at the current location to a list</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">move</th>
+							<td class="value-description">move the selected item <p class</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">save</th>
+							<td class="value-description">save the current content. (Implied simplification = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">send</th>
+							<td class="value-description">send a form, email or request. (Implied simplification = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">close</th>
+							<td class="value-description">close current dialog. (Implied simplification = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">more</th>
+							<td class="value-description">show more information <p class="ednote" > We may need more work to identify the dirction (up left degree etc) but there may be a way to do that already </p></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">print</th>
+							<td class="value-description">print current page, selection or the item at the current location</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">received</th>
+							<td class="value-description">open received folder</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">sent</th>
+							<td class="value-description">open sent folder</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">edit</th>
+							<td class="value-description">edit current item, selection or the item at the current location</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">forward</th>
+							<td class="value-description">forward to current item such as an email</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">reply</th>
+							<td class="value-description">reply to current item such as an email. (Implied simplification = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">upload</th>
+							<td class="value-description">upload file to the server</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">open</th>
+							<td class="value-description">open item. (Implied simplification = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">new</th>
+							<td class="value-description">open new item. (Implied simplification= "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">settings</th>
+							<td class="value-description">open settings and options</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">mode</th>
+							<td class="value-description">change the mode or functionality. (Implied simplification= "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">higher</th>
+							<td class="value-description">increases the level of the relevant setting. (Implied simplification= "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">lower</th>
+							<td class="value-description">increases the level of the relevant setting. (Implied simplification= "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">profile</th>
+							<td class="value-description">opens the userâ's profile page</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">expand</th>
+							<td class="value-description">expand or unexpand the current item</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">refresh</th>
+							<td class="value-description">manually refresh the current contents of the screen</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">properties</th>
+							<td class="value-description">shows the properties of the item</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">help</th>
+							<td class="value-description">opens a help function. (Implied simplification= "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">cut</th>
+							<td class="value-description">removes the selected control, item or text and places it on the Clipboard</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">copy</th>
+							<td class="value-description">copies the selected control, item or text onto the Clipboard</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">color</th>
+							<td class="value-description">opens a color picker</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">date</th>
+							<td class="value-description">opens a date control. (Implied simplification= "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">remove</th>
+							<td class="value-description">remove an item from a list</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">right</th>
+							<td class="value-description">moves a selected item to the right to another column or list</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">left</th>
+							<td class="value-description">moves a selected item to the left to another column or list</td>
+						</tr>
+		</tbody>
+		</table>
+	</section> 
+</section>
+
+
+
+
+
