@@ -1,0 +1,30 @@
+<section id="use_case_simplification">
+                    <h3>Simplification</h3>
+                    <p><strong>Requirement</strong>: The user must be able to request a way to identify and differentiate between critical features, medium features and less important features. These need to be defined as important from a user perspective in the content. Typically, critical features may be used by many or most users, 90% of the time or more. High important features would be above 60% use. Medium important features would be 20% of users use it 20% of the time . Under 20% usage would be of low importance.</p>
+                    <p><strong>User experience</strong>: Based on personalization setting the user can see less options. A sample user experience is available at <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html">https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html </a></p>
+                    <p>Relevant properties: <a href="#x3-4-coga-simplification">simplification</a></p>
+</section>
+<section id="use_case_adding_context">
+                    <h3>Adding Context</h3>
+                    <p><strong>Requirement:</strong> Having familiar terms and symbols is key to being able to use the web. However what is familiar for one user may be strange for another requiring them to learn new symbols. If a user agent or script knows the context of links, buttons, and other page elements then symbols and text used can be ones that the user understands. This can include: </p>
+                    <ul>
+                        <li> Symbols and graphics that they are familiar with </li>
+                        <li> Tool tips </li>
+                        <li> Language the use can understand </li>
+                        <li> Keyboard short cuts </li>
+                    </ul>
+                    <p>For that we need to standardize supportive syntax and terms that can be linked to associated symbols, terms, translations and explanations, for the individual, via an attribute.</p>
+                    <p><strong>Example user experience:</strong>, if an author gives to a button a role "send" then, without any work by the author, the button could be automatically rendered with a symbol, term, and/or tooltips that is understandable by a particular user. It could automatically imply F1 help that explains the send function in simple terms. It could be identified with a keyboard short cut that will always be used for send. In addition it could be identified as important and always rendered, or rendered as a large button. This would enable a consistent UI experience across applications and websites.</p>
+                    <p>Relevant properties: <a href="#action">action</a>, <a href="#destination">destination</a>, <a href="#field">field</a></p>
+                    <section id="use_case_general_context">
+                        <h4>General context</h4>
+                        <p><strong>Requirement: </strong> One important factor in optimizing the personalization of a product or service is to ensure that the personalization is appropriate for the current context of use as well as what is relevant for the user. For example a female user with a cognitive disability may need less options, and options that are for men are less likely to be relevant for her and may be demoted to bellow the scroll or placed under a &quot;more option&quot; button.</p>
+                        <p>Relevant properties: <a href="#context">context</a></p>
+                    </section>
+                    <section id="use_case_interoperable_symbols">
+                        <h4>Interoperable symbols</h4>
+                        <p><strong>Requirement: </strong>We would like to enable interoperable symbol set codes for Non verbal people. Products for people who are non vocal often use symbols to help users communicate. These symbols are in fact peoples language. Unfortunately many of these symbols are both subject to copy write AND not interoperable. That means end-users can only use one device, and can not use apps or AT from a different company. There are open set of symbol codes for these symbol sets, that could be referenced then they can be interoperable. alternatively wordnet nodes could be referenced. If the users symbols are mapped to the same nodes then users agents will be able to load the user understandable symbol. That means the end use could buy the symbols and use them across different devices or applications. They would still be proprietary but they would also be interoperable. </p>
+                        <p>User experience: AAC users will load symbols that they understand in different applications that are made by a different provider.</p>
+                        <p>Relevant properties: <a href="#concept">concept</a></p>
+                    </section>
+</section>
