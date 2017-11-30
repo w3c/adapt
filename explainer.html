@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Personalization Explainer 1.0</title>
+		<meta charset="utf-8"/>
+		<script src="https://www.w3.org/Tools/respec/respec-w3c-common" class="remove"></script>
+		<script src="common/biblio.js" class="remove"></script>
+		<script src="respec-config.js" class="remove"></script>
+	
+		<link href="common/css/common.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+
+		<section id="abstract">
+			<p>Personalization involves tailoring aspects of the user experience to meet the needs and preferences of the user. For example, having familiar terms and symbols is key to many users being able to use the web. However, what is familiar for one user may be unfamiliar to another requiring them to learn new symbols. The challenge has been the ability to identify the types of content in a document that should be adapted to the preferred user experience. The introduction of standardized semantics allows web applications to customize the exposure of that content to one that is familiar to individuals based on their needs and preferences. This specification defines standard semantics to enable user driven personalization such as the association of a user-preferred symbols to elements having those semantics. This ensures that users can quickly find familiar icons, such as a help icon, that apply to user interface elements.</p>
+			<p>This document is an explanation for understanding how to use Personalization properties to personalize an accessible web site.</p>
+		</section>
+
+		<section id="sotd"></section>
+
+		<section class="informative" id="introduction">
+
+			<h1>Introduction</h1>
+			<p>The goals of this specification include:</p>
+			<ul>
+				<li> expanding the accessibility information that may be supplied by the author;</li>
+				<li> facilitate preference driven individual personalization;</li>
+				<li> enable the author to specify key semantics needed to support users with cognitive impairments</li>
+			</ul>
+			<p>This is a proposal to define syntax for adaptable content such as: links, buttons, symbols, help and keyboard. This may be an WAI-ARIA COGA Extension.</p>
+			<p>Personalization involves tailoring aspects of the user experience to meet the preferences or needs of the user. For example, having familiar terms and symbols is key to being able to use the web. However what is familiar for one user may be new for another requiring them to learn new symbols. Personalization could include loading a set of symbols that is appropriate for the specific user, ensuring that all users find the icons simple and familiar.</p>
+			<p>Technology holds the promise of being extremely flexible and the design of many systems includes the expectation that users will be able to optimize their interaction experience according to their personal preferences or accessibility requirements (needs). </p>
+			<section class="section" id="why_accessibility">
+				<h2>Why We Need Personalization</h2>
+				<p>We need personalization because: </p>
+				<ul>
+					<li>Different user needs can conflict</li>
+					<li>Learning new design patterns (and widgets) can be confusing - we want to allow users to stick with what works for them </li>
+					<li>Extra support can be annoying to people who do not need it </li>
+					<li>Making content predictable is necessary for accessibility but can often be considered boring design </li>
+					<li>Ability to change levels of complexity (increase or decrease) - As people skills improve or decrease over time or context. </li>
+					<li>Enable us to really meet the user needs </li>
+				</ul>
+				<p>Some users need extra support. This can include: </p>
+				<ul>
+					<li> Symbols and graphics that they are familiar with </li>
+					<li> Tool tips </li>
+					<li> Language they understand </li>
+					<li> Less features </li>
+					<li> Separating advertisements, so they do not confuse them with native content </li>
+					<li> Keyboard short cuts </li>
+				</ul>
+				<p>For this we need standardized terms and supportive syntax that can be linked to associated symbols, terms, translations and explanations for the individual use via an attribute and personal preferences. </p>
+				<p>For example, assume an author can make it programanticaly known that a button is used to send an email. At at the user end, the button could be renderer with a symbol, term, and/or tooltips that is understandable for this particular user. It could automatically imply F1 help that explains the send function in simple terms. It could be identified with a keyboard short cut that will always be used for send. In addition it could be identified as important and always rendered, or rendered as a large button. </p>
+				<p>Working examples of how this could be used in practice, with user preferences, are available at <a href="https://github.com/ayelet-seeman/coga.personalisation">https://github.com/ayelet-seeman/coga.personalisation</a>. This is a project to help personalization for any use - including people with learning and memory issues. It is described more at: <a href="https://www.w3.org/WAI/PF/cognitive-a11y-tf/wiki/Easy_Personalization">https://www.w3.org/WAI/PF/cognitive-a11y-tf/wiki/Easy_Personalization</a>. </p>
+				<p>This project consists of 4 parts:</p>
+				<ol>
+					<li><a href="https://github.com/ayelet-seeman/coga.personalisation/tree/JSON-Script">JSON files for user setting</a></li>
+					<li>Proposal for new syntax: (This document) <br /></li>
+					<li>An HTML page that uses some of the new syntax: <a href="https://github.com/ayelet-seeman/coga.personalisation/tree/ExampleWebPage/">https://github.com/ayelet-seeman/coga.personalisation/tree/ExampleWebPage/</a></li>
+					<li>Scripts that a web author can use or include that read the user settings in the JSON files and adapt the page for the user needs: <a href="https://github.com/ayelet-seeman/coga.personalisation/tree/Script-Options">https://github.com/ayelet-seeman/coga.personalisation/tree/Script-Options</a></li>
+				</ol>
+				<p>This is one example of personalization based on semantics. Others may follow. It is also worth noting that the GPII project is working on making user preferences portable which would also enhance this work.</p>
+				<p>In another use-case we would like to see interoperable symbol set codes for non-verbal people. Products for people who are non vocal often use symbols to help users communicate. These symbols are in fact peoples language. Unfortunately many of these symbols are both subject to copy write and are not interoperable. That means end-users can only use one device, and can not use apps or AT from a different company. An open set of references for symbol codes for these symbol sets however, could be interoperable. That means the end user could use an open source symbol set or buy the symbols and use them across different devices or applications. Symbols could still be proprietary but they would also be interoperable. </p>
+			</section>
+
+			<section class="section" id="intro_context">
+				<h2>Personalization Use Cases (general)</h2>
+				<p>TPersonalization Use Cases covers use cases that can be addressed by personalization, and references the vocabulary items that help meet the use cases.</p>
+			</section>
+
+			<section class="section" id="Stru_of_doc">
+				<h2>Structure of this document</h2>
+				<p>This specification include:</p>
+				<ul>
+					<li> Personalized Content;</li>
+					<li> Personalized Help and support;</li>
+					<li> Personalized Tools</li>
+				</ul>
+			<p><a href="content/index.html">Personalization Content</a>, <a href="help/index.html">Personalization Help and support</a> and <a href="tools/index.html">Personalization Tools</a> provide describes and examples for each Personalization properties.</p>
+			</section>
+		</section>
+
+		<section class="informative" id="terms">
+			<h1>Important Terms</h1>
+			<div data-include="common/terms.html" data-oninclude="restrictReferences"></div>
+		</section>
+
+		<section id="characteristics_semanticproperties">
+			<h1>Structure of Properties</h1>
+			<p>Semantic properties have the characteristics described in the following sections.</p>
+			<section id="propcharacteristic_relatedconcept">
+				<h2>Related Concepts</h2>
+				<p>Advisory information about features from this or other languages that correspond to this property. While the correspondence may not be exact, it is useful to help understand the intent of the state or property.</p>
+			</section>
+			<section id="propcharacteristic_value">
+				<h2>Value</h2>
+				<p>Value type of the semantic property. The value may be one of the following types:</p>
+				<dl>
+					<dt id="valuetype_true-false">true/false</dt>
+					<dd>Value representing either true or false, with a default &quot;false&quot; value.</dd>
+					<dt id="valuetype_true-false-undefined">true/false/undefined</dt>
+					<dd>Value representing true or false, with a default &quot;undefined&quot; value indicating the state or property is not relevant.</dd>
+					<dt id="valuetype_idref">ID reference</dt>
+					<dd>Reference to the ID of another element in the same document</dd>
+					<dt id="valuetype_idref_list">ID reference list</dt>
+					<dd>A list of one or more ID references.</dd>
+					<dt id="valuetype_integer">integer</dt>
+					<dd>A numerical value without a fractional component.</dd>
+					<dt id="valuetype_number">number</dt>
+					<dd>Any real numerical value.</dd>
+					<dt id="valuetype_string">string</dt>
+					<dd>Unconstrained value type.</dd>
+					<dt id="valuetype_token">token</dt>
+					<dd>One of a limited set of allowed values.</dd>
+					<dt id="valuetype_token_list">token list</dt>
+					<dd>A list of one or more tokens.</dd>
+					<dt id="valuetype_uri">URI</dt>
+					<dd>A Uniform Resource Identifier as defined by <cite><a href="http://www.ietf.org/rfc/rfc3986.txt">RFC 3986</a></cite> [[RFC3986]]. It may reference a separate document, or a content fragment identifier in a separate document, or a content fragment identifier within the same document.</dd>
+				</dl>
+				<p>The "undefined" value, when allowed on a state or property, is an explicit indication that the state or property is not set. The value is used on states and properties that support tokens, and the &quot;undefined&quot; value is a string that is one of the allowed tokens. It is also used on some states and properties that accept true/false values, when &quot;undefined&quot; has a different meaning than &quot;false&quot;.</p>
+				<p>These are generic types for states and properties, but do not define specific representation. See <a href="#state_property_processing" class="specref">State and Property Attribute Processing</a> for details on how these values are expressed and handled in host languages.</p>
+			</section>
+		</section>
+
+
+
+
+
+		<section class="informative" id="content">
+			<h1>Adaptable content</h1>
+			<section id="content_use_cases">
+				<h2>Use Cases</h2>
+				<section>
+					<h3>Simplification</h3>
+					<p>Explanation: <a href="content/index.html#use_case_simplification">simplification</a></p>
+				</section>
+				<section>
+					<h3>Adding Context </h3>
+					<p>Explanation: <a href="content/index.html#use_case_adding_context">Adding Context</a></p>
+					<section>
+						<h4>General context</h4>
+						<p>Explanation: <a href="content/index.html#use_case_general_context">General context</a></p>
+					</section>
+					<section>
+						<h4>Interoperable symbols</h4>
+						<p>Explanation: <a href="content/index.html#use_case_interoperable_symbols">Interoperable symbols</a></p>
+					</section>
+				</section>
+			</section>
+			<section id="list_of_properties">
+				<h2>List of properties</h2>
+				<section class="property">
+					<h2>action</h2>
+					<p>Explanation: <a href="content/index.html#action-explanation">coga-action</a></p>
+				</section>
+				<section class="property">
+					<h2>destination</h2>
+					<p>Explanation: <a href="content/index.html#destination-explanation">coga-destination</a></p>
+				
+				</section>
+				<section class="property">
+					<h2>field</h2>
+					<p>Explanation: <a href="content/index.html#field-explanation">coga-field</a></p>
+				
+				</section>
+				<section class="property">
+					<h2>simplification</h2>
+					<p>Explanation: <a href="content/index.html#simplification-explanation">coga-simplification</a></p>
+				
+				</section>
+				<section class="property">
+					<h2>distraction</h2>
+					<p>Explanation: <a href="content/index.html#distraction-explanation">coga-distraction</a></p>
+				</section>
+				<section class="property">
+					<h2>symbol</h2>
+					<p>Explanation: <a href="content/index.html#symbol-explanation">coga-symbol</a></p>
+				</section>
+			</section>
+		</section>
+
+		<section class="informative" id="help ">
+			<h1>Help and support</h1>
+			<section id="help_use_cases">
+				<h2>Use Cases</h2>
+				<section>
+					<h2>Number free</h2>
+					<p>Explanation: <a href="help/index.html#use_case_numberfree">Number free</a></p>
+				</section>
+				<section>
+					<h2>Language type support</h2>
+					<p>Explanation: <a href="help/index.html#use_case_language">Language type support</a></p>
+				</section>
+				<section>
+					<h2>Non-literal text and images</h2>
+					<p>Explanation: <a href="help/index.html#use_case_literal">Non-literal text and images</a></p>
+				</section>
+				<section>
+					<h3>More Help</h3>
+					<p>Explanation: <a href="help/index.html#use_case_morehelp">More Help</a></p>
+				</section>
+				<section>
+					<h2>Explain and feedback</h2>
+					<p>Explanation: <a href="help/index.html#use_case_explain">Explain and feedback</a></p>
+				</section>
+				<section>
+					<h2>Potential Features</h2>
+					<p>Explanation: <a href="help/index.html#use_case_potential_featuren">Potential Features</a></p>
+				</section>
+			</section>
+			<section id="list_of_properties">
+				<h2>List of properties</h2>
+				<section class="property">
+					<h2>literal</h2>
+					<p>Explanation: <a href="help/index.html#literal-explanation">literal</a></p>
+				</section>
+				<section class="property">
+					<h2>numberfree</h2>
+					<p>Explanation: <a href="help/index.html#numberfree-explanation">numberfree</a></p>
+				</section>
+				<section class="property">
+					<h2>easylang</h2>
+					<p>Explanation: <a href="help/index.html#easylang-explanation">easylang</a></p>
+				</section>
+				<section class="property">
+					<h2>alternative</h2>
+					<p>Explanation: <a href="help/index.html#alternative-explanation">alternative</a></p>
+				</section>
+				<section class="property">
+					<h2>explain</h2>
+					<p>Explanation: <a href="help/index.html#explain-explanation">explain</a></p>
+				</section>
+				<section class="property">
+					<h2>feedback</h2>
+					<p>Explanation: <a href="help/index.html#feedback-explanation">feedback</a></p>
+				</section>
+				<section class="property">
+					<h2>moreinfo</h2>
+					<p>Explanation: <a href="help/index.html#moreinfo-explanation">moreinfo</a></p>
+				</section>
+				<section class="property">
+					<h2>extrahelp</h2>
+					<p>Explanation: <a href="help/index.html#extrahelp-explanation">extrahelp</a></p>
+				</section>
+				<section class="property">
+					<h2>helptype</h2>
+					<p>Explanation: <a href="help/index.html#helptype-explanation">helptype</a></p>
+				</section>
+			</section>
+		</section>
+
+		<section class="informative" id="tools ">
+			<h1>Tools</h1>
+			<section id="use_cases">
+				<h2>Use Cases</h2>
+				<section>
+					<h3 id="logs">Logs</h3>
+					<p>Explanation: <a href="tools/index.html#use_case_log">Logs</a></p>
+					<section>
+						<h4>Log usage examples</h4>
+						<p>Explanation: <a href="tools/index.html#use_case_log_usage">Log usage examples</a></p>
+					</section>
+					<section>
+						<h4>Alternative syntax for log</h4>
+						<p>Explanation: <a href="tools/index.html#use_case_alternative_syntax">Alternative syntax for log</a></p>
+					</section>
+				</section>
+			<section>
+				<h3>Reminders and messages</h3>
+				<p>Explanation: <a href="tools/index.html#use_case_reminder">Reminders and messages</a></p>
+			</section>
+			<section>
+				<h3>general tools</h3>
+				<p>Explanation: <a href="tools/index.html#use_case_general_tool">general tools</a></p>
+			</section>
+			</section>
+			<section id="list_of_properties">
+				<h2>List of properties</h2>
+				<section>
+					<h2>All the log properties</h2>
+					<p>Explanation: <a href="tools/index.html#all-log-explanation">All the log properties</a></p>
+					<section>
+						<h3>Log usage examples</h3>
+						<p>Explanation: <a href="tools/index.html#log-usage-example-explanation">Log usage examples</a></p>
+                	</section>
+                	<section>
+                		<h3>Alternative syntax for log</h3>
+                		<p>Explanation: <a href="tools/index.html#Alternative-syntax-log-example-explanation">Alternative syntax for log</a></p>
+                	
+					</section>
+				</section>
+           		<section>
+				<h2>All the message properties</h2>
+				<section class="property">
+					<h3>messageimportance</h3>
+					<p>Explanation: <a href="tools/index.html#messageimportance-explanation">messageimportance</a></p>
+				</section>
+				<section class="property">
+					<h3>messagefrom</h3>
+					<p>Explanation: <a href="tools/index.html#messagefrom-explanation">messagefrom</a></p>
+				</section>
+				<section class="property">
+					<h3>messagecontext</h3>
+					<p>Explanation: <a href="tools/index.html#messagecontext-explanation">messagecontext</a></p>
+				</section>
+				<section class="property">
+					<h3>messagetime</h3>
+					<p>Explanation: <a href="tools/index.html#messagetime-explanation">messagetime</a></p>
+				</section>
+				</section>
+			</section>	
+		</section>
+
+
+		<section class="appendix">
+			<h2>Vocabulary Implementations</h2>
+			<section>
+				<h3>mapping values to different syntax </h3>
+			</section>
+			<section>
+				<h3>WAI-ARIA</h3>
+				<p>Properties in this case can be represented as WAI-ARIA properties by adding the prefix "aria-" to the attribute name, and the property value as the attribute value.</p>
+				<p class="ednote">The prefix above is not yet accepted by the ARIA Working Group.</p>
+				<section>
+					<h2>Additional WAI-ARIA roles</h2>
+					<p><strong>Requirement: </strong> We may want to add roles for sections a page such as: contact us - for a contact us formÂ  </p>
+					<p><strong>User experience: </strong>symbols and colors could be used consistently across different content.</p>
+					<p>Nav maps can be automatically generated for people learn via key-points or examples.</p>
+					<p>Further these sections could be hidden in the normal rendering of a page or rendered the top of page depending on user preferences. The location of these sections can also be changed, based on the user preference, enabling the user to find them easily.</p>
+					<p>Values:</p>
+					<ul>
+						<li>summary</li>
+						<li>keypoints</li>
+						<li>example</li>
+						<li>note</li>
+						<li>warning</li>
+						<li>step</li>
+						<li>external - for external content, such as sponsored or advertising</li>
+						<li>offers - for special offers that are complementary to the main content or task</li>
+						<li>advertisement - advertisement or sponsored content</li>
+						<li>contact us</li>
+						<li>about us</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<h3>HTML Microdata</h3>
+				<p>Properties in this vocabulary can be used in <a href="https://www.w3.org/TR/microdata/">HTML Microdata</a> [[microdata]]. The property name is uses as the item name, the property value as the item value. Authors SHOULD use the itemtype property to express to the <a href="#propcharacteristic_value">value type</a> defined in this specification.</p>
+			</section>
+			<section>
+				<h3>RDFa</h3>
+				<p>The context based properties should be convertible to RDFa. (see <a href="https://www.w3.org/TR/xhtml-rdfa-primer/">RDFa Primer</a>) and the task force should create this mapping.</p>
+				<p>Note that a lot of this can be done using RDFa. However it is easy to change the meaning with RDFa and a very basic parser will misinterpret the result. The coga work needs to be usable by as many authors as possible, and not only those who can implement RDF logic.</p>
+				<p>Further , personalization setting need to be limited, and RDF can give an unlimited number of potential options which will make the system unusable. (This is unless we create restrictions and controls on an ontology uses - such as mapping to know ontologies.)</p>
+				<p>For example, in the code below the property homepage does not refer to the home page of the site but of the person being references. Beyond declaring the type of data we are dealing with, each typeof creates a new blank node with its own distinct properties. </p>
+				<pre>
+&lt;div vocab="http://xmlns.com/foaf/0.1/"&gt;
+&lt;ul&gt;
+   &lt;li typeof="Person"&gt;
+      &lt;a property="homepage" href="http://example.com/bob/"&gt;Bob&lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li typeof="Person"&gt;
+      &lt;a property="homepage" href="http://example.com/eve/"&gt;Eve&lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li typeof="Person"&gt;
+      &lt;a property="homepage" href="http://example.com/manu/"&gt;Manu&lt;/a&gt;
+   &lt;/li&gt;
+&lt;/ul&gt;
+				</pre>
+				<p>We may recommend adding RDFA that describe the role of the item (see <a href="https://www.w3.org/TR/xhtml-rdfa-primer/">RDFa Primer</a>):</p>
+				<pre>
+&lt;div resource="/alice/posts/jos_barbecue"&gt;
+	&lt;h2 property="title"&gt;Jo's Barbecue&lt;/h2&gt;
+	&lt;p&gt;Date: &lt;span property="created"&gt;2011-09-14&lt;/span&gt;&lt;/p&gt;
+	&lt;h3 property="creator"&gt;Eve&lt;/h3&gt;
+	...
+&lt;/div&gt;
+			</pre>
+			</section>
+			<section>
+				<h3>autocomplete</h3>
+			</section>
+		</section>
+
+		<!--
+
+		<section class="appendix" id="changelog">
+			<h2>Change Log</h2>
+
+			<section>
+				<h2>Substantive changes since the <a href="@@">last public working draft</a></h2>
+				<ul>
+					<li>@@</li>
+					<!- EdNote: After each WD publish, move contents of this list into the next one below. ->
+				</ul>
+			</section>
+
+			<section>
+				<h2>Other substantive changes since the <a href="@@">First Public Working Draft</a></h2>
+				<ul>
+					<li>@@</li>
+					<!- EdNote: After each WD publish, move previous list into this one. ->
+				</ul>
+			</section>
+		</section>
+
+		-->
+		<div data-include="common/acknowledgements.html" data-oninclude="fixIncludes" data-include-replace="true">Acknowledgements placeholder</div>
+
+	</body>
+</html>
