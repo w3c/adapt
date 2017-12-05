@@ -1,0 +1,1717 @@
+<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml" typeof="bibo:Document " prefix="bibo: http://purl.org/ontology/bibo/ w3p: http://www.w3.org/2001/02pd/rec54#"><head><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta charset="utf-8"><meta name="generator" content="ReSpec 18.3.0"><meta lang="" property="dc:language" content="en"><style>/* --- ISSUES/NOTES --- */
+div.issue-title, div.note-title , div.ednote-title, div.warning-title {
+    padding-right:  1em;
+    min-width: 7.5em;
+    color: #b9ab2d;
+}
+div.issue-title { color: #e05252; }
+div.note-title, div.ednote-title { color: #2b2; }
+div.warning-title { color: #f22; }
+div.issue-title span, div.note-title span, div.ednote-title span, div.warning-title span {
+    text-transform: uppercase;
+}
+div.note, div.issue, div.ednote, div.warning {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.note > p:first-child, .ednote > p:first-child, .issue > p:first-child, .warning > p:first-child { margin-top: 0 }
+.issue, .note, .ednote, .warning {
+    padding: .5em;
+    border-left-width: .5em;
+    border-left-style: solid;
+}
+div.issue, div.note , div.ednote,  div.warning {
+    padding: 1em 1.2em 0.5em;
+    margin: 1em 0;
+    position: relative;
+    clear: both;
+}
+span.note, span.ednote, span.issue, span.warning { padding: .1em .5em .15em; }
+
+.issue {
+    border-color: #e05252;
+    background: #fbe9e9;
+}
+.note, .ednote {
+    border-color: #52e052;
+    background: #e9fbe9;
+}
+
+.warning {
+    border-color: #f11;
+    border-width: .2em;
+    border-style: solid;
+    background: #fbe9e9;
+}
+
+.warning-title:before{
+    content: "⚠"; /*U+26A0 WARNING SIGN*/
+    font-size: 3em;
+    float: left;
+    height: 100%;
+    padding-right: .3em;
+    vertical-align: top;
+    margin-top: -0.5em;
+}
+
+li.task-list-item {
+    list-style: none;
+}
+
+input.task-list-item-checkbox {
+    margin: 0 0.35em 0.25em -1.6em;
+    vertical-align: middle;
+}
+</style><style>/* --- PERMALINKS --- */
+
+.permalink {
+  width: 1px;
+  height: 1px;
+  overflow: visible;
+  font-size: 10pt;
+  font-style: normal;
+  vertical-align: middle;
+  margin-left: 4px;
+  float: right;
+}
+
+.permalink a, .permalink a:link, .permalink a:visited, .permalink a:hover, .permalink a:focus, .permalink a:active {
+  background:transparent !important;
+  text-decoration:none;
+  font-weight: bold;
+  color:#666 !important;
+}
+
+.permalink abbr {
+  border:0;
+}
+</style>
+		<title>Personalization Help and Support 1.0</title>
+		
+		
+		
+		<style id="respec-mainstyle">/*****************************************************************
+ * ReSpec 3 CSS
+ * Robin Berjon - http://berjon.com/
+ *****************************************************************/
+
+/* Override code highlighter background */
+.hljs {
+  background: transparent !important;
+}
+
+/* --- INLINES --- */
+h1 abbr,
+h2 abbr,
+h3 abbr,
+h4 abbr,
+h5 abbr,
+h6 abbr,
+a abbr {
+  border: none;
+}
+
+dfn {
+  font-weight: bold;
+}
+
+a.internalDFN {
+  color: inherit;
+  border-bottom: 1px solid #99c;
+  text-decoration: none;
+}
+
+a.externalDFN {
+  color: inherit;
+  border-bottom: 1px dotted #ccc;
+  text-decoration: none;
+}
+
+a.bibref {
+  text-decoration: none;
+}
+
+cite .bibref {
+  font-style: normal;
+}
+
+code {
+  color: #c83500;
+}
+
+th code {
+  color: inherit;
+}
+
+/* --- TOC --- */
+
+.toc a,
+.tof a {
+  text-decoration: none;
+}
+
+a .secno,
+a .figno {
+  color: #000;
+}
+
+ul.tof,
+ol.tof {
+  list-style: none outside none;
+}
+
+.caption {
+  margin-top: 0.5em;
+  font-style: italic;
+}
+
+/* --- TABLE --- */
+
+table.simple {
+  border-spacing: 0;
+  border-collapse: collapse;
+  border-bottom: 3px solid #005a9c;
+}
+
+.simple th {
+  background: #005a9c;
+  color: #fff;
+  padding: 3px 5px;
+  text-align: left;
+}
+
+.simple th[scope="row"] {
+  background: inherit;
+  color: inherit;
+  border-top: 1px solid #ddd;
+}
+
+.simple td {
+  padding: 3px 10px;
+  border-top: 1px solid #ddd;
+}
+
+.simple tr:nth-child(even) {
+  background: #f0f6ff;
+}
+
+/* --- DL --- */
+
+.section dd > p:first-child {
+  margin-top: 0;
+}
+
+.section dd > p:last-child {
+  margin-bottom: 0;
+}
+
+.section dd {
+  margin-bottom: 1em;
+}
+
+.section dl.attrs dd,
+.section dl.eldef dd {
+  margin-bottom: 0;
+}
+
+#issue-summary > ul,
+.respec-dfn-list {
+  column-count: 2;
+}
+
+#issue-summary li,
+.respec-dfn-list li {
+  list-style: none;
+}
+
+details.respec-tests-details {
+  margin-left: 1em;
+  display: inline-block;
+  vertical-align: top;
+}
+
+details.respec-tests-details > * {
+  padding-right: 2em;
+}
+
+details.respec-tests-details[open] {
+  z-index: 999999;
+  position: absolute;
+  border: thin solid #cad3e2;
+  border-radius: .3em;
+  background-color: white;
+  padding-bottom: .5em;
+}
+
+details.respec-tests-details[open] > summary {
+  border-bottom: thin solid #cad3e2;
+  padding-left: 1em;
+  margin-bottom: 1em;
+  line-height: 2em;
+}
+
+details.respec-tests-details > ul {
+  width: 100%;
+  margin-top: -0.3em;
+}
+
+details.respec-tests-details > li {
+  padding-left: 1em;
+}
+
+@media print {
+  .removeOnSave {
+    display: none;
+  }
+}
+</style><style>/*
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #333;
+  background: #f8f8f8;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #998;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: #333;
+  font-weight: bold;
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr {
+  color: #008080;
+}
+
+.hljs-string,
+.hljs-doctag {
+  color: #d14;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
+  color: #900;
+  font-weight: bold;
+}
+
+.hljs-subst {
+  font-weight: normal;
+}
+
+.hljs-type,
+.hljs-class .hljs-title {
+  color: #458;
+  font-weight: bold;
+}
+
+.hljs-tag,
+.hljs-name,
+.hljs-attribute {
+  color: #000080;
+  font-weight: normal;
+}
+
+.hljs-regexp,
+.hljs-link {
+  color: #009926;
+}
+
+.hljs-symbol,
+.hljs-bullet {
+  color: #990073;
+}
+
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #0086b3;
+}
+
+.hljs-meta {
+  color: #999;
+  font-weight: bold;
+}
+
+.hljs-deletion {
+  background: #fdd;
+}
+
+.hljs-addition {
+  background: #dfd;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+</style>
+	
+		<link href="../common/css/common.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/personalization-help&amp;support-1.0/"><script id="initialUserConfig" type="application/json">{
+  "trace": true,
+  "doRDFa": "1.0",
+  "includePermalinks": true,
+  "permalinkEdge": true,
+  "permalinkHide": false,
+  "tocIntroductory": true,
+  "specStatus": "ED",
+  "noRecTrack": true,
+  "shortName": "personalization-help&support-1.0",
+  "copyrightStart": "2017",
+  "edDraftURI": "https://w3c.github.io/w3c/personalization-semantics/help/index.html",
+  "editors": [
+    {
+      "name": "Lisa Seeman",
+      "url": "http://athena-ict.com",
+      "mailto": "lisa.seeman@zoho.com",
+      "w3cid": 16320
+    },
+    {
+      "name": "Rich Schwerdtfeger",
+      "w3cid": 2460
+    },
+    {
+      "name": "Michael Cooper",
+      "url": "https://www.w3.org",
+      "mailto": "cooper@w3.org",
+      "company": "W3C",
+      "companyURI": "http://www.w3.org",
+      "w3cid": 34017
+    }
+  ],
+  "wg": "Accessible Rich Internet Applications Working Group",
+  "wgURI": "https://www.w3.org/WAI/ARIA/",
+  "wgPublicList": "public-personalization-tf",
+  "wgPatentURI": "https://www.w3.org/2004/01/pp-impl/83726/status",
+  "localBiblio": {
+    "ACCNAME-AAM": {
+      "title": "Accessible Name and Description: Computation and API Mappings 1.1",
+      "href": "http://www.w3.org/TR/accname-aam-1.1/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "Joseph Scheuhammer",
+        "Michael Cooper",
+        "Andi Snow-Weaver",
+        "Aaron Leventhal"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/ARIA/"
+      ]
+    },
+    "ARIA-PRACTICES": {
+      "title": "WAI-ARIA Authoring Practicess 1.1",
+      "href": "http://www.w3.org/TR/wai-aria-practices-1.1/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "Matt King",
+        "James Nurthen",
+        "Michael Cooper",
+        "Michiel Bijl",
+        "Joseph Scheuhammer",
+        "Lisa Pappas",
+        "Richard Schwerdtfeger"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/ARIA/"
+      ]
+    },
+    "ATK": {
+      "href": "https://developer.gnome.org/atk/stable/",
+      "title": "ATK - Accessibility Toolkit",
+      "publisher": "The GNOME Project"
+    },
+    "AXAPI": {
+      "href": "https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078",
+      "title": "Accessibility Programming Guide for OS X",
+      "publisher": "Apple Corporation"
+    },
+    "coga-gap-analysis": {
+      "title": "Cognitive Accessibility Roadmap and Gap Analysis",
+      "href": "https://w3c.github.io/coga/gap-analysis/",
+      "publisher": "W3C",
+      "editors": [
+        "Lisa Seeman",
+        "Michael Cooper"
+      ],
+      "etAl": "false",
+      "deliveredBy": "https://www.w3.org/WAI/PF/cognitive-a11y-tf/"
+    },
+    "coga-issue-papers": {
+      "title": "Issue Papers for the The Cognitive and Learning Disabilities Accessibility Task Force (COGA)",
+      "href": "https://w3c.github.io/coga/issue-papers/",
+      "publisher": "W3C",
+      "editors": [
+        "Lisa Seeman",
+        "Michael Cooper"
+      ],
+      "etAl": "false",
+      "deliveredBy": "https://www.w3.org/WAI/PF/cognitive-a11y-tf/"
+    },
+    "CORE-AAM": {
+      "title": "Core Accessibility API Mappings 1.1",
+      "href": "http://www.w3.org/TR/core-aam-1.1/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "Joseph Scheuhammer",
+        "Michael Cooper",
+        "Andi Snow-Weaver",
+        "Aaron Leventhal"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/ARIA/"
+      ]
+    },
+    "DPUB-ARIA": {
+      "title": "Digital Publishing WAI-ARIA Module 1.0",
+      "href": "http://www.w3.org/TR/dpub-aria-1.0/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "Matt Garrish",
+        "Tzviya Siegman",
+        "Markus Gylling",
+        "Shane McCarron"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/ARIA/"
+      ]
+    },
+    "GRAPHICS-ARIA": {
+      "title": "WAI-ARIA Graphics",
+      "href": "http://www.w3.org/TR/graphics-aria-1.0/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "Amelia Bellamy-Royds",
+        "Fred Esch",
+        "Rich Schwerdtfeger",
+        "Leonie Watson"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/ARIA/",
+        "http://www.w3.org/SVG/"
+      ]
+    },
+    "GRAPHICS-AAM": {
+      "title": "Graphics Accessibility API Mappings",
+      "href": "http://www.w3.org/TR/graphics-aam-1.0/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "Amelia Bellamy-Royds",
+        "Fred Esch",
+        "Richard Schwerdtfeger"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/ARIA/",
+        "http://www.w3.org/SVG/"
+      ]
+    },
+    "EPUB-SSV": {
+      "href": "http://www.idpf.org/epub/vocab/structure/",
+      "title": "EPUB Structural Semantics Vocabulary",
+      "publisher": "IDPF"
+    },
+    "EPUB-Content": {
+      "href": "http://www.idpf.org/epub/31/spec/epub-contentdocs.html",
+      "title": "EPUB Content Documents 3.1",
+      "publisher": "IDPF"
+    },
+    "GTK": {
+      "href": "https://developer.gnome.org/gtk3/stable/",
+      "title": "GTK+ 3 Reference Manual",
+      "publisher": "The GNOME Project"
+    },
+    "HTML-AAM": {
+      "authors": [
+        "Steve Faulkner",
+        "Jason Kiss",
+        "Cynthia Shelly",
+        "Alexander Surkov"
+      ],
+      "etAl": true,
+      "href": "http://www.w3.org/TR/html-aam-1.0/",
+      "title": "HTML Accessibility API Mappings 1.0",
+      "status": "WD",
+      "publisher": "W3C",
+      "deliveredBy": [
+        "http://www.w3.org/html",
+        "http://www.w3.org/WAI/PF/"
+      ]
+    },
+    "MSAA": {
+      "href": "https://msdn.microsoft.com/en-us/library/ms697707.aspx",
+      "title": "Microsoft Active Accessibility (MSAA) 2.0",
+      "publisher": "Microsoft Corporation"
+    },
+    "SVG-AAM": {
+      "title": "SVG2 Accessibility API Mappings 1.0",
+      "href": "http://www.w3.org/TR/svg-aam-1.0/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "Amelia Bellamy-Royds",
+        "Richard Schwerdtfeger"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/PF/"
+      ]
+    },
+    "SVG1": {
+      "title": "Scalable Vector Graphics (SVG) 1.0 Specification",
+      "href": "http://www.w3.org/TR/SVG10/",
+      "status": "REC",
+      "publisher": "W3C",
+      "authors": [
+        "John Ferraiolo"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/SVG"
+      ]
+    },
+    "SVG11": {
+      "title": "Scalable Vector Graphics (SVG) 1.1 (Second Edition)",
+      "href": "http://www.w3.org/TR/SVG11/",
+      "status": "REC",
+      "publisher": "W3C",
+      "authors": [
+        "Erik Dahlström",
+        "Patrick Dengler",
+        "Anthony Grasso",
+        "Chris Lilley",
+        "Cameron McCormack",
+        "Doug Schepers",
+        "Jonathan Watt",
+        "John Ferraiolo",
+        "藤沢 淳 (FUJISAWA Jun)",
+        "Dean Jackson"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/SVG"
+      ]
+    },
+    "SVG2": {
+      "title": "Scalable Vector Graphics (SVG) 2",
+      "href": "http://www.w3.org/TR/2015/WD-SVG2-20150915/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "Nikos Andronikos",
+        "Rossen Atanassov",
+        "Tavmjong Bah",
+        "Amelia Bellamy-Royds",
+        "Brian Birtles",
+        "Cyril Concolato",
+        "Erik Dahlström",
+        "Chris Lilley",
+        "Cameron McCormack",
+        "Doug Schepers",
+        "Dirk Schulze",
+        "Richard Schwerdtfeger",
+        "Satoru Takagi",
+        "Jonathan Watt"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/PF/"
+      ]
+    },
+    "UI-AUTOMATION": {
+      "href": "https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx",
+      "title": "UI Automation",
+      "publisher": "Microsoft Corporation"
+    },
+    "UIA-EXPRESS": {
+      "href": "https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx",
+      "title": "The IAccessibleEx Interface",
+      "publisher": "Microsoft Corporation"
+    },
+    "WAI-ARIA": {
+      "title": "Accessible Rich Internet Applications (WAI-ARIA) 1.1",
+      "href": "http://www.w3.org/TR/wai-aria-1.1/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "James Craig",
+        "Michael Cooper",
+        "Shane McCarron"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/PF/"
+      ]
+    },
+    "WAI-ARIA-10": {
+      "authors": [
+        "James Craig",
+        "Michael Cooper"
+      ],
+      "etAl": true,
+      "href": "http://www.w3.org/TR/wai-aria/",
+      "title": "Accessible Rich Internet Applications (WAI-ARIA) 1.0",
+      "status": "REC",
+      "publisher": "W3C",
+      "deliveredBy": [
+        "http://www.w3.org/WAI/PF/"
+      ]
+    }
+  },
+  "ariaSpecURLs": {
+    "ED": "https://w3c.github.io/aria/aria/aria",
+    "FPWD": "https://www.w3.org/TR/wai-aria-1.1/",
+    "WD": "https://www.w3.org/TR/wai-aria-1.1/",
+    "CR": "https://www.w3.org/TR/wai-aria-1.1/",
+    "REC": "https://www.w3.org/TR/wai-aria-1.1/"
+  },
+  "publishDate": "2017-12-05",
+  "publishISODate": "2017-12-05T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 05 December 2017"
+}</script></head>
+	<body aria-busy="false" class="h-entry toc-inline"><div class="head">
+    <p>
+      <a class="logo" href="https://www.w3.org/"><img width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt="W3C"></a>
+    </p>
+  <p><!--_hyper: 200704679;--></p>
+  <h1 class="title p-name" id="title" property="dcterms:title">Personalization Help and Support 1.0</h1>
+  <h2 id="w3c-editor-s-draft-05-december-2017"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time property="dcterms:issued" class="dt-published" datetime="2017-12-05">05 December 2017</time><span class="permalink" typeof="bookmark"><a href="#undefined" aria-label="Permalink for W3C Editor's Draft 05 December 2017" title="Permalink for W3C Editor's Draft 05 December 2017" property="url"><span property="title" content="W3C Editor's Draft 05 December 2017">§</span></a></span></h2>
+  <dl>
+      <dt>This version:</dt>
+      <dd><a class="u-url" href="https://w3c.github.io/w3c/personalization-semantics/help/index.html">https://w3c.github.io/w3c/personalization-semantics/help/index.html</a></dd>
+      <dt>Latest published version:</dt>
+      <dd><a href="https://www.w3.org/TR/personalization-help&amp;support-1.0/">https://www.w3.org/TR/personalization-help&amp;support-1.0/</a></dd>
+      <dt>Latest editor's draft:</dt>
+      <dd><a href="https://w3c.github.io/w3c/personalization-semantics/help/index.html">https://w3c.github.io/w3c/personalization-semantics/help/index.html</a></dd>
+    <dt>Editors:</dt>
+    <dd class="p-author h-card vcard" property="bibo:editor" resource="_:editor0" data-editor-id="16320"><span property="rdf:first" typeof="foaf:Person"><meta property="foaf:name" content="Lisa Seeman"><a class="u-url url p-name fn" property="foaf:homepage" href="http://athena-ict.com">Lisa Seeman</a>, <span class="ed_mailto"><a class="u-email email" property="foaf:mbox" href="mailto:lisa.seeman@zoho.com">lisa.seeman@zoho.com</a></span></span>
+<span property="rdf:rest" resource="_:editor1"></span>
+</dd>
+<dd class="p-author h-card vcard" resource="_:editor1" data-editor-id="2460"><span property="rdf:first" typeof="foaf:Person"><span property="foaf:name" class="p-name fn">Rich Schwerdtfeger</span></span>
+<span property="rdf:rest" resource="_:editor2"></span>
+</dd>
+<dd class="p-author h-card vcard" resource="_:editor2" data-editor-id="34017"><span property="rdf:first" typeof="foaf:Person"><meta property="foaf:name" content="Michael Cooper"><a class="u-url url p-name fn" property="foaf:homepage" href="https://www.w3.org">Michael Cooper</a>, <abbr title="World Wide Web Consortium">W3C</abbr>, <span class="ed_mailto"><a class="u-email email" property="foaf:mbox" href="mailto:cooper@w3.org">cooper@w3.org</a></span></span>
+<span property="rdf:rest" resource="rdf:nil"></span>
+</dd>
+
+  </dl>
+      <p class="copyright">
+        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> ©
+        2017
+        
+        <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup>
+        (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+        <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>,
+        <a href="https://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>).
+        <abbr title="World Wide Web Consortium">W3C</abbr> <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and
+            <a rel="license" href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document">permissive document license</a>
+        rules apply.
+      </p>
+  <hr title="Separator for header">
+</div>
+
+		<section id="abstract" class="introductory" property="dc:abstract"><!--OddPage--><h2 id="abstract-0" resource="#abstract-0"><span property="xhv:role" resource="xhv:heading">Abstract</span></h2>
+			<p>This document list examples of the personalized help and support properties, this is an extension of Personalization Explainer. including the properties of <code>coga-literal</code>, <code>coga-numberfree</code>, <code>coga-easylang</code>, <code>coga-alternative</code>, <code>coga-explain</code>, <code>coga-feedback</code>, <code>coga-moreinfo</code>,<code>coga-extrahelp</code>, <code>coga-helptype</code>. </p>
+		</section>
+
+		<section id="sotd" class="introductory"><!--OddPage--><h2 id="status-of-this-document" resource="#status-of-this-document"><span property="xhv:role" resource="xhv:heading">Status of This Document</span></h2>
+      <p>
+        <em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em>
+      </p>
+        
+        <p>
+          This document was published by the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> as an Editor's Draft.
+            Comments regarding this document are welcome. Please send them to
+            <a href="mailto:public-personalization-tf@w3.org">public-personalization-tf@w3.org</a>
+            (<a href="mailto:public-personalization-tf-request@w3.org?subject=subscribe">subscribe</a>,
+            <a href="https://lists.w3.org/Archives/Public/public-personalization-tf/">archives</a>).
+        </p>
+          <p>
+            Publication as an Editor's Draft does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr>
+            Membership. This is a draft document and may be updated, replaced or obsoleted by other
+            documents at any time. It is inappropriate to cite this document as other than work in
+            progress.
+          </p>
+        <p>
+            This document was produced by
+            a group
+             operating under the
+            <a id="sotd_patent" property="w3p:patentRules" href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+              <abbr title="World Wide Web Consortium">W3C</abbr> maintains a <a href="https://www.w3.org/2004/01/pp-impl/83726/status" rel="disclosure">public list of any patent
+              disclosures</a>
+            made in connection with the deliverables of
+            the group; that page also includes
+            instructions for disclosing a patent. An individual who has actual knowledge of a patent
+            which the individual believes contains
+            <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential
+            Claim(s)</a> must disclose the information in accordance with
+            <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section
+            6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+        </p>
+          <p>This document is governed by the <a id="w3c_process_revision" href="https://www.w3.org/2017/Process-20170301/">1 March 2017 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+          </p>
+        
+
+</section><nav id="toc"><h2 class="introductory" id="table-of-contents" resource="#table-of-contents"><span property="xhv:role" resource="xhv:heading">Table of Contents<span class="permalink" typeof="bookmark"><a href="#undefined" aria-label="Permalink for Table of Contents" title="Permalink for Table of Contents" property="url"><span property="title" content="Table of Contents">§</span></a></span></span></h2><ol class="toc"><li class="tocline"><a href="#abstract" class="tocxref">Abstract</a></li><li class="tocline"><a href="#sotd" class="tocxref">Status of This Document</a></li><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a></li><li class="tocline"><a href="#use-cases" class="tocxref"><span class="secno">2. </span>Use cases</a><ol class="toc"><li class="tocline"><a href="#use_case_numberfree" class="tocxref"><span class="secno">2.1 </span>Number free</a></li><li class="tocline"><a href="#use_case_language" class="tocxref"><span class="secno">2.2 </span>Language type support</a></li><li class="tocline"><a href="#use_case_literal" class="tocxref"><span class="secno">2.3 </span>Non-literal text and images</a></li><li class="tocline"><a href="#use_case_morehelp" class="tocxref"><span class="secno">2.4 </span>More Help</a></li><li class="tocline"><a href="#use_case_explain" class="tocxref"><span class="secno">2.5 </span>Explain and feedback</a></li><li class="tocline"><a href="#use_case_potential_feature" class="tocxref"><span class="secno">2.6 </span>Potential Features</a></li></ol></li><li class="tocline"><a href="#help" class="tocxref"><span class="secno">3. </span>Help and support</a><ol class="toc"><li class="tocline"><a href="#literal-explanation" class="tocxref"><span class="secno">3.1 </span>coga-literal</a><ol class="toc"><li class="tocline"><a href="#description" class="tocxref"><span class="secno">3.1.1 </span>Description</a></li><li class="tocline"><a href="#literal-example" class="tocxref"><span class="secno">3.1.2 </span>Example</a></li><li class="tocline"><a href="#characteristics" class="tocxref"><span class="secno">3.1.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a href="#numberfree-explanation" class="tocxref"><span class="secno">3.2 </span>coga-numberfree</a><ol class="toc"><li class="tocline"><a href="#description-0" class="tocxref"><span class="secno">3.2.1 </span>Description</a></li><li class="tocline"><a href="#numberfree-example" class="tocxref"><span class="secno">3.2.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-0" class="tocxref"><span class="secno">3.2.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a href="#easylang-explanation" class="tocxref"><span class="secno">3.3 </span>coga-easylang</a><ol class="toc"><li class="tocline"><a href="#description-1" class="tocxref"><span class="secno">3.3.1 </span>Description</a></li><li class="tocline"><a href="#easylang-example" class="tocxref"><span class="secno">3.3.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-1" class="tocxref"><span class="secno">3.3.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a href="#alternative-explanation" class="tocxref"><span class="secno">3.4 </span>coga-alternative</a><ol class="toc"><li class="tocline"><a href="#description-2" class="tocxref"><span class="secno">3.4.1 </span>Description</a></li><li class="tocline"><a href="#alternative-example" class="tocxref"><span class="secno">3.4.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-2" class="tocxref"><span class="secno">3.4.3 </span>Characteristics</a></li><li class="tocline"><a href="#values" class="tocxref"><span class="secno">3.4.4 </span>Values</a></li></ol></li><li class="tocline"><a href="#explain-explanation" class="tocxref"><span class="secno">3.5 </span>coga-explain</a><ol class="toc"><li class="tocline"><a href="#description-3" class="tocxref"><span class="secno">3.5.1 </span>Description</a></li><li class="tocline"><a href="#explain-example" class="tocxref"><span class="secno">3.5.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-3" class="tocxref"><span class="secno">3.5.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a href="#feedback-explanation" class="tocxref"><span class="secno">3.6 </span>coga-feedback</a><ol class="toc"><li class="tocline"><a href="#description-4" class="tocxref"><span class="secno">3.6.1 </span>Description</a></li><li class="tocline"><a href="#feedback-example" class="tocxref"><span class="secno">3.6.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-4" class="tocxref"><span class="secno">3.6.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a href="#moreinfo-explanation" class="tocxref"><span class="secno">3.7 </span>coga-moreinfo</a><ol class="toc"><li class="tocline"><a href="#description-5" class="tocxref"><span class="secno">3.7.1 </span>Description</a></li><li class="tocline"><a href="#moreinfo-example" class="tocxref"><span class="secno">3.7.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-5" class="tocxref"><span class="secno">3.7.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a href="#extrahelp-explanation" class="tocxref"><span class="secno">3.8 </span>coga-extrahelp</a><ol class="toc"><li class="tocline"><a href="#description-6" class="tocxref"><span class="secno">3.8.1 </span>Description</a></li><li class="tocline"><a href="#extrahelp-example" class="tocxref"><span class="secno">3.8.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-6" class="tocxref"><span class="secno">3.8.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a href="#helptype-explanation" class="tocxref"><span class="secno">3.9 </span>coga-helptype</a><ol class="toc"><li class="tocline"><a href="#description-7" class="tocxref"><span class="secno">3.9.1 </span>Description</a></li><li class="tocline"><a href="#helptype-example" class="tocxref"><span class="secno">3.9.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-7" class="tocxref"><span class="secno">3.9.3 </span>Characteristics</a></li><li class="tocline"><a href="#values-0" class="tocxref"><span class="secno">3.9.4 </span>Values</a></li></ol></li></ol></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">A. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a href="#ack_group" class="tocxref"><span class="secno">A.1 </span>Participants active in the ARIA WG at the time of publication</a></li><li class="tocline"><a href="#ack_others" class="tocxref"><span class="secno">A.2 </span>Other ARIA contributors, commenters, and previously active participants</a></li><li class="tocline"><a href="#ack_funders" class="tocxref"><span class="secno">A.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">B. </span>References</a><ol class="toc"><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">B.1 </span>Informative references</a></li></ol></li></ol></nav>
+
+		<section class="informative" id="introduction" typeof="bibo:Chapter" resource="#introduction" property="bibo:hasPart">
+
+			<!--OddPage--><h2 id="x1-introduction" resource="#x1-introduction"><span property="xhv:role" resource="xhv:heading"><span class="secno">1. </span>Introduction<span class="permalink" typeof="bookmark"><a href="#introduction" aria-label="Permalink for 1. Introduction" title="Permalink for 1. Introduction" property="url"><span property="title" content="1. Introduction">§</span></a></span></span></h2><p><em>This section is non-normative.</em></p>
+			<p>This document list examples of the personalized help and support properties, this is an extension of Personalization Explainer. including the properties of <code>coga-literal</code>, <code>coga-numberfree</code>, <code>coga-easylang</code>, <code>coga-alternative</code>, <code>coga-explain</code>, <code>coga-feedback</code>, <code>coga-moreinfo</code>,<code>coga-extrahelp</code>, <code>coga-helptype</code>. </p>
+
+		</section>
+		<section id="use-cases" typeof="bibo:Chapter" resource="#use-cases" property="bibo:hasPart">
+			<!--OddPage--><h2 id="x2-use-cases" resource="#x2-use-cases"><span property="xhv:role" resource="xhv:heading"><span class="secno">2. </span>Use cases<span class="permalink" typeof="bookmark"><a href="#use-cases" aria-label="Permalink for 2. Use cases" title="Permalink for 2. Use cases" property="url"><span property="title" content="2. Use cases">§</span></a></span></span></h2>
+			                <section id="use_case_numberfree" typeof="bibo:Chapter" resource="#use_case_numberfree" property="bibo:hasPart">
+                    <h3 id="x2-1-number-free" resource="#x2-1-number-free"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1 </span>Number free<span class="permalink" typeof="bookmark"><a href="#use_case_numberfree" aria-label="Permalink for 2.1 Number free" title="Permalink for 2.1 Number free" property="url"><span property="title" content="2.1 Number free">§</span></a></span></span></h3>
+                    <p><strong>Requirement</strong>: Not everyone can understand numbers. We therefor suggest coga-numberfree for alternative text for people who can not understand the main content</p>
+                    <p><strong>User experience:</strong></p>
+                    <p>A suggested user experience would be: Numerical concepts could be rendered by the user agent slightly different so that the user knows a number free explanation is available. The user can then mouse over the content and a tooltips would give the number free value</p>
+                    <p>Relevant properties: <a href="#x3-2-coga-numberfree">numberfree</a></p>
+                </section>
+                <section id="use_case_language" typeof="bibo:Chapter" resource="#use_case_language" property="bibo:hasPart">
+                    <h3 id="x2-2-language-type-support" resource="#x2-2-language-type-support"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.2 </span>Language type support<span class="permalink" typeof="bookmark"><a href="#use_case_language" aria-label="Permalink for 2.2 Language type support" title="Permalink for 2.2 Language type support" property="url"><span property="title" content="2.2 Language type support">§</span></a></span></span></h3>
+                    <p><strong>Requirement: </strong>Sometimes you may want to provide a simplified version of a section of a page. For example, you may wish to provide a simplified summary of legal document, but still have a longer version for other users. These alternative versions may not be identical in content but maintain the gist of the original content.</p>
+                    <p>Relevant properties: <a href="#x3-4-coga-alternative">alternative</a>, <a href="#x3-3-coga-easylang">easylang</a></p>
+                </section>
+                <section id="use_case_literal" typeof="bibo:Chapter" resource="#use_case_literal" property="bibo:hasPart">
+                    <h3 id="x2-3-non-literal-text-and-images" resource="#x2-3-non-literal-text-and-images"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.3 </span>Non-literal text and images<span class="permalink" typeof="bookmark"><a href="#use_case_literal" aria-label="Permalink for 2.3 Non-literal text and images" title="Permalink for 2.3 Non-literal text and images" property="url"><span property="title" content="2.3 Non-literal text and images">§</span></a></span></span></h3>
+                    <p><strong>Requirement: </strong>Not everyone can understand non-literal text and icons such as metaphors, idioms etc. We need a tag that identifies text or images as non literal and allows the author to explain non-literal text and images to users.</p>
+                    <p><strong>User experience:</strong></p>
+                    <p>A suggested user experience would be: Non literal content could be rendered by the user agent slightly differently so that the user knows that this content should not be taken literally and that a literal explanation is available. The user can then mouse over the content and a tooltips would give the literal value.</p>
+                    <p>Relevant properties: <a href="#x3-1-coga-literal">literal</a></p>
+                </section>
+                <section id="use_case_morehelp" typeof="bibo:Chapter" resource="#use_case_morehelp" property="bibo:hasPart">
+                    <h3 id="x2-4-more-help" resource="#x2-4-more-help"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.4 </span>More Help<span class="permalink" typeof="bookmark"><a href="#use_case_morehelp" aria-label="Permalink for 2.4 More Help" title="Permalink for 2.4 More Help" property="url"><span property="title" content="2.4 More Help">§</span></a></span></span></h3>
+                    <p><strong>Requirement: </strong>Some users may need additional information or specifically additional help information. We request additional attributes so that an author can indicate the existence of this additional information.</p>
+                    <p>Relevant properties: <a href="#x3-7-coga-moreinfo">moreinfo</a>, <a href="#x3-8-coga-extrahelp">extrahelp</a>, <a href="#x3-9-coga-helptype">helptype</a></p>
+                </section>
+                <section id="use_case_explain" typeof="bibo:Chapter" resource="#use_case_explain" property="bibo:hasPart">
+                    <h3 id="x2-5-explain-and-feedback" resource="#x2-5-explain-and-feedback"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.5 </span>Explain and feedback<span class="permalink" typeof="bookmark"><a href="#use_case_explain" aria-label="Permalink for 2.5 Explain and feedback" title="Permalink for 2.5 Explain and feedback" property="url"><span property="title" content="2.5 Explain and feedback">§</span></a></span></span></h3>
+                    <p><strong>Requirement: </strong></p>
+                    <p>Some users need additional help. We request an attribute where the author can provide additional information or what just happened.</p>
+                    <p>Relevant properties: <a href="#x3-6-coga-feedback">feedback</a>, <a href="#x3-5-coga-explain">explain</a></p>
+                </section>
+                <section id="use_case_potential_feature" typeof="bibo:Chapter" resource="#use_case_potential_feature" property="bibo:hasPart">
+                    <h3 id="x2-6-potential-features" resource="#x2-6-potential-features"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.6 </span>Potential Features<span class="permalink" typeof="bookmark"><a href="#use_case_potential_feature" aria-label="Permalink for 2.6 Potential Features" title="Permalink for 2.6 Potential Features" property="url"><span property="title" content="2.6 Potential Features">§</span></a></span></span></h3>
+                    <p>The following may not be necessary </p>
+                    <ul>
+                        <li>Views </li>
+                        <li>ascending. descending </li>
+                        <li>day, week month </li>
+                        <li>this week </li>
+                        <li>this month </li>
+                        <li>today </li>
+                    </ul>
+                </section>
+		</section>
+
+		<section class="informative" id="help" typeof="bibo:Chapter" resource="#help" property="bibo:hasPart">
+			<!--OddPage--><h2 id="x3-help-and-support" resource="#x3-help-and-support"><span property="xhv:role" resource="xhv:heading"><span class="secno">3. </span>Help and support<span class="permalink" typeof="bookmark"><a href="#help" aria-label="Permalink for 3. Help and support" title="Permalink for 3. Help and support" property="url"><span property="title" content="3. Help and support">§</span></a></span></span></h2><p><em>This section is non-normative.</em></p>
+			<section id="literal-explanation" typeof="bibo:Chapter" resource="#literal-explanation" property="bibo:hasPart">
+	<h3 id="x3-1-coga-literal" resource="#x3-1-coga-literal"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.1 </span>coga-literal<span class="permalink" typeof="bookmark"><a href="#literal-explanation" aria-label="Permalink for 3.1 coga-literal" title="Permalink for 3.1 coga-literal" property="url"><span property="title" content="3.1 coga-literal">§</span></a></span></span></h3>
+	<section id="description" typeof="bibo:Chapter" resource="#description" property="bibo:hasPart">
+		<h4 id="x3-1-1-description" resource="#x3-1-1-description"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.1.1 </span>Description<span class="permalink" typeof="bookmark"><a href="#description" aria-label="Permalink for 3.1.1 Description" title="Permalink for 3.1.1 Description" property="url"><span property="title" content="3.1.1 Description">§</span></a></span></span></h4>
+		<div class="property-description">
+					<p><code>literal</code> provides alternative text for people who prefer content that does not use non literal text, such as metaphors.</p>
+					<p>A personalization agent may replace the content with the literal alternative, or it may put the literal alternative in a tooltip.</p>
+					<p>User agents may also render non-literal text in a different way so that users will be able to identify non literal content. They can then use a mouse over or other technique to receive the alternative. </p>
+					<p>A user agent must be able to replace the non literal content with the literal alternative without loss of meaning.</p>
+					<p><strong>Supported value: </strong>String</p>
+					<p>Note that there is no default value.</p>
+				</div>
+	</section>
+	<section id="literal-example" typeof="bibo:Chapter" resource="#literal-example" property="bibo:hasPart">
+		<h4 id="x3-1-2-example" resource="#x3-1-2-example"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.1.2 </span>Example<span class="permalink" typeof="bookmark"><a href="#literal-example" aria-label="Permalink for 3.1.2 Example" title="Permalink for 3.1.2 Example" property="url"><span property="title" content="3.1.2 Example">§</span></a></span></span></h4>
+		<p>The below example section show how <code>coga-literal</code> used when coding.</p>
+    	<div class="example">
+    	<div class="example-title marker"><span>Example:</span><span style="text-transform: none"> Symbol Using ARIA</span>
+    	</div>
+		   <pre aria-busy="false" aria-live="polite" class="hljs xml">It is <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">coga-literal</span>=<span class="hljs-string">"raining hard"</span>&gt;</span>raining cats and dogs<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></pre>
+		</div>
+    </section>
+    <section id="characteristics" typeof="bibo:Chapter" resource="#characteristics" property="bibo:hasPart">
+    	<h4 id="x3-1-3-characteristics" resource="#x3-1-3-characteristics"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.1.3 </span>Characteristics<span class="permalink" typeof="bookmark"><a href="#characteristics" aria-label="Permalink for 3.1.3 Characteristics" title="Permalink for 3.1.3 Characteristics" property="url"><span property="title" content="3.1.3 Characteristics">§</span></a></span></span></h4>
+    	<table class="property-features">
+					<caption>Characteristics:</caption>
+					<thead>
+						<tr>
+							<th scope="col">Characteristic</th>
+							<th scope="col">Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="property-related-head" scope="row">Related Concepts:</th>
+							<td class="property-related">Alt text</td>
+						</tr>
+						<tr>
+							<th class="property-applicability-head" scope="row">Used in Roles:</th>
+							<td class="property-applicability">All elements of the base markup</td>
+						</tr>
+						<tr>
+							<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+							<td class="property-descendants">Placeholder</td>
+						</tr>
+						<tr>
+							<th class="property-value-head" scope="row">Value:</th>
+							<td class="property-value"><a href="#valuetype_string">string</a></td>
+						</tr>
+					</tbody>
+				</table>
+    </section>
+</section>
+
+
+
+
+	
+			<section id="numberfree-explanation" typeof="bibo:Chapter" resource="#numberfree-explanation" property="bibo:hasPart">
+	<h3 id="x3-2-coga-numberfree" resource="#x3-2-coga-numberfree"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2 </span>coga-numberfree<span class="permalink" typeof="bookmark"><a href="#numberfree-explanation" aria-label="Permalink for 3.2 coga-numberfree" title="Permalink for 3.2 coga-numberfree" property="url"><span property="title" content="3.2 coga-numberfree">§</span></a></span></span></h3>
+	<section id="description-0" typeof="bibo:Chapter" resource="#description-0" property="bibo:hasPart">
+		<h4 id="x3-2-1-description" resource="#x3-2-1-description"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2.1 </span>Description<span class="permalink" typeof="bookmark"><a href="#description-0" aria-label="Permalink for 3.2.1 Description" title="Permalink for 3.2.1 Description" property="url"><span property="title" content="3.2.1 Description">§</span></a></span></span></h4>
+		<div class="property-description">
+					<p><code>numberfree</code> provides alternative text for people who prefer content that does not use numerical concepts.</p>
+					<p>A personalization agent may replace the content with the number free alternative, or it may put the number free alternative in a tooltip or sidebar. The content must still be understandable when a user agent replaces the original content with the number free alternative.</p> <p></p>
+
+					<p><strong>Supported value: </strong> String</p>
+					<p>Note that there is no default value.</p>
+				
+				</div>
+	</section>
+	<section id="numberfree-example" typeof="bibo:Chapter" resource="#numberfree-example" property="bibo:hasPart">
+		<h4 id="x3-2-2-example" resource="#x3-2-2-example"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2.2 </span>Example<span class="permalink" typeof="bookmark"><a href="#numberfree-example" aria-label="Permalink for 3.2.2 Example" title="Permalink for 3.2.2 Example" property="url"><span property="title" content="3.2.2 Example">§</span></a></span></span></h4>
+		<p>The below example section show how <code>coga-numberfree</code> used when coding.</p>
+  		  <div class="example"><div class="example-title marker"><span>Example 1</span><span style="text-transform: none">: Numberfree Using ARIA</span></div>
+			<pre aria-busy="false" aria-live="polite" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">coga-numberfree</span>=<span class="hljs-string">"almost all"</span>&gt;</span>9 out of 10 <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></pre>
+			</div>
+			<div class="example"><div class="example-title marker"><span>Example 2</span><span style="text-transform: none">: Numberfree Using ARIA</span></div>
+			<pre aria-busy="false" aria-live="polite" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">coga-numberfree</span>=<span class="hljs-string">"hat and coat weather"</span>&gt;</span>The weather is 9 degrees<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></pre>
+			</div>
+    </section>
+    <section id="characteristics-0" typeof="bibo:Chapter" resource="#characteristics-0" property="bibo:hasPart">
+    	<h4 id="x3-2-3-characteristics" resource="#x3-2-3-characteristics"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2.3 </span>Characteristics<span class="permalink" typeof="bookmark"><a href="#characteristics-0" aria-label="Permalink for 3.2.3 Characteristics" title="Permalink for 3.2.3 Characteristics" property="url"><span property="title" content="3.2.3 Characteristics">§</span></a></span></span></h4>
+    	<table class="property-features">
+					<caption>Characteristics:</caption>
+					<thead>
+						<tr>
+							<th scope="col">Characteristic</th>
+							<th scope="col">Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="property-related-head" scope="row">Related Concepts:</th>
+							<td class="property-related">Alt text </td>
+						</tr>
+						<tr>
+							<th class="property-applicability-head" scope="row">Used in Roles:</th>
+							<td class="property-applicability">All elements of the base markup</td>
+						</tr>
+						<tr>
+							<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+							<td class="property-descendants">Placeholder</td>
+						</tr>
+						<tr>
+							<th class="property-value-head" scope="row">Value:</th>
+							<td class="property-value"><a href="#valuetype_string">string</a></td>
+						</tr>
+					</tbody>
+				</table>
+    </section>
+</section>
+
+
+
+
+
+			<section id="easylang-explanation" typeof="bibo:Chapter" resource="#easylang-explanation" property="bibo:hasPart">
+	<h3 id="x3-3-coga-easylang" resource="#x3-3-coga-easylang"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.3 </span>coga-easylang<span class="permalink" typeof="bookmark"><a href="#easylang-explanation" aria-label="Permalink for 3.3 coga-easylang" title="Permalink for 3.3 coga-easylang" property="url"><span property="title" content="3.3 coga-easylang">§</span></a></span></span></h3>
+	<section id="description-1" typeof="bibo:Chapter" resource="#description-1" property="bibo:hasPart">
+		<h4 id="x3-3-1-description" resource="#x3-3-1-description"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.3.1 </span>Description<span class="permalink" typeof="bookmark"><a href="#description-1" aria-label="Permalink for 3.3.1 Description" title="Permalink for 3.3.1 Description" property="url"><span property="title" content="3.3.1 Description">§</span></a></span></span></h4>
+		<div class="property-description">
+				<p><code>easylang</code> provides an alternative text of the content that is easier to read and understand. Note that this only works on small sections of text as the easylang attribute does not support full HTML, such as lists and sections.</p>
+				<p>A personalization agent may replace the content with the simpler alternative, or it may put the  alternative in a tooltip or help panel.</p>
+				<p>User agents may also render hard text in a different way so that users will be able to identify text that has an alternative provided. </p>
+				<p>The content must still be understandable when a user agent replaces the original content with the simpler alternative.</p>
+				<p><strong>Supported values:</strong> String</p>
+				<p>Where coga-easylang should use as simple well-known words as possible, and active voicing, literal text, small simple sentences.Â&nbsp;Acronyms and abbreviations should be avoided, unless they are the common way to refer to an item.</p>
+		</div>
+	</section>
+	<section id="easylang-example" typeof="bibo:Chapter" resource="#easylang-example" property="bibo:hasPart">
+		<h4 id="x3-3-2-example" resource="#x3-3-2-example"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.3.2 </span>Example<span class="permalink" typeof="bookmark"><a href="#easylang-example" aria-label="Permalink for 3.3.2 Example" title="Permalink for 3.3.2 Example" property="url"><span property="title" content="3.3.2 Example">§</span></a></span></span></h4>
+		<p>The below example section show how <code>coga-easylang</code> used when coding.</p>
+   		<div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: Easylang Using ARIA</span></div>
+			<pre aria-busy="false" aria-live="polite" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">coga-easylang</span>=<span class="hljs-string">"some text that is easy to read"</span>&gt;</span> some convoluted obtuse text<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>&gt;</pre>
+			</div>
+    </section>
+    <section id="characteristics-1" typeof="bibo:Chapter" resource="#characteristics-1" property="bibo:hasPart">
+    	<h4 id="x3-3-3-characteristics" resource="#x3-3-3-characteristics"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.3.3 </span>Characteristics<span class="permalink" typeof="bookmark"><a href="#characteristics-1" aria-label="Permalink for 3.3.3 Characteristics" title="Permalink for 3.3.3 Characteristics" property="url"><span property="title" content="3.3.3 Characteristics">§</span></a></span></span></h4>
+    	<table class="property-features">
+								<caption>Characteristics:</caption>
+								<thead>
+									<tr>
+										<th scope="col">Characteristic</th>
+										<th scope="col">Value</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th class="property-related-head" scope="row">Related Concepts:</th>
+										<td class="property-related"> Alt text</td>
+									</tr>
+									<tr>
+										<th class="property-applicability-head" scope="row">Used in Roles:</th>
+										<td class="property-applicability">All elements of the base markup</td>
+									</tr>
+									<tr>
+										<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+										<td class="property-descendants">Placeholder</td>
+									</tr>
+									<tr>
+										<th class="property-value-head" scope="row">Value:</th>
+										<td class="property-value"><a href="#valuetype_string">string</a></td>
+									</tr>
+								</tbody>
+		</table>
+    </section>
+</section>
+
+
+
+
+
+			<section id="alternative-explanation" typeof="bibo:Chapter" resource="#alternative-explanation" property="bibo:hasPart">
+	<h3 id="x3-4-coga-alternative" resource="#x3-4-coga-alternative"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.4 </span>coga-alternative<span class="permalink" typeof="bookmark"><a href="#alternative-explanation" aria-label="Permalink for 3.4 coga-alternative" title="Permalink for 3.4 coga-alternative" property="url"><span property="title" content="3.4 coga-alternative">§</span></a></span></span></h3>
+  <section id="description-2" typeof="bibo:Chapter" resource="#description-2" property="bibo:hasPart">
+    <h4 id="x3-4-1-description" resource="#x3-4-1-description"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.4.1 </span>Description<span class="permalink" typeof="bookmark"><a href="#description-2" aria-label="Permalink for 3.4.1 Description" title="Permalink for 3.4.1 Description" property="url"><span property="title" content="3.4.1 Description">§</span></a></span></span></h4>
+    <div class="property-description">
+          <p>Would be used on an alternative content as an alternative to more detailed or difficult to understand content. coga-alternative can be used on a span, div, link or image that servers as alternative content to it's direct parent element.</p>
+          <div class="ednote"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="5"><span>Editor's note</span></div><p class="">This data model may be too complex, so this property could undergo substantial changes.</p></div>
+          <p><strong>Supported values:</strong>
+          </p>
+          <ul>
+            <li>On text: easylang, explain, more, vocab500, vocab1000, vocab2000, active, literal, numberfree, smallsentences, chunks</li>
+            <li>General: lessoptions. Whitespace, largefontÂ&nbsp;</li>
+            <li>Images: symbolic , realistic</li>
+            <li>p0, p1, p1, p2, p3 Where p0 are images with true content, p1 is a symbol or illustration that is typically shown with alt="", P2 are extra illustration that most people will not mind such as at the start of a paragraph or option. p3 are for disability centric illustrations that can disturb other people and may be mid sentence.Â&nbsp;</li>
+          </ul>
+          <p>Note that there is no default value.</p>         
+        </div>
+  </section>
+	<section id="alternative-example" typeof="bibo:Chapter" resource="#alternative-example" property="bibo:hasPart">
+    <h4 id="x3-4-2-example" resource="#x3-4-2-example"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.4.2 </span>Example<span class="permalink" typeof="bookmark"><a href="#alternative-example" aria-label="Permalink for 3.4.2 Example" title="Permalink for 3.4.2 Example" property="url"><span property="title" content="3.4.2 Example">§</span></a></span></span></h4>
+	<p>The below example section show how <code>coga-alternative</code> used when coding.</p>
+    <div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: Alternative Using ARIA</span></div>
+			<pre aria-busy="false" aria-live="polite" class="hljs javascript">&lt;div&gt;
+	<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">coga-alternative</span>=<span class="hljs-string">"easylang numberfree vocab1000"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hidden"</span>&gt;</span>
+ 	   most people prefer simple text
+  	<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span>
+        In studies it was found that only <span class="hljs-number">30</span>% <span class="hljs-keyword">of</span> users prefer long convoluted text
+  	<span class="hljs-keyword">with</span> obtuse words and lots <span class="hljs-keyword">of</span> numbers,
+  	<span class="hljs-keyword">with</span> <span class="hljs-number">56</span>% claiming there preferred the simplified text,
+  	<span class="hljs-keyword">with</span> the remainder unsure or stated it depends on the context.
+&lt;<span class="hljs-regexp">/div&gt;</span></pre>
+			</div>
+
+    </section>
+    <section id="characteristics-2" typeof="bibo:Chapter" resource="#characteristics-2" property="bibo:hasPart">
+      <h4 id="x3-4-3-characteristics" resource="#x3-4-3-characteristics"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.4.3 </span>Characteristics<span class="permalink" typeof="bookmark"><a href="#characteristics-2" aria-label="Permalink for 3.4.3 Characteristics" title="Permalink for 3.4.3 Characteristics" property="url"><span property="title" content="3.4.3 Characteristics">§</span></a></span></span></h4>
+      <table class="property-features">
+          <caption>Characteristics:</caption>
+          <thead>
+            <tr>
+              <th scope="col">Characteristic</th>
+              <th scope="col">Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="property-related-head" scope="row">Related Concepts:</th>
+              <td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-SVG2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-DOM4">DOM4</a></cite>] active</td>
+            </tr>
+            <tr>
+              <th class="property-applicability-head" scope="row">Used in Roles:</th>
+              <td class="property-applicability">All elements of the base markup</td>
+            </tr>
+            <tr>
+              <th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+              <td class="property-descendants">Placeholder</td>
+            </tr>
+            <tr>
+              <th class="property-value-head" scope="row">Value:</th>
+              <td class="property-value"><a href="#valuetype_token_list">token list</a></td>
+            </tr>
+          </tbody>
+        </table>
+    </section>
+    <section id="values" typeof="bibo:Chapter" resource="#values" property="bibo:hasPart">
+      <h4 id="x3-4-4-values" resource="#x3-4-4-values"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.4.4 </span>Values<span class="permalink" typeof="bookmark"><a href="#values" aria-label="Permalink for 3.4.4 Values" title="Permalink for 3.4.4 Values" property="url"><span property="title" content="3.4.4 Values">§</span></a></span></span></h4>
+      <table class="value-descriptions">
+          <caption>Values:</caption>
+          <thead>
+            <tr>
+              <th scope="col">Value</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="value-name" scope="row">active</th>
+              <td class="value-description"></td>
+            </tr>
+            <tr>
+              <th class="value-name" scope="row">chunks</th>
+              <td class="value-description"></td>
+            </tr>
+            <tr>
+              <th class="value-name" scope="row">easylang</th>
+              <td class="value-description"></td>
+            </tr>
+            <tr>
+              <th class="value-name" scope="row">explain</th>
+              <td class="value-description"></td>
+            </tr>
+            <tr>
+              <th class="value-name" scope="row">largefont</th>
+              <td class="value-description"></td>
+            </tr>
+            <tr>
+              <th class="value-name" scope="row">lessoptions</th>
+              <td class="value-description"></td>
+            </tr>
+            <tr>
+              <th class="value-name" scope="row">literal</th>
+              <td class="value-description"></td>
+            </tr>
+            <tr>
+              <th class="value-name" scope="row">more</th>
+              <td class="value-description"></td>
+            </tr>
+            <tr>
+              <th class="value-name" scope="row">numberfree</th>
+              <td class="value-description"></td>
+            </tr>
+            <tr>
+              <th class="value-name" scope="row">p0</th>
+              <td class="value-description"></td>
+            </tr>
+            <tr>
+              <th class="value-name" scope="row">p1</th>
+              <td class="value-description"></td>
+            </tr>
+            <tr>
+              <th class="value-name" scope="row">p1</th>
+              <td class="value-description"></td>
+            </tr>
+            <tr>
+              <th class="value-name" scope="row">p2</th>
+              <td class="value-description"></td>
+            </tr>
+            <tr>
+              <th class="value-name" scope="row">p3</th>
+              <td class="value-description"></td>
+            </tr>
+            <tr>
+              <th class="value-name" scope="row">realistic</th>
+              <td class="value-description"></td>
+            </tr>
+            <tr>
+              <th class="value-name" scope="row">smallsentences</th>
+              <td class="value-description"></td>
+            </tr>
+            <tr>
+              <th class="value-name" scope="row">symbolic </th>
+              <td class="value-description"></td>
+            </tr>
+            <tr>
+              <th class="value-name" scope="row">vocab1000</th>
+              <td class="value-description"></td>
+            </tr>
+            <tr>
+              <th class="value-name" scope="row">vocab2000</th>
+              <td class="value-description"></td>
+            </tr>
+            <tr>
+              <th class="value-name" scope="row">vocab500</th>
+              <td class="value-description"></td>
+            </tr>
+            <tr>
+              <th class="value-name" scope="row">whitespace</th>
+              <td class="value-description"></td>
+            </tr>
+          </tbody>
+        </table>
+    </section>
+</section>
+
+
+
+
+
+			<section id="explain-explanation" typeof="bibo:Chapter" resource="#explain-explanation" property="bibo:hasPart">
+	<h3 id="x3-5-coga-explain" resource="#x3-5-coga-explain"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.5 </span>coga-explain<span class="permalink" typeof="bookmark"><a href="#explain-explanation" aria-label="Permalink for 3.5 coga-explain" title="Permalink for 3.5 coga-explain" property="url"><span property="title" content="3.5 coga-explain">§</span></a></span></span></h3>
+	<section id="description-3" typeof="bibo:Chapter" resource="#description-3" property="bibo:hasPart">
+		<h4 id="x3-5-1-description" resource="#x3-5-1-description"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.5.1 </span>Description<span class="permalink" typeof="bookmark"><a href="#description-3" aria-label="Permalink for 3.5.1 Description" title="Permalink for 3.5.1 Description" property="url"><span property="title" content="3.5.1 Description">§</span></a></span></span></h4>
+		<div class="property-description">
+					<p>This attribute provides any information that helps the user anticipate the functionality, such as letting the user know what behavior will trigger an event. This is most important if the mechanism is not standard. </p>
+					<p>User experience: This help can be rendered as a tool tip, help link or read when the control or link is read. Most users will not want this text rendered or spoken, but other users however will need it to understand the behavior of the element.</p>
+					<p>Note that there is no default value.</p>
+					<p>These values will change when the email is sent.</p>
+		</div>
+	</section>
+	<section id="explain-example" typeof="bibo:Chapter" resource="#explain-example" property="bibo:hasPart">
+		<h4 id="x3-5-2-example" resource="#x3-5-2-example"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.5.2 </span>Example<span class="permalink" typeof="bookmark"><a href="#explain-example" aria-label="Permalink for 3.5.2 Example" title="Permalink for 3.5.2 Example" property="url"><span property="title" content="3.5.2 Example">§</span></a></span></span></h4>
+		<p>The below example section show how <code>coga-explain</code> used when coding.</p>
+  		<div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: Explain Using ARIA</span></div>
+			<pre aria-busy="false" aria-live="polite" class="hljs javascript">coga-explain=<span class="hljs-string">"press enter to send the email"</span> </pre>
+		</div>
+
+    </section>
+    <section id="characteristics-3" typeof="bibo:Chapter" resource="#characteristics-3" property="bibo:hasPart">
+    	<h4 id="x3-5-3-characteristics" resource="#x3-5-3-characteristics"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.5.3 </span>Characteristics<span class="permalink" typeof="bookmark"><a href="#characteristics-3" aria-label="Permalink for 3.5.3 Characteristics" title="Permalink for 3.5.3 Characteristics" property="url"><span property="title" content="3.5.3 Characteristics">§</span></a></span></span></h4>
+    	<table class="property-features">
+					<caption>Characteristics:</caption>
+					<thead>
+						<tr>
+							<th scope="col">Characteristic</th>
+							<th scope="col">Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="property-related-head" scope="row">Related Concepts:</th>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-SVG2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-DOM4">DOM4</a></cite>] active</td>
+						</tr>
+						<tr>
+							<th class="property-applicability-head" scope="row">Used in Roles:</th>
+							<td class="property-applicability">All elements of the base markup</td>
+						</tr>
+						<tr>
+							<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+							<td class="property-descendants">Placeholder</td>
+						</tr>
+						<tr>
+							<th class="property-value-head" scope="row">Value:</th>
+							<td class="property-value"><a href="#valuetype_string">string</a></td>
+						</tr>
+					</tbody>
+				</table>
+    </section>
+</section>
+
+
+
+
+
+			<section id="feedback-explanation" typeof="bibo:Chapter" resource="#feedback-explanation" property="bibo:hasPart">
+	<h3 id="x3-6-coga-feedback" resource="#x3-6-coga-feedback"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.6 </span>coga-feedback<span class="permalink" typeof="bookmark"><a href="#feedback-explanation" aria-label="Permalink for 3.6 coga-feedback" title="Permalink for 3.6 coga-feedback" property="url"><span property="title" content="3.6 coga-feedback">§</span></a></span></span></h3>
+	<section id="description-4" typeof="bibo:Chapter" resource="#description-4" property="bibo:hasPart">
+		<h4 id="x3-6-1-description" resource="#x3-6-1-description"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.6.1 </span>Description<span class="permalink" typeof="bookmark"><a href="#description-4" aria-label="Permalink for 3.6.1 Description" title="Permalink for 3.6.1 Description" property="url"><span property="title" content="3.6.1 Description">§</span></a></span></span></h4>
+		<div class="property-description">
+					<p>This attribute provides immediate feedback that can be shown or spoken when any event is triggered on a control.</p>
+					<p><strong>User experience: </strong>This can be rendered as text at the top of the page and read immediately. Most users will not want this text rendered and spoken. Other users however will need it to know what has just happened. </p>
+		</div>
+	</section>
+	<section id="feedback-example" typeof="bibo:Chapter" resource="#feedback-example" property="bibo:hasPart">
+		<h4 id="x3-6-2-example" resource="#x3-6-2-example"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.6.2 </span>Example<span class="permalink" typeof="bookmark"><a href="#feedback-example" aria-label="Permalink for 3.6.2 Example" title="Permalink for 3.6.2 Example" property="url"><span property="title" content="3.6.2 Example">§</span></a></span></span></h4>
+		<p>The below example section show how <code>coga-feedback</code> used when coding.</p>
+   		<div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: Feedback Using ARIA</span></div>
+			<pre aria-busy="false" aria-live="polite" class="hljs javascript">coga-feedback=<span class="hljs-string">"your email on birthdays was sent"</span> </pre>
+			</div>
+
+    </section>
+    <section id="characteristics-4" typeof="bibo:Chapter" resource="#characteristics-4" property="bibo:hasPart">
+    	<h4 id="x3-6-3-characteristics" resource="#x3-6-3-characteristics"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.6.3 </span>Characteristics<span class="permalink" typeof="bookmark"><a href="#characteristics-4" aria-label="Permalink for 3.6.3 Characteristics" title="Permalink for 3.6.3 Characteristics" property="url"><span property="title" content="3.6.3 Characteristics">§</span></a></span></span></h4>
+    	<table class="property-features">
+					<caption>Characteristics:</caption>
+					<thead>
+						<tr>
+							<th scope="col">Characteristic</th>
+							<th scope="col">Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="property-related-head" scope="row">Related Concepts:</th>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-SVG2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-DOM4">DOM4</a></cite>] active</td>
+						</tr>
+						<tr>
+							<th class="property-applicability-head" scope="row">Used in Roles:</th>
+							<td class="property-applicability">All elements of the base markup</td>
+						</tr>
+						<tr>
+							<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+							<td class="property-descendants">Placeholder</td>
+						</tr>
+						<tr>
+							<th class="property-value-head" scope="row">Value:</th>
+							<td class="property-value"><a href="#valuetype_string">string</a></td>
+						</tr>
+					</tbody>
+				</table>
+    </section>
+</section>
+
+
+
+
+
+			<section id="moreinfo-explanation" typeof="bibo:Chapter" resource="#moreinfo-explanation" property="bibo:hasPart">
+	<h3 id="x3-7-coga-moreinfo" resource="#x3-7-coga-moreinfo"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.7 </span>coga-moreinfo<span class="permalink" typeof="bookmark"><a href="#moreinfo-explanation" aria-label="Permalink for 3.7 coga-moreinfo" title="Permalink for 3.7 coga-moreinfo" property="url"><span property="title" content="3.7 coga-moreinfo">§</span></a></span></span></h3>
+	<section id="description-5" typeof="bibo:Chapter" resource="#description-5" property="bibo:hasPart">
+		<h4 id="x3-7-1-description" resource="#x3-7-1-description"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.7.1 </span>Description<span class="permalink" typeof="bookmark"><a href="#description-5" aria-label="Permalink for 3.7.1 Description" title="Permalink for 3.7.1 Description" property="url"><span property="title" content="3.7.1 Description">§</span></a></span></span></h4>
+		<div class="property-description">
+					<p>@@1-line description</p>
+					<p><strong>Supported values: </strong>URI</p>
+					<p>Note that there is no default value.</p>
+		</div>
+
+	</section>
+	<section id="moreinfo-example" typeof="bibo:Chapter" resource="#moreinfo-example" property="bibo:hasPart">
+		<h4 id="x3-7-2-example" resource="#x3-7-2-example"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.7.2 </span>Example<span class="permalink" typeof="bookmark"><a href="#moreinfo-example" aria-label="Permalink for 3.7.2 Example" title="Permalink for 3.7.2 Example" property="url"><span property="title" content="3.7.2 Example">§</span></a></span></span></h4>
+		<p>The below example section show how <code>coga-moreinfo</code> used when coding.</p>
+    	<div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: Moreinfo Using ARIA</span></div>
+			<pre aria-busy="false" aria-live="polite" class="hljs">N/A</pre>
+			</div>
+
+    </section>
+    <section id="characteristics-5" typeof="bibo:Chapter" resource="#characteristics-5" property="bibo:hasPart">
+    	<h4 id="x3-7-3-characteristics" resource="#x3-7-3-characteristics"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.7.3 </span>Characteristics<span class="permalink" typeof="bookmark"><a href="#characteristics-5" aria-label="Permalink for 3.7.3 Characteristics" title="Permalink for 3.7.3 Characteristics" property="url"><span property="title" content="3.7.3 Characteristics">§</span></a></span></span></h4>
+    	<table class="property-features">
+					<caption>Characteristics:</caption>
+					<thead>
+						<tr>
+							<th scope="col">Characteristic</th>
+							<th scope="col">Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="property-related-head" scope="row">Related Concepts:</th>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-SVG2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-DOM4">DOM4</a></cite>] active</td>
+						</tr>
+						<tr>
+							<th class="property-applicability-head" scope="row">Used in Roles:</th>
+							<td class="property-applicability">All elements of the base markup</td>
+						</tr>
+						<tr>
+							<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+							<td class="property-descendants">Placeholder</td>
+						</tr>
+						<tr>
+							<th class="property-value-head" scope="row">Value:</th>
+							<td class="property-value"><a href="#valuetype_uri">URI</a></td>
+						</tr>
+					</tbody>
+				</table>
+    </section>
+</section>
+
+
+
+
+
+			<section id="extrahelp-explanation" typeof="bibo:Chapter" resource="#extrahelp-explanation" property="bibo:hasPart">
+	<h3 id="x3-8-coga-extrahelp" resource="#x3-8-coga-extrahelp"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.8 </span>coga-extrahelp<span class="permalink" typeof="bookmark"><a href="#extrahelp-explanation" aria-label="Permalink for 3.8 coga-extrahelp" title="Permalink for 3.8 coga-extrahelp" property="url"><span property="title" content="3.8 coga-extrahelp">§</span></a></span></span></h3>
+	<section id="description-6" typeof="bibo:Chapter" resource="#description-6" property="bibo:hasPart">
+		<h4 id="x3-8-1-description" resource="#x3-8-1-description"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.8.1 </span>Description<span class="permalink" typeof="bookmark"><a href="#description-6" aria-label="Permalink for 3.8.1 Description" title="Permalink for 3.8.1 Description" property="url"><span property="title" content="3.8.1 Description">§</span></a></span></span></h4>
+		<div class="property-description">
+					<p>@@1-line description</p>
+					<p><strong>Supported values: </strong>URI</p>
+					<p>Note that there is no default value.</p>
+				</div>
+
+	</section>
+	<section id="extrahelp-example" typeof="bibo:Chapter" resource="#extrahelp-example" property="bibo:hasPart">
+		<h4 id="x3-8-2-example" resource="#x3-8-2-example"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.8.2 </span>Example<span class="permalink" typeof="bookmark"><a href="#extrahelp-example" aria-label="Permalink for 3.8.2 Example" title="Permalink for 3.8.2 Example" property="url"><span property="title" content="3.8.2 Example">§</span></a></span></span></h4>
+		<p>The below example section show how <code>coga-extrahelp</code> used when coding.</p>
+    	<div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: Extrahelp Using ARIA</span></div>
+			<pre aria-busy="false" aria-live="polite" class="hljs">N/A</pre>
+			</div>
+
+    </section>
+    <section id="characteristics-6" typeof="bibo:Chapter" resource="#characteristics-6" property="bibo:hasPart">
+    	<h4 id="x3-8-3-characteristics" resource="#x3-8-3-characteristics"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.8.3 </span>Characteristics<span class="permalink" typeof="bookmark"><a href="#characteristics-6" aria-label="Permalink for 3.8.3 Characteristics" title="Permalink for 3.8.3 Characteristics" property="url"><span property="title" content="3.8.3 Characteristics">§</span></a></span></span></h4>
+    	<table class="property-features">
+					<caption>Characteristics:</caption>
+					<thead>
+						<tr>
+							<th scope="col">Characteristic</th>
+							<th scope="col">Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="property-related-head" scope="row">Related Concepts:</th>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-SVG2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-DOM4">DOM4</a></cite>] active</td>
+						</tr>
+						<tr>
+							<th class="property-applicability-head" scope="row">Used in Roles:</th>
+							<td class="property-applicability">All elements of the base markup</td>
+						</tr>
+						<tr>
+							<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+							<td class="property-descendants">Placeholder</td>
+						</tr>
+						<tr>
+							<th class="property-value-head" scope="row">Value:</th>
+							<td class="property-value"><a href="#valuetype_uri">URI</a></td>
+						</tr>
+					</tbody>
+				</table>
+    </section>
+</section>
+
+
+
+
+
+			<section id="helptype-explanation" typeof="bibo:Chapter" resource="#helptype-explanation" property="bibo:hasPart">
+	<h3 id="x3-9-coga-helptype" resource="#x3-9-coga-helptype"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.9 </span>coga-helptype<span class="permalink" typeof="bookmark"><a href="#helptype-explanation" aria-label="Permalink for 3.9 coga-helptype" title="Permalink for 3.9 coga-helptype" property="url"><span property="title" content="3.9 coga-helptype">§</span></a></span></span></h3>
+	<section id="description-7" typeof="bibo:Chapter" resource="#description-7" property="bibo:hasPart">
+		<h4 id="x3-9-1-description" resource="#x3-9-1-description"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.9.1 </span>Description<span class="permalink" typeof="bookmark"><a href="#description-7" aria-label="Permalink for 3.9.1 Description" title="Permalink for 3.9.1 Description" property="url"><span property="title" content="3.9.1 Description">§</span></a></span></span></h4>
+		<div class="property-description">
+					<p>@@1-line description</p>
+				</div>
+	</section>
+	<section id="helptype-example" typeof="bibo:Chapter" resource="#helptype-example" property="bibo:hasPart">
+		<h4 id="x3-9-2-example" resource="#x3-9-2-example"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.9.2 </span>Example<span class="permalink" typeof="bookmark"><a href="#helptype-example" aria-label="Permalink for 3.9.2 Example" title="Permalink for 3.9.2 Example" property="url"><span property="title" content="3.9.2 Example">§</span></a></span></span></h4>
+	<p>The below example section show how <code>coga-helptype</code> used when coding.</p>
+    <div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: Helptype Using ARIA</span></div>
+			<pre aria-busy="false" aria-live="polite" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">coga-extrahelp</span>=<span class="hljs-string">"uri2 uri3"</span> &gt;</span>undo<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></pre>
+					<p>URI 2 may read: </p>
+					<pre aria-busy="false" aria-live="polite" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"uri2"</span> <span class="hljs-attr">coga-helptype</span>=<span class="hljs-string">"morehelp"</span> <span class="hljs-attr">coga-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
+  pressing the undo button will erase all your work on this page.
+  Use this button with care.
+  If you press it by mistake, press control and y at the same time
+  and your answers will come back.
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"functiongethelp()"</span> <span class="hljs-attr">coga-helptype</span>=<span class="hljs-string">"humanhelp"</span> <span class="hljs-attr">coga-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
+  I want a person to help me<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"uri3"</span> <span class="hljs-attr">coga-extrahelp</span>=<span class="hljs-string">"glossary"</span> <span class="hljs-attr">coga-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
+</pre>
+			</div>
+
+    </section>
+    <section id="characteristics-7" typeof="bibo:Chapter" resource="#characteristics-7" property="bibo:hasPart">
+    	<h4 id="x3-9-3-characteristics" resource="#x3-9-3-characteristics"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.9.3 </span>Characteristics<span class="permalink" typeof="bookmark"><a href="#characteristics-7" aria-label="Permalink for 3.9.3 Characteristics" title="Permalink for 3.9.3 Characteristics" property="url"><span property="title" content="3.9.3 Characteristics">§</span></a></span></span></h4>
+    	<table class="property-features">
+					<caption>Characteristics:</caption>
+					<thead>
+						<tr>
+							<th scope="col">Characteristic</th>
+							<th scope="col">Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="property-related-head" scope="row">Related Concepts:</th>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-SVG2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-DOM4">DOM4</a></cite>] active</td>
+						</tr>
+						<tr>
+							<th class="property-applicability-head" scope="row">Used in Roles:</th>
+							<td class="property-applicability">All elements of the base markup</td>
+						</tr>
+						<tr>
+							<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+							<td class="property-descendants">Placeholder</td>
+						</tr>
+						<tr>
+							<th class="property-value-head" scope="row">Value:</th>
+							<td class="property-value"><a href="#valuetype_token">token</a></td>
+						</tr>
+					</tbody>
+				</table>
+    </section>
+    <section id="values-0" typeof="bibo:Chapter" resource="#values-0" property="bibo:hasPart">
+    	<h4 id="x3-9-4-values" resource="#x3-9-4-values"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.9.4 </span>Values<span class="permalink" typeof="bookmark"><a href="#values-0" aria-label="Permalink for 3.9.4 Values" title="Permalink for 3.9.4 Values" property="url"><span property="title" content="3.9.4 Values">§</span></a></span></span></h4>
+    	<table class="value-descriptions">
+					<caption>Values:</caption>
+					<thead>
+						<tr>
+							<th scope="col">Value</th>
+							<th scope="col">Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="value-name" scope="row">automated</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">dictionary</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">faqs</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">glossary</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">helpform</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">humanhelp</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">morehelp</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">simplified</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">thesaurus</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">tooltips</th>
+							<td class="value-description"></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">topicsearch</th>
+							<td class="value-description"></td>
+						</tr>
+					</tbody>
+				</table>
+    </section>
+</section>
+
+
+
+
+
+				
+		</section>
+
+		<section class="appendix informative section" id="acknowledgements" typeof="bibo:Chapter" resource="#acknowledgements" property="bibo:hasPart">
+	<!--OddPage--><h2 id="a-acknowledgments" resource="#a-acknowledgments"><span property="xhv:role" resource="xhv:heading"><span class="secno">A. </span>Acknowledgments<span class="permalink" typeof="bookmark"><a href="#acknowledgements" aria-label="Permalink for A. Acknowledgments" title="Permalink for A. Acknowledgments" property="url"><span property="title" content="A. Acknowledgments">§</span></a></span></span></h2><p><em>This section is non-normative.</em></p>
+	<p>The following people contributed to the development of this document.</p>
+	<section class="section" id="ack_group" typeof="bibo:Chapter" resource="#ack_group" property="bibo:hasPart">
+		<h3 id="a-1-participants-active-in-the-aria-wg-at-the-time-of-publication" resource="#a-1-participants-active-in-the-aria-wg-at-the-time-of-publication"><span property="xhv:role" resource="xhv:heading"><span class="secno">A.1 </span>Participants active in the ARIA WG at the time of publication<span class="permalink" typeof="bookmark"><a href="#ack_group" aria-label="Permalink for A.1 Participants active in the ARIA WG at the time of publication" title="Permalink for A.1 Participants active in the ARIA WG at the time of publication" property="url"><span property="title" content="A.1 Participants active in the ARIA WG at the time of publication">§</span></a></span></span></h3>
+		<ul>
+			<li>Ann Abbott (IBM Corporation)</li>
+			<li>Michiel Bijl (The Paciello Group)</li>
+			<li>Christy Blew (University of Illinois at Urbana-Champaign)</li>
+			<li>David Bolter (Mozilla Foundation) </li>
+			<li>Michael Cooper (<abbr title="World Wide Web Consortium">W3C</abbr>/<abbr title="Massachusetts Institute of Technology">MIT</abbr>)</li>
+			<li>James Craig (Apple Inc.) </li>
+			<li>Joanmarie Diggs (Igalia)</li>
+			<li>Fred Esch (IBM Corporation)</li>
+			<li>Steve Faulkner (The Paciello Group) </li>
+			<li>John Foliot (Invited Expert)</li>
+			<li>Bryan Garaventa (SSB BART Group)</li>
+			<li>Matt Garrish (DAISY Consortium)</li>
+			<li>Billy Gregory (The Paciello Group)</li>
+			<li>Karl Groves (The Paciello Group)</li>
+			<li>Jon Gunderson (University of Illinois at Urbana-Champaign)</li>
+			<li>Markus Gylling (DAISY Consortium)</li>
+			<li>Markku Hakkinen (Educational Testing Service)</li>
+			<li>Katie Haritos-Shea (Knowbility)</li>
+			<li>Susann Keohane (IBM Corporation)</li>
+			<li>Matthew King (Facebook)</li>
+			<li>Jason Kiss (Department of Internal Affairs, New Zealand Government)</li>
+			<li>Jamie Knight (British Broadcasting Corporation)</li>
+			<li>JaEun Jemma Ku (University of Illinois at Urbana-Champaign)</li>
+			<li>Shane McCarron (Invited Expert, Aptest)</li>
+			<li>Charles McCathie Nevile (Yandex)</li>
+			<li>Mary Jo Mueller (IBM Corporation)</li>
+			<li>James Nurthen (Oracle Corporation) </li>
+			<li>Ian Pouncey (The Paciello Group, LLC)</li>
+			<li>Mark Sadecki (Invited Expert)</li>
+			<li>Janina Sajka (Invited Expert, The Linux Foundation)</li>
+			<li>Joseph Scheuhammer (Invited Expert, Inclusive Design Research Centre, OCAD University) </li>
+			<li>Stefan Schnabel (SAP AG) </li>
+			<li>Richard Schwerdtfeger (IBM Corporation)</li>
+			<li>Lisa Seeman (Invited Expert) </li>
+			<li>Tzviya Siegman (Wiley)</li>
+			<li>Cynthia Shelly (Microsoft Corporation) </li>
+			<li>Alexander Surkov (Mozilla Foundation)</li>
+			<li>Léonie Watson (The Paciello Group)</li>
+			<li>Jason White (Educational Testing Service)</li>
+			<li>Gottfried Zimmermann (Invited Expert, Access Technologies Group)</li>
+		</ul>
+  </section>
+	<section class="section" id="ack_others" typeof="bibo:Chapter" resource="#ack_others" property="bibo:hasPart">
+		<h3 id="a-2-other-aria-contributors-commenters-and-previously-active-participants" resource="#a-2-other-aria-contributors-commenters-and-previously-active-participants"><span property="xhv:role" resource="xhv:heading"><span class="secno">A.2 </span>Other ARIA contributors, commenters, and previously active participants<span class="permalink" typeof="bookmark"><a href="#ack_others" aria-label="Permalink for A.2 Other ARIA contributors, commenters, and previously active participants" title="Permalink for A.2 Other ARIA contributors, commenters, and previously active participants" property="url"><span property="title" content="A.2 Other ARIA contributors, commenters, and previously active participants">§</span></a></span></span></h3>
+		<ul>
+			<li>Shadi Abou-Zahra (<abbr title="World Wide Web Consortium">W3C</abbr>)</li>
+			<li>Jim Allan (TSB)</li>
+			<li>Jonny Axelsson (Opera Software)</li>
+			<li>David Baron (Mozilla Foundation)</li>
+			<li>Art Barstow (Nokia Corporation)</li>
+			<li>Simon Bates</li>
+			<li>Chris Blouch (AOL)</li>
+			<li>Judy Brewer (<abbr title="World Wide Web Consortium">W3C</abbr>/<abbr title="Massachusetts Institute of Technology">MIT</abbr>)</li>
+			<li>Mark Birbeck (Sidewinder Labs)</li>
+			<li>Sally Cain (Royal National Institute of Blind People (RNIB))</li>
+			<li>Gerardo Capiel (Benetech)</li>
+			<li>Ben Caldwell (Trace)</li>
+			<li>Sofia Celic-Li</li>
+			<li>Jaesik Chang (Samsung Electronics Co., Ltd.)</li>
+			<li>Alex Qiang Chen (University of Manchester)</li>
+			<li>Charles Chen (Google, Inc.)</li>
+			<li>Christian Cohrs</li>
+			<li>Deborah Dahl</li>
+			<li>Erik Dahlström (Opera Software)</li>
+			<li>Dimitar Denev (Frauenhofer Gesellschaft)</li>
+			<li>Micah Dubinko (Invited Expert)</li>
+			<li>Mandana Eibegger</li>
+			<li>Beth Epperson (Websense)</li>
+			<li>Donald Evans (AOL)</li>
+			<li>Chris Fleizach (Apple Inc.)</li>
+			<li>Kelly Ford (Microsoft Corporation)</li>
+			<li>Geoff Freed (Invited Expert, NCAM)</li>
+			<li>Christopher Gallelo (Microsoft Corporation)</li>
+			<li>Birkir Gunnarsson (Deque Systems, Inc.)</li>
+			<li>Kentarou Fukuda (IBM Corporation)</li>
+			<li>Bryan Garaventa</li>
+			<li>Guido Geloso</li>
+			<li>Ali Ghassemi</li>
+			<li>Becky Gibson (IBM)</li>
+			<li>Alfred S. Gilman</li>
+			<li>Andres Gonzalez (Adobe Systems Inc.)</li>
+			<li>Scott González (JQuery Foundation)</li>
+			<li>James Graham</li>
+			<li>Georgios Grigoriadis (SAP AG)</li>
+			<li>Jeff Grimes (Oracle)</li>
+			<li>Loretta Guarino Reid (Google, Inc.)</li>
+			<li>Barbara Hartel</li>
+			<li>James Hawkins (Google, Inc.)</li>
+			<li>Benjamin Hawkes-Lewis</li>
+			<li>Sean Hayes (Microsoft Corporation)</li>
+			<li>Mona Heath (University of Illinois at Urbana-Champaign)</li>
+			<li>Jan Heck</li>
+			<li>Shawn Henry</li>
+			<li>Tina Homboe</li>
+			<li>John Hrvatin (Microsoft Corporation)</li>
+			<li>Takahiro Inada</li>
+			<li>Masayasu Ishikawa (<abbr title="World Wide Web Consortium">W3C</abbr>)</li>
+			<li>Jim Jewitt</li>
+			<li>Kenny Johar (Microsoft Corporation)</li>
+			<li>Shilpi Kapoor (BarrierBreak Technologies)</li>
+			<li>Masahiko Kaneko (Microsoft Corporation)</li>
+			<li>Marjolein Katsma</li>
+			<li>George Kerscher (International Digital Publishing Forum)</li>
+			<li>Jason Kiss (New Zealand Government)</li>
+			<li>Todd Kloots</li>
+			<li>Johannes Koch</li>
+			<li>Sam Kuper</li>
+			<li>Earl Johnson (Sun)</li>
+			<li>Jael Kurz</li>
+			<li>Rajesh Lal (Nokia Corporation)</li>
+			<li>Diego La Monica (International Webmasters Association / HTML Writers Guild (IWA-HWG))</li>
+			<li>Aaron Leventhal (IBM Corporation)</li>
+			<li>Gez Lemon (International Webmasters Association / HTML Writers Guild (IWA-HWG))</li>
+			<li>Alex Li (SAP)</li>
+			<li>Chris Lilley</li>
+			<li>Thomas Logan (HiSoftware Inc.)</li>
+			<li>William Loughborough (Invited Expert)</li>
+			<li>Linda Mao (Microsoft)</li>
+			<li>David MacDonald (Invited Expert, CanAdapt Solutions Inc.)</li>
+			<li>Carolyn MacLeod</li>
+			<li>Anders Markussen (Opera Software)</li>
+			<li>Krzysztof Maczyński </li>
+			<li>Matthew May (Adobe Systems Inc.)</li>
+			<li>Dominic Mazzoni (Google, Inc.)</li>
+			<li>Alexandre Morgaut (4D)</li>
+			<li>Ann Navarro (Invited Expert)</li>
+			<li>Joshue O Connor (Invited Expert, CFIT)</li>
+			<li>Artur Ortega (Microsoft Corporation)</li>
+			<li>Sailesh Panchang (Deque)</li>
+			<li>Lisa Pappas (Society for Technical Communication (STC))</li>
+			<li>Marta Pawlowlska (Samsung Electronics Co., Ltd.)</li>
+			<li>Dave Pawson (RNIB)</li>
+			<li>Steven Pemberton (CWI Amsterdam)</li>
+			<li>Simon Pieters (Opera Software)</li>
+			<li>Jean-Bernard Piot (4D)</li>
+			<li>David Poehlman, Simon Pieters (Opera Software)</li>
+			<li>Sarah Pulis (Media Access Australia)</li>
+			<li>T.V. Raman (Google, Inc.)</li>
+			<li>Jan Richards</li>
+			<li>Gregory Rosmaita (Invited Expert)</li>
+			<li>Tony Ross (Microsoft Corporation)</li>
+			<li>Alex Russell (Dojo Foundation) (</li>
+			<li>Mark Sadecki (Invited Expert)</li>
+			<li>Mario Sánchez Prada (Samsung Electronics Co., Ltd. and Gnome Foundation)</li>
+			<li>Martin Schaus (SAP AG)</li>
+			<li>Doug Schepers (<abbr title="World Wide Web Consortium">W3C</abbr>)</li>
+			<li>Matthias Schmitt </li>
+			<li>Marc Silbey (Microsoft Corporation)</li>
+			<li>Leif Halvard Sili</li>
+			<li>Henri Sivonen (Mozilla)</li>
+			<li>Michael Smith (<abbr title="World Wide Web Consortium">W3C</abbr>)</li>
+			<li>Andi Snow-Weaver (IBM Corporation)</li>
+			<li>Ville Skyttä </li>
+			<li>Henny Swan (BBC)</li>
+			<li>Neil Soiffer (Design Science)</li>
+			<li>Vitaly Sourikov</li>
+			<li>Mike Squillace (IBM)</li>
+			<li>Maciej Stachowiak (Apple Inc.)</li>
+			<li>Christophe Strobbe</li>
+			<li>Suzanne Taylor (Pearson plc)</li>
+			<li>Terrill Thompson</li>
+			<li>David Todd</li>
+			<li>Gregg Vanderheiden (Invited Expert, Trace)</li>
+			<li>Anne van Kesteren</li>
+			<li>Wen He (Tencent)</li>
+			<li>Wu Wei (<abbr title="World Wide Web Consortium">W3C</abbr> / RITT)</li>
+			<li>Ryan Williams (Oracle)</li>
+			<li>Tom Wlodkowski</li>
+			<li>Sam White (Apple Inc.)</li>
+			<li>Marco Zehe (Mozilla Foundation)</li>
+		</ul>
+	</section>
+	<section class="section" id="ack_funders" typeof="bibo:Chapter" resource="#ack_funders" property="bibo:hasPart">
+		<h3 id="a-3-enabling-funders" resource="#a-3-enabling-funders"><span property="xhv:role" resource="xhv:heading"><span class="secno">A.3 </span>Enabling funders<span class="permalink" typeof="bookmark"><a href="#ack_funders" aria-label="Permalink for A.3 Enabling funders" title="Permalink for A.3 Enabling funders" property="url"><span property="title" content="A.3 Enabling funders">§</span></a></span></span></h3>
+		<p>This publication has been funded in part with U.S. Federal funds from the Department of Education, National Institute on Disability, Independent Living, and Rehabilitation Research (NIDILRR), initially under contract number ED-OSE-10-C-0067 and currently under contract number HHSP23301500054C. The content of this publication does not necessarily reflect the views or policies of the U.S. Department of Education, nor does mention of trade names, commercial products, or organizations imply endorsement by the U.S. Government.</p>
+	</section>
+</section>
+
+
+
+
+	
+
+<section id="references" class="appendix" typeof="bibo:Chapter" resource="#references" property="bibo:hasPart"><!--OddPage--><h2 id="b-references" resource="#b-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">B. </span>References<span class="permalink" typeof="bookmark"><a href="#references" aria-label="Permalink for B. References" title="Permalink for B. References" property="url"><span property="title" content="B. References">§</span></a></span></span></h2><section id="informative-references" typeof="bibo:Chapter" resource="#informative-references" property="bibo:hasPart"><h3 id="b-1-informative-references" resource="#b-1-informative-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">B.1 </span>Informative references<span class="permalink" typeof="bookmark"><a href="#informative-references" aria-label="Permalink for B.1 Informative references" title="Permalink for B.1 Informative references" property="url"><span property="title" content="B.1 Informative references">§</span></a></span></span></h3><dl class="bibliography" resource=""><dt id="bib-DOM4">[DOM4]</dt><dd><a href="https://dom.spec.whatwg.org/" property="dc:references"><cite>DOM Standard</cite></a>. Anne van Kesteren. WHATWG. Living Standard. URL: <a href="https://dom.spec.whatwg.org/" property="dc:references">https://dom.spec.whatwg.org/</a>
+</dd><dt id="bib-SVG2">[SVG2]</dt><dd><a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/" property="dc:references"><cite>Scalable Vector Graphics (SVG) 2</cite></a>. Nikos Andronikos; Rossen Atanassov; Tavmjong Bah; Amelia Bellamy-Royds; Brian Birtles; Cyril Concolato; Erik Dahlström; Chris Lilley; Cameron McCormack; Doug Schepers; Dirk Schulze; Richard Schwerdtfeger; Satoru Takagi; Jonathan Watt et al. W3C. W3C Working Draft. URL: <a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/" property="dc:references">http://www.w3.org/TR/2015/WD-SVG2-20150915/</a>
+</dd></dl></section></section><p role="navigation" id="back-to-top"><a href="#toc"><abbr title="Back to Top">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>

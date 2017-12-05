@@ -1,0 +1,1307 @@
+<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml" typeof="bibo:Document " prefix="bibo: http://purl.org/ontology/bibo/ w3p: http://www.w3.org/2001/02pd/rec54#"><head><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta charset="utf-8"><meta name="generator" content="ReSpec 18.3.0"><meta lang="" property="dc:language" content="en"><style>/* --- PERMALINKS --- */
+
+.permalink {
+  width: 1px;
+  height: 1px;
+  overflow: visible;
+  font-size: 10pt;
+  font-style: normal;
+  vertical-align: middle;
+  margin-left: 4px;
+  float: right;
+}
+
+.permalink a, .permalink a:link, .permalink a:visited, .permalink a:hover, .permalink a:focus, .permalink a:active {
+  background:transparent !important;
+  text-decoration:none;
+  font-weight: bold;
+  color:#666 !important;
+}
+
+.permalink abbr {
+  border:0;
+}
+</style>
+		<title>Personalization Tools 1.0</title>
+		
+		
+		
+		<style id="respec-mainstyle">/*****************************************************************
+ * ReSpec 3 CSS
+ * Robin Berjon - http://berjon.com/
+ *****************************************************************/
+
+/* Override code highlighter background */
+.hljs {
+  background: transparent !important;
+}
+
+/* --- INLINES --- */
+h1 abbr,
+h2 abbr,
+h3 abbr,
+h4 abbr,
+h5 abbr,
+h6 abbr,
+a abbr {
+  border: none;
+}
+
+dfn {
+  font-weight: bold;
+}
+
+a.internalDFN {
+  color: inherit;
+  border-bottom: 1px solid #99c;
+  text-decoration: none;
+}
+
+a.externalDFN {
+  color: inherit;
+  border-bottom: 1px dotted #ccc;
+  text-decoration: none;
+}
+
+a.bibref {
+  text-decoration: none;
+}
+
+cite .bibref {
+  font-style: normal;
+}
+
+code {
+  color: #c83500;
+}
+
+th code {
+  color: inherit;
+}
+
+/* --- TOC --- */
+
+.toc a,
+.tof a {
+  text-decoration: none;
+}
+
+a .secno,
+a .figno {
+  color: #000;
+}
+
+ul.tof,
+ol.tof {
+  list-style: none outside none;
+}
+
+.caption {
+  margin-top: 0.5em;
+  font-style: italic;
+}
+
+/* --- TABLE --- */
+
+table.simple {
+  border-spacing: 0;
+  border-collapse: collapse;
+  border-bottom: 3px solid #005a9c;
+}
+
+.simple th {
+  background: #005a9c;
+  color: #fff;
+  padding: 3px 5px;
+  text-align: left;
+}
+
+.simple th[scope="row"] {
+  background: inherit;
+  color: inherit;
+  border-top: 1px solid #ddd;
+}
+
+.simple td {
+  padding: 3px 10px;
+  border-top: 1px solid #ddd;
+}
+
+.simple tr:nth-child(even) {
+  background: #f0f6ff;
+}
+
+/* --- DL --- */
+
+.section dd > p:first-child {
+  margin-top: 0;
+}
+
+.section dd > p:last-child {
+  margin-bottom: 0;
+}
+
+.section dd {
+  margin-bottom: 1em;
+}
+
+.section dl.attrs dd,
+.section dl.eldef dd {
+  margin-bottom: 0;
+}
+
+#issue-summary > ul,
+.respec-dfn-list {
+  column-count: 2;
+}
+
+#issue-summary li,
+.respec-dfn-list li {
+  list-style: none;
+}
+
+details.respec-tests-details {
+  margin-left: 1em;
+  display: inline-block;
+  vertical-align: top;
+}
+
+details.respec-tests-details > * {
+  padding-right: 2em;
+}
+
+details.respec-tests-details[open] {
+  z-index: 999999;
+  position: absolute;
+  border: thin solid #cad3e2;
+  border-radius: .3em;
+  background-color: white;
+  padding-bottom: .5em;
+}
+
+details.respec-tests-details[open] > summary {
+  border-bottom: thin solid #cad3e2;
+  padding-left: 1em;
+  margin-bottom: 1em;
+  line-height: 2em;
+}
+
+details.respec-tests-details > ul {
+  width: 100%;
+  margin-top: -0.3em;
+}
+
+details.respec-tests-details > li {
+  padding-left: 1em;
+}
+
+@media print {
+  .removeOnSave {
+    display: none;
+  }
+}
+</style><style>/*
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #333;
+  background: #f8f8f8;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #998;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: #333;
+  font-weight: bold;
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr {
+  color: #008080;
+}
+
+.hljs-string,
+.hljs-doctag {
+  color: #d14;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
+  color: #900;
+  font-weight: bold;
+}
+
+.hljs-subst {
+  font-weight: normal;
+}
+
+.hljs-type,
+.hljs-class .hljs-title {
+  color: #458;
+  font-weight: bold;
+}
+
+.hljs-tag,
+.hljs-name,
+.hljs-attribute {
+  color: #000080;
+  font-weight: normal;
+}
+
+.hljs-regexp,
+.hljs-link {
+  color: #009926;
+}
+
+.hljs-symbol,
+.hljs-bullet {
+  color: #990073;
+}
+
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #0086b3;
+}
+
+.hljs-meta {
+  color: #999;
+  font-weight: bold;
+}
+
+.hljs-deletion {
+  background: #fdd;
+}
+
+.hljs-addition {
+  background: #dfd;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+</style>
+	
+		<link href="../common/css/common.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/personalization-tools-1.0/"><script id="initialUserConfig" type="application/json">{
+  "trace": true,
+  "doRDFa": "1.0",
+  "includePermalinks": true,
+  "permalinkEdge": true,
+  "permalinkHide": false,
+  "tocIntroductory": true,
+  "specStatus": "ED",
+  "noRecTrack": true,
+  "shortName": "personalization-tools-1.0",
+  "copyrightStart": "2017",
+  "edDraftURI": "https://w3c.github.io/w3c/personalization-semantics/tools/index.html",
+  "editors": [
+    {
+      "name": "Lisa Seeman",
+      "url": "http://athena-ict.com",
+      "mailto": "lisa.seeman@zoho.com",
+      "w3cid": 16320
+    },
+    {
+      "name": "Rich Schwerdtfeger",
+      "w3cid": 2460
+    },
+    {
+      "name": "Michael Cooper",
+      "url": "https://www.w3.org",
+      "mailto": "cooper@w3.org",
+      "company": "W3C",
+      "companyURI": "http://www.w3.org",
+      "w3cid": 34017
+    }
+  ],
+  "wg": "Accessible Rich Internet Applications Working Group",
+  "wgURI": "https://www.w3.org/WAI/ARIA/",
+  "wgPublicList": "public-personalization-tf",
+  "wgPatentURI": "https://www.w3.org/2004/01/pp-impl/83726/status",
+  "localBiblio": {
+    "ACCNAME-AAM": {
+      "title": "Accessible Name and Description: Computation and API Mappings 1.1",
+      "href": "http://www.w3.org/TR/accname-aam-1.1/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "Joseph Scheuhammer",
+        "Michael Cooper",
+        "Andi Snow-Weaver",
+        "Aaron Leventhal"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/ARIA/"
+      ]
+    },
+    "ARIA-PRACTICES": {
+      "title": "WAI-ARIA Authoring Practicess 1.1",
+      "href": "http://www.w3.org/TR/wai-aria-practices-1.1/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "Matt King",
+        "James Nurthen",
+        "Michael Cooper",
+        "Michiel Bijl",
+        "Joseph Scheuhammer",
+        "Lisa Pappas",
+        "Richard Schwerdtfeger"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/ARIA/"
+      ]
+    },
+    "ATK": {
+      "href": "https://developer.gnome.org/atk/stable/",
+      "title": "ATK - Accessibility Toolkit",
+      "publisher": "The GNOME Project"
+    },
+    "AXAPI": {
+      "href": "https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078",
+      "title": "Accessibility Programming Guide for OS X",
+      "publisher": "Apple Corporation"
+    },
+    "coga-gap-analysis": {
+      "title": "Cognitive Accessibility Roadmap and Gap Analysis",
+      "href": "https://w3c.github.io/coga/gap-analysis/",
+      "publisher": "W3C",
+      "editors": [
+        "Lisa Seeman",
+        "Michael Cooper"
+      ],
+      "etAl": "false",
+      "deliveredBy": "https://www.w3.org/WAI/PF/cognitive-a11y-tf/"
+    },
+    "coga-issue-papers": {
+      "title": "Issue Papers for the The Cognitive and Learning Disabilities Accessibility Task Force (COGA)",
+      "href": "https://w3c.github.io/coga/issue-papers/",
+      "publisher": "W3C",
+      "editors": [
+        "Lisa Seeman",
+        "Michael Cooper"
+      ],
+      "etAl": "false",
+      "deliveredBy": "https://www.w3.org/WAI/PF/cognitive-a11y-tf/"
+    },
+    "CORE-AAM": {
+      "title": "Core Accessibility API Mappings 1.1",
+      "href": "http://www.w3.org/TR/core-aam-1.1/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "Joseph Scheuhammer",
+        "Michael Cooper",
+        "Andi Snow-Weaver",
+        "Aaron Leventhal"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/ARIA/"
+      ]
+    },
+    "DPUB-ARIA": {
+      "title": "Digital Publishing WAI-ARIA Module 1.0",
+      "href": "http://www.w3.org/TR/dpub-aria-1.0/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "Matt Garrish",
+        "Tzviya Siegman",
+        "Markus Gylling",
+        "Shane McCarron"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/ARIA/"
+      ]
+    },
+    "GRAPHICS-ARIA": {
+      "title": "WAI-ARIA Graphics",
+      "href": "http://www.w3.org/TR/graphics-aria-1.0/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "Amelia Bellamy-Royds",
+        "Fred Esch",
+        "Rich Schwerdtfeger",
+        "Leonie Watson"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/ARIA/",
+        "http://www.w3.org/SVG/"
+      ]
+    },
+    "GRAPHICS-AAM": {
+      "title": "Graphics Accessibility API Mappings",
+      "href": "http://www.w3.org/TR/graphics-aam-1.0/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "Amelia Bellamy-Royds",
+        "Fred Esch",
+        "Richard Schwerdtfeger"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/ARIA/",
+        "http://www.w3.org/SVG/"
+      ]
+    },
+    "EPUB-SSV": {
+      "href": "http://www.idpf.org/epub/vocab/structure/",
+      "title": "EPUB Structural Semantics Vocabulary",
+      "publisher": "IDPF"
+    },
+    "EPUB-Content": {
+      "href": "http://www.idpf.org/epub/31/spec/epub-contentdocs.html",
+      "title": "EPUB Content Documents 3.1",
+      "publisher": "IDPF"
+    },
+    "GTK": {
+      "href": "https://developer.gnome.org/gtk3/stable/",
+      "title": "GTK+ 3 Reference Manual",
+      "publisher": "The GNOME Project"
+    },
+    "HTML-AAM": {
+      "authors": [
+        "Steve Faulkner",
+        "Jason Kiss",
+        "Cynthia Shelly",
+        "Alexander Surkov"
+      ],
+      "etAl": true,
+      "href": "http://www.w3.org/TR/html-aam-1.0/",
+      "title": "HTML Accessibility API Mappings 1.0",
+      "status": "WD",
+      "publisher": "W3C",
+      "deliveredBy": [
+        "http://www.w3.org/html",
+        "http://www.w3.org/WAI/PF/"
+      ]
+    },
+    "MSAA": {
+      "href": "https://msdn.microsoft.com/en-us/library/ms697707.aspx",
+      "title": "Microsoft Active Accessibility (MSAA) 2.0",
+      "publisher": "Microsoft Corporation"
+    },
+    "SVG-AAM": {
+      "title": "SVG2 Accessibility API Mappings 1.0",
+      "href": "http://www.w3.org/TR/svg-aam-1.0/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "Amelia Bellamy-Royds",
+        "Richard Schwerdtfeger"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/PF/"
+      ]
+    },
+    "SVG1": {
+      "title": "Scalable Vector Graphics (SVG) 1.0 Specification",
+      "href": "http://www.w3.org/TR/SVG10/",
+      "status": "REC",
+      "publisher": "W3C",
+      "authors": [
+        "John Ferraiolo"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/SVG"
+      ]
+    },
+    "SVG11": {
+      "title": "Scalable Vector Graphics (SVG) 1.1 (Second Edition)",
+      "href": "http://www.w3.org/TR/SVG11/",
+      "status": "REC",
+      "publisher": "W3C",
+      "authors": [
+        "Erik Dahlström",
+        "Patrick Dengler",
+        "Anthony Grasso",
+        "Chris Lilley",
+        "Cameron McCormack",
+        "Doug Schepers",
+        "Jonathan Watt",
+        "John Ferraiolo",
+        "藤沢 淳 (FUJISAWA Jun)",
+        "Dean Jackson"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/SVG"
+      ]
+    },
+    "SVG2": {
+      "title": "Scalable Vector Graphics (SVG) 2",
+      "href": "http://www.w3.org/TR/2015/WD-SVG2-20150915/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "Nikos Andronikos",
+        "Rossen Atanassov",
+        "Tavmjong Bah",
+        "Amelia Bellamy-Royds",
+        "Brian Birtles",
+        "Cyril Concolato",
+        "Erik Dahlström",
+        "Chris Lilley",
+        "Cameron McCormack",
+        "Doug Schepers",
+        "Dirk Schulze",
+        "Richard Schwerdtfeger",
+        "Satoru Takagi",
+        "Jonathan Watt"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/PF/"
+      ]
+    },
+    "UI-AUTOMATION": {
+      "href": "https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx",
+      "title": "UI Automation",
+      "publisher": "Microsoft Corporation"
+    },
+    "UIA-EXPRESS": {
+      "href": "https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx",
+      "title": "The IAccessibleEx Interface",
+      "publisher": "Microsoft Corporation"
+    },
+    "WAI-ARIA": {
+      "title": "Accessible Rich Internet Applications (WAI-ARIA) 1.1",
+      "href": "http://www.w3.org/TR/wai-aria-1.1/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "James Craig",
+        "Michael Cooper",
+        "Shane McCarron"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/PF/"
+      ]
+    },
+    "WAI-ARIA-10": {
+      "authors": [
+        "James Craig",
+        "Michael Cooper"
+      ],
+      "etAl": true,
+      "href": "http://www.w3.org/TR/wai-aria/",
+      "title": "Accessible Rich Internet Applications (WAI-ARIA) 1.0",
+      "status": "REC",
+      "publisher": "W3C",
+      "deliveredBy": [
+        "http://www.w3.org/WAI/PF/"
+      ]
+    }
+  },
+  "ariaSpecURLs": {
+    "ED": "https://w3c.github.io/aria/aria/aria",
+    "FPWD": "https://www.w3.org/TR/wai-aria-1.1/",
+    "WD": "https://www.w3.org/TR/wai-aria-1.1/",
+    "CR": "https://www.w3.org/TR/wai-aria-1.1/",
+    "REC": "https://www.w3.org/TR/wai-aria-1.1/"
+  },
+  "publishDate": "2017-12-05",
+  "publishISODate": "2017-12-05T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 05 December 2017"
+}</script></head>
+	<body aria-busy="false" class="h-entry toc-inline"><div class="head">
+    <p>
+      <a class="logo" href="https://www.w3.org/"><img width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt="W3C"></a>
+    </p>
+  <p><!--_hyper: -531493978;--></p>
+  <h1 class="title p-name" id="title" property="dcterms:title">Personalization Tools 1.0</h1>
+  <h2 id="w3c-editor-s-draft-05-december-2017"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time property="dcterms:issued" class="dt-published" datetime="2017-12-05">05 December 2017</time><span class="permalink" typeof="bookmark"><a href="#undefined" aria-label="Permalink for W3C Editor's Draft 05 December 2017" title="Permalink for W3C Editor's Draft 05 December 2017" property="url"><span property="title" content="W3C Editor's Draft 05 December 2017">§</span></a></span></h2>
+  <dl>
+      <dt>This version:</dt>
+      <dd><a class="u-url" href="https://w3c.github.io/w3c/personalization-semantics/tools/index.html">https://w3c.github.io/w3c/personalization-semantics/tools/index.html</a></dd>
+      <dt>Latest published version:</dt>
+      <dd><a href="https://www.w3.org/TR/personalization-tools-1.0/">https://www.w3.org/TR/personalization-tools-1.0/</a></dd>
+      <dt>Latest editor's draft:</dt>
+      <dd><a href="https://w3c.github.io/w3c/personalization-semantics/tools/index.html">https://w3c.github.io/w3c/personalization-semantics/tools/index.html</a></dd>
+    <dt>Editors:</dt>
+    <dd class="p-author h-card vcard" property="bibo:editor" resource="_:editor0" data-editor-id="16320"><span property="rdf:first" typeof="foaf:Person"><meta property="foaf:name" content="Lisa Seeman"><a class="u-url url p-name fn" property="foaf:homepage" href="http://athena-ict.com">Lisa Seeman</a>, <span class="ed_mailto"><a class="u-email email" property="foaf:mbox" href="mailto:lisa.seeman@zoho.com">lisa.seeman@zoho.com</a></span></span>
+<span property="rdf:rest" resource="_:editor1"></span>
+</dd>
+<dd class="p-author h-card vcard" resource="_:editor1" data-editor-id="2460"><span property="rdf:first" typeof="foaf:Person"><span property="foaf:name" class="p-name fn">Rich Schwerdtfeger</span></span>
+<span property="rdf:rest" resource="_:editor2"></span>
+</dd>
+<dd class="p-author h-card vcard" resource="_:editor2" data-editor-id="34017"><span property="rdf:first" typeof="foaf:Person"><meta property="foaf:name" content="Michael Cooper"><a class="u-url url p-name fn" property="foaf:homepage" href="https://www.w3.org">Michael Cooper</a>, <abbr title="World Wide Web Consortium">W3C</abbr>, <span class="ed_mailto"><a class="u-email email" property="foaf:mbox" href="mailto:cooper@w3.org">cooper@w3.org</a></span></span>
+<span property="rdf:rest" resource="rdf:nil"></span>
+</dd>
+
+  </dl>
+      <p class="copyright">
+        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> ©
+        2017
+        
+        <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup>
+        (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+        <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>,
+        <a href="https://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>).
+        <abbr title="World Wide Web Consortium">W3C</abbr> <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and
+            <a rel="license" href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document">permissive document license</a>
+        rules apply.
+      </p>
+  <hr title="Separator for header">
+</div>
+
+		<section id="abstract" class="introductory" property="dc:abstract"><!--OddPage--><h2 id="abstract-0" resource="#abstract-0"><span property="xhv:role" resource="xhv:heading">Abstract</span></h2>
+			<p>This document list examples of the tools properties, this is an extension of Personalization Explainer. </p>
+		</section>
+
+		<section id="sotd" class="introductory"><!--OddPage--><h2 id="status-of-this-document" resource="#status-of-this-document"><span property="xhv:role" resource="xhv:heading">Status of This Document</span></h2>
+      <p>
+        <em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em>
+      </p>
+        
+        <p>
+          This document was published by the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> as an Editor's Draft.
+            Comments regarding this document are welcome. Please send them to
+            <a href="mailto:public-personalization-tf@w3.org">public-personalization-tf@w3.org</a>
+            (<a href="mailto:public-personalization-tf-request@w3.org?subject=subscribe">subscribe</a>,
+            <a href="https://lists.w3.org/Archives/Public/public-personalization-tf/">archives</a>).
+        </p>
+          <p>
+            Publication as an Editor's Draft does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr>
+            Membership. This is a draft document and may be updated, replaced or obsoleted by other
+            documents at any time. It is inappropriate to cite this document as other than work in
+            progress.
+          </p>
+        <p>
+            This document was produced by
+            a group
+             operating under the
+            <a id="sotd_patent" property="w3p:patentRules" href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+              <abbr title="World Wide Web Consortium">W3C</abbr> maintains a <a href="https://www.w3.org/2004/01/pp-impl/83726/status" rel="disclosure">public list of any patent
+              disclosures</a>
+            made in connection with the deliverables of
+            the group; that page also includes
+            instructions for disclosing a patent. An individual who has actual knowledge of a patent
+            which the individual believes contains
+            <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential
+            Claim(s)</a> must disclose the information in accordance with
+            <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section
+            6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+        </p>
+          <p>This document is governed by the <a id="w3c_process_revision" href="https://www.w3.org/2017/Process-20170301/">1 March 2017 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+          </p>
+        
+
+</section><nav id="toc"><h2 class="introductory" id="table-of-contents" resource="#table-of-contents"><span property="xhv:role" resource="xhv:heading">Table of Contents<span class="permalink" typeof="bookmark"><a href="#undefined" aria-label="Permalink for Table of Contents" title="Permalink for Table of Contents" property="url"><span property="title" content="Table of Contents">§</span></a></span></span></h2><ol class="toc"><li class="tocline"><a href="#abstract" class="tocxref">Abstract</a></li><li class="tocline"><a href="#sotd" class="tocxref">Status of This Document</a></li><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a></li><li class="tocline"><a href="#use-cases" class="tocxref"><span class="secno">2. </span>Use cases</a><ol class="toc"><li class="tocline"><a href="#logs" class="tocxref"><span class="secno">2.1 </span>Logs</a><ol class="toc"><li class="tocline"><a href="#use_case_log_usage" class="tocxref"><span class="secno">2.1.1 </span>Log usage examples</a></li><li class="tocline"><a href="#use_case_alternative_syntax" class="tocxref"><span class="secno">2.1.2 </span>Alternative syntax for log</a></li></ol></li><li class="tocline"><a href="#use_case_reminder" class="tocxref"><span class="secno">2.2 </span>Reminders and messages</a></li><li class="tocline"><a href="#use_case_general_tool" class="tocxref"><span class="secno">2.3 </span>general tools</a></li></ol></li><li class="tocline"><a href="#tools" class="tocxref"><span class="secno">3. </span>Tools</a><ol class="toc"><li class="tocline"><a href="#all-log-explanation" class="tocxref"><span class="secno">3.1 </span>All the log properties </a><ol class="toc"><li class="tocline"><a href="#log-usage-example-explanation" class="tocxref"><span class="secno">3.1.1 </span>Log usage</a><ol class="toc"><li class="tocline"><a href="#description" class="tocxref"><span class="secno">3.1.1.1 </span>Description</a></li><li class="tocline"><a href="#log-usage-example" class="tocxref"><span class="secno">3.1.1.2 </span>Example</a></li></ol></li><li class="tocline"><a href="#Alternative-syntax-log-example-explanation" class="tocxref"><span class="secno">3.1.2 </span>Alternative syntax for log</a><ol class="toc"><li class="tocline"><a href="#description-0" class="tocxref"><span class="secno">3.1.2.1 </span>Description</a></li><li class="tocline"><a href="#Alternative-syntax-log-example" class="tocxref"><span class="secno">3.1.2.2 </span>Example</a></li></ol></li></ol></li><li class="tocline"><a href="#all-the-message-properties" class="tocxref"><span class="secno">3.2 </span>All the message properties </a><ol class="toc"><li class="tocline"><a href="#messageimportance-explanation" class="tocxref"><span class="secno">3.2.1 </span>messageimportance</a><ol class="toc"><li class="tocline"><a href="#description-1" class="tocxref"><span class="secno">3.2.1.1 </span>Description</a></li><li class="tocline"><a href="#messageimportance-example" class="tocxref"><span class="secno">3.2.1.2 </span>Example</a></li><li class="tocline"><a href="#characteristics" class="tocxref"><span class="secno">3.2.1.3 </span>Characteristics</a></li><li class="tocline"><a href="#values" class="tocxref"><span class="secno">3.2.1.4 </span>Values</a></li></ol></li><li class="tocline"><a href="#messagefrom-explanation" class="tocxref"><span class="secno">3.2.2 </span>messagefrom</a><ol class="toc"><li class="tocline"><a href="#description-2" class="tocxref"><span class="secno">3.2.2.1 </span>Description</a></li><li class="tocline"><a href="#messagefrom-example" class="tocxref"><span class="secno">3.2.2.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-0" class="tocxref"><span class="secno">3.2.2.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a href="#messagecontext-explanation" class="tocxref"><span class="secno">3.2.3 </span>messagecontext</a><ol class="toc"><li class="tocline"><a href="#description-3" class="tocxref"><span class="secno">3.2.3.1 </span>Description</a></li><li class="tocline"><a href="#messagecontext-example" class="tocxref"><span class="secno">3.2.3.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-1" class="tocxref"><span class="secno">3.2.3.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a href="#messagetime-explanation" class="tocxref"><span class="secno">3.2.4 </span>messagetime</a><ol class="toc"><li class="tocline"><a href="#description-4" class="tocxref"><span class="secno">3.2.4.1 </span>Description</a></li><li class="tocline"><a href="#messagetime-example" class="tocxref"><span class="secno">3.2.4.2 </span>messagetime</a></li><li class="tocline"><a href="#characteristics-2" class="tocxref"><span class="secno">3.2.4.3 </span>Characteristics</a></li></ol></li></ol></li></ol></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">A. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a href="#ack_group" class="tocxref"><span class="secno">A.1 </span>Participants active in the ARIA WG at the time of publication</a></li><li class="tocline"><a href="#ack_others" class="tocxref"><span class="secno">A.2 </span>Other ARIA contributors, commenters, and previously active participants</a></li><li class="tocline"><a href="#ack_funders" class="tocxref"><span class="secno">A.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">B. </span>References</a><ol class="toc"><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">B.1 </span>Informative references</a></li></ol></li></ol></nav>
+
+		<section class="informative" id="introduction" typeof="bibo:Chapter" resource="#introduction" property="bibo:hasPart">
+
+			<!--OddPage--><h2 id="x1-introduction" resource="#x1-introduction"><span property="xhv:role" resource="xhv:heading"><span class="secno">1. </span>Introduction<span class="permalink" typeof="bookmark"><a href="#introduction" aria-label="Permalink for 1. Introduction" title="Permalink for 1. Introduction" property="url"><span property="title" content="1. Introduction">§</span></a></span></span></h2><p><em>This section is non-normative.</em></p>
+			<p>This document list examples of the tools properties, this is an extension of Personalization Explainer. </p>
+
+		</section>
+
+		<section id="use-cases" typeof="bibo:Chapter" resource="#use-cases" property="bibo:hasPart">
+			<!--OddPage--><h2 id="x2-use-cases" resource="#x2-use-cases"><span property="xhv:role" resource="xhv:heading"><span class="secno">2. </span>Use cases<span class="permalink" typeof="bookmark"><a href="#use-cases" aria-label="Permalink for 2. Use cases" title="Permalink for 2. Use cases" property="url"><span property="title" content="2. Use cases">§</span></a></span></span></h2>
+			<section id="use_case_log" typeof="bibo:Chapter" resource="#use_case_log" property="bibo:hasPart">
+                    <h3 id="logs" resource="#logs"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1 </span>Logs<span class="permalink" typeof="bookmark"><a href="#use_case_log" aria-label="Permalink for 2.1 Logs" title="Permalink for 2.1 Logs" property="url"><span property="title" content="2.1 Logs">§</span></a></span></span></h3>
+                    <p>This proposal is to track the tasks that a user has done, so that they can be reminded of them, and return to or fix a task. The suggested syntax should allow the author to transform some of the information into breadcrumbs via CSS, and the user system can read and present more or less information to the user as per their preferences.</p>
+                    <p>Preferably this should be in the header so that the user agent can build a cross application log of user tasks.</p>
+                    <p>Note that there is no default value.</p>
+                    <p>Relevant properties: <a href="#x3-1-all-the-log-properties">log</a>, <a href="#step">step</a>, <a href="#actiontaken">actiontaken</a>, <a href="#steplocation">steplocation</a>, <a href="#status">status</a></p>
+                    <section id="use_case_log_usage" typeof="bibo:Chapter" resource="#use_case_log_usage" property="bibo:hasPart">
+                        <h4 id="x2-1-1-log-usage-examples" resource="#x2-1-1-log-usage-examples"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.1 </span>Log usage examples<span class="permalink" typeof="bookmark"><a href="#use_case_log_usage" aria-label="Permalink for 2.1.1 Log usage examples" title="Permalink for 2.1.1 Log usage examples" property="url"><span property="title" content="2.1.1 Log usage examples">§</span></a></span></span></h4>
+                        <pre aria-busy="false" aria-live="polite" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">coga-log</span>=<span class="hljs-string">"booking trip"</span> <span class="hljs-attr">coga-step</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"buy ticket"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>
+     <span class="hljs-attr">coga-actiontaken</span>=<span class="hljs-string">"bought ticket to NY return"</span> <span class="hljs-attr">steplocation</span> =<span class="hljs-string">"uri"</span> /&gt;</span></pre>
+                        <p>or</p>
+                        <pre aria-busy="false" aria-live="polite" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">coga-log</span>=<span class="hljs-string">"booking trip"</span> <span class="hljs-attr">coga-step</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">coga-actiontaken</span>=<span class="hljs-string">"bought ticket to NY return"</span>&gt;</span>
+      buy ticket
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"uri"</span>&gt;</span>change<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
+                        <p>or the step number can be implied by the <abbr title="Document Object Model">DOM</abbr></p>
+                        <pre aria-busy="false" aria-live="polite" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">coga-log</span>=<span class="hljs-string">"booking trip"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">coga-actiontaken</span>=<span class="hljs-string">"bought ticket to NY return"</span>&gt;</span>
+    buy ticket
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"uri"</span>&gt;</span>change<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
+                </section>
+                <section id="use_case_alternative_syntax" typeof="bibo:Chapter" resource="#use_case_alternative_syntax" property="bibo:hasPart">
+                    <h4 id="x2-1-2-alternative-syntax-for-log" resource="#x2-1-2-alternative-syntax-for-log"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.2 </span>Alternative syntax for log<span class="permalink" typeof="bookmark"><a href="#use_case_alternative_syntax" aria-label="Permalink for 2.1.2 Alternative syntax for log" title="Permalink for 2.1.2 Alternative syntax for log" property="url"><span property="title" content="2.1.2 Alternative syntax for log">§</span></a></span></span></h4>
+                    <p>Note we are considering supporting an alternative syntax such as:</p>
+                    <pre aria-busy="false" aria-live="polite" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">log</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"booking trip"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">step</span> <span class="hljs-attr">status</span> =<span class="hljs-string">"done"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>buy ticket<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">actiontaken</span>&gt;</span>bought ticket to NY return<span class="hljs-tag">&lt;/<span class="hljs-name">actiontaken</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">changepossible</span>=<span class="hljs-string">"yes"</span>&gt;</span>url <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">step</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">step</span>  <span class="hljs-attr">status</span> =<span class="hljs-string">"done"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>hotel<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">actiontaken</span>&gt;</span>booked Sheraton single room<span class="hljs-tag">&lt;/<span class="hljs-name">actiontaken</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">changepossible</span>=<span class="hljs-string">"yes"</span>&gt;</span>url <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">step</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">step</span>  <span class="hljs-attr">status</span> =<span class="hljs-string">"current"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>car rental<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">current</span> <span class="hljs-attr">changepossible</span>=<span class="hljs-string">"yes"</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">step</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">log</span>&gt;</span>
+</pre>
+                </section>
+            </section>
+            <section id="use_case_reminder" typeof="bibo:Chapter" resource="#use_case_reminder" property="bibo:hasPart">
+                <h3 id="x2-2-reminders-and-messages" resource="#x2-2-reminders-and-messages"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.2 </span>Reminders and messages<span class="permalink" typeof="bookmark"><a href="#use_case_reminder" aria-label="Permalink for 2.2 Reminders and messages" title="Permalink for 2.2 Reminders and messages" property="url"><span property="title" content="2.2 Reminders and messages">§</span></a></span></span></h3>
+                <p><strong>Requirement: </strong>We require an attribute that enables different users to experience different amount of reminders and messages based on personal preferences. Reminders are a wonderful tool for many people with cognitive disabilities. However too many reminders will be annoying or distracting for some other users. Currently people can turn off distractions such as Skype, and Facebook, across different devices, and then may forget to turn them back on.</p>
+                <p>These semantics allow for different solutions so that users are able to focus without missing important messages. Users need to manage all distractions by forming a cross application and cross device distraction matrix that manages all distractions in one setting. It is based on a matrix for distractions at the operating system , browser or cloud level. People and users can be clustered in terms of importance or groups. For example, the CEO and your child's care giver could both be considered critical contacts. So even if they do not feel the message is urgent they can sometimes disrupt the user anyway. Some family members and important colleagues can be in another group, friends and extended family in a third group, system messages from the compliance system can be a different group again. </p>
+                <p>Relevant properties: <a href="#x3-2-1-messageimportance">messageimportance</a>, <a href="#x3-2-2-messagefrom">messagefrom</a>, <a href="#x3-2-3-messagecontext">messagecontext</a>, <a href="#x3-2-4-messagetime">messagetime</a></p>
+            </section>
+            <section id="use_case_general_tool" typeof="bibo:Chapter" resource="#use_case_general_tool" property="bibo:hasPart">
+                <h3 id="x2-3-general-tools" resource="#x2-3-general-tools"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.3 </span>general tools<span class="permalink" typeof="bookmark"><a href="#use_case_general_tool" aria-label="Permalink for 2.3 general tools" title="Permalink for 2.3 general tools" property="url"><span property="title" content="2.3 general tools">§</span></a></span></span></h3>
+            </section>
+		</section>
+
+		<section class="informative" id="tools" typeof="bibo:Chapter" resource="#tools" property="bibo:hasPart">
+			<!--OddPage--><h2 id="x3-tools" resource="#x3-tools"><span property="xhv:role" resource="xhv:heading"><span class="secno">3. </span>Tools<span class="permalink" typeof="bookmark"><a href="#tools" aria-label="Permalink for 3. Tools" title="Permalink for 3. Tools" property="url"><span property="title" content="3. Tools">§</span></a></span></span></h2><p><em>This section is non-normative.</em></p>
+			<section id="all-log-explanation" typeof="bibo:Chapter" resource="#all-log-explanation" property="bibo:hasPart">
+	<h3 id="x3-1-all-the-log-properties" resource="#x3-1-all-the-log-properties"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.1 </span>All the log properties <span class="permalink" typeof="bookmark"><a href="#all-log-explanation" aria-label="Permalink for 3.1 All the log properties " title="Permalink for 3.1 All the log properties " property="url"><span property="title" content="3.1 All the log properties ">§</span></a></span></span></h3>
+
+	<section class="property-explanation" id="log-usage-example-explanation" typeof="bibo:Chapter" resource="#log-usage-example-explanation" property="bibo:hasPart">
+  <h4 id="x3-1-1-log-usage" resource="#x3-1-1-log-usage"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.1.1 </span>Log usage<span class="permalink" typeof="bookmark"><a href="#log-usage-example-explanation" aria-label="Permalink for 3.1.1 Log usage" title="Permalink for 3.1.1 Log usage" property="url"><span property="title" content="3.1.1 Log usage">§</span></a></span></span></h4>
+  <section id="description" typeof="bibo:Chapter" resource="#description" property="bibo:hasPart">
+    <h5 id="x3-1-1-1-description" resource="#x3-1-1-1-description"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.1.1.1 </span>Description<span class="permalink" typeof="bookmark"><a href="#description" aria-label="Permalink for 3.1.1.1 Description" title="Permalink for 3.1.1.1 Description" property="url"><span property="title" content="3.1.1.1 Description">§</span></a></span></span></h5>
+    <p>@@</p>
+
+  </section>
+  <section id="log-usage-example" typeof="bibo:Chapter" resource="#log-usage-example" property="bibo:hasPart">
+    <h5 id="x3-1-1-2-example" resource="#x3-1-1-2-example"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.1.1.2 </span>Example<span class="permalink" typeof="bookmark"><a href="#log-usage-example" aria-label="Permalink for 3.1.1.2 Example" title="Permalink for 3.1.1.2 Example" property="url"><span property="title" content="3.1.1.2 Example">§</span></a></span></span></h5>
+  	<p>Note we are considering supporting a log such as</p>
+    <div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: </span></div>
+			<pre aria-busy="false" aria-live="polite" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">coga-log</span>=<span class="hljs-string">"booking trip"</span> <span class="hljs-attr">coga-step</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"buy ticket"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>
+    <span class="hljs-attr">coga-actiontaken</span>=<span class="hljs-string">"bought ticket to NY return"</span> <span class="hljs-attr">steplocation</span> =<span class="hljs-string">"uri"</span> /&gt;</span></pre>
+					<p>or</p>
+					<pre aria-busy="false" aria-live="polite" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">coga-log</span>=<span class="hljs-string">"booking trip"</span> <span class="hljs-attr">coga-step</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">coga-actiontaken</span>=<span class="hljs-string">"bought ticket to NY return"</span>&gt;</span>
+  buy ticket
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"uri"</span>&gt;</span>change<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
+					<p>or the step number can be implied by the <abbr title="Document Object Model">DOM</abbr></p>
+					<pre aria-busy="false" aria-live="polite" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">coga-log</span>=<span class="hljs-string">"booking trip"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">coga-actiontaken</span>=<span class="hljs-string">"bought ticket to NY return"</span>&gt;</span>
+    buy ticket
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"uri"</span>&gt;</span>change<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
+			</div>
+      </section>
+
+
+    </section>
+    
+  <section class="property-explanation" id="Alternative-syntax-log-example-explanation" typeof="bibo:Chapter" resource="#Alternative-syntax-log-example-explanation" property="bibo:hasPart">
+  <h4 id="x3-1-2-alternative-syntax-for-log" resource="#x3-1-2-alternative-syntax-for-log"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.1.2 </span>Alternative syntax for log<span class="permalink" typeof="bookmark"><a href="#Alternative-syntax-log-example-explanation" aria-label="Permalink for 3.1.2 Alternative syntax for log" title="Permalink for 3.1.2 Alternative syntax for log" property="url"><span property="title" content="3.1.2 Alternative syntax for log">§</span></a></span></span></h4>
+  <section id="description-0" typeof="bibo:Chapter" resource="#description-0" property="bibo:hasPart">
+    <h5 id="x3-1-2-1-description" resource="#x3-1-2-1-description"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.1.2.1 </span>Description<span class="permalink" typeof="bookmark"><a href="#description-0" aria-label="Permalink for 3.1.2.1 Description" title="Permalink for 3.1.2.1 Description" property="url"><span property="title" content="3.1.2.1 Description">§</span></a></span></span></h5>
+    <p>@@</p>
+  </section>
+  <section id="Alternative-syntax-log-example" typeof="bibo:Chapter" resource="#Alternative-syntax-log-example" property="bibo:hasPart">
+    <h5 id="x3-1-2-2-example" resource="#x3-1-2-2-example"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.1.2.2 </span>Example<span class="permalink" typeof="bookmark"><a href="#Alternative-syntax-log-example" aria-label="Permalink for 3.1.2.2 Example" title="Permalink for 3.1.2.2 Example" property="url"><span property="title" content="3.1.2.2 Example">§</span></a></span></span></h5>
+	<p>Note we are considering supporting an alternative syntax such as:</p>
+    <div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: </span></div>
+		<pre aria-busy="false" aria-live="polite" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">log</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"booking trip"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">step</span> <span class="hljs-attr">status</span> =<span class="hljs-string">"done"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>buy ticket<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">actiontaken</span>&gt;</span>bought ticket to NY return<span class="hljs-tag">&lt;/<span class="hljs-name">actiontaken</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">changepossible</span>=<span class="hljs-string">"yes"</span>&gt;</span>url <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">step</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">step</span>  <span class="hljs-attr">status</span> =<span class="hljs-string">"done"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>hotel<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">actiontaken</span>&gt;</span>booked Sheraton single room<span class="hljs-tag">&lt;/<span class="hljs-name">actiontaken</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">changepossible</span>=<span class="hljs-string">"yes"</span>&gt;</span>url <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">step</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">step</span>  <span class="hljs-attr">status</span> =<span class="hljs-string">"current"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>car rental<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">current</span> <span class="hljs-attr">changepossible</span>=<span class="hljs-string">"yes"</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">step</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">log</span>&gt;</span>
+</pre>	
+			</div>
+    </section>
+
+    </section>
+</section>
+
+
+
+
+	
+			<section id="all-the-message-properties" typeof="bibo:Chapter" resource="#all-the-message-properties" property="bibo:hasPart">
+	<h3 id="x3-2-all-the-message-properties" resource="#x3-2-all-the-message-properties"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2 </span>All the message properties <span class="permalink" typeof="bookmark"><a href="#all-the-message-properties" aria-label="Permalink for 3.2 All the message properties " title="Permalink for 3.2 All the message properties " property="url"><span property="title" content="3.2 All the message properties ">§</span></a></span></span></h3>
+
+	<p>@@</p>
+
+	<section class="property" id="messageimportance-explanation" typeof="bibo:Chapter" resource="#messageimportance-explanation" property="bibo:hasPart">
+  <h4 id="x3-2-1-messageimportance" resource="#x3-2-1-messageimportance"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2.1 </span>messageimportance<span class="permalink" typeof="bookmark"><a href="#messageimportance-explanation" aria-label="Permalink for 3.2.1 messageimportance" title="Permalink for 3.2.1 messageimportance" property="url"><span property="title" content="3.2.1 messageimportance">§</span></a></span></span></h4>
+  <section id="description-1" typeof="bibo:Chapter" resource="#description-1" property="bibo:hasPart">
+    <h5 id="x3-2-1-1-description" resource="#x3-2-1-1-description"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2.1.1 </span>Description<span class="permalink" typeof="bookmark"><a href="#description-1" aria-label="Permalink for 3.2.1.1 Description" title="Permalink for 3.2.1.1 Description" property="url"><span property="title" content="3.2.1.1 Description">§</span></a></span></span></h5>
+	  <div class="property-description">
+          <p>@@1-line description</p>
+    </div>
+  </section>
+  <section id="messageimportance-example" typeof="bibo:Chapter" resource="#messageimportance-example" property="bibo:hasPart">
+    <h5 id="x3-2-1-2-example" resource="#x3-2-1-2-example"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2.1.2 </span>Example<span class="permalink" typeof="bookmark"><a href="#messageimportance-example" aria-label="Permalink for 3.2.1.2 Example" title="Permalink for 3.2.1.2 Example" property="url"><span property="title" content="3.2.1.2 Example">§</span></a></span></span></h5>
+    <div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: </span></div>
+			<pre aria-busy="false" aria-live="polite" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"alert"</span>
+    <span class="hljs-attr">coga-messageimportance</span>=<span class="hljs-string">"medium"</span>&gt;</span>
+  It is your daughter's birthday tomorrow
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
+			</div>
+  </section>
+  <section id="characteristics" typeof="bibo:Chapter" resource="#characteristics" property="bibo:hasPart">
+    <h5 id="x3-2-1-3-characteristics" resource="#x3-2-1-3-characteristics"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2.1.3 </span>Characteristics<span class="permalink" typeof="bookmark"><a href="#characteristics" aria-label="Permalink for 3.2.1.3 Characteristics" title="Permalink for 3.2.1.3 Characteristics" property="url"><span property="title" content="3.2.1.3 Characteristics">§</span></a></span></span></h5>
+    <table class="property-features">
+          <caption>Characteristics:</caption>
+          <thead>
+            <tr>
+              <th scope="col">Characteristic</th>
+              <th scope="col">Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="property-related-head" scope="row">Related Concepts:</th>
+              <td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-SVG2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-DOM4">DOM4</a></cite>] active</td>
+            </tr>
+            <tr>
+              <th class="property-applicability-head" scope="row">Used in Roles:</th>
+              <td class="property-applicability">All elements of the base markup</td>
+            </tr>
+            <tr>
+              <th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+              <td class="property-descendants">Placeholder</td>
+            </tr>
+            <tr>
+              <th class="property-value-head" scope="row">Value:</th>
+              <td class="property-value"><a href="#valuetype_token">token</a></td>
+            </tr>
+          </tbody>
+          </table>
+  </section>
+  <section id="values" typeof="bibo:Chapter" resource="#values" property="bibo:hasPart">
+    <h5 id="x3-2-1-4-values" resource="#x3-2-1-4-values"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2.1.4 </span>Values<span class="permalink" typeof="bookmark"><a href="#values" aria-label="Permalink for 3.2.1.4 Values" title="Permalink for 3.2.1.4 Values" property="url"><span property="title" content="3.2.1.4 Values">§</span></a></span></span></h5>
+    <table class="value-descriptions">
+          <caption>Values:</caption>
+          <thead>
+            <tr>
+              <th scope="col">Value</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="value-name" scope="row">critical</th>
+              <td class="value-description">To be critical a message needs to be both urgent and content that the user is very likely to consider important. For example, a system may send a message that it is going to reboot in one minute to install updates. </td>
+            </tr>
+            <tr>
+              <th class="value-name" scope="row"><strong class="default">medium (default)</strong></th>
+              <td class="value-description">Important messages that needs the user's attention at their convenience. For example, a relatively important chat message.</td>
+            </tr>
+            <tr>
+              <th class="value-name" scope="row">low</th>
+              <td class="value-description">A message that does not need time sensitive attention. For example, a typical chat message.</td>
+            </tr>
+          </tbody>
+          </table>
+  </section>
+  </section>
+
+  
+
+  <section class="property" id="messagefrom-explanation" typeof="bibo:Chapter" resource="#messagefrom-explanation" property="bibo:hasPart">
+  <h4 id="x3-2-2-messagefrom" resource="#x3-2-2-messagefrom"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2.2 </span>messagefrom<span class="permalink" typeof="bookmark"><a href="#messagefrom-explanation" aria-label="Permalink for 3.2.2 messagefrom" title="Permalink for 3.2.2 messagefrom" property="url"><span property="title" content="3.2.2 messagefrom">§</span></a></span></span></h4>
+  <section id="description-2" typeof="bibo:Chapter" resource="#description-2" property="bibo:hasPart">
+    <h5 id="x3-2-2-1-description" resource="#x3-2-2-1-description"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2.2.1 </span>Description<span class="permalink" typeof="bookmark"><a href="#description-2" aria-label="Permalink for 3.2.2.1 Description" title="Permalink for 3.2.2.1 Description" property="url"><span property="title" content="3.2.2.1 Description">§</span></a></span></span></h5>
+    <div class="property-description">
+          <p>@@1-line description</p>
+          <p><strong>Supported values: </strong>a string value that identifies the sender of the message. If multiple names are used they can be separated by a coma.</p>
+          <p>Note that there is no default value.</p>
+    </div>
+  </section>
+	<section id="messagefrom-example" typeof="bibo:Chapter" resource="#messagefrom-example" property="bibo:hasPart">
+    <h5 id="x3-2-2-2-example" resource="#x3-2-2-2-example"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2.2.2 </span>Example<span class="permalink" typeof="bookmark"><a href="#messagefrom-example" aria-label="Permalink for 3.2.2.2 Example" title="Permalink for 3.2.2.2 Example" property="url"><span property="title" content="3.2.2.2 Example">§</span></a></span></span></h5>
+    <div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: </span></div>
+		<pre aria-busy="false" aria-live="polite" class="hljs javascript">&lt;div role=<span class="hljs-string">"alert"</span>
+    coga-messageimportance=<span class="hljs-string">"low"</span>
+    coga-messagefrom=<span class="hljs-string">"lisa seeman, lseeman"</span>&gt;
+  I posted a <span class="hljs-keyword">new</span> version on GitHub <span class="hljs-keyword">for</span> you to review
+&lt;<span class="hljs-regexp">/div&gt;</span></pre>
+			</div>
+      </section>
+      <section id="characteristics-0" typeof="bibo:Chapter" resource="#characteristics-0" property="bibo:hasPart">
+        <h5 id="x3-2-2-3-characteristics" resource="#x3-2-2-3-characteristics"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2.2.3 </span>Characteristics<span class="permalink" typeof="bookmark"><a href="#characteristics-0" aria-label="Permalink for 3.2.2.3 Characteristics" title="Permalink for 3.2.2.3 Characteristics" property="url"><span property="title" content="3.2.2.3 Characteristics">§</span></a></span></span></h5>
+        <table class="property-features">
+            <caption>Characteristics:</caption>
+            <thead>
+            <tr>
+              <th scope="col">Characteristic</th>
+              <th scope="col">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th class="property-related-head" scope="row">Related Concepts:</th>
+              <td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-SVG2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-DOM4">DOM4</a></cite>] active</td>
+            </tr>
+            <tr>
+              <th class="property-applicability-head" scope="row">Used in Roles:</th>
+              <td class="property-applicability">All elements of the base markup</td>
+            </tr>
+            <tr>
+              <th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+              <td class="property-descendants">Placeholder</td>
+            </tr>
+            <tr>
+              <th class="property-value-head" scope="row">Value:</th>
+              <td class="property-value"><a href="#valuetype_string">string</a></td>
+            </tr>
+          </tbody>
+          </table>
+      </section>
+    </section>
+
+  
+
+  <section class="property" id="messagecontext-explanation" typeof="bibo:Chapter" resource="#messagecontext-explanation" property="bibo:hasPart">
+  <h4 id="x3-2-3-messagecontext" resource="#x3-2-3-messagecontext"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2.3 </span>messagecontext<span class="permalink" typeof="bookmark"><a href="#messagecontext-explanation" aria-label="Permalink for 3.2.3 messagecontext" title="Permalink for 3.2.3 messagecontext" property="url"><span property="title" content="3.2.3 messagecontext">§</span></a></span></span></h4>
+  <section id="description-3" typeof="bibo:Chapter" resource="#description-3" property="bibo:hasPart">
+    <h5 id="x3-2-3-1-description" resource="#x3-2-3-1-description"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2.3.1 </span>Description<span class="permalink" typeof="bookmark"><a href="#description-3" aria-label="Permalink for 3.2.3.1 Description" title="Permalink for 3.2.3.1 Description" property="url"><span property="title" content="3.2.3.1 Description">§</span></a></span></span></h5>
+    <div class="property-description">
+          <p>@@1-line description</p>
+          <p><strong>Supported values: </strong><strong> </strong>a string value that identifies the location that makes this message relevant. Typical values are "home" and "work". If multiple locations are relevant they can be separated by a coma.</p>
+          <p>Note that there is no default value.</p>
+    </div>
+  </section>
+  <section id="messagecontext-example" typeof="bibo:Chapter" resource="#messagecontext-example" property="bibo:hasPart">
+    <h5 id="x3-2-3-2-example" resource="#x3-2-3-2-example"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2.3.2 </span>Example<span class="permalink" typeof="bookmark"><a href="#messagecontext-example" aria-label="Permalink for 3.2.3.2 Example" title="Permalink for 3.2.3.2 Example" property="url"><span property="title" content="3.2.3.2 Example">§</span></a></span></span></h5>
+    <div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: </span></div>
+    <pre aria-busy="false" aria-live="polite" class="hljs javascript">&lt;div role=<span class="hljs-string">"alert"</span>
+   coga-messageimportance=<span class="hljs-string">"low"</span>
+   coga-messagefrom=<span class="hljs-string">"lisa seeman, lseeman"</span>
+   coga-messagecontext=<span class="hljs-string">"work"</span>&gt;
+  I posted a <span class="hljs-keyword">new</span> version on GitHub <span class="hljs-keyword">for</span> you to review
+&lt;<span class="hljs-regexp">/div&gt;</span></pre>
+      </div>
+  </section>
+  <section id="characteristics-1" typeof="bibo:Chapter" resource="#characteristics-1" property="bibo:hasPart">
+    <h5 id="x3-2-3-3-characteristics" resource="#x3-2-3-3-characteristics"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2.3.3 </span>Characteristics<span class="permalink" typeof="bookmark"><a href="#characteristics-1" aria-label="Permalink for 3.2.3.3 Characteristics" title="Permalink for 3.2.3.3 Characteristics" property="url"><span property="title" content="3.2.3.3 Characteristics">§</span></a></span></span></h5>
+      <table class="property-features">
+            <caption>Characteristics:</caption>
+            <thead>
+            <tr>
+              <th scope="col">Characteristic</th>
+              <th scope="col">Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="property-related-head" scope="row">Related Concepts:</th>
+              <td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-SVG2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-DOM4">DOM4</a></cite>] active</td>
+            </tr>
+            <tr>
+              <th class="property-applicability-head" scope="row">Used in Roles:</th>
+              <td class="property-applicability">All elements of the base markup</td>
+            </tr>
+            <tr>
+              <th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+              <td class="property-descendants">Placeholder</td>
+            </tr>
+            <tr>
+              <th class="property-value-head" scope="row">Value:</th>
+              <td class="property-value"><a href="#valuetype_string">string</a></td>
+            </tr>
+          </tbody>
+      </table>
+  </section>
+  </section>
+<section class="property" id="messagetime-explanation" typeof="bibo:Chapter" resource="#messagetime-explanation" property="bibo:hasPart">
+  <h4 id="x3-2-4-messagetime" resource="#x3-2-4-messagetime"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2.4 </span>messagetime<span class="permalink" typeof="bookmark"><a href="#messagetime-explanation" aria-label="Permalink for 3.2.4 messagetime" title="Permalink for 3.2.4 messagetime" property="url"><span property="title" content="3.2.4 messagetime">§</span></a></span></span></h4>
+  <section id="description-4" typeof="bibo:Chapter" resource="#description-4" property="bibo:hasPart">
+    <h5 id="x3-2-4-1-description" resource="#x3-2-4-1-description"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2.4.1 </span>Description<span class="permalink" typeof="bookmark"><a href="#description-4" aria-label="Permalink for 3.2.4.1 Description" title="Permalink for 3.2.4.1 Description" property="url"><span property="title" content="3.2.4.1 Description">§</span></a></span></span></h5>
+    <div class="property-description">
+          <p>@@1-line description</p>
+          <p><strong>Supported values: </strong><strong> </strong>24 hour date time format. DD.MM.YEAR.HOUR.MM - DD.MM.YEAR.HOUR.MM where the second date is an optional exclusive expiry date.</p>
+          <p>Note that there is no default value.</p>
+    </div>
+  </section>
+
+  <section id="messagetime-example" typeof="bibo:Chapter" resource="#messagetime-example" property="bibo:hasPart">
+  <h5 id="x3-2-4-2-messagetime" resource="#x3-2-4-2-messagetime"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2.4.2 </span>messagetime<span class="permalink" typeof="bookmark"><a href="#messagetime-example" aria-label="Permalink for 3.2.4.2 messagetime" title="Permalink for 3.2.4.2 messagetime" property="url"><span property="title" content="3.2.4.2 messagetime">§</span></a></span></span></h5>
+  <p>@@1-line description</p>
+    <div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: </span></div>
+    <pre aria-busy="false" aria-live="polite" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"alert"</span>
+    <span class="hljs-attr">coga-messageimportance</span>=<span class="hljs-string">"medium"</span>
+    <span class="hljs-attr">coga-messagefrom</span>=<span class="hljs-string">"my calender"</span>
+    <span class="hljs-attr">coga-messagecontext</span>=<span class="hljs-string">"work"</span>
+    <span class="hljs-attr">coga-messagetime</span>=<span class="hljs-string">"10.02.2017.00.00-16.02.2017.00.00"</span>&gt;</span>
+  Renew your driving license this week
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
+          <pre aria-busy="false" aria-live="polite" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"alert"</span>
+    <span class="hljs-attr">coga-messageimportance</span>=<span class="hljs-string">"critical"</span>
+    <span class="hljs-attr">coga-messagefrom</span>=<span class="hljs-string">"my calender"</span>
+    <span class="hljs-attr">coga-messagecontext</span>=<span class="hljs-string">"work"</span>
+    <span class="hljs-attr">coga-messagetime</span>=<span class="hljs-string">"16.02.2017.00.00"</span>&gt;</span>
+  Renew your driving license ASAP
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
+      </div>
+  </section>
+  <section id="characteristics-2" typeof="bibo:Chapter" resource="#characteristics-2" property="bibo:hasPart">
+    <h5 id="x3-2-4-3-characteristics" resource="#x3-2-4-3-characteristics"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2.4.3 </span>Characteristics<span class="permalink" typeof="bookmark"><a href="#characteristics-2" aria-label="Permalink for 3.2.4.3 Characteristics" title="Permalink for 3.2.4.3 Characteristics" property="url"><span property="title" content="3.2.4.3 Characteristics">§</span></a></span></span></h5>
+    <table class="property-features">
+          <caption>Characteristics:</caption>
+          <thead>
+            <tr>
+              <th scope="col">Characteristic</th>
+              <th scope="col">Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="property-related-head" scope="row">Related Concepts:</th>
+              <td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-SVG2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-DOM4">DOM4</a></cite>] active</td>
+            </tr>
+            <tr>
+              <th class="property-applicability-head" scope="row">Used in Roles:</th>
+              <td class="property-applicability">All elements of the base markup</td>
+            </tr>
+            <tr>
+              <th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+              <td class="property-descendants">Placeholder</td>
+            </tr>
+            <tr>
+              <th class="property-value-head" scope="row">Value:</th>
+              <td class="property-value"><a href="#valuetype_string">string</a></td>
+            </tr>
+            </tbody>
+          </table>
+  </section>
+</section>
+
+
+
+
+</section>	
+		</section>
+		<section class="appendix informative section" id="acknowledgements" typeof="bibo:Chapter" resource="#acknowledgements" property="bibo:hasPart">
+	<!--OddPage--><h2 id="a-acknowledgments" resource="#a-acknowledgments"><span property="xhv:role" resource="xhv:heading"><span class="secno">A. </span>Acknowledgments<span class="permalink" typeof="bookmark"><a href="#acknowledgements" aria-label="Permalink for A. Acknowledgments" title="Permalink for A. Acknowledgments" property="url"><span property="title" content="A. Acknowledgments">§</span></a></span></span></h2><p><em>This section is non-normative.</em></p>
+	<p>The following people contributed to the development of this document.</p>
+	<section class="section" id="ack_group" typeof="bibo:Chapter" resource="#ack_group" property="bibo:hasPart">
+		<h3 id="a-1-participants-active-in-the-aria-wg-at-the-time-of-publication" resource="#a-1-participants-active-in-the-aria-wg-at-the-time-of-publication"><span property="xhv:role" resource="xhv:heading"><span class="secno">A.1 </span>Participants active in the ARIA WG at the time of publication<span class="permalink" typeof="bookmark"><a href="#ack_group" aria-label="Permalink for A.1 Participants active in the ARIA WG at the time of publication" title="Permalink for A.1 Participants active in the ARIA WG at the time of publication" property="url"><span property="title" content="A.1 Participants active in the ARIA WG at the time of publication">§</span></a></span></span></h3>
+		<ul>
+			<li>Ann Abbott (IBM Corporation)</li>
+			<li>Michiel Bijl (The Paciello Group)</li>
+			<li>Christy Blew (University of Illinois at Urbana-Champaign)</li>
+			<li>David Bolter (Mozilla Foundation) </li>
+			<li>Michael Cooper (<abbr title="World Wide Web Consortium">W3C</abbr>/<abbr title="Massachusetts Institute of Technology">MIT</abbr>)</li>
+			<li>James Craig (Apple Inc.) </li>
+			<li>Joanmarie Diggs (Igalia)</li>
+			<li>Fred Esch (IBM Corporation)</li>
+			<li>Steve Faulkner (The Paciello Group) </li>
+			<li>John Foliot (Invited Expert)</li>
+			<li>Bryan Garaventa (SSB BART Group)</li>
+			<li>Matt Garrish (DAISY Consortium)</li>
+			<li>Billy Gregory (The Paciello Group)</li>
+			<li>Karl Groves (The Paciello Group)</li>
+			<li>Jon Gunderson (University of Illinois at Urbana-Champaign)</li>
+			<li>Markus Gylling (DAISY Consortium)</li>
+			<li>Markku Hakkinen (Educational Testing Service)</li>
+			<li>Katie Haritos-Shea (Knowbility)</li>
+			<li>Susann Keohane (IBM Corporation)</li>
+			<li>Matthew King (Facebook)</li>
+			<li>Jason Kiss (Department of Internal Affairs, New Zealand Government)</li>
+			<li>Jamie Knight (British Broadcasting Corporation)</li>
+			<li>JaEun Jemma Ku (University of Illinois at Urbana-Champaign)</li>
+			<li>Shane McCarron (Invited Expert, Aptest)</li>
+			<li>Charles McCathie Nevile (Yandex)</li>
+			<li>Mary Jo Mueller (IBM Corporation)</li>
+			<li>James Nurthen (Oracle Corporation) </li>
+			<li>Ian Pouncey (The Paciello Group, LLC)</li>
+			<li>Mark Sadecki (Invited Expert)</li>
+			<li>Janina Sajka (Invited Expert, The Linux Foundation)</li>
+			<li>Joseph Scheuhammer (Invited Expert, Inclusive Design Research Centre, OCAD University) </li>
+			<li>Stefan Schnabel (SAP AG) </li>
+			<li>Richard Schwerdtfeger (IBM Corporation)</li>
+			<li>Lisa Seeman (Invited Expert) </li>
+			<li>Tzviya Siegman (Wiley)</li>
+			<li>Cynthia Shelly (Microsoft Corporation) </li>
+			<li>Alexander Surkov (Mozilla Foundation)</li>
+			<li>Léonie Watson (The Paciello Group)</li>
+			<li>Jason White (Educational Testing Service)</li>
+			<li>Gottfried Zimmermann (Invited Expert, Access Technologies Group)</li>
+		</ul>
+  </section>
+	<section class="section" id="ack_others" typeof="bibo:Chapter" resource="#ack_others" property="bibo:hasPart">
+		<h3 id="a-2-other-aria-contributors-commenters-and-previously-active-participants" resource="#a-2-other-aria-contributors-commenters-and-previously-active-participants"><span property="xhv:role" resource="xhv:heading"><span class="secno">A.2 </span>Other ARIA contributors, commenters, and previously active participants<span class="permalink" typeof="bookmark"><a href="#ack_others" aria-label="Permalink for A.2 Other ARIA contributors, commenters, and previously active participants" title="Permalink for A.2 Other ARIA contributors, commenters, and previously active participants" property="url"><span property="title" content="A.2 Other ARIA contributors, commenters, and previously active participants">§</span></a></span></span></h3>
+		<ul>
+			<li>Shadi Abou-Zahra (<abbr title="World Wide Web Consortium">W3C</abbr>)</li>
+			<li>Jim Allan (TSB)</li>
+			<li>Jonny Axelsson (Opera Software)</li>
+			<li>David Baron (Mozilla Foundation)</li>
+			<li>Art Barstow (Nokia Corporation)</li>
+			<li>Simon Bates</li>
+			<li>Chris Blouch (AOL)</li>
+			<li>Judy Brewer (<abbr title="World Wide Web Consortium">W3C</abbr>/<abbr title="Massachusetts Institute of Technology">MIT</abbr>)</li>
+			<li>Mark Birbeck (Sidewinder Labs)</li>
+			<li>Sally Cain (Royal National Institute of Blind People (RNIB))</li>
+			<li>Gerardo Capiel (Benetech)</li>
+			<li>Ben Caldwell (Trace)</li>
+			<li>Sofia Celic-Li</li>
+			<li>Jaesik Chang (Samsung Electronics Co., Ltd.)</li>
+			<li>Alex Qiang Chen (University of Manchester)</li>
+			<li>Charles Chen (Google, Inc.)</li>
+			<li>Christian Cohrs</li>
+			<li>Deborah Dahl</li>
+			<li>Erik Dahlström (Opera Software)</li>
+			<li>Dimitar Denev (Frauenhofer Gesellschaft)</li>
+			<li>Micah Dubinko (Invited Expert)</li>
+			<li>Mandana Eibegger</li>
+			<li>Beth Epperson (Websense)</li>
+			<li>Donald Evans (AOL)</li>
+			<li>Chris Fleizach (Apple Inc.)</li>
+			<li>Kelly Ford (Microsoft Corporation)</li>
+			<li>Geoff Freed (Invited Expert, NCAM)</li>
+			<li>Christopher Gallelo (Microsoft Corporation)</li>
+			<li>Birkir Gunnarsson (Deque Systems, Inc.)</li>
+			<li>Kentarou Fukuda (IBM Corporation)</li>
+			<li>Bryan Garaventa</li>
+			<li>Guido Geloso</li>
+			<li>Ali Ghassemi</li>
+			<li>Becky Gibson (IBM)</li>
+			<li>Alfred S. Gilman</li>
+			<li>Andres Gonzalez (Adobe Systems Inc.)</li>
+			<li>Scott González (JQuery Foundation)</li>
+			<li>James Graham</li>
+			<li>Georgios Grigoriadis (SAP AG)</li>
+			<li>Jeff Grimes (Oracle)</li>
+			<li>Loretta Guarino Reid (Google, Inc.)</li>
+			<li>Barbara Hartel</li>
+			<li>James Hawkins (Google, Inc.)</li>
+			<li>Benjamin Hawkes-Lewis</li>
+			<li>Sean Hayes (Microsoft Corporation)</li>
+			<li>Mona Heath (University of Illinois at Urbana-Champaign)</li>
+			<li>Jan Heck</li>
+			<li>Shawn Henry</li>
+			<li>Tina Homboe</li>
+			<li>John Hrvatin (Microsoft Corporation)</li>
+			<li>Takahiro Inada</li>
+			<li>Masayasu Ishikawa (<abbr title="World Wide Web Consortium">W3C</abbr>)</li>
+			<li>Jim Jewitt</li>
+			<li>Kenny Johar (Microsoft Corporation)</li>
+			<li>Shilpi Kapoor (BarrierBreak Technologies)</li>
+			<li>Masahiko Kaneko (Microsoft Corporation)</li>
+			<li>Marjolein Katsma</li>
+			<li>George Kerscher (International Digital Publishing Forum)</li>
+			<li>Jason Kiss (New Zealand Government)</li>
+			<li>Todd Kloots</li>
+			<li>Johannes Koch</li>
+			<li>Sam Kuper</li>
+			<li>Earl Johnson (Sun)</li>
+			<li>Jael Kurz</li>
+			<li>Rajesh Lal (Nokia Corporation)</li>
+			<li>Diego La Monica (International Webmasters Association / HTML Writers Guild (IWA-HWG))</li>
+			<li>Aaron Leventhal (IBM Corporation)</li>
+			<li>Gez Lemon (International Webmasters Association / HTML Writers Guild (IWA-HWG))</li>
+			<li>Alex Li (SAP)</li>
+			<li>Chris Lilley</li>
+			<li>Thomas Logan (HiSoftware Inc.)</li>
+			<li>William Loughborough (Invited Expert)</li>
+			<li>Linda Mao (Microsoft)</li>
+			<li>David MacDonald (Invited Expert, CanAdapt Solutions Inc.)</li>
+			<li>Carolyn MacLeod</li>
+			<li>Anders Markussen (Opera Software)</li>
+			<li>Krzysztof Maczyński </li>
+			<li>Matthew May (Adobe Systems Inc.)</li>
+			<li>Dominic Mazzoni (Google, Inc.)</li>
+			<li>Alexandre Morgaut (4D)</li>
+			<li>Ann Navarro (Invited Expert)</li>
+			<li>Joshue O Connor (Invited Expert, CFIT)</li>
+			<li>Artur Ortega (Microsoft Corporation)</li>
+			<li>Sailesh Panchang (Deque)</li>
+			<li>Lisa Pappas (Society for Technical Communication (STC))</li>
+			<li>Marta Pawlowlska (Samsung Electronics Co., Ltd.)</li>
+			<li>Dave Pawson (RNIB)</li>
+			<li>Steven Pemberton (CWI Amsterdam)</li>
+			<li>Simon Pieters (Opera Software)</li>
+			<li>Jean-Bernard Piot (4D)</li>
+			<li>David Poehlman, Simon Pieters (Opera Software)</li>
+			<li>Sarah Pulis (Media Access Australia)</li>
+			<li>T.V. Raman (Google, Inc.)</li>
+			<li>Jan Richards</li>
+			<li>Gregory Rosmaita (Invited Expert)</li>
+			<li>Tony Ross (Microsoft Corporation)</li>
+			<li>Alex Russell (Dojo Foundation) (</li>
+			<li>Mark Sadecki (Invited Expert)</li>
+			<li>Mario Sánchez Prada (Samsung Electronics Co., Ltd. and Gnome Foundation)</li>
+			<li>Martin Schaus (SAP AG)</li>
+			<li>Doug Schepers (<abbr title="World Wide Web Consortium">W3C</abbr>)</li>
+			<li>Matthias Schmitt </li>
+			<li>Marc Silbey (Microsoft Corporation)</li>
+			<li>Leif Halvard Sili</li>
+			<li>Henri Sivonen (Mozilla)</li>
+			<li>Michael Smith (<abbr title="World Wide Web Consortium">W3C</abbr>)</li>
+			<li>Andi Snow-Weaver (IBM Corporation)</li>
+			<li>Ville Skyttä </li>
+			<li>Henny Swan (BBC)</li>
+			<li>Neil Soiffer (Design Science)</li>
+			<li>Vitaly Sourikov</li>
+			<li>Mike Squillace (IBM)</li>
+			<li>Maciej Stachowiak (Apple Inc.)</li>
+			<li>Christophe Strobbe</li>
+			<li>Suzanne Taylor (Pearson plc)</li>
+			<li>Terrill Thompson</li>
+			<li>David Todd</li>
+			<li>Gregg Vanderheiden (Invited Expert, Trace)</li>
+			<li>Anne van Kesteren</li>
+			<li>Wen He (Tencent)</li>
+			<li>Wu Wei (<abbr title="World Wide Web Consortium">W3C</abbr> / RITT)</li>
+			<li>Ryan Williams (Oracle)</li>
+			<li>Tom Wlodkowski</li>
+			<li>Sam White (Apple Inc.)</li>
+			<li>Marco Zehe (Mozilla Foundation)</li>
+		</ul>
+	</section>
+	<section class="section" id="ack_funders" typeof="bibo:Chapter" resource="#ack_funders" property="bibo:hasPart">
+		<h3 id="a-3-enabling-funders" resource="#a-3-enabling-funders"><span property="xhv:role" resource="xhv:heading"><span class="secno">A.3 </span>Enabling funders<span class="permalink" typeof="bookmark"><a href="#ack_funders" aria-label="Permalink for A.3 Enabling funders" title="Permalink for A.3 Enabling funders" property="url"><span property="title" content="A.3 Enabling funders">§</span></a></span></span></h3>
+		<p>This publication has been funded in part with U.S. Federal funds from the Department of Education, National Institute on Disability, Independent Living, and Rehabilitation Research (NIDILRR), initially under contract number ED-OSE-10-C-0067 and currently under contract number HHSP23301500054C. The content of this publication does not necessarily reflect the views or policies of the U.S. Department of Education, nor does mention of trade names, commercial products, or organizations imply endorsement by the U.S. Government.</p>
+	</section>
+</section>
+
+
+
+	
+
+<section id="references" class="appendix" typeof="bibo:Chapter" resource="#references" property="bibo:hasPart"><!--OddPage--><h2 id="b-references" resource="#b-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">B. </span>References<span class="permalink" typeof="bookmark"><a href="#references" aria-label="Permalink for B. References" title="Permalink for B. References" property="url"><span property="title" content="B. References">§</span></a></span></span></h2><section id="informative-references" typeof="bibo:Chapter" resource="#informative-references" property="bibo:hasPart"><h3 id="b-1-informative-references" resource="#b-1-informative-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">B.1 </span>Informative references<span class="permalink" typeof="bookmark"><a href="#informative-references" aria-label="Permalink for B.1 Informative references" title="Permalink for B.1 Informative references" property="url"><span property="title" content="B.1 Informative references">§</span></a></span></span></h3><dl class="bibliography" resource=""><dt id="bib-DOM4">[DOM4]</dt><dd><a href="https://dom.spec.whatwg.org/" property="dc:references"><cite>DOM Standard</cite></a>. Anne van Kesteren. WHATWG. Living Standard. URL: <a href="https://dom.spec.whatwg.org/" property="dc:references">https://dom.spec.whatwg.org/</a>
+</dd><dt id="bib-SVG2">[SVG2]</dt><dd><a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/" property="dc:references"><cite>Scalable Vector Graphics (SVG) 2</cite></a>. Nikos Andronikos; Rossen Atanassov; Tavmjong Bah; Amelia Bellamy-Royds; Brian Birtles; Cyril Concolato; Erik Dahlström; Chris Lilley; Cameron McCormack; Doug Schepers; Dirk Schulze; Richard Schwerdtfeger; Satoru Takagi; Jonathan Watt et al. W3C. W3C Working Draft. URL: <a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/" property="dc:references">http://www.w3.org/TR/2015/WD-SVG2-20150915/</a>
+</dd></dl></section></section><p role="navigation" id="back-to-top"><a href="#toc"><abbr title="Back to Top">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
