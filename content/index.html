@@ -726,17 +726,17 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     "CR": "https://www.w3.org/TR/wai-aria-1.1/",
     "REC": "https://www.w3.org/TR/wai-aria-1.1/"
   },
-  "publishDate": "2017-12-11",
-  "publishISODate": "2017-12-11T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 11 December 2017"
+  "publishDate": "2017-12-12",
+  "publishISODate": "2017-12-12T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 12 December 2017"
 }</script></head>
 	<body aria-busy="false" class="h-entry toc-inline"><div class="head">
     <p>
       <a class="logo" href="https://www.w3.org/"><img width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt="W3C"></a>
     </p>
-  <p><!--_hyper: 449832641;--></p>
+  <p><!--_hyper: 2113443212;--></p>
   <h1 class="title p-name" id="title" property="dcterms:title">Personalization Content 1.0</h1>
-  <h2 id="w3c-editor-s-draft-11-december-2017"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time property="dcterms:issued" class="dt-published" datetime="2017-12-11">11 December 2017</time><span class="permalink" typeof="bookmark"><a href="#undefined" aria-label="Permalink for W3C Editor's Draft 11 December 2017" title="Permalink for W3C Editor's Draft 11 December 2017" property="url"><span property="title" content="W3C Editor's Draft 11 December 2017">§</span></a></span></h2>
+  <h2 id="w3c-editor-s-draft-12-december-2017"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time property="dcterms:issued" class="dt-published" datetime="2017-12-12">12 December 2017</time><span class="permalink" typeof="bookmark"><a href="#undefined" aria-label="Permalink for W3C Editor's Draft 12 December 2017" title="Permalink for W3C Editor's Draft 12 December 2017" property="url"><span property="title" content="W3C Editor's Draft 12 December 2017">§</span></a></span></h2>
   <dl>
       <dt>This version:</dt>
       <dd><a class="u-url" href="https://w3c.github.io/w3c/personalization-semantics/content/index.html">https://w3c.github.io/w3c/personalization-semantics/content/index.html</a></dd>
@@ -907,7 +907,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 						</tr>
 					</tbody>
 		</table>
-    	<p>The following could be supported values of <code>aui-action</code> for buttons:</p>
+    	<p>The following could be supported values of <code>aui-action</code> for buttons. Note that The following items represent an option or control that allows you to perform the action. The do not represent page regions.</p>
     </section>
 
     <section id="values" typeof="bibo:Chapter" resource="#values" property="bibo:hasPart">
@@ -975,8 +975,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">move</th>
-							<td class="value-description">move the selected item <p class<="" td="">
-						</p></td></tr>
+							<td class="value-description">move the selected item. <div class="ednote"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="5"><span>Editor's note</span></div><em class=""> Note that this item  may change to allow for the direction to be added.</em></div>  </td>
+						</tr>
 						<tr>
 							<th class="value-name" scope="row">save</th>
 							<td class="value-description">save the current content. (Implied simplification = "critical".)</td>
@@ -991,7 +991,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">more</th>
-							<td class="value-description">show more information <div class="ednote"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="5"><span>Editor's note</span></div><p class=""> We may need more work to identify the dirction (up left degree etc) but there may be a way to do that already </p></div></td>
+							<td class="value-description">show more information </td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">print</th>
@@ -1107,11 +1107,15 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">cut</th>
-							<td class="value-description">removes the selected control, item or text and places it on the Clipboard</td>
+							<td class="value-description">removes the selected control, item or text and places it on the clipboard</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">copy</th>
-							<td class="value-description">copies the selected control, item or text onto the Clipboard</td>
+							<td class="value-description">copies the selected control, item or text onto the clipboard</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">paste</th>
+							<td class="value-description">paste the content from the clipboard to the current position</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">color</th>
@@ -1273,7 +1277,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">social</th>
-							<td class="value-description">content provider on social media</td>
+							<td class="value-description">content provider on social media. 
+<div class="note"><div role="heading" class="note-title marker" id="h-note" aria-level="5"><span>Note</span></div><em class=""> Note that this item may be augmented  to allow for the name of the group to be added via the accessible name. This mechanism may change.</em></div></td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">post</th>
@@ -1572,7 +1577,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 							 <div class="ednote"><div role="heading" class="ednote-title marker" id="h-ednote-0" aria-level="5"><span>Editor's note</span></div><p class="">This was formerly aui-importance. However different people may feel that sections that would be hidden in a simplified version are still very important, such as marketing content or legal terms.)</p></div>
 
-							<div class="note"><div role="heading" class="note-title marker" id="h-note" aria-level="5"><span>Note</span></div><div class="">
+							<div class="note"><div role="heading" class="note-title marker" id="h-note-0" aria-level="5"><span>Note</span></div><div class="">
 								<p>These semantics aid simplification. But what content is most useful to a user varies from user to user. For example, men may be more interested in mens clothing, and may not be interested in the more frequently use womens clothing option. For that reason we may add context for elements that will help the personalization agent select the most useful content for a given user (see the <a href="#context">context</a> attribute). This is also necessary for reminders (see bellow).</p>
 								<p>It is worth mentioning that a lot of this information is known for personalization of advertisements and content optimization. </p>
 							</div></div>
@@ -1787,7 +1792,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 					<p><code>symbol</code> identifies the concept for symbols.</p>
 					<p><code>symbol</code> accepts the values of a URI or shortened URI. Note that namespaces are the only additional parsing that maybe required to identify the concept.</p>
 					<p>A personalization agent can then load alternative symbols that the user is familiar with and they do not have to learn new symbols for different applications. </p>
-					<div class="note"><div role="heading" class="note-title marker" id="h-note-0" aria-level="5"><span>Note</span></div><p class="">To help this be interoperable without an RDF parser we  recommend referencing the most commonly used ontologies and the highest level concept. (For example, reference "girl" and not "young girl" .) </p></div>
+					<div class="note"><div role="heading" class="note-title marker" id="h-note-1" aria-level="5"><span>Note</span></div><p class="">To help this be interoperable without an RDF parser we  recommend referencing the most commonly used ontologies and the highest level concept. (For example, reference "girl" and not "young girl" .) </p></div>
 					<div class="ednote"><div role="heading" class="ednote-title marker" id="h-ednote-1" aria-level="5"><span>Editor's note</span></div><p class="">We should have a note of common suggested terms and references. (Maybe with links to http://www.arasaac.org/) </p></div>
 				</div>
 	</section>
