@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml" typeof="bibo:Document " prefix="bibo: http://purl.org/ontology/bibo/ w3p: http://www.w3.org/2001/02pd/rec54#"><head><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta charset="utf-8"><meta name="generator" content="ReSpec 18.3.0"><meta lang="" property="dc:language" content="en"><style>/* --- ISSUES/NOTES --- */
+<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml" typeof="bibo:Document " prefix="bibo: http://purl.org/ontology/bibo/ w3p: http://www.w3.org/2001/02pd/rec54#"><head><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta charset="utf-8"><meta name="generator" content="ReSpec 19.0.1"><meta lang="" property="dc:language" content="en"><style>/* --- ISSUES/NOTES --- */
 div.issue-title, div.note-title , div.ednote-title, div.warning-title {
     padding-right:  1em;
     min-width: 7.5em;
@@ -701,17 +701,17 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     "CR": "https://www.w3.org/TR/wai-aria-1.1/",
     "REC": "https://www.w3.org/TR/wai-aria-1.1/"
   },
-  "publishDate": "2017-12-14",
-  "publishISODate": "2017-12-14T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 14 December 2017"
+  "publishDate": "2017-12-21",
+  "publishISODate": "2017-12-21T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 21 December 2017"
 }</script></head>
 	<body aria-busy="false" class="h-entry toc-inline"><div class="head">
     <p>
       <a class="logo" href="https://www.w3.org/"><img width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt="W3C"></a>
     </p>
-  <p><!--_hyper: -998051272;--></p>
+  <p><!--_hyper: -123446411;--></p>
   <h1 class="title p-name" id="title" property="dcterms:title">Personalization Explainer 1.0</h1>
-  <h2 id="w3c-editor-s-draft-14-december-2017"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time property="dcterms:issued" class="dt-published" datetime="2017-12-14">14 December 2017</time><span class="permalink" typeof="bookmark"><a href="#undefined" aria-label="Permalink for W3C Editor's Draft 14 December 2017" title="Permalink for W3C Editor's Draft 14 December 2017" property="url"><span property="title" content="W3C Editor's Draft 14 December 2017">§</span></a></span></h2>
+  <h2 id="w3c-editor-s-draft-21-december-2017"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time property="dcterms:issued" class="dt-published" datetime="2017-12-21">21 December 2017</time><span class="permalink" typeof="bookmark"><a href="#undefined" aria-label="Permalink for W3C Editor's Draft 21 December 2017" title="Permalink for W3C Editor's Draft 21 December 2017" property="url"><span property="title" content="W3C Editor's Draft 21 December 2017">§</span></a></span></h2>
   <dl>
       <dt>This version:</dt>
       <dd><a class="u-url" href="https://w3c.github.io/w3c/personalization-semantics/explainer.html">https://w3c.github.io/w3c/personalization-semantics/explainer.html</a></dd>
@@ -793,7 +793,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           </p>
         
 
-</section><nav id="toc"><h2 class="introductory" id="table-of-contents" resource="#table-of-contents"><span property="xhv:role" resource="xhv:heading">Table of Contents<span class="permalink" typeof="bookmark"><a href="#undefined" aria-label="Permalink for Table of Contents" title="Permalink for Table of Contents" property="url"><span property="title" content="Table of Contents">§</span></a></span></span></h2><ol class="toc"><li class="tocline"><a href="#abstract" class="tocxref">Abstract</a></li><li class="tocline"><a href="#sotd" class="tocxref">Status of This Document</a></li><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a><ol class="toc"><li class="tocline"><a href="#why_accessibility" class="tocxref"><span class="secno">1.1 </span>Why We Need Personalization</a></li><li class="tocline"><a href="#intro_context" class="tocxref"><span class="secno">1.2 </span>Personalization Use Cases (general)</a></li><li class="tocline"><a href="#Stru_of_doc" class="tocxref"><span class="secno">1.3 </span>Structure of this document</a></li></ol></li><li class="tocline"><a href="#terms" class="tocxref"><span class="secno">2. </span>Important Terms</a></li><li class="tocline"><a href="#characteristics_semanticproperties" class="tocxref"><span class="secno">3. </span>Structure of Properties</a><ol class="toc"><li class="tocline"><a href="#propcharacteristic_relatedconcept" class="tocxref"><span class="secno">3.1 </span>Related Concepts</a></li><li class="tocline"><a href="#propcharacteristic_value" class="tocxref"><span class="secno">3.2 </span>Value</a></li></ol></li><li class="tocline"><a href="#content" class="tocxref"><span class="secno">4. </span>Adaptable content</a><ol class="toc"><li class="tocline"><a href="#content_use_cases" class="tocxref"><span class="secno">4.1 </span>Use Cases</a><ol class="toc"><li class="tocline"><a href="#simplification" class="tocxref"><span class="secno">4.1.1 </span>Simplification</a></li><li class="tocline"><a href="#adding-context" class="tocxref"><span class="secno">4.1.2 </span>Adding Context </a><ol class="toc"><li class="tocline"><a href="#general-context" class="tocxref"><span class="secno">4.1.2.1 </span>General context</a></li><li class="tocline"><a href="#interoperable-symbols" class="tocxref"><span class="secno">4.1.2.2 </span>Interoperable symbols</a></li></ol></li></ol></li><li class="tocline"><a href="#list_of_properties" class="tocxref"><span class="secno">4.2 </span>List of properties</a><ol class="toc"><li class="tocline"><a href="#action" class="tocxref"><span class="secno">4.2.1 </span>action</a></li><li class="tocline"><a href="#destination" class="tocxref"><span class="secno">4.2.2 </span>destination</a></li><li class="tocline"><a href="#field" class="tocxref"><span class="secno">4.2.3 </span>field</a></li><li class="tocline"><a href="#simplification-0" class="tocxref"><span class="secno">4.2.4 </span>simplification</a></li><li class="tocline"><a href="#distraction" class="tocxref"><span class="secno">4.2.5 </span>distraction</a></li><li class="tocline"><a href="#symbol" class="tocxref"><span class="secno">4.2.6 </span>symbol</a></li></ol></li></ol></li><li class="tocline"><a href="#help " class="tocxref"><span class="secno">5. </span>Help and support</a><ol class="toc"><li class="tocline"><a href="#help_use_cases" class="tocxref"><span class="secno">5.1 </span>Use Cases</a><ol class="toc"><li class="tocline"><a href="#number-free" class="tocxref"><span class="secno">5.1.1 </span>Number free</a></li><li class="tocline"><a href="#language-type-support" class="tocxref"><span class="secno">5.1.2 </span>Language type support</a></li><li class="tocline"><a href="#non-literal-text-and-images" class="tocxref"><span class="secno">5.1.3 </span>Non-literal text and images</a></li><li class="tocline"><a href="#more-help" class="tocxref"><span class="secno">5.1.4 </span>More Help</a></li><li class="tocline"><a href="#explain-and-feedback" class="tocxref"><span class="secno">5.1.5 </span>Explain and feedback</a></li><li class="tocline"><a href="#potential-features" class="tocxref"><span class="secno">5.1.6 </span>Potential Features</a></li></ol></li><li class="tocline"><a href="#list_of_properties" class="tocxref"><span class="secno">5.2 </span>List of properties</a><ol class="toc"><li class="tocline"><a href="#literal" class="tocxref"><span class="secno">5.2.1 </span>literal</a></li><li class="tocline"><a href="#numberfree" class="tocxref"><span class="secno">5.2.2 </span>numberfree</a></li><li class="tocline"><a href="#easylang" class="tocxref"><span class="secno">5.2.3 </span>easylang</a></li><li class="tocline"><a href="#alternative" class="tocxref"><span class="secno">5.2.4 </span>alternative</a></li><li class="tocline"><a href="#explain" class="tocxref"><span class="secno">5.2.5 </span>explain</a></li><li class="tocline"><a href="#feedback" class="tocxref"><span class="secno">5.2.6 </span>feedback</a></li><li class="tocline"><a href="#moreinfo" class="tocxref"><span class="secno">5.2.7 </span>moreinfo</a></li><li class="tocline"><a href="#extrahelp" class="tocxref"><span class="secno">5.2.8 </span>extrahelp</a></li><li class="tocline"><a href="#helptype" class="tocxref"><span class="secno">5.2.9 </span>helptype</a></li></ol></li></ol></li><li class="tocline"><a href="#tools " class="tocxref"><span class="secno">6. </span>Tools</a><ol class="toc"><li class="tocline"><a href="#use_cases" class="tocxref"><span class="secno">6.1 </span>Use Cases</a><ol class="toc"><li class="tocline"><a href="#logs" class="tocxref"><span class="secno">6.1.1 </span>Logs</a><ol class="toc"><li class="tocline"><a href="#log-usage-examples" class="tocxref"><span class="secno">6.1.1.1 </span>Log usage examples</a></li><li class="tocline"><a href="#alternative-syntax-for-log" class="tocxref"><span class="secno">6.1.1.2 </span>Alternative syntax for log</a></li></ol></li><li class="tocline"><a href="#reminders-and-messages" class="tocxref"><span class="secno">6.1.2 </span>Reminders and messages</a></li><li class="tocline"><a href="#general-tools" class="tocxref"><span class="secno">6.1.3 </span>general tools</a></li></ol></li><li class="tocline"><a href="#list_of_properties" class="tocxref"><span class="secno">6.2 </span>List of properties</a><ol class="toc"><li class="tocline"><a href="#all-the-log-properties" class="tocxref"><span class="secno">6.2.1 </span>All the log properties</a><ol class="toc"><li class="tocline"><a href="#log-usage-examples-0" class="tocxref"><span class="secno">6.2.1.1 </span>Log usage examples</a></li><li class="tocline"><a href="#alternative-syntax-for-log-0" class="tocxref"><span class="secno">6.2.1.2 </span>Alternative syntax for log</a></li></ol></li><li class="tocline"><a href="#all-the-message-properties" class="tocxref"><span class="secno">6.2.2 </span>All the message properties</a><ol class="toc"><li class="tocline"><a href="#messageimportance" class="tocxref"><span class="secno">6.2.2.1 </span>messageimportance</a></li><li class="tocline"><a href="#messagefrom" class="tocxref"><span class="secno">6.2.2.2 </span>messagefrom</a></li><li class="tocline"><a href="#messagecontext" class="tocxref"><span class="secno">6.2.2.3 </span>messagecontext</a></li><li class="tocline"><a href="#messagetime" class="tocxref"><span class="secno">6.2.2.4 </span>messagetime</a></li></ol></li></ol></li></ol></li><li class="tocline"><a href="#vocabulary-implementations" class="tocxref"><span class="secno">A. </span>Vocabulary Implementations</a><ol class="toc"><li class="tocline"><a href="#mapping-values-to-different-syntax" class="tocxref"><span class="secno">A.1 </span>mapping values to different syntax </a></li><li class="tocline"><a href="#wai-aria" class="tocxref"><span class="secno">A.2 </span><abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr></a><ol class="toc"><li class="tocline"><a href="#additional-wai-aria-roles" class="tocxref"><span class="secno">A.2.1 </span>Additional <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> roles</a></li></ol></li><li class="tocline"><a href="#html-microdata" class="tocxref"><span class="secno">A.3 </span><abbr title="Hypertext Markup Language">HTML</abbr> Microdata</a></li><li class="tocline"><a href="#rdfa" class="tocxref"><span class="secno">A.4 </span>RDFa</a></li><li class="tocline"><a href="#autocomplete" class="tocxref"><span class="secno">A.5 </span>autocomplete</a></li></ol></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a href="#ack_group" class="tocxref"><span class="secno">B.1 </span>Participants active in the ARIA WG at the time of publication</a></li><li class="tocline"><a href="#ack_others" class="tocxref"><span class="secno">B.2 </span>Other ARIA contributors, commenters, and previously active participants</a></li><li class="tocline"><a href="#ack_funders" class="tocxref"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">C.1 </span>Informative references</a></li></ol></li></ol></nav>
+</section><nav id="toc"><h2 class="introductory" id="table-of-contents" resource="#table-of-contents"><span property="xhv:role" resource="xhv:heading">Table of Contents<span class="permalink" typeof="bookmark"><a href="#undefined" aria-label="Permalink for Table of Contents" title="Permalink for Table of Contents" property="url"><span property="title" content="Table of Contents">§</span></a></span></span></h2><ol class="toc"><li class="tocline"><a href="#abstract" class="tocxref">Abstract</a></li><li class="tocline"><a href="#sotd" class="tocxref">Status of This Document</a></li><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a><ol class="toc"><li class="tocline"><a href="#why_accessibility" class="tocxref"><span class="secno">1.1 </span>Why We Need Personalization</a></li><li class="tocline"><a href="#intro_context" class="tocxref"><span class="secno">1.2 </span>Personalization Use Cases (general)</a></li></ol></li><li class="tocline"><a href="#terms" class="tocxref"><span class="secno">2. </span>Important Terms</a></li><li class="tocline"><a href="#characteristics_semanticproperties" class="tocxref"><span class="secno">3. </span>Structure of Properties</a><ol class="toc"><li class="tocline"><a href="#propcharacteristic_relatedconcept" class="tocxref"><span class="secno">3.1 </span>Related Concepts</a></li><li class="tocline"><a href="#propcharacteristic_value" class="tocxref"><span class="secno">3.2 </span>Value</a></li></ol></li><li class="tocline"><a href="#Stru_of_doc" class="tocxref"><span class="secno">4. </span>Structure of this document</a></li><li class="tocline"><a href="#vocabulary-implementations" class="tocxref"><span class="secno">A. </span>Vocabulary Implementations</a><ol class="toc"><li class="tocline"><a href="#mapping-values-to-different-syntax" class="tocxref"><span class="secno">A.1 </span>mapping values to different syntax </a></li><li class="tocline"><a href="#wai-aria" class="tocxref"><span class="secno">A.2 </span><abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr></a><ol class="toc"><li class="tocline"><a href="#additional-wai-aria-roles" class="tocxref"><span class="secno">A.2.1 </span>Additional <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> roles</a></li></ol></li><li class="tocline"><a href="#html-microdata" class="tocxref"><span class="secno">A.3 </span><abbr title="Hypertext Markup Language">HTML</abbr> Microdata</a></li><li class="tocline"><a href="#rdfa" class="tocxref"><span class="secno">A.4 </span>RDFa</a></li><li class="tocline"><a href="#autocomplete" class="tocxref"><span class="secno">A.5 </span>autocomplete</a></li></ol></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a href="#ack_group" class="tocxref"><span class="secno">B.1 </span>Participants active in the ARIA WG at the time of publication</a></li><li class="tocline"><a href="#ack_others" class="tocxref"><span class="secno">B.2 </span>Other ARIA contributors, commenters, and previously active participants</a></li><li class="tocline"><a href="#ack_funders" class="tocxref"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">C.1 </span>Informative references</a></li></ol></li></ol></nav>
 
 		<section class="informative" id="introduction" typeof="bibo:Chapter" resource="#introduction" property="bibo:hasPart">
 
@@ -844,17 +844,6 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 			<section class="section" id="intro_context" typeof="bibo:Chapter" resource="#intro_context" property="bibo:hasPart">
 				<h3 id="x1-2-personalization-use-cases-general" resource="#x1-2-personalization-use-cases-general"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.2 </span>Personalization Use Cases (general)<span class="permalink" typeof="bookmark"><a href="#intro_context" aria-label="Permalink for 1.2 Personalization Use Cases (general)" title="Permalink for 1.2 Personalization Use Cases (general)" property="url"><span property="title" content="1.2 Personalization Use Cases (general)">§</span></a></span></span></h3>
 				<p>TPersonalization Use Cases covers use cases that can be addressed by personalization, and references the vocabulary items that help meet the use cases.</p>
-			</section>
-
-			<section class="section" id="Stru_of_doc" typeof="bibo:Chapter" resource="#Stru_of_doc" property="bibo:hasPart">
-				<h3 id="x1-3-structure-of-this-document" resource="#x1-3-structure-of-this-document"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.3 </span>Structure of this document<span class="permalink" typeof="bookmark"><a href="#Stru_of_doc" aria-label="Permalink for 1.3 Structure of this document" title="Permalink for 1.3 Structure of this document" property="url"><span property="title" content="1.3 Structure of this document">§</span></a></span></span></h3>
-				<p>This specification include:</p>
-				<ul>
-					<li> Personalized Content;</li>
-					<li> Personalized Help and support;</li>
-					<li> Personalized Tools</li>
-				</ul>
-			<p><a href="content/index.html">Personalization Content</a>, <a href="help/index.html">Personalization Help and support</a> and <a href="tools/index.html">Personalization Tools</a> provide describes and examples for each Personalization properties.</p>
 			</section>
 		</section>
 
@@ -1105,194 +1094,20 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 			</section>
 		</section>
 
-
-
-
-
-		<section class="informative" id="content" typeof="bibo:Chapter" resource="#content" property="bibo:hasPart">
-			<!--OddPage--><h2 id="x4-adaptable-content" resource="#x4-adaptable-content"><span property="xhv:role" resource="xhv:heading"><span class="secno">4. </span>Adaptable content<span class="permalink" typeof="bookmark"><a href="#content" aria-label="Permalink for 4. Adaptable content" title="Permalink for 4. Adaptable content" property="url"><span property="title" content="4. Adaptable content">§</span></a></span></span></h2><p><em>This section is non-normative.</em></p>
-			<section id="content_use_cases" typeof="bibo:Chapter" resource="#content_use_cases" property="bibo:hasPart">
-				<h3 id="x4-1-use-cases" resource="#x4-1-use-cases"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.1 </span>Use Cases<span class="permalink" typeof="bookmark"><a href="#content_use_cases" aria-label="Permalink for 4.1 Use Cases" title="Permalink for 4.1 Use Cases" property="url"><span property="title" content="4.1 Use Cases">§</span></a></span></span></h3>
-				<section id="simplification" typeof="bibo:Chapter" resource="#simplification" property="bibo:hasPart">
-					<h4 id="x4-1-1-simplification" resource="#x4-1-1-simplification"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.1.1 </span>Simplification<span class="permalink" typeof="bookmark"><a href="#simplification" aria-label="Permalink for 4.1.1 Simplification" title="Permalink for 4.1.1 Simplification" property="url"><span property="title" content="4.1.1 Simplification">§</span></a></span></span></h4>
-					<p>Explanation: <a href="content/index.html#use_case_simplification">simplification</a></p>
-				</section>
-				<section id="adding-context" typeof="bibo:Chapter" resource="#adding-context" property="bibo:hasPart">
-					<h4 id="x4-1-2-adding-context" resource="#x4-1-2-adding-context"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.1.2 </span>Adding Context <span class="permalink" typeof="bookmark"><a href="#adding-context" aria-label="Permalink for 4.1.2 Adding Context " title="Permalink for 4.1.2 Adding Context " property="url"><span property="title" content="4.1.2 Adding Context ">§</span></a></span></span></h4>
-					<p>Explanation: <a href="content/index.html#use_case_adding_context">Adding Context</a></p>
-					<section id="general-context" typeof="bibo:Chapter" resource="#general-context" property="bibo:hasPart">
-						<h5 id="x4-1-2-1-general-context" resource="#x4-1-2-1-general-context"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.1.2.1 </span>General context<span class="permalink" typeof="bookmark"><a href="#general-context" aria-label="Permalink for 4.1.2.1 General context" title="Permalink for 4.1.2.1 General context" property="url"><span property="title" content="4.1.2.1 General context">§</span></a></span></span></h5>
-						<p>Explanation: <a href="content/index.html#use_case_general_context">General context</a></p>
-					</section>
-					<section id="interoperable-symbols" typeof="bibo:Chapter" resource="#interoperable-symbols" property="bibo:hasPart">
-						<h5 id="x4-1-2-2-interoperable-symbols" resource="#x4-1-2-2-interoperable-symbols"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.1.2.2 </span>Interoperable symbols<span class="permalink" typeof="bookmark"><a href="#interoperable-symbols" aria-label="Permalink for 4.1.2.2 Interoperable symbols" title="Permalink for 4.1.2.2 Interoperable symbols" property="url"><span property="title" content="4.1.2.2 Interoperable symbols">§</span></a></span></span></h5>
-						<p>Explanation: <a href="content/index.html#use_case_interoperable_symbols">Interoperable symbols</a></p>
-					</section>
-				</section>
-			</section>
-			<section id="list_of_properties" typeof="bibo:Chapter" resource="#list_of_properties" property="bibo:hasPart">
-				<h3 id="x4-2-list-of-properties" resource="#x4-2-list-of-properties"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2 </span>List of properties<span class="permalink" typeof="bookmark"><a href="#list_of_properties" aria-label="Permalink for 4.2 List of properties" title="Permalink for 4.2 List of properties" property="url"><span property="title" content="4.2 List of properties">§</span></a></span></span></h3>
-				<section class="property" id="action" typeof="bibo:Chapter" resource="#action" property="bibo:hasPart">
-					<h4 id="x4-2-1-action" resource="#x4-2-1-action"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.1 </span>action<span class="permalink" typeof="bookmark"><a href="#action" aria-label="Permalink for 4.2.1 action" title="Permalink for 4.2.1 action" property="url"><span property="title" content="4.2.1 action">§</span></a></span></span></h4>
-					<p>Explanation: <a href="content/index.html#action-explanation">coga-action</a></p>
-				</section>
-				<section class="property" id="destination" typeof="bibo:Chapter" resource="#destination" property="bibo:hasPart">
-					<h4 id="x4-2-2-destination" resource="#x4-2-2-destination"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.2 </span>destination<span class="permalink" typeof="bookmark"><a href="#destination" aria-label="Permalink for 4.2.2 destination" title="Permalink for 4.2.2 destination" property="url"><span property="title" content="4.2.2 destination">§</span></a></span></span></h4>
-					<p>Explanation: <a href="content/index.html#destination-explanation">coga-destination</a></p>
-				
-				</section>
-				<section class="property" id="field" typeof="bibo:Chapter" resource="#field" property="bibo:hasPart">
-					<h4 id="x4-2-3-field" resource="#x4-2-3-field"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.3 </span>field<span class="permalink" typeof="bookmark"><a href="#field" aria-label="Permalink for 4.2.3 field" title="Permalink for 4.2.3 field" property="url"><span property="title" content="4.2.3 field">§</span></a></span></span></h4>
-					<p>Explanation: <a href="content/index.html#field-explanation">coga-field</a></p>
-				
-				</section>
-				<section class="property" id="simplification-0" typeof="bibo:Chapter" resource="#simplification-0" property="bibo:hasPart">
-					<h4 id="x4-2-4-simplification" resource="#x4-2-4-simplification"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.4 </span>simplification<span class="permalink" typeof="bookmark"><a href="#simplification-0" aria-label="Permalink for 4.2.4 simplification" title="Permalink for 4.2.4 simplification" property="url"><span property="title" content="4.2.4 simplification">§</span></a></span></span></h4>
-					<p>Explanation: <a href="content/index.html#simplification-explanation">coga-simplification</a></p>
-				
-				</section>
-				<section class="property" id="distraction" typeof="bibo:Chapter" resource="#distraction" property="bibo:hasPart">
-					<h4 id="x4-2-5-distraction" resource="#x4-2-5-distraction"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.5 </span>distraction<span class="permalink" typeof="bookmark"><a href="#distraction" aria-label="Permalink for 4.2.5 distraction" title="Permalink for 4.2.5 distraction" property="url"><span property="title" content="4.2.5 distraction">§</span></a></span></span></h4>
-					<p>Explanation: <a href="content/index.html#distraction-explanation">coga-distraction</a></p>
-				</section>
-				<section class="property" id="symbol" typeof="bibo:Chapter" resource="#symbol" property="bibo:hasPart">
-					<h4 id="x4-2-6-symbol" resource="#x4-2-6-symbol"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.6 </span>symbol<span class="permalink" typeof="bookmark"><a href="#symbol" aria-label="Permalink for 4.2.6 symbol" title="Permalink for 4.2.6 symbol" property="url"><span property="title" content="4.2.6 symbol">§</span></a></span></span></h4>
-					<p>Explanation: <a href="content/index.html#symbol-explanation">coga-symbol</a></p>
-				</section>
-			</section>
+		<section class="section" id="Stru_of_doc" typeof="bibo:Chapter" resource="#Stru_of_doc" property="bibo:hasPart">
+				<!--OddPage--><h2 id="x4-structure-of-this-document" resource="#x4-structure-of-this-document"><span property="xhv:role" resource="xhv:heading"><span class="secno">4. </span>Structure of this document<span class="permalink" typeof="bookmark"><a href="#Stru_of_doc" aria-label="Permalink for 4. Structure of this document" title="Permalink for 4. Structure of this document" property="url"><span property="title" content="4. Structure of this document">§</span></a></span></span></h2>
+				<p>This specification include:</p>
+				<ul>
+					<li> <a href="content/index.html">Personalization Content</a>;</li>
+					<li> <a href="help/index.html">Personalization Help and support</a>;</li>
+					<li> <a href="tools/index.html">Personalization Tools</a></li>
+				</ul>
+				<p> Those three specification provide describes and examples for each Personalization properties.</p>
 		</section>
 
-		<section class="informative" id="help " typeof="bibo:Chapter" resource="#help " property="bibo:hasPart">
-			<!--OddPage--><h2 id="x5-help-and-support" resource="#x5-help-and-support"><span property="xhv:role" resource="xhv:heading"><span class="secno">5. </span>Help and support<span class="permalink" typeof="bookmark"><a href="#help " aria-label="Permalink for 5. Help and support" title="Permalink for 5. Help and support" property="url"><span property="title" content="5. Help and support">§</span></a></span></span></h2><p><em>This section is non-normative.</em></p>
-			<section id="help_use_cases" typeof="bibo:Chapter" resource="#help_use_cases" property="bibo:hasPart">
-				<h3 id="x5-1-use-cases" resource="#x5-1-use-cases"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.1 </span>Use Cases<span class="permalink" typeof="bookmark"><a href="#help_use_cases" aria-label="Permalink for 5.1 Use Cases" title="Permalink for 5.1 Use Cases" property="url"><span property="title" content="5.1 Use Cases">§</span></a></span></span></h3>
-				<section id="number-free" typeof="bibo:Chapter" resource="#number-free" property="bibo:hasPart">
-					<h4 id="x5-1-1-number-free" resource="#x5-1-1-number-free"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.1.1 </span>Number free<span class="permalink" typeof="bookmark"><a href="#number-free" aria-label="Permalink for 5.1.1 Number free" title="Permalink for 5.1.1 Number free" property="url"><span property="title" content="5.1.1 Number free">§</span></a></span></span></h4>
-					<p>Explanation: <a href="help/index.html#use_case_numberfree">Number free</a></p>
-				</section>
-				<section id="language-type-support" typeof="bibo:Chapter" resource="#language-type-support" property="bibo:hasPart">
-					<h4 id="x5-1-2-language-type-support" resource="#x5-1-2-language-type-support"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.1.2 </span>Language type support<span class="permalink" typeof="bookmark"><a href="#language-type-support" aria-label="Permalink for 5.1.2 Language type support" title="Permalink for 5.1.2 Language type support" property="url"><span property="title" content="5.1.2 Language type support">§</span></a></span></span></h4>
-					<p>Explanation: <a href="help/index.html#use_case_language">Language type support</a></p>
-				</section>
-				<section id="non-literal-text-and-images" typeof="bibo:Chapter" resource="#non-literal-text-and-images" property="bibo:hasPart">
-					<h4 id="x5-1-3-non-literal-text-and-images" resource="#x5-1-3-non-literal-text-and-images"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.1.3 </span>Non-literal text and images<span class="permalink" typeof="bookmark"><a href="#non-literal-text-and-images" aria-label="Permalink for 5.1.3 Non-literal text and images" title="Permalink for 5.1.3 Non-literal text and images" property="url"><span property="title" content="5.1.3 Non-literal text and images">§</span></a></span></span></h4>
-					<p>Explanation: <a href="help/index.html#use_case_literal">Non-literal text and images</a></p>
-				</section>
-				<section id="more-help" typeof="bibo:Chapter" resource="#more-help" property="bibo:hasPart">
-					<h4 id="x5-1-4-more-help" resource="#x5-1-4-more-help"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.1.4 </span>More Help<span class="permalink" typeof="bookmark"><a href="#more-help" aria-label="Permalink for 5.1.4 More Help" title="Permalink for 5.1.4 More Help" property="url"><span property="title" content="5.1.4 More Help">§</span></a></span></span></h4>
-					<p>Explanation: <a href="help/index.html#use_case_morehelp">More Help</a></p>
-				</section>
-				<section id="explain-and-feedback" typeof="bibo:Chapter" resource="#explain-and-feedback" property="bibo:hasPart">
-					<h4 id="x5-1-5-explain-and-feedback" resource="#x5-1-5-explain-and-feedback"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.1.5 </span>Explain and feedback<span class="permalink" typeof="bookmark"><a href="#explain-and-feedback" aria-label="Permalink for 5.1.5 Explain and feedback" title="Permalink for 5.1.5 Explain and feedback" property="url"><span property="title" content="5.1.5 Explain and feedback">§</span></a></span></span></h4>
-					<p>Explanation: <a href="help/index.html#use_case_explain">Explain and feedback</a></p>
-				</section>
-				<section id="potential-features" typeof="bibo:Chapter" resource="#potential-features" property="bibo:hasPart">
-					<h4 id="x5-1-6-potential-features" resource="#x5-1-6-potential-features"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.1.6 </span>Potential Features<span class="permalink" typeof="bookmark"><a href="#potential-features" aria-label="Permalink for 5.1.6 Potential Features" title="Permalink for 5.1.6 Potential Features" property="url"><span property="title" content="5.1.6 Potential Features">§</span></a></span></span></h4>
-					<p>Explanation: <a href="help/index.html#use_case_potential_featuren">Potential Features</a></p>
-				</section>
-			</section>
-			<section id="list_of_properties" typeof="bibo:Chapter" resource="#list_of_properties" property="bibo:hasPart">
-				<h3 id="x5-2-list-of-properties" resource="#x5-2-list-of-properties"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.2 </span>List of properties<span class="permalink" typeof="bookmark"><a href="#list_of_properties" aria-label="Permalink for 5.2 List of properties" title="Permalink for 5.2 List of properties" property="url"><span property="title" content="5.2 List of properties">§</span></a></span></span></h3>
-				<section class="property" id="literal" typeof="bibo:Chapter" resource="#literal" property="bibo:hasPart">
-					<h4 id="x5-2-1-literal" resource="#x5-2-1-literal"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.2.1 </span>literal<span class="permalink" typeof="bookmark"><a href="#literal" aria-label="Permalink for 5.2.1 literal" title="Permalink for 5.2.1 literal" property="url"><span property="title" content="5.2.1 literal">§</span></a></span></span></h4>
-					<p>Explanation: <a href="help/index.html#literal-explanation">literal</a></p>
-				</section>
-				<section class="property" id="numberfree" typeof="bibo:Chapter" resource="#numberfree" property="bibo:hasPart">
-					<h4 id="x5-2-2-numberfree" resource="#x5-2-2-numberfree"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.2.2 </span>numberfree<span class="permalink" typeof="bookmark"><a href="#numberfree" aria-label="Permalink for 5.2.2 numberfree" title="Permalink for 5.2.2 numberfree" property="url"><span property="title" content="5.2.2 numberfree">§</span></a></span></span></h4>
-					<p>Explanation: <a href="help/index.html#numberfree-explanation">numberfree</a></p>
-				</section>
-				<section class="property" id="easylang" typeof="bibo:Chapter" resource="#easylang" property="bibo:hasPart">
-					<h4 id="x5-2-3-easylang" resource="#x5-2-3-easylang"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.2.3 </span>easylang<span class="permalink" typeof="bookmark"><a href="#easylang" aria-label="Permalink for 5.2.3 easylang" title="Permalink for 5.2.3 easylang" property="url"><span property="title" content="5.2.3 easylang">§</span></a></span></span></h4>
-					<p>Explanation: <a href="help/index.html#easylang-explanation">easylang</a></p>
-				</section>
-				<section class="property" id="alternative" typeof="bibo:Chapter" resource="#alternative" property="bibo:hasPart">
-					<h4 id="x5-2-4-alternative" resource="#x5-2-4-alternative"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.2.4 </span>alternative<span class="permalink" typeof="bookmark"><a href="#alternative" aria-label="Permalink for 5.2.4 alternative" title="Permalink for 5.2.4 alternative" property="url"><span property="title" content="5.2.4 alternative">§</span></a></span></span></h4>
-					<p>Explanation: <a href="help/index.html#alternative-explanation">alternative</a></p>
-				</section>
-				<section class="property" id="explain" typeof="bibo:Chapter" resource="#explain" property="bibo:hasPart">
-					<h4 id="x5-2-5-explain" resource="#x5-2-5-explain"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.2.5 </span>explain<span class="permalink" typeof="bookmark"><a href="#explain" aria-label="Permalink for 5.2.5 explain" title="Permalink for 5.2.5 explain" property="url"><span property="title" content="5.2.5 explain">§</span></a></span></span></h4>
-					<p>Explanation: <a href="help/index.html#explain-explanation">explain</a></p>
-				</section>
-				<section class="property" id="feedback" typeof="bibo:Chapter" resource="#feedback" property="bibo:hasPart">
-					<h4 id="x5-2-6-feedback" resource="#x5-2-6-feedback"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.2.6 </span>feedback<span class="permalink" typeof="bookmark"><a href="#feedback" aria-label="Permalink for 5.2.6 feedback" title="Permalink for 5.2.6 feedback" property="url"><span property="title" content="5.2.6 feedback">§</span></a></span></span></h4>
-					<p>Explanation: <a href="help/index.html#feedback-explanation">feedback</a></p>
-				</section>
-				<section class="property" id="moreinfo" typeof="bibo:Chapter" resource="#moreinfo" property="bibo:hasPart">
-					<h4 id="x5-2-7-moreinfo" resource="#x5-2-7-moreinfo"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.2.7 </span>moreinfo<span class="permalink" typeof="bookmark"><a href="#moreinfo" aria-label="Permalink for 5.2.7 moreinfo" title="Permalink for 5.2.7 moreinfo" property="url"><span property="title" content="5.2.7 moreinfo">§</span></a></span></span></h4>
-					<p>Explanation: <a href="help/index.html#moreinfo-explanation">moreinfo</a></p>
-				</section>
-				<section class="property" id="extrahelp" typeof="bibo:Chapter" resource="#extrahelp" property="bibo:hasPart">
-					<h4 id="x5-2-8-extrahelp" resource="#x5-2-8-extrahelp"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.2.8 </span>extrahelp<span class="permalink" typeof="bookmark"><a href="#extrahelp" aria-label="Permalink for 5.2.8 extrahelp" title="Permalink for 5.2.8 extrahelp" property="url"><span property="title" content="5.2.8 extrahelp">§</span></a></span></span></h4>
-					<p>Explanation: <a href="help/index.html#extrahelp-explanation">extrahelp</a></p>
-				</section>
-				<section class="property" id="helptype" typeof="bibo:Chapter" resource="#helptype" property="bibo:hasPart">
-					<h4 id="x5-2-9-helptype" resource="#x5-2-9-helptype"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.2.9 </span>helptype<span class="permalink" typeof="bookmark"><a href="#helptype" aria-label="Permalink for 5.2.9 helptype" title="Permalink for 5.2.9 helptype" property="url"><span property="title" content="5.2.9 helptype">§</span></a></span></span></h4>
-					<p>Explanation: <a href="help/index.html#helptype-explanation">helptype</a></p>
-				</section>
-			</section>
-		</section>
 
-		<section class="informative" id="tools " typeof="bibo:Chapter" resource="#tools " property="bibo:hasPart">
-			<!--OddPage--><h2 id="x6-tools" resource="#x6-tools"><span property="xhv:role" resource="xhv:heading"><span class="secno">6. </span>Tools<span class="permalink" typeof="bookmark"><a href="#tools " aria-label="Permalink for 6. Tools" title="Permalink for 6. Tools" property="url"><span property="title" content="6. Tools">§</span></a></span></span></h2><p><em>This section is non-normative.</em></p>
-			<section id="use_cases" typeof="bibo:Chapter" resource="#use_cases" property="bibo:hasPart">
-				<h3 id="x6-1-use-cases" resource="#x6-1-use-cases"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.1 </span>Use Cases<span class="permalink" typeof="bookmark"><a href="#use_cases" aria-label="Permalink for 6.1 Use Cases" title="Permalink for 6.1 Use Cases" property="url"><span property="title" content="6.1 Use Cases">§</span></a></span></span></h3>
-				<section typeof="bibo:Chapter" resource="#logs" property="bibo:hasPart">
-					<h4 id="logs" resource="#logs"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.1.1 </span>Logs<span class="permalink" typeof="bookmark"><a href="#undefined" aria-label="Permalink for 6.1.1 Logs" title="Permalink for 6.1.1 Logs" property="url"><span property="title" content="6.1.1 Logs">§</span></a></span></span></h4>
-					<p>Explanation: <a href="tools/index.html#use_case_log">Logs</a></p>
-					<section id="log-usage-examples" typeof="bibo:Chapter" resource="#log-usage-examples" property="bibo:hasPart">
-						<h5 id="x6-1-1-1-log-usage-examples" resource="#x6-1-1-1-log-usage-examples"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.1.1.1 </span>Log usage examples<span class="permalink" typeof="bookmark"><a href="#log-usage-examples" aria-label="Permalink for 6.1.1.1 Log usage examples" title="Permalink for 6.1.1.1 Log usage examples" property="url"><span property="title" content="6.1.1.1 Log usage examples">§</span></a></span></span></h5>
-						<p>Explanation: <a href="tools/index.html#use_case_log_usage">Log usage examples</a></p>
-					</section>
-					<section id="alternative-syntax-for-log" typeof="bibo:Chapter" resource="#alternative-syntax-for-log" property="bibo:hasPart">
-						<h5 id="x6-1-1-2-alternative-syntax-for-log" resource="#x6-1-1-2-alternative-syntax-for-log"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.1.1.2 </span>Alternative syntax for log<span class="permalink" typeof="bookmark"><a href="#alternative-syntax-for-log" aria-label="Permalink for 6.1.1.2 Alternative syntax for log" title="Permalink for 6.1.1.2 Alternative syntax for log" property="url"><span property="title" content="6.1.1.2 Alternative syntax for log">§</span></a></span></span></h5>
-						<p>Explanation: <a href="tools/index.html#use_case_alternative_syntax">Alternative syntax for log</a></p>
-					</section>
-				</section>
-			<section id="reminders-and-messages" typeof="bibo:Chapter" resource="#reminders-and-messages" property="bibo:hasPart">
-				<h4 id="x6-1-2-reminders-and-messages" resource="#x6-1-2-reminders-and-messages"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.1.2 </span>Reminders and messages<span class="permalink" typeof="bookmark"><a href="#reminders-and-messages" aria-label="Permalink for 6.1.2 Reminders and messages" title="Permalink for 6.1.2 Reminders and messages" property="url"><span property="title" content="6.1.2 Reminders and messages">§</span></a></span></span></h4>
-				<p>Explanation: <a href="tools/index.html#use_case_reminder">Reminders and messages</a></p>
-			</section>
-			<section id="general-tools" typeof="bibo:Chapter" resource="#general-tools" property="bibo:hasPart">
-				<h4 id="x6-1-3-general-tools" resource="#x6-1-3-general-tools"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.1.3 </span>general tools<span class="permalink" typeof="bookmark"><a href="#general-tools" aria-label="Permalink for 6.1.3 general tools" title="Permalink for 6.1.3 general tools" property="url"><span property="title" content="6.1.3 general tools">§</span></a></span></span></h4>
-				<p>Explanation: <a href="tools/index.html#use_case_general_tool">general tools</a></p>
-			</section>
-			</section>
-			<section id="list_of_properties" typeof="bibo:Chapter" resource="#list_of_properties" property="bibo:hasPart">
-				<h3 id="x6-2-list-of-properties" resource="#x6-2-list-of-properties"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.2 </span>List of properties<span class="permalink" typeof="bookmark"><a href="#list_of_properties" aria-label="Permalink for 6.2 List of properties" title="Permalink for 6.2 List of properties" property="url"><span property="title" content="6.2 List of properties">§</span></a></span></span></h3>
-				<section id="all-the-log-properties" typeof="bibo:Chapter" resource="#all-the-log-properties" property="bibo:hasPart">
-					<h4 id="x6-2-1-all-the-log-properties" resource="#x6-2-1-all-the-log-properties"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.2.1 </span>All the log properties<span class="permalink" typeof="bookmark"><a href="#all-the-log-properties" aria-label="Permalink for 6.2.1 All the log properties" title="Permalink for 6.2.1 All the log properties" property="url"><span property="title" content="6.2.1 All the log properties">§</span></a></span></span></h4>
-					<p>Explanation: <a href="tools/index.html#all-log-explanation">All the log properties</a></p>
-					<section id="log-usage-examples-0" typeof="bibo:Chapter" resource="#log-usage-examples-0" property="bibo:hasPart">
-						<h5 id="x6-2-1-1-log-usage-examples" resource="#x6-2-1-1-log-usage-examples"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.2.1.1 </span>Log usage examples<span class="permalink" typeof="bookmark"><a href="#log-usage-examples-0" aria-label="Permalink for 6.2.1.1 Log usage examples" title="Permalink for 6.2.1.1 Log usage examples" property="url"><span property="title" content="6.2.1.1 Log usage examples">§</span></a></span></span></h5>
-						<p>Explanation: <a href="tools/index.html#log-usage-example-explanation">Log usage examples</a></p>
-                	</section>
-                	<section id="alternative-syntax-for-log-0" typeof="bibo:Chapter" resource="#alternative-syntax-for-log-0" property="bibo:hasPart">
-                		<h5 id="x6-2-1-2-alternative-syntax-for-log" resource="#x6-2-1-2-alternative-syntax-for-log"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.2.1.2 </span>Alternative syntax for log<span class="permalink" typeof="bookmark"><a href="#alternative-syntax-for-log-0" aria-label="Permalink for 6.2.1.2 Alternative syntax for log" title="Permalink for 6.2.1.2 Alternative syntax for log" property="url"><span property="title" content="6.2.1.2 Alternative syntax for log">§</span></a></span></span></h5>
-                		<p>Explanation: <a href="tools/index.html#Alternative-syntax-log-example-explanation">Alternative syntax for log</a></p>
-                	
-					</section>
-				</section>
-           		<section id="all-the-message-properties" typeof="bibo:Chapter" resource="#all-the-message-properties" property="bibo:hasPart">
-				<h4 id="x6-2-2-all-the-message-properties" resource="#x6-2-2-all-the-message-properties"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.2.2 </span>All the message properties<span class="permalink" typeof="bookmark"><a href="#all-the-message-properties" aria-label="Permalink for 6.2.2 All the message properties" title="Permalink for 6.2.2 All the message properties" property="url"><span property="title" content="6.2.2 All the message properties">§</span></a></span></span></h4>
-				<section class="property" id="messageimportance" typeof="bibo:Chapter" resource="#messageimportance" property="bibo:hasPart">
-					<h5 id="x6-2-2-1-messageimportance" resource="#x6-2-2-1-messageimportance"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.2.2.1 </span>messageimportance<span class="permalink" typeof="bookmark"><a href="#messageimportance" aria-label="Permalink for 6.2.2.1 messageimportance" title="Permalink for 6.2.2.1 messageimportance" property="url"><span property="title" content="6.2.2.1 messageimportance">§</span></a></span></span></h5>
-					<p>Explanation: <a href="tools/index.html#messageimportance-explanation">messageimportance</a></p>
-				</section>
-				<section class="property" id="messagefrom" typeof="bibo:Chapter" resource="#messagefrom" property="bibo:hasPart">
-					<h5 id="x6-2-2-2-messagefrom" resource="#x6-2-2-2-messagefrom"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.2.2.2 </span>messagefrom<span class="permalink" typeof="bookmark"><a href="#messagefrom" aria-label="Permalink for 6.2.2.2 messagefrom" title="Permalink for 6.2.2.2 messagefrom" property="url"><span property="title" content="6.2.2.2 messagefrom">§</span></a></span></span></h5>
-					<p>Explanation: <a href="tools/index.html#messagefrom-explanation">messagefrom</a></p>
-				</section>
-				<section class="property" id="messagecontext" typeof="bibo:Chapter" resource="#messagecontext" property="bibo:hasPart">
-					<h5 id="x6-2-2-3-messagecontext" resource="#x6-2-2-3-messagecontext"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.2.2.3 </span>messagecontext<span class="permalink" typeof="bookmark"><a href="#messagecontext" aria-label="Permalink for 6.2.2.3 messagecontext" title="Permalink for 6.2.2.3 messagecontext" property="url"><span property="title" content="6.2.2.3 messagecontext">§</span></a></span></span></h5>
-					<p>Explanation: <a href="tools/index.html#messagecontext-explanation">messagecontext</a></p>
-				</section>
-				<section class="property" id="messagetime" typeof="bibo:Chapter" resource="#messagetime" property="bibo:hasPart">
-					<h5 id="x6-2-2-4-messagetime" resource="#x6-2-2-4-messagetime"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.2.2.4 </span>messagetime<span class="permalink" typeof="bookmark"><a href="#messagetime" aria-label="Permalink for 6.2.2.4 messagetime" title="Permalink for 6.2.2.4 messagetime" property="url"><span property="title" content="6.2.2.4 messagetime">§</span></a></span></span></h5>
-					<p>Explanation: <a href="tools/index.html#messagetime-explanation">messagetime</a></p>
-				</section>
-				</section>
-			</section>	
-		</section>
+
+
 
 
 		<section class="appendix" id="vocabulary-implementations" typeof="bibo:Chapter" resource="#vocabulary-implementations" property="bibo:hasPart">
