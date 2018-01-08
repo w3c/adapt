@@ -6,16 +6,16 @@
                     <p>Relevant properties: <a href="#x3-1-all-the-log-properties">log</a>, <a href="#step">step</a>, <a href="#actiontaken">actiontaken</a>, <a href="#steplocation">steplocation</a>, <a href="#status">status</a></p>
                     <section id="use_case_log_usage">
                         <h4>Log Usage Examples</h4>
-                        <pre>&lt;div coga-log="booking trip" coga-step="1" aria-label="buy ticket" aria-hidden="true"
-     coga-actiontaken="bought ticket to NY return" steplocation ="uri" /></pre>
+                        <pre>&lt;div aui-log="booking trip" aui-step="1" aria-label="buy ticket" aria-hidden="true"
+     aui-actiontaken="bought ticket to NY return" steplocation ="uri" /></pre>
                         <p>or</p>
-                        <pre>&lt;div coga-log="booking trip" coga-step="1" coga-actiontaken="bought ticket to NY return">
+                        <pre>&lt;div aui-log="booking trip" aui-step="1" aui-actiontaken="bought ticket to NY return">
       buy ticket
   &lt;a href="uri">change&lt;/a>
     &lt;/div></pre>
                         <p>or the step number can be implied by the DOM</p>
-                        <pre>&lt;div coga-log="booking trip">
-  &lt;div coga-actiontaken="bought ticket to NY return">
+                        <pre>&lt;div aui-log="booking trip">
+  &lt;div aui-actiontaken="bought ticket to NY return">
     buy ticket
     &lt;a href="uri">change&lt;/a>
   &lt;/div>
