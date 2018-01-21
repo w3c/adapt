@@ -89,11 +89,7 @@ input.task-list-item-checkbox {
 		<title>Personalization Explainer 1.0</title>
 		
 		
-		
-		
-	
-		<link href="common/css/common.css" rel="stylesheet" type="text/css">
-	<style id="respec-mainstyle">/*****************************************************************
+		<style id="respec-mainstyle">/*****************************************************************
  * ReSpec 3 CSS
  * Robin Berjon - http://berjon.com/
  *****************************************************************/
@@ -366,7 +362,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-strong {
   font-weight: bold;
 }
-</style><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/personalization-explainer-1.0/"><script id="initialUserConfig" type="application/json">{
+</style>
+		
+	
+		<link href="common/css/common.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/personalization-explainer-1.0/"><script id="initialUserConfig" type="application/json">{
   "trace": true,
   "doRDFa": "1.0",
   "includePermalinks": true,
@@ -404,6 +404,14 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       "company": "W3C",
       "companyURI": "http://www.w3.org",
       "w3cid": 34017
+    },
+    {
+      "name": "Roy Ran",
+      "url": "https://www.w3.org",
+      "mailto": "ran@w3.org",
+      "company": "W3C",
+      "companyURI": "http://www.w3.org",
+      "w3cid": 100586
     }
   ],
   "wg": "Accessible Rich Internet Applications Working Group",
@@ -702,17 +710,17 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     "CR": "https://www.w3.org/TR/wai-aria-1.1/",
     "REC": "https://www.w3.org/TR/wai-aria-1.1/"
   },
-  "publishDate": "2018-01-18",
-  "publishISODate": "2018-01-18T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 18 January 2018"
+  "publishDate": "2018-01-21",
+  "publishISODate": "2018-01-21T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 21 January 2018"
 }</script></head>
 	<body aria-busy="false" class="h-entry toc-inline"><div class="head">
     <p>
       <a class="logo" href="https://www.w3.org/"><img width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt="W3C"></a>
     </p>
-  <p><!--_hyper: -1091348885;--></p>
+  <p><!--_hyper: -1182829863;--></p>
   <h1 class="title p-name" id="title" property="dcterms:title">Personalization Explainer 1.0</h1>
-  <h2 id="w3c-editor-s-draft-18-january-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time property="dcterms:issued" class="dt-published" datetime="2018-01-18">18 January 2018</time><span class="permalink" typeof="bookmark"><a href="#undefined" aria-label="Permalink for W3C Editor's Draft 18 January 2018" title="Permalink for W3C Editor's Draft 18 January 2018" property="url"><span property="title" content="W3C Editor's Draft 18 January 2018">§</span></a></span></h2>
+  <h2 id="w3c-editor-s-draft-21-january-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time property="dcterms:issued" class="dt-published" datetime="2018-01-21">21 January 2018</time><span class="permalink" typeof="bookmark"><a href="#undefined" aria-label="Permalink for W3C Editor's Draft 21 January 2018" title="Permalink for W3C Editor's Draft 21 January 2018" property="url"><span property="title" content="W3C Editor's Draft 21 January 2018">§</span></a></span></h2>
   <dl>
       <dt>This version:</dt>
       <dd><a class="u-url" href="https://w3c.github.io/w3c/personalization-semantics/explainer.html">https://w3c.github.io/w3c/personalization-semantics/explainer.html</a></dd>
@@ -731,6 +739,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 <span property="rdf:rest" resource="_:editor3"></span>
 </dd>
 <dd class="p-author h-card vcard" resource="_:editor3" data-editor-id="34017"><span property="rdf:first" typeof="foaf:Person"><meta property="foaf:name" content="Michael Cooper"><a class="u-url url p-name fn" property="foaf:homepage" href="https://www.w3.org">Michael Cooper</a>, <abbr title="World Wide Web Consortium">W3C</abbr>, <span class="ed_mailto"><a class="u-email email" property="foaf:mbox" href="mailto:cooper@w3.org">cooper@w3.org</a></span></span>
+<span property="rdf:rest" resource="_:editor4"></span>
+</dd>
+<dd class="p-author h-card vcard" resource="_:editor4" data-editor-id="100586"><span property="rdf:first" typeof="foaf:Person"><meta property="foaf:name" content="Roy Ran"><a class="u-url url p-name fn" property="foaf:homepage" href="https://www.w3.org">Roy Ran</a>, <abbr title="World Wide Web Consortium">W3C</abbr>, <span class="ed_mailto"><a class="u-email email" property="foaf:mbox" href="mailto:ran@w3.org">ran@w3.org</a></span></span>
 <span property="rdf:rest" resource="rdf:nil"></span>
 </dd>
 
@@ -794,7 +805,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           </p>
         
 
-</section><nav id="toc"><h2 class="introductory" id="table-of-contents" resource="#table-of-contents"><span property="xhv:role" resource="xhv:heading">Table of Contents<span class="permalink" typeof="bookmark"><a href="#undefined" aria-label="Permalink for Table of Contents" title="Permalink for Table of Contents" property="url"><span property="title" content="Table of Contents">§</span></a></span></span></h2><ol class="toc"><li class="tocline"><a href="#abstract" class="tocxref">Abstract</a></li><li class="tocline"><a href="#sotd" class="tocxref">Status of This Document</a></li><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a><ol class="toc"><li class="tocline"><a href="#why_accessibility" class="tocxref"><span class="secno">1.1 </span>Why We Need Personalization</a></li><li class="tocline"><a href="#intro_context" class="tocxref"><span class="secno">1.2 </span>Personalization Use Cases (general)</a></li></ol></li><li class="tocline"><a href="#terms" class="tocxref"><span class="secno">2. </span>Important Terms</a></li><li class="tocline"><a href="#characteristics_semanticproperties" class="tocxref"><span class="secno">3. </span>Structure of Properties</a><ol class="toc"><li class="tocline"><a href="#propcharacteristic_relatedconcept" class="tocxref"><span class="secno">3.1 </span>Related Concepts</a></li><li class="tocline"><a href="#propcharacteristic_value" class="tocxref"><span class="secno">3.2 </span>Value</a></li></ol></li><li class="tocline"><a href="#Stru_of_doc" class="tocxref"><span class="secno">4. </span>Structure of This Document</a></li><li class="tocline"><a href="#vocabulary-implementations" class="tocxref"><span class="secno">A. </span>Vocabulary Implementations</a><ol class="toc"><li class="tocline"><a href="#mapping-values-to-different-syntax" class="tocxref"><span class="secno">A.1 </span>Mapping Values to Different Syntax </a></li><li class="tocline"><a href="#wai-aria" class="tocxref"><span class="secno">A.2 </span><abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr></a><ol class="toc"><li class="tocline"><a href="#additional-wai-aria-roles" class="tocxref"><span class="secno">A.2.1 </span>Additional <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> Roles</a></li></ol></li><li class="tocline"><a href="#html-microdata" class="tocxref"><span class="secno">A.3 </span><abbr title="Hypertext Markup Language">HTML</abbr> Microdata</a></li><li class="tocline"><a href="#rdfa" class="tocxref"><span class="secno">A.4 </span>RDFa</a></li><li class="tocline"><a href="#autocomplete" class="tocxref"><span class="secno">A.5 </span>Autocomplete</a></li></ol></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a href="#ack_group" class="tocxref"><span class="secno">B.1 </span>Participants active in the ARIA WG at the time of publication</a></li><li class="tocline"><a href="#ack_others" class="tocxref"><span class="secno">B.2 </span>Other ARIA contributors, commenters, and previously active participants</a></li><li class="tocline"><a href="#ack_funders" class="tocxref"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">C.1 </span>Informative references</a></li></ol></li></ol></nav>
+</section><nav id="toc"><h2 class="introductory" id="table-of-contents" resource="#table-of-contents"><span property="xhv:role" resource="xhv:heading">Table of Contents<span class="permalink" typeof="bookmark"><a href="#undefined" aria-label="Permalink for Table of Contents" title="Permalink for Table of Contents" property="url"><span property="title" content="Table of Contents">§</span></a></span></span></h2><ol class="toc"><li class="tocline"><a href="#abstract" class="tocxref">Abstract</a></li><li class="tocline"><a href="#sotd" class="tocxref">Status of This Document</a></li><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a><ol class="toc"><li class="tocline"><a href="#why_accessibility" class="tocxref"><span class="secno">1.1 </span>Why We Need Personalization</a></li><li class="tocline"><a href="#intro_context" class="tocxref"><span class="secno">1.2 </span>Personalization Use Cases (general)</a></li></ol></li><li class="tocline"><a href="#terms" class="tocxref"><span class="secno">2. </span>Important Terms</a></li><li class="tocline"><a href="#characteristics_semanticproperties" class="tocxref"><span class="secno">3. </span>Structure of Properties</a><ol class="toc"><li class="tocline"><a href="#propcharacteristic_value" class="tocxref"><span class="secno">3.1 </span>Value</a></li></ol></li><li class="tocline"><a href="#Stru_of_doc" class="tocxref"><span class="secno">4. </span>Modules</a></li><li class="tocline"><a href="#vocabulary-implementations" class="tocxref"><span class="secno">A. </span>Vocabulary Implementations</a><ol class="toc"><li class="tocline"><a href="#mapping-values-to-different-syntax" class="tocxref"><span class="secno">A.1 </span>Mapping Values to Different Syntax </a></li><li class="tocline"><a href="#wai-aria" class="tocxref"><span class="secno">A.2 </span><abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr></a><ol class="toc"><li class="tocline"><a href="#additional-wai-aria-roles" class="tocxref"><span class="secno">A.2.1 </span>Additional <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> Roles</a></li></ol></li><li class="tocline"><a href="#html-microdata" class="tocxref"><span class="secno">A.3 </span><abbr title="Hypertext Markup Language">HTML</abbr> Microdata</a></li><li class="tocline"><a href="#rdfa" class="tocxref"><span class="secno">A.4 </span>RDFa</a></li><li class="tocline"><a href="#autocomplete" class="tocxref"><span class="secno">A.5 </span>Autocomplete</a></li></ol></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a href="#ack_group" class="tocxref"><span class="secno">B.1 </span>Participants active in the ARIA WG at the time of publication</a></li><li class="tocline"><a href="#ack_others" class="tocxref"><span class="secno">B.2 </span>Other ARIA contributors, commenters, and previously active participants</a></li><li class="tocline"><a href="#ack_funders" class="tocxref"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">C.1 </span>Informative references</a></li></ol></li></ol></nav>
 
 		<section class="informative" id="introduction" typeof="bibo:Chapter" resource="#introduction" property="bibo:hasPart">
 
@@ -1061,12 +1072,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 		<section id="characteristics_semanticproperties" typeof="bibo:Chapter" resource="#characteristics_semanticproperties" property="bibo:hasPart">
 			<!--OddPage--><h2 id="x3-structure-of-properties" resource="#x3-structure-of-properties"><span property="xhv:role" resource="xhv:heading"><span class="secno">3. </span>Structure of Properties<span class="permalink" typeof="bookmark"><a href="#characteristics_semanticproperties" aria-label="Permalink for 3. Structure of Properties" title="Permalink for 3. Structure of Properties" property="url"><span property="title" content="3. Structure of Properties">§</span></a></span></span></h2>
 			<p>Semantic properties have the characteristics described in the following sections.</p>
-			<section id="propcharacteristic_relatedconcept" typeof="bibo:Chapter" resource="#propcharacteristic_relatedconcept" property="bibo:hasPart">
-				<h3 id="x3-1-related-concepts" resource="#x3-1-related-concepts"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.1 </span>Related Concepts<span class="permalink" typeof="bookmark"><a href="#propcharacteristic_relatedconcept" aria-label="Permalink for 3.1 Related Concepts" title="Permalink for 3.1 Related Concepts" property="url"><span property="title" content="3.1 Related Concepts">§</span></a></span></span></h3>
-				<p>Advisory information about features from this or other languages that correspond to this property. While the correspondence may not be exact, it is useful to help understand the intent of the state or property.</p>
-			</section>
 			<section id="propcharacteristic_value" typeof="bibo:Chapter" resource="#propcharacteristic_value" property="bibo:hasPart">
-				<h3 id="x3-2-value" resource="#x3-2-value"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2 </span>Value<span class="permalink" typeof="bookmark"><a href="#propcharacteristic_value" aria-label="Permalink for 3.2 Value" title="Permalink for 3.2 Value" property="url"><span property="title" content="3.2 Value">§</span></a></span></span></h3>
+				<h3 id="x3-1-value" resource="#x3-1-value"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.1 </span>Value<span class="permalink" typeof="bookmark"><a href="#propcharacteristic_value" aria-label="Permalink for 3.1 Value" title="Permalink for 3.1 Value" property="url"><span property="title" content="3.1 Value">§</span></a></span></span></h3>
 				<p>Value type of the semantic property. The value may be one of the following types:</p>
 				<dl>
 					<dt id="valuetype_true-false">true/false</dt>
@@ -1096,14 +1103,23 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 		</section>
 
 		<section class="section" id="Stru_of_doc" typeof="bibo:Chapter" resource="#Stru_of_doc" property="bibo:hasPart">
-				<!--OddPage--><h2 id="x4-structure-of-this-document" resource="#x4-structure-of-this-document"><span property="xhv:role" resource="xhv:heading"><span class="secno">4. </span>Structure of This Document<span class="permalink" typeof="bookmark"><a href="#Stru_of_doc" aria-label="Permalink for 4. Structure of This Document" title="Permalink for 4. Structure of This Document" property="url"><span property="title" content="4. Structure of This Document">§</span></a></span></span></h2>
-				<p>This specification include:</p>
+				<!--OddPage--><h2 id="x4-modules" resource="#x4-modules"><span property="xhv:role" resource="xhv:heading"><span class="secno">4. </span>Modules<span class="permalink" typeof="bookmark"><a href="#Stru_of_doc" aria-label="Permalink for 4. Modules" title="Permalink for 4. Modules" property="url"><span property="title" content="4. Modules">§</span></a></span></span></h2>
+				<p>This specification has been divided into modules. </p>
+				<p>Each module has use cases and vocabularies: </p>
 				<ul>
-					<li> <a href="content/index.html">Personalization Content</a>;</li>
-					<li> <a href="help/index.html">Personalization Help and support</a>;</li>
-					<li> <a href="tools/index.html">Personalization Tools</a></li>
+					<li><a href="content/index.html">Adaptable Content:</a>
+					<p>This section provided vocabularies that enables user agents to augment or adapt content to the user scenario and helps the user use and understand the content.</p>
+					<p>It includes use cases and vocabularies for identifying the purpose of controls, symbols  and user interface elements and supports simplification and distractions.</p></li>
+				
+					<li><a href="help/index.html">Adaptable Help and support:</a>
+					<p>This module is not yet published but an early draft is available.</p>
+					<p>It addresses adding information about the content to enable help scaffolding and additional support for different user scenarios.</p></li>
+				
+					<li><a href="tools/index.html">Adaptable Tools</a>
+					<p>This module is not yet published but an early draft is available.</p>
+					<p>It addresses adding information about the content to enable user agents and new extensions that support the user such as adaptable breadcrumbs.</p></li>
+				
 				</ul>
-				<p> Those three specification provide describes and examples for each Personalization properties.</p>
 		</section>
 
 
