@@ -49,6 +49,13 @@ var respecConfig = {
         w3cid: 2460
       },
       {
+        name: "Charles LaPierre",
+        url: 'http://www.benetech.org',
+        mailto: "charlesl@benetech.org",
+        company: "Benetech",
+        w3cid: 72055
+      },
+      {
         name: "Michael Cooper",
         url: 'https://www.w3.org',
         mailto: "cooper@w3.org",
