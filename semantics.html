@@ -234,7 +234,7 @@
 			</section>
 			<section>
 				<h2>Number free</h2>
-				<p><strong>Requirement</strong>: Not everyone can understand numbers. We therefor suggest coga-numberfree for alternative text for people who can not understand the main content</p>
+				<p><strong>Requirement</strong>: Not everyone can understand numbers. We therefor suggest aui-numberfree for alternative text for people who can not understand the main content</p>
 				<p><strong>User experience:</strong></p>
 				<p>A suggested user experience would be: Numerical concepts could be rendered by the user agent slightly different so that the user knows a number free explanation is available. The user can then mouse over the content and a tooltips would give the number free value</p>
 				<p>Relevant properties: <a href="#numberfree">numberfree</a></p>
@@ -282,16 +282,16 @@
 				<p>Relevant properties: <a href="#log">log</a>, <a href="#step">step</a>, <a href="#actiontaken">actiontaken</a>, <a href="#steplocation">steplocation</a>, <a href="#status">status</a></p>
 				<section>
 					<h4>Log usage examples</h4>
-					<pre>&lt;div coga-log="booking trip" coga-step="1" aria-label="buy ticket" aria-hidden="true"
-    coga-actiontaken="bought ticket to NY return" steplocation ="uri" /></pre>
+					<pre>&lt;div aui-log="booking trip" aui-step="1" aria-label="buy ticket" aria-hidden="true"
+    aui-actiontaken="bought ticket to NY return" steplocation ="uri" /></pre>
 					<p>or</p>
-					<pre>&lt;div coga-log="booking trip" coga-step="1" coga-actiontaken="bought ticket to NY return">
+					<pre>&lt;div aui-log="booking trip" aui-step="1" aui-actiontaken="bought ticket to NY return">
   buy ticket
   &lt;a href="uri">change&lt;/a>
 &lt;/div></pre>
 					<p>or the step number can be implied by the DOM</p>
-					<pre>&lt;div coga-log="booking trip">
-  &lt;div coga-actiontaken="bought ticket to NY return">
+					<pre>&lt;div aui-log="booking trip">
+  &lt;div aui-actiontaken="bought ticket to NY return">
     buy ticket
     &lt;a href="uri">change&lt;/a>
   &lt;/div>
@@ -331,7 +331,7 @@
 				<p>Relevant properties: <a href="#distraction">distraction</a></p>
 			</section>
 			<section>
-				<h2>New Misc.</h2> Triggers: for emotional support. coga-trigger: violent, racism, etc. coga-keyparts of the page: key points, example, note, warning, external (content), advertisements, (some may be in digital publishing) coga-dates - (cancellation, return) </section>
+				<h2>New Misc.</h2> Triggers: for emotional support. aui-trigger: violent, racism, etc. aui-keyparts of the page: key points, example, note, warning, external (content), advertisements, (some may be in digital publishing) aui-dates - (cancellation, return) </section>
 		</section>
 		<section id="characteristics_semanticproperties">
 			<h2>Structure of Properties</h2>
@@ -378,10 +378,10 @@
 							<p>The <code>simplification</code> attribute differentiates between critical features and less important features for simplification.</p>
 							<p>This allows simplified interfaces with less options or interfaces that emphasize critical features. Adaptations can be based on personalization settings. </p>
 							<div class="example"><div class="example-title marker"><span>Example:</span><span style="text-transform: none"> Simplification Using ARIA</span></div>
-							&lt;input coga-simplification="critical" aria-function="submit" value="Submit" type="submit"/&gt;
+							&lt;input aui-simplification="critical" aria-function="submit" value="Submit" type="submit"/&gt;
 							</div>
 
-							 <p class="ednote">This was formerly coga-importance. However different people may feel that sections that would be hidden in a simplified version are still very important, such as marketing content or legal terms.)</p>
+							 <p class="ednote">This was formerly aui-importance. However different people may feel that sections that would be hidden in a simplified version are still very important, such as marketing content or legal terms.)</p>
 
 							<div class="note">
 								<p>These semantics aid simplification. But what content is most useful to a user varies from user to user. For example, men may be more interested in mens clothing, and may not be interested in the more frequently use womens clothing option. For that reason we may add context for elements that will help the personalization agent select the most useful content for a given user (see the <a href="#context">context</a> attribute). This is also necessary for reminders (see bellow).</p>
@@ -462,7 +462,7 @@
 				    <p>The <code>action</code> attribute provides the context of a button. It is typically used on a button element or element with role="button".</p>
 
  					<pre class="example" title="Action Using ARIA">
-					   <p>For example: &lt;button coga-action=&quot;undo&quot; &gt;Revert&lt;/button&gt;</p>
+					   <p>For example: &lt;button aui-action=&quot;undo&quot; &gt;Revert&lt;/button&gt;</p>
 					   <p>A personalization agent may add a symbol, replace the text with a more familiar term, or give it a specific presentation. Note that there is no default value.</p>
                     </pre>
                 </div>
@@ -494,7 +494,7 @@
 						</tr>
 					</tbody>
 				</table>
-                <p>The following could be supported values of <code>coga-action</code> for buttons:</p>
+                <p>The following could be supported values of <code>aui-action</code> for buttons:</p>
 				<table class="value-descriptions">
 					<caption>Values:</caption>
 					<thead>
@@ -681,7 +681,7 @@
 				<div class="property-description">
 					<p>The <code>destination</code> term categorizes the target of a hyperlink.</p>
 					<p>A personalization agent or user agent may add additional familiar user interface features to help users understand the link and follow the right one easily. User agents might add a familiar customized icon to the link, or style the link in a customized way, or position the link on the page in a location that the user generally expects to find a link of the particular type.</p>
-					<pre class="example" title="Destination Using ARIA">&lt;a href=&quot;home.html&quot; coga-destination=&quot;home&quot;&gt;our main page&lt;/a&gt;</pre>
+					<pre class="example" title="Destination Using ARIA">&lt;a href=&quot;home.html&quot; aui-destination=&quot;home&quot;&gt;our main page&lt;/a&gt;</pre>
 					<p>See the <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html">destination sample user experience</a>.</p>
 
 				</div>
@@ -807,11 +807,11 @@
 				<div class="property-description">
 					<p><code>field</code> provides the context of a text input field such as a text box. It is typically used on an input of type text, or element with a responding role.</p>
 					<pre class="example" title="Fields Using ARIA">
-              <p>&lt;input type="text" name="fname" coga-field=&quot;phone&quot;/&gt;</p>
+              <p>&lt;input type="text" name="fname" aui-field=&quot;phone&quot;/&gt;</p>
 					</pre>
 					<p>A personalization agent may add a symbol, replace the text with a more familiar term, or give it a specific presentation. Note that there is no default value.</p><p>The user experience may include filling in the field and adding an icon.</p>
-					<p>coga-field values that would typically be on form controls and would have a user context - for example phone would relate to the user's phone. Note that there is no default value.</p>
-					<p>Note they can be more then one value for a field, such as <code>coga-field=&quot;country postcode&quot;</code></p>
+					<p>aui-field values that would typically be on form controls and would have a user context - for example phone would relate to the user's phone. Note that there is no default value.</p>
+					<p>Note they can be more then one value for a field, such as <code>aui-field=&quot;country postcode&quot;</code></p>
 				</div>
 				<table class="property-features">
 					<caption>Characteristics:</caption>
@@ -1063,7 +1063,7 @@
 					<p><code>context</code> gives additional contextual information about the content.</p>
 					<p><code>context</code> accepts the values of a URI or shortened URI. Note that namespaces are the only additional parsing that maybe required to identify the concept.</p>
 					<p>These semantics aid simplification. What content is most useful to a user varies from user to user. For example, men may be more interested in mens clothing, and may not be interested in the more frequently use womens clothing option. For that reason adding context for elements that will help the personalization agent select the most useful content for a given user. </p>
-					<div class="example"><div class="example-title marker"><span>Example:</span><span style="text-transform: none"> Context Using ARIA</span></div>&lt;a href=&quot;women.html&quot; coga-context=&quot;http://schema.org/Female&quot;&gt;women&lt;/a&gt; </div>
+					<div class="example"><div class="example-title marker"><span>Example:</span><span style="text-transform: none"> Context Using ARIA</span></div>&lt;a href=&quot;women.html&quot; aui-context=&quot;http://schema.org/Female&quot;&gt;women&lt;/a&gt; </div>
 
 					<p class="note">To help this be interoperable without an RDF parser we  recommend using the most commonly used ontologies. </p>
 				</div>
@@ -1101,7 +1101,7 @@
 				<p><code>symbol</code> identifies the concept for symbols.</p>
 				<p><code>symbol</code> accepts the values of a URI or shortened URI. Note that namespaces are the only additional parsing that maybe required to identify the concept.</p>
 				<p>A personalization agent can then load alternative symbols that the user is familiar with and they do not have to learn new symbols for different applications. </p>
-										<div class="example"><div class="example-title marker"><span>Example:</span><span style="text-transform: none"> Symbol Using ARIA</span></div>&lt;img coga-symbol="http://wordnet-rdf.princeton.edu/wn31/girl-n" href="mygirlsy.bmp"/&gt; </div>
+										<div class="example"><div class="example-title marker"><span>Example:</span><span style="text-transform: none"> Symbol Using ARIA</span></div>&lt;img aui-symbol="http://wordnet-rdf.princeton.edu/wn31/girl-n" href="mygirlsy.bmp"/&gt; </div>
 
 										<p class="note">To help this be interoperable without an RDF parser we  recommend referencing the most commonly used ontologies and the highest level concept. (For example, reference "girl" and not "young girl" .) </p>
 										<p class="ednote">We should have a note of common suggested terms and references. (Maybe with links to http://www.arasaac.org/) </p>
@@ -1144,10 +1144,10 @@
 					<p><strong>Supported value: </strong> String</p>
 					<p>Note that there is no default value.</p>
 					<div class="example"><div class="example-title marker"><span>Example 1</span><span style="text-transform: none">: Numberfree Using ARIA</span></div>
-					<pre>&lt;span coga-numberfree=&quot;almost all&quot;&gt;9 out of 10 &lt;/span&gt;
+					<pre>&lt;span aui-numberfree=&quot;almost all&quot;&gt;9 out of 10 &lt;/span&gt;
 			</div>
 			<div class="example"><div class="example-title marker"><span>Example 2</span><span style="text-transform: none">: Numberfree Using ARIA</span></div>
-			<pre>&lt;span coga-numberfree=&quot;hat and coat weather&quot;&gt;The weather is 9 degrees&lt;/span&gt;</pre>
+			<pre>&lt;span aui-numberfree=&quot;hat and coat weather&quot;&gt;The weather is 9 degrees&lt;/span&gt;</pre>
 			</div>
 				</div>
 				<table class="property-features">
@@ -1188,7 +1188,7 @@
 					<p><strong>Supported value: </strong>String</p>
 					<p>Note that there is no default value.</p>
 					<div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: Literal Using ARIA</span></div>
-					<pre>It is &lt;span coga-literal=&quot;raining hard&quot;&gt;raining cats and dogs&lt;/span&gt;</pre>
+					<pre>It is &lt;span aui-literal=&quot;raining hard&quot;&gt;raining cats and dogs&lt;/span&gt;</pre>
 					</div>
 
 				</div>
@@ -1231,8 +1231,8 @@
 								<p>The content must still be understandable when a user agent replaces the original content with the simpler alternative.</p>
 								<p><strong>Supported values:</strong> String</p>
 								<div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: Easylang Using ARIA</span></div>
-								<pre>&lt;span coga-easylang=&quot;some text that is easy to read&quot;&gt; some convoluted obtuse text&lt;/span&gt;</pre></div>
-								<p>Where coga-easylang should use as simple well-known words as possible, and active voicing, literal text, small simple sentences. Acronyms and abbreviations should be avoided, unless they are the common way to refer to an item.</p>
+								<pre>&lt;span aui-easylang=&quot;some text that is easy to read&quot;&gt; some convoluted obtuse text&lt;/span&gt;</pre></div>
+								<p>Where aui-easylang should use as simple well-known words as possible, and active voicing, literal text, small simple sentences. Acronyms and abbreviations should be avoided, unless they are the common way to refer to an item.</p>
 							</div>
 							<table class="property-features">
 								<caption>Characteristics:</caption>
@@ -1303,8 +1303,8 @@
 					<p>User experience: This help can be rendered as a tool tip, help link or read when the control or link is read. Most users will not want this text rendered or spoken, but other users however will need it to understand the behavior of the element.</p>
 					<p>Note that there is no default value.</p>
 					<p><strong>Examples:</strong></p>
-					<pre>coga-explain="press enter to send the email" </pre>
-					<pre>coga-feedback="your email on birthdays was sent" </pre>
+					<pre>aui-explain="press enter to send the email" </pre>
+					<pre>aui-feedback="your email on birthdays was sent" </pre>
 					<p>These values will change when the email is sent.</p>
 				</div>
 				<table class="property-features">
@@ -1410,11 +1410,11 @@
 				<div class="property-description">
 					<p>@@1-line description</p>
 					<p><strong>Example:</strong></p>
-					<pre>&lt;button type="button" coga-extrahelp=&quot;uri2 uri3&quot; &gt;undo&lt;/button&gt;</pre>
+					<pre>&lt;button type="button" aui-extrahelp=&quot;uri2 uri3&quot; &gt;undo&lt;/button&gt;</pre>
 					<p>URI 2 may read: </p>
 					<pre>&lt;div id=&quot;uri2&quot;
-    coga-helptype=&quot;morehelp&quot;
-    coga-hidden=&quot;true&quot;&gt;
+    aui-helptype=&quot;morehelp&quot;
+    aui-hidden=&quot;true&quot;&gt;
   pressing the undo button will erase all your work on this page.
   Use this button with care.
   If you press it by mistake, press control and y at the same time
@@ -1422,13 +1422,13 @@
 &lt;/div&gt;
 
 &lt;a href=&quot;functiongethelp()&quot;
-    coga-helptype=&quot;humanhelp&quot;
-    coga-hidden=&quot;true&quot;&gt;
+    aui-helptype=&quot;humanhelp&quot;
+    aui-hidden=&quot;true&quot;&gt;
   I want a person to help me
 &lt;/a&gt;
 &lt;div id=&quot;uri3&quot;
-    coga-extrahelp=&quot;glossary&quot;
-    coga-hidden=&quot;true&quot;&gt;
+    aui-extrahelp=&quot;glossary&quot;
+    aui-hidden=&quot;true&quot;&gt;
 </pre>
 				</div>
 				<table class="property-features">
@@ -1517,7 +1517,7 @@
 			<section class="property">
 				<h3>alternative</h3>
 				<div class="property-description">
-					<p>Would be used on an alternative content as an alternative to more detailed or difficult to understand content. coga-alternative can be used on a span, div, link or image that servers as alternative content to it's direct parent element.</p>
+					<p>Would be used on an alternative content as an alternative to more detailed or difficult to understand content. aui-alternative can be used on a span, div, link or image that servers as alternative content to it's direct parent element.</p>
 					<p class="ednote">This data model may be too complex, so this property could undergo substantial changes.</p>
 					<p><strong>Supported values:</strong>
 					</p>
@@ -1530,7 +1530,7 @@
 					<p>Note that there is no default value.</p>
 					<strong>Example:</strong>
 					<pre>&lt;div&gt;
-  &lt;span coga-alternative="easylang numberfree vocab1000" class="hidden"&gt;>
+  &lt;span aui-alternative="easylang numberfree vocab1000" class="hidden"&gt;>
     most people prefer simple text
   &lt;/span&gt;
   In studies it was found that only 30% of users prefer long convoluted text
@@ -1767,7 +1767,7 @@
 				<h3>steplocation</h3>
 				<div class="property-description">
 					<p>Contains a link to the location of the step for editing and review. The referenced location should support editing.</p>
-					<p>An embedded link inside a step can serve the same function as coga-steplocation.</p>
+					<p>An embedded link inside a step can serve the same function as aui-steplocation.</p>
 				</div>
 				<table class="property-features">
 					<caption>Characteristics:</caption>
@@ -1803,8 +1803,8 @@
 					<p>Describe whether a step in a process is done, pending, current, or not done.</p>
 					<p class="ednote">Need a better token for "not done", or is that value actually needed given the presence of prending and current?</p>
 					<p class="ednote">Not clear how the true and false values below relate to the done/pending/current/not-done values above.</p>
-					<p>When <a href="#actiontaken">actiontaken</a> is not null it implies that <code>coga-status</code> is true. </p>
-					<p>When <a href="#actiontaken">actiontaken</a> is null it implies that <code>coga-status</code> is false.</p>
+					<p>When <a href="#actiontaken">actiontaken</a> is not null it implies that <code>aui-status</code> is true. </p>
+					<p>When <a href="#actiontaken">actiontaken</a> is null it implies that <code>aui-status</code> is false.</p>
 				</div>
 				<table class="property-features">
 					<caption>Characteristics:</caption>
@@ -1875,7 +1875,7 @@
 					<p>@@1-line description</p>
 					<p><strong>Example:</strong></p>
 					<pre>&lt;div role=&quot;alert&quot;
-    coga-messageimportance=&quot;medium&quot;&gt;
+    aui-messageimportance=&quot;medium&quot;&gt;
   It is your daughter's birthday tomorrow
 &lt;/div&gt;</pre>
 				</div>
@@ -1938,8 +1938,8 @@
 					<p>Note that there is no default value.</p>
 					<p><strong>Example:</strong></p>
 					<pre>&lt;div role=&quot;alert&quot;
-    coga-messageimportance=&quot;low&quot;
-    coga-messagefrom=&quot;lisa seeman, lseeman&quot;&gt;
+    aui-messageimportance=&quot;low&quot;
+    aui-messagefrom=&quot;lisa seeman, lseeman&quot;&gt;
   I posted a new version on GitHub for you to review
 &lt;/div&gt;</pre>
 				</div>
@@ -1979,9 +1979,9 @@
 					<p>Note that there is no default value.</p>
 					<p><strong>Example:</strong></p>
 					<pre>&lt;div role=&quot;alert&quot;
-   coga-messageimportance=&quot;low&quot;
-   coga-messagefrom=&quot;lisa seeman, lseeman&quot;
-   coga-messagecontext=&quot;work&quot;&gt;
+   aui-messageimportance=&quot;low&quot;
+   aui-messagefrom=&quot;lisa seeman, lseeman&quot;
+   aui-messagecontext=&quot;work&quot;&gt;
   I posted a new version on GitHub for you to review
 &lt;/div&gt;</pre>
 				</div>
@@ -2021,17 +2021,17 @@
 					<p>Note that there is no default value.</p>
 					<p><strong>Example:</strong></p>
 					<pre>&lt;div role=&quot;alert&quot;
-    coga-messageimportance=&quot;medium&quot;
-    coga-messagefrom=&quot;my calender&quot;
-    coga-messagecontext=&quot;work&quot;
-    coga-messagetime=&quot;10.02.2017.00.00-16.02.2017.00.00&quot;&gt;
+    aui-messageimportance=&quot;medium&quot;
+    aui-messagefrom=&quot;my calender&quot;
+    aui-messagecontext=&quot;work&quot;
+    aui-messagetime=&quot;10.02.2017.00.00-16.02.2017.00.00&quot;&gt;
   Renew your driving license this week
 &lt;/div&gt;</pre>
 					<pre>&lt;div role=&quot;alert&quot;
-    coga-messageimportance=&quot;critical&quot;
-    coga-messagefrom=&quot;my calender&quot;
-    coga-messagecontext=&quot;work&quot;
-    coga-messagetime=&quot;16.02.2017.00.00&quot;&gt;
+    aui-messageimportance=&quot;critical&quot;
+    aui-messagefrom=&quot;my calender&quot;
+    aui-messagecontext=&quot;work&quot;
+    aui-messagetime=&quot;16.02.2017.00.00&quot;&gt;
   Renew your driving license ASAP
 &lt;/div&gt;</pre>
 				</div>
@@ -2068,10 +2068,10 @@
 				<div class="property-description">
 					<p>This attribute should be used on non essential, detracting content, so that people who have problems keeping focus can turn them off. An example user experiences would be to hide all distraction content.</p>
 					<p><strong>Example: </strong></p>
-					<pre>coga-distraction=&quot;moving ad&quot;</pre>
+					<pre>aui-distraction=&quot;moving ad&quot;</pre>
 					<p><strong>Supported values: </strong>animations, auto-starting, moving, ad, message, chat , overlay, popup<br /> Auto-changing (logs) third-party, offer ( includes suggestions).</p>
 					<p>Note that there is no default value.</p>
-					<p>Note that elements with the coga-distraction attribute should also have a label or accessible name.</p>
+					<p>Note that elements with the aui-distraction attribute should also have a label or accessible name.</p>
 				</div>
 				<table class="property-features">
 					<caption>Characteristics:</caption>
