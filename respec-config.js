@@ -63,6 +63,14 @@ var respecConfig = {
         company: "W3C",
         companyURI: "http://www.w3.org",
         w3cid: 34017
+      },
+      {
+        name: "Roy Ran",
+        url: 'https://www.w3.org',
+        mailto: "ran@w3.org",
+        company: "W3C",
+        companyURI: "http://www.w3.org",
+        w3cid: 100586
       }
     ],
 
