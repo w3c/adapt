@@ -21,7 +21,7 @@
 		<section class="informative" id="introduction">
 
 			<h1>Introduction</h1>
-			<p>The goals of this specification include:</p>
+			<p>The goals of this specification includes:</p>
 			<ul>
 				<li> expanding the accessibility information that may be supplied by the author;</li>
 				<li> facilitate preference driven individual personalization;</li>
@@ -44,7 +44,7 @@
 				<p>Some users need extra support. This can include: </p>
 				<ul>
 					<li> Symbols and graphics that they are familiar with </li>
-					<li> Tool tips </li>
+					<li> Tooltips </li>
 					<li> Language they understand </li>
 					<li> Less features </li>
 					<li> Separating advertisements, so they do not confuse them with native content </li>
@@ -60,13 +60,13 @@
 					<li>An HTML page that uses some of the new syntax: <a href="https://github.com/ayelet-seeman/coga.personalisation/tree/ExampleWebPage/">https://github.com/ayelet-seeman/coga.personalisation/tree/ExampleWebPage/</a></li>
 					<li>Scripts that a web author can use or include that read the user settings in the JSON files and adapt the page for the user needs: <a href="https://github.com/ayelet-seeman/coga.personalisation/tree/Script-Options">https://github.com/ayelet-seeman/coga.personalisation/tree/Script-Options</a></li>
 				</ol>
-				<p>This is one example of personalization based on semantics. Others may follow. It is also worth noting that the GPII project is working on making user preferences portable which would also enhance this work.</p>
+				<p>This is one example of personalization based on semantics. Others may follow. It is also worth noting that the <a href="https://gpii.net">GPII project</a> is working on making user preferences portable which would also enhance this work.</p>
 				<p>In another use-case we would like to see interoperable symbol set codes for non-verbal people. Products for people who are non vocal often use symbols to help users communicate. These symbols are in fact peoples language. Unfortunately many of these symbols are both subject to copy write and are not interoperable. That means end-users can only use one device, and can not use apps or AT from a different company. An open set of references for symbol codes for these symbol sets however, could be interoperable. That means the end user could use an open source symbol set or buy the symbols and use them across different devices or applications. Symbols could still be proprietary but they would also be interoperable. </p>
 			</section>
 
 			<section class="section" id="intro_context">
 				<h2>Personalization Use Cases (general)</h2>
-				<p>TPersonalization Use Cases covers use cases that can be addressed by personalization, and references the vocabulary items that help meet the use cases.</p>
+				<p>Personalization Use Cases covers use cases that can be addressed by personalization, and references the vocabulary items that help meet the use cases.</p>
 			</section>
 		</section>
 
@@ -144,8 +144,8 @@
 				<p class="ednote">The prefix above is not yet accepted by the ARIA Working Group.</p>
 				<section>
 					<h2>Additional WAI-ARIA Roles</h2>
-					<p><strong>Requirement: </strong> We may want to add roles for sections a page such as: contact us - for a contact us formÂ  </p>
-					<p><strong>User experience: </strong>symbols and colors could be used consistently across different content.</p>
+					<p><b>Requirement</b>: We may want to add roles for sections a page such as: contact us - for a contact us form.</p>
+					<p><b>User experience: </b>symbols and colors could be used consistently across different content.</p>
 					<p>Nav maps can be automatically generated for people learn via key-points or examples.</p>
 					<p>Further these sections could be hidden in the normal rendering of a page or rendered the top of page depending on user preferences. The location of these sections can also be changed, based on the user preference, enabling the user to find them easily.</p>
 					<p>Values:</p>
@@ -172,7 +172,7 @@
 				<h3>RDFa</h3>
 				<p>The context based properties should be convertible to RDFa. (see <a href="https://www.w3.org/TR/xhtml-rdfa-primer/">RDFa Primer</a>) and the task force should create this mapping.</p>
 				<p>Note that a lot of this can be done using RDFa. However it is easy to change the meaning with RDFa and a very basic parser will misinterpret the result. The coga work needs to be usable by as many authors as possible, and not only those who can implement RDF logic.</p>
-				<p>Further , personalization setting need to be limited, and RDF can give an unlimited number of potential options which will make the system unusable. (This is unless we create restrictions and controls on an ontology uses - such as mapping to know ontologies.)</p>
+				<p>Further, personalization setting need to be limited, and RDF can give an unlimited number of potential options which will make the system unusable. (This is unless we create restrictions and controls on an ontology uses - such as mapping to known ontologies.)</p>
 				<p>For example, in the code below the property homepage does not refer to the home page of the site but of the person being references. Beyond declaring the type of data we are dealing with, each typeof creates a new blank node with its own distinct properties. </p>
 				<pre>
 &lt;div vocab="http://xmlns.com/foaf/0.1/"&gt;
