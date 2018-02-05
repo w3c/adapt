@@ -7,7 +7,7 @@ var respecConfig = {
     permalinkHide:     false,
     tocIntroductory: true,
     // specification status (e.g., WD, LC, NOTE, etc.). If in doubt use ED.
-    specStatus:           "ED",
+    specStatus:           "WD",
     noRecTrack: true,
     //crEnd:                "2012-04-30",
     //perEnd:               "2013-07-23",
@@ -15,7 +15,7 @@ var respecConfig = {
     //diffTool:             "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
 
     // the specifications short name, as in http://www.w3.org/TR/short-name/
-    shortName:            "personalization-explainer-1.0",
+    shortName:            "personalization-semantics-1.0",
 
 
     // if you wish the publication date to be other than today, set this
