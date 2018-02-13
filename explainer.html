@@ -6,7 +6,7 @@
 		<script src="https://www.w3.org/Tools/respec/respec-w3c-common" class="remove"></script>
 		<script src="common/biblio.js" class="remove"></script>
 		<script src="respec-config.js" class="remove"></script>
-	
+
 		<link href="common/css/common.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
@@ -108,15 +108,15 @@
 					<li><a href="content/index.html">Adaptable Content:</a>
 					<p>This section provided vocabularies that enables user agents to augment or adapt content to the user scenario and helps the user use and understand the content.</p>
 					<p>It includes use cases and vocabularies for identifying the purpose of controls, symbols  and user interface elements and supports simplification and distractions.</p></li>
-				
+
 					<li><a href="help/index.html">Adaptable Help and support:</a>
 					<p>This module is not yet published but an early draft is available.</p>
 					<p>It addresses adding information about the content to enable help scaffolding and additional support for different user scenarios.</p></li>
-				
+
 					<li><a href="tools/index.html">Adaptable Tools</a>
 					<p>This module is not yet published but an early draft is available.</p>
 					<p>It addresses adding information about the content to enable user agents and new extensions that support the user such as adaptable breadcrumbs.</p></li>
-				
+
 				</ul>
 		</section>
 
@@ -158,11 +158,23 @@
 			</section>
 			<section>
 				<h3>HTML Microdata</h3>
-				<p>Properties in this vocabulary can be used in <a href="https://www.w3.org/TR/microdata/">HTML Microdata</a> [[microdata]]. The property name is uses as the item name, the property value as the item value. Authors SHOULD use the itemtype property to express to the <a href="#propcharacteristic_value">value type</a> defined in this specification.</p>
+				<p>Properties in this vocabulary can be used in <a href="https://www.w3.org/TR/microdata/">HTML Microdata</a> [[microdata]]. The property name is used as the item name, the property value as the item value. Authors SHOULD use the itemtype property to express to the <a href="#propcharacteristic_value">value type</a> defined in this specification.</p>
+				<pre>
+&lt;div itemscope&gt;
+  &lt;a href="home.html" itemprop="aui-destination" itemvalue="home"&gt;our main page&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div itemscope&gt;
+  &lt;label for="firstN"&gt;Name: &lt;/label&gt;
+	&lt;input type="text" id="fName" itemprop="aui-field" itemvalue="givenName" itemtype="string"&gt;
+&lt;/div&gt;
+				</pre>
+		See the destination sample user experience.
+				</pre>
 			</section>
 			<section>
 				<h3>RDFa</h3>
-                <p class="ednote">The task force is revising the recommended approach to using the vocabulary in RDFa. Significant changes will be made to this section in future public drafts.  Please see the latest editors draft for the latest version.</p>                
+                <p class="ednote">The task force is revising the recommended approach to using the vocabulary in RDFa. Significant changes will be made to this section in future public drafts.  Please see the latest editors draft for the latest version.</p>
 				<p>The context based properties should be convertible to RDFa. (see <a href="https://www.w3.org/TR/xhtml-rdfa-primer/">RDFa Primer</a>) and the task force should create this mapping.</p>
 				<p>Note that a lot of this can be done using RDFa. However it is easy to change the meaning with RDFa and a very basic parser will misinterpret the result. The coga work needs to be usable by as many authors as possible, and not only those who can implement RDF logic.</p>
 				<p>Further, personalization setting need to be limited, and RDF can give an unlimited number of potential options which will make the system unusable. (This is unless we create restrictions and controls on an ontology uses - such as mapping to known ontologies.)</p>
