@@ -131,6 +131,18 @@
 				<h3>Mapping Values to Different Syntax </h3>
 			</section>
 			<section>
+				<h3>Vocabulary Identification</h3>
+				<p>Metadata languages that support this vocabulary need to distinguish terms coming from the personalization semantics vocabulary, from terms in other vocabularies. This document proposes two identifications mechanisms, which may be used separately or together according to the needs of the metadata language. These are the <strong>prefix</strong> and the <strong>identification URI</strong>.</p>
+				<section>
+					<h4>Prefix</h4>
+					<p>The prefix for personalization semantics is "<strong>aui</strong>", which is an acronym of "accessible user interface". Implementations that use a prefix to identify terms from this vocabulary should use that prefix.</p>
+				</section>
+				<section>
+					<h4>Identification URI</h4>
+					<p>The identification URI for personalization semantics is <code>https://www.w3.org/ns/aui/</code>. Implementations that use a URI to identify terms from this vocabulary should use that URI.</p>
+				</section>
+			</section>
+			<section>
 				<h3>WAI-ARIA</h3>
 				<p>Properties in this case can be represented as WAI-ARIA properties by adding the prefix "aui-" to the attribute name, and the property value as the attribute value.</p>
 				<p class="ednote">The prefix above is not yet accepted by the ARIA Working Group.</p>
@@ -158,38 +170,38 @@
 			</section>
 			<section>
 				<h3>HTML Microdata</h3>
-				<p>Properties in this vocabulary can be used in <a href="https://www.w3.org/TR/microdata/">HTML Microdata</a> [[microdata]]. The property name is used as the item name, the property value as the item value. Authors SHOULD use the itemtype property to express to the <a href="#propcharacteristic_value">value type</a> defined in this specification.</p>
+				<p>Properties in this vocabulary can be applied via <a href="https://www.w3.org/TR/microdata/">HTML Microdata</a> [[microdata]]. To apply a term from this vocabulary to content using Microdata, use the following steps:</p>
+				<ul>
+					<li>On the element to which a property applies, set the <a href="https://www.w3.org/TR/microdata/#dfn-itemscope"><code>itemscope</code> attribute</a>. </li>
+					<li>On the element for which <code>itemscope</code> is set, set the <a href="https://www.w3.org/TR/microdata/#dfn-itemtype"><code>itemtype</code> attribute</a> to the personalizaton semantics <a href="#identification-uri">identification URI</a>.</li>
+					<li>On the same element or a descendant element, as appropriate to the context, set the <a href="https://www.w3.org/TR/microdata/#dfn-attr-itemprop"><code>itemprop</code> attribute</a>, using the name of the personalization semantics property as the value of the attribute.</li>
+					<li>On the element for which <code>itemprop</code> is set, set the <a href="https://www.w3.org/TR/microdata/#dfn-content"><code>content</code> attribute</a> to the appropriate value for the property.</li>
+				</ul>
+				<pre class="example" title="Action property in HTML using HTML Microdata">&lt;button itemscope itemtype="https://www.w3.org/ns/aui/" itemprop="action" content="undo">
+  Revert
+&lt;/button></pre>
 			</section>
 			<section>
 				<h3>RDFa</h3>
-                <p class="ednote">The task force is revising the recommended approach to using the vocabulary in RDFa. Significant changes will be made to this section in future public drafts.  Please see the latest editors draft for the latest version.</p>                
-				<p>The context based properties should be convertible to RDFa. (see <a href="https://www.w3.org/TR/xhtml-rdfa-primer/">RDFa Primer</a>) and the task force should create this mapping.</p>
-				<p>Note that a lot of this can be done using RDFa. However it is easy to change the meaning with RDFa and a very basic parser will misinterpret the result. The personalization semantics need to be usable by as many authors as possible, and not only those who can implement RDF logic.</p>
-				<p>Further, personalization setting need to be limited, and RDF can give an unlimited number of potential options which will make the system unusable. (This is unless we create restrictions and controls on an ontology uses - such as mapping to known ontologies.)</p>
-				<p>For example, in the code below the property homepage does not refer to the home page of the site but of the person being referenced. Beyond declaring the type of data we are dealing with, each typeof creates a new blank node with its own distinct properties. </p>
-				<pre>
-&lt;div vocab="http://xmlns.com/foaf/0.1/"&gt;
-&lt;ul&gt;
-   &lt;li typeof="Person"&gt;
-      &lt;a property="homepage" href="http://example.com/bob/"&gt;Bob&lt;/a&gt;
-   &lt;/li&gt;
-   &lt;li typeof="Person"&gt;
-      &lt;a property="homepage" href="http://example.com/eve/"&gt;Eve&lt;/a&gt;
-   &lt;/li&gt;
-   &lt;li typeof="Person"&gt;
-      &lt;a property="homepage" href="http://example.com/manu/"&gt;Manu&lt;/a&gt;
-   &lt;/li&gt;
-&lt;/ul&gt;
-				</pre>
-				<p>We may recommend adding RDFA that describe the role of the item (see <a href="https://www.w3.org/TR/xhtml-rdfa-primer/">RDFa Primer</a>):</p>
-				<pre>
-&lt;div resource="/alice/posts/jos_barbecue"&gt;
-	&lt;h2 property="title"&gt;Jo's Barbecue&lt;/h2&gt;
-	&lt;p&gt;Date: &lt;span property="created"&gt;2011-09-14&lt;/span&gt;&lt;/p&gt;
-	&lt;h3 property="creator"&gt;Eve&lt;/h3&gt;
-	...
-&lt;/div&gt;
-			</pre>
+				<p>Properties in this vocabulary can be applied via <a href="https://www.w3.org/TR/rdfa-lite/">RDFa</a> [[rdfa-core]]. To apply a term from this vocabulary to content using RDFa, use the following steps:</p>
+				<ul>
+					<li>On the <code>body</code> element, use the personalization semantics <a href="#identification-uri">identification URI</a> to identify the vocabulary to the RDFa processor. This can be done in one of two ways:<ul>
+							<li>If personalization semantics is the only vocabulary being used, use the identification URI as the value of the <a href="https://www.w3.org/TR/rdfa-lite/#vocab-typeof-and-property"><code>vocab</code> attribute</a>.</li>
+							<li>If multiple vocabularies are being used, use the <a href="https://www.w3.org/TR/rdfa-lite/#prefix"><code>prefix</code> attribute</a> to declare a prefix and vocabulary reference for the personalization semantics vocabulary. The prefix should be the personalization semantics <a href="#prefix">prefix</a>, and the vocabulary should be the identification URI, i.e., <code>prefix="aui: https://www.w3.org/ns/aui/"</code>. Define prefixes and voculabulary references for other vocabularies in the same attribute.</li>
+						</ul></li>
+					<li>On the element to which a property applies, set the <a href="https://www.w3.org/TR/rdfa-lite/#vocab-typeof-and-property"><code>property</code> attribute</a> to the name of the personalization semantics property, using the prefix if needed.</li>
+					<li>On the same element, set the <a href="https://www.w3.org/TR/rdfa-core/#A-content"><code>content</code> attribute</a> to the appropriate value for the property.</li>
+				</ul>
+				<pre class="example" title="Action property in HTML using RDFa without prefix">&lt;html>
+  &lt;body vocab="https://www.w3.org/ns/aui/">
+    &lt;button property="action" content="undo">Revert&lt;/button>
+  &lt;/body>
+&lt;/html></pre>
+				<pre class="example" title="Action property in HTML using RDFa with prefix">&lt;html>
+  &lt;body prefix="aui: https://www.w3.org/ns/aui/">
+    &lt;button property="aui:action" content="undo">Revert&lt;/button>
+  &lt;/body>
+&lt;/html></pre>
 			</section>
 			<section>
 				<h3>Autocomplete</h3>
