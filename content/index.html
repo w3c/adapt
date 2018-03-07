@@ -121,11 +121,7 @@ input.task-list-item-checkbox {
 		<title>Personalization Semantics Content Module 1.0</title>
 		
 		
-		
-		
-	
-		<link href="../common/css/common.css" rel="stylesheet" type="text/css">
-	<style id="respec-mainstyle">/*****************************************************************
+		<style id="respec-mainstyle">/*****************************************************************
  * ReSpec 3 CSS
  * Robin Berjon - http://berjon.com/
  *****************************************************************/
@@ -398,7 +394,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-strong {
   font-weight: bold;
 }
-</style><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-content-1.0/"><script id="initialUserConfig" type="application/json">{
+</style>
+		
+	
+		<link href="../common/css/common.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-content-1.0/"><script id="initialUserConfig" type="application/json">{
   "trace": true,
   "doRDFa": "1.0",
   "includePermalinks": true,
@@ -833,7 +833,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           
           
         </p><p>This document is governed by the <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-        </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a href="#abstract" class="tocxref">Abstract</a></li><li class="tocline"><a href="#sotd" class="tocxref">Status of This Document</a></li><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a></li><li class="tocline"><a href="#use-cases" class="tocxref"><span class="secno">2. </span>Use Cases</a><ol class="toc"><li class="tocline"><a href="#use_case_simplification" class="tocxref"><span class="secno">2.1 </span>Simplification</a></li><li class="tocline"><a href="#use_case_adding_context" class="tocxref"><span class="secno">2.2 </span>Adding Context</a><ol class="toc"><li class="tocline"><a href="#use_case_general_context" class="tocxref"><span class="secno">2.2.1 </span>General Context</a></li><li class="tocline"><a href="#use_case_interoperable_symbols" class="tocxref"><span class="secno">2.2.2 </span>Interoperable Symbols</a></li></ol></li></ol></li><li class="tocline"><a href="#content" class="tocxref"><span class="secno">3. </span>Content</a><ol class="toc"><li class="tocline"><a href="#action-explanation" class="tocxref"><span class="secno">3.1 </span>aui-action</a><ol class="toc"><li class="tocline"><a href="#description" class="tocxref"><span class="secno">3.1.1 </span>Description</a></li><li class="tocline"><a href="#action-example" class="tocxref"><span class="secno">3.1.2 </span>Example</a></li><li class="tocline"><a href="#characteristics" class="tocxref"><span class="secno">3.1.3 </span>Characteristics</a></li><li class="tocline"><a href="#values" class="tocxref"><span class="secno">3.1.4 </span>Values</a></li></ol></li><li class="tocline"><a href="#destination-explanation" class="tocxref"><span class="secno">3.2 </span>aui-destination</a><ol class="toc"><li class="tocline"><a href="#description-0" class="tocxref"><span class="secno">3.2.1 </span>Description</a></li><li class="tocline"><a href="#destination-example" class="tocxref"><span class="secno">3.2.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-0" class="tocxref"><span class="secno">3.2.3 </span>Characteristics</a></li><li class="tocline"><a href="#values-0" class="tocxref"><span class="secno">3.2.4 </span>Values</a></li></ol></li><li class="tocline"><a href="#field-explanation" class="tocxref"><span class="secno">3.3 </span>aui-field</a><ol class="toc"><li class="tocline"><a href="#description-1" class="tocxref"><span class="secno">3.3.1 </span>Description</a></li><li class="tocline"><a href="#field-example" class="tocxref"><span class="secno">3.3.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-1" class="tocxref"><span class="secno">3.3.3 </span>Characteristics</a></li><li class="tocline"><a href="#values-1" class="tocxref"><span class="secno">3.3.4 </span>Values</a></li></ol></li><li class="tocline"><a href="#simplification-explanation" class="tocxref"><span class="secno">3.4 </span>aui-simplification</a><ol class="toc"><li class="tocline"><a href="#description-2" class="tocxref"><span class="secno">3.4.1 </span>Description</a></li><li class="tocline"><a href="#simplification-example" class="tocxref"><span class="secno">3.4.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-2" class="tocxref"><span class="secno">3.4.3 </span>Characteristics</a></li><li class="tocline"><a href="#values-2" class="tocxref"><span class="secno">3.4.4 </span>Values</a></li></ol></li><li class="tocline"><a href="#distraction-explanation" class="tocxref"><span class="secno">3.5 </span>aui-distraction</a><ol class="toc"><li class="tocline"><a href="#description-3" class="tocxref"><span class="secno">3.5.1 </span>Description</a></li><li class="tocline"><a href="#distraction-example" class="tocxref"><span class="secno">3.5.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-3" class="tocxref"><span class="secno">3.5.3 </span>Characteristics</a></li><li class="tocline"><a href="#values-3" class="tocxref"><span class="secno">3.5.4 </span>Values</a></li></ol></li><li class="tocline"><a href="#symbol-explanation" class="tocxref"><span class="secno">3.6 </span>aui-symbol</a><ol class="toc"><li class="tocline"><a href="#description-4" class="tocxref"><span class="secno">3.6.1 </span>Description</a></li><li class="tocline"><a href="#symbol-example" class="tocxref"><span class="secno">3.6.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-4" class="tocxref"><span class="secno">3.6.3 </span>Characteristics</a></li></ol></li></ol></li><li class="tocline"><a href="#vocabulary-implementations" class="tocxref"><span class="secno">A. </span>Vocabulary Implementations</a></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a href="#ack_group" class="tocxref"><span class="secno">B.1 </span>Participants active in the ARIA WG at the time of publication</a></li><li class="tocline"><a href="#ack_others" class="tocxref"><span class="secno">B.2 </span>Other ARIA contributors, commenters, and previously active participants</a></li><li class="tocline"><a href="#ack_funders" class="tocxref"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">C.1 </span>Informative references</a></li></ol></li></ol></nav>
+        </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a href="#abstract" class="tocxref">Abstract</a></li><li class="tocline"><a href="#sotd" class="tocxref">Status of This Document</a></li><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a></li><li class="tocline"><a href="#use-cases" class="tocxref"><span class="secno">2. </span>Use Cases</a><ol class="toc"><li class="tocline"><a href="#use_case_simplification" class="tocxref"><span class="secno">2.1 </span>Simplification</a></li><li class="tocline"><a href="#use_case_adding_context" class="tocxref"><span class="secno">2.2 </span>Adding Context</a><ol class="toc"><li class="tocline"><a href="#use_case_general_context" class="tocxref"><span class="secno">2.2.1 </span>General Context</a></li><li class="tocline"><a href="#use_case_interoperable_symbols" class="tocxref"><span class="secno">2.2.2 </span>Interoperable Symbols</a></li></ol></li></ol></li><li class="tocline"><a href="#content" class="tocxref"><span class="secno">3. </span>Content</a><ol class="toc"><li class="tocline"><a href="#action-explanation" class="tocxref"><span class="secno">3.1 </span>action</a><ol class="toc"><li class="tocline"><a href="#description" class="tocxref"><span class="secno">3.1.1 </span>Description</a></li><li class="tocline"><a href="#action-example" class="tocxref"><span class="secno">3.1.2 </span>Example</a></li><li class="tocline"><a href="#characteristics" class="tocxref"><span class="secno">3.1.3 </span>Characteristics</a></li><li class="tocline"><a href="#values" class="tocxref"><span class="secno">3.1.4 </span>Values</a></li></ol></li><li class="tocline"><a href="#destination-explanation" class="tocxref"><span class="secno">3.2 </span>destination</a><ol class="toc"><li class="tocline"><a href="#description-0" class="tocxref"><span class="secno">3.2.1 </span>Description</a></li><li class="tocline"><a href="#destination-example" class="tocxref"><span class="secno">3.2.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-0" class="tocxref"><span class="secno">3.2.3 </span>Characteristics</a></li><li class="tocline"><a href="#values-0" class="tocxref"><span class="secno">3.2.4 </span>Values</a></li></ol></li><li class="tocline"><a href="#field-explanation" class="tocxref"><span class="secno">3.3 </span>field</a><ol class="toc"><li class="tocline"><a href="#description-1" class="tocxref"><span class="secno">3.3.1 </span>Description</a></li><li class="tocline"><a href="#field-example" class="tocxref"><span class="secno">3.3.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-1" class="tocxref"><span class="secno">3.3.3 </span>Characteristics</a></li><li class="tocline"><a href="#values-1" class="tocxref"><span class="secno">3.3.4 </span>Values</a></li></ol></li><li class="tocline"><a href="#simplification-explanation" class="tocxref"><span class="secno">3.4 </span>simplification</a><ol class="toc"><li class="tocline"><a href="#description-2" class="tocxref"><span class="secno">3.4.1 </span>Description</a></li><li class="tocline"><a href="#simplification-example" class="tocxref"><span class="secno">3.4.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-2" class="tocxref"><span class="secno">3.4.3 </span>Characteristics</a></li><li class="tocline"><a href="#values-2" class="tocxref"><span class="secno">3.4.4 </span>Values</a></li></ol></li><li class="tocline"><a href="#distraction-explanation" class="tocxref"><span class="secno">3.5 </span>distraction</a><ol class="toc"><li class="tocline"><a href="#description-3" class="tocxref"><span class="secno">3.5.1 </span>Description</a></li><li class="tocline"><a href="#distraction-example" class="tocxref"><span class="secno">3.5.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-3" class="tocxref"><span class="secno">3.5.3 </span>Characteristics</a></li><li class="tocline"><a href="#values-3" class="tocxref"><span class="secno">3.5.4 </span>Values</a></li></ol></li><li class="tocline"><a href="#symbol-explanation" class="tocxref"><span class="secno">3.6 </span>symbol</a><ol class="toc"><li class="tocline"><a href="#description-4" class="tocxref"><span class="secno">3.6.1 </span>Description</a></li><li class="tocline"><a href="#symbol-example" class="tocxref"><span class="secno">3.6.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-4" class="tocxref"><span class="secno">3.6.3 </span>Characteristics</a></li></ol></li></ol></li><li class="tocline"><a href="#vocabulary-implementations" class="tocxref"><span class="secno">A. </span>Vocabulary Implementations</a></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a href="#ack_group" class="tocxref"><span class="secno">B.1 </span>Participants active in the ARIA WG at the time of publication</a></li><li class="tocline"><a href="#ack_others" class="tocxref"><span class="secno">B.2 </span>Other ARIA contributors, commenters, and previously active participants</a></li><li class="tocline"><a href="#ack_funders" class="tocxref"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">C.1 </span>Informative references</a></li></ol></li></ol></nav>
 
 		<section class="informative" id="introduction">
 
@@ -847,7 +847,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     <h3 id="x2-1-simplification"><span class="secno">2.1 </span>Simplification<span class="permalink"><a href="#use_case_simplification" aria-label="Permalink for 2.1 Simplification" title="Permalink for 2.1 Simplification"><span>§</span></a></span></h3>
                     <p><b>Requirement</b>: The user must be able to request a way to identify and differentiate between critical features, medium features and less important features. These need to be defined as important from a user perspective in the content. Typically, critical features may be used by many or most users, 90% of the time or more. High important features would be above 60% use. Medium important features would be 20% of users use it 20% of the time. Under 20% usage would be of low importance.</p>
                     <p><b>User experience</b>: Based on personalization setting the user can see less options. A sample user experience is available at <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html">https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html </a></p>
-                    <p>Relevant properties: <a href="#x3-4-aui-simplification">simplification</a></p>
+                    <p>Relevant properties: <a href="#simplification"><code>simplification</code></a></p>
 </section>
 <section id="use_case_adding_context">
                     <h3 id="x2-2-adding-context"><span class="secno">2.2 </span>Adding Context<span class="permalink"><a href="#use_case_adding_context" aria-label="Permalink for 2.2 Adding Context" title="Permalink for 2.2 Adding Context"><span>§</span></a></span></h3>
@@ -860,7 +860,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     </ul>
                     <p>For that we need to standardize supportive syntax and terms that can be linked to associated symbols, terms, translations and explanations, for the individual, via an attribute.</p>
                     <p><b>Example user experience:</b> If an author gives to a button a role "send" then, without any work by the author, the button could be automatically rendered with a symbol, term, and/or tooltips that is understandable by a particular user. It could automatically imply F1 help that explains the send function in simple terms. It could be identified with a keyboard short cut that will always be used for send. In addition it could be identified as important and always rendered, or rendered as a large button. This would enable a consistent UI experience across applications and websites.</p>
-                    <p>Relevant properties: <a href="#x3-1-aui-action">action</a>, <a href="#x3-2-aui-destination">destination</a>, <a href="#x3-3-aui-field">field</a></p>
+                    <p>Relevant properties: <a href="#action"><code>action</code></a>, <a href="#destination"><code>destination</code></a>, <a href="#field"><code>field</code></a></p>
                     <section id="use_case_general_context">
                         <h4 id="x2-2-1-general-context"><span class="secno">2.2.1 </span>General Context<span class="permalink"><a href="#use_case_general_context" aria-label="Permalink for 2.2.1 General Context" title="Permalink for 2.2.1 General Context"><span>§</span></a></span></h4>
                         <p><b>Requirement: </b> One important factor in optimizing the personalization of a product or service is to ensure that the personalization is appropriate for the current context of use as well as what is relevant for the user. For example a female user with a cognitive disability may need less options, and options that are for men are less likely to be relevant for her and may be demoted to bellow the scroll or placed under a "more option" button.</p>
@@ -879,7 +879,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 			<!--OddPage--><h2 id="x3-content"><span class="secno">3. </span>Content<span class="permalink"><a href="#content" aria-label="Permalink for 3. Content" title="Permalink for 3. Content"><span>§</span></a></span></h2>
 			
 <section class="property" id="action-explanation">
-	<h3 id="x3-1-aui-action"><span class="secno">3.1 </span>aui-action<span class="permalink"><a href="#action-explanation" aria-label="Permalink for 3.1 aui-action" title="Permalink for 3.1 aui-action"><span>§</span></a></span></h3>
+	<h3 id="x3-1-action"><span class="secno">3.1 </span>action<span class="permalink"><a href="#action-explanation" aria-label="Permalink for 3.1 action" title="Permalink for 3.1 action"><span>§</span></a></span></h3>
 	<section id="description">
 		<h4 id="x3-1-1-description"><span class="secno">3.1.1 </span>Description<span class="permalink"><a href="#description" aria-label="Permalink for 3.1.1 Description" title="Permalink for 3.1.1 Description"><span>§</span></a></span></h4>
     	<div class="property-description">
@@ -890,7 +890,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <section id="action-example">
     	<h4 id="x3-1-2-example"><span class="secno">3.1.2 </span>Example<span class="permalink"><a href="#action-example" aria-label="Permalink for 3.1.2 Example" title="Permalink for 3.1.2 Example"><span>§</span></a></span></h4>
     	<div class="property-example">               	
-                	<p>The below example section show how aui-action used when coding.</p>
+                	<p>The below example section show how <code>action</code> used when coding.</p>
     				<div class="example"><div class="example-title marker"><span>Example 1</span><span style="text-transform: none">: Action Using ARIA</span></div><pre class="hljs javascript" aria-busy="false">For example: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aui-action</span>=<span class="hljs-string">"undo"</span> &gt;</span>Revert<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span></pre></div>
         			<p>A personalization agent may add a symbol, replace the text with a more familiar term, or give it a specific presentation. Note that there is no default value.</p>			
     	</div>
@@ -926,7 +926,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 						</tr>
 					</tbody>
 		</table>
-    	<p>The following could be supported values of <code>aui-action</code> for buttons. Note that The following items represent an option or control that allows you to perform the action. They do not represent page regions.</p>
+    	<p>The following could be supported values of <code>action</code> for buttons. Note that The following items represent an option or control that allows you to perform the action. They do not represent page regions.</p>
     </section>
 
     <section id="values">
@@ -1171,7 +1171,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 
 			<section class="property" id="destination-explanation">
-	<h3 id="x3-2-aui-destination"><span class="secno">3.2 </span>aui-destination<span class="permalink"><a href="#destination-explanation" aria-label="Permalink for 3.2 aui-destination" title="Permalink for 3.2 aui-destination"><span>§</span></a></span></h3>
+	<h3 id="x3-2-destination"><span class="secno">3.2 </span>destination<span class="permalink"><a href="#destination-explanation" aria-label="Permalink for 3.2 destination" title="Permalink for 3.2 destination"><span>§</span></a></span></h3>
 	<section id="description-0">
 		<h4 id="x3-2-1-description"><span class="secno">3.2.1 </span>Description<span class="permalink"><a href="#description-0" aria-label="Permalink for 3.2.1 Description" title="Permalink for 3.2.1 Description"><span>§</span></a></span></h4>
 		<div class="property-description">
@@ -1181,7 +1181,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 	</section>
 	<section id="destination-example">
 		<h4 id="x3-2-2-example"><span class="secno">3.2.2 </span>Example<span class="permalink"><a href="#destination-example" aria-label="Permalink for 3.2.2 Example" title="Permalink for 3.2.2 Example"><span>§</span></a></span></h4>
-		<p>The below example section show how <code>aui-destination</code> used when coding.</p>
+		<p>The below example section show how <code>destination</code> used when coding.</p>
     	<div class="example"><div class="example-title marker"><span>Example 2</span><span style="text-transform: none">: Action Using ARIA</span></div><pre class="hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"home.html"</span> <span class="hljs-attr">aui-destination</span>=<span class="hljs-string">"home"</span>&gt;</span>our main page<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 		See the destination sample user experience.</pre></div>
     </section>
@@ -1317,20 +1317,20 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 
 			<section class="property" id="field-explanation">
-	<h3 id="x3-3-aui-field"><span class="secno">3.3 </span>aui-field<span class="permalink"><a href="#field-explanation" aria-label="Permalink for 3.3 aui-field" title="Permalink for 3.3 aui-field"><span>§</span></a></span></h3>
+	<h3 id="x3-3-field"><span class="secno">3.3 </span>field<span class="permalink"><a href="#field-explanation" aria-label="Permalink for 3.3 field" title="Permalink for 3.3 field"><span>§</span></a></span></h3>
 	<section id="description-1">
 		<h4 id="x3-3-1-description"><span class="secno">3.3.1 </span>Description<span class="permalink"><a href="#description-1" aria-label="Permalink for 3.3.1 Description" title="Permalink for 3.3.1 Description"><span>§</span></a></span></h4>
 		<div class="property-description">
 			<p><code>field</code> provides the context of a text input field such as a text box. It is typically used on an input of type text, or element with a responding role.</p>
 			<p>A personalization agent may add a symbol, replace the text with a more familiar term, or give it a specific presentation. Note that there is no default value.</p><p>The user experience may include filling in the field and adding an icon.</p>
-			<p>aui-field values that would typically be on form controls and would have a user context - for example phone would relate to the user's phone. Note that there is no default value.</p>
+			<p><code>field</code> values that would typically be on form controls and would have a user context - for example phone would relate to the user's phone. Note that there is no default value.</p>
 			<p>Note they can be more then one value for a field, such as <code>aui-field="country postcode"</code></p>
 		</div>
 	</section>
 
 	<section id="field-example">
 		<h4 id="x3-3-2-example"><span class="secno">3.3.2 </span>Example<span class="permalink"><a href="#field-example" aria-label="Permalink for 3.3.2 Example" title="Permalink for 3.3.2 Example"><span>§</span></a></span></h4>
-		<p>The below example section show how <code>aui-field</code> used when coding.</p>
+		<p>The below example section show how <code>field</code> used when coding.</p>
     	<div class="example"><div class="example-title marker"><span>Example 4</span><span style="text-transform: none">: Fields Using ARIA</span></div><pre class="hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"fname"</span> <span class="hljs-attr">aui-field</span>=<span class="hljs-string">"phone"</span>/&gt;</span></pre></div>
     </section>
     <section id="characteristics-1">
@@ -1604,7 +1604,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 
 			<section class="property" id="simplification-explanation">
-	<h3 id="x3-4-aui-simplification"><span class="secno">3.4 </span>aui-simplification<span class="permalink"><a href="#simplification-explanation" aria-label="Permalink for 3.4 aui-simplification" title="Permalink for 3.4 aui-simplification"><span>§</span></a></span></h3>
+	<h3 id="x3-4-simplification"><span class="secno">3.4 </span>simplification<span class="permalink"><a href="#simplification-explanation" aria-label="Permalink for 3.4 simplification" title="Permalink for 3.4 simplification"><span>§</span></a></span></h3>
 	<section id="description-2">
 		<h4 id="x3-4-1-description"><span class="secno">3.4.1 </span>Description<span class="permalink"><a href="#description-2" aria-label="Permalink for 3.4.1 Description" title="Permalink for 3.4.1 Description"><span>§</span></a></span></h4>
 		<div class="property-description">
@@ -1612,7 +1612,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 							<p>This allows simplified interfaces with less options or interfaces that emphasize critical features. Adaptations can be based on personalization settings. </p>
 						
 
-							 <div class="ednote"><div role="heading" class="ednote-title marker" id="h-ednote-0" aria-level="5"><span>Editor's note</span></div><p class="">This was formerly aui-importance. However different people may feel that sections that would be hidden in a simplified version are still very important, such as marketing content or legal terms.)</p></div>
+							 <div class="ednote"><div role="heading" class="ednote-title marker" id="h-ednote-0" aria-level="5"><span>Editor's note</span></div><p class="">This was formerly <code>importance</code>. However different people may feel that sections that would be hidden in a simplified version are still very important, such as marketing content or legal terms.)</p></div>
 
 							<div class="note"><div role="heading" class="note-title marker" id="h-note-0" aria-level="5"><span>Note</span></div><div class="">
 								<p>These semantics aid simplification. But what content is most useful to a user varies from user to user. For example, men may be more interested in mens clothing, and may not be interested in the more frequently use womens clothing option. For that reason we may add context for elements that will help the personalization agent select the most useful content for a given user (see the <a href="#context">context</a> attribute). This is also necessary for reminders (see bellow).</p>
@@ -1622,7 +1622,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 	</section>
 	<section id="simplification-example">
 		<h4 id="x3-4-2-example"><span class="secno">3.4.2 </span>Example<span class="permalink"><a href="#simplification-example" aria-label="Permalink for 3.4.2 Example" title="Permalink for 3.4.2 Example"><span>§</span></a></span></h4>
-		<p>The below example section show how <code>aui-simplification</code> used when coding.</p>
+		<p>The below example section show how <code>simplification</code> used when coding.</p>
     	<div class="example">
     		<div class="example-title marker"><span>Example:</span><span style="text-transform: none"> Simplification Using ARIA</span>
     		</div>
@@ -1706,19 +1706,19 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 
 			<section id="distraction-explanation">
-	<h3 id="x3-5-aui-distraction"><span class="secno">3.5 </span>aui-distraction<span class="permalink"><a href="#distraction-explanation" aria-label="Permalink for 3.5 aui-distraction" title="Permalink for 3.5 aui-distraction"><span>§</span></a></span></h3>
+	<h3 id="x3-5-distraction"><span class="secno">3.5 </span>distraction<span class="permalink"><a href="#distraction-explanation" aria-label="Permalink for 3.5 distraction" title="Permalink for 3.5 distraction"><span>§</span></a></span></h3>
 	<section id="description-3">
 		<h4 id="x3-5-1-description"><span class="secno">3.5.1 </span>Description<span class="permalink"><a href="#description-3" aria-label="Permalink for 3.5.1 Description" title="Permalink for 3.5.1 Description"><span>§</span></a></span></h4>
 		<div class="property-description">
 			<p>This attribute should be used on non essential, detracting content, so that people who have problems keeping focus can turn them off. An example user experiences would be to hide all distraction content.</p>
 			<p><strong>Supported values: </strong>animations, auto-starting, moving, ad, message, chat , overlay, popup<br> Auto-changing (logs) third-party, offer ( includes suggestions).</p>
 			<p>Note that there is no default value.</p>
-			<p>Note that elements with the aui-distraction attribute should also have a label or accessible name.</p>
+			<p>Note that elements with the <code>distraction</code> attribute should also have a label or accessible name.</p>
 		</div>
 	</section>
 	<section id="distraction-example">
 		<h4 id="x3-5-2-example"><span class="secno">3.5.2 </span>Example<span class="permalink"><a href="#distraction-example" aria-label="Permalink for 3.5.2 Example" title="Permalink for 3.5.2 Example"><span>§</span></a></span></h4>
-		<p>The below example section show how <code>aui-distraction</code> used when coding.</p>
+		<p>The below example section show how <code>distraction</code> used when coding.</p>
    		<div class="example">
     	<div class="example-title marker"><span>Example:</span><span style="text-transform: none"> Distraction Using ARIA</span>
     	</div>
@@ -1814,7 +1814,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 
 			<section id="symbol-explanation">
-	<h3 id="x3-6-aui-symbol"><span class="secno">3.6 </span>aui-symbol<span class="permalink"><a href="#symbol-explanation" aria-label="Permalink for 3.6 aui-symbol" title="Permalink for 3.6 aui-symbol"><span>§</span></a></span></h3>
+	<h3 id="x3-6-symbol"><span class="secno">3.6 </span>symbol<span class="permalink"><a href="#symbol-explanation" aria-label="Permalink for 3.6 symbol" title="Permalink for 3.6 symbol"><span>§</span></a></span></h3>
 	<section id="description-4">
 		<h4 id="x3-6-1-description"><span class="secno">3.6.1 </span>Description<span class="permalink"><a href="#description-4" aria-label="Permalink for 3.6.1 Description" title="Permalink for 3.6.1 Description"><span>§</span></a></span></h4>
 		<div class="property-description">
@@ -1827,7 +1827,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 	</section>
 	<section id="symbol-example">
 		<h4 id="x3-6-2-example"><span class="secno">3.6.2 </span>Example<span class="permalink"><a href="#symbol-example" aria-label="Permalink for 3.6.2 Example" title="Permalink for 3.6.2 Example"><span>§</span></a></span></h4>
-		<p>The below example section show how <code>aui-symbol</code> used when coding.</p>
+		<p>The below example section show how <code>symbol</code> used when coding.</p>
     	<div class="example">
     	<div class="example-title marker"><span>Example:</span><span style="text-transform: none"> Symbol Using ARIA</span>
     	</div>

@@ -90,10 +90,7 @@ input.task-list-item-checkbox {
 		
 		
 		
-		
-	
-		<link href="../common/css/common.css" rel="stylesheet" type="text/css">
-	<style id="respec-mainstyle">/*****************************************************************
+		<style id="respec-mainstyle">/*****************************************************************
  * ReSpec 3 CSS
  * Robin Berjon - http://berjon.com/
  *****************************************************************/
@@ -366,7 +363,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-strong {
   font-weight: bold;
 }
-</style><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-help-1.0/"><script id="initialUserConfig" type="application/json">{
+</style>
+	
+		<link href="../common/css/common.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-help-1.0/"><script id="initialUserConfig" type="application/json">{
   "trace": true,
   "doRDFa": "1.0",
   "includePermalinks": true,
@@ -713,7 +713,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   "publishDate": "2018-03-07",
   "publishISODate": "2018-03-07T00:00:00.000Z",
   "generatedSubtitle": "Editor's Draft 07 March 2018"
-}</script><meta name="description" content="This document list examples of the personalized help and support properties, this is an extension of Personalization Explainer 1.0. including the properties of aui-literal, aui-numberfree, aui-easylang, aui-alternative, aui-explain, aui-feedback, aui-moreinfo,aui-extrahelp, aui-helptype."></head>
+}</script><meta name="description" content="This document list examples of the personalized help and support properties, this is an extension of Personalization Explainer 1.0. including the properties of literal, numberfree, easylang, alternative, explain, feedback, moreinfo,extrahelp, helptype."></head>
 	<body class="h-entry toc-inline"><div class="head">
   <a href="https://www.w3.org/" class="logo">
       <img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C">
@@ -756,7 +756,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 </div>
 
 		<section id="abstract" class="introductory"><!--OddPage--><h2 id="abstract-0">Abstract</h2>
-			<p>This document list examples of the personalized help and support properties, this is an extension of <a href="../">Personalization Explainer 1.0</a>. including the properties of <code>aui-literal</code>, <code>aui-numberfree</code>, <code>aui-easylang</code>, <code>aui-alternative</code>, <code>aui-explain</code>, <code>aui-feedback</code>, <code>aui-moreinfo</code>,<code>aui-extrahelp</code>, <code>aui-helptype</code>. </p>
+			<p>This document list examples of the personalized help and support properties, this is an extension of <a href="../">Personalization Explainer 1.0</a>. including the properties of <code>literal</code>, <code>numberfree</code>, <code>easylang</code>, <code>alternative</code>, <code>explain</code>, <code>feedback</code>, <code>moreinfo</code>,<code>extrahelp</code>, <code>helptype</code>. </p>
 		</section>
 
 		<section id="sotd" class="introductory"><!--OddPage--><h2 id="status-of-this-document">Status of This Document</h2><p>
@@ -800,45 +800,45 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           
           
         </p><p>This document is governed by the <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-        </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a href="#abstract" class="tocxref">Abstract</a></li><li class="tocline"><a href="#sotd" class="tocxref">Status of This Document</a></li><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a></li><li class="tocline"><a href="#use-cases" class="tocxref"><span class="secno">2. </span>Use Cases</a><ol class="toc"><li class="tocline"><a href="#use_case_numberfree" class="tocxref"><span class="secno">2.1 </span>Number Free</a></li><li class="tocline"><a href="#use_case_language" class="tocxref"><span class="secno">2.2 </span>Language Type Support</a></li><li class="tocline"><a href="#use_case_literal" class="tocxref"><span class="secno">2.3 </span>Non-literal Text and Images</a></li><li class="tocline"><a href="#use_case_morehelp" class="tocxref"><span class="secno">2.4 </span>More Help</a></li><li class="tocline"><a href="#use_case_explain" class="tocxref"><span class="secno">2.5 </span>Explain and Feedback</a></li><li class="tocline"><a href="#use_case_potential_feature" class="tocxref"><span class="secno">2.6 </span>Potential Features</a></li></ol></li><li class="tocline"><a href="#help" class="tocxref"><span class="secno">3. </span>Help and support</a><ol class="toc"><li class="tocline"><a href="#literal-explanation" class="tocxref"><span class="secno">3.1 </span>aui-literal</a><ol class="toc"><li class="tocline"><a href="#description" class="tocxref"><span class="secno">3.1.1 </span>Description</a></li><li class="tocline"><a href="#literal-example" class="tocxref"><span class="secno">3.1.2 </span>Example</a></li><li class="tocline"><a href="#characteristics" class="tocxref"><span class="secno">3.1.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a href="#numberfree-explanation" class="tocxref"><span class="secno">3.2 </span>aui-numberfree</a><ol class="toc"><li class="tocline"><a href="#description-0" class="tocxref"><span class="secno">3.2.1 </span>Description</a></li><li class="tocline"><a href="#numberfree-example" class="tocxref"><span class="secno">3.2.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-0" class="tocxref"><span class="secno">3.2.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a href="#easylang-explanation" class="tocxref"><span class="secno">3.3 </span>aui-easylang</a><ol class="toc"><li class="tocline"><a href="#description-1" class="tocxref"><span class="secno">3.3.1 </span>Description</a></li><li class="tocline"><a href="#easylang-example" class="tocxref"><span class="secno">3.3.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-1" class="tocxref"><span class="secno">3.3.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a href="#alternative-explanation" class="tocxref"><span class="secno">3.4 </span>aui-alternative</a><ol class="toc"><li class="tocline"><a href="#description-2" class="tocxref"><span class="secno">3.4.1 </span>Description</a></li><li class="tocline"><a href="#alternative-example" class="tocxref"><span class="secno">3.4.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-2" class="tocxref"><span class="secno">3.4.3 </span>Characteristics</a></li><li class="tocline"><a href="#values" class="tocxref"><span class="secno">3.4.4 </span>Values</a></li></ol></li><li class="tocline"><a href="#explain-explanation" class="tocxref"><span class="secno">3.5 </span>aui-explain</a><ol class="toc"><li class="tocline"><a href="#description-3" class="tocxref"><span class="secno">3.5.1 </span>Description</a></li><li class="tocline"><a href="#explain-example" class="tocxref"><span class="secno">3.5.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-3" class="tocxref"><span class="secno">3.5.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a href="#feedback-explanation" class="tocxref"><span class="secno">3.6 </span>aui-feedback</a><ol class="toc"><li class="tocline"><a href="#description-4" class="tocxref"><span class="secno">3.6.1 </span>Description</a></li><li class="tocline"><a href="#feedback-example" class="tocxref"><span class="secno">3.6.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-4" class="tocxref"><span class="secno">3.6.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a href="#moreinfo-explanation" class="tocxref"><span class="secno">3.7 </span>aui-moreinfo</a><ol class="toc"><li class="tocline"><a href="#description-5" class="tocxref"><span class="secno">3.7.1 </span>Description</a></li><li class="tocline"><a href="#moreinfo-example" class="tocxref"><span class="secno">3.7.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-5" class="tocxref"><span class="secno">3.7.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a href="#extrahelp-explanation" class="tocxref"><span class="secno">3.8 </span>aui-extrahelp</a><ol class="toc"><li class="tocline"><a href="#description-6" class="tocxref"><span class="secno">3.8.1 </span>Description</a></li><li class="tocline"><a href="#extrahelp-example" class="tocxref"><span class="secno">3.8.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-6" class="tocxref"><span class="secno">3.8.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a href="#helptype-explanation" class="tocxref"><span class="secno">3.9 </span>aui-helptype</a><ol class="toc"><li class="tocline"><a href="#description-7" class="tocxref"><span class="secno">3.9.1 </span>Description</a></li><li class="tocline"><a href="#helptype-example" class="tocxref"><span class="secno">3.9.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-7" class="tocxref"><span class="secno">3.9.3 </span>Characteristics</a></li><li class="tocline"><a href="#values-0" class="tocxref"><span class="secno">3.9.4 </span>Values</a></li></ol></li></ol></li><li class="tocline"><a href="#vocabulary-implementations" class="tocxref"><span class="secno">A. </span>Vocabulary Implementations</a></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a href="#ack_group" class="tocxref"><span class="secno">B.1 </span>Participants active in the ARIA WG at the time of publication</a></li><li class="tocline"><a href="#ack_others" class="tocxref"><span class="secno">B.2 </span>Other ARIA contributors, commenters, and previously active participants</a></li><li class="tocline"><a href="#ack_funders" class="tocxref"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">C.1 </span>Informative references</a></li></ol></li></ol></nav>
+        </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a href="#abstract" class="tocxref">Abstract</a></li><li class="tocline"><a href="#sotd" class="tocxref">Status of This Document</a></li><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a></li><li class="tocline"><a href="#use-cases" class="tocxref"><span class="secno">2. </span>Use Cases</a><ol class="toc"><li class="tocline"><a href="#use_case_numberfree" class="tocxref"><span class="secno">2.1 </span>Number Free</a></li><li class="tocline"><a href="#use_case_language" class="tocxref"><span class="secno">2.2 </span>Language Type Support</a></li><li class="tocline"><a href="#use_case_literal" class="tocxref"><span class="secno">2.3 </span>Non-literal Text and Images</a></li><li class="tocline"><a href="#use_case_morehelp" class="tocxref"><span class="secno">2.4 </span>More Help</a></li><li class="tocline"><a href="#use_case_explain" class="tocxref"><span class="secno">2.5 </span>Explain and Feedback</a></li><li class="tocline"><a href="#use_case_potential_feature" class="tocxref"><span class="secno">2.6 </span>Potential Features</a></li></ol></li><li class="tocline"><a href="#help" class="tocxref"><span class="secno">3. </span>Help and support</a><ol class="toc"><li class="tocline"><a href="#literal-explanation" class="tocxref"><span class="secno">3.1 </span>literal</a><ol class="toc"><li class="tocline"><a href="#description" class="tocxref"><span class="secno">3.1.1 </span>Description</a></li><li class="tocline"><a href="#literal-example" class="tocxref"><span class="secno">3.1.2 </span>Example</a></li><li class="tocline"><a href="#characteristics" class="tocxref"><span class="secno">3.1.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a href="#numberfree-explanation" class="tocxref"><span class="secno">3.2 </span>numberfree</a><ol class="toc"><li class="tocline"><a href="#description-0" class="tocxref"><span class="secno">3.2.1 </span>Description</a></li><li class="tocline"><a href="#numberfree-example" class="tocxref"><span class="secno">3.2.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-0" class="tocxref"><span class="secno">3.2.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a href="#easylang-explanation" class="tocxref"><span class="secno">3.3 </span>easylang</a><ol class="toc"><li class="tocline"><a href="#description-1" class="tocxref"><span class="secno">3.3.1 </span>Description</a></li><li class="tocline"><a href="#easylang-example" class="tocxref"><span class="secno">3.3.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-1" class="tocxref"><span class="secno">3.3.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a href="#alternative-explanation" class="tocxref"><span class="secno">3.4 </span>alternative</a><ol class="toc"><li class="tocline"><a href="#description-2" class="tocxref"><span class="secno">3.4.1 </span>Description</a></li><li class="tocline"><a href="#alternative-example" class="tocxref"><span class="secno">3.4.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-2" class="tocxref"><span class="secno">3.4.3 </span>Characteristics</a></li><li class="tocline"><a href="#values" class="tocxref"><span class="secno">3.4.4 </span>Values</a></li></ol></li><li class="tocline"><a href="#explain-explanation" class="tocxref"><span class="secno">3.5 </span>explain</a><ol class="toc"><li class="tocline"><a href="#description-3" class="tocxref"><span class="secno">3.5.1 </span>Description</a></li><li class="tocline"><a href="#explain-example" class="tocxref"><span class="secno">3.5.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-3" class="tocxref"><span class="secno">3.5.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a href="#feedback-explanation" class="tocxref"><span class="secno">3.6 </span>feedback</a><ol class="toc"><li class="tocline"><a href="#description-4" class="tocxref"><span class="secno">3.6.1 </span>Description</a></li><li class="tocline"><a href="#feedback-example" class="tocxref"><span class="secno">3.6.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-4" class="tocxref"><span class="secno">3.6.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a href="#moreinfo-explanation" class="tocxref"><span class="secno">3.7 </span>moreinfo</a><ol class="toc"><li class="tocline"><a href="#description-5" class="tocxref"><span class="secno">3.7.1 </span>Description</a></li><li class="tocline"><a href="#moreinfo-example" class="tocxref"><span class="secno">3.7.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-5" class="tocxref"><span class="secno">3.7.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a href="#extrahelp-explanation" class="tocxref"><span class="secno">3.8 </span>extrahelp</a><ol class="toc"><li class="tocline"><a href="#description-6" class="tocxref"><span class="secno">3.8.1 </span>Description</a></li><li class="tocline"><a href="#extrahelp-example" class="tocxref"><span class="secno">3.8.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-6" class="tocxref"><span class="secno">3.8.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a href="#helptype-explanation" class="tocxref"><span class="secno">3.9 </span>helptype</a><ol class="toc"><li class="tocline"><a href="#description-7" class="tocxref"><span class="secno">3.9.1 </span>Description</a></li><li class="tocline"><a href="#helptype-example" class="tocxref"><span class="secno">3.9.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-7" class="tocxref"><span class="secno">3.9.3 </span>Characteristics</a></li><li class="tocline"><a href="#values-0" class="tocxref"><span class="secno">3.9.4 </span>Values</a></li></ol></li></ol></li><li class="tocline"><a href="#vocabulary-implementations" class="tocxref"><span class="secno">A. </span>Vocabulary Implementations</a></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a href="#ack_group" class="tocxref"><span class="secno">B.1 </span>Participants active in the ARIA WG at the time of publication</a></li><li class="tocline"><a href="#ack_others" class="tocxref"><span class="secno">B.2 </span>Other ARIA contributors, commenters, and previously active participants</a></li><li class="tocline"><a href="#ack_funders" class="tocxref"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">C.1 </span>Informative references</a></li></ol></li></ol></nav>
 
 		<section class="informative" id="introduction">
 
 			<!--OddPage--><h2 id="x1-introduction"><span class="secno">1. </span>Introduction<span class="permalink"><a href="#introduction" aria-label="Permalink for 1. Introduction" title="Permalink for 1. Introduction"><span>§</span></a></span></h2><p><em>This section is non-normative.</em></p>
-			<p>This document list examples of the personalized help and support properties, this is an extension of <a href="../">Personalization Explainer 1.0</a>. including the properties of <code>aui-literal</code>, <code>aui-numberfree</code>, <code>aui-easylang</code>, <code>aui-alternative</code>, <code>aui-explain</code>, <code>aui-feedback</code>, <code>aui-moreinfo</code>,<code>aui-extrahelp</code>, <code>aui-helptype</code>. </p>
+			<p>This document list examples of the personalized help and support properties, this is an extension of <a href="../">Personalization Explainer 1.0</a>. including the properties of <code>literal</code>, <code>numberfree</code>, <code>easylang</code>, <code>alternative</code>, <code>explain</code>, <code>feedback</code>, <code>moreinfo</code>,<code>extrahelp</code>, <code>helptype</code>. </p>
 
 		</section>
 		<section id="use-cases">
 			<!--OddPage--><h2 id="x2-use-cases"><span class="secno">2. </span>Use Cases<span class="permalink"><a href="#use-cases" aria-label="Permalink for 2. Use Cases" title="Permalink for 2. Use Cases"><span>§</span></a></span></h2>
 			                <section id="use_case_numberfree">
                     <h3 id="x2-1-number-free"><span class="secno">2.1 </span>Number Free<span class="permalink"><a href="#use_case_numberfree" aria-label="Permalink for 2.1 Number Free" title="Permalink for 2.1 Number Free"><span>§</span></a></span></h3>
-                    <p><strong>Requirement</strong>: Not everyone can understand numbers. We therefor suggest aui-numberfree for alternative text for people who can not understand the main content</p>
+                    <p><strong>Requirement</strong>: Not everyone can understand numbers. We therefor suggest <code>numberfree</code> for alternative text for people who can not understand the main content</p>
                     <p><strong>User experience:</strong></p>
                     <p>A suggested user experience would be: Numerical concepts could be rendered by the user agent slightly different so that the user knows a number free explanation is available. The user can then mouse over the content and a tooltips would give the number free value</p>
-                    <p>Relevant properties: <a href="#x3-2-aui-numberfree">numberfree</a></p>
+                    <p>Relevant properties: <a href="#numberfree"><code>numberfree</code></a></p>
                 </section>
                 <section id="use_case_language">
                     <h3 id="x2-2-language-type-support"><span class="secno">2.2 </span>Language Type Support<span class="permalink"><a href="#use_case_language" aria-label="Permalink for 2.2 Language Type Support" title="Permalink for 2.2 Language Type Support"><span>§</span></a></span></h3>
                     <p><strong>Requirement: </strong>Sometimes you may want to provide a simplified version of a section of a page. For example, you may wish to provide a simplified summary of legal document, but still have a longer version for other users. These alternative versions may not be identical in content but maintain the gist of the original content.</p>
-                    <p>Relevant properties: <a href="#x3-4-aui-alternative">alternative</a>, <a href="#x3-3-aui-easylang">easylang</a></p>
+                    <p>Relevant properties: <a href="#alternative"><code>alternative</code></a>, <a href="#easylang"><code>easylang</code></a></p>
                 </section>
                 <section id="use_case_literal">
                     <h3 id="x2-3-non-literal-text-and-images"><span class="secno">2.3 </span>Non-literal Text and Images<span class="permalink"><a href="#use_case_literal" aria-label="Permalink for 2.3 Non-literal Text and Images" title="Permalink for 2.3 Non-literal Text and Images"><span>§</span></a></span></h3>
                     <p><strong>Requirement: </strong>Not everyone can understand non-literal text and icons such as metaphors, idioms etc. We need a tag that identifies text or images as non literal and allows the author to explain non-literal text and images to users.</p>
                     <p><strong>User experience:</strong></p>
                     <p>A suggested user experience would be: Non literal content could be rendered by the user agent slightly differently so that the user knows that this content should not be taken literally and that a literal explanation is available. The user can then mouse over the content and a tooltips would give the literal value.</p>
-                    <p>Relevant properties: <a href="#x3-1-aui-literal">literal</a></p>
+                    <p>Relevant properties: <a href="#literal"><code>literal</code></a></p>
                 </section>
                 <section id="use_case_morehelp">
                     <h3 id="x2-4-more-help"><span class="secno">2.4 </span>More Help<span class="permalink"><a href="#use_case_morehelp" aria-label="Permalink for 2.4 More Help" title="Permalink for 2.4 More Help"><span>§</span></a></span></h3>
                     <p><strong>Requirement: </strong>Some users may need additional information or specifically additional help information. We request additional attributes so that an author can indicate the existence of this additional information.</p>
-                    <p>Relevant properties: <a href="#x3-7-aui-moreinfo">moreinfo</a>, <a href="#x3-8-aui-extrahelp">extrahelp</a>, <a href="#x3-9-aui-helptype">helptype</a></p>
+                    <p>Relevant properties: <a href="#moreinfo"><code>moreinfo</code></a>, <a href="#extrahelp"><code>extrahelp</code></a>, <a href="#helptype">helptype</a></p>
                 </section>
                 <section id="use_case_explain">
                     <h3 id="x2-5-explain-and-feedback"><span class="secno">2.5 </span>Explain and Feedback<span class="permalink"><a href="#use_case_explain" aria-label="Permalink for 2.5 Explain and Feedback" title="Permalink for 2.5 Explain and Feedback"><span>§</span></a></span></h3>
                     <p><strong>Requirement: </strong></p>
                     <p>Some users need additional help. We request an attribute where the author can provide additional information or what just happened.</p>
-                    <p>Relevant properties: <a href="#x3-6-aui-feedback">feedback</a>, <a href="#x3-5-aui-explain">explain</a></p>
+                    <p>Relevant properties: <a href="#feedback"><code>feedback</code></a>, <a href="#explain"><code>explain</code></a></p>
                 </section>
                 <section id="use_case_potential_feature">
                     <h3 id="x2-6-potential-features"><span class="secno">2.6 </span>Potential Features<span class="permalink"><a href="#use_case_potential_feature" aria-label="Permalink for 2.6 Potential Features" title="Permalink for 2.6 Potential Features"><span>§</span></a></span></h3>
@@ -857,7 +857,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 		<section id="help">
 			<!--OddPage--><h2 id="x3-help-and-support"><span class="secno">3. </span>Help and support<span class="permalink"><a href="#help" aria-label="Permalink for 3. Help and support" title="Permalink for 3. Help and support"><span>§</span></a></span></h2>
 			<section id="literal-explanation">
-	<h3 id="x3-1-aui-literal"><span class="secno">3.1 </span>aui-literal<span class="permalink"><a href="#literal-explanation" aria-label="Permalink for 3.1 aui-literal" title="Permalink for 3.1 aui-literal"><span>§</span></a></span></h3>
+	<h3 id="x3-1-literal"><span class="secno">3.1 </span>literal<span class="permalink"><a href="#literal-explanation" aria-label="Permalink for 3.1 literal" title="Permalink for 3.1 literal"><span>§</span></a></span></h3>
 	<section id="description">
 		<h4 id="x3-1-1-description"><span class="secno">3.1.1 </span>Description<span class="permalink"><a href="#description" aria-label="Permalink for 3.1.1 Description" title="Permalink for 3.1.1 Description"><span>§</span></a></span></h4>
 		<div class="property-description">
@@ -871,7 +871,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 	</section>
 	<section id="literal-example">
 		<h4 id="x3-1-2-example"><span class="secno">3.1.2 </span>Example<span class="permalink"><a href="#literal-example" aria-label="Permalink for 3.1.2 Example" title="Permalink for 3.1.2 Example"><span>§</span></a></span></h4>
-		<p>The below example section show how <code>aui-literal</code> used when coding.</p>
+		<p>The below example section show how <code>literal</code> used when coding.</p>
     	<div class="example">
     	<div class="example-title marker"><span>Example:</span><span style="text-transform: none"> Symbol Using ARIA</span>
     	</div>
@@ -914,7 +914,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 	
 			<section id="numberfree-explanation">
-	<h3 id="x3-2-aui-numberfree"><span class="secno">3.2 </span>aui-numberfree<span class="permalink"><a href="#numberfree-explanation" aria-label="Permalink for 3.2 aui-numberfree" title="Permalink for 3.2 aui-numberfree"><span>§</span></a></span></h3>
+	<h3 id="x3-2-numberfree"><span class="secno">3.2 </span>numberfree<span class="permalink"><a href="#numberfree-explanation" aria-label="Permalink for 3.2 numberfree" title="Permalink for 3.2 numberfree"><span>§</span></a></span></h3>
 	<section id="description-0">
 		<h4 id="x3-2-1-description"><span class="secno">3.2.1 </span>Description<span class="permalink"><a href="#description-0" aria-label="Permalink for 3.2.1 Description" title="Permalink for 3.2.1 Description"><span>§</span></a></span></h4>
 		<div class="property-description">
@@ -928,7 +928,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 	</section>
 	<section id="numberfree-example">
 		<h4 id="x3-2-2-example"><span class="secno">3.2.2 </span>Example<span class="permalink"><a href="#numberfree-example" aria-label="Permalink for 3.2.2 Example" title="Permalink for 3.2.2 Example"><span>§</span></a></span></h4>
-		<p>The below example section show how <code>aui-numberfree</code> used when coding.</p>
+		<p>The below example section show how <code>numberfree</code> used when coding.</p>
   		  <div class="example"><div class="example-title marker"><span>Example 1</span><span style="text-transform: none">: Numberfree Using ARIA</span></div>
 			<pre aria-busy="false" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">aui-numberfree</span>=<span class="hljs-string">"almost all"</span>&gt;</span>9 out of 10 <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></pre>
 			</div>
@@ -972,7 +972,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 
 			<section id="easylang-explanation">
-	<h3 id="x3-3-aui-easylang"><span class="secno">3.3 </span>aui-easylang<span class="permalink"><a href="#easylang-explanation" aria-label="Permalink for 3.3 aui-easylang" title="Permalink for 3.3 aui-easylang"><span>§</span></a></span></h3>
+	<h3 id="x3-3-easylang"><span class="secno">3.3 </span>easylang<span class="permalink"><a href="#easylang-explanation" aria-label="Permalink for 3.3 easylang" title="Permalink for 3.3 easylang"><span>§</span></a></span></h3>
 	<section id="description-1">
 		<h4 id="x3-3-1-description"><span class="secno">3.3.1 </span>Description<span class="permalink"><a href="#description-1" aria-label="Permalink for 3.3.1 Description" title="Permalink for 3.3.1 Description"><span>§</span></a></span></h4>
 		<div class="property-description">
@@ -981,12 +981,12 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 				<p>User agents may also render hard text in a different way so that users will be able to identify text that has an alternative provided. </p>
 				<p>The content must still be understandable when a user agent replaces the original content with the simpler alternative.</p>
 				<p><strong>Supported values:</strong> String</p>
-				<p>Where aui-easylang should use as simple well-known words as possible, and active voicing, literal text, small simple sentences.Â&nbsp;Acronyms and abbreviations should be avoided, unless they are the common way to refer to an item.</p>
+				<p>Where <code>easylang</code> should use as simple well-known words as possible, and active voicing, literal text, small simple sentences.Â&nbsp;Acronyms and abbreviations should be avoided, unless they are the common way to refer to an item.</p>
 		</div>
 	</section>
 	<section id="easylang-example">
 		<h4 id="x3-3-2-example"><span class="secno">3.3.2 </span>Example<span class="permalink"><a href="#easylang-example" aria-label="Permalink for 3.3.2 Example" title="Permalink for 3.3.2 Example"><span>§</span></a></span></h4>
-		<p>The below example section show how <code>aui-easylang</code> used when coding.</p>
+		<p>The below example section show how <code>easylang</code> used when coding.</p>
    		<div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: Easylang Using ARIA</span></div>
 			<pre aria-busy="false" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">aui-easylang</span>=<span class="hljs-string">"some text that is easy to read"</span>&gt;</span> some convoluted obtuse text<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>&gt;</pre>
 			</div>
@@ -1027,11 +1027,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 
 			<section id="alternative-explanation">
-	<h3 id="x3-4-aui-alternative"><span class="secno">3.4 </span>aui-alternative<span class="permalink"><a href="#alternative-explanation" aria-label="Permalink for 3.4 aui-alternative" title="Permalink for 3.4 aui-alternative"><span>§</span></a></span></h3>
+	<h3 id="x3-4-alternative"><span class="secno">3.4 </span>alternative<span class="permalink"><a href="#alternative-explanation" aria-label="Permalink for 3.4 alternative" title="Permalink for 3.4 alternative"><span>§</span></a></span></h3>
   <section id="description-2">
     <h4 id="x3-4-1-description"><span class="secno">3.4.1 </span>Description<span class="permalink"><a href="#description-2" aria-label="Permalink for 3.4.1 Description" title="Permalink for 3.4.1 Description"><span>§</span></a></span></h4>
     <div class="property-description">
-          <p>Would be used on an alternative content as an alternative to more detailed or difficult to understand content. aui-alternative can be used on a span, div, link or image that servers as alternative content to it's direct parent element.</p>
+          <p>Would be used on an alternative content as an alternative to more detailed or difficult to understand content. <code>alternative</code> can be used on a span, div, link or image that servers as alternative content to it's direct parent element.</p>
           <div class="ednote"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="5"><span>Editor's note</span></div><p class="">This data model may be too complex, so this property could undergo substantial changes.</p></div>
           <p><strong>Supported values:</strong>
           </p>
@@ -1046,10 +1046,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   </section>
 	<section id="alternative-example">
     <h4 id="x3-4-2-example"><span class="secno">3.4.2 </span>Example<span class="permalink"><a href="#alternative-example" aria-label="Permalink for 3.4.2 Example" title="Permalink for 3.4.2 Example"><span>§</span></a></span></h4>
-	<p>The below example section show how <code>aui-alternative</code> used when coding.</p>
+	<p>The below example section show how <code>alternative</code> used when coding.</p>
     <div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: Alternative Using ARIA</span></div>
 			<pre aria-busy="false" class="hljs javascript">&lt;div&gt;
-	<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">coga-alternative</span>=<span class="hljs-string">"easylang numberfree vocab1000"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hidden"</span>&gt;</span>
+	<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">aui-alternative</span>=<span class="hljs-string">"easylang numberfree vocab1000"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hidden"</span>&gt;</span>
  	   most people prefer simple text
   	<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span>
         In studies it was found that only <span class="hljs-number">30</span>% <span class="hljs-keyword">of</span> users prefer long convoluted text
@@ -1193,7 +1193,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 
 			<section id="explain-explanation">
-	<h3 id="x3-5-aui-explain"><span class="secno">3.5 </span>aui-explain<span class="permalink"><a href="#explain-explanation" aria-label="Permalink for 3.5 aui-explain" title="Permalink for 3.5 aui-explain"><span>§</span></a></span></h3>
+	<h3 id="x3-5-explain"><span class="secno">3.5 </span>explain<span class="permalink"><a href="#explain-explanation" aria-label="Permalink for 3.5 explain" title="Permalink for 3.5 explain"><span>§</span></a></span></h3>
 	<section id="description-3">
 		<h4 id="x3-5-1-description"><span class="secno">3.5.1 </span>Description<span class="permalink"><a href="#description-3" aria-label="Permalink for 3.5.1 Description" title="Permalink for 3.5.1 Description"><span>§</span></a></span></h4>
 		<div class="property-description">
@@ -1205,7 +1205,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 	</section>
 	<section id="explain-example">
 		<h4 id="x3-5-2-example"><span class="secno">3.5.2 </span>Example<span class="permalink"><a href="#explain-example" aria-label="Permalink for 3.5.2 Example" title="Permalink for 3.5.2 Example"><span>§</span></a></span></h4>
-		<p>The below example section show how <code>aui-explain</code> used when coding.</p>
+		<p>The below example section show how <code>explain</code> used when coding.</p>
   		<div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: Explain Using ARIA</span></div>
 			<pre aria-busy="false" class="hljs javascript">aui-explain=<span class="hljs-string">"press enter to send the email"</span> </pre>
 		</div>
@@ -1247,7 +1247,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 
 			<section id="feedback-explanation">
-	<h3 id="x3-6-aui-feedback"><span class="secno">3.6 </span>aui-feedback<span class="permalink"><a href="#feedback-explanation" aria-label="Permalink for 3.6 aui-feedback" title="Permalink for 3.6 aui-feedback"><span>§</span></a></span></h3>
+	<h3 id="x3-6-feedback"><span class="secno">3.6 </span>feedback<span class="permalink"><a href="#feedback-explanation" aria-label="Permalink for 3.6 feedback" title="Permalink for 3.6 feedback"><span>§</span></a></span></h3>
 	<section id="description-4">
 		<h4 id="x3-6-1-description"><span class="secno">3.6.1 </span>Description<span class="permalink"><a href="#description-4" aria-label="Permalink for 3.6.1 Description" title="Permalink for 3.6.1 Description"><span>§</span></a></span></h4>
 		<div class="property-description">
@@ -1257,7 +1257,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 	</section>
 	<section id="feedback-example">
 		<h4 id="x3-6-2-example"><span class="secno">3.6.2 </span>Example<span class="permalink"><a href="#feedback-example" aria-label="Permalink for 3.6.2 Example" title="Permalink for 3.6.2 Example"><span>§</span></a></span></h4>
-		<p>The below example section show how <code>aui-feedback</code> used when coding.</p>
+		<p>The below example section show how <code>feedback</code> used when coding.</p>
    		<div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: Feedback Using ARIA</span></div>
 			<pre aria-busy="false" class="hljs javascript">aui-feedback=<span class="hljs-string">"your email on birthdays was sent"</span> </pre>
 			</div>
@@ -1299,7 +1299,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 
 			<section id="moreinfo-explanation">
-	<h3 id="x3-7-aui-moreinfo"><span class="secno">3.7 </span>aui-moreinfo<span class="permalink"><a href="#moreinfo-explanation" aria-label="Permalink for 3.7 aui-moreinfo" title="Permalink for 3.7 aui-moreinfo"><span>§</span></a></span></h3>
+	<h3 id="x3-7-moreinfo"><span class="secno">3.7 </span>moreinfo<span class="permalink"><a href="#moreinfo-explanation" aria-label="Permalink for 3.7 moreinfo" title="Permalink for 3.7 moreinfo"><span>§</span></a></span></h3>
 	<section id="description-5">
 		<h4 id="x3-7-1-description"><span class="secno">3.7.1 </span>Description<span class="permalink"><a href="#description-5" aria-label="Permalink for 3.7.1 Description" title="Permalink for 3.7.1 Description"><span>§</span></a></span></h4>
 		<div class="property-description">
@@ -1312,7 +1312,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 	</section>
 	<section id="moreinfo-example">
 		<h4 id="x3-7-2-example"><span class="secno">3.7.2 </span>Example<span class="permalink"><a href="#moreinfo-example" aria-label="Permalink for 3.7.2 Example" title="Permalink for 3.7.2 Example"><span>§</span></a></span></h4>
-		<p>The below example section show how <code>aui-moreinfo</code> used when coding.</p>
+		<p>The below example section show how <code>moreinfo</code> used when coding.</p>
     	<div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: Moreinfo Using ARIA</span></div>
 			<pre aria-busy="false" class="hljs">N/A</pre>
 			</div>
@@ -1350,7 +1350,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 </section>
 
 			<section id="extrahelp-explanation">
-	<h3 id="x3-8-aui-extrahelp"><span class="secno">3.8 </span>aui-extrahelp<span class="permalink"><a href="#extrahelp-explanation" aria-label="Permalink for 3.8 aui-extrahelp" title="Permalink for 3.8 aui-extrahelp"><span>§</span></a></span></h3>
+	<h3 id="x3-8-extrahelp"><span class="secno">3.8 </span>extrahelp<span class="permalink"><a href="#extrahelp-explanation" aria-label="Permalink for 3.8 extrahelp" title="Permalink for 3.8 extrahelp"><span>§</span></a></span></h3>
 	<section id="description-6">
 		<h4 id="x3-8-1-description"><span class="secno">3.8.1 </span>Description<span class="permalink"><a href="#description-6" aria-label="Permalink for 3.8.1 Description" title="Permalink for 3.8.1 Description"><span>§</span></a></span></h4>
 		<div class="property-description">
@@ -1363,7 +1363,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 	</section>
 	<section id="extrahelp-example">
 		<h4 id="x3-8-2-example"><span class="secno">3.8.2 </span>Example<span class="permalink"><a href="#extrahelp-example" aria-label="Permalink for 3.8.2 Example" title="Permalink for 3.8.2 Example"><span>§</span></a></span></h4>
-		<p>The below example section show how <code>aui-extrahelp</code> used when coding.</p>
+		<p>The below example section show how <code>extrahelp</code> used when coding.</p>
     	<div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: Extrahelp Using ARIA</span></div>
 			<pre aria-busy="false" class="hljs">N/A</pre>
 			</div>
@@ -1401,16 +1401,16 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 </section>
 
 			<section id="helptype-explanation">
-	<h3 id="x3-9-aui-helptype"><span class="secno">3.9 </span>aui-helptype<span class="permalink"><a href="#helptype-explanation" aria-label="Permalink for 3.9 aui-helptype" title="Permalink for 3.9 aui-helptype"><span>§</span></a></span></h3>
+	<h3 id="x3-9-helptype"><span class="secno">3.9 </span>helptype<span class="permalink"><a href="#helptype-explanation" aria-label="Permalink for 3.9 helptype" title="Permalink for 3.9 helptype"><span>§</span></a></span></h3>
 	<section id="description-7">
 		<h4 id="x3-9-1-description"><span class="secno">3.9.1 </span>Description<span class="permalink"><a href="#description-7" aria-label="Permalink for 3.9.1 Description" title="Permalink for 3.9.1 Description"><span>§</span></a></span></h4>
 		<div class="property-description">
-					<p>Would be used on additional content to indicate the type of extra help provided. <code>aui-helptype</code> can be used on a span, div, link or image that provides or redirects the user to additional help information.</p>
+					<p>Would be used on additional content to indicate the type of extra help provided. <code>helptype</code> can be used on a span, div, link or image that provides or redirects the user to additional help information.</p>
 				</div>
 	</section>
 	<section id="helptype-example">
 		<h4 id="x3-9-2-example"><span class="secno">3.9.2 </span>Example<span class="permalink"><a href="#helptype-example" aria-label="Permalink for 3.9.2 Example" title="Permalink for 3.9.2 Example"><span>§</span></a></span></h4>
-	<p>The below example section show how <code>aui-helptype</code> used when coding.</p>
+	<p>The below example section show how <code>helptype</code> used when coding.</p>
     <div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: Helptype Using ARIA</span></div>
 			<pre aria-busy="false" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">aui-extrahelp</span>=<span class="hljs-string">"uri2 uri3"</span> &gt;</span>undo<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></pre>
 					<p>URI 2 may read: </p>

@@ -1,4 +1,36 @@
-<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 20.0.3"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
+<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 20.0.3"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
+div.example-title {
+    min-width: 7.5em;
+    color: #b9ab2d;
+}
+div.example-title span {
+    text-transform: uppercase;
+}
+aside.example, div.example, div.illegal-example {
+    padding: 0.5em;
+    margin: 1em 0;
+    position: relative;
+    clear: both;
+}
+div.illegal-example { color: red }
+div.illegal-example p { color: black }
+aside.example, div.example {
+    padding: .5em;
+    border-left-width: .5em;
+    border-left-style: solid;
+    border-color: #e0cb52;
+    background: #fcfaee;
+}
+
+aside.example div.example {
+    border-left-width: .1em;
+    border-color: #999;
+    background: #fff;
+}
+aside.example div.example div.example-title {
+    color: #999;
+}
+</style><style>/* --- ISSUES/NOTES --- */
 div.issue-title, div.note-title , div.ednote-title, div.warning-title {
     padding-right:  1em;
     min-width: 7.5em;
@@ -89,11 +121,7 @@ input.task-list-item-checkbox {
 		<title>Personalization Semantics Explainer 1.0</title>
 		
 		
-		
-		
-	
-		<link href="common/css/common.css" rel="stylesheet" type="text/css">
-	<style id="respec-mainstyle">/*****************************************************************
+		<style id="respec-mainstyle">/*****************************************************************
  * ReSpec 3 CSS
  * Robin Berjon - http://berjon.com/
  *****************************************************************/
@@ -366,7 +394,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-strong {
   font-weight: bold;
 }
-</style><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-1.0/"><script id="initialUserConfig" type="application/json">{
+</style>
+		
+	
+		<link href="common/css/common.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-1.0/"><script id="initialUserConfig" type="application/json">{
   "trace": true,
   "doRDFa": "1.0",
   "includePermalinks": true,
@@ -801,7 +833,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           
           
         </p><p>This document is governed by the <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-        </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a href="#abstract" class="tocxref">Abstract</a></li><li class="tocline"><a href="#sotd" class="tocxref">Status of This Document</a></li><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a><ol class="toc"><li class="tocline"><a href="#why_accessibility" class="tocxref"><span class="secno">1.1 </span>Why We Need Personalization</a></li><li class="tocline"><a href="#intro_context" class="tocxref"><span class="secno">1.2 </span>Personalization Use Cases (general)</a></li></ol></li><li class="tocline"><a href="#terms" class="tocxref"><span class="secno">2. </span>Important Terms</a></li><li class="tocline"><a href="#characteristics_semanticproperties" class="tocxref"><span class="secno">3. </span>Structure of Properties</a><ol class="toc"><li class="tocline"><a href="#propcharacteristic_value" class="tocxref"><span class="secno">3.1 </span>Value</a></li></ol></li><li class="tocline"><a href="#modules" class="tocxref"><span class="secno">4. </span>Modules</a></li><li class="tocline"><a href="#vocabulary-implementations" class="tocxref"><span class="secno">A. </span>Vocabulary Implementations</a><ol class="toc"><li class="tocline"><a href="#mapping-values-to-different-syntax" class="tocxref"><span class="secno">A.1 </span>Mapping Values to Different Syntax </a></li><li class="tocline"><a href="#wai-aria" class="tocxref"><span class="secno">A.2 </span><abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr></a><ol class="toc"><li class="tocline"><a href="#additional-wai-aria-roles" class="tocxref"><span class="secno">A.2.1 </span>Additional <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> Roles</a></li></ol></li><li class="tocline"><a href="#html-microdata" class="tocxref"><span class="secno">A.3 </span><abbr title="Hypertext Markup Language">HTML</abbr> Microdata</a></li><li class="tocline"><a href="#rdfa" class="tocxref"><span class="secno">A.4 </span>RDFa</a></li><li class="tocline"><a href="#autocomplete" class="tocxref"><span class="secno">A.5 </span>Autocomplete</a></li></ol></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a href="#ack_group" class="tocxref"><span class="secno">B.1 </span>Participants active in the ARIA WG at the time of publication</a></li><li class="tocline"><a href="#ack_others" class="tocxref"><span class="secno">B.2 </span>Other ARIA contributors, commenters, and previously active participants</a></li><li class="tocline"><a href="#ack_funders" class="tocxref"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">C.1 </span>Informative references</a></li></ol></li></ol></nav>
+        </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a href="#abstract" class="tocxref">Abstract</a></li><li class="tocline"><a href="#sotd" class="tocxref">Status of This Document</a></li><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a><ol class="toc"><li class="tocline"><a href="#why_accessibility" class="tocxref"><span class="secno">1.1 </span>Why We Need Personalization</a></li><li class="tocline"><a href="#intro_context" class="tocxref"><span class="secno">1.2 </span>Personalization Use Cases (general)</a></li></ol></li><li class="tocline"><a href="#terms" class="tocxref"><span class="secno">2. </span>Important Terms</a></li><li class="tocline"><a href="#characteristics_semanticproperties" class="tocxref"><span class="secno">3. </span>Structure of Properties</a><ol class="toc"><li class="tocline"><a href="#propcharacteristic_value" class="tocxref"><span class="secno">3.1 </span>Value</a></li></ol></li><li class="tocline"><a href="#modules" class="tocxref"><span class="secno">4. </span>Modules</a></li><li class="tocline"><a href="#vocabulary-implementations" class="tocxref"><span class="secno">A. </span>Vocabulary Implementations</a><ol class="toc"><li class="tocline"><a href="#mapping-values-to-different-syntax" class="tocxref"><span class="secno">A.1 </span>Mapping Values to Different Syntax </a></li><li class="tocline"><a href="#vocabulary-identification" class="tocxref"><span class="secno">A.2 </span>Vocabulary Identification</a><ol class="toc"><li class="tocline"><a href="#prefix" class="tocxref"><span class="secno">A.2.1 </span>Prefix</a></li><li class="tocline"><a href="#identification-uri" class="tocxref"><span class="secno">A.2.2 </span>Identification URI</a></li></ol></li><li class="tocline"><a href="#wai-aria" class="tocxref"><span class="secno">A.3 </span><abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr></a><ol class="toc"><li class="tocline"><a href="#additional-wai-aria-roles" class="tocxref"><span class="secno">A.3.1 </span>Additional <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> Roles</a></li></ol></li><li class="tocline"><a href="#html-microdata" class="tocxref"><span class="secno">A.4 </span><abbr title="Hypertext Markup Language">HTML</abbr> Microdata</a></li><li class="tocline"><a href="#rdfa" class="tocxref"><span class="secno">A.5 </span>RDFa</a></li><li class="tocline"><a href="#autocomplete" class="tocxref"><span class="secno">A.6 </span>Autocomplete</a></li></ol></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a href="#ack_group" class="tocxref"><span class="secno">B.1 </span>Participants active in the ARIA WG at the time of publication</a></li><li class="tocline"><a href="#ack_others" class="tocxref"><span class="secno">B.2 </span>Other ARIA contributors, commenters, and previously active participants</a></li><li class="tocline"><a href="#ack_funders" class="tocxref"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">C.1 </span>Informative references</a></li></ol></li></ol></nav>
 
 		<section class="informative" id="introduction">
 
@@ -1120,8 +1152,20 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 			<section id="mapping-values-to-different-syntax">
 				<h3 id="a-1-mapping-values-to-different-syntax"><span class="secno">A.1 </span>Mapping Values to Different Syntax <span class="permalink"><a href="#mapping-values-to-different-syntax" aria-label="Permalink for A.1 Mapping Values to Different Syntax " title="Permalink for A.1 Mapping Values to Different Syntax "><span>§</span></a></span></h3>
 			</section>
+			<section id="vocabulary-identification">
+				<h3 id="a-2-vocabulary-identification"><span class="secno">A.2 </span>Vocabulary Identification<span class="permalink"><a href="#vocabulary-identification" aria-label="Permalink for A.2 Vocabulary Identification" title="Permalink for A.2 Vocabulary Identification"><span>§</span></a></span></h3>
+				<p>Metadata languages that support this vocabulary need to distinguish terms coming from the personalization semantics vocabulary, from terms in other vocabularies. This document proposes two identifications mechanisms, which may be used separately or together according to the needs of the metadata language. These are the <strong>prefix</strong> and the <strong>identification URI</strong>.</p>
+				<section id="prefix">
+					<h4 id="a-2-1-prefix"><span class="secno">A.2.1 </span>Prefix<span class="permalink"><a href="#prefix" aria-label="Permalink for A.2.1 Prefix" title="Permalink for A.2.1 Prefix"><span>§</span></a></span></h4>
+					<p>The prefix for personalization semantics is "<strong>aui</strong>", which is an acronym of "accessible user interface". Implementations that use a prefix to identify terms from this vocabulary should use that prefix.</p>
+				</section>
+				<section id="identification-uri">
+					<h4 id="a-2-2-identification-uri"><span class="secno">A.2.2 </span>Identification URI<span class="permalink"><a href="#identification-uri" aria-label="Permalink for A.2.2 Identification URI" title="Permalink for A.2.2 Identification URI"><span>§</span></a></span></h4>
+					<p>The identification URI for personalization semantics is <code>https://www.w3.org/ns/aui/</code>. Implementations that use a URI to identify terms from this vocabulary should use that URI.</p>
+				</section>
+			</section>
 			<section id="wai-aria">
-				<h3 id="a-2-wai-aria"><span class="secno">A.2 </span><abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr><span class="permalink"><a href="#wai-aria" aria-label="Permalink for A.2 WAI-ARIA" title="Permalink for A.2 WAI-ARIA"><span>§</span></a></span></h3>
+				<h3 id="a-3-wai-aria"><span class="secno">A.3 </span><abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr><span class="permalink"><a href="#wai-aria" aria-label="Permalink for A.3 WAI-ARIA" title="Permalink for A.3 WAI-ARIA"><span>§</span></a></span></h3>
 				<p>Properties in this case can be represented as <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> properties by adding the prefix "aui-" to the attribute name, and the property value as the attribute value.</p>
 				<div class="ednote"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="4"><span>Editor's note</span></div><p class="">The prefix above is not yet accepted by the ARIA Working Group.</p></div>
 				<div class="example"><div class="example-title marker"><span>Example 1</span><span style="text-transform: none">: Action Using ARIA</span></div><pre class="hljs javascript" aria-busy="false">For example: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aui-action</span>=<span class="hljs-string">"undo"</span> &gt;</span>Revert<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span></pre></div>
@@ -1135,7 +1179,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 				
 
 				<section id="additional-wai-aria-roles">
-					<h4 id="a-2-1-additional-wai-aria-roles"><span class="secno">A.2.1 </span>Additional <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> Roles<span class="permalink"><a href="#additional-wai-aria-roles" aria-label="Permalink for A.2.1 Additional WAI-ARIA Roles" title="Permalink for A.2.1 Additional WAI-ARIA Roles"><span>§</span></a></span></h4>
+					<h4 id="a-3-1-additional-wai-aria-roles"><span class="secno">A.3.1 </span>Additional <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> Roles<span class="permalink"><a href="#additional-wai-aria-roles" aria-label="Permalink for A.3.1 Additional WAI-ARIA Roles" title="Permalink for A.3.1 Additional WAI-ARIA Roles"><span>§</span></a></span></h4>
 					<p><b>Requirement</b>: We may want to add landmark role values for sections on a page such as: contact us - for a contact us form.</p>
 					<p><b>User experience: </b>symbols and colors could be used consistently across different content.</p>
 					<p>Nav maps can be automatically generated for people learn via key-points or examples.</p>
@@ -1157,40 +1201,24 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 				</section>
 			</section>
 			<section id="html-microdata">
-				<h3 id="a-3-html-microdata"><span class="secno">A.3 </span><abbr title="Hypertext Markup Language">HTML</abbr> Microdata<span class="permalink"><a href="#html-microdata" aria-label="Permalink for A.3 HTML Microdata" title="Permalink for A.3 HTML Microdata"><span>§</span></a></span></h3>
-				<p>Properties in this vocabulary can be used in <a href="https://www.w3.org/TR/microdata/"><abbr title="Hypertext Markup Language">HTML</abbr> Microdata</a> [<cite><a class="bibref" href="#bib-microdata">microdata</a></cite>]. The property name is used as the item name, the property value as the item value. Authors <em class="rfc2119" title="SHOULD">SHOULD</em> use the itemtype property to express to the <a href="#propcharacteristic_value">value type</a> defined in this specification.</p>
+				<h3 id="a-4-html-microdata"><span class="secno">A.4 </span><abbr title="Hypertext Markup Language">HTML</abbr> Microdata<span class="permalink"><a href="#html-microdata" aria-label="Permalink for A.4 HTML Microdata" title="Permalink for A.4 HTML Microdata"><span>§</span></a></span></h3>
+				<p>Properties in this vocabulary can be applied via <a href="https://www.w3.org/TR/microdata/"><abbr title="Hypertext Markup Language">HTML</abbr> Microdata</a> [<cite><a class="bibref" href="#bib-microdata">microdata</a></cite>]. To apply a term from this vocabulary to content using Microdata, use the following steps:</p>
+				<ul>
+					<li>On the element to which a property applies, set the <a href="https://www.w3.org/TR/microdata/#dfn-itemscope"><code>itemscope</code> attribute</a>. </li>
+					<li>On the element for which <code>itemscope</code> is set, set the <a href="https://www.w3.org/TR/microdata/#dfn-itemtype"><code>itemtype</code> attribute</a> to the personalizaton semantics <a href="#identification-uri">identification URI</a>.</li>
+					<li>On the same element or a descendant element, as appropriate to the context, set the <a href="https://www.w3.org/TR/microdata/#dfn-attr-itemprop"><code>itemprop</code> attribute</a>, using the name of the personalization semantics property as the value of the attribute.</li>
+					<li>On the element for which <code>itemprop</code> is set, set the <a href="https://www.w3.org/TR/microdata/#dfn-content"><code>content</code> attribute</a> to the appropriate value for the property.</li>
+				</ul>
+				<div class="example"><div class="example-title marker"><span>Example 1</span><span style="text-transform: none">: Action property in HTML using HTML Microdata</span></div><pre class="hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">itemscope</span> <span class="hljs-attr">itemtype</span>=<span class="hljs-string">"https://www.w3.org/ns/aui/"</span> <span class="hljs-attr">itemprop</span>=<span class="hljs-string">"action"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"undo"</span>&gt;</span>
+  Revert
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></pre></div>
 			</section>
 			<section id="rdfa">
-				<h3 id="a-4-rdfa"><span class="secno">A.4 </span>RDFa<span class="permalink"><a href="#rdfa" aria-label="Permalink for A.4 RDFa" title="Permalink for A.4 RDFa"><span>§</span></a></span></h3>
-                <div class="ednote"><div role="heading" class="ednote-title marker" id="h-ednote-0" aria-level="4"><span>Editor's note</span></div><p class="">The task force is revising the recommended approach to using the vocabulary in RDFa. Significant changes will be made to this section in future public drafts.  Please see the latest editors draft for the latest version.</p></div>                
-				<p>The context based properties should be convertible to RDFa. (see <a href="https://www.w3.org/TR/xhtml-rdfa-primer/">RDFa Primer</a>) and the task force should create this mapping.</p>
-				<p>Note that a lot of this can be done using RDFa. However it is easy to change the meaning with RDFa and a very basic parser will misinterpret the result. The personalization semantics need to be usable by as many authors as possible, and not only those who can implement RDF logic.</p>
-				<p>Further, personalization setting need to be limited, and RDF can give an unlimited number of potential options which will make the system unusable. (This is unless we create restrictions and controls on an ontology uses - such as mapping to known ontologies.)</p>
-				<p>For example, in the code below the property homepage does not refer to the home page of the site but of the person being referenced. Beyond declaring the type of data we are dealing with, each typeof creates a new blank node with its own distinct properties. </p>
-				<pre aria-busy="false" class="hljs javascript">&lt;div vocab=<span class="hljs-string">"http://xmlns.com/foaf/0.1/"</span>&gt;
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
-   <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">typeof</span>=<span class="hljs-string">"Person"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"homepage"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://example.com/bob/"</span>&gt;</span>Bob<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-   <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-   <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">typeof</span>=<span class="hljs-string">"Person"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"homepage"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://example.com/eve/"</span>&gt;</span>Eve<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-   <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-   <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">typeof</span>=<span class="hljs-string">"Person"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"homepage"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://example.com/manu/"</span>&gt;</span>Manu<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-   <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></span>
-				</pre>
-				<p>We may recommend adding RDFA that describe the role of the item (see <a href="https://www.w3.org/TR/xhtml-rdfa-primer/">RDFa Primer</a>):</p>
-				<pre aria-busy="false" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">resource</span>=<span class="hljs-string">"/alice/posts/jos_barbecue"</span>&gt;</span>
-	<span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"title"</span>&gt;</span>Jo's Barbecue<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
-	<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Date: <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"created"</span>&gt;</span>2011-09-14<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-	<span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"creator"</span>&gt;</span>Eve<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
-	...
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-			</pre>
+				<h3 id="a-5-rdfa"><span class="secno">A.5 </span>RDFa<span class="permalink"><a href="#rdfa" aria-label="Permalink for A.5 RDFa" title="Permalink for A.5 RDFa"><span>§</span></a></span></h3>
+				<div class="ednote"><div role="heading" class="ednote-title marker" id="h-ednote-0" aria-level="4"><span>Editor's note</span></div><p class="">The Personalization Task Force is exploring whether the personalization semantics vocabulary can be used with RDFa. If so, guidance will be added here in a future draft. See <a href="https://github.com/w3c/personalization-semantics/issues/53">Issue 53</a>.</p></div>
 			</section>
 			<section id="autocomplete">
-				<h3 id="a-5-autocomplete"><span class="secno">A.5 </span>Autocomplete<span class="permalink"><a href="#autocomplete" aria-label="Permalink for A.5 Autocomplete" title="Permalink for A.5 Autocomplete"><span>§</span></a></span></h3>
+				<h3 id="a-6-autocomplete"><span class="secno">A.6 </span>Autocomplete<span class="permalink"><a href="#autocomplete" aria-label="Permalink for A.6 Autocomplete" title="Permalink for A.6 Autocomplete"><span>§</span></a></span></h3>
 			</section>
 		</section>
 
