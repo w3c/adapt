@@ -110,7 +110,7 @@
 							<th class="value-name" scope="row">buy</th>
 							<td class="value-description">buy the selected item or buy the item at the current location. Often involves adding the current item into a shopping cart. (Implied simplification  = "critical".)</td>
 						</tr>
-			<tr>
+			             <tr>
 							<th class="value-name" scope="row">checkout</th>
 							<td class="value-description">proceed to the purchasing process. (Implied simplification  = "critical".)</td>
 						</tr>
@@ -120,7 +120,7 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">move</th>
-							<td class="value-description">move the selected item. <em class="ednote"> Note that this item  may change to allow for the direction to be added.</em>  </td>
+							<td class="value-description">Changes the position of a selected item(s).  Often used with left, right, begin, end, increase (up) or decrease (down)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">save</th>
@@ -166,12 +166,12 @@
 							<th class="value-name" scope="row">upload</th>
 							<td class="value-description">upload file to the server</td>
 						</tr>
-			<tr>
+			             <tr>
 							<th class="value-name" scope="row">download</th>
 							<td class="value-description">download file from the server</td>
 						</tr>
-			<tr>
-							<th class="value-name" scope="row">connect </th>
+			             <tr>
+							<th class="value-name" scope="row">connect</th>
 							<td class="value-description">connect a communication channel</td>
 						</tr>
 						<tr>
@@ -210,23 +210,23 @@
 							<th class="value-name" scope="row">captions</th>
 							<td class="value-description">show the settings for captions and subtitles. </td>
 						</tr>
-			<tr>
+			             <tr>
 							<th class="value-name" scope="row">mute</th>
 							<td class="value-description">mute or toggle the mute option. </td>
 						</tr>
-			<tr>
+			             <tr>
 							<th class="value-name" scope="row">volume</th>
 							<td class="value-description">change or show the settings for the volume. (Implied simplification = "critical".) </td>
 						</tr>
-			<tr>
+			             <tr>
 							<th class="value-name" scope="row">channel</th>
 							<td class="value-description">change or show the settings for the channel. (Implied simplification = "critical".) </td>
 						</tr>
-			<tr>
+			             <tr>
 							<th class="value-name" scope="row">temperature</th>
 							<td class="value-description">change or show the settings for the temperature. (Implied simplification = "critical".)</td>
 						</tr>
-			<tr>
+			             <tr>
 							<th class="value-name" scope="row">brightness</th>
 							<td class="value-description">change or show the settings for the brightness. </td>
 						</tr>
@@ -282,7 +282,63 @@
 							<th class="value-name" scope="row">left</th>
 							<td class="value-description">moves a selected item to the left to another column or list</td>
 						</tr>
-		</tbody>
+						<tr>
+							<th class="value-name" scope="row">skip</th>
+							<td class="value-description">skips the current step, typically used a  in a sequence of steps</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">scroll</th>
+							<td class="value-description">advances the view. Often used with left, right, begin, end increase (up) or decrease (down)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">escape</th>
+							<td class="value-description">Typically used to abort, cancel or change what is currently being displayed on the screen. An example is closing the full screen view.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">voiceCommands</th>
+							<td class="value-description">activate or deactivate voice commands. Often used with  [aria-pressed = "true"] for on or [aria-pressed = "false"] for off.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">connect</th>
+							<td class="value-description">connect to a communication channel, such as an FTP server or Voice over IP channel.  Often used with  [aria-pressed = "true"] for on or [aria-pressed = "false"] for off.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">drag</th>
+							<td class="value-description">enables a dragged and dropped capabilities.   Often used with  [aria-pressed = "true"] for on or [aria-pressed = "false"] for off.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">re-size</th>
+							<td class="value-description">increase or decrease font size.  Often used with increase or decrease.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">order</th>
+							<td class="value-description">Changes of the selected item position within list items, while each item in the list has a layer position Often used with  increase (forward), decrease (back), first and end.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">mediaPosition</th>
+							<td class="value-description">adjust the current playback position in the current media</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">loop</th>
+							<td class="value-description">plays the flow, presentation or a movie over and over again, once or without stopping. Often used with  [aria-pressed = "true"] for on or [aria-pressed = "false"] for off.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">volume</th>
+							<td class="value-description">adjust the volume of a multi media component. Often used with increase or decrease  but is sometimes used alone as a menu name or item.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">channel</th>
+							<td class="value-description">adjust the channel of a multi media component. Often used with increase or decrease but is sometimes used alone as a menu name  or item.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">temperature</th>
+							<td class="value-description">adjust the temperature. Often used with increase or decrease but is sometimes used alone as a menu name or item.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">brightness</th>
+							<td class="value-description"> adjust the screen or application  brightness. Often used with increase or decrease but is sometimes used alone as a menu name or item.</td>
+						</tr>
+			</tbody>
 		</table>
 	</section> 
 </section>
