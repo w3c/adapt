@@ -1124,9 +1124,19 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 				<h3 id="a-2-wai-aria"><span class="secno">A.2 </span><abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr><span class="permalink"><a href="#wai-aria" aria-label="Permalink for A.2 WAI-ARIA" title="Permalink for A.2 WAI-ARIA"><span>§</span></a></span></h3>
 				<p>Properties in this case can be represented as <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> properties by adding the prefix "aui-" to the attribute name, and the property value as the attribute value.</p>
 				<div class="ednote"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="4"><span>Editor's note</span></div><p class="">The prefix above is not yet accepted by the ARIA Working Group.</p></div>
+				<div class="example"><div class="example-title marker"><span>Example 1</span><span style="text-transform: none">: Action Using ARIA</span></div><pre class="hljs javascript" aria-busy="false">For example: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aui-action</span>=<span class="hljs-string">"undo"</span> &gt;</span>Revert<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span></pre></div>
+				<div class="example"><div class="example-title marker"><span>Example 2</span><span style="text-transform: none">: Destination Using ARIA</span></div><pre class="hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"home.html"</span> <span class="hljs-attr">aui-destination</span>=<span class="hljs-string">"home"</span>&gt;</span>our main page<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></pre></div>
+			
+				<div class="example"><div class="example-title marker"><span>Example 3</span><span style="text-transform: none">: Fields Using ARIA</span></div><pre class="hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"fname"</span> <span class="hljs-attr">aui-field</span>=<span class="hljs-string">"phone"</span>/&gt;</span></pre></div>
+				<div class="example"><div class="example-title marker"><span>Example 4</span><span style="text-transform: none"> Context Using ARIA</span></div>&lt;a href="women.html" aui-context="http://schema.org/Female"&gt;women&lt;/a&gt; </div>
+		
+				<div class="example"><div class="example-title marker"><span>Example 5</span><span style="text-transform: none"> Symbol Using ARIA</span></div>&lt;img aui-symbol="http://wordnet-rdf.princeton.edu/wn31/girl-n" href="mygirlsy.bmp"/&gt; </div>
+			
+				
+
 				<section id="additional-wai-aria-roles">
 					<h4 id="a-2-1-additional-wai-aria-roles"><span class="secno">A.2.1 </span>Additional <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> Roles<span class="permalink"><a href="#additional-wai-aria-roles" aria-label="Permalink for A.2.1 Additional WAI-ARIA Roles" title="Permalink for A.2.1 Additional WAI-ARIA Roles"><span>§</span></a></span></h4>
-					<p><b>Requirement</b>: We may want to add roles for sections on a page such as: contact us - for a contact us form.</p>
+					<p><b>Requirement</b>: We may want to add landmark role values for sections on a page such as: contact us - for a contact us form.</p>
 					<p><b>User experience: </b>symbols and colors could be used consistently across different content.</p>
 					<p>Nav maps can be automatically generated for people learn via key-points or examples.</p>
 					<p>Further these sections could be hidden in the normal rendering of a page or rendered the top of page depending on user preferences. The location of these sections can also be changed, based on the user preference, enabling the user to find them easily.</p>
