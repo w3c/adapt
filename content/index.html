@@ -122,10 +122,7 @@ input.task-list-item-checkbox {
 		
 		
 		
-		
-	
-		<link href="../common/css/common.css" rel="stylesheet" type="text/css">
-	<style id="respec-mainstyle">/*****************************************************************
+		<style id="respec-mainstyle">/*****************************************************************
  * ReSpec 3 CSS
  * Robin Berjon - http://berjon.com/
  *****************************************************************/
@@ -398,19 +395,22 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-strong {
   font-weight: bold;
 }
-</style><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-WD"><link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-content-1.0/"><script id="initialUserConfig" type="application/json">{
+</style>
+	
+		<link href="../common/css/common.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-content-1.0/"><script id="initialUserConfig" type="application/json">{
   "trace": true,
   "doRDFa": "1.0",
   "includePermalinks": true,
   "permalinkEdge": true,
   "permalinkHide": false,
   "tocIntroductory": true,
-  "specStatus": "FPWD",
+  "specStatus": "ED",
   "noRecTrack": false,
   "shortName": "personalization-semantics-content-1.0",
   "copyrightStart": "2017",
   "license": "document",
-  "edDraftURI": "https://w3c.github.io/w3c/personalization-semantics/content/index.html",
+  "edDraftURI": "https://w3c.github.io/personalization-semantics/content/",
   "editors": [
     {
       "name": "Lisa Seeman",
@@ -742,9 +742,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     "CR": "https://www.w3.org/TR/wai-aria-1.1/",
     "REC": "https://www.w3.org/TR/wai-aria-1.1/"
   },
-  "publishDate": "2018-03-06",
-  "publishISODate": "2018-03-06T00:00:00.000Z",
-  "generatedSubtitle": "First Public Working Draft 06 March 2018"
+  "publishDate": "2018-03-07",
+  "publishISODate": "2018-03-07T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 07 March 2018"
 }</script><meta name="description" content="This document provides a vocabulary of terms that can be used to enhance web content with information about controls, symbols, and user interface elements. User agents use these semantics to augment or adapt content to the user scenario. This helps the user use and understand the content, and supports simplification and management of distractions."></head>
 	<body class="h-entry toc-inline"><div class="head">
   <a href="https://www.w3.org/" class="logo">
@@ -752,10 +752,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   </a>
   <h1 class="title p-name" id="title">Personalization Semantics Content Module 1.0</h1>
   
-  <h2 id="w3c-first-public-working-draft-06-march-2018"><abbr title="World Wide Web Consortium">W3C</abbr> First Public Working Draft <time class="dt-published" datetime="2018-03-06">06 March 2018</time></h2>
+  <h2 id="w3c-editor-s-draft-07-march-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-03-07">07 March 2018</time></h2>
   <dl>
-    <dt>This version:</dt><dd><a class="u-url" href="https://www.w3.org/TR/2018/WD-personalization-semantics-content-1.0-20180306/">https://www.w3.org/TR/2018/WD-personalization-semantics-content-1.0-20180306/</a></dd><dt>Latest published version:</dt><dd><a href="https://www.w3.org/TR/personalization-semantics-content-1.0/">https://www.w3.org/TR/personalization-semantics-content-1.0/</a></dd>
-    <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/w3c/personalization-semantics/content/index.html">https://w3c.github.io/w3c/personalization-semantics/content/index.html</a></dd>
+    <dt>This version:</dt><dd><a class="u-url" href="https://w3c.github.io/personalization-semantics/content/">https://w3c.github.io/personalization-semantics/content/</a></dd><dt>Latest published version:</dt><dd><a href="https://www.w3.org/TR/personalization-semantics-content-1.0/">https://www.w3.org/TR/personalization-semantics-content-1.0/</a></dd>
+    <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/personalization-semantics/content/">https://w3c.github.io/personalization-semantics/content/</a></dd>
     
     
     
@@ -795,8 +795,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 		<section id="sotd" class="introductory"><!--OddPage--><h2 id="status-of-this-document">Status of This Document</h2><p>
         <em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em>
       </p><p>
-          This document was published by the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> as a First Public Working Draft.
-          This document is intended to become a <abbr title="World Wide Web Consortium">W3C</abbr> Recommendation.
+          This document was published by the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> as an Editor's Draft.
+          
           
             Comments regarding this document are welcome. Please send them to
             <a href="mailto:public-personalization-tf@w3.org">public-personalization-tf@w3.org</a>
@@ -807,7 +807,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           
           
         </p><p>
-            Publication as a First Public Working Draft does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr>
+            Publication as an Editor's Draft does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr>
             Membership. This is a draft document and may be updated, replaced or obsoleted by other
             documents at any time. It is inappropriate to cite this document as other than work in
             progress.
@@ -835,9 +835,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         </p><p>This document is governed by the <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
         </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a href="#abstract" class="tocxref">Abstract</a></li><li class="tocline"><a href="#sotd" class="tocxref">Status of This Document</a></li><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a></li><li class="tocline"><a href="#use-cases" class="tocxref"><span class="secno">2. </span>Use Cases</a><ol class="toc"><li class="tocline"><a href="#use_case_simplification" class="tocxref"><span class="secno">2.1 </span>Simplification</a></li><li class="tocline"><a href="#use_case_adding_context" class="tocxref"><span class="secno">2.2 </span>Adding Context</a><ol class="toc"><li class="tocline"><a href="#use_case_general_context" class="tocxref"><span class="secno">2.2.1 </span>General Context</a></li><li class="tocline"><a href="#use_case_interoperable_symbols" class="tocxref"><span class="secno">2.2.2 </span>Interoperable Symbols</a></li></ol></li></ol></li><li class="tocline"><a href="#content" class="tocxref"><span class="secno">3. </span>Content</a><ol class="toc"><li class="tocline"><a href="#action-explanation" class="tocxref"><span class="secno">3.1 </span>aui-action</a><ol class="toc"><li class="tocline"><a href="#description" class="tocxref"><span class="secno">3.1.1 </span>Description</a></li><li class="tocline"><a href="#action-example" class="tocxref"><span class="secno">3.1.2 </span>Example</a></li><li class="tocline"><a href="#characteristics" class="tocxref"><span class="secno">3.1.3 </span>Characteristics</a></li><li class="tocline"><a href="#values" class="tocxref"><span class="secno">3.1.4 </span>Values</a></li></ol></li><li class="tocline"><a href="#destination-explanation" class="tocxref"><span class="secno">3.2 </span>aui-destination</a><ol class="toc"><li class="tocline"><a href="#description-0" class="tocxref"><span class="secno">3.2.1 </span>Description</a></li><li class="tocline"><a href="#destination-example" class="tocxref"><span class="secno">3.2.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-0" class="tocxref"><span class="secno">3.2.3 </span>Characteristics</a></li><li class="tocline"><a href="#values-0" class="tocxref"><span class="secno">3.2.4 </span>Values</a></li></ol></li><li class="tocline"><a href="#field-explanation" class="tocxref"><span class="secno">3.3 </span>aui-field</a><ol class="toc"><li class="tocline"><a href="#description-1" class="tocxref"><span class="secno">3.3.1 </span>Description</a></li><li class="tocline"><a href="#field-example" class="tocxref"><span class="secno">3.3.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-1" class="tocxref"><span class="secno">3.3.3 </span>Characteristics</a></li><li class="tocline"><a href="#values-1" class="tocxref"><span class="secno">3.3.4 </span>Values</a></li></ol></li><li class="tocline"><a href="#simplification-explanation" class="tocxref"><span class="secno">3.4 </span>aui-simplification</a><ol class="toc"><li class="tocline"><a href="#description-2" class="tocxref"><span class="secno">3.4.1 </span>Description</a></li><li class="tocline"><a href="#simplification-example" class="tocxref"><span class="secno">3.4.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-2" class="tocxref"><span class="secno">3.4.3 </span>Characteristics</a></li><li class="tocline"><a href="#values-2" class="tocxref"><span class="secno">3.4.4 </span>Values</a></li></ol></li><li class="tocline"><a href="#distraction-explanation" class="tocxref"><span class="secno">3.5 </span>aui-distraction</a><ol class="toc"><li class="tocline"><a href="#description-3" class="tocxref"><span class="secno">3.5.1 </span>Description</a></li><li class="tocline"><a href="#distraction-example" class="tocxref"><span class="secno">3.5.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-3" class="tocxref"><span class="secno">3.5.3 </span>Characteristics</a></li><li class="tocline"><a href="#values-3" class="tocxref"><span class="secno">3.5.4 </span>Values</a></li></ol></li><li class="tocline"><a href="#symbol-explanation" class="tocxref"><span class="secno">3.6 </span>aui-symbol</a><ol class="toc"><li class="tocline"><a href="#description-4" class="tocxref"><span class="secno">3.6.1 </span>Description</a></li><li class="tocline"><a href="#symbol-example" class="tocxref"><span class="secno">3.6.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-4" class="tocxref"><span class="secno">3.6.3 </span>Characteristics</a></li></ol></li></ol></li><li class="tocline"><a href="#vocabulary-implementations" class="tocxref"><span class="secno">A. </span>Vocabulary Implementations</a></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a href="#ack_group" class="tocxref"><span class="secno">B.1 </span>Participants active in the ARIA WG at the time of publication</a></li><li class="tocline"><a href="#ack_others" class="tocxref"><span class="secno">B.2 </span>Other ARIA contributors, commenters, and previously active participants</a></li><li class="tocline"><a href="#ack_funders" class="tocxref"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">C.1 </span>Informative references</a></li></ol></li></ol></nav>
 
-		<section id="introduction">
+		<section class="informative" id="introduction">
 
-			<!--OddPage--><h2 id="x1-introduction"><span class="secno">1. </span>Introduction<span class="permalink"><a href="#introduction" aria-label="Permalink for 1. Introduction" title="Permalink for 1. Introduction"><span>§</span></a></span></h2>
+			<!--OddPage--><h2 id="x1-introduction"><span class="secno">1. </span>Introduction<span class="permalink"><a href="#introduction" aria-label="Permalink for 1. Introduction" title="Permalink for 1. Introduction"><span>§</span></a></span></h2><p><em>This section is non-normative.</em></p>
 			<p>This document is an extension of <a href="../">Personalization Semantics Explainer 1.0</a>. it provided vocabularies that enables user agents to augment or adapt content to the user scenario and helps the user use and understand the content. It includes use cases and vocabularies for identifying the purpose of controls, symbols and user interface elements and supports simplification and distractions.</p>
 
 		</section>
