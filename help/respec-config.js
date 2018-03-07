@@ -15,7 +15,7 @@ var respecConfig = {
     //diffTool:             "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
 
     // the specifications short name, as in http://www.w3.org/TR/short-name/
-    shortName:            "personalization-help&support-1.0",
+    shortName:            "personalization-semantics-help-1.0",
 
 
     // if you wish the publication date to be other than today, set this
@@ -31,7 +31,7 @@ var respecConfig = {
     //previousDiffURI: "",
 
     // if there a publicly available Editors Draft, this is the link
-    edDraftURI: "https://w3c.github.io/w3c/personalization-semantics/help/index.html",
+    edDraftURI: "https://w3c.github.io/personalization-semantics/help/",
 
     // if this is a LCWD, uncomment and set the end of its review period
     // lcEnd: "2012-02-21",
