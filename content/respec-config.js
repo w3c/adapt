@@ -31,7 +31,7 @@ var respecConfig = {
     //previousDiffURI: "",
 
     // if there a publicly available Editors Draft, this is the link
-    edDraftURI: "https://w3c.github.io/w3c/personalization-semantics/content/index.html",
+    edDraftURI: "https://w3c.github.io/personalization-semantics/content/index.html",
 
     // if this is a LCWD, uncomment and set the end of its review period
     // lcEnd: "2012-02-21",
