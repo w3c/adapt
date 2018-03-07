@@ -183,25 +183,7 @@
 			</section>
 			<section>
 				<h3>RDFa</h3>
-				<p>Properties in this vocabulary can be applied via <a href="https://www.w3.org/TR/rdfa-lite/">RDFa</a> [[rdfa-core]]. To apply a term from this vocabulary to content using RDFa, use the following steps:</p>
-				<ul>
-					<li>On the <code>body</code> element, use the personalization semantics <a href="#identification-uri">identification URI</a> to identify the vocabulary to the RDFa processor. This can be done in one of two ways:<ul>
-							<li>If personalization semantics is the only vocabulary being used, use the identification URI as the value of the <a href="https://www.w3.org/TR/rdfa-lite/#vocab-typeof-and-property"><code>vocab</code> attribute</a>.</li>
-							<li>If multiple vocabularies are being used, use the <a href="https://www.w3.org/TR/rdfa-lite/#prefix"><code>prefix</code> attribute</a> to declare a prefix and vocabulary reference for the personalization semantics vocabulary. The prefix should be the personalization semantics <a href="#prefix">prefix</a>, and the vocabulary should be the identification URI, i.e., <code>prefix="aui: https://www.w3.org/ns/aui/"</code>. Define prefixes and voculabulary references for other vocabularies in the same attribute.</li>
-						</ul></li>
-					<li>On the element to which a property applies, set the <a href="https://www.w3.org/TR/rdfa-lite/#vocab-typeof-and-property"><code>property</code> attribute</a> to the name of the personalization semantics property, using the prefix if needed.</li>
-					<li>On the same element, set the <a href="https://www.w3.org/TR/rdfa-core/#A-content"><code>content</code> attribute</a> to the appropriate value for the property.</li>
-				</ul>
-				<pre class="example" title="Action property in HTML using RDFa without prefix">&lt;html>
-  &lt;body vocab="https://www.w3.org/ns/aui/">
-    &lt;button property="action" content="undo">Revert&lt;/button>
-  &lt;/body>
-&lt;/html></pre>
-				<pre class="example" title="Action property in HTML using RDFa with prefix">&lt;html>
-  &lt;body prefix="aui: https://www.w3.org/ns/aui/">
-    &lt;button property="aui:action" content="undo">Revert&lt;/button>
-  &lt;/body>
-&lt;/html></pre>
+				<p class="ednote">The Personalization Task Force is exploring whether the personalization semantics vocabulary can be used with RDFa. If so, guidance will be added here in a future draft. See <a href="https://github.com/w3c/personalization-semantics/issues/53">Issue 53</a>.</p>
 			</section>
 			<section>
 				<h3>Autocomplete</h3>
