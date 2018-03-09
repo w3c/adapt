@@ -121,6 +121,7 @@ input.task-list-item-checkbox {
 		<title>Personalization Semantics Content Module 1.0</title>
 		
 		
+		
 		<style id="respec-mainstyle">/*****************************************************************
  * ReSpec 3 CSS
  * Robin Berjon - http://berjon.com/
@@ -395,7 +396,6 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   font-weight: bold;
 }
 </style>
-		
 	
 		<link href="../common/css/common.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-content-1.0/"><script id="initialUserConfig" type="application/json">{
@@ -742,9 +742,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     "CR": "https://www.w3.org/TR/wai-aria-1.1/",
     "REC": "https://www.w3.org/TR/wai-aria-1.1/"
   },
-  "publishDate": "2018-03-07",
-  "publishISODate": "2018-03-07T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 07 March 2018"
+  "publishDate": "2018-03-09",
+  "publishISODate": "2018-03-09T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 09 March 2018"
 }</script><meta name="description" content="This document provides a vocabulary of terms that can be used to enhance web content with information about controls, symbols, and user interface elements. User agents use these semantics to augment or adapt content to the user scenario. This helps the user use and understand the content, and supports simplification and management of distractions."></head>
 	<body class="h-entry toc-inline"><div class="head">
   <a href="https://www.w3.org/" class="logo">
@@ -752,7 +752,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   </a>
   <h1 class="title p-name" id="title">Personalization Semantics Content Module 1.0</h1>
   
-  <h2 id="w3c-editor-s-draft-07-march-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-03-07">07 March 2018</time></h2>
+  <h2 id="w3c-editor-s-draft-09-march-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-03-09">09 March 2018</time></h2>
   <dl>
     <dt>This version:</dt><dd><a class="u-url" href="https://w3c.github.io/personalization-semantics/content/">https://w3c.github.io/personalization-semantics/content/</a></dd><dt>Latest published version:</dt><dd><a href="https://www.w3.org/TR/personalization-semantics-content-1.0/">https://www.w3.org/TR/personalization-semantics-content-1.0/</a></dd>
     <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/personalization-semantics/content/">https://w3c.github.io/personalization-semantics/content/</a></dd>
@@ -988,7 +988,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 							<th class="value-name" scope="row">buy</th>
 							<td class="value-description">buy the selected item or buy the item at the current location. Often involves adding the current item into a shopping cart. (Implied simplification  = "critical".)</td>
 						</tr>
-			<tr>
+			             <tr>
 							<th class="value-name" scope="row">checkout</th>
 							<td class="value-description">proceed to the purchasing process. (Implied simplification  = "critical".)</td>
 						</tr>
@@ -998,7 +998,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">move</th>
-							<td class="value-description">move the selected item. <div class="ednote"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="5"><span>Editor's note</span></div><em class=""> Note that this item  may change to allow for the direction to be added.</em></div>  </td>
+							<td class="value-description">Changes the position of a selected item(s).  Often used with left, right, begin, end, increase (up) or decrease (down)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">save</th>
@@ -1044,12 +1044,12 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 							<th class="value-name" scope="row">upload</th>
 							<td class="value-description">upload file to the server</td>
 						</tr>
-			<tr>
+			             <tr>
 							<th class="value-name" scope="row">download</th>
 							<td class="value-description">download file from the server</td>
 						</tr>
-			<tr>
-							<th class="value-name" scope="row">connect </th>
+			             <tr>
+							<th class="value-name" scope="row">connect</th>
 							<td class="value-description">connect a communication channel</td>
 						</tr>
 						<tr>
@@ -1088,23 +1088,23 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 							<th class="value-name" scope="row">captions</th>
 							<td class="value-description">show the settings for captions and subtitles. </td>
 						</tr>
-			<tr>
+			             <tr>
 							<th class="value-name" scope="row">mute</th>
 							<td class="value-description">mute or toggle the mute option. </td>
 						</tr>
-			<tr>
+			             <tr>
 							<th class="value-name" scope="row">volume</th>
 							<td class="value-description">change or show the settings for the volume. (Implied simplification = "critical".) </td>
 						</tr>
-			<tr>
+			             <tr>
 							<th class="value-name" scope="row">channel</th>
 							<td class="value-description">change or show the settings for the channel. (Implied simplification = "critical".) </td>
 						</tr>
-			<tr>
+			             <tr>
 							<th class="value-name" scope="row">temperature</th>
 							<td class="value-description">change or show the settings for the temperature. (Implied simplification = "critical".)</td>
 						</tr>
-			<tr>
+			             <tr>
 							<th class="value-name" scope="row">brightness</th>
 							<td class="value-description">change or show the settings for the brightness. </td>
 						</tr>
@@ -1160,7 +1160,93 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 							<th class="value-name" scope="row">left</th>
 							<td class="value-description">moves a selected item to the left to another column or list</td>
 						</tr>
-		</tbody>
+						<tr>
+							<th class="value-name" scope="row">skip</th>
+							<td class="value-description">skips the current step, typically used a  in a sequence of steps</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">scroll</th>
+							<td class="value-description">advances the view. Often used with left, right, begin, end, increase (up) or decrease (down)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">escape</th>
+							<td class="value-description">Typically used to abort, cancel or change what is currently being displayed on the screen. A common application of the the esc key is to leave full screen mode.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">voiceCommands</th>
+							<td class="value-description">activate or deactivate voice commands. Often used with  [aria-pressed = "true"] for on or [aria-pressed = "false"] for off.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">connect</th>
+							<td class="value-description">connect to a communication channel, such as an FTP server or Voice over IP channel.  Often used with  [aria-pressed = "true"] for on or [aria-pressed = "false"] for off.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">drag</th>
+							<td class="value-description">enables a dragged and dropped capabilities.   Often used with  [aria-pressed = "true"] for on or [aria-pressed = "false"] for off.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">re-size</th>
+							<td class="value-description">increase or decrease font size.  Often used with increase or decrease.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">order</th>
+							<td class="value-description">Changes of the selected item position within list items, while each item in the list has a layer position Often used with  increase (forward), decrease (back), first and end.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">mediaPosition</th>
+							<td class="value-description">adjust the current playback position in the current media</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">loop</th>
+							<td class="value-description">plays the flow, presentation or a movie over and over again, once or without stopping. Often used with  [aria-pressed = "true"] for on or [aria-pressed = "false"] for off.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">volume</th>
+							<td class="value-description">adjust the volume of a multi media component. Often used with increase or decrease  but is sometimes used alone as a menu name or item.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">channel</th>
+							<td class="value-description">adjust the channel of a multi media component. Often used with increase or decrease but is sometimes used alone as a menu name  or item.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">temperature</th>
+							<td class="value-description">adjust the temperature. Often used with increase or decrease but is sometimes used alone as a menu name or item.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">brightness</th>
+							<td class="value-description"> adjust the screen or application  brightness. Often used with increase or decrease but is sometimes used alone as a menu name or item.</td>
+						</tr>
+   						<tr>
+							<th class="value-name" scope="row">mediaPosition</th>
+							<td class="value-description">Adjust the current playback position in the current media.
+                            <div class="note"><div role="heading" class="note-title marker" id="h-note" aria-level="5"><span>Note</span></div><em class="">At risk pending implemetions.</em></div></td>
+						</tr>
+   						<tr>
+							<th class="value-name" scope="row">loop</th>
+							<td class="value-description">plays the flow, presentation or a movie over and over again, once or without stopping. Often used with  [aria-pressed = "true"] for on or [aria-pressed = "false"] for off.
+                            <div class="note"><div role="heading" class="note-title marker" id="h-note-0" aria-level="5"><span>Note</span></div><em class="">At risk pending implemetions.</em></div></td>
+						</tr>
+  						<tr>
+							<th class="value-name" scope="row">volume</th>
+							<td class="value-description">adjust the volume of a multi media component. Often used with increase or decrease  but is sometimes used alone as a menu name  or item. 
+                            <div class="note"><div role="heading" class="note-title marker" id="h-note-1" aria-level="5"><span>Note</span></div><em class="">At risk pending implemetions.</em></div></td>
+						</tr>
+ 						<tr>
+							<th class="value-name" scope="row">channel</th>
+							<td class="value-description">adjust the channel of a multi media component. Often used with increase or decrease but is sometimes used alone as a menu name  or item. 
+                            <div class="note"><div role="heading" class="note-title marker" id="h-note-2" aria-level="5"><span>Note</span></div><em class="">At risk pending implemetions.</em></div></td>
+						</tr>
+ 						<tr>
+							<th class="value-name" scope="row">temperature</th>
+							<td class="value-description">adjust the temperature. Often used with increase or decrease but is sometimes used alone as a menu name  or item. 
+                            <div class="note"><div role="heading" class="note-title marker" id="h-note-3" aria-level="5"><span>Note</span></div><em class="">At risk pending implemetions.</em></div></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">brightness</th>
+							<td class="value-description">adjust the screen or application  brightness. Often used with increase or decrease but is sometimes used alone as a menu name  or item.
+                            <div class="note"><div role="heading" class="note-title marker" id="h-note-4" aria-level="5"><span>Note</span></div><em class="">At risk pending implemetions.</em></div></td>
+						</tr>
+			</tbody>
 		</table>
 	</section> 
 </section>
@@ -1300,12 +1386,37 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">social</th>
-							<td class="value-description">content provider on social media. 
-<div class="note"><div role="heading" class="note-title marker" id="h-note" aria-level="5"><span>Note</span></div><em class=""> Note that this item may be augmented  to allow for the name of the group to be added via the accessible name. This mechanism may change.</em></div></td>
+							<td class="value-description">content provider on social media. Note, that the specific name of the social media platform should be included in the accessible name.
+                            <div class="note"><div role="heading" class="note-title marker" id="h-note-5" aria-level="5"><span>Note</span></div><em class="">At risk pending implemetions.</em></div></td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">post</th>
 							<td class="value-description">post current item. Item will be visible to other parties.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">begin</th>
+							<td class="value-description">Changes the location to the beginning item from a list of items or redirects functionality to the first step in a sequence.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">end</th>
+							<td class="value-description">Changes the location to the end item from a list of items or redirects functionality to the last step in a sequence.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">left</th>
+							<td class="value-description">Changes the location of the selected item(s) to the left.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">right</th>
+							<td class="value-description">Changes the location of the selected item(s) to the right.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">related</th>
+							<td class="value-description">Adds a related item(s) to a pre-selected list of items.</td>
+						</tr>
+                        
+  						<tr>
+							<th class="value-name" scope="row">related</th>
+							<td class="value-description">Adds a related item(s) to a pre-selected list of items.</td>
 						</tr>
 					</tbody>
 				</table>
@@ -1331,7 +1442,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 	<section id="field-example">
 		<h4 id="x3-3-2-example"><span class="secno">3.3.2 </span>Example<span class="permalink"><a href="#field-example" aria-label="Permalink for 3.3.2 Example" title="Permalink for 3.3.2 Example"><span>§</span></a></span></h4>
 		<p>The below example section show how <code>field</code> used when coding.</p>
-    	<div class="example"><div class="example-title marker"><span>Example 4</span><span style="text-transform: none">: Fields Using ARIA</span></div><pre class="hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"fname"</span> <span class="hljs-attr">aui-field</span>=<span class="hljs-string">"phone"</span>/&gt;</span></pre></div>
+    	<div class="example"><div class="example-title marker"><span>Example 4</span><span style="text-transform: none">: Fields Using ARIA</span></div><pre class="hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"telnum"</span> <span class="hljs-attr">aui-field</span>=<span class="hljs-string">"tel"</span>/&gt;</span></pre></div>
     </section>
     <section id="characteristics-1">
     	<h4 id="x3-3-3-characteristics"><span class="secno">3.3.3 </span>Characteristics<span class="permalink"><a href="#characteristics-1" aria-label="Permalink for 3.3.3 Characteristics" title="Permalink for 3.3.3 Characteristics"><span>§</span></a></span></h4>
@@ -1364,7 +1475,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </section>
     <section id="values-1">
     	<h4 id="x3-3-4-values"><span class="secno">3.3.4 </span>Values<span class="permalink"><a href="#values-1" aria-label="Permalink for 3.3.4 Values" title="Permalink for 3.3.4 Values"><span>§</span></a></span></h4>
-    	<table class="value-descriptions">
+    	<div class="note"><div role="heading" class="note-title marker" id="h-note-6" aria-level="5"><span>Note</span></div><em class="">At risk pending implemetions.</em></div><div class="note"><div role="heading" class="note-title marker" id="h-note-7" aria-level="5"><span>Note</span></div><em class="">At risk pending implemetions.</em></div><div class="note"><div role="heading" class="note-title marker" id="h-note-8" aria-level="5"><span>Note</span></div><em class="">At risk pending implemetions.</em></div><div class="note"><div role="heading" class="note-title marker" id="h-note-9" aria-level="5"><span>Note</span></div><em class="">At risk pending implemetions.</em></div><table class="value-descriptions">
 					<thead>
 						<tr>
 							<th scope="col">Value</th>
@@ -1496,7 +1607,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 						 <tr>
 							<th class="value-name" scope="row">ccType</th>
 							<td class="value-description">type of payment instrument (e.g. Visa). Note that there may be a change to allow for adding options.</td>
-</tr>
+                        </tr>
 						<tr>
 							<th class="value-name" scope="row">ccNumber</th>
 							<td class="value-description">credit card number</td>
@@ -1594,6 +1705,30 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 							<th class="value-name" scope="row">section-*****</th>
 							<td class="value-description">used to group forms together</td>
 						</tr>
+						<tr>
+							<th class="value-name" scope="row">timeStart</th>
+							<td class="value-description"> Set the start time or the time of an event. 
+                            <div class="note"><div role="heading" class="note-title marker" id="h-note-10" aria-level="5"><span>Note</span></div><em class="">We may remove this or harmonize with other date time standards.</em></div></td>
+                            
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">timeEnd</th>
+							<td class="value-description">Set the end time of an event.
+                            <div class="note"><div role="heading" class="note-title marker" id="h-note-11" aria-level="5"><span>Note</span></div><em class="">We may remove this or harmonize with other date time standards.</em></div></td>
+                            
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">dateStart</th>
+							<td class="value-description">Set the start date or the date of an event.
+                            <div class="note"><div role="heading" class="note-title marker" id="h-note-12" aria-level="5"><span>Note</span></div><em class="">We may remove this or harmonize with other date time standards.</em></div></td>
+                            
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">dateEnd</th>
+							<td class="value-description">Set the end time of an event  
+                            <div class="note"><div role="heading" class="note-title marker" id="h-note-13" aria-level="5"><span>Note</span></div><em class="">We may remove this or harmonize with other date time standards.</em></div></td>
+                            
+                        </tr>
 					</tbody>
 				</table>
     </section>
@@ -1612,9 +1747,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 							<p>This allows simplified interfaces with less options or interfaces that emphasize critical features. Adaptations can be based on personalization settings. </p>
 						
 
-							 <div class="ednote"><div role="heading" class="ednote-title marker" id="h-ednote-0" aria-level="5"><span>Editor's note</span></div><p class="">This was formerly <code>importance</code>. However different people may feel that sections that would be hidden in a simplified version are still very important, such as marketing content or legal terms.)</p></div>
+							 <div class="ednote"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="5"><span>Editor's note</span></div><p class="">This was formerly <code>importance</code>. However different people may feel that sections that would be hidden in a simplified version are still very important, such as marketing content or legal terms.)</p></div>
 
-							<div class="note"><div role="heading" class="note-title marker" id="h-note-0" aria-level="5"><span>Note</span></div><div class="">
+							<div class="note"><div role="heading" class="note-title marker" id="h-note-14" aria-level="5"><span>Note</span></div><div class="">
 								<p>These semantics aid simplification. But what content is most useful to a user varies from user to user. For example, men may be more interested in mens clothing, and may not be interested in the more frequently use womens clothing option. For that reason we may add context for elements that will help the personalization agent select the most useful content for a given user (see the <a href="#context">context</a> attribute). This is also necessary for reminders (see bellow).</p>
 								<p>It is worth mentioning that a lot of this information is known for personalization of advertisements and content optimization. </p>
 							</div></div>
@@ -1821,8 +1956,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 					<p><code>symbol</code> identifies the concept for symbols.</p>
 					<p><code>symbol</code> accepts the values of a URI or shortened URI. Note that namespaces are the only additional parsing that maybe required to identify the concept.</p>
 					<p>A personalization agent can then load alternative symbols that the user is familiar with and they do not have to learn new symbols for different applications. </p>
-					<div class="note"><div role="heading" class="note-title marker" id="h-note-1" aria-level="5"><span>Note</span></div><p class="">To help this be interoperable without an RDF parser we  recommend referencing the most commonly used ontologies and the highest level concept. (For example, reference "girl" and not "young girl" .) </p></div>
-					<div class="ednote"><div role="heading" class="ednote-title marker" id="h-ednote-1" aria-level="5"><span>Editor's note</span></div><p class="">We should have a note of common suggested terms and references. (Maybe with links to http://www.arasaac.org/) </p></div>
+					<div class="note"><div role="heading" class="note-title marker" id="h-note-15" aria-level="5"><span>Note</span></div><p class="">To help this be interoperable without an RDF parser we  recommend referencing the most commonly used ontologies and the highest level concept. (For example, reference "girl" and not "young girl" .) </p></div>
+					<div class="ednote"><div role="heading" class="ednote-title marker" id="h-ednote-0" aria-level="5"><span>Editor's note</span></div><p class="">We should have a note of common suggested terms and references. (Maybe with links to http://www.arasaac.org/) </p></div>
 				</div>
 	</section>
 	<section id="symbol-example">
