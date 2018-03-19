@@ -46,10 +46,6 @@ var respecConfig = {
         w3cid: 16320
       },
       {
-        name: "Rich Schwerdtfeger",
-        w3cid: 2460
-      },
-      {
         name: "Charles LaPierre",
         url: 'http://www.benetech.org',
         mailto: "charlesl@benetech.org",
@@ -71,7 +67,14 @@ var respecConfig = {
         company: "W3C",
         companyURI: "http://www.w3.org",
         w3cid: 100586
-      }
+      },
+      {
+        name: "Richard Schwerdtfeger",
+        company: "Knowbility",
+        companyURL: "https://www.knowbility.org/",
+        w3cid: 2460,
+        note: "Editor until October 2017"
+       }
     ],
 
     // authors, add as many as you like.
