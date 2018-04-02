@@ -1,54 +1,43 @@
-<section id="use_case_log">
-                    <h3 id="logs">Logs</h3>
-                    <p>This proposal is to track the tasks that a user has done, so that they can be reminded of them, and return to or fix a task. The suggested syntax should allow the author to transform some of the information into breadcrumbs via CSS, and the user system can read and present more or less information to the user as per their preferences.</p>
-                    <p>Preferably this should be in the header so that the user agent can build a cross application log of user tasks.</p>
-                    <p>Note that there is no default value.</p>
-                    <p>Relevant properties: <a href="#x3-1-all-the-log-properties">log</a>, <a href="#step">step</a>, <a href="#actiontaken">actiontaken</a>, <a href="#steplocation">steplocation</a>, <a href="#status">status</a></p>
-                    <section id="use_case_log_usage">
-                        <h4>Log Usage Examples</h4>
-                        <pre>&lt;div aui-log="booking trip" aui-step="1" aria-label="buy ticket" aria-hidden="true"
-     aui-actiontaken="bought ticket to NY return" steplocation ="uri" /></pre>
-                        <p>or</p>
-                        <pre>&lt;div aui-log="booking trip" aui-step="1" aui-actiontaken="bought ticket to NY return">
-      buy ticket
-  &lt;a href="uri">change&lt;/a>
-    &lt;/div></pre>
-                        <p>or the step number can be implied by the DOM</p>
-                        <pre>&lt;div aui-log="booking trip">
-  &lt;div aui-actiontaken="bought ticket to NY return">
-    buy ticket
-    &lt;a href="uri">change&lt;/a>
-  &lt;/div>
-&lt;/div></pre>
-                </section>
-                <section id="use_case_alternative_syntax">
-                    <h4>Alternative Syntax for Log</h4>
-                    <p>Note we are considering supporting an alternative syntax such as:</p>
-                    <pre>&lt;log name="booking trip">
-  &lt;step status ="done">
-    &lt;name>buy ticket&lt;/name>
-    &lt;actiontaken>bought ticket to NY return&lt;/actiontaken>
-    &lt;view changepossible="yes">url &lt;/view>
-  &lt;/step>
-  &lt;step  status ="done">
-    &lt;name>hotel&lt;/name>
-    &lt;actiontaken>booked Sheraton single room&lt;/actiontaken>
-    &lt;view changepossible="yes">url &lt;/view>
-  &lt;/step>
-  &lt;step  status ="current">
-    &lt;name>car rental&lt;/name>
-    &lt;view current changepossible="yes"/>
-  &lt;/step>
-&lt;/log>
-</pre>
-                </section>
-            </section>
-            <section id="use_case_reminder">
-                <h3>Reminders and Messages</h3>
-                <p><strong>Requirement: </strong>We require an attribute that enables different users to experience different amount of reminders and messages based on personal preferences. Reminders are a wonderful tool for many people with cognitive disabilities. However too many reminders will be annoying or distracting for some other users. Currently people can turn off distractions such as Skype, and Facebook, across different devices, and then may forget to turn them back on.</p>
-                <p>These semantics allow for different solutions so that users are able to focus without missing important messages. Users need to manage all distractions by forming a cross application and cross device distraction matrix that manages all distractions in one setting. It is based on a matrix for distractions at the operating system , browser or cloud level. People and users can be clustered in terms of importance or groups. For example, the CEO and your child's care giver could both be considered critical contacts. So even if they do not feel the message is urgent they can sometimes disrupt the user anyway. Some family members and important colleagues can be in another group, friends and extended family in a third group, system messages from the compliance system can be a different group again. </p>
-                <p>Relevant properties: <a href="#x3-2-1-messageimportance">messageimportance</a>, <a href="#x3-2-2-messagefrom">messagefrom</a>, <a href="#x3-2-3-messagecontext">messagecontext</a>, <a href="#x3-2-4-messagetime">messagetime</a></p>
-            </section>
-            <section id="use_case_general_tool">
-                <h3>General Tools</h3>
-            </section>
+<section id="use_case_stepindicator">
+  <h3 id="stepindicator">Step Indicator</h3>
+  <p>
+    <b>Requirement:</b> The user must be able to track all completed tasks in a sequence of tasks so they know where they are
+    in the process and can be reminded of the tasks that are complete. In addition, the user must be able to navigate to
+    any completed task and make corrections. The suggested syntax allows the author to transform some of the information
+    into breadcrumbs that identify the completed tasks using CSS so that the user's system can present more or less information
+    to the user based on the user's preferences.</p>
+    <p><b>Example User Experience:</b> A breadcrumb displays in the header so that the user agent can build a 
+      cross application step-by-step indicator that displays each task in the order it was completed 
+      by the user. 
+  </p>
+  <p>Relevant properties:
+    <a href="#x3-1-all-the-stepindicator-properties">stepindicator</a>,
+    <a href="#step">step</a>,
+    <a href="#steplocation">steplocation</a>,
+    <a href="#status">status</a>
+  </p> 
+</section>
+<section id="use_case_reminder">
+  <h3>Reminders and Messages</h3>
+  <p>
+    <strong>Requirement: </strong>We require an attribute that enables different users to experience different amount of reminders
+    and messages based on personal preferences. Reminders are a wonderful tool for many people with cognitive disabilities.
+    However too many reminders will be annoying or distracting for some other users. Currently people can turn off distractions
+    such as Skype, and Facebook, across different devices, and then may forget to turn them back on.</p>
+  <p>These semantics allow for different solutions so that users are able to focus without missing important messages. Users
+    need to manage all distractions by forming a cross application and cross device distraction matrix that manages all distractions
+    in one setting. It is based on a matrix for distractions at the operating system , browser or cloud level. People and
+    users can be clustered in terms of importance or groups. For example, the CEO and your child's care giver could both
+    be considered critical contacts. So even if they do not feel the message is urgent they can sometimes disrupt the user
+    anyway. Some family members and important colleagues can be in another group, friends and extended family in a third
+    group, system messages from the compliance system can be a different group again. </p>
+  <p>Relevant properties:
+    <a href="#x3-2-1-messageimportance">messageimportance</a>,
+    <a href="#x3-2-2-messagefrom">messagefrom</a>,
+    <a href="#x3-2-3-messagecontext">messagecontext</a>,
+    <a href="#x3-2-4-messagetime">messagetime</a>
+  </p>
+</section>
+<section id="use_case_general_tool">
+  <h3>General Tools</h3>
+</section>
