@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 20.7.1"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
+<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 20.10.3"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
 div.example-title {
     min-width: 7.5em;
     color: #b9ab2d;
@@ -767,9 +767,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     "CR": "https://www.w3.org/TR/wai-aria-1.1/",
     "REC": "https://www.w3.org/TR/wai-aria-1.1/"
   },
-  "publishDate": "2018-04-16",
-  "publishISODate": "2018-04-16T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 16 April 2018"
+  "publishDate": "2018-05-07",
+  "publishISODate": "2018-05-07T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 07 May 2018"
 }</script><meta name="description" content="Personalization involves tailoring aspects of the user experience to meet the needs and preferences of the user. For example, having familiar terms and symbols is key to many users being able to use the web. However, what is familiar for one user may be unfamiliar to another requiring them to learn new symbols. The challenge has been the ability to identify the types of content in a document that should be adapted to the preferred user experience. The introduction of standardized semantics allows web applications to customize the exposure of that content to one that is familiar to individuals based on their needs and preferences. This specification defines standard semantics to enable user driven personalization such as the association of user-preferred symbols to elements having those semantics. This ensures that users can quickly find familiar icons, such as a help icon, that apply to user interface elements."></head>
 	<body class="h-entry toc-inline"><div class="head">
   <a href="https://www.w3.org/" class="logo">
@@ -777,7 +777,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   </a>
   <h1 id="title" class="title p-name">Personalization Semantics Explainer 1.0</h1>
   
-  <h2 id="w3c-editor-s-draft-16-april-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-04-16">16 April 2018</time></h2>
+  <h2 id="w3c-editor-s-draft-07-may-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-05-07">07 May 2018</time></h2>
   <dl>
     <dt>This version:</dt><dd><a class="u-url" href="https://w3c.github.io/personalization-semantics/">https://w3c.github.io/personalization-semantics/</a></dd><dt>Latest published version:</dt><dd><a href="https://www.w3.org/TR/personalization-semantics-1.0/">https://www.w3.org/TR/personalization-semantics-1.0/</a></dd>
     <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/personalization-semantics/">https://w3c.github.io/personalization-semantics/</a></dd>
@@ -1193,7 +1193,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 			<section id="wai-aria">
 				<h3 id="a-3-wai-aria"><span class="secno">A.3 </span><abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr><span class="permalink"><a href="#wai-aria" aria-label="Permalink for A.3 WAI-ARIA" title="Permalink for A.3 WAI-ARIA"><span>§</span></a></span></h3>
 				<p>Properties in this case can be represented as <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> properties by adding the prefix "aui-" to the attribute name, and the property value as the attribute value.</p>
-				<div class="ednote"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="4"><span>Editor's note</span></div><p class="">The prefix above is not yet accepted by the ARIA Working Group.</p></div>
+				<div class="ednote" id="issue-container-generatedID"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="4"><span>Editor's note</span></div><p class="">The prefix above is not yet accepted by the ARIA Working Group.</p></div>
 				<div class="example"><div class="example-title marker"><span>Example 1</span><span style="text-transform: none">: Action Using ARIA</span></div><pre class="hljs javascript" aria-busy="false">For example: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aui-action</span>=<span class="hljs-string">"undo"</span> &gt;</span>Revert<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span></pre></div>
 				<div class="example"><div class="example-title marker"><span>Example 2</span><span style="text-transform: none">: Destination Using ARIA</span></div><pre class="hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"home.html"</span> <span class="hljs-attr">aui-destination</span>=<span class="hljs-string">"home"</span>&gt;</span>our main page<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></pre></div>
 			
@@ -1241,7 +1241,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 			</section>
 			<section id="rdfa">
 				<h3 id="a-5-rdfa"><span class="secno">A.5 </span>RDFa<span class="permalink"><a href="#rdfa" aria-label="Permalink for A.5 RDFa" title="Permalink for A.5 RDFa"><span>§</span></a></span></h3>
-				<div class="ednote"><div role="heading" class="ednote-title marker" id="h-ednote-0" aria-level="4"><span>Editor's note</span></div><p class="">The Personalization Task Force is exploring whether the personalization semantics vocabulary can be used with RDFa. If so, guidance will be added here in a future draft. See <a href="https://github.com/w3c/personalization-semantics/issues/53">Issue 53</a>.</p></div>
+				<div class="ednote" id="issue-container-generatedID-0"><div role="heading" class="ednote-title marker" id="h-ednote-0" aria-level="4"><span>Editor's note</span></div><p class="">The Personalization Task Force is exploring whether the personalization semantics vocabulary can be used with RDFa. If so, guidance will be added here in a future draft. See <a href="https://github.com/w3c/personalization-semantics/issues/53">Issue 53</a>.</p></div>
 			</section>
 			<section id="autocomplete">
 				<h3 id="a-6-autocomplete"><span class="secno">A.6 </span>Autocomplete<span class="permalink"><a href="#autocomplete" aria-label="Permalink for A.6 Autocomplete" title="Permalink for A.6 Autocomplete"><span>§</span></a></span></h3>
@@ -1308,7 +1308,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 </dd><dt id="bib-ATK">[ATK]</dt><dd><a href="https://developer.gnome.org/atk/stable/"><cite>ATK - Accessibility Toolkit</cite></a>.  The GNOME Project. URL: <a href="https://developer.gnome.org/atk/stable/">https://developer.gnome.org/atk/stable/</a>
 </dd><dt id="bib-AXAPI">[AXAPI]</dt><dd><a href="https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078"><cite>Accessibility Programming Guide for OS X</cite></a>.  Apple Corporation. URL: <a href="https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078">https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078</a>
 </dd><dt id="bib-IAccessible2">[IAccessible2]</dt><dd><a href="https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2"><cite>IAccessible2</cite></a>.  Linux Foundation. URL: <a href="https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2">https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2</a>
-</dd><dt id="bib-microdata">[microdata]</dt><dd><a href="https://www.w3.org/TR/microdata/"><cite>HTML Microdata</cite></a>. Charles McCathie Nevile; Dan Brickley. W3C. 10 October 2017. W3C Working Draft. URL: <a href="https://www.w3.org/TR/microdata/">https://www.w3.org/TR/microdata/</a>
+</dd><dt id="bib-microdata">[microdata]</dt><dd><a href="https://www.w3.org/TR/microdata/"><cite>HTML Microdata</cite></a>. Charles McCathie Nevile; Dan Brickley; Ian Hickson. W3C. 26 April 2018. W3C Working Draft. URL: <a href="https://www.w3.org/TR/microdata/">https://www.w3.org/TR/microdata/</a>
 </dd><dt id="bib-MSAA">[MSAA]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/ms697707.aspx"><cite>Microsoft Active Accessibility (MSAA) 2.0</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/ms697707.aspx">https://msdn.microsoft.com/en-us/library/ms697707.aspx</a>
 </dd><dt id="bib-RFC3986">[RFC3986]</dt><dd><a href="https://tools.ietf.org/html/rfc3986"><cite>Uniform Resource Identifier (URI): Generic Syntax</cite></a>. T. Berners-Lee; R. Fielding; L. Masinter. IETF. January 2005. Internet Standard. URL: <a href="https://tools.ietf.org/html/rfc3986">https://tools.ietf.org/html/rfc3986</a>
 </dd><dt id="bib-UI-AUTOMATION">[UI-AUTOMATION]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx"><cite>UI Automation</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx">https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx</a>
