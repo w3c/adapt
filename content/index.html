@@ -865,6 +865,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 			<!--OddPage--><h2 id="x1-introduction"><span class="secno">1. </span>Introduction<span class="permalink"><a href="#introduction" aria-label="Permalink for 1. Introduction" title="Permalink for 1. Introduction"><span>§</span></a></span></h2><p><em>This section is non-normative.</em></p>
 			<p>This document is an extension of <a href="../">Personalization Semantics Explainer 1.0</a>. it provided vocabularies that enables user agents to augment or adapt content to the user scenario and helps the user use and understand the content. It includes use cases and vocabularies for identifying the purpose of controls, symbols and user interface elements and supports simplification and distractions.</p>
+			
+			<div class="ednote" id="examples-disclaimer"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="3"><span>Editor's note</span></div><p class="">Personalization semantics defines a set of properties and values to annotate content. The specific mechanism to apply these properties to content has not been decided. <a href="https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content">Several approaches are under consideration</a> and future drafts will show progress. To help with understanding of the properties, this document provides many examples of personalization semantics applied to content, which show attributes beginning with the prefix "aui-". <em>This has not been decided as the chosen approach</em>, but the simplicity supports understanding of the examples.</p></div>
 
 		</section>
 		<section id="use-cases">
@@ -1245,32 +1247,32 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
    						<tr>
 							<th class="value-name" scope="row">mediaPosition</th>
 							<td class="value-description">Adjust the current playback position in the current media.
-                            <div class="ednote" id="issue-container-generatedID"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div></td>
+                            <div class="ednote" id="issue-container-generatedID"><div role="heading" class="ednote-title marker" id="h-ednote-0" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div></td>
 						</tr>
    						<tr>
 							<th class="value-name" scope="row">loop</th>
 							<td class="value-description">plays the flow, presentation or a movie over and over again, once or without stopping. Often used with  [aria-pressed = "true"] for on or [aria-pressed = "false"] for off.
-                            <div class="ednote" id="issue-container-generatedID-0"><div role="heading" class="ednote-title marker" id="h-ednote-0" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div></td>
+                            <div class="ednote" id="issue-container-generatedID-0"><div role="heading" class="ednote-title marker" id="h-ednote-1" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div></td>
 						</tr>
   						<tr>
 							<th class="value-name" scope="row">volume</th>
 							<td class="value-description">adjust the volume of a multi media component. Often used with increase or decrease  but is sometimes used alone as a menu name  or item. 
-                            <div class="ednote" id="issue-container-generatedID-1"><div role="heading" class="ednote-title marker" id="h-ednote-1" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div></td>
+                            <div class="ednote" id="issue-container-generatedID-1"><div role="heading" class="ednote-title marker" id="h-ednote-2" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div></td>
 						</tr>
  						<tr>
 							<th class="value-name" scope="row">channel</th>
 							<td class="value-description">adjust the channel of a multi media component. Often used with increase or decrease but is sometimes used alone as a menu name  or item. 
-                            <div class="ednote" id="issue-container-generatedID-2"><div role="heading" class="ednote-title marker" id="h-ednote-2" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div></td>
+                            <div class="ednote" id="issue-container-generatedID-2"><div role="heading" class="ednote-title marker" id="h-ednote-3" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div></td>
 						</tr>
  						<tr>
 							<th class="value-name" scope="row">temperature</th>
 							<td class="value-description">adjust the temperature. Often used with increase or decrease but is sometimes used alone as a menu name  or item. 
-                            <div class="ednote" id="issue-container-generatedID-3"><div role="heading" class="ednote-title marker" id="h-ednote-3" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div></td>
+                            <div class="ednote" id="issue-container-generatedID-3"><div role="heading" class="ednote-title marker" id="h-ednote-4" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div></td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">brightness</th>
 							<td class="value-description">adjust the screen or application  brightness. Often used with increase or decrease but is sometimes used alone as a menu name  or item.
-                            <div class="ednote" id="issue-container-generatedID-4"><div role="heading" class="ednote-title marker" id="h-ednote-4" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div></td>
+                            <div class="ednote" id="issue-container-generatedID-4"><div role="heading" class="ednote-title marker" id="h-ednote-5" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div></td>
 						</tr>
 			</tbody>
 		</table>
@@ -1413,7 +1415,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 						<tr>
 							<th class="value-name" scope="row">social</th>
 							<td class="value-description">content provider on social media. Note, that the specific name of the social media platform should be included in the accessible name.
-                            <div class="ednote" id="issue-container-generatedID-5"><div role="heading" class="ednote-title marker" id="h-ednote-5" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div></td>
+                            <div class="ednote" id="issue-container-generatedID-5"><div role="heading" class="ednote-title marker" id="h-ednote-6" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div></td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">post</th>
@@ -1735,28 +1737,28 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 							<th class="value-name" scope="row">timeStart</th>
 							<td class="value-description"> Set the start time or the time of an event. 
                             <div class="note" id="issue-container-generatedID-6"><div role="heading" class="note-title marker" id="h-note" aria-level="5"><span>Note</span></div><em class="">We may remove this or harmonize with other date time standards.</em></div>
-                            <div class="ednote" id="issue-container-generatedID-7"><div role="heading" class="ednote-title marker" id="h-ednote-6" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div>
+                            <div class="ednote" id="issue-container-generatedID-7"><div role="heading" class="ednote-title marker" id="h-ednote-7" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div>
                             </td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">timeEnd</th>
 							<td class="value-description">Set the end time of an event.
                             <div class="note" id="issue-container-generatedID-8"><div role="heading" class="note-title marker" id="h-note-0" aria-level="5"><span>Note</span></div><em class="">We may remove this or harmonize with other date time standards.</em></div>
-                            <div class="ednote" id="issue-container-generatedID-9"><div role="heading" class="ednote-title marker" id="h-ednote-7" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div>
+                            <div class="ednote" id="issue-container-generatedID-9"><div role="heading" class="ednote-title marker" id="h-ednote-8" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div>
                             </td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">dateStart</th>
 							<td class="value-description">Set the start date or the date of an event.
                             <div class="note" id="issue-container-generatedID-10"><div role="heading" class="note-title marker" id="h-note-1" aria-level="5"><span>Note</span></div><em class="">We may remove this or harmonize with other date time standards.</em></div>
-                            <div class="ednote" id="issue-container-generatedID-11"><div role="heading" class="ednote-title marker" id="h-ednote-8" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div>
+                            <div class="ednote" id="issue-container-generatedID-11"><div role="heading" class="ednote-title marker" id="h-ednote-9" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div>
                             </td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">dateEnd</th>
 							<td class="value-description">Set the end time of an event  
                             <div class="note" id="issue-container-generatedID-12"><div role="heading" class="note-title marker" id="h-note-2" aria-level="5"><span>Note</span></div><em class="">We may remove this or harmonize with other date time standards.</em></div>
-                            <div class="ednote" id="issue-container-generatedID-13"><div role="heading" class="ednote-title marker" id="h-ednote-9" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div>
+                            <div class="ednote" id="issue-container-generatedID-13"><div role="heading" class="ednote-title marker" id="h-ednote-10" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div>
                             </td>
                         </tr>
 					</tbody>
@@ -1777,7 +1779,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 							<p>This allows simplified interfaces with less options or interfaces that emphasize critical features. Adaptations can be based on personalization settings. </p>
 						
 
-							 <div class="ednote" id="issue-container-generatedID-14"><div role="heading" class="ednote-title marker" id="h-ednote-10" aria-level="5"><span>Editor's note</span></div><p class="">This was formerly <code>importance</code>. However different people may feel that sections that would be hidden in a simplified version are still very important, such as marketing content or legal terms.)</p></div>
+							 <div class="ednote" id="issue-container-generatedID-14"><div role="heading" class="ednote-title marker" id="h-ednote-11" aria-level="5"><span>Editor's note</span></div><p class="">This was formerly <code>importance</code>. However different people may feel that sections that would be hidden in a simplified version are still very important, such as marketing content or legal terms.)</p></div>
 
 							<div class="note" id="issue-container-generatedID-15"><div role="heading" class="note-title marker" id="h-note-3" aria-level="5"><span>Note</span></div><div class="">
 								<p>These semantics aid simplification. But what content is most useful to a user varies from user to user. For example, men may be more interested in mens clothing, and may not be interested in the more frequently use womens clothing option. For that reason we may add context for elements that will help the personalization agent select the most useful content for a given user (see the <a href="#context">context</a> attribute). This is also necessary for reminders (see bellow).</p>
@@ -1987,7 +1989,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 					<p><code>symbol</code> accepts the values of a URI or shortened URI. Note that namespaces are the only additional parsing that maybe required to identify the concept.</p>
 					<p>A personalization agent can then load alternative symbols that the user is familiar with and they do not have to learn new symbols for different applications. </p>
 					<div class="note" id="issue-container-generatedID-16"><div role="heading" class="note-title marker" id="h-note-4" aria-level="5"><span>Note</span></div><p class="">To help this be interoperable without an RDF parser we  recommend referencing the most commonly used ontologies and the highest level concept. (For example, reference "girl" and not "young girl" .) </p></div>
-					<div class="ednote" id="issue-container-generatedID-17"><div role="heading" class="ednote-title marker" id="h-ednote-11" aria-level="5"><span>Editor's note</span></div><p class="">We should have a note of common suggested terms and references. (Maybe with links to http://www.arasaac.org/) </p></div>
+					<div class="ednote" id="issue-container-generatedID-17"><div role="heading" class="ednote-title marker" id="h-ednote-12" aria-level="5"><span>Editor's note</span></div><p class="">We should have a note of common suggested terms and references. (Maybe with links to http://www.arasaac.org/) </p></div>
 				</div>
 	</section>
 	<section id="symbol-example">
