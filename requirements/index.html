@@ -1,0 +1,765 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><head><meta charset="UTF-8"><meta name="generator" content="ReSpec 21.0.2"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
+div.issue-title, div.note-title , div.ednote-title, div.warning-title {
+    padding-right:  1em;
+    min-width: 7.5em;
+    color: #b9ab2d;
+}
+div.issue-title { color: #e05252; }
+div.note-title, div.ednote-title { color: #2b2; }
+div.warning-title { color: #f22; }
+div.issue-title span, div.note-title span, div.ednote-title span, div.warning-title span {
+    text-transform: uppercase;
+}
+div.note, div.issue, div.ednote, div.warning {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.note > p:first-child, .ednote > p:first-child, .issue > p:first-child, .warning > p:first-child { margin-top: 0 }
+.issue, .note, .ednote, .warning {
+    padding: .5em;
+    border-left-width: .5em;
+    border-left-style: solid;
+}
+div.issue, div.note , div.ednote,  div.warning {
+    padding: 1em 1.2em 0.5em;
+    margin: 1em 0;
+    position: relative;
+    clear: both;
+}
+span.note, span.ednote, span.issue, span.warning { padding: .1em .5em .15em; }
+
+.issue {
+    border-color: #e05252;
+    background: #fbe9e9;
+}
+.note, .ednote {
+    border-color: #52e052;
+    background: #e9fbe9;
+}
+
+.warning {
+    border-color: #f11;
+    border-width: .2em;
+    border-style: solid;
+    background: #fbe9e9;
+}
+
+.warning-title:before{
+    content: "⚠"; /*U+26A0 WARNING SIGN*/
+    font-size: 3em;
+    float: left;
+    height: 100%;
+    padding-right: .3em;
+    vertical-align: top;
+    margin-top: -0.5em;
+}
+
+li.task-list-item {
+    list-style: none;
+}
+
+input.task-list-item-checkbox {
+    margin: 0 0.35em 0.25em -1.6em;
+    vertical-align: middle;
+}
+
+.issue a.respec-gh-label {
+  padding: 5px;
+  margin: 0 2px 0 2px;
+  font-size: 10px;
+  text-transform: none;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  position: relative;
+  bottom: 2px;
+}
+
+.issue a.respec-label-dark {
+  color: #fff;
+  background-color: #000;
+}
+
+.issue a.respec-label-light {
+  color: #000;
+  background-color: #fff;
+}
+</style><style>/* --- PERMALINKS --- */
+
+.permalink {
+  width: 1px;
+  height: 1px;
+  overflow: visible;
+  font-size: 10pt;
+  font-style: normal;
+  vertical-align: middle;
+  margin-left: 4px;
+  float: right;
+}
+
+.permalink a, .permalink a:link, .permalink a:visited, .permalink a:hover, .permalink a:focus, .permalink a:active {
+  background:transparent !important;
+  text-decoration:none;
+  font-weight: bold;
+  color:#666 !important;
+}
+
+.permalink abbr {
+  border:0;
+}
+</style>
+		<title>Requirements for Personalization Semantics</title>
+		
+		
+		
+		
+	<style id="respec-mainstyle">/*****************************************************************
+ * ReSpec 3 CSS
+ * Robin Berjon - http://berjon.com/
+ *****************************************************************/
+
+/* Override code highlighter background */
+.hljs {
+  background: transparent !important;
+}
+
+/* --- INLINES --- */
+h1 abbr,
+h2 abbr,
+h3 abbr,
+h4 abbr,
+h5 abbr,
+h6 abbr,
+a abbr {
+  border: none;
+}
+
+dfn {
+  font-weight: bold;
+}
+
+a.internalDFN {
+  color: inherit;
+  border-bottom: 1px solid #99c;
+  text-decoration: none;
+}
+
+a.externalDFN {
+  color: inherit;
+  border-bottom: 1px dotted #ccc;
+  text-decoration: none;
+}
+
+a.bibref {
+  text-decoration: none;
+}
+
+cite .bibref {
+  font-style: normal;
+}
+
+code {
+  color: #c83500;
+}
+
+th code {
+  color: inherit;
+}
+
+/* --- TOC --- */
+
+.toc a,
+.tof a {
+  text-decoration: none;
+}
+
+a .secno,
+a .figno {
+  color: #000;
+}
+
+ul.tof,
+ol.tof {
+  list-style: none outside none;
+}
+
+.caption {
+  margin-top: 0.5em;
+  font-style: italic;
+}
+
+/* --- TABLE --- */
+
+table.simple {
+  border-spacing: 0;
+  border-collapse: collapse;
+  border-bottom: 3px solid #005a9c;
+}
+
+.simple th {
+  background: #005a9c;
+  color: #fff;
+  padding: 3px 5px;
+  text-align: left;
+}
+
+.simple th[scope="row"] {
+  background: inherit;
+  color: inherit;
+  border-top: 1px solid #ddd;
+}
+
+.simple td {
+  padding: 3px 10px;
+  border-top: 1px solid #ddd;
+}
+
+.simple tr:nth-child(even) {
+  background: #f0f6ff;
+}
+
+/* --- DL --- */
+
+.section dd > p:first-child {
+  margin-top: 0;
+}
+
+.section dd > p:last-child {
+  margin-bottom: 0;
+}
+
+.section dd {
+  margin-bottom: 1em;
+}
+
+.section dl.attrs dd,
+.section dl.eldef dd {
+  margin-bottom: 0;
+}
+
+#issue-summary > ul,
+.respec-dfn-list {
+  column-count: 2;
+}
+
+#issue-summary li,
+.respec-dfn-list li {
+  list-style: none;
+}
+
+details.respec-tests-details {
+  margin-left: 1em;
+  display: inline-block;
+  vertical-align: top;
+}
+
+details.respec-tests-details > * {
+  padding-right: 2em;
+}
+
+details.respec-tests-details[open] {
+  z-index: 999999;
+  position: absolute;
+  border: thin solid #cad3e2;
+  border-radius: .3em;
+  background-color: white;
+  padding-bottom: .5em;
+}
+
+details.respec-tests-details[open] > summary {
+  border-bottom: thin solid #cad3e2;
+  padding-left: 1em;
+  margin-bottom: 1em;
+  line-height: 2em;
+}
+
+details.respec-tests-details > ul {
+  width: 100%;
+  margin-top: -0.3em;
+}
+
+details.respec-tests-details > li {
+  padding-left: 1em;
+}
+
+@media print {
+  .removeOnSave {
+    display: none;
+  }
+}
+</style><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-requirements-1.0/"><script id="initialUserConfig" type="application/json">{
+  "trace": true,
+  "doRDFa": "1.0",
+  "includePermalinks": true,
+  "permalinkEdge": true,
+  "permalinkHide": false,
+  "tocIntroductory": true,
+  "noRecTrack": true,
+  "specStatus": "ED",
+  "shortName": "personalization-semantics-requirements-1.0",
+  "copyrightStart": "2018",
+  "license": "document",
+  "edDraftURI": "https://w3c.github.io/personalization-semantics/requirements/",
+  "editors": [
+    {
+      "name": "Lisa Seeman",
+      "url": "http://athena-ict.com",
+      "mailto": "lisa.seeman@zoho.com",
+      "w3cid": 16320
+    },
+    {
+      "name": "Charles LaPierre",
+      "url": "http://www.benetech.org",
+      "mailto": "charlesl@benetech.org",
+      "company": "Benetech",
+      "w3cid": 72055
+    },
+    {
+      "name": "Michael Cooper",
+      "url": "https://www.w3.org",
+      "mailto": "cooper@w3.org",
+      "company": "W3C",
+      "companyURI": "http://www.w3.org",
+      "w3cid": 34017
+    },
+    {
+      "name": "Roy Ran",
+      "url": "https://www.w3.org",
+      "mailto": "ran@w3.org",
+      "company": "W3C",
+      "companyURI": "http://www.w3.org",
+      "w3cid": 100586
+    }
+  ],
+  "wg": "Accessible Rich Internet Applications Working Group",
+  "wgURI": "https://www.w3.org/WAI/ARIA/",
+  "wgPublicList": "public-personalization-tf",
+  "wgPatentURI": "https://www.w3.org/2004/01/pp-impl/83726/status",
+  "localBiblio": {
+    "ACCNAME-AAM": {
+      "title": "Accessible Name and Description: Computation and API Mappings 1.1",
+      "href": "http://www.w3.org/TR/accname-aam-1.1/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "Joseph Scheuhammer",
+        "Michael Cooper",
+        "Andi Snow-Weaver",
+        "Aaron Leventhal"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/ARIA/"
+      ]
+    },
+    "ARIA-PRACTICES": {
+      "title": "WAI-ARIA Authoring Practicess 1.1",
+      "href": "http://www.w3.org/TR/wai-aria-practices-1.1/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "Matt King",
+        "James Nurthen",
+        "Michael Cooper",
+        "Michiel Bijl",
+        "Joseph Scheuhammer",
+        "Lisa Pappas",
+        "Richard Schwerdtfeger"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/ARIA/"
+      ]
+    },
+    "ATK": {
+      "href": "https://developer.gnome.org/atk/stable/",
+      "title": "ATK - Accessibility Toolkit",
+      "publisher": "The GNOME Project"
+    },
+    "AXAPI": {
+      "href": "https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078",
+      "title": "Accessibility Programming Guide for OS X",
+      "publisher": "Apple Corporation"
+    },
+    "coga-gap-analysis": {
+      "title": "Cognitive Accessibility Roadmap and Gap Analysis",
+      "href": "https://w3c.github.io/coga/gap-analysis/",
+      "publisher": "W3C",
+      "editors": [
+        "Lisa Seeman",
+        "Michael Cooper"
+      ],
+      "etAl": "false",
+      "deliveredBy": "https://www.w3.org/WAI/PF/cognitive-a11y-tf/"
+    },
+    "coga-issue-papers": {
+      "title": "Issue Papers for the The Cognitive and Learning Disabilities Accessibility Task Force (COGA)",
+      "href": "https://w3c.github.io/coga/issue-papers/",
+      "publisher": "W3C",
+      "editors": [
+        "Lisa Seeman",
+        "Michael Cooper"
+      ],
+      "etAl": "false",
+      "deliveredBy": "https://www.w3.org/WAI/PF/cognitive-a11y-tf/"
+    },
+    "CORE-AAM": {
+      "title": "Core Accessibility API Mappings 1.1",
+      "href": "http://www.w3.org/TR/core-aam-1.1/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "Joseph Scheuhammer",
+        "Michael Cooper",
+        "Andi Snow-Weaver",
+        "Aaron Leventhal"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/ARIA/"
+      ]
+    },
+    "DPUB-ARIA": {
+      "title": "Digital Publishing WAI-ARIA Module 1.0",
+      "href": "http://www.w3.org/TR/dpub-aria-1.0/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "Matt Garrish",
+        "Tzviya Siegman",
+        "Markus Gylling",
+        "Shane McCarron"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/ARIA/"
+      ]
+    },
+    "GRAPHICS-ARIA": {
+      "title": "WAI-ARIA Graphics",
+      "href": "http://www.w3.org/TR/graphics-aria-1.0/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "Amelia Bellamy-Royds",
+        "Fred Esch",
+        "Rich Schwerdtfeger",
+        "Leonie Watson"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/ARIA/",
+        "http://www.w3.org/SVG/"
+      ]
+    },
+    "GRAPHICS-AAM": {
+      "title": "Graphics Accessibility API Mappings",
+      "href": "http://www.w3.org/TR/graphics-aam-1.0/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "Amelia Bellamy-Royds",
+        "Fred Esch",
+        "Richard Schwerdtfeger"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/ARIA/",
+        "http://www.w3.org/SVG/"
+      ]
+    },
+    "EPUB-SSV": {
+      "href": "http://www.idpf.org/epub/vocab/structure/",
+      "title": "EPUB Structural Semantics Vocabulary",
+      "publisher": "IDPF"
+    },
+    "EPUB-Content": {
+      "href": "http://www.idpf.org/epub/31/spec/epub-contentdocs.html",
+      "title": "EPUB Content Documents 3.1",
+      "publisher": "IDPF"
+    },
+    "GTK": {
+      "href": "https://developer.gnome.org/gtk3/stable/",
+      "title": "GTK+ 3 Reference Manual",
+      "publisher": "The GNOME Project"
+    },
+    "HTML-AAM": {
+      "authors": [
+        "Steve Faulkner",
+        "Jason Kiss",
+        "Cynthia Shelly",
+        "Alexander Surkov"
+      ],
+      "etAl": true,
+      "href": "http://www.w3.org/TR/html-aam-1.0/",
+      "title": "HTML Accessibility API Mappings 1.0",
+      "status": "WD",
+      "publisher": "W3C",
+      "deliveredBy": [
+        "http://www.w3.org/html",
+        "http://www.w3.org/WAI/PF/"
+      ]
+    },
+    "MSAA": {
+      "href": "https://msdn.microsoft.com/en-us/library/ms697707.aspx",
+      "title": "Microsoft Active Accessibility (MSAA) 2.0",
+      "publisher": "Microsoft Corporation"
+    },
+    "SVG-AAM": {
+      "title": "SVG2 Accessibility API Mappings 1.0",
+      "href": "http://www.w3.org/TR/svg-aam-1.0/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "Amelia Bellamy-Royds",
+        "Richard Schwerdtfeger"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/PF/"
+      ]
+    },
+    "SVG1": {
+      "title": "Scalable Vector Graphics (SVG) 1.0 Specification",
+      "href": "http://www.w3.org/TR/SVG10/",
+      "status": "REC",
+      "publisher": "W3C",
+      "authors": [
+        "John Ferraiolo"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/SVG"
+      ]
+    },
+    "SVG11": {
+      "title": "Scalable Vector Graphics (SVG) 1.1 (Second Edition)",
+      "href": "http://www.w3.org/TR/SVG11/",
+      "status": "REC",
+      "publisher": "W3C",
+      "authors": [
+        "Erik Dahlström",
+        "Patrick Dengler",
+        "Anthony Grasso",
+        "Chris Lilley",
+        "Cameron McCormack",
+        "Doug Schepers",
+        "Jonathan Watt",
+        "John Ferraiolo",
+        "藤沢 淳 (FUJISAWA Jun)",
+        "Dean Jackson"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/SVG"
+      ]
+    },
+    "SVG2": {
+      "title": "Scalable Vector Graphics (SVG) 2",
+      "href": "http://www.w3.org/TR/2015/WD-SVG2-20150915/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "Nikos Andronikos",
+        "Rossen Atanassov",
+        "Tavmjong Bah",
+        "Amelia Bellamy-Royds",
+        "Brian Birtles",
+        "Cyril Concolato",
+        "Erik Dahlström",
+        "Chris Lilley",
+        "Cameron McCormack",
+        "Doug Schepers",
+        "Dirk Schulze",
+        "Richard Schwerdtfeger",
+        "Satoru Takagi",
+        "Jonathan Watt"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/PF/"
+      ]
+    },
+    "UI-AUTOMATION": {
+      "href": "https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx",
+      "title": "UI Automation",
+      "publisher": "Microsoft Corporation"
+    },
+    "UIA-EXPRESS": {
+      "href": "https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx",
+      "title": "The IAccessibleEx Interface",
+      "publisher": "Microsoft Corporation"
+    },
+    "WAI-ARIA": {
+      "title": "Accessible Rich Internet Applications (WAI-ARIA) 1.1",
+      "href": "http://www.w3.org/TR/wai-aria-1.1/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "James Craig",
+        "Michael Cooper",
+        "Shane McCarron"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/PF/"
+      ]
+    },
+    "WAI-ARIA-10": {
+      "authors": [
+        "James Craig",
+        "Michael Cooper"
+      ],
+      "etAl": true,
+      "href": "http://www.w3.org/TR/wai-aria/",
+      "title": "Accessible Rich Internet Applications (WAI-ARIA) 1.0",
+      "status": "REC",
+      "publisher": "W3C",
+      "deliveredBy": [
+        "http://www.w3.org/WAI/PF/"
+      ]
+    }
+  },
+  "publishISODate": "2018-06-18T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 18 June 2018"
+}</script><meta name="description" content="Requirements for Personalization Semantics"></head>
+	<body class="h-entry"><div class="head">
+  <a href="https://www.w3.org/" class="logo">
+      <img alt="W3C" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72" height="48">
+  </a>
+  <h1 id="title" class="title p-name">Requirements for Personalization Semantics</h1>
+  
+  <h2 id="w3c-editor-s-draft-18-june-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-06-18">18 June 2018</time></h2>
+  <dl>
+    <dt>This version:</dt><dd><a class="u-url" href="https://w3c.github.io/personalization-semantics/requirements/">https://w3c.github.io/personalization-semantics/requirements/</a></dd><dt>Latest published version:</dt><dd><a href="https://www.w3.org/TR/personalization-semantics-requirements-1.0/">https://www.w3.org/TR/personalization-semantics-requirements-1.0/</a></dd>
+    <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/personalization-semantics/requirements/">https://w3c.github.io/personalization-semantics/requirements/</a></dd>
+    
+    
+    
+    
+    
+    
+    <dt>Editors:</dt>
+    <dd class="p-author h-card vcard" data-editor-id="16320"><a class="ed_mailto u-email email p-name" href="mailto:lisa.seeman@zoho.com">Lisa Seeman</a></dd><dd class="p-author h-card vcard" data-editor-id="72055"><a class="ed_mailto u-email email p-name" href="mailto:charlesl@benetech.org">Charles LaPierre</a> (Benetech)</dd><dd class="p-author h-card vcard" data-editor-id="34017"><a class="ed_mailto u-email email p-name" href="mailto:cooper@w3.org">Michael Cooper</a> (<abbr title="World Wide Web Consortium">W3C</abbr>)</dd><dd class="p-author h-card vcard" data-editor-id="100586"><a class="ed_mailto u-email email p-name" href="mailto:ran@w3.org">Roy Ran</a> (<abbr title="World Wide Web Consortium">W3C</abbr>)</dd>
+    
+    
+    
+  </dl>
+  
+  
+  
+  <p class="copyright">
+        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> ©
+        2018
+        
+        <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup>
+        (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+        <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>,
+        <a href="https://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>).
+        
+        <abbr title="World Wide Web Consortium">W3C</abbr> <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and
+        <a rel="license" href="https://www.w3.org/Consortium/Legal/copyright-documents">document use</a>
+        rules apply.
+      </p>
+  <hr title="Separator for header">
+</div>
+		<section id="abstract" class="introductory"><!--OddPage--><h2 id="abstract-0">Abstract</h2>
+			<p>Requirements for Personalization Semantics</p>
+		</section>
+		<section id="sotd" class="introductory"><!--OddPage--><h2 id="status-of-this-document">Status of This Document</h2><p>
+        <em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em>
+      </p><p>
+          This document was published by the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> as an Editor's Draft.
+          
+          
+            Comments regarding this document are welcome. Please send them to
+            <a href="mailto:public-personalization-tf@w3.org">public-personalization-tf@w3.org</a>
+            (<a href="mailto:public-personalization-tf-request@w3.org?subject=subscribe">subscribe</a>,
+            <a href="https://lists.w3.org/Archives/Public/public-personalization-tf/">archives</a>).
+          
+          
+          
+          
+        </p><p>
+            Publication as an Editor's Draft does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr>
+            Membership. This is a draft document and may be updated, replaced or obsoleted by other
+            documents at any time. It is inappropriate to cite this document as other than work in
+            progress.
+          </p><p>
+          
+            This document was produced by
+            a group
+            operating under the
+            <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+          
+          
+          
+              <abbr title="World Wide Web Consortium">W3C</abbr> maintains a <a rel="disclosure" href="https://www.w3.org/2004/01/pp-impl/83726/status">public list of any patent
+              disclosures</a>
+            made in connection with the deliverables of
+            the group; that page also includes
+            instructions for disclosing a patent. An individual who has actual knowledge of a patent
+            which the individual believes contains
+            <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential
+            Claim(s)</a> must disclose the information in accordance with
+            <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section
+            6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+          
+          
+        </p><p>This document is governed by the <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+        </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a href="#abstract" class="tocxref">Abstract</a></li><li class="tocline"><a href="#sotd" class="tocxref">Status of This Document</a></li><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a></li><li class="tocline"><a href="#use-cases" class="tocxref"><span class="secno">2. </span>Use Cases</a></li><li class="tocline"><a href="#requirements" class="tocxref"><span class="secno">3. </span>Requirements</a><ol class="toc"><li class="tocline"><a href="#peronalization-features" class="tocxref"><span class="secno">3.1 </span>Peronalization Features</a></li><li class="tocline"><a href="#vocabulary-structure" class="tocxref"><span class="secno">3.2 </span>Vocabulary Structure</a></li><li class="tocline"><a href="#host-language-integration" class="tocxref"><span class="secno">3.3 </span>Host Language Integration</a></li></ol></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">A. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a href="#ack_group" class="tocxref"><span class="secno">A.1 </span>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a href="#ack_others" class="tocxref"><span class="secno">A.2 </span>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a href="#ack_funders" class="tocxref"><span class="secno">A.3 </span>Enabling funders</a></li></ol></li></ol></nav>
+		<section id="introduction">
+			<!--OddPage--><h2 id="x1-introduction"><span class="secno">1. </span>Introduction<span class="permalink"><a href="#introduction" aria-label="Permalink for 1. Introduction" title="Permalink for 1. Introduction"><span>§</span></a></span></h2>
+		</section>
+		<section id="use-cases">
+			<!--OddPage--><h2 id="x2-use-cases"><span class="secno">2. </span>Use Cases<span class="permalink"><a href="#use-cases" aria-label="Permalink for 2. Use Cases" title="Permalink for 2. Use Cases"><span>§</span></a></span></h2>
+		</section>
+		<section id="requirements">
+			<!--OddPage--><h2 id="x3-requirements"><span class="secno">3. </span>Requirements<span class="permalink"><a href="#requirements" aria-label="Permalink for 3. Requirements" title="Permalink for 3. Requirements"><span>§</span></a></span></h2>
+			<section id="peronalization-features">
+				<h3 id="x3-1-peronalization-features"><span class="secno">3.1 </span>Peronalization Features<span class="permalink"><a href="#peronalization-features" aria-label="Permalink for 3.1 Peronalization Features" title="Permalink for 3.1 Peronalization Features"><span>§</span></a></span></h3>
+				<div class="ednote" id="issue-container-generatedID"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="4"><span>Editor's note</span></div><p class="">See <a href="https://github.com/w3c/personalization-semantics/labels/features">feature issues</a> for considerations on requirements for specific features of personalization semantics.</p></div>
+			</section>
+			<section id="vocabulary-structure">
+				<h3 id="x3-2-vocabulary-structure"><span class="secno">3.2 </span>Vocabulary Structure<span class="permalink"><a href="#vocabulary-structure" aria-label="Permalink for 3.2 Vocabulary Structure" title="Permalink for 3.2 Vocabulary Structure"><span>§</span></a></span></h3>
+				<div class="ednote" id="issue-container-generatedID-0"><div role="heading" class="ednote-title marker" id="h-ednote-0" aria-level="4"><span>Editor's note</span></div><p class="">See <a href="https://github.com/w3c/personalization-semantics/labels/structure">vocabulary structure issues</a> for considerations on requirements for vocabulary structure.</p></div>
+			</section>
+			<section id="host-language-integration">
+				<h3 id="x3-3-host-language-integration"><span class="secno">3.3 </span>Host Language Integration<span class="permalink"><a href="#host-language-integration" aria-label="Permalink for 3.3 Host Language Integration" title="Permalink for 3.3 Host Language Integration"><span>§</span></a></span></h3>
+				<div class="ednote" id="issue-container-generatedID-1"><div role="heading" class="ednote-title marker" id="h-ednote-1" aria-level="4"><span>Editor's note</span></div><p class="">See <a href="https://github.com/w3c/personalization-semantics/labels/implementation">host language implementation issues</a> and <a href="https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content">https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content</a> for considerations on requirements for implementation in content.</p></div>
+			</section>
+		</section>
+		<section class="appendix informative section" id="acknowledgements">
+	<!--OddPage--><h2 id="a-acknowledgments"><span class="secno">A. </span>Acknowledgments<span class="permalink"><a href="#acknowledgements" aria-label="Permalink for A. Acknowledgments" title="Permalink for A. Acknowledgments"><span>§</span></a></span></h2><p><em>This section is non-normative.</em></p>
+	<p>The following people contributed to the development of this document.</p>
+	<section class="section" id="ack_group">
+		<h3 id="a-1-participants-active-in-the-personalization-tf-at-the-time-of-publication"><span class="secno">A.1 </span>Participants active in the Personalization TF at the time of publication<span class="permalink"><a href="#ack_group" aria-label="Permalink for A.1 Participants active in the Personalization TF at the time of publication" title="Permalink for A.1 Participants active in the Personalization TF at the time of publication"><span>§</span></a></span></h3>
+		<ul>
+			<li>Thaddeus Cambron (Invited Expert)</li>
+			<li>Michael Cooper (<abbr title="World Wide Web Consortium">W3C</abbr>/<abbr title="Massachusetts Institute of Technology">MIT</abbr>)</li>
+			<li>John Foliot (Deque Systems, Inc.)</li>
+			<li>Becky Gibson (Knowbility, Inc.)</li>
+			<li>Charles LaPierre (Benetech)</li>
+			<li>Roy Ran (<abbr title="World Wide Web Consortium">W3C</abbr>/Beihang)</li>
+			<li>Lisa Seeman (Invited Expert) </li>
+			<li>Sharon Snider (IBM Corporation)</li>
+		</ul>
+  </section>
+	<section class="section" id="ack_others">
+		<h3 id="a-2-other-personalization-tf-contributors-commenters-and-previously-active-participants"><span class="secno">A.2 </span>Other Personalization TF contributors, commenters, and previously active participants<span class="permalink"><a href="#ack_others" aria-label="Permalink for A.2 Other Personalization TF contributors, commenters, and previously active participants" title="Permalink for A.2 Other Personalization TF contributors, commenters, and previously active participants"><span>§</span></a></span></h3>
+		<ul>
+			<li>Joanmarie Diggs (Igalia)</li>
+			<li>Richard Schwerdtfeger (Knowbility, Inc.)</li>
+			<li>Jason White (Educational Testing Service)</li>
+		</ul>
+	</section>
+	<section class="section" id="ack_funders">
+		<h3 id="a-3-enabling-funders"><span class="secno">A.3 </span>Enabling funders<span class="permalink"><a href="#ack_funders" aria-label="Permalink for A.3 Enabling funders" title="Permalink for A.3 Enabling funders"><span>§</span></a></span></h3>
+		<p>This publication has been funded in part with U.S. Federal funds from the Health and Human Services, National Institute on Disability, Independent Living, and Rehabilitation Research (NIDILRR) under contract number HHSP23301500054C. The content of this publication does not necessarily reflect the views or policies of the U.S. Department of Health and Human Services, nor does mention of trade names, commercial products, or organizations imply endorsement by the U.S. Government.</p>
+	</section>
+</section>
+
+	
+
+<p role="navigation" id="back-to-top"><a href="#title"><abbr title="Back to Top">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
