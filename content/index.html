@@ -1,10 +1,6 @@
-<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 21.0.2"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
-div.example-title {
-    min-width: 7.5em;
-    color: #b9ab2d;
-}
-div.example-title span {
-    text-transform: uppercase;
+<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 22.4.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
+span.example-title {
+    text-transform: none;
 }
 aside.example, div.example, div.illegal-example {
     padding: 0.5em;
@@ -27,7 +23,7 @@ aside.example div.example {
     border-color: #999;
     background: #fff;
 }
-aside.example div.example div.example-title {
+aside.example div.example span.example-title {
     color: #999;
 }
 </style><style>/* --- ISSUES/NOTES --- */
@@ -64,6 +60,10 @@ span.note, span.ednote, span.issue, span.warning { padding: .1em .5em .15em; }
     border-color: #e05252;
     background: #fbe9e9;
 }
+.issue.closed span.issue-number {
+    text-decoration: line-through;
+}
+
 .note, .ednote {
     border-color: #52e052;
     background: #e9fbe9;
@@ -144,10 +144,7 @@ input.task-list-item-checkbox {
 		
 		
 		
-		
-	
-		<link href="../common/css/common.css" rel="stylesheet" type="text/css">
-	<style id="respec-mainstyle">/*****************************************************************
+		<style id="respec-mainstyle">/*****************************************************************
  * ReSpec 3 CSS
  * Robin Berjon - http://berjon.com/
  *****************************************************************/
@@ -186,6 +183,10 @@ a.externalDFN {
 
 a.bibref {
   text-decoration: none;
+}
+
+#references :target {
+  background: #eaf3ff;
 }
 
 cite .bibref {
@@ -295,9 +296,9 @@ details.respec-tests-details[open] {
   z-index: 999999;
   position: absolute;
   border: thin solid #cad3e2;
-  border-radius: .3em;
+  border-radius: 0.3em;
   background-color: white;
-  padding-bottom: .5em;
+  padding-bottom: 0.5em;
 }
 
 details.respec-tests-details[open] > summary {
@@ -420,7 +421,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-strong {
   font-weight: bold;
 }
-</style><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-content-1.0/"><script id="initialUserConfig" type="application/json">{
+</style>
+	
+		<link href="../common/css/common.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-content-1.0/"><script id="initialUserConfig" type="application/json">{
   "trace": true,
   "doRDFa": "1.0",
   "includePermalinks": true,
@@ -718,7 +722,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       "etAl": true,
       "deliveredBy": [
         "http://www.w3.org/WAI/PF/"
-      ]
+      ],
+      "id": "svg2"
     },
     "UI-AUTOMATION": {
       "href": "https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx",
@@ -767,9 +772,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     "CR": "https://www.w3.org/TR/wai-aria-1.1/",
     "REC": "https://www.w3.org/TR/wai-aria-1.1/"
   },
-  "publishDate": "2018-06-20",
-  "publishISODate": "2018-06-20T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 20 June 2018"
+  "publishDate": "2018-08-13",
+  "publishISODate": "2018-08-13T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 13 August 2018"
 }</script><meta name="description" content="This document provides a vocabulary of terms that can be used to enhance web content with information about controls, symbols, and user interface elements. User agents use these semantics to augment or adapt content to the user scenario. This helps the user use and understand the content, and supports simplification and management of distractions."></head>
 	<body class="h-entry toc-inline"><div class="head">
   <a href="https://www.w3.org/" class="logo">
@@ -777,7 +782,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   </a>
   <h1 id="title" class="title p-name">Personalization Semantics Content Module 1.0</h1>
   
-  <h2 id="w3c-editor-s-draft-20-june-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-06-20">20 June 2018</time></h2>
+  <h2 id="w3c-editor-s-draft-13-august-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-08-13">13 August 2018</time></h2>
   <dl>
     <dt>This version:</dt><dd><a class="u-url" href="https://w3c.github.io/personalization-semantics/content/">https://w3c.github.io/personalization-semantics/content/</a></dd><dt>Latest published version:</dt><dd><a href="https://www.w3.org/TR/personalization-semantics-content-1.0/">https://www.w3.org/TR/personalization-semantics-content-1.0/</a></dd>
     <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/personalization-semantics/content/">https://w3c.github.io/personalization-semantics/content/</a></dd>
@@ -823,16 +828,14 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       </p><p>
           This document was published by the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> as an Editor's Draft.
           
-          
-            Comments regarding this document are welcome. Please send them to
-            <a href="mailto:public-personalization-tf@w3.org">public-personalization-tf@w3.org</a>
-            (<a href="mailto:public-personalization-tf-request@w3.org?subject=subscribe">subscribe</a>,
-            <a href="https://lists.w3.org/Archives/Public/public-personalization-tf/">archives</a>).
-          
-          
-          
-          
-        </p><p>
+          </p><p>
+            
+            Comments regarding this document are welcome.
+              Please send them to
+              <a href="mailto:public-personalization-tf@w3.org">public-personalization-tf@w3.org</a>
+              (<a href="https://lists.w3.org/Archives/Public/public-personalization-tf/">archives</a>).
+            
+            </p><p>
             Publication as an Editor's Draft does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr>
             Membership. This is a draft document and may be updated, replaced or obsoleted by other
             documents at any time. It is inappropriate to cite this document as other than work in
@@ -875,7 +878,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     <h3 id="x2-1-simplification"><span class="secno">2.1 </span>Simplification<span class="permalink"><a href="#use_case_simplification" aria-label="Permalink for 2.1 Simplification" title="Permalink for 2.1 Simplification"><span>§</span></a></span></h3>
                     <p><b>Requirement</b>: The user must be able to request a way to identify and differentiate between critical features, medium features and less important features. These need to be defined as important from a user perspective in the content. Typically, critical features may be used by many or most users, 90% of the time or more. High important features would be above 60% use. Medium important features would be 20% of users use it 20% of the time. Under 20% usage would be of low importance.</p>
                     <p><b>User experience</b>: Based on personalization setting the user can see less options. A sample user experience is available at <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html">https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html </a></p>
-                    <p>Relevant properties: <a href="#simplification"><code>simplification</code></a></p>
+                    <p>Relevant properties: <a href="#simplification" class="respec-offending-element"><code>simplification</code></a></p>
 </section>
 <section id="use_case_adding_context">
                     <h3 id="x2-2-adding-context"><span class="secno">2.2 </span>Adding Context<span class="permalink"><a href="#use_case_adding_context" aria-label="Permalink for 2.2 Adding Context" title="Permalink for 2.2 Adding Context"><span>§</span></a></span></h3>
@@ -888,17 +891,17 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     </ul>
                     <p>For that we need to standardize supportive syntax and terms that can be linked to associated symbols, terms, translations and explanations, for the individual, via an attribute.</p>
                     <p><b>Example user experience:</b> If an author gives to a button a role "send" then, without any work by the author, the button could be automatically rendered with a symbol, term, and/or tooltips that is understandable by a particular user. It could automatically imply F1 help that explains the send function in simple terms. It could be identified with a keyboard short cut that will always be used for send. In addition it could be identified as important and always rendered, or rendered as a large button. This would enable a consistent UI experience across applications and websites.</p>
-                    <p>Relevant properties: <a href="#action"><code>action</code></a>, <a href="#destination"><code>destination</code></a>, <a href="#field"><code>field</code></a></p>
+                    <p>Relevant properties: <a href="#action" class="respec-offending-element"><code>action</code></a>, <a href="#destination" class="respec-offending-element"><code>destination</code></a>, <a href="#field" class="respec-offending-element"><code>field</code></a></p>
                     <section id="use_case_general_context">
                         <h4 id="x2-2-1-general-context"><span class="secno">2.2.1 </span>General Context<span class="permalink"><a href="#use_case_general_context" aria-label="Permalink for 2.2.1 General Context" title="Permalink for 2.2.1 General Context"><span>§</span></a></span></h4>
                         <p><b>Requirement: </b> One important factor in optimizing the personalization of a product or service is to ensure that the personalization is appropriate for the current context of use as well as what is relevant for the user. For example a female user with a cognitive disability may need less options, and options that are for men are less likely to be relevant for her and may be demoted to bellow the scroll or placed under a "more option" button.</p>
-                        <p>Relevant properties: <a href="#context">context</a></p>
+                        <p>Relevant properties: <a href="#context" class="respec-offending-element">context</a></p>
                     </section>
                     <section id="use_case_interoperable_symbols">
                         <h4 id="x2-2-2-interoperable-symbols"><span class="secno">2.2.2 </span>Interoperable Symbols<span class="permalink"><a href="#use_case_interoperable_symbols" aria-label="Permalink for 2.2.2 Interoperable Symbols" title="Permalink for 2.2.2 Interoperable Symbols"><span>§</span></a></span></h4>
                         <p><b>Requirement:</b> We would like to create interoperable symbol sets for those with complex communication needs using Alternative and Augmentative Communication (AAC) systems. AAC systems designed for people who are non-verbal often use symbols with or without text. End-users tend to only learn one symbol set and cannot easily communicate with other symbol users in a written format or may struggle to understand different symbols used in different applications. Some symbols are subject to copyright and cannot be shared across applications. However, there are open symbol sets that can be shared and mapped against concepts, generating representative text. This text can be translated into different languages and even used to present a different set of symbols. If users' symbols are mapped to the same concepts then user agents can load the user understandable symbols and enable access to the web and other applications.</p>
                         <p>User experience: AAC users, those working with AAC users and others will be able to load symbols that they understand into different applications that have been made by a different provider.</p>
-                        <p>Relevant properties: <a href="#concept">concept</a></p>
+                        <p>Relevant properties: <a href="#concept" class="respec-offending-element">concept</a></p>
                     </section>
 </section>
 		</section>
@@ -919,7 +922,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     	<h4 id="x3-1-2-example"><span class="secno">3.1.2 </span>Example<span class="permalink"><a href="#action-example" aria-label="Permalink for 3.1.2 Example" title="Permalink for 3.1.2 Example"><span>§</span></a></span></h4>
     	<div class="property-example">               	
                 	<p>The below example section show how <code>action</code> used when coding.</p>
-    				<div class="example"><div class="example-title marker"><span>Example 1</span><span style="text-transform: none">: Action Using ARIA</span></div><pre class="hljs javascript" aria-busy="false">For example: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aui-action</span>=<span class="hljs-string">"undo"</span> &gt;</span>Revert<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span></pre></div>
+    				<div class="example">
+          <div class="marker"><span>Example 1</span><span class="example-title">: Action Using ARIA</span></div>
+          <pre class="hljs javascript" aria-busy="false">For example: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aui-action</span>=<span class="hljs-string">"undo"</span> &gt;</span>Revert<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span></pre>
+        </div>
         			<p>A personalization agent may add a symbol, replace the text with a more familiar term, or give it a specific presentation. Note that there is no default value.</p>			
     	</div>
     </section>
@@ -938,7 +944,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 					<tbody>
 						<tr>
 							<th class="property-related-head" scope="row">Related Concepts:</th>
-							<td class="property-related"><cite><a href="https://www.w3.org/TR/html52/links.html#sec-link-types">link types</a></cite> [<cite><a class="bibref" href="#bib-HTML52">HTML52</a></cite>] and <cite><a href="https://www.w3.org/TR/html5/forms.html#states-of-the-type-attribute"><abbr title="Hypertext Markup Language ">HTML </abbr> types</a></cite> [<cite><a class="bibref" href="#bib-HTML5">HTML5</a></cite>]</td>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/html52/links.html#sec-link-types">link types</a></cite> [<cite><a class="bibref" href="#bib-html52">HTML52</a></cite>] and <cite><a href="https://www.w3.org/TR/html5/forms.html#states-of-the-type-attribute"><abbr title="Hypertext Markup Language ">HTML </abbr> types</a></cite> [<cite><a class="bibref" href="#bib-html5">HTML5</a></cite>]</td>
 						</tr>
 						<tr>
 							<th class="property-applicability-head" scope="row">Used in Roles:</th>
@@ -950,7 +956,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 						</tr>
 						<tr>
 							<th class="property-value-head" scope="row">Value:</th>
-							<td class="property-value"><a href="#valuetype_token">token</a></td>
+							<td class="property-value"><a href="#valuetype_token" class="respec-offending-element">token</a></td>
 						</tr>
 					</tbody>
 		</table>
@@ -1296,8 +1302,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 	<section id="destination-example">
 		<h4 id="x3-2-2-example"><span class="secno">3.2.2 </span>Example<span class="permalink"><a href="#destination-example" aria-label="Permalink for 3.2.2 Example" title="Permalink for 3.2.2 Example"><span>§</span></a></span></h4>
 		<p>The below example section show how <code>destination</code> used when coding.</p>
-    	<div class="example"><div class="example-title marker"><span>Example 2</span><span style="text-transform: none">: Action Using ARIA</span></div><pre class="hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"home.html"</span> <span class="hljs-attr">aui-destination</span>=<span class="hljs-string">"home"</span>&gt;</span>our main page<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-		See the destination sample user experience.</pre></div>
+    	<div class="example">
+          <div class="marker"><span>Example 2</span><span class="example-title">: Action Using ARIA</span></div>
+          <pre class="hljs xml" aria-busy="false">      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"home.html"</span> <span class="hljs-attr">aui-destination</span>=<span class="hljs-string">"home"</span>&gt;</span>our main page<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+See the destination sample user experience.</pre>
+        </div>
     </section>
     <section id="characteristics-0">
     	<h4 id="x3-2-3-characteristics"><span class="secno">3.2.3 </span>Characteristics<span class="permalink"><a href="#characteristics-0" aria-label="Permalink for 3.2.3 Characteristics" title="Permalink for 3.2.3 Characteristics"><span>§</span></a></span></h4>
@@ -1312,7 +1321,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 					<tbody>
 						<tr>
 							<th class="property-related-head" scope="row">Related Concepts:</th>
-							<td class="property-related"><cite><a href="https://www.w3.org/TR/html52/links.html#sec-link-types">link types</a></cite> [<cite><a class="bibref" href="#bib-HTML52">HTML52</a></cite>] and <cite><a href="https://www.w3.org/TR/html52/sec-forms.html#autofilling-form-controls-the-autocomplete-attribute"><abbr title="Hypertext Markup Language ">HTML 5.2</abbr> autocomplete</a></cite> [<cite><a class="bibref" href="#bib-HTML52">HTML52</a></cite>] </td>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/html52/links.html#sec-link-types">link types</a></cite> [<cite><a class="bibref" href="#bib-html52">HTML52</a></cite>] and <cite><a href="https://www.w3.org/TR/html52/sec-forms.html#autofilling-form-controls-the-autocomplete-attribute"><abbr title="Hypertext Markup Language ">HTML 5.2</abbr> autocomplete</a></cite> [<cite><a class="bibref" href="#bib-html52">HTML52</a></cite>] </td>
 						</tr>
 						<tr>
 							<th class="property-applicability-head" scope="row">Used in Roles:</th>
@@ -1324,7 +1333,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 						</tr>
 						<tr>
 							<th class="property-value-head" scope="row">Value:</th>
-							<td class="property-value"><a href="#valuetype_token">token</a></td>
+							<td class="property-value"><a href="#valuetype_token" class="respec-offending-element">token</a></td>
 						</tr>
 					</tbody>
 				</table>
@@ -1470,7 +1479,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 	<section id="field-example">
 		<h4 id="x3-3-2-example"><span class="secno">3.3.2 </span>Example<span class="permalink"><a href="#field-example" aria-label="Permalink for 3.3.2 Example" title="Permalink for 3.3.2 Example"><span>§</span></a></span></h4>
 		<p>The below example section show how <code>field</code> used when coding.</p>
-    	<div class="example"><div class="example-title marker"><span>Example 4</span><span style="text-transform: none">: Fields Using ARIA</span></div><pre class="hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"telnum"</span> <span class="hljs-attr">aui-field</span>=<span class="hljs-string">"tel"</span>/&gt;</span></pre></div>
+    	<pre class="example hljs" title="Fields Using ARIA" aria-busy="false">         &lt;input type="text" name="telnum" aui-field="tel"/&gt;
+		</pre>
     </section>
     <section id="characteristics-1">
     	<h4 id="x3-3-3-characteristics"><span class="secno">3.3.3 </span>Characteristics<span class="permalink"><a href="#characteristics-1" aria-label="Permalink for 3.3.3 Characteristics" title="Permalink for 3.3.3 Characteristics"><span>§</span></a></span></h4>
@@ -1484,7 +1494,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 					<tbody>
 						<tr>
 							<th class="property-related-head" scope="row">Related Concepts:</th>
-							<td class="property-related"><cite><a href="https://www.w3.org/TR/html52/links.html#sec-link-types">link types</a></cite> [<cite><a class="bibref" href="#bib-HTML52">HTML52</a></cite>] and <cite><a href="https://www.w3.org/TR/html5/forms.html#states-of-the-type-attribute"><abbr title="Hypertext Markup Language ">HTML </abbr> types</a></cite> [<cite><a class="bibref" href="#bib-HTML5">HTML5</a></cite>]</td>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/html52/links.html#sec-link-types">link types</a></cite> [<cite><a class="bibref" href="#bib-html52">HTML52</a></cite>] and <cite><a href="https://www.w3.org/TR/html5/forms.html#states-of-the-type-attribute"><abbr title="Hypertext Markup Language ">HTML </abbr> types</a></cite> [<cite><a class="bibref" href="#bib-html5">HTML5</a></cite>]</td>
 						</tr>
 						<tr>
 							<th class="property-applicability-head" scope="row">Used in Roles:</th>
@@ -1496,7 +1506,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 						</tr>
 						<tr>
 							<th class="property-value-head" scope="row">Value:</th>
-							<td class="property-value"><a href="#valuetype_token">token</a></td>
+							<td class="property-value"><a href="#valuetype_token" class="respec-offending-element">token</a></td>
 						</tr>
 					</tbody>
 				</table>
@@ -1782,7 +1792,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 							 <div class="ednote" id="issue-container-generatedID-14"><div role="heading" class="ednote-title marker" id="h-ednote-11" aria-level="5"><span>Editor's note</span></div><p class="">This was formerly <code>importance</code>. However different people may feel that sections that would be hidden in a simplified version are still very important, such as marketing content or legal terms.)</p></div>
 
 							<div class="note" id="issue-container-generatedID-15"><div role="heading" class="note-title marker" id="h-note-3" aria-level="5"><span>Note</span></div><div class="">
-								<p>These semantics aid simplification. But what content is most useful to a user varies from user to user. For example, men may be more interested in mens clothing, and may not be interested in the more frequently use womens clothing option. For that reason we may add context for elements that will help the personalization agent select the most useful content for a given user (see the <a href="#context">context</a> attribute). This is also necessary for reminders (see bellow).</p>
+								<p>These semantics aid simplification. But what content is most useful to a user varies from user to user. For example, men may be more interested in mens clothing, and may not be interested in the more frequently use womens clothing option. For that reason we may add context for elements that will help the personalization agent select the most useful content for a given user (see the <a href="#context" class="respec-offending-element">context</a> attribute). This is also necessary for reminders (see bellow).</p>
 								<p>It is worth mentioning that a lot of this information is known for personalization of advertisements and content optimization. </p>
 							</div></div>
 				</div>
@@ -1808,7 +1818,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 							<tbody>
 								<tr>
 									<th class="property-related-head" scope="row">Related Concepts:</th>
-									<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-SVG2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-DOM4">DOM4</a></cite>] active</td>
+									<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-svg2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-dom4">DOM4</a></cite>] active</td>
 								</tr>
 								<tr>
 									<th class="property-applicability-head" scope="row">Used in Roles:</th>
@@ -1820,7 +1830,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 								</tr>
 								<tr>
 									<th class="property-value-head" scope="row">Value:</th>
-									<td class="property-value"><a href="#valuetype_token">token</a></td>
+									<td class="property-value"><a href="#valuetype_token" class="respec-offending-element">token</a></td>
 								</tr>
 							</tbody>
 				</table>
@@ -1904,7 +1914,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 					<tbody>
 						<tr>
 							<th class="property-related-head" scope="row">Related Concepts:</th>
-							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-SVG2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-DOM4">DOM4</a></cite>] active</td>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-svg2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-dom4">DOM4</a></cite>] active</td>
 						</tr>
 						<tr>
 							<th class="property-applicability-head" scope="row">Used in Roles:</th>
@@ -1916,7 +1926,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 						</tr>
 						<tr>
 							<th class="property-value-head" scope="row">Value:</th>
-							<td class="property-value"><a href="#valuetype_token_list">token list</a></td>
+							<td class="property-value"><a href="#valuetype_token_list" class="respec-offending-element">token list</a></td>
 						</tr>
 					</tbody>
 				</table>
@@ -2028,7 +2038,7 @@ When there is more then one concept, multiple concepts can be referenced by sepa
 											</tr>
 											<tr>
 												<th class="property-value-head" scope="row">Value:</th>
-												<td class="property-value"><a href="#valuetype_uri">URI</a></td>
+												<td class="property-value"><a href="#valuetype_uri" class="respec-offending-element">URI</a></td>
 											</tr>
 										</tbody>
 				</table>
@@ -2081,10 +2091,11 @@ When there is more then one concept, multiple concepts can be referenced by sepa
 
 	
 
-<section id="references" class="appendix"><!--OddPage--><h2 id="c-references"><span class="secno">C. </span>References<span class="permalink"><a href="#references" aria-label="Permalink for C. References" title="Permalink for C. References"><span>§</span></a></span></h2><section id="informative-references"><h3 id="c-1-informative-references"><span class="secno">C.1 </span>Informative references<span class="permalink"><a href="#informative-references" aria-label="Permalink for C.1 Informative references" title="Permalink for C.1 Informative references"><span>§</span></a></span></h3><dl class="bibliography"><dt id="bib-DOM4">[DOM4]</dt><dd><a href="https://dom.spec.whatwg.org/"><cite>DOM Standard</cite></a>. Anne van Kesteren. WHATWG. Living Standard. URL: <a href="https://dom.spec.whatwg.org/">https://dom.spec.whatwg.org/</a>
-</dd><dt id="bib-HTML5">[HTML5]</dt><dd><a href="https://www.w3.org/TR/html5/"><cite>HTML5</cite></a>. Ian Hickson; Robin Berjon; Steve Faulkner; Travis Leithead; Erika Doyle Navara; Theresa O'Connor; Silvia Pfeiffer. W3C. 27 March 2018. W3C Recommendation. URL: <a href="https://www.w3.org/TR/html5/">https://www.w3.org/TR/html5/</a>
-</dd><dt id="bib-HTML52">[HTML52]</dt><dd><a href="https://www.w3.org/TR/html52/"><cite>HTML 5.2</cite></a>. Steve Faulkner; Arron Eicholz; Travis Leithead; Alex Danilo; Sangwhan Moon. W3C. 14 December 2017. W3C Recommendation. URL: <a href="https://www.w3.org/TR/html52/">https://www.w3.org/TR/html52/</a>
-</dd><dt id="bib-microdata">[microdata]</dt><dd><a href="https://www.w3.org/TR/microdata/"><cite>HTML Microdata</cite></a>. Charles McCathie Nevile; Dan Brickley; Ian Hickson. W3C. 26 April 2018. W3C Working Draft. URL: <a href="https://www.w3.org/TR/microdata/">https://www.w3.org/TR/microdata/</a>
-</dd><dt id="bib-personalization-semantics-1.0">[personalization-semantics-1.0]</dt><dd><a href="https://www.w3.org/TR/personalization-semantics-1.0/"><cite>Personalization Semantics Explainer 1.0</cite></a>. Lisa Seeman-Kestenbaum; Charles LaPierre; Richard Schwerdtfeger; Michael Cooper; Ruoxi Ran. W3C. 16 March 2018. W3C Working Draft. URL: <a href="https://www.w3.org/TR/personalization-semantics-1.0/">https://www.w3.org/TR/personalization-semantics-1.0/</a>
-</dd><dt id="bib-SVG2">[SVG2]</dt><dd><a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/"><cite>Scalable Vector Graphics (SVG) 2</cite></a>. Nikos Andronikos; Rossen Atanassov; Tavmjong Bah; Amelia Bellamy-Royds; Brian Birtles; Cyril Concolato; Erik Dahlström; Chris Lilley; Cameron McCormack; Doug Schepers; Dirk Schulze; Richard Schwerdtfeger; Satoru Takagi; Jonathan Watt et al. W3C. W3C Working Draft. URL: <a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/">http://www.w3.org/TR/2015/WD-SVG2-20150915/</a>
-</dd></dl></section></section><p role="navigation" id="back-to-top"><a href="#title"><abbr title="Back to Top">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
+<section id="references" class="appendix">
+      <!--OddPage--><h2 id="c-references"><span class="secno">C. </span>References<span class="permalink"><a href="#references" aria-label="Permalink for C. References" title="Permalink for C. References"><span>§</span></a></span></h2>
+      
+    <section id="informative-references">
+        <h3 id="c-1-informative-references"><span class="secno">C.1 </span>Informative references<span class="permalink"><a href="#informative-references" aria-label="Permalink for C.1 Informative references" title="Permalink for C.1 Informative references"><span>§</span></a></span></h3>
+      <dl class="bibliography">
+        <dt id="bib-dom4">[DOM4]</dt><dd><a href="https://dom.spec.whatwg.org/"><cite>DOM Standard</cite></a>. Anne van Kesteren. WHATWG. Living Standard. URL: <a href="https://dom.spec.whatwg.org/">https://dom.spec.whatwg.org/</a></dd><dt id="bib-html5">[HTML5]</dt><dd><a href="https://www.w3.org/TR/html5/"><cite>HTML5</cite></a>. Ian Hickson; Robin Berjon; Steve Faulkner; Travis Leithead; Erika Doyle Navara; Theresa O'Connor; Silvia Pfeiffer. W3C. 27 March 2018. W3C Recommendation. URL: <a href="https://www.w3.org/TR/html5/">https://www.w3.org/TR/html5/</a></dd><dt id="bib-html52">[HTML52]</dt><dd><a href="https://www.w3.org/TR/html52/"><cite>HTML 5.2</cite></a>. Steve Faulkner; Arron Eicholz; Travis Leithead; Alex Danilo; Sangwhan Moon. W3C. 14 December 2017. W3C Recommendation. URL: <a href="https://www.w3.org/TR/html52/">https://www.w3.org/TR/html52/</a></dd><dt id="bib-microdata">[microdata]</dt><dd><a href="https://www.w3.org/TR/microdata/"><cite>HTML Microdata</cite></a>. Charles McCathie Nevile; Dan Brickley; Ian Hickson. W3C. 26 April 2018. W3C Working Draft. URL: <a href="https://www.w3.org/TR/microdata/">https://www.w3.org/TR/microdata/</a></dd><dt id="bib-personalization-semantics-1.0">[personalization-semantics-1.0]</dt><dd><a href="https://www.w3.org/TR/personalization-semantics-1.0/"><cite>Personalization Semantics Explainer 1.0</cite></a>. Lisa Seeman-Kestenbaum; Charles LaPierre; Richard Schwerdtfeger; Michael Cooper; Ruoxi Ran. W3C. 16 March 2018. W3C Working Draft. URL: <a href="https://www.w3.org/TR/personalization-semantics-1.0/">https://www.w3.org/TR/personalization-semantics-1.0/</a></dd><dt id="bib-svg2">[SVG2]</dt><dd><a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/"><cite>Scalable Vector Graphics (SVG) 2</cite></a>. Nikos Andronikos; Rossen Atanassov; Tavmjong Bah; Amelia Bellamy-Royds; Brian Birtles; Cyril Concolato; Erik Dahlström; Chris Lilley; Cameron McCormack; Doug Schepers; Dirk Schulze; Richard Schwerdtfeger; Satoru Takagi; Jonathan Watt et al. W3C. W3C Working Draft. URL: <a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/">http://www.w3.org/TR/2015/WD-SVG2-20150915/</a></dd>
+      </dl></section></section><p role="navigation" id="back-to-top"><a href="#title"><abbr title="Back to Top">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 21.0.2"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
+<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 22.4.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
 div.issue-title, div.note-title , div.ednote-title, div.warning-title {
     padding-right:  1em;
     min-width: 7.5em;
@@ -32,6 +32,10 @@ span.note, span.ednote, span.issue, span.warning { padding: .1em .5em .15em; }
     border-color: #e05252;
     background: #fbe9e9;
 }
+.issue.closed span.issue-number {
+    text-decoration: line-through;
+}
+
 .note, .ednote {
     border-color: #52e052;
     background: #e9fbe9;
@@ -112,10 +116,7 @@ input.task-list-item-checkbox {
 		
 		
 		
-		
-
-		<link href="../common/css/common.css" rel="stylesheet" type="text/css">
-	<style id="respec-mainstyle">/*****************************************************************
+		<style id="respec-mainstyle">/*****************************************************************
  * ReSpec 3 CSS
  * Robin Berjon - http://berjon.com/
  *****************************************************************/
@@ -154,6 +155,10 @@ a.externalDFN {
 
 a.bibref {
   text-decoration: none;
+}
+
+#references :target {
+  background: #eaf3ff;
 }
 
 cite .bibref {
@@ -263,9 +268,9 @@ details.respec-tests-details[open] {
   z-index: 999999;
   position: absolute;
   border: thin solid #cad3e2;
-  border-radius: .3em;
+  border-radius: 0.3em;
   background-color: white;
-  padding-bottom: .5em;
+  padding-bottom: 0.5em;
 }
 
 details.respec-tests-details[open] > summary {
@@ -388,7 +393,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-strong {
   font-weight: bold;
 }
-</style><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-help-1.0/"><script id="initialUserConfig" type="application/json">{
+</style>
+
+		<link href="../common/css/common.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-help-1.0/"><script id="initialUserConfig" type="application/json">{
   "trace": true,
   "doRDFa": "1.0",
   "includePermalinks": true,
@@ -686,7 +694,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       "etAl": true,
       "deliveredBy": [
         "http://www.w3.org/WAI/PF/"
-      ]
+      ],
+      "id": "svg2"
     },
     "UI-AUTOMATION": {
       "href": "https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx",
@@ -735,9 +744,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     "CR": "https://www.w3.org/TR/wai-aria-1.1/",
     "REC": "https://www.w3.org/TR/wai-aria-1.1/"
   },
-  "publishDate": "2018-06-20",
-  "publishISODate": "2018-06-20T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 20 June 2018"
+  "publishDate": "2018-08-13",
+  "publishISODate": "2018-08-13T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 13 August 2018"
 }</script><meta name="description" content="This document list examples of the personalized help and support properties, this is an extension of Personalization Explainer 1.0. including the properties of literal, numberfree, easylang, alternative, explain, feedback, moreinfo,extrahelp, helptype."></head>
 	<body class="h-entry toc-inline"><div class="head">
   <a href="https://www.w3.org/" class="logo">
@@ -745,7 +754,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   </a>
   <h1 id="title" class="title p-name">Personalization Help and Support 1.0</h1>
   
-  <h2 id="w3c-editor-s-draft-20-june-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-06-20">20 June 2018</time></h2>
+  <h2 id="w3c-editor-s-draft-13-august-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-08-13">13 August 2018</time></h2>
   <dl>
     <dt>This version:</dt><dd><a class="u-url" href="https://w3c.github.io/personalization-semantics/help/">https://w3c.github.io/personalization-semantics/help/</a></dd><dt>Latest published version:</dt><dd><a href="https://www.w3.org/TR/personalization-semantics-help-1.0/">https://www.w3.org/TR/personalization-semantics-help-1.0/</a></dd>
     <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/personalization-semantics/help/">https://w3c.github.io/personalization-semantics/help/</a></dd>
@@ -790,16 +799,14 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       </p><p>
           This document was published by the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> as an Editor's Draft.
           
-          
-            Comments regarding this document are welcome. Please send them to
-            <a href="mailto:public-personalization-tf@w3.org">public-personalization-tf@w3.org</a>
-            (<a href="mailto:public-personalization-tf-request@w3.org?subject=subscribe">subscribe</a>,
-            <a href="https://lists.w3.org/Archives/Public/public-personalization-tf/">archives</a>).
-          
-          
-          
-          
-        </p><p>
+          </p><p>
+            
+            Comments regarding this document are welcome.
+              Please send them to
+              <a href="mailto:public-personalization-tf@w3.org">public-personalization-tf@w3.org</a>
+              (<a href="https://lists.w3.org/Archives/Public/public-personalization-tf/">archives</a>).
+            
+            </p><p>
             Publication as an Editor's Draft does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr>
             Membership. This is a draft document and may be updated, replaced or obsoleted by other
             documents at any time. It is inappropriate to cite this document as other than work in
@@ -843,30 +850,30 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     <p><strong>Requirement</strong>: Not everyone can understand numbers. We therefor suggest <code>numberfree</code> for alternative text for people who can not understand the main content</p>
                     <p><strong>User experience:</strong></p>
                     <p>A suggested user experience would be: Numerical concepts could be rendered by the user agent slightly different so that the user knows a number free explanation is available. The user can then mouse over the content and a tooltips would give the number free value</p>
-                    <p>Relevant properties: <a href="#numberfree"><code>numberfree</code></a></p>
+                    <p>Relevant properties: <a href="#numberfree" class="respec-offending-element"><code>numberfree</code></a></p>
                 </section>
                 <section id="use_case_language">
                     <h3 id="x2-2-language-type-support"><span class="secno">2.2 </span>Language Type Support<span class="permalink"><a href="#use_case_language" aria-label="Permalink for 2.2 Language Type Support" title="Permalink for 2.2 Language Type Support"><span>§</span></a></span></h3>
                     <p><strong>Requirement: </strong>Sometimes you may want to provide a simplified version of a section of a page. For example, you may wish to provide a simplified summary of legal document, but still have a longer version for other users. These alternative versions may not be identical in content but maintain the gist of the original content.</p>
-                    <p>Relevant properties: <a href="#alternative"><code>alternative</code></a>, <a href="#easylang"><code>easylang</code></a></p>
+                    <p>Relevant properties: <a href="#alternative" class="respec-offending-element"><code>alternative</code></a>, <a href="#easylang" class="respec-offending-element"><code>easylang</code></a></p>
                 </section>
                 <section id="use_case_literal">
                     <h3 id="x2-3-non-literal-text-and-images"><span class="secno">2.3 </span>Non-literal Text and Images<span class="permalink"><a href="#use_case_literal" aria-label="Permalink for 2.3 Non-literal Text and Images" title="Permalink for 2.3 Non-literal Text and Images"><span>§</span></a></span></h3>
                     <p><strong>Requirement: </strong>Not everyone can understand non-literal text and icons such as metaphors, idioms etc. We need a tag that identifies text or images as non literal and allows the author to explain non-literal text and images to users.</p>
                     <p><strong>User experience:</strong></p>
                     <p>A suggested user experience would be: Non literal content could be rendered by the user agent slightly differently so that the user knows that this content should not be taken literally and that a literal explanation is available. The user can then mouse over the content and a tooltips would give the literal value.</p>
-                    <p>Relevant properties: <a href="#literal"><code>literal</code></a></p>
+                    <p>Relevant properties: <a href="#literal" class="respec-offending-element"><code>literal</code></a></p>
                 </section>
                 <section id="use_case_morehelp">
                     <h3 id="x2-4-more-help"><span class="secno">2.4 </span>More Help<span class="permalink"><a href="#use_case_morehelp" aria-label="Permalink for 2.4 More Help" title="Permalink for 2.4 More Help"><span>§</span></a></span></h3>
                     <p><strong>Requirement: </strong>Some users may need additional information or specifically additional help information. We request additional attributes so that an author can indicate the existence of this additional information.</p>
-                    <p>Relevant properties: <a href="#moreinfo"><code>moreinfo</code></a>, <a href="#extrahelp"><code>extrahelp</code></a>, <a href="#helptype">helptype</a></p>
+                    <p>Relevant properties: <a href="#moreinfo" class="respec-offending-element"><code>moreinfo</code></a>, <a href="#extrahelp" class="respec-offending-element"><code>extrahelp</code></a>, <a href="#helptype" class="respec-offending-element">helptype</a></p>
                 </section>
                 <section id="use_case_explain">
                     <h3 id="x2-5-explain-and-feedback"><span class="secno">2.5 </span>Explain and Feedback<span class="permalink"><a href="#use_case_explain" aria-label="Permalink for 2.5 Explain and Feedback" title="Permalink for 2.5 Explain and Feedback"><span>§</span></a></span></h3>
                     <p><strong>Requirement: </strong></p>
                     <p>Some users need additional help. We request an attribute where the author can provide additional information or what just happened.</p>
-                    <p>Relevant properties: <a href="#feedback"><code>feedback</code></a>, <a href="#explain"><code>explain</code></a></p>
+                    <p>Relevant properties: <a href="#feedback" class="respec-offending-element"><code>feedback</code></a>, <a href="#explain" class="respec-offending-element"><code>explain</code></a></p>
                 </section>
                 <section id="use_case_potential_feature">
                     <h3 id="x2-6-potential-features"><span class="secno">2.6 </span>Potential Features<span class="permalink"><a href="#use_case_potential_feature" aria-label="Permalink for 2.6 Potential Features" title="Permalink for 2.6 Potential Features"><span>§</span></a></span></h3>
@@ -1090,7 +1097,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           <tbody>
             <tr>
               <th class="property-related-head" scope="row">Related Concepts:</th>
-              <td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-SVG2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-DOM4">DOM4</a></cite>] active</td>
+              <td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-svg2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-dom4">DOM4</a></cite>] active</td>
             </tr>
             <tr>
               <th class="property-applicability-head" scope="row">Used in Roles:</th>
@@ -1102,7 +1109,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             </tr>
             <tr>
               <th class="property-value-head" scope="row">Value:</th>
-              <td class="property-value"><a href="#valuetype_token_list">token list</a></td>
+              <td class="property-value"><a href="#valuetype_token_list" class="respec-offending-element">token list</a></td>
             </tr>
           </tbody>
         </table>
@@ -1166,7 +1173,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           <tbody>
             <tr>
               <th class="property-related-head" scope="row">Related Concepts:</th>
-              <td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-SVG2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-DOM4">DOM4</a></cite>] active</td>
+              <td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-svg2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-dom4">DOM4</a></cite>] active</td>
             </tr>
             <tr>
               <th class="property-applicability-head" scope="row">Used in Roles:</th>
@@ -1178,7 +1185,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             </tr>
             <tr>
               <th class="property-value-head" scope="row">Value:</th>
-              <td class="property-value"><a href="#valuetype_token_list">token list</a></td>
+              <td class="property-value"><a href="#valuetype_token_list" class="respec-offending-element">token list</a></td>
             </tr>
           </tbody>
         </table>
@@ -1236,7 +1243,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 					<tbody>
 						<tr>
 							<th class="property-related-head" scope="row">Related Concepts:</th>
-							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-SVG2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-DOM4">DOM4</a></cite>] active</td>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-svg2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-dom4">DOM4</a></cite>] active</td>
 						</tr>
 						<tr>
 							<th class="property-applicability-head" scope="row">Used in Roles:</th>
@@ -1248,7 +1255,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 						</tr>
 						<tr>
 							<th class="property-value-head" scope="row">Value:</th>
-							<td class="property-value"><a href="#valuetype_token">token</a></td>
+							<td class="property-value"><a href="#valuetype_token" class="respec-offending-element">token</a></td>
 						</tr>
 					</tbody>
 				</table>
@@ -1365,7 +1372,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 						</tr>
 						<tr>
 							<th class="property-value-head" scope="row">Value:</th>
-							<td class="property-value"><a href="#valuetype_string">string</a></td>
+							<td class="property-value"><a href="#valuetype_string" class="respec-offending-element">string</a></td>
 						</tr>
 					</tbody>
 				</table>
@@ -1423,7 +1430,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 						</tr>
 						<tr>
 							<th class="property-value-head" scope="row">Value:</th>
-							<td class="property-value"><a href="#valuetype_string">string</a></td>
+							<td class="property-value"><a href="#valuetype_string" class="respec-offending-element">string</a></td>
 						</tr>
 					</tbody>
 				</table>
@@ -1478,7 +1485,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 									</tr>
 									<tr>
 										<th class="property-value-head" scope="row">Value:</th>
-										<td class="property-value"><a href="#valuetype_string">string</a></td>
+										<td class="property-value"><a href="#valuetype_string" class="respec-offending-element">string</a></td>
 									</tr>
 								</tbody>
 		</table>
@@ -1520,7 +1527,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 					<tbody>
 						<tr>
 							<th class="property-related-head" scope="row">Related Concepts:</th>
-							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-SVG2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-DOM4">DOM4</a></cite>] active</td>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-svg2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-dom4">DOM4</a></cite>] active</td>
 						</tr>
 						<tr>
 							<th class="property-applicability-head" scope="row">Used in Roles:</th>
@@ -1532,7 +1539,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 						</tr>
 						<tr>
 							<th class="property-value-head" scope="row">Value:</th>
-							<td class="property-value"><a href="#valuetype_string">string</a></td>
+							<td class="property-value"><a href="#valuetype_string" class="respec-offending-element">string</a></td>
 						</tr>
 					</tbody>
 				</table>
@@ -1572,7 +1579,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 					<tbody>
 						<tr>
 							<th class="property-related-head" scope="row">Related Concepts:</th>
-							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-SVG2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-DOM4">DOM4</a></cite>] active</td>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-svg2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-dom4">DOM4</a></cite>] active</td>
 						</tr>
 						<tr>
 							<th class="property-applicability-head" scope="row">Used in Roles:</th>
@@ -1584,7 +1591,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 						</tr>
 						<tr>
 							<th class="property-value-head" scope="row">Value:</th>
-							<td class="property-value"><a href="#valuetype_string">string</a></td>
+							<td class="property-value"><a href="#valuetype_string" class="respec-offending-element">string</a></td>
 						</tr>
 					</tbody>
 				</table>
@@ -1627,7 +1634,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 					<tbody>
 						<tr>
 							<th class="property-related-head" scope="row">Related Concepts:</th>
-							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-SVG2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-DOM4">DOM4</a></cite>] active</td>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-svg2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-dom4">DOM4</a></cite>] active</td>
 						</tr>
 						<tr>
 							<th class="property-applicability-head" scope="row">Used in Roles:</th>
@@ -1639,7 +1646,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 						</tr>
 						<tr>
 							<th class="property-value-head" scope="row">Value:</th>
-							<td class="property-value"><a href="#valuetype_uri">URI</a></td>
+							<td class="property-value"><a href="#valuetype_uri" class="respec-offending-element">URI</a></td>
 						</tr>
 					</tbody>
 				</table>
@@ -1678,7 +1685,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 					<tbody>
 						<tr>
 							<th class="property-related-head" scope="row">Related Concepts:</th>
-							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-SVG2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-DOM4">DOM4</a></cite>] active</td>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-svg2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-dom4">DOM4</a></cite>] active</td>
 						</tr>
 						<tr>
 							<th class="property-applicability-head" scope="row">Used in Roles:</th>
@@ -1690,7 +1697,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 						</tr>
 						<tr>
 							<th class="property-value-head" scope="row">Value:</th>
-							<td class="property-value"><a href="#valuetype_uri">URI</a></td>
+							<td class="property-value"><a href="#valuetype_uri" class="respec-offending-element">URI</a></td>
 						</tr>
 					</tbody>
 				</table>
@@ -1741,6 +1748,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 	
 
-<section id="references" class="appendix"><!--OddPage--><h2 id="c-references"><span class="secno">C. </span>References<span class="permalink"><a href="#references" aria-label="Permalink for C. References" title="Permalink for C. References"><span>§</span></a></span></h2><section id="informative-references"><h3 id="c-1-informative-references"><span class="secno">C.1 </span>Informative references<span class="permalink"><a href="#informative-references" aria-label="Permalink for C.1 Informative references" title="Permalink for C.1 Informative references"><span>§</span></a></span></h3><dl class="bibliography"><dt id="bib-DOM4">[DOM4]</dt><dd><a href="https://dom.spec.whatwg.org/"><cite>DOM Standard</cite></a>. Anne van Kesteren. WHATWG. Living Standard. URL: <a href="https://dom.spec.whatwg.org/">https://dom.spec.whatwg.org/</a>
-</dd><dt id="bib-SVG2">[SVG2]</dt><dd><a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/"><cite>Scalable Vector Graphics (SVG) 2</cite></a>. Nikos Andronikos; Rossen Atanassov; Tavmjong Bah; Amelia Bellamy-Royds; Brian Birtles; Cyril Concolato; Erik Dahlström; Chris Lilley; Cameron McCormack; Doug Schepers; Dirk Schulze; Richard Schwerdtfeger; Satoru Takagi; Jonathan Watt et al. W3C. W3C Working Draft. URL: <a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/">http://www.w3.org/TR/2015/WD-SVG2-20150915/</a>
-</dd></dl></section></section><p role="navigation" id="back-to-top"><a href="#title"><abbr title="Back to Top">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
+<section id="references" class="appendix">
+      <!--OddPage--><h2 id="c-references"><span class="secno">C. </span>References<span class="permalink"><a href="#references" aria-label="Permalink for C. References" title="Permalink for C. References"><span>§</span></a></span></h2>
+      
+    <section id="informative-references">
+        <h3 id="c-1-informative-references"><span class="secno">C.1 </span>Informative references<span class="permalink"><a href="#informative-references" aria-label="Permalink for C.1 Informative references" title="Permalink for C.1 Informative references"><span>§</span></a></span></h3>
+      <dl class="bibliography">
+        <dt id="bib-dom4">[DOM4]</dt><dd><a href="https://dom.spec.whatwg.org/"><cite>DOM Standard</cite></a>. Anne van Kesteren. WHATWG. Living Standard. URL: <a href="https://dom.spec.whatwg.org/">https://dom.spec.whatwg.org/</a></dd><dt id="bib-svg2">[SVG2]</dt><dd><a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/"><cite>Scalable Vector Graphics (SVG) 2</cite></a>. Nikos Andronikos; Rossen Atanassov; Tavmjong Bah; Amelia Bellamy-Royds; Brian Birtles; Cyril Concolato; Erik Dahlström; Chris Lilley; Cameron McCormack; Doug Schepers; Dirk Schulze; Richard Schwerdtfeger; Satoru Takagi; Jonathan Watt et al. W3C. W3C Working Draft. URL: <a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/">http://www.w3.org/TR/2015/WD-SVG2-20150915/</a></dd>
+      </dl></section></section><p role="navigation" id="back-to-top"><a href="#title"><abbr title="Back to Top">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>

@@ -1,10 +1,6 @@
-<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 21.0.2"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
-div.example-title {
-    min-width: 7.5em;
-    color: #b9ab2d;
-}
-div.example-title span {
-    text-transform: uppercase;
+<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 22.4.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
+span.example-title {
+    text-transform: none;
 }
 aside.example, div.example, div.illegal-example {
     padding: 0.5em;
@@ -27,7 +23,7 @@ aside.example div.example {
     border-color: #999;
     background: #fff;
 }
-aside.example div.example div.example-title {
+aside.example div.example span.example-title {
     color: #999;
 }
 </style><style>/* --- ISSUES/NOTES --- */
@@ -64,6 +60,10 @@ span.note, span.ednote, span.issue, span.warning { padding: .1em .5em .15em; }
     border-color: #e05252;
     background: #fbe9e9;
 }
+.issue.closed span.issue-number {
+    text-decoration: line-through;
+}
+
 .note, .ednote {
     border-color: #52e052;
     background: #e9fbe9;
@@ -144,10 +144,7 @@ input.task-list-item-checkbox {
 		
 		
 		
-		
-	
-		<link href="common/css/common.css" rel="stylesheet" type="text/css">
-	<style id="respec-mainstyle">/*****************************************************************
+		<style id="respec-mainstyle">/*****************************************************************
  * ReSpec 3 CSS
  * Robin Berjon - http://berjon.com/
  *****************************************************************/
@@ -186,6 +183,10 @@ a.externalDFN {
 
 a.bibref {
   text-decoration: none;
+}
+
+#references :target {
+  background: #eaf3ff;
 }
 
 cite .bibref {
@@ -295,9 +296,9 @@ details.respec-tests-details[open] {
   z-index: 999999;
   position: absolute;
   border: thin solid #cad3e2;
-  border-radius: .3em;
+  border-radius: 0.3em;
   background-color: white;
-  padding-bottom: .5em;
+  padding-bottom: 0.5em;
 }
 
 details.respec-tests-details[open] > summary {
@@ -420,7 +421,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-strong {
   font-weight: bold;
 }
-</style><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-1.0/"><script id="initialUserConfig" type="application/json">{
+</style>
+	
+		<link href="common/css/common.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-1.0/"><script id="initialUserConfig" type="application/json">{
   "trace": true,
   "doRDFa": "1.0",
   "includePermalinks": true,
@@ -514,12 +518,14 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     "ATK": {
       "href": "https://developer.gnome.org/atk/stable/",
       "title": "ATK - Accessibility Toolkit",
-      "publisher": "The GNOME Project"
+      "publisher": "The GNOME Project",
+      "id": "atk"
     },
     "AXAPI": {
       "href": "https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078",
       "title": "Accessibility Programming Guide for OS X",
-      "publisher": "Apple Corporation"
+      "publisher": "Apple Corporation",
+      "id": "axapi"
     },
     "coga-gap-analysis": {
       "title": "Cognitive Accessibility Roadmap and Gap Analysis",
@@ -643,7 +649,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     "MSAA": {
       "href": "https://msdn.microsoft.com/en-us/library/ms697707.aspx",
       "title": "Microsoft Active Accessibility (MSAA) 2.0",
-      "publisher": "Microsoft Corporation"
+      "publisher": "Microsoft Corporation",
+      "id": "msaa"
     },
     "SVG-AAM": {
       "title": "SVG2 Accessibility API Mappings 1.0",
@@ -723,12 +730,14 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     "UI-AUTOMATION": {
       "href": "https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx",
       "title": "UI Automation",
-      "publisher": "Microsoft Corporation"
+      "publisher": "Microsoft Corporation",
+      "id": "ui-automation"
     },
     "UIA-EXPRESS": {
       "href": "https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx",
       "title": "The IAccessibleEx Interface",
-      "publisher": "Microsoft Corporation"
+      "publisher": "Microsoft Corporation",
+      "id": "uia-express"
     },
     "WAI-ARIA": {
       "title": "Accessible Rich Internet Applications (WAI-ARIA) 1.1",
@@ -767,9 +776,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     "CR": "https://www.w3.org/TR/wai-aria-1.1/",
     "REC": "https://www.w3.org/TR/wai-aria-1.1/"
   },
-  "publishDate": "2018-06-20",
-  "publishISODate": "2018-06-20T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 20 June 2018"
+  "publishDate": "2018-08-13",
+  "publishISODate": "2018-08-13T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 13 August 2018"
 }</script><meta name="description" content="Personalization involves tailoring aspects of the user experience to meet the needs and preferences of the user. For example, having familiar terms and symbols is key to many users being able to use the web. However, what is familiar for one user may be unfamiliar to another requiring them to learn new symbols. The challenge has been the ability to identify the types of content in a document that should be adapted to the preferred user experience. The introduction of standardized semantics allows web applications to customize the exposure of that content to one that is familiar to individuals based on their needs and preferences. This specification defines standard semantics to enable user driven personalization such as the association of user-preferred symbols to elements having those semantics. This ensures that users can quickly find familiar icons, such as a help icon, that apply to user interface elements."></head>
 	<body class="h-entry toc-inline"><div class="head">
   <a href="https://www.w3.org/" class="logo">
@@ -777,7 +786,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   </a>
   <h1 id="title" class="title p-name">Personalization Semantics Explainer 1.0</h1>
   
-  <h2 id="w3c-editor-s-draft-20-june-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-06-20">20 June 2018</time></h2>
+  <h2 id="w3c-editor-s-draft-13-august-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-08-13">13 August 2018</time></h2>
   <dl>
     <dt>This version:</dt><dd><a class="u-url" href="https://w3c.github.io/personalization-semantics/">https://w3c.github.io/personalization-semantics/</a></dd><dt>Latest published version:</dt><dd><a href="https://www.w3.org/TR/personalization-semantics-1.0/">https://www.w3.org/TR/personalization-semantics-1.0/</a></dd>
     <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/personalization-semantics/">https://w3c.github.io/personalization-semantics/</a></dd>
@@ -823,16 +832,14 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       </p><p>
           This document was published by the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> as an Editor's Draft.
           
-          
-            Comments regarding this document are welcome. Please send them to
-            <a href="mailto:public-personalization-tf@w3.org">public-personalization-tf@w3.org</a>
-            (<a href="mailto:public-personalization-tf-request@w3.org?subject=subscribe">subscribe</a>,
-            <a href="https://lists.w3.org/Archives/Public/public-personalization-tf/">archives</a>).
-          
-          
-          
-          
-        </p><p>
+          </p><p>
+            
+            Comments regarding this document are welcome.
+              Please send them to
+              <a href="mailto:public-personalization-tf@w3.org">public-personalization-tf@w3.org</a>
+              (<a href="https://lists.w3.org/Archives/Public/public-personalization-tf/">archives</a>).
+            
+            </p><p>
             Publication as an Editor's Draft does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr>
             Membership. This is a draft document and may be updated, replaced or obsoleted by other
             documents at any time. It is inappropriate to cite this document as other than work in
@@ -911,8 +918,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   <dl class="termlist">
     <dt><dfn data-lt="accessibility api|accessibility apis" data-dfn-type="dfn" id="dfn-accessibility-api">Accessibility <abbr title="Application Programming Interface">API</abbr></dfn></dt>
     <dd>
-      <p>Operating systems and other platforms provide a set of interfaces that expose information about <a class="termref internalDFN" data-lt="object" href="#dfn-objects" data-link-type="dfn">objects</a> and <a class="termref internalDFN" data-lt="event" href="#dfn-events" data-link-type="dfn">events</a> to <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a>. Assistive technologies use these interfaces to get information about and interact with those <a class="termref internalDFN" data-lt="widget" href="#dfn-widgets" data-link-type="dfn">widgets</a>. Examples of accessibility APIs are <a href="https://msdn.microsoft.com/en-us/library/ms697270(VS.85).aspx">Microsoft Active Accessibility</a> [<cite><a class="bibref" href="#bib-MSAA">MSAA</a></cite>], <a href="https://msdn.microsoft.com/en-us/library/ee684013%28VS.85%29.aspx">Microsoft User Interface Automation</a> [<cite><a class="bibref" href="#bib-UI-AUTOMATION">UI-AUTOMATION</a></cite>], <abbr title="Microsoft Active Accessibility">MSAA</abbr> with <cite><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898(v=vs.85).aspx"><abbr title="User Interface Automation">UIA</abbr> Express</a></cite> [<cite><a class="bibref" href="#bib-UIA-EXPRESS">UIA-EXPRESS</a></cite>], the
-      	<a href="https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSAccessibility_Protocol/index.html">Mac <abbr title="OS Ten">OS X</abbr> Accessibility Protocol</a> [<cite><a class="bibref" href="#bib-AXAPI">AXAPI</a></cite>], the <cite><a href="https://developer.gnome.org/atk/unstable/">Linux/Unix Accessibility Toolkit</a></cite> [<cite><a class="bibref" href="#bib-ATK">ATK</a></cite>] and <cite><a href="https://developer.gnome.org/libatspi/stable/">Assistive Technology Service Provider Interface</a></cite> [<cite><a class="bibref" href="#bib-AT-SPI">AT-SPI</a></cite>], and <a href="http://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2">IAccessible2</a> [<cite><a class="bibref" href="#bib-IAccessible2">IAccessible2</a></cite>].</p>
+      <p>Operating systems and other platforms provide a set of interfaces that expose information about <a class="termref internalDFN" data-lt="object" href="#dfn-objects" data-link-type="dfn">objects</a> and <a class="termref internalDFN" data-lt="event" href="#dfn-events" data-link-type="dfn">events</a> to <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a>. Assistive technologies use these interfaces to get information about and interact with those <a class="termref internalDFN" data-lt="widget" href="#dfn-widgets" data-link-type="dfn">widgets</a>. Examples of accessibility APIs are <a href="https://msdn.microsoft.com/en-us/library/ms697270(VS.85).aspx">Microsoft Active Accessibility</a> [<cite><a class="bibref" href="#bib-msaa">MSAA</a></cite>], <a href="https://msdn.microsoft.com/en-us/library/ee684013%28VS.85%29.aspx">Microsoft User Interface Automation</a> [<cite><a class="bibref" href="#bib-ui-automation">UI-AUTOMATION</a></cite>], <abbr title="Microsoft Active Accessibility">MSAA</abbr> with <cite><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898(v=vs.85).aspx"><abbr title="User Interface Automation">UIA</abbr> Express</a></cite> [<cite><a class="bibref" href="#bib-uia-express">UIA-EXPRESS</a></cite>], the
+      	<a href="https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSAccessibility_Protocol/index.html">Mac <abbr title="OS Ten">OS X</abbr> Accessibility Protocol</a> [<cite><a class="bibref" href="#bib-axapi">AXAPI</a></cite>], the <cite><a href="https://developer.gnome.org/atk/unstable/">Linux/Unix Accessibility Toolkit</a></cite> [<cite><a class="bibref" href="#bib-atk">ATK</a></cite>] and <cite><a href="https://developer.gnome.org/libatspi/stable/">Assistive Technology Service Provider Interface</a></cite> [<cite><a class="bibref" href="#bib-at-spi">AT-SPI</a></cite>], and <a href="http://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2">IAccessible2</a> [<cite><a class="bibref" href="#bib-iaccessible2">IAccessible2</a></cite>].</p>
     </dd>
     <dt><dfn data-dfn-type="dfn" id="dfn-accessibility-subtree">Accessibility Subtree</dfn></dt>
     <dd>
@@ -960,15 +967,15 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </dd>
     <dt><dfn data-lt="attributes|attribute" data-dfn-type="dfn" id="dfn-attributes">Attribute</dfn></dt>
     <dd>
-      <p>In this specification, attribute is used as it is in markup languages. Attributes are structural features added to <a class="termref" href="#dfn-element">elements</a> to provide information about the <a class="termref" href="#dfn-state">states</a> and <a class="termref" href="#dfn-property">properties</a> of the <a class="termref" href="#dfn-object">object</a> represented by the element.</p>
+      <p>In this specification, attribute is used as it is in markup languages. Attributes are structural features added to <a class="termref respec-offending-element" href="#dfn-element">elements</a> to provide information about the <a class="termref respec-offending-element" href="#dfn-state">states</a> and <a class="termref respec-offending-element" href="#dfn-property">properties</a> of the <a class="termref respec-offending-element" href="#dfn-object">object</a> represented by the element.</p>
     </dd>
     <dt><dfn data-lt="classes|class" data-dfn-type="dfn" id="dfn-classes">Class</dfn></dt>
     <dd>
-      <p>A set of instance <a class="termref" href="#dfn-object">objects</a> that share similar characteristics.</p>
+      <p>A set of instance <a class="termref respec-offending-element" href="#dfn-object">objects</a> that share similar characteristics.</p>
     </dd>
     <dt><dfn data-lt="deprecate|deprecation|deprecated" data-dfn-type="dfn" id="dfn-deprecate">Deprecated</dfn></dt>
     <dd>
-      <p>A deprecated <a class="termref" href="#dfn-role">role</a>, <a class="termref" href="#dfn-state">state</a>, or <a class="termref" href="#dfn-property">property</a> is one which has been outdated by newer constructs or changed circumstances, and which may be removed in future versions of the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> specification. <a class="termref internalDFN" data-lt="user agent" href="#dfn-user-agents" data-link-type="dfn">User agents</a> are encouraged to continue to support items identified as deprecated for backward compatibility. For more information, see <a href="#deprecated">Deprecated Requirements</a> in the Conformance section.</p>
+      <p>A deprecated <a class="termref respec-offending-element" href="#dfn-role">role</a>, <a class="termref respec-offending-element" href="#dfn-state">state</a>, or <a class="termref respec-offending-element" href="#dfn-property">property</a> is one which has been outdated by newer constructs or changed circumstances, and which may be removed in future versions of the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> specification. <a class="termref internalDFN" data-lt="user agent" href="#dfn-user-agents" data-link-type="dfn">User agents</a> are encouraged to continue to support items identified as deprecated for backward compatibility. For more information, see <a href="#deprecated" class="respec-offending-element">Deprecated Requirements</a> in the Conformance section.</p>
     </dd>
     <dt><dfn data-dfn-type="dfn" id="dfn-desktop-focus-event">Desktop focus event</dfn></dt>
     <dd>
@@ -984,7 +991,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </dd>
     <dt><dfn data-dfn-type="dfn" id="dfn-expose">Expose</dfn></dt>
     <dd>
-      <p>Translated to platform-specific <a class="termref internalDFN" data-lt="accessibility api" href="#dfn-accessibility-api" data-link-type="dfn">accessibility APIs</a> as defined in the <cite><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> User Agent Implementation Guide.</cite> [<cite><a class="bibref" href="#bib-WAI-ARIA-IMPLEMENTATION">WAI-ARIA-IMPLEMENTATION</a></cite>]</p>
+      <p>Translated to platform-specific <a class="termref internalDFN" data-lt="accessibility api" href="#dfn-accessibility-api" data-link-type="dfn">accessibility APIs</a> as defined in the <cite><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> User Agent Implementation Guide.</cite> [<cite><a class="bibref" href="#bib-wai-aria-implementation">WAI-ARIA-IMPLEMENTATION</a></cite>]</p>
     </dd>
     <dt><dfn data-lt="graphical documents|graphical document" data-dfn-type="dfn" id="dfn-graphical-documents">Graphical Document</dfn></dt>
     <dd>
@@ -1000,7 +1007,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </dd>
     <dt><dfn data-dfn-type="dfn" id="dfn-keyboard-accessible">Keyboard Accessible</dfn></dt>
     <dd>
-      <p>Accessible to the user using a keyboard or <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a> that mimic keyboard input, such as a sip and puff tube. References in this document relate to <cite><a href="http://www.w3.org/TR/WCAG20/#keyboard-operation"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0 Guideline 2.1: Make all functionality available from a keyboard</a></cite> [<cite><a class="bibref" href="#bib-WCAG20">WCAG20</a></cite>].</p>
+      <p>Accessible to the user using a keyboard or <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a> that mimic keyboard input, such as a sip and puff tube. References in this document relate to <cite><a href="http://www.w3.org/TR/WCAG20/#keyboard-operation"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0 Guideline 2.1: Make all functionality available from a keyboard</a></cite> [<cite><a class="bibref" href="#bib-wcag20">WCAG20</a></cite>].</p>
     </dd>
     <dt><dfn data-lt="landmarks|landmark" data-dfn-type="dfn" id="dfn-landmarks">Landmark</dfn></dt>
     <dd>
@@ -1008,7 +1015,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </dd>
     <dt><dfn data-lt="live regions|live region" data-dfn-type="dfn" id="dfn-live-regions">Live Region</dfn></dt>
     <dd>
-      <p>Live regions are perceivable regions of a web page that are typically updated as a result of an external event when user focus may be elsewhere. These regions are not always updated as a result of a user interaction. This practice has become commonplace with the growing use of Ajax. Examples of live regions include a chat log, stock ticker, or a sport scoring section that updates periodically to reflect game statistics. Since these asynchronous areas are expected to update outside the user's area of focus, assistive technologies such as screen readers have either been unaware of their existence or unable to process them for the user. <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> has provided a collection of properties that allow the author to identify these live regions and process them: aria-live, aria-relevant, aria-atomic, and aria-busy. Pre-defined live region roles are listed in the <cite><a href="http://www.w3.org/TR/wai-aria-practices/#chobet">Choosing Between Special Case Live Regions</a></cite> ([<cite><a class="bibref" href="#bib-WAI-ARIA-PRACTICES">WAI-ARIA-PRACTICES</a></cite>], Section 5.3).</p>
+      <p>Live regions are perceivable regions of a web page that are typically updated as a result of an external event when user focus may be elsewhere. These regions are not always updated as a result of a user interaction. This practice has become commonplace with the growing use of Ajax. Examples of live regions include a chat log, stock ticker, or a sport scoring section that updates periodically to reflect game statistics. Since these asynchronous areas are expected to update outside the user's area of focus, assistive technologies such as screen readers have either been unaware of their existence or unable to process them for the user. <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> has provided a collection of properties that allow the author to identify these live regions and process them: aria-live, aria-relevant, aria-atomic, and aria-busy. Pre-defined live region roles are listed in the <cite><a href="http://www.w3.org/TR/wai-aria-practices/#chobet">Choosing Between Special Case Live Regions</a></cite> ([<cite><a class="bibref" href="#bib-wai-aria-practices">WAI-ARIA-PRACTICES</a></cite>], Section 5.3).</p>
     </dd>
     <dt><dfn data-dfn-type="dfn" id="dfn-primary-content-element">Primary Content Element</dfn></dt>
     <dd>
@@ -1041,7 +1048,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </dd>
     <dt><dfn data-dfn-type="dfn" id="dfn-operable">Operable</dfn></dt>
     <dd>
-      <p>Usable by users in ways they can control. References in this document relate to <cite><a href="http://www.w3.org/TR/WCAG20/#operable"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0 Principle 2: Content must be operable</a></cite> [<cite><a class="bibref" href="#bib-WCAG20">WCAG20</a></cite>]. See <a href="#dfn-keyboard-accessible" class="internalDFN" data-link-type="dfn">Keyboard Accessible</a>.</p>
+      <p>Usable by users in ways they can control. References in this document relate to <cite><a href="http://www.w3.org/TR/WCAG20/#operable"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0 Principle 2: Content must be operable</a></cite> [<cite><a class="bibref" href="#bib-wcag20">WCAG20</a></cite>]. See <a href="#dfn-keyboard-accessible" class="internalDFN" data-link-type="dfn">Keyboard Accessible</a>.</p>
     </dd>
     <dt><dfn data-lt="owned|owned element's|owned elements|owned element" data-dfn-type="dfn" id="dfn-owned">Owned Element</dfn></dt>
     <dd>
@@ -1053,11 +1060,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </dd>
     <dt><dfn data-dfn-type="dfn" id="dfn-perceivable">Perceivable</dfn></dt>
     <dd>
-      <p>Presentable to users in ways they can sense. References in this document relate to <cite><a href="http://www.w3.org/TR/WCAG20/#perceivable"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0 Principle 1: Content must be perceivable</a></cite> [<cite><a class="bibref" href="#bib-WCAG20">WCAG20</a></cite>].</p>
+      <p>Presentable to users in ways they can sense. References in this document relate to <cite><a href="http://www.w3.org/TR/WCAG20/#perceivable"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0 Principle 1: Content must be perceivable</a></cite> [<cite><a class="bibref" href="#bib-wcag20">WCAG20</a></cite>].</p>
     </dd>
     <dt><dfn data-lt="properties|property" data-dfn-type="dfn" id="dfn-properties">Property</dfn></dt>
     <dd>
-      <p><a class="termref internalDFN" data-lt="attribute" href="#dfn-attributes" data-link-type="dfn">Attributes</a> that are essential to the nature of a given <a href="#dfn-objects" class="internalDFN" data-link-type="dfn">object</a>, or that represent a data value associated with the object. A change of a property may significantly impact the meaning or presentation of an object. Certain properties (for example, <pref>aria-multiline</pref>) are less likely to change than <a class="termref" href="#dfn-state">states</a>, but note that the frequency of change difference is not a rule. A few properties, such as <pref>aria-activedescendant</pref>, <pref>aria-valuenow</pref>, and <pref>aria-valuetext</pref> are expected to change often. See <a href="http://www.w3.org/TR/wai-aria/states_and_properties#statevsprop">clarification of states versus properties</a>.</p>
+      <p><a class="termref internalDFN" data-lt="attribute" href="#dfn-attributes" data-link-type="dfn">Attributes</a> that are essential to the nature of a given <a href="#dfn-objects" class="internalDFN" data-link-type="dfn">object</a>, or that represent a data value associated with the object. A change of a property may significantly impact the meaning or presentation of an object. Certain properties (for example, <pref>aria-multiline</pref>) are less likely to change than <a class="termref respec-offending-element" href="#dfn-state">states</a>, but note that the frequency of change difference is not a rule. A few properties, such as <pref>aria-activedescendant</pref>, <pref>aria-valuenow</pref>, and <pref>aria-valuetext</pref> are expected to change often. See <a href="http://www.w3.org/TR/wai-aria/states_and_properties#statevsprop">clarification of states versus properties</a>.</p>
     </dd>
     <dt><dfn data-lt="relationships|relationship" data-dfn-type="dfn" id="dfn-relationships">Relationship</dfn></dt>
     <dd>
@@ -1077,7 +1084,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </dd>
     <dt><dfn data-lt="states|state" data-dfn-type="dfn" id="dfn-states">State</dfn></dt>
     <dd>
-      <p>A state is a dynamic <a class="termref" href="#dfn-property">property</a> expressing characteristics of an <a href="#dfn-objects" class="internalDFN" data-link-type="dfn">object</a> that may change in response to user action or automated processes. States do not affect the essential nature of the object, but represent data associated with the object or user interaction possibilities. See <a href="http://www.w3.org/TR/wai-aria/states_and_properties#statevsprop">clarification of states versus properties</a>.</p>
+      <p>A state is a dynamic <a class="termref respec-offending-element" href="#dfn-property">property</a> expressing characteristics of an <a href="#dfn-objects" class="internalDFN" data-link-type="dfn">object</a> that may change in response to user action or automated processes. States do not affect the essential nature of the object, but represent data associated with the object or user interaction possibilities. See <a href="http://www.w3.org/TR/wai-aria/states_and_properties#statevsprop">clarification of states versus properties</a>.</p>
     </dd>
     <dt><dfn data-dfn-type="dfn" id="dfn-sub-document">Sub-document</dfn></dt>
     <dd>
@@ -1097,7 +1104,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </dd>
     <dt><dfn data-dfn-type="dfn" id="dfn-understandable">Understandable</dfn></dt>
     <dd>
-      <p>Presentable to users in ways they can construct an appropriate meaning. References in this document relate to <cite><a href="http://www.w3.org/TR/WCAG20/#understandable"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0 Principle 3: Information and the operation of user interface must be understandable</a></cite> [<cite><a class="bibref" href="#bib-WCAG20">WCAG20</a></cite>].</p>
+      <p>Presentable to users in ways they can construct an appropriate meaning. References in this document relate to <cite><a href="http://www.w3.org/TR/WCAG20/#understandable"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0 Principle 3: Information and the operation of user interface must be understandable</a></cite> [<cite><a class="bibref" href="#bib-wcag20">WCAG20</a></cite>].</p>
     </dd>
     <dt><dfn data-lt="user agents|user agent" data-dfn-type="dfn" id="dfn-user-agents">User Agent</dfn></dt>
     <dd>
@@ -1109,7 +1116,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </dd>
     <dt><dfn data-lt="widgets|widget" data-dfn-type="dfn" id="dfn-widgets">Widget</dfn></dt>
     <dd>
-      <p>Discrete user interface <a class="termref" href="#dfn-object">object</a> with which the user can interact. Widgets range from simple objects that have one value or operation (e.g., check boxes and menu items), to complex objects that contain many managed sub-objects (e.g., trees and grids).</p>
+      <p>Discrete user interface <a class="termref respec-offending-element" href="#dfn-object">object</a> with which the user can interact. Widgets range from simple objects that have one value or operation (e.g., check boxes and menu items), to complex objects that contain many managed sub-objects (e.g., trees and grids).</p>
     </dd>
   </dl>
 </div>
@@ -1141,10 +1148,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 					<dt id="valuetype_token_list">token list</dt>
 					<dd>A list of one or more tokens.</dd>
 					<dt id="valuetype_uri">URI</dt>
-					<dd>A Uniform Resource Identifier as defined by <cite><a href="http://www.ietf.org/rfc/rfc3986.txt">RFC 3986</a></cite> [<cite><a class="bibref" href="#bib-RFC3986">RFC3986</a></cite>]. It may reference a separate document, or a content fragment identifier in a separate document, or a content fragment identifier within the same document.</dd>
+					<dd>A Uniform Resource Identifier as defined by <cite><a href="http://www.ietf.org/rfc/rfc3986.txt">RFC 3986</a></cite> [<cite><a class="bibref" href="#bib-rfc3986">RFC3986</a></cite>]. It may reference a separate document, or a content fragment identifier in a separate document, or a content fragment identifier within the same document.</dd>
 				</dl>
 				<p>The "undefined" value, when allowed on a state or property, is an explicit indication that the state or property is not set. The value is used on states and properties that support tokens, and the "undefined" value is a string that is one of the allowed tokens. It is also used on some states and properties that accept true/false values, when "undefined" has a different meaning than "false".</p>
-				<p>These are generic types for states and properties, but do not define specific representation. See <a href="#state_property_processing" class="specref">State and Property Attribute Processing</a> for details on how these values are expressed and handled in host languages.</p>
+				<p>These are generic types for states and properties, but do not define specific representation. See <a href="#state_property_processing" class="specref respec-offending-element">State and Property Attribute Processing</a> for details on how these values are expressed and handled in host languages.</p>
 			</section>
 		</section>
 
@@ -1235,9 +1242,12 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 					<li>On the same element or a descendant element, as appropriate to the context, set the <a href="https://www.w3.org/TR/microdata/#dfn-attr-itemprop"><code>itemprop</code> attribute</a>, using the name of the personalization semantics property as the value of the attribute.</li>
 					<li>On the element for which <code>itemprop</code> is set, set the <a href="https://www.w3.org/TR/microdata/#dfn-content"><code>content</code> attribute</a> to the appropriate value for the property.</li>
 				</ul>
-				<div class="example"><div class="example-title marker"><span>Example 1</span><span style="text-transform: none">: Action property in HTML using HTML Microdata</span></div><pre class="hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">itemscope</span> <span class="hljs-attr">itemtype</span>=<span class="hljs-string">"https://www.w3.org/ns/aui/"</span> <span class="hljs-attr">itemprop</span>=<span class="hljs-string">"action"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"undo"</span>&gt;</span>
+				<div class="example">
+          <div class="marker"><span>Example 1</span><span class="example-title">: Action property in HTML using HTML Microdata</span></div>
+          <pre class="hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">itemscope</span> <span class="hljs-attr">itemtype</span>=<span class="hljs-string">"https://www.w3.org/ns/aui/"</span> <span class="hljs-attr">itemprop</span>=<span class="hljs-string">"action"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"undo"</span>&gt;</span>
   Revert
-<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></pre></div>
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></pre>
+        </div>
 			</section>
 			<section id="rdfa">
 				<h3 id="a-5-rdfa"><span class="secno">A.5 </span>RDFa<span class="permalink"><a href="#rdfa" aria-label="Permalink for A.5 RDFa" title="Permalink for A.5 RDFa"><span>§</span></a></span></h3>
@@ -1304,16 +1314,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 	
 
-<section id="references" class="appendix"><!--OddPage--><h2 id="c-references"><span class="secno">C. </span>References<span class="permalink"><a href="#references" aria-label="Permalink for C. References" title="Permalink for C. References"><span>§</span></a></span></h2><section id="informative-references"><h3 id="c-1-informative-references"><span class="secno">C.1 </span>Informative references<span class="permalink"><a href="#informative-references" aria-label="Permalink for C.1 Informative references" title="Permalink for C.1 Informative references"><span>§</span></a></span></h3><dl class="bibliography"><dt id="bib-AT-SPI">[AT-SPI]</dt><dd><a href="https://developer.gnome.org/libatspi/stable/"><cite>Assistive Technology Service Provider Interface</cite></a>.  The GNOME Project. URL: <a href="https://developer.gnome.org/libatspi/stable/">https://developer.gnome.org/libatspi/stable/</a>
-</dd><dt id="bib-ATK">[ATK]</dt><dd><a href="https://developer.gnome.org/atk/stable/"><cite>ATK - Accessibility Toolkit</cite></a>.  The GNOME Project. URL: <a href="https://developer.gnome.org/atk/stable/">https://developer.gnome.org/atk/stable/</a>
-</dd><dt id="bib-AXAPI">[AXAPI]</dt><dd><a href="https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078"><cite>Accessibility Programming Guide for OS X</cite></a>.  Apple Corporation. URL: <a href="https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078">https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078</a>
-</dd><dt id="bib-IAccessible2">[IAccessible2]</dt><dd><a href="https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2"><cite>IAccessible2</cite></a>.  Linux Foundation. URL: <a href="https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2">https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2</a>
-</dd><dt id="bib-microdata">[microdata]</dt><dd><a href="https://www.w3.org/TR/microdata/"><cite>HTML Microdata</cite></a>. Charles McCathie Nevile; Dan Brickley; Ian Hickson. W3C. 26 April 2018. W3C Working Draft. URL: <a href="https://www.w3.org/TR/microdata/">https://www.w3.org/TR/microdata/</a>
-</dd><dt id="bib-MSAA">[MSAA]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/ms697707.aspx"><cite>Microsoft Active Accessibility (MSAA) 2.0</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/ms697707.aspx">https://msdn.microsoft.com/en-us/library/ms697707.aspx</a>
-</dd><dt id="bib-RFC3986">[RFC3986]</dt><dd><a href="https://tools.ietf.org/html/rfc3986"><cite>Uniform Resource Identifier (URI): Generic Syntax</cite></a>. T. Berners-Lee; R. Fielding; L. Masinter. IETF. January 2005. Internet Standard. URL: <a href="https://tools.ietf.org/html/rfc3986">https://tools.ietf.org/html/rfc3986</a>
-</dd><dt id="bib-UI-AUTOMATION">[UI-AUTOMATION]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx"><cite>UI Automation</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx">https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx</a>
-</dd><dt id="bib-UIA-EXPRESS">[UIA-EXPRESS]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx"><cite>The IAccessibleEx Interface</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx">https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx</a>
-</dd><dt id="bib-WAI-ARIA-IMPLEMENTATION">[WAI-ARIA-IMPLEMENTATION]</dt><dd><a href="https://www.w3.org/TR/wai-aria-implementation/"><cite>WAI-ARIA 1.0 User Agent Implementation Guide</cite></a>. Joseph Scheuhammer; Michael Cooper. W3C. 20 March 2014. W3C Recommendation. URL: <a href="https://www.w3.org/TR/wai-aria-implementation/">https://www.w3.org/TR/wai-aria-implementation/</a>
-</dd><dt id="bib-WAI-ARIA-PRACTICES">[WAI-ARIA-PRACTICES]</dt><dd><a href="https://www.w3.org/TR/wai-aria-practices/"><cite>WAI-ARIA 1.0 Authoring Practices</cite></a>. Joseph Scheuhammer; Michael Cooper. W3C. 14 July 2016. W3C Working Draft. URL: <a href="https://www.w3.org/TR/wai-aria-practices/">https://www.w3.org/TR/wai-aria-practices/</a>
-</dd><dt id="bib-WCAG20">[WCAG20]</dt><dd><a href="https://www.w3.org/TR/WCAG20/"><cite>Web Content Accessibility Guidelines (WCAG) 2.0</cite></a>. Ben Caldwell; Michael Cooper; Loretta Guarino Reid; Gregg Vanderheiden et al. W3C. 11 December 2008. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WCAG20/">https://www.w3.org/TR/WCAG20/</a>
-</dd></dl></section></section><p role="navigation" id="back-to-top"><a href="#title"><abbr title="Back to Top">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
+<section id="references" class="appendix">
+      <!--OddPage--><h2 id="c-references"><span class="secno">C. </span>References<span class="permalink"><a href="#references" aria-label="Permalink for C. References" title="Permalink for C. References"><span>§</span></a></span></h2>
+      
+    <section id="informative-references">
+        <h3 id="c-1-informative-references"><span class="secno">C.1 </span>Informative references<span class="permalink"><a href="#informative-references" aria-label="Permalink for C.1 Informative references" title="Permalink for C.1 Informative references"><span>§</span></a></span></h3>
+      <dl class="bibliography">
+        <dt id="bib-at-spi">[AT-SPI]</dt><dd><a href="https://developer.gnome.org/libatspi/stable/"><cite>Assistive Technology Service Provider Interface</cite></a>.  The GNOME Project. URL: <a href="https://developer.gnome.org/libatspi/stable/">https://developer.gnome.org/libatspi/stable/</a></dd><dt id="bib-atk">[ATK]</dt><dd><a href="https://developer.gnome.org/atk/stable/"><cite>ATK - Accessibility Toolkit</cite></a>.  The GNOME Project. URL: <a href="https://developer.gnome.org/atk/stable/">https://developer.gnome.org/atk/stable/</a></dd><dt id="bib-axapi">[AXAPI]</dt><dd><a href="https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078"><cite>Accessibility Programming Guide for OS X</cite></a>.  Apple Corporation. URL: <a href="https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078">https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078</a></dd><dt id="bib-iaccessible2">[IAccessible2]</dt><dd><a href="https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2"><cite>IAccessible2</cite></a>.  Linux Foundation. URL: <a href="https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2">https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2</a></dd><dt id="bib-microdata">[microdata]</dt><dd><a href="https://www.w3.org/TR/microdata/"><cite>HTML Microdata</cite></a>. Charles McCathie Nevile; Dan Brickley; Ian Hickson. W3C. 26 April 2018. W3C Working Draft. URL: <a href="https://www.w3.org/TR/microdata/">https://www.w3.org/TR/microdata/</a></dd><dt id="bib-msaa">[MSAA]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/ms697707.aspx"><cite>Microsoft Active Accessibility (MSAA) 2.0</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/ms697707.aspx">https://msdn.microsoft.com/en-us/library/ms697707.aspx</a></dd><dt id="bib-rfc3986">[RFC3986]</dt><dd><a href="https://tools.ietf.org/html/rfc3986"><cite>Uniform Resource Identifier (URI): Generic Syntax</cite></a>. T. Berners-Lee; R. Fielding; L. Masinter. IETF. January 2005. Internet Standard. URL: <a href="https://tools.ietf.org/html/rfc3986">https://tools.ietf.org/html/rfc3986</a></dd><dt id="bib-ui-automation">[UI-AUTOMATION]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx"><cite>UI Automation</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx">https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx</a></dd><dt id="bib-uia-express">[UIA-EXPRESS]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx"><cite>The IAccessibleEx Interface</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx">https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx</a></dd><dt id="bib-wai-aria-implementation">[WAI-ARIA-IMPLEMENTATION]</dt><dd><a href="https://www.w3.org/TR/wai-aria-implementation/"><cite>WAI-ARIA 1.0 User Agent Implementation Guide</cite></a>. Joseph Scheuhammer; Michael Cooper. W3C. 20 March 2014. W3C Recommendation. URL: <a href="https://www.w3.org/TR/wai-aria-implementation/">https://www.w3.org/TR/wai-aria-implementation/</a></dd><dt id="bib-wai-aria-practices">[WAI-ARIA-PRACTICES]</dt><dd><a href="https://www.w3.org/TR/wai-aria-practices/"><cite>WAI-ARIA 1.0 Authoring Practices</cite></a>. Joseph Scheuhammer; Michael Cooper. W3C. 14 July 2016. W3C Working Draft. URL: <a href="https://www.w3.org/TR/wai-aria-practices/">https://www.w3.org/TR/wai-aria-practices/</a></dd><dt id="bib-wcag20">[WCAG20]</dt><dd><a href="https://www.w3.org/TR/WCAG20/"><cite>Web Content Accessibility Guidelines (WCAG) 2.0</cite></a>. Ben Caldwell; Michael Cooper; Loretta Guarino Reid; Gregg Vanderheiden et al. W3C. 11 December 2008. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WCAG20/">https://www.w3.org/TR/WCAG20/</a></dd>
+      </dl></section></section><p role="navigation" id="back-to-top"><a href="#title"><abbr title="Back to Top">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
