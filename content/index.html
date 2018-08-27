@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 22.4.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
+<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 22.6.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
 span.example-title {
     text-transform: none;
 }
@@ -772,9 +772,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     "CR": "https://www.w3.org/TR/wai-aria-1.1/",
     "REC": "https://www.w3.org/TR/wai-aria-1.1/"
   },
-  "publishDate": "2018-08-13",
-  "publishISODate": "2018-08-13T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 13 August 2018"
+  "publishDate": "2018-08-27",
+  "publishISODate": "2018-08-27T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 27 August 2018"
 }</script><meta name="description" content="This document provides a vocabulary of terms that can be used to enhance web content with information about controls, symbols, and user interface elements. User agents use these semantics to augment or adapt content to the user scenario. This helps the user use and understand the content, and supports simplification and management of distractions."></head>
 	<body class="h-entry toc-inline"><div class="head">
   <a href="https://www.w3.org/" class="logo">
@@ -782,7 +782,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   </a>
   <h1 id="title" class="title p-name">Personalization Semantics Content Module 1.0</h1>
   
-  <h2 id="w3c-editor-s-draft-13-august-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-08-13">13 August 2018</time></h2>
+  <h2 id="w3c-editor-s-draft-27-august-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-08-27">27 August 2018</time></h2>
   <dl>
     <dt>This version:</dt><dd><a class="u-url" href="https://w3c.github.io/personalization-semantics/content/">https://w3c.github.io/personalization-semantics/content/</a></dd><dt>Latest published version:</dt><dd><a href="https://www.w3.org/TR/personalization-semantics-content-1.0/">https://www.w3.org/TR/personalization-semantics-content-1.0/</a></dd>
     <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/personalization-semantics/content/">https://w3c.github.io/personalization-semantics/content/</a></dd>
@@ -876,25 +876,25 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 			<!--OddPage--><h2 id="x2-use-cases"><span class="secno">2. </span>Use Cases<span class="permalink"><a href="#use-cases" aria-label="Permalink for 2. Use Cases" title="Permalink for 2. Use Cases"><span>§</span></a></span></h2>
 			<section id="use_case_simplification">
                     <h3 id="x2-1-simplification"><span class="secno">2.1 </span>Simplification<span class="permalink"><a href="#use_case_simplification" aria-label="Permalink for 2.1 Simplification" title="Permalink for 2.1 Simplification"><span>§</span></a></span></h3>
-                    <p><b>Requirement</b>: The user must be able to request a way to identify and differentiate between critical features, medium features and less important features. These need to be defined as important from a user perspective in the content. Typically, critical features may be used by many or most users, 90% of the time or more. High important features would be above 60% use. Medium important features would be 20% of users use it 20% of the time. Under 20% usage would be of low importance.</p>
+                    <p><b>Requirement</b>: The user must be able to request a way to identify and differentiate between critical features, medium features and less important features. These need to be defined as important from a user perspective in the content. Typically, critical features may be used by many or most users, 90% of the time or more. Highly important features would be above 60% use. Medium important features would be 20% of users use it 20% of the time. Under 20% usage would be of low importance.</p>
                     <p><b>User experience</b>: Based on personalization setting the user can see less options. A sample user experience is available at <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html">https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html </a></p>
                     <p>Relevant properties: <a href="#simplification" class="respec-offending-element"><code>simplification</code></a></p>
 </section>
 <section id="use_case_adding_context">
                     <h3 id="x2-2-adding-context"><span class="secno">2.2 </span>Adding Context<span class="permalink"><a href="#use_case_adding_context" aria-label="Permalink for 2.2 Adding Context" title="Permalink for 2.2 Adding Context"><span>§</span></a></span></h3>
-                    <p><b>Requirement:</b> Having familiar terms and symbols is key to being able to use the web. However what is familiar for one user may be strange for another requiring them to learn new symbols. If a user agent or script knows the context of links, buttons, and other page elements then symbols and text used can be ones that the user understands. This can include: </p>
+                    <p><b>Requirement:</b> Having familiar terms and symbols is key to being able to use the web. However, what is familiar for one user may be strange for another, requiring them to learn new symbols. If a user agent or script knows the context of links, buttons, and other page elements then symbols and text used can be ones that the user understands. This can include: </p>
                     <ul>
                         <li> Symbols and graphics that they are familiar with </li>
                         <li> Tooltips </li>
                         <li> Language the use can understand </li>
-                        <li> Keyboard short cuts </li>
+                        <li> Keyboard shortcuts </li>
                     </ul>
                     <p>For that we need to standardize supportive syntax and terms that can be linked to associated symbols, terms, translations and explanations, for the individual, via an attribute.</p>
-                    <p><b>Example user experience:</b> If an author gives to a button a role "send" then, without any work by the author, the button could be automatically rendered with a symbol, term, and/or tooltips that is understandable by a particular user. It could automatically imply F1 help that explains the send function in simple terms. It could be identified with a keyboard short cut that will always be used for send. In addition it could be identified as important and always rendered, or rendered as a large button. This would enable a consistent UI experience across applications and websites.</p>
+                    <p><b>Example user experience:</b> If an author gives to a button a role "send" then, without any work by the author, the button could be automatically rendered with a symbol, term, and/or tooltips that is understandable by a particular user. It could automatically imply F1 help that explains the send function in simple terms. It could be identified with a keyboard shortcut that will always be used for send. In addition, it could be identified as important and always rendered, or rendered as a large button. This would enable a consistent UI experience across applications and websites.</p>
                     <p>Relevant properties: <a href="#action" class="respec-offending-element"><code>action</code></a>, <a href="#destination" class="respec-offending-element"><code>destination</code></a>, <a href="#field" class="respec-offending-element"><code>field</code></a></p>
                     <section id="use_case_general_context">
                         <h4 id="x2-2-1-general-context"><span class="secno">2.2.1 </span>General Context<span class="permalink"><a href="#use_case_general_context" aria-label="Permalink for 2.2.1 General Context" title="Permalink for 2.2.1 General Context"><span>§</span></a></span></h4>
-                        <p><b>Requirement: </b> One important factor in optimizing the personalization of a product or service is to ensure that the personalization is appropriate for the current context of use as well as what is relevant for the user. For example a female user with a cognitive disability may need less options, and options that are for men are less likely to be relevant for her and may be demoted to bellow the scroll or placed under a "more option" button.</p>
+                        <p><b>Requirement: </b> One important factor in optimizing the personalization of a product or service is to ensure that the personalization is appropriate for the current context of use as well as what is relevant for the user. For example a female user with a cognitive disability may need less options, and options that are for men are less likely to be relevant for her and may be demoted to below the scroll or placed under a "more option" button.</p>
                         <p>Relevant properties: <a href="#context" class="respec-offending-element">context</a></p>
                     </section>
                     <section id="use_case_interoperable_symbols">
@@ -922,7 +922,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     	<h4 id="x3-1-2-example"><span class="secno">3.1.2 </span>Example<span class="permalink"><a href="#action-example" aria-label="Permalink for 3.1.2 Example" title="Permalink for 3.1.2 Example"><span>§</span></a></span></h4>
     	<div class="property-example">               	
                 	<p>The below example section show how <code>action</code> used when coding.</p>
-    				<div class="example">
+    				<div class="example" id="ex-1-action-using-aria">
           <div class="marker"><span>Example 1</span><span class="example-title">: Action Using ARIA</span></div>
           <pre class="hljs javascript" aria-busy="false">For example: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aui-action</span>=<span class="hljs-string">"undo"</span> &gt;</span>Revert<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span></pre>
         </div>
@@ -1302,7 +1302,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 	<section id="destination-example">
 		<h4 id="x3-2-2-example"><span class="secno">3.2.2 </span>Example<span class="permalink"><a href="#destination-example" aria-label="Permalink for 3.2.2 Example" title="Permalink for 3.2.2 Example"><span>§</span></a></span></h4>
 		<p>The below example section show how <code>destination</code> used when coding.</p>
-    	<div class="example">
+    	<div class="example" id="ex-2-action-using-aria">
           <div class="marker"><span>Example 2</span><span class="example-title">: Action Using ARIA</span></div>
           <pre class="hljs xml" aria-busy="false">      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"home.html"</span> <span class="hljs-attr">aui-destination</span>=<span class="hljs-string">"home"</span>&gt;</span>our main page<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 See the destination sample user experience.</pre>
@@ -1792,7 +1792,7 @@ See the destination sample user experience.</pre>
 							 <div class="ednote" id="issue-container-generatedID-14"><div role="heading" class="ednote-title marker" id="h-ednote-11" aria-level="5"><span>Editor's note</span></div><p class="">This was formerly <code>importance</code>. However different people may feel that sections that would be hidden in a simplified version are still very important, such as marketing content or legal terms.)</p></div>
 
 							<div class="note" id="issue-container-generatedID-15"><div role="heading" class="note-title marker" id="h-note-3" aria-level="5"><span>Note</span></div><div class="">
-								<p>These semantics aid simplification. But what content is most useful to a user varies from user to user. For example, men may be more interested in mens clothing, and may not be interested in the more frequently use womens clothing option. For that reason we may add context for elements that will help the personalization agent select the most useful content for a given user (see the <a href="#context" class="respec-offending-element">context</a> attribute). This is also necessary for reminders (see bellow).</p>
+								<p>These semantics aid simplification. But what content is most useful to a user varies from user to user. For example, men may be more interested in men's clothing, and may not be interested in the more frequently use women's clothing option. For that reason we may add context for elements that will help the personalization agent select the most useful content for a given user (see the <a href="#context" class="respec-offending-element">context</a> attribute). This is also necessary for reminders (see below).</p>
 								<p>It is worth mentioning that a lot of this information is known for personalization of advertisements and content optimization. </p>
 							</div></div>
 				</div>
@@ -1803,7 +1803,7 @@ See the destination sample user experience.</pre>
     	<div class="example">
     		<div class="example-title marker"><span>Example:</span><span style="text-transform: none"> Simplification Using ARIA</span>
     		</div>
-			<pre aria-busy="false" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">aui-simplification</span>=<span class="hljs-string">"critical"</span> <span class="hljs-attr">aria-function</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Submit"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>/&gt;</span></pre>
+			<pre aria-busy="false" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">aui-simplification</span>=<span class="hljs-string">"critical"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Submit"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>/&gt;</span></pre>
 		</div>
     </section>
     <section id="characteristics-2">
@@ -1846,29 +1846,28 @@ See the destination sample user experience.</pre>
 							</thead>
 							<tbody>
 							<tr>
-														<th class="value-name" scope="row">simplest</th>
+														<th class="value-name" scope="row">critical</th>
 														<td class="value-description">This setting should be used on: <ul>
-															<li> Elements that are essential for the key function (from the user perspective) of the page (Example: The send button for an email draft in an email application) or</li>
-															<li> Elements that are sometimes critical to a user being able to use the site, such as "save my work" or "emergency instructions" or</li>
-															<li> Elements that are used by over 90% of a user group (such as parents or teachers) use this element most times they use the content<br>
+															<li> Elements that are essential for the key function (from the user perspective) of the page. Example: The send button for an email draft in an email application.</li>
+															<li> Elements that are sometimes critical to use the site, such as "save my work" or "emergency instructions".</li>
+															<li> Elements that are used by over 90% of a user group (such as parents or teachers) most times they interact with the content.<br>
 															</li>
 														</ul>
-
-								<p>Typically 3 links or buttons would be considered "simplest"</p></td>
+														</td>
 							</tr>
 								<tr>
 									<th class="value-name" scope="row"><strong class="default">medium (default)</strong></th>
 									<td class="value-description">
 									 This setting should be used on: <ul>
-										<li> Elements that are used frequent but are not essential for the key functioning pf the application. (Example: The delete button for an email draft in an email application) or</li>
-										<li> Elements that are sometimes important to a user being able to use the site, such as settings or</li>
-										<li> Elements that are used by frequently (over 60%) by a user group (such as parents or teachers) use this element most times they use the content</li>
+										<li> Elements that are used frequently but are not essential for the key functioning of the application. Example: The delete button for an email draft in an email application.</li>
+										<li> Elements that are sometimes important for a user to interact with the site, such as settings to change colors or fonts. </li>
+										<li> Elements that are used by over 60% of a user group (such as parents or teachers) when they interact with the content.</li>
 									</ul></td>
 								</tr>
 
 								<tr>
 									<th class="value-name" scope="row">low</th>
-									<td class="value-description">This setting should be used on elements that are rarely used or only used by advanced users. (Example: The terms and services or the archive button for an email application.) 
+									<td class="value-description">This setting should be used on elements that are rarely used or only used by advanced users. Example: The terms and services or the archive button for an email application. 
 							</td>
 								</tr>
 
@@ -1895,11 +1894,11 @@ See the destination sample user experience.</pre>
 	</section>
 	<section id="distraction-example">
 		<h4 id="x3-5-2-example"><span class="secno">3.5.2 </span>Example<span class="permalink"><a href="#distraction-example" aria-label="Permalink for 3.5.2 Example" title="Permalink for 3.5.2 Example"><span>§</span></a></span></h4>
-		<p>The below example section show how <code>distraction</code> used when coding.</p>
+		<p>The below example section shows how <code>distraction</code> is used when coding.</p>
    		<div class="example">
     	<div class="example-title marker"><span>Example:</span><span style="text-transform: none"> Distraction Using ARIA</span>
     	</div>
-		   &lt;aui-distraction="moving ad"&gt;
+		   <pre aria-busy="false" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"animated.gif"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"animated banner advertising for Foobars"</span> <span class="hljs-attr">aui-distraction</span>=<span class="hljs-string">"moving ad"</span>&gt;</span></pre>
 		</div>
     </section>
     <section id="characteristics-3">
@@ -2012,7 +2011,7 @@ See the destination sample user experience.</pre>
 		</div>
 		
 	<p>
-When there is more then one concept, multiple concepts can be referenced by separating them with white space. The order of multiple concepts should be subject predicate object. Both omissions and  multiple triples are allowed.</p>
+When there is more than one concept, multiple concepts can be referenced by separating them with white space. The order of multiple concepts should be subject predicate object. Both omissions and  multiple triples are allowed.</p>
     </section>
     <section id="characteristics-4">
     	<h4 id="x3-6-3-characteristics"><span class="secno">3.6.3 </span>Characteristics<span class="permalink"><a href="#characteristics-4" aria-label="Permalink for 3.6.3 Characteristics" title="Permalink for 3.6.3 Characteristics"><span>§</span></a></span></h4>
