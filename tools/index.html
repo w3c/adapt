@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 22.6.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
+<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 23.0.3"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
 div.issue-title, div.note-title , div.ednote-title, div.warning-title {
     padding-right:  1em;
     min-width: 7.5em;
@@ -87,29 +87,6 @@ input.task-list-item-checkbox {
 .issue a.respec-label-light {
   color: #000;
   background-color: #fff;
-}
-</style><style>/* --- PERMALINKS --- */
-
-.permalink {
-  width: 1px;
-  height: 1px;
-  overflow: visible;
-  font-size: 10pt;
-  font-style: normal;
-  vertical-align: middle;
-  margin-left: 4px;
-  float: right;
-}
-
-.permalink a, .permalink a:link, .permalink a:visited, .permalink a:hover, .permalink a:focus, .permalink a:active {
-  background:transparent !important;
-  text-decoration:none;
-  font-weight: bold;
-  color:#666 !important;
-}
-
-.permalink abbr {
-  border:0;
 }
 </style>
 		<title>Personalization Tools 1.0</title>
@@ -227,11 +204,11 @@ table.simple {
 
 /* --- DL --- */
 
-.section dd > p:first-child {
+.section dd>p:first-child {
   margin-top: 0;
 }
 
-.section dd > p:last-child {
+.section dd>p:last-child {
   margin-bottom: 0;
 }
 
@@ -244,7 +221,7 @@ table.simple {
   margin-bottom: 0;
 }
 
-#issue-summary > ul,
+#issue-summary>ul,
 .respec-dfn-list {
   column-count: 2;
 }
@@ -260,7 +237,7 @@ details.respec-tests-details {
   vertical-align: top;
 }
 
-details.respec-tests-details > * {
+details.respec-tests-details>* {
   padding-right: 2em;
 }
 
@@ -273,20 +250,82 @@ details.respec-tests-details[open] {
   padding-bottom: 0.5em;
 }
 
-details.respec-tests-details[open] > summary {
+details.respec-tests-details[open]>summary {
   border-bottom: thin solid #cad3e2;
   padding-left: 1em;
   margin-bottom: 1em;
   line-height: 2em;
 }
 
-details.respec-tests-details > ul {
+details.respec-tests-details>ul {
   width: 100%;
   margin-top: -0.3em;
 }
 
-details.respec-tests-details > li {
+details.respec-tests-details>li {
   padding-left: 1em;
+}
+
+a[href].self-link:hover {
+  opacity: 1;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  position: relative;
+}
+
+aside.example .marker > a.self-link {
+  color: inherit;
+}
+
+h2>a.self-link,
+h3>a.self-link,
+h4>a.self-link,
+h5>a.self-link,
+h6>a.self-link {
+  border: none;
+  color: inherit;
+  font-size: 83%;
+  height: 2em;
+  left: -1.6em;
+  opacity: .5;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  top: 0;
+  transition: opacity .2s;
+  width: 2em;
+}
+
+h2>a.self-link::before,
+h3>a.self-link::before,
+h4>a.self-link::before,
+h5>a.self-link::before,
+h6>a.self-link::before {
+  content: "§";
+  display: block;
+}
+
+@media (max-width: 767px) {
+  dd {
+    margin-left: 0;
+  }
+
+  /* Don't position self-link in headings off-screen */
+  h2>a.self-link,
+  h3>a.self-link,
+  h4>a.self-link,
+  h5>a.self-link,
+  h6>a.self-link {
+    left: auto;
+    top: auto;
+  }
 }
 
 @media print {
@@ -744,9 +783,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     "CR": "https://www.w3.org/TR/wai-aria-1.1/",
     "REC": "https://www.w3.org/TR/wai-aria-1.1/"
   },
-  "publishDate": "2018-08-27",
-  "publishISODate": "2018-08-27T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 27 August 2018"
+  "publishDate": "2018-09-20",
+  "publishISODate": "2018-09-20T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 20 September 2018"
 }</script><meta name="description" content="This document list examples of the tools defined values, this is an extension of Personalization Explainer 1.0."></head>
 	<body class="h-entry toc-inline"><div class="head">
   <a href="https://www.w3.org/" class="logo">
@@ -754,7 +793,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   </a>
   <h1 id="title" class="title p-name">Personalization Tools 1.0</h1>
   
-  <h2 id="w3c-editor-s-draft-27-august-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-08-27">27 August 2018</time></h2>
+  <h2><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-09-20">20 September 2018</time></h2>
   <dl>
     <dt>This version:</dt><dd><a class="u-url" href="https://w3c.github.io/personalization-semantics/tools/">https://w3c.github.io/personalization-semantics/tools/</a></dd><dt>Latest published version:</dt><dd><a href="https://www.w3.org/TR/personalization-semantics-tools-1.0/">https://www.w3.org/TR/personalization-semantics-tools-1.0/</a></dd>
     <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/personalization-semantics/tools/">https://w3c.github.io/personalization-semantics/tools/</a></dd>
@@ -790,14 +829,14 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   <hr title="Separator for header">
 </div>
 
-		<section id="abstract" class="introductory"><!--OddPage--><h2 id="abstract-0">Abstract</h2>
+		<section id="abstract" class="introductory"><!--OddPage--><h2>Abstract</h2>
 			<p>This document list examples of the tools defined values, this is an extension of <a href="../">Personalization Explainer 1.0</a>. </p>
 		</section>
 		<section class="informative" id="introduction">
 
-			<!--OddPage--><h2 id="x1-introduction"><span class="secno">1. </span>Introduction<span class="permalink"><a href="#introduction" aria-label="Permalink for 1. Introduction" title="Permalink for 1. Introduction"><span>§</span></a></span></h2><p><em>This section is non-normative.</em></p>
+			<!--OddPage--><h2 id="x1-introduction"><span class="secno">1. </span>Introduction<a class="self-link" aria-label="§" href="#introduction"></a></h2><p><em>This section is non-normative.</em></p>
 
-		<section id="sotd" class="introductory"><h2 id="status-of-this-document">Status of This Document</h2><p>
+		<section id="sotd" class="introductory"><h2 id="status-of-this-document">Status of This Document<a class="self-link" aria-label="§" href="#sotd"></a></h2><p>
         <em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em>
       </p><p>
           This document was published by the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> as an Editor's Draft.
@@ -836,7 +875,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           
           
         </p><p>This document is governed by the <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-        </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a href="#abstract" class="tocxref">Abstract</a></li><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a><ol class="toc"><li class="tocline"><a href="#sotd" class="tocxref">Status of This Document</a></li></ol></li><li class="tocline"><a href="#use-cases" class="tocxref"><span class="secno">2. </span>Use Cases</a><ol class="toc"><li class="tocline"><a href="#stepindicator" class="tocxref"><span class="secno">2.1 </span>Step Indicator</a></li><li class="tocline"><a href="#reminder" class="tocxref"><span class="secno">2.2 </span>Reminders and Messages</a></li></ol></li><li class="tocline"><a href="#tools" class="tocxref"><span class="secno">3. </span>Tools</a><ol class="toc"><li class="tocline"><a href="#all-stepindicator-explanation" class="tocxref"><span class="secno">3.1 </span>All the Step Indicator Properties </a><ol class="toc"><li class="tocline"><a href="#stepindicator-usage-example-explanation" class="tocxref"><span class="secno">3.1.1 </span>Step Indicator Usage</a><ol class="toc"><li class="tocline"><a href="#description" class="tocxref"><span class="secno">3.1.1.1 </span>Description</a></li><li class="tocline"><a href="#stepindicator-usage-example" class="tocxref"><span class="secno">3.1.1.2 </span>Example</a></li></ol></li></ol></li><li class="tocline"><a href="#all-the-message-properties" class="tocxref"><span class="secno">3.2 </span>All the message properties </a><ol class="toc"><li class="tocline"><a href="#messageimportance-explanation" class="tocxref"><span class="secno">3.2.1 </span>messageimportance</a><ol class="toc"><li class="tocline"><a href="#description-0" class="tocxref"><span class="secno">3.2.1.1 </span>Description</a></li><li class="tocline"><a href="#messageimportance-example" class="tocxref"><span class="secno">3.2.1.2 </span>Example</a></li><li class="tocline"><a href="#characteristics" class="tocxref"><span class="secno">3.2.1.3 </span>Characteristics</a></li><li class="tocline"><a href="#values" class="tocxref"><span class="secno">3.2.1.4 </span>Values</a></li></ol></li><li class="tocline"><a href="#messagefrom-explanation" class="tocxref"><span class="secno">3.2.2 </span>messagefrom</a><ol class="toc"><li class="tocline"><a href="#description-1" class="tocxref"><span class="secno">3.2.2.1 </span>Description</a></li><li class="tocline"><a href="#messagefrom-example" class="tocxref"><span class="secno">3.2.2.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-0" class="tocxref"><span class="secno">3.2.2.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a href="#messagecontext-explanation" class="tocxref"><span class="secno">3.2.3 </span>messagecontext</a><ol class="toc"><li class="tocline"><a href="#description-2" class="tocxref"><span class="secno">3.2.3.1 </span>Description</a></li><li class="tocline"><a href="#messagecontext-example" class="tocxref"><span class="secno">3.2.3.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-1" class="tocxref"><span class="secno">3.2.3.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a href="#messagetime-explanation" class="tocxref"><span class="secno">3.2.4 </span>messagetime</a><ol class="toc"><li class="tocline"><a href="#description-3" class="tocxref"><span class="secno">3.2.4.1 </span>Description</a></li><li class="tocline"><a href="#messagetime-example" class="tocxref"><span class="secno">3.2.4.2 </span>messagetime</a></li><li class="tocline"><a href="#characteristics-2" class="tocxref"><span class="secno">3.2.4.3 </span>Characteristics</a></li></ol></li></ol></li></ol></li><li class="tocline"><a href="#vocabulary-implementations" class="tocxref"><span class="secno">A. </span>Vocabulary Implementations</a></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a href="#ack_group" class="tocxref"><span class="secno">B.1 </span>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a href="#ack_others" class="tocxref"><span class="secno">B.2 </span>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a href="#ack_funders" class="tocxref"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">C.1 </span>Informative references</a></li></ol></li></ol></nav>
+        </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents<a class="self-link" aria-label="§" href="#introduction"></a></h2><ol class="toc"><li class="tocline"><a href="#abstract" class="tocxref">Abstract</a></li><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a><ol class="toc"><li class="tocline"><a href="#sotd" class="tocxref">Status of This Document</a></li></ol></li><li class="tocline"><a href="#use-cases" class="tocxref"><span class="secno">2. </span>Use Cases</a><ol class="toc"><li class="tocline"><a href="#stepindicator" class="tocxref"><span class="secno">2.1 </span>Step Indicator</a></li><li class="tocline"><a href="#reminder" class="tocxref"><span class="secno">2.2 </span>Reminders and Messages</a></li></ol></li><li class="tocline"><a href="#tools" class="tocxref"><span class="secno">3. </span>Tools</a><ol class="toc"><li class="tocline"><a href="#all-stepindicator-explanation" class="tocxref"><span class="secno">3.1 </span>All the Step Indicator Properties </a><ol class="toc"><li class="tocline"><a href="#stepindicator-usage-example-explanation" class="tocxref"><span class="secno">3.1.1 </span>Step Indicator Usage</a><ol class="toc"><li class="tocline"><a href="#description" class="tocxref"><span class="secno">3.1.1.1 </span>Description</a></li><li class="tocline"><a href="#stepindicator-usage-example" class="tocxref"><span class="secno">3.1.1.2 </span>Example</a></li></ol></li></ol></li><li class="tocline"><a href="#all-the-message-properties" class="tocxref"><span class="secno">3.2 </span>All the message properties </a><ol class="toc"><li class="tocline"><a href="#messageimportance-explanation" class="tocxref"><span class="secno">3.2.1 </span>messageimportance</a><ol class="toc"><li class="tocline"><a href="#description-0" class="tocxref"><span class="secno">3.2.1.1 </span>Description</a></li><li class="tocline"><a href="#messageimportance-example" class="tocxref"><span class="secno">3.2.1.2 </span>Example</a></li><li class="tocline"><a href="#characteristics" class="tocxref"><span class="secno">3.2.1.3 </span>Characteristics</a></li><li class="tocline"><a href="#values" class="tocxref"><span class="secno">3.2.1.4 </span>Values</a></li></ol></li><li class="tocline"><a href="#messagefrom-explanation" class="tocxref"><span class="secno">3.2.2 </span>messagefrom</a><ol class="toc"><li class="tocline"><a href="#description-1" class="tocxref"><span class="secno">3.2.2.1 </span>Description</a></li><li class="tocline"><a href="#messagefrom-example" class="tocxref"><span class="secno">3.2.2.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-0" class="tocxref"><span class="secno">3.2.2.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a href="#messagecontext-explanation" class="tocxref"><span class="secno">3.2.3 </span>messagecontext</a><ol class="toc"><li class="tocline"><a href="#description-2" class="tocxref"><span class="secno">3.2.3.1 </span>Description</a></li><li class="tocline"><a href="#messagecontext-example" class="tocxref"><span class="secno">3.2.3.2 </span>Example</a></li><li class="tocline"><a href="#characteristics-1" class="tocxref"><span class="secno">3.2.3.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a href="#messagetime-explanation" class="tocxref"><span class="secno">3.2.4 </span>messagetime</a><ol class="toc"><li class="tocline"><a href="#description-3" class="tocxref"><span class="secno">3.2.4.1 </span>Description</a></li><li class="tocline"><a href="#messagetime-example" class="tocxref"><span class="secno">3.2.4.2 </span>messagetime</a></li><li class="tocline"><a href="#characteristics-2" class="tocxref"><span class="secno">3.2.4.3 </span>Characteristics</a></li></ol></li></ol></li></ol></li><li class="tocline"><a href="#vocabulary-implementations" class="tocxref"><span class="secno">A. </span>Vocabulary Implementations</a></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a href="#ack_group" class="tocxref"><span class="secno">B.1 </span>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a href="#ack_others" class="tocxref"><span class="secno">B.2 </span>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a href="#ack_funders" class="tocxref"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">C.1 </span>Informative references</a></li></ol></li></ol></nav>
 
 			<p>This document list examples of the tools defined values. This is an extension of <a href="../">Personalization Explainer 1.0</a>. </p>
 
@@ -847,9 +886,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 		</section>
 
 		<section id="use-cases">
-	<!--OddPage--><h2 id="x2-use-cases"><span class="secno">2. </span>Use Cases<span class="permalink"><a href="#use-cases" aria-label="Permalink for 2. Use Cases" title="Permalink for 2. Use Cases"><span>§</span></a></span></h2>
+	<!--OddPage--><h2 id="x2-use-cases"><span class="secno">2. </span>Use Cases<a class="self-link" aria-label="§" href="#use-cases"></a></h2>
 <section id="use_case_stepindicator">
-  <h3 id="stepindicator"><span class="secno">2.1 </span>Step Indicator<span class="permalink"><a href="#use_case_stepindicator" aria-label="Permalink for 2.1 Step Indicator" title="Permalink for 2.1 Step Indicator"><span>§</span></a></span></h3>
+  <h3 id="stepindicator"><span class="secno">2.1 </span>Step Indicator<a class="self-link" aria-label="§" href="#use_case_stepindicator"></a></h3>
   <p>
     <strong>Requirement:</strong> Users may have differences in both working and short-term memory. For some users the duration of working memory may be shorter than the average which is between 10-15 seconds. For some users the duration of short-term memory may be shorter than the average which is between 15-30 seconds.
   </p><p> Many processes consist of a sequence of separate steps or actions which must be performed by a user to complete a process or workflow. Users must be able to track completed tasks in order to identify their location in a process. In addition, a user must be able to navigate to completed tasks to make modifications or corrections.</p>
@@ -867,7 +906,7 @@ into breadcrumbs or linked steps that identify completed tasks, allow the user t
   </p> 
 </section>
 <section id="use_case_reminder">
-  <h3 id="reminder"><span class="secno">2.2 </span>Reminders and Messages<span class="permalink"><a href="#use_case_reminder" aria-label="Permalink for 2.2 Reminders and Messages" title="Permalink for 2.2 Reminders and Messages"><span>§</span></a></span></h3>
+  <h3 id="reminder"><span class="secno">2.2 </span>Reminders and Messages<a class="self-link" aria-label="§" href="#use_case_reminder"></a></h3>
   <p>
     <strong>Requirement: </strong>A mechanism for managing both system level and application level reminders and messages is a useful tool for people with a variety of cognitive disabilities including, memory impairment and users who are sensitive to distractions. We require a group of defined values that give users control over the amount of reminders and messages that are presented along with a mechanism for managing, prioritizing, managing and grouping reminders and messages.</p><p>
     </p><p>For example, users can disable push notifications and messages on applications such as Skype and Facebook across different devices, however, they may forget to re-enable these notifications and messages. The following defined values allow an alternative solution for users to manage reminders and messages by forming a cross-application and cross-device matrix that manages all reminders and messages. These values are based on a matrix for reminders and messages at the operating system, browser or cloud level. A user's contacts can be organized by importance or by groups. For example, the CEO of the company a user works for and a user's child care giver could both be set to critical. A user's contacts may also be grouped. Family members es.</p><p>
@@ -890,14 +929,14 @@ into breadcrumbs or linked steps that identify completed tasks, allow the user t
 </section>
 
 		<section id="tools">
-			<!--OddPage--><h2 id="x3-tools"><span class="secno">3. </span>Tools<span class="permalink"><a href="#tools" aria-label="Permalink for 3. Tools" title="Permalink for 3. Tools"><span>§</span></a></span></h2>
+			<!--OddPage--><h2 id="x3-tools"><span class="secno">3. </span>Tools<a class="self-link" aria-label="§" href="#tools"></a></h2>
 			<section id="all-stepindicator-explanation">
-	<h3 id="x3-1-all-the-step-indicator-properties"><span class="secno">3.1 </span>All the Step Indicator Properties <span class="permalink"><a href="#all-stepindicator-explanation" aria-label="Permalink for 3.1 All the Step Indicator Properties " title="Permalink for 3.1 All the Step Indicator Properties "><span>§</span></a></span></h3>
+	<h3 id="x3-1-all-the-step-indicator-properties"><span class="secno">3.1 </span>All the Step Indicator Properties <a class="self-link" aria-label="§" href="#all-stepindicator-explanation"></a></h3>
 
 	<section class="property-explanation" id="stepindicator-usage-example-explanation">
-  <h4 id="x3-1-1-step-indicator-usage"><span class="secno">3.1.1 </span>Step Indicator Usage<span class="permalink"><a href="#stepindicator-usage-example-explanation" aria-label="Permalink for 3.1.1 Step Indicator Usage" title="Permalink for 3.1.1 Step Indicator Usage"><span>§</span></a></span></h4>
+  <h4 id="x3-1-1-step-indicator-usage"><span class="secno">3.1.1 </span>Step Indicator Usage<a class="self-link" aria-label="§" href="#stepindicator-usage-example-explanation"></a></h4>
   <section id="description">
-    <h5 id="x3-1-1-1-description"><span class="secno">3.1.1.1 </span>Description<span class="permalink"><a href="#description" aria-label="Permalink for 3.1.1.1 Description" title="Permalink for 3.1.1.1 Description"><span>§</span></a></span></h5>
+    <h5 id="x3-1-1-1-description"><span class="secno">3.1.1.1 </span>Description<a class="self-link" aria-label="§" href="#description"></a></h5>
     <p>The <code>stepindicator</code> defined values should be used whenever there is a sequence of 
       tasks that the user is required to complete, so that users who have memory issues can keep 
       track of the steps previously completed.</p><br><br>
@@ -905,7 +944,7 @@ into breadcrumbs or linked steps that identify completed tasks, allow the user t
 
   </section>
   <section id="stepindicator-usage-example">
-    <h5 id="x3-1-1-2-example"><span class="secno">3.1.1.2 </span>Example<span class="permalink"><a href="#stepindicator-usage-example" aria-label="Permalink for 3.1.1.2 Example" title="Permalink for 3.1.1.2 Example"><span>§</span></a></span></h5>
+    <h5 id="x3-1-1-2-example"><span class="secno">3.1.1.2 </span>Example<a class="self-link" aria-label="§" href="#stepindicator-usage-example"></a></h5>
   	<p>Note, the specific mechanism to apply these defined values has not been decided:</p>
     <div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: </span></div>
 		<pre aria-busy="false" class="hljs xml">      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">aui-stepindicator</span>=<span class="hljs-string">"book trip"</span>&gt;</span>
@@ -941,20 +980,20 @@ into breadcrumbs or linked steps that identify completed tasks, allow the user t
 
 	
 			<section id="all-the-message-properties">
-	<h3 id="x3-2-all-the-message-properties"><span class="secno">3.2 </span>All the message properties <span class="permalink"><a href="#all-the-message-properties" aria-label="Permalink for 3.2 All the message properties " title="Permalink for 3.2 All the message properties "><span>§</span></a></span></h3>
+	<h3 id="x3-2-all-the-message-properties"><span class="secno">3.2 </span>All the message properties <a class="self-link" aria-label="§" href="#all-the-message-properties"></a></h3>
 
 	<p>@@</p>
 
 	<section class="property" id="messageimportance-explanation">
-  <h4 id="x3-2-1-messageimportance"><span class="secno">3.2.1 </span>messageimportance<span class="permalink"><a href="#messageimportance-explanation" aria-label="Permalink for 3.2.1 messageimportance" title="Permalink for 3.2.1 messageimportance"><span>§</span></a></span></h4>
+  <h4 id="x3-2-1-messageimportance"><span class="secno">3.2.1 </span>messageimportance<a class="self-link" aria-label="§" href="#messageimportance-explanation"></a></h4>
   <section id="description-0">
-    <h5 id="x3-2-1-1-description"><span class="secno">3.2.1.1 </span>Description<span class="permalink"><a href="#description-0" aria-label="Permalink for 3.2.1.1 Description" title="Permalink for 3.2.1.1 Description"><span>§</span></a></span></h5>
+    <h5 id="x3-2-1-1-description"><span class="secno">3.2.1.1 </span>Description<a class="self-link" aria-label="§" href="#description-0"></a></h5>
 	  <div class="property-description">
           <p>@@1-line description</p>
     </div>
   </section>
   <section id="messageimportance-example">
-    <h5 id="x3-2-1-2-example"><span class="secno">3.2.1.2 </span>Example<span class="permalink"><a href="#messageimportance-example" aria-label="Permalink for 3.2.1.2 Example" title="Permalink for 3.2.1.2 Example"><span>§</span></a></span></h5>
+    <h5 id="x3-2-1-2-example"><span class="secno">3.2.1.2 </span>Example<a class="self-link" aria-label="§" href="#messageimportance-example"></a></h5>
 	  <p>The specific mechanism to apply these defined values has not been decided</p>
     <div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: </span></div>
 			<pre aria-busy="false" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"alert"</span>
@@ -964,7 +1003,7 @@ into breadcrumbs or linked steps that identify completed tasks, allow the user t
 			</div>
   </section>
   <section id="characteristics">
-    <h5 id="x3-2-1-3-characteristics"><span class="secno">3.2.1.3 </span>Characteristics<span class="permalink"><a href="#characteristics" aria-label="Permalink for 3.2.1.3 Characteristics" title="Permalink for 3.2.1.3 Characteristics"><span>§</span></a></span></h5>
+    <h5 id="x3-2-1-3-characteristics"><span class="secno">3.2.1.3 </span>Characteristics<a class="self-link" aria-label="§" href="#characteristics"></a></h5>
     <table class="property-features">
           <thead>
             <tr>
@@ -993,7 +1032,7 @@ into breadcrumbs or linked steps that identify completed tasks, allow the user t
           </table>
   </section>
   <section id="values">
-    <h5 id="x3-2-1-4-values"><span class="secno">3.2.1.4 </span>Values<span class="permalink"><a href="#values" aria-label="Permalink for 3.2.1.4 Values" title="Permalink for 3.2.1.4 Values"><span>§</span></a></span></h5>
+    <h5 id="x3-2-1-4-values"><span class="secno">3.2.1.4 </span>Values<a class="self-link" aria-label="§" href="#values"></a></h5>
     <table class="value-descriptions">
           <thead>
             <tr>
@@ -1022,9 +1061,9 @@ into breadcrumbs or linked steps that identify completed tasks, allow the user t
   
 
   <section class="property" id="messagefrom-explanation">
-  <h4 id="x3-2-2-messagefrom"><span class="secno">3.2.2 </span>messagefrom<span class="permalink"><a href="#messagefrom-explanation" aria-label="Permalink for 3.2.2 messagefrom" title="Permalink for 3.2.2 messagefrom"><span>§</span></a></span></h4>
+  <h4 id="x3-2-2-messagefrom"><span class="secno">3.2.2 </span>messagefrom<a class="self-link" aria-label="§" href="#messagefrom-explanation"></a></h4>
   <section id="description-1">
-    <h5 id="x3-2-2-1-description"><span class="secno">3.2.2.1 </span>Description<span class="permalink"><a href="#description-1" aria-label="Permalink for 3.2.2.1 Description" title="Permalink for 3.2.2.1 Description"><span>§</span></a></span></h5>
+    <h5 id="x3-2-2-1-description"><span class="secno">3.2.2.1 </span>Description<a class="self-link" aria-label="§" href="#description-1"></a></h5>
     <div class="property-description">
           <p>@@1-line description</p>
           <p><strong>Supported values: </strong>a string value that identifies the sender of the message. If multiple names are used they can be separated by a coma.</p>
@@ -1032,7 +1071,7 @@ into breadcrumbs or linked steps that identify completed tasks, allow the user t
     </div>
   </section>
 	<section id="messagefrom-example">
-    <h5 id="x3-2-2-2-example"><span class="secno">3.2.2.2 </span>Example<span class="permalink"><a href="#messagefrom-example" aria-label="Permalink for 3.2.2.2 Example" title="Permalink for 3.2.2.2 Example"><span>§</span></a></span></h5>
+    <h5 id="x3-2-2-2-example"><span class="secno">3.2.2.2 </span>Example<a class="self-link" aria-label="§" href="#messagefrom-example"></a></h5>
 	<p>The specific mechanism to apply these defined values has not been decided</p>
     <div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: </span></div>
 		<pre aria-busy="false" class="hljs javascript">&lt;div role=<span class="hljs-string">"alert"</span>
@@ -1043,7 +1082,7 @@ into breadcrumbs or linked steps that identify completed tasks, allow the user t
 			</div>
       </section>
       <section id="characteristics-0">
-        <h5 id="x3-2-2-3-characteristics"><span class="secno">3.2.2.3 </span>Characteristics<span class="permalink"><a href="#characteristics-0" aria-label="Permalink for 3.2.2.3 Characteristics" title="Permalink for 3.2.2.3 Characteristics"><span>§</span></a></span></h5>
+        <h5 id="x3-2-2-3-characteristics"><span class="secno">3.2.2.3 </span>Characteristics<a class="self-link" aria-label="§" href="#characteristics-0"></a></h5>
 	      <p>The specific mechanism to apply these defined values has not been decided</p>
         <table class="property-features">
             <thead>
@@ -1077,9 +1116,9 @@ into breadcrumbs or linked steps that identify completed tasks, allow the user t
   
 
   <section class="property" id="messagecontext-explanation">
-  <h4 id="x3-2-3-messagecontext"><span class="secno">3.2.3 </span>messagecontext<span class="permalink"><a href="#messagecontext-explanation" aria-label="Permalink for 3.2.3 messagecontext" title="Permalink for 3.2.3 messagecontext"><span>§</span></a></span></h4>
+  <h4 id="x3-2-3-messagecontext"><span class="secno">3.2.3 </span>messagecontext<a class="self-link" aria-label="§" href="#messagecontext-explanation"></a></h4>
   <section id="description-2">
-    <h5 id="x3-2-3-1-description"><span class="secno">3.2.3.1 </span>Description<span class="permalink"><a href="#description-2" aria-label="Permalink for 3.2.3.1 Description" title="Permalink for 3.2.3.1 Description"><span>§</span></a></span></h5>
+    <h5 id="x3-2-3-1-description"><span class="secno">3.2.3.1 </span>Description<a class="self-link" aria-label="§" href="#description-2"></a></h5>
     <div class="property-description">
           <p>@@1-line description</p>
           <p><strong>Supported values: </strong><strong> </strong>a string value that identifies the location that makes this message relevant. Typical values are "home" and "work". If multiple locations are relevant they can be separated by a coma.</p>
@@ -1087,7 +1126,7 @@ into breadcrumbs or linked steps that identify completed tasks, allow the user t
     </div>
   </section>
   <section id="messagecontext-example">
-    <h5 id="x3-2-3-2-example"><span class="secno">3.2.3.2 </span>Example<span class="permalink"><a href="#messagecontext-example" aria-label="Permalink for 3.2.3.2 Example" title="Permalink for 3.2.3.2 Example"><span>§</span></a></span></h5>
+    <h5 id="x3-2-3-2-example"><span class="secno">3.2.3.2 </span>Example<a class="self-link" aria-label="§" href="#messagecontext-example"></a></h5>
 	<p>The specific mechanism to apply these defined values has not been decided</p>
     <div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: </span></div>
     <pre aria-busy="false" class="hljs javascript">&lt;div role=<span class="hljs-string">"alert"</span>
@@ -1099,7 +1138,7 @@ into breadcrumbs or linked steps that identify completed tasks, allow the user t
       </div>
   </section>
   <section id="characteristics-1">
-    <h5 id="x3-2-3-3-characteristics"><span class="secno">3.2.3.3 </span>Characteristics<span class="permalink"><a href="#characteristics-1" aria-label="Permalink for 3.2.3.3 Characteristics" title="Permalink for 3.2.3.3 Characteristics"><span>§</span></a></span></h5>
+    <h5 id="x3-2-3-3-characteristics"><span class="secno">3.2.3.3 </span>Characteristics<a class="self-link" aria-label="§" href="#characteristics-1"></a></h5>
       <table class="property-features">
             <thead>
             <tr>
@@ -1129,9 +1168,9 @@ into breadcrumbs or linked steps that identify completed tasks, allow the user t
   </section>
   </section>
 <section class="property" id="messagetime-explanation">
-  <h4 id="x3-2-4-messagetime"><span class="secno">3.2.4 </span>messagetime<span class="permalink"><a href="#messagetime-explanation" aria-label="Permalink for 3.2.4 messagetime" title="Permalink for 3.2.4 messagetime"><span>§</span></a></span></h4>
+  <h4 id="x3-2-4-messagetime"><span class="secno">3.2.4 </span>messagetime<a class="self-link" aria-label="§" href="#messagetime-explanation"></a></h4>
   <section id="description-3">
-    <h5 id="x3-2-4-1-description"><span class="secno">3.2.4.1 </span>Description<span class="permalink"><a href="#description-3" aria-label="Permalink for 3.2.4.1 Description" title="Permalink for 3.2.4.1 Description"><span>§</span></a></span></h5>
+    <h5 id="x3-2-4-1-description"><span class="secno">3.2.4.1 </span>Description<a class="self-link" aria-label="§" href="#description-3"></a></h5>
     <div class="property-description">
           <p>@@1-line description</p>
           <p><strong>Supported values: </strong><strong> </strong>24 hour date time format. DD.MM.YEAR.HOUR.MM - DD.MM.YEAR.HOUR.MM where the second date is an optional exclusive expiry date.</p>
@@ -1140,7 +1179,7 @@ into breadcrumbs or linked steps that identify completed tasks, allow the user t
   </section>
 
   <section id="messagetime-example">
-  <h5 id="x3-2-4-2-messagetime"><span class="secno">3.2.4.2 </span>messagetime<span class="permalink"><a href="#messagetime-example" aria-label="Permalink for 3.2.4.2 messagetime" title="Permalink for 3.2.4.2 messagetime"><span>§</span></a></span></h5>
+  <h5 id="x3-2-4-2-messagetime"><span class="secno">3.2.4.2 </span>messagetime<a class="self-link" aria-label="§" href="#messagetime-example"></a></h5>
 	  <p>The specific mechanism to apply these defined values has not been decided</p>
   <p>@@1-line description</p>
     <div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: </span></div>
@@ -1161,7 +1200,7 @@ into breadcrumbs or linked steps that identify completed tasks, allow the user t
       </div>
   </section>
   <section id="characteristics-2">
-    <h5 id="x3-2-4-3-characteristics"><span class="secno">3.2.4.3 </span>Characteristics<span class="permalink"><a href="#characteristics-2" aria-label="Permalink for 3.2.4.3 Characteristics" title="Permalink for 3.2.4.3 Characteristics"><span>§</span></a></span></h5>
+    <h5 id="x3-2-4-3-characteristics"><span class="secno">3.2.4.3 </span>Characteristics<a class="self-link" aria-label="§" href="#characteristics-2"></a></h5>
 	  <p>The specific mechanism to apply these defined values has not been decided</p>
     <table class="property-features">
           <thead>
@@ -1199,16 +1238,16 @@ into breadcrumbs or linked steps that identify completed tasks, allow the user t
 		</section>
 
 		<section class="appendix" id="vocabulary-implementations">
-			<!--OddPage--><h2 id="a-vocabulary-implementations"><span class="secno">A. </span>Vocabulary Implementations<span class="permalink"><a href="#vocabulary-implementations" aria-label="Permalink for A. Vocabulary Implementations" title="Permalink for A. Vocabulary Implementations"><span>§</span></a></span></h2>
+			<!--OddPage--><h2 id="a-vocabulary-implementations"><span class="secno">A. </span>Vocabulary Implementations<a class="self-link" aria-label="§" href="#vocabulary-implementations"></a></h2>
 			<p>The vocabulary implementations of this document is available at <a href="../#vocabulary-implementations">Personalization Explainer 1.0 Vocabulary Implementations section</a>.</p>
 		</section>
 
 
 		<section class="appendix informative section" id="acknowledgements">
-	<!--OddPage--><h2 id="b-acknowledgments"><span class="secno">B. </span>Acknowledgments<span class="permalink"><a href="#acknowledgements" aria-label="Permalink for B. Acknowledgments" title="Permalink for B. Acknowledgments"><span>§</span></a></span></h2><p><em>This section is non-normative.</em></p>
+	<!--OddPage--><h2 id="b-acknowledgments"><span class="secno">B. </span>Acknowledgments<a class="self-link" aria-label="§" href="#acknowledgements"></a></h2><p><em>This section is non-normative.</em></p>
 	<p>The following people contributed to the development of this document.</p>
 	<section class="section" id="ack_group">
-		<h3 id="b-1-participants-active-in-the-personalization-tf-at-the-time-of-publication"><span class="secno">B.1 </span>Participants active in the Personalization TF at the time of publication<span class="permalink"><a href="#ack_group" aria-label="Permalink for B.1 Participants active in the Personalization TF at the time of publication" title="Permalink for B.1 Participants active in the Personalization TF at the time of publication"><span>§</span></a></span></h3>
+		<h3 id="b-1-participants-active-in-the-personalization-tf-at-the-time-of-publication"><span class="secno">B.1 </span>Participants active in the Personalization TF at the time of publication<a class="self-link" aria-label="§" href="#ack_group"></a></h3>
 		<ul>
 			<li>Thaddeus Cambron (Invited Expert)</li>
 			<li>Michael Cooper (<abbr title="World Wide Web Consortium">W3C</abbr>/<abbr title="Massachusetts Institute of Technology">MIT</abbr>)</li>
@@ -1221,7 +1260,7 @@ into breadcrumbs or linked steps that identify completed tasks, allow the user t
 		</ul>
   </section>
 	<section class="section" id="ack_others">
-		<h3 id="b-2-other-personalization-tf-contributors-commenters-and-previously-active-participants"><span class="secno">B.2 </span>Other Personalization TF contributors, commenters, and previously active participants<span class="permalink"><a href="#ack_others" aria-label="Permalink for B.2 Other Personalization TF contributors, commenters, and previously active participants" title="Permalink for B.2 Other Personalization TF contributors, commenters, and previously active participants"><span>§</span></a></span></h3>
+		<h3 id="b-2-other-personalization-tf-contributors-commenters-and-previously-active-participants"><span class="secno">B.2 </span>Other Personalization TF contributors, commenters, and previously active participants<a class="self-link" aria-label="§" href="#ack_others"></a></h3>
 		<ul>
 			<li>Joanmarie Diggs (Igalia)</li>
 			<li>Richard Schwerdtfeger (Knowbility, Inc.)</li>
@@ -1229,7 +1268,7 @@ into breadcrumbs or linked steps that identify completed tasks, allow the user t
 		</ul>
 	</section>
 	<section class="section" id="ack_funders">
-		<h3 id="b-3-enabling-funders"><span class="secno">B.3 </span>Enabling funders<span class="permalink"><a href="#ack_funders" aria-label="Permalink for B.3 Enabling funders" title="Permalink for B.3 Enabling funders"><span>§</span></a></span></h3>
+		<h3 id="b-3-enabling-funders"><span class="secno">B.3 </span>Enabling funders<a class="self-link" aria-label="§" href="#ack_funders"></a></h3>
 		<p>This publication has been funded in part with U.S. Federal funds from the Health and Human Services, National Institute on Disability, Independent Living, and Rehabilitation Research (NIDILRR) under contract number HHSP23301500054C. The content of this publication does not necessarily reflect the views or policies of the U.S. Department of Health and Human Services, nor does mention of trade names, commercial products, or organizations imply endorsement by the U.S. Government.</p>
 	</section>
 </section>
@@ -1239,10 +1278,10 @@ into breadcrumbs or linked steps that identify completed tasks, allow the user t
 	
 
 <section id="references" class="appendix">
-      <!--OddPage--><h2 id="c-references"><span class="secno">C. </span>References<span class="permalink"><a href="#references" aria-label="Permalink for C. References" title="Permalink for C. References"><span>§</span></a></span></h2>
+      <!--OddPage--><h2 id="c-references"><span class="secno">C. </span>References<a class="self-link" aria-label="§" href="#references"></a></h2>
       
     <section id="informative-references">
-        <h3 id="c-1-informative-references"><span class="secno">C.1 </span>Informative references<span class="permalink"><a href="#informative-references" aria-label="Permalink for C.1 Informative references" title="Permalink for C.1 Informative references"><span>§</span></a></span></h3>
+        <h3 id="c-1-informative-references"><span class="secno">C.1 </span>Informative references<a class="self-link" aria-label="§" href="#informative-references"></a></h3>
       <dl class="bibliography">
         <dt id="bib-dom4">[DOM4]</dt><dd><a href="https://dom.spec.whatwg.org/"><cite>DOM Standard</cite></a>. Anne van Kesteren. WHATWG. Living Standard. URL: <a href="https://dom.spec.whatwg.org/">https://dom.spec.whatwg.org/</a></dd><dt id="bib-svg2">[SVG2]</dt><dd><a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/"><cite>Scalable Vector Graphics (SVG) 2</cite></a>. Nikos Andronikos; Rossen Atanassov; Tavmjong Bah; Amelia Bellamy-Royds; Brian Birtles; Cyril Concolato; Erik Dahlström; Chris Lilley; Cameron McCormack; Doug Schepers; Dirk Schulze; Richard Schwerdtfeger; Satoru Takagi; Jonathan Watt et al. W3C. W3C Working Draft. URL: <a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/">http://www.w3.org/TR/2015/WD-SVG2-20150915/</a></dd>
       </dl></section></section><p role="navigation" id="back-to-top"><a href="#title"><abbr title="Back to Top">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta charset="UTF-8"><meta name="generator" content="ReSpec 22.6.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta charset="UTF-8"><meta name="generator" content="ReSpec 23.0.3"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
 div.issue-title, div.note-title , div.ednote-title, div.warning-title {
     padding-right:  1em;
     min-width: 7.5em;
@@ -87,29 +87,6 @@ input.task-list-item-checkbox {
 .issue a.respec-label-light {
   color: #000;
   background-color: #fff;
-}
-</style><style>/* --- PERMALINKS --- */
-
-.permalink {
-  width: 1px;
-  height: 1px;
-  overflow: visible;
-  font-size: 10pt;
-  font-style: normal;
-  vertical-align: middle;
-  margin-left: 4px;
-  float: right;
-}
-
-.permalink a, .permalink a:link, .permalink a:visited, .permalink a:hover, .permalink a:focus, .permalink a:active {
-  background:transparent !important;
-  text-decoration:none;
-  font-weight: bold;
-  color:#666 !important;
-}
-
-.permalink abbr {
-  border:0;
 }
 </style>
 		<title>Requirements for Personalization Semantics</title>
@@ -228,11 +205,11 @@ table.simple {
 
 /* --- DL --- */
 
-.section dd > p:first-child {
+.section dd>p:first-child {
   margin-top: 0;
 }
 
-.section dd > p:last-child {
+.section dd>p:last-child {
   margin-bottom: 0;
 }
 
@@ -245,7 +222,7 @@ table.simple {
   margin-bottom: 0;
 }
 
-#issue-summary > ul,
+#issue-summary>ul,
 .respec-dfn-list {
   column-count: 2;
 }
@@ -261,7 +238,7 @@ details.respec-tests-details {
   vertical-align: top;
 }
 
-details.respec-tests-details > * {
+details.respec-tests-details>* {
   padding-right: 2em;
 }
 
@@ -274,20 +251,82 @@ details.respec-tests-details[open] {
   padding-bottom: 0.5em;
 }
 
-details.respec-tests-details[open] > summary {
+details.respec-tests-details[open]>summary {
   border-bottom: thin solid #cad3e2;
   padding-left: 1em;
   margin-bottom: 1em;
   line-height: 2em;
 }
 
-details.respec-tests-details > ul {
+details.respec-tests-details>ul {
   width: 100%;
   margin-top: -0.3em;
 }
 
-details.respec-tests-details > li {
+details.respec-tests-details>li {
   padding-left: 1em;
+}
+
+a[href].self-link:hover {
+  opacity: 1;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  position: relative;
+}
+
+aside.example .marker > a.self-link {
+  color: inherit;
+}
+
+h2>a.self-link,
+h3>a.self-link,
+h4>a.self-link,
+h5>a.self-link,
+h6>a.self-link {
+  border: none;
+  color: inherit;
+  font-size: 83%;
+  height: 2em;
+  left: -1.6em;
+  opacity: .5;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  top: 0;
+  transition: opacity .2s;
+  width: 2em;
+}
+
+h2>a.self-link::before,
+h3>a.self-link::before,
+h4>a.self-link::before,
+h5>a.self-link::before,
+h6>a.self-link::before {
+  content: "§";
+  display: block;
+}
+
+@media (max-width: 767px) {
+  dd {
+    margin-left: 0;
+  }
+
+  /* Don't position self-link in headings off-screen */
+  h2>a.self-link,
+  h3>a.self-link,
+  h4>a.self-link,
+  h5>a.self-link,
+  h6>a.self-link {
+    left: auto;
+    top: auto;
+  }
 }
 
 @media print {
@@ -628,9 +667,9 @@ details.respec-tests-details > li {
       ]
     }
   },
-  "publishDate": "2018-08-27",
-  "publishISODate": "2018-08-27T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 27 August 2018"
+  "publishDate": "2018-09-20",
+  "publishISODate": "2018-09-20T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 20 September 2018"
 }</script><meta name="description" content="Requirements for Personalization Semantics"></head>
 	<body class="h-entry toc-inline"><div class="head">
   <a href="https://www.w3.org/" class="logo">
@@ -638,7 +677,7 @@ details.respec-tests-details > li {
   </a>
   <h1 id="title" class="title p-name">Requirements for Personalization Semantics</h1>
   
-  <h2 id="w3c-editor-s-draft-27-august-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-08-27">27 August 2018</time></h2>
+  <h2><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-09-20">20 September 2018</time></h2>
   <dl>
     <dt>This version:</dt><dd><a class="u-url" href="https://w3c.github.io/personalization-semantics/requirements/">https://w3c.github.io/personalization-semantics/requirements/</a></dd><dt>Latest published version:</dt><dd><a href="https://www.w3.org/TR/personalization-semantics-requirements-1.0/">https://www.w3.org/TR/personalization-semantics-requirements-1.0/</a></dd>
     <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/personalization-semantics/requirements/">https://w3c.github.io/personalization-semantics/requirements/</a></dd>
@@ -673,10 +712,10 @@ details.respec-tests-details > li {
       </p>
   <hr title="Separator for header">
 </div>
-		<section id="abstract" class="introductory"><!--OddPage--><h2 id="abstract-0">Abstract</h2>
+		<section id="abstract" class="introductory"><!--OddPage--><h2>Abstract</h2>
 			<p>Requirements for Personalization Semantics</p>
 		</section>
-		<section id="sotd" class="introductory"><!--OddPage--><h2 id="status-of-this-document">Status of This Document</h2><p>
+		<section id="sotd" class="introductory"><!--OddPage--><h2>Status of This Document</h2><p>
         <em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em>
       </p><p>
           This document was published by the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> as an Editor's Draft.
@@ -717,31 +756,31 @@ details.respec-tests-details > li {
         </p><p>This document is governed by the <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
         </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a href="#abstract" class="tocxref">Abstract</a></li><li class="tocline"><a href="#sotd" class="tocxref">Status of This Document</a></li><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a></li><li class="tocline"><a href="#use-cases" class="tocxref"><span class="secno">2. </span>Use Cases</a></li><li class="tocline"><a href="#requirements" class="tocxref"><span class="secno">3. </span>Requirements</a><ol class="toc"><li class="tocline"><a href="#peronalization-features" class="tocxref"><span class="secno">3.1 </span>Peronalization Features</a></li><li class="tocline"><a href="#vocabulary-structure" class="tocxref"><span class="secno">3.2 </span>Vocabulary Structure</a></li><li class="tocline"><a href="#host-language-integration" class="tocxref"><span class="secno">3.3 </span>Host Language Integration</a></li></ol></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">A. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a href="#ack_group" class="tocxref"><span class="secno">A.1 </span>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a href="#ack_others" class="tocxref"><span class="secno">A.2 </span>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a href="#ack_funders" class="tocxref"><span class="secno">A.3 </span>Enabling funders</a></li></ol></li></ol></nav>
 		<section id="introduction">
-			<!--OddPage--><h2 id="x1-introduction"><span class="secno">1. </span>Introduction<span class="permalink"><a href="#introduction" aria-label="Permalink for 1. Introduction" title="Permalink for 1. Introduction"><span>§</span></a></span></h2>
+			<!--OddPage--><h2 id="x1-introduction"><span class="secno">1. </span>Introduction<a class="self-link" aria-label="§" href="#introduction"></a></h2>
 		</section>
 		<section id="use-cases">
-			<!--OddPage--><h2 id="x2-use-cases"><span class="secno">2. </span>Use Cases<span class="permalink"><a href="#use-cases" aria-label="Permalink for 2. Use Cases" title="Permalink for 2. Use Cases"><span>§</span></a></span></h2>
+			<!--OddPage--><h2 id="x2-use-cases"><span class="secno">2. </span>Use Cases<a class="self-link" aria-label="§" href="#use-cases"></a></h2>
 		</section>
 		<section id="requirements">
-			<!--OddPage--><h2 id="x3-requirements"><span class="secno">3. </span>Requirements<span class="permalink"><a href="#requirements" aria-label="Permalink for 3. Requirements" title="Permalink for 3. Requirements"><span>§</span></a></span></h2>
+			<!--OddPage--><h2 id="x3-requirements"><span class="secno">3. </span>Requirements<a class="self-link" aria-label="§" href="#requirements"></a></h2>
 			<section id="peronalization-features">
-				<h3 id="x3-1-peronalization-features"><span class="secno">3.1 </span>Peronalization Features<span class="permalink"><a href="#peronalization-features" aria-label="Permalink for 3.1 Peronalization Features" title="Permalink for 3.1 Peronalization Features"><span>§</span></a></span></h3>
+				<h3 id="x3-1-peronalization-features"><span class="secno">3.1 </span>Peronalization Features<a class="self-link" aria-label="§" href="#peronalization-features"></a></h3>
 				<div class="ednote" id="issue-container-generatedID"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="4"><span>Editor's note</span></div><p class="">See <a href="https://github.com/w3c/personalization-semantics/labels/features">feature issues</a> for considerations on requirements for specific features of personalization semantics.</p></div>
 			</section>
 			<section id="vocabulary-structure">
-				<h3 id="x3-2-vocabulary-structure"><span class="secno">3.2 </span>Vocabulary Structure<span class="permalink"><a href="#vocabulary-structure" aria-label="Permalink for 3.2 Vocabulary Structure" title="Permalink for 3.2 Vocabulary Structure"><span>§</span></a></span></h3>
+				<h3 id="x3-2-vocabulary-structure"><span class="secno">3.2 </span>Vocabulary Structure<a class="self-link" aria-label="§" href="#vocabulary-structure"></a></h3>
 				<div class="ednote" id="issue-container-generatedID-0"><div role="heading" class="ednote-title marker" id="h-ednote-0" aria-level="4"><span>Editor's note</span></div><p class="">See <a href="https://github.com/w3c/personalization-semantics/labels/structure">vocabulary structure issues</a> for considerations on requirements for vocabulary structure.</p></div>
 			</section>
 			<section id="host-language-integration">
-				<h3 id="x3-3-host-language-integration"><span class="secno">3.3 </span>Host Language Integration<span class="permalink"><a href="#host-language-integration" aria-label="Permalink for 3.3 Host Language Integration" title="Permalink for 3.3 Host Language Integration"><span>§</span></a></span></h3>
+				<h3 id="x3-3-host-language-integration"><span class="secno">3.3 </span>Host Language Integration<a class="self-link" aria-label="§" href="#host-language-integration"></a></h3>
 				<div class="ednote" id="issue-container-generatedID-1"><div role="heading" class="ednote-title marker" id="h-ednote-1" aria-level="4"><span>Editor's note</span></div><p class="">See <a href="https://github.com/w3c/personalization-semantics/labels/implementation">host language implementation issues</a> and <a href="https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content">https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content</a> for considerations on requirements for implementation in content.</p></div>
 			</section>
 		</section>
 		<section class="appendix informative section" id="acknowledgements">
-	<!--OddPage--><h2 id="a-acknowledgments"><span class="secno">A. </span>Acknowledgments<span class="permalink"><a href="#acknowledgements" aria-label="Permalink for A. Acknowledgments" title="Permalink for A. Acknowledgments"><span>§</span></a></span></h2><p><em>This section is non-normative.</em></p>
+	<!--OddPage--><h2 id="a-acknowledgments"><span class="secno">A. </span>Acknowledgments<a class="self-link" aria-label="§" href="#acknowledgements"></a></h2><p><em>This section is non-normative.</em></p>
 	<p>The following people contributed to the development of this document.</p>
 	<section class="section" id="ack_group">
-		<h3 id="a-1-participants-active-in-the-personalization-tf-at-the-time-of-publication"><span class="secno">A.1 </span>Participants active in the Personalization TF at the time of publication<span class="permalink"><a href="#ack_group" aria-label="Permalink for A.1 Participants active in the Personalization TF at the time of publication" title="Permalink for A.1 Participants active in the Personalization TF at the time of publication"><span>§</span></a></span></h3>
+		<h3 id="a-1-participants-active-in-the-personalization-tf-at-the-time-of-publication"><span class="secno">A.1 </span>Participants active in the Personalization TF at the time of publication<a class="self-link" aria-label="§" href="#ack_group"></a></h3>
 		<ul>
 			<li>Thaddeus Cambron (Invited Expert)</li>
 			<li>Michael Cooper (<abbr title="World Wide Web Consortium">W3C</abbr>/<abbr title="Massachusetts Institute of Technology">MIT</abbr>)</li>
@@ -754,7 +793,7 @@ details.respec-tests-details > li {
 		</ul>
   </section>
 	<section class="section" id="ack_others">
-		<h3 id="a-2-other-personalization-tf-contributors-commenters-and-previously-active-participants"><span class="secno">A.2 </span>Other Personalization TF contributors, commenters, and previously active participants<span class="permalink"><a href="#ack_others" aria-label="Permalink for A.2 Other Personalization TF contributors, commenters, and previously active participants" title="Permalink for A.2 Other Personalization TF contributors, commenters, and previously active participants"><span>§</span></a></span></h3>
+		<h3 id="a-2-other-personalization-tf-contributors-commenters-and-previously-active-participants"><span class="secno">A.2 </span>Other Personalization TF contributors, commenters, and previously active participants<a class="self-link" aria-label="§" href="#ack_others"></a></h3>
 		<ul>
 			<li>Joanmarie Diggs (Igalia)</li>
 			<li>Richard Schwerdtfeger (Knowbility, Inc.)</li>
@@ -762,7 +801,7 @@ details.respec-tests-details > li {
 		</ul>
 	</section>
 	<section class="section" id="ack_funders">
-		<h3 id="a-3-enabling-funders"><span class="secno">A.3 </span>Enabling funders<span class="permalink"><a href="#ack_funders" aria-label="Permalink for A.3 Enabling funders" title="Permalink for A.3 Enabling funders"><span>§</span></a></span></h3>
+		<h3 id="a-3-enabling-funders"><span class="secno">A.3 </span>Enabling funders<a class="self-link" aria-label="§" href="#ack_funders"></a></h3>
 		<p>This publication has been funded in part with U.S. Federal funds from the Health and Human Services, National Institute on Disability, Independent Living, and Rehabilitation Research (NIDILRR) under contract number HHSP23301500054C. The content of this publication does not necessarily reflect the views or policies of the U.S. Department of Health and Human Services, nor does mention of trade names, commercial products, or organizations imply endorsement by the U.S. Government.</p>
 	</section>
 </section>
