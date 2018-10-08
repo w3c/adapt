@@ -12,7 +12,7 @@
 	<body>
 
 		<section id="abstract">
-			<p>This document list examples of the personalized help and support properties, this is an extension of <a href="../">Personalization Explainer 1.0</a>. including the properties of <code>literal</code>, <code>numberfree</code>, <code>easylang</code>, <code>alternative</code>, <code>explain</code>, <code>feedback</code>, <code>moreinfo</code>,<code>extrahelp</code>, <code>helptype</code>. </p>
+			<p>This document lists examples of the personalized help and support properties, this is an extension of <a href="../">Personalization Explainer 1.0</a>. including the properties of <code>literal</code>, <code>numberfree</code>, <code>easylang</code>, <code>alternative</code>, <code>explain</code>, <code>feedback</code>, <code>moreinfo</code>,<code>extrahelp</code>, <code>helptype</code>. </p>
 		</section>
 
 		<section id="sotd"></section>
@@ -20,9 +20,9 @@
 		<section class="informative" id="introduction">
 
 			<h1>Introduction</h1>
-			<p>This document list examples of the personalized help and support properties, this is an extension of <a href="../">Personalization Explainer 1.0</a>. including the properties of <code>literal</code>, <code>numberfree</code>, <code>easylang</code>, <code>alternative</code>, <code>explain</code>, <code>feedback</code>, <code>moreinfo</code>,<code>extrahelp</code>, <code>helptype</code>. </p>
+			<p>This document lists examples of the personalized help and support properties, this is an extension of <a href="../">Personalization Explainer 1.0</a>. including the properties of <code>literal</code>, <code>numberfree</code>, <code>easylang</code>, <code>alternative</code>, <code>explain</code>, <code>feedback</code>, <code>moreinfo</code>,<code>extrahelp</code>, <code>helptype</code>. </p>
 
-			<p class="ednote" id="examples-disclaimer">Personalization semantics defines a set of properties and values to annotate content. The specific mechanism to apply these properties to content has not been decided. <a href="https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content">Several approaches are under consideration</a> and future drafts will show progress. To help with understanding of the properties, this document provides many examples of personalization semantics applied to content, which show attributes beginning with the prefix "aui-". <em>This has not been decided as the chosen approach</em>, but the simplicity supports understanding of the examples.</p>
+			<p class="ednote" id="examples-disclaimer">Personalization semantics defines a set of properties and values to annotate content. The specific mechanism to apply these properties to content and semantics has not been decided. <a href="https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content">Several approaches are under consideration</a> and future drafts will show progress. To help understand the proposed properties, this document provides many examples of personalization semantics applied to content, which show attributes beginning with the prefix "aui-". <em>This prefix has not been decided on as the definitive approach</em>, but is used as a way to illustrate the examples.</p>
 
 		</section>
 		<section>
@@ -38,15 +38,15 @@
 
 			<section id="implementation">
 				<h2>Example Implementations</h2>
-				<p>There are two proposed general methods to implement the help and support. The first provides help and supporting content in a different section of content. For small changes, the additional information and support can be provided inline with the content.</p>
-				<p class="ednote">Currently all examples are implemented via attribute/value pairs. This does not imply that attribute/value pairs are the only implemenation strategy. The Working Group plans to add additional examples using other mechanisms.</p>
+				<p>There are two proposed methods to implement help and support. The first provides help and support for content (in a different section of content) <strong>Note:</strong> this does not make sense. Please clarify what is meant here. For small pieces of content, additional information and support can be provided inline within the relateive context of the content.</p>
+				<p class="ednote">Currently all examples are implemented through attribute/value pairs. This does not imply that attribute/value pairs are the only implemenation strategy. The Working Group plans to add additional examples using other mechanisms as previously indicated.</p>
 				<section id="addn-content">
 					<h2>Implementation in diffrent content sections</h2>
 						<section data-include="alternative.html" data-include-replace="true" id="alternative"></section>
 						<section data-include="helptype.html" data-include-replace="true" id="helptype"></section>
 				</section>
 				<section id="inline">
-					<h2>Implementation Inline</h2>
+					<h2>Inline Implementation </h2>
 					<p>For small inline support and changes, attributes may be used.</p>
 
 					<section data-include="literal.html" data-include-replace="true" id="literal"></section>
