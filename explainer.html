@@ -12,7 +12,7 @@
 	<body>
 
 		<section id="abstract">
-			<p>Personalization involves tailoring aspects of the user experience to meet the needs and preferences of the user. For example, having familiar terms and symbols is key to many users being able to use the web. However, what is familiar for one user may be unfamiliar to another requiring them to learn new symbols. The challenge has been the ability to identify the types of content in a document that should be adapted to the preferred user experience. The introduction of standardized semantics allows web applications to customize the exposure of that content to one that is familiar to individuals based on their needs and preferences. This specification defines standard semantics to enable user driven personalization such as the association of user-preferred symbols to elements having those semantics. This ensures that users can quickly find familiar icons, such as a help icon, that apply to user interface elements.</p>
+			<p>Personalization involves tailoring aspects of the user experience to meet the needs and preferences of the individual user. For example, having familiar terms and symbols is key to many users being able to use the web. However, what is familiar for one user may not be familiar to another, requiring them to learn new symbols. The challenge has been the ability to identify the types of content in a document that should be adapted to the preferred user experience. The introduction of standardized semantics allows web applications to customize the presentation of that content to one that is familiar to individuals based on their specificneeds and preferences. This specification defines standard semantics to enable user driven personalization. For example, the association of user-preferred symbols with elements having those semantics. This ensures that users can quickly find familiar icons, for example, a help icon, within the context of user interface elements.</p>
 			<p>This document is an explanation for understanding how to use Personalization properties to personalize an accessible web site.</p>
 		</section>
 
@@ -21,19 +21,20 @@
 		<section class="informative" id="introduction">
 
 			<h1>Introduction</h1>
-			<p>The goals of this specification includes:</p>
+			<p>The goals of this specification include:</p>
 			<ul>
-				<li> expanding the accessibility information that may be supplied by the author;</li>
-				<li> facilitate preference driven individual personalization;</li>
-				<li> enable the author to specify key semantics needed to support users with cognitive impairments</li>
+				<li> Expanding the accessibility information that may be supplied by the author;</li>
+				<li> Facilitate preference driven individual personalization;</li>
+				<li> Enable the author to specify key semantics needed to support users with cognitive impairments</li>
 			</ul>
-			<p>This is a proposal to define syntax for adaptable content such as: links, buttons, symbols, help and keyboard. This may be an WAI-ARIA COGA Extension.</p>
-			<p>Personalization involves tailoring aspects of the user experience to meet the preferences or needs of the user. For example, having familiar terms and symbols is key to being able to use the web. However what is familiar for one user may be new for another requiring them to learn new symbols. Personalization could include loading a set of symbols that is appropriate for the specific user, ensuring that all users find the icons simple and familiar.</p>
-			<p>Technology holds the promise of being extremely flexible and the design of many systems includes the expectation that users will be able to optimize their interaction experience according to their personal preferences or accessibility requirements (needs). </p>
+			<p>This is a proposal for defining syntax for adaptable content such as: links, buttons, symbols, help and keyboard. This may be a WAI-ARIA COGA Extension, however implemenation methods are currently being explored.</p>
+			<!--<p>Personalization involves tailoring aspects of the user experience to meet the preferences or needs of the user. For example, having familiar terms and symbols is key to being able to use the web. However what is familiar for one user may be new for another requiring them to learn new symbols. Personalization could include loading a set of symbols that is appropriate for the specific user, ensuring that all users find the icons simple and familiar.</p> -->
+			<p>Technology holds the promise of being extremely flexible and the design of many systems includes the expectation that users will be able to optimize their interaction experience according to their personal preferences or accessibility needs. </p>
 			<section class="section" id="why_accessibility">
 				<h2>Why We Need Personalization</h2>
 				<p>We need personalization because: </p>
 				<ul>
+<<<<<<< HEAD
 					<li>Different user needs can conflict</li>
 					<li>Learning new design patterns (and widgets) can be confusing - we want to allow users to stick with formats that work for them </li>
 					<li>Extra support can be annoying to people who do not need it </li>
@@ -49,6 +50,23 @@
 					<li> Less features </li>
 					<li> Separating out advertisements so they are not confused with native content.  </li>
 					<li> Keyboard short cuts </li>
+=======
+					<li>The needs of individual user may conflict.</li>
+					<li>Learning new design patterns, widgets and user interfaces can be confusing. We would like to give users the ability to decide what works best for them based on preference and ability.</li>
+					<li>Extra support can be a distraction for people who do not need it.</li>
+					<li>Making content predictable is necessary for accessibility but can often lead to less innovate design.</li>
+					<li>Ability to increase of decrease levels of complexity. As people's skills improve or decline over time or within changes of context.</li>
+					<li>Enable us to really meet the user needs</li>
+				</ul>
+				<p>Some users need extra support. This can include: </p>
+				<ul>
+					<li>Symbols and graphics that they are familiar with</li>
+					<li>Tooltips</li>
+					<li>Language they understand</li>
+					<li>Less features</li>
+					<li>Separating advertisements, so they do not confuse them with native content </li>
+					<li>Keyboard short cuts</li>
+>>>>>>> 092539275e1dd684f24f1a50cee8888fe5329bd9
 				</ul>
 				<p>To achieve this we need standardized terms and supportive syntax. These can be linked to associated symbols, terms, translations and explanations. They are then provided to an individual based on personal preferences.</p>
 				<p>For example, assume an author can make it programmatically known that a button sends an email. Based on user preferences, the button renders with a symbol, term, and/or tooltips that are understandable by this particular user. It could automatically include F1 help that explains the send function in simple terms. It could be identified with a keyboard short cut that is always used for send. In addition, the button could be identified as important and always rendered, or always rendered very large. </p>
