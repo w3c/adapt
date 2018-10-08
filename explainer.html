@@ -35,11 +35,11 @@
 				<p>We need personalization because: </p>
 				<ul>
 					<li>The needs of individual user may conflict.</li>
-					<li>Learning new design patterns, widgets and user interfaces can be confusing. We would like to give users the ability to decide what works best for them based on preference and ability.</li>
+					<li>Learning new design patterns, widgets, and user interfaces can be confusing. We would like to give users the ability to decide what works best for them based on preference and ability.</li>
 					<li>Extra support can be a distraction for people who do not need it.</li>
 					<li>Making content predictable is necessary for accessibility but can often lead to less innovate design.</li>
-					<li>Ability to increase of decrease levels of complexity. As people's skills improve or decline over time or within changes of context.</li>
-					<li>Enable us to really meet the user needs</li>
+					<li>Ability to increase of decrease levels of complexity as people's skills improve or decline over time.</li>
+					<li>Enable websites to adapt to and meet the user's needs.</li>
 				</ul>
 				<p>Some users need extra support. This can include: </p>
 				<ul>
@@ -47,13 +47,13 @@
 					<li>Tooltips</li>
 					<li>Language they understand</li>
 					<li>Less features</li>
-					<li>Separating advertisements, so they do not confuse them with native content </li>
+					<li>Separating advertisements so users don't confuse them with native content </li>
 					<li>Keyboard short cuts</li>
 				</ul>
-				<p>For this we need standardized terms and supportive syntax that can be linked to associated symbols, terms, translations and explanations for the individual use via an attribute and personal preferences. </p>
-				<p>For example, assume an author can make it programanticaly known that a button is used to send an email. At the user end, the button could be rendered with a symbol, term, and/or tooltips that are understandable for this particular user. It could automatically apply F1 help that explains the send function in simple terms. It could be identified with a keyboard short cut that will always be used for send. In addition it could be identified as important and always rendered, or rendered as a large button. </p>
+				<p>To achieve this we need standardized terms and supportive syntax. These can be linked to associated symbols, terms, translations and explanations. They are then provided to an individual based on personal preferences.</p>
+				<p>For example, assume an author can make it programmatically known that a button sends an email. Based on user preferences, the button renders with a symbol, term, and/or tooltips that are understandable by this particular user. It could automatically include F1 help that explains the send function in simple terms. It could be identified with a keyboard short cut that is always used for send. In addition, the button could be identified as important and always rendered, or always rendered very large. </p>
 				<p>Working examples of how this could be used in practice, with user preferences, are available on the task force <a href="https://github.com/w3c/personalization-semantics/wiki/Implementations-of-Semantics">implementations page</a>. </p>
-					<p>In another use-case we would like to see interoperable symbol set codes for non-verbal people. Products for people who are non-vocal often use symbols to help users communicate. These symbols are in fact an individuals language. Unfortunately many of these symbols are both subject to copyright and are not interoperable. That means end-users can only use one device, and can not use applications or assistive technologies from a different company. An open set of references for symbol codes for these symbol sets however, could be interoperable. That means the end user could use an open source symbol set or buy the symbols and use them across different devices or applications. Symbols could still be proprietary but they would also be interoperable. </p>
+					<p>Another use-case we would like to see is interoperable symbol set codes for non-verbal people. Products for people who are non-vocal often use symbols to help users communicate. These symbols are in fact an individual's language. Unfortunately many of these symbols are both subject to copyright and are not interoperable. That means end-users can only use one device, and can not use applications or assistive technologies from a different company. An open set of references for symbol codes for these symbol sets however, could be interoperable. That means the end user could use an open source symbol set or buy the symbols and use them across different devices or applications. Symbols could still be proprietary but they would also be interoperable.</p>
 			</section>
 
 			<section class="section" id="intro_context">
@@ -106,7 +106,7 @@
 				<p>Each module has use cases and vocabularies: </p>
 				<ul>
 					<li><a href="content/index.html">Adaptable Content:</a>
-					<p>This section provided vocabularies that enables user agents to augment or adapt content to the user scenario and helps the user use and understand the content.</p>
+					<p>This section provides vocabularies that enable user agents to augment or adapt content to the user scenario and helps the user use and understand the content.</p>
 					<p>It includes use cases and vocabularies for identifying the purpose of controls, symbols  and user interface elements and supports simplification and distractions.</p></li>
 				
 					<li><a href="help/index.html">Adaptable Help and Support:</a>
@@ -131,7 +131,7 @@
 			<h2 id="vocabulary-implementations">Vocabulary Implementations</h2>
             <section class="issue">
                 <p>HELP NEEDED!</p>
-                <p>The Personalization Task Force is looking for advice on choosing an implementation mechanism.  We have considered a number of different approaches all with varying pros and cons with either excess burdon on host languages or on authoring.</p>
+                <p>The Personalization Task Force is looking for advice on choosing an implementation mechanism.  We have considered a number of different approaches all with varying pros and cons with either excess burden on host languages or on authoring.</p>
                 <p>See our Pros/Cons discussion <a href="https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content">Comparison of ways to use vocabulary in content</a>, on the various alternatives we have identified.  If you have any comments or suggestions on implementation please add a comment to this <a href="https://github.com/w3c/personalization-semantics/issues/77">issue #77</a>.</p>
             </section>
   
@@ -219,6 +219,7 @@
             </section>
 			<section>
 				<h3>HTML Microdata</h3>
+				
 				<p>Properties in this vocabulary can be applied via <a href="https://www.w3.org/TR/microdata/">HTML Microdata</a> [[microdata]]. To apply a term from this vocabulary to content using Microdata, use the following steps:</p>
 				<ul>
 					<li>On the element to which a property applies, set the <a href="https://www.w3.org/TR/microdata/#dfn-itemscope"><code>itemscope</code> attribute</a>. </li>
@@ -232,6 +233,7 @@
 			</section>
 			<section>
 				<h3>RDFa</h3>
+				
 				<p class="ednote">The Personalization Task Force is exploring whether the personalization semantics vocabulary can be used with RDFa. If so, guidance will be added here in a future draft. See <a href="https://github.com/w3c/personalization-semantics/issues/53">Issue 53</a>.</p>
 			</section>
 			<section>
