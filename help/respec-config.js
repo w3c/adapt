@@ -97,10 +97,10 @@ var respecConfig = {
     // errata: 'http://www.w3.org/2010/02/rdfa/errata.html',
 
     // name of the WG
-    wg:           "Accessible Rich Internet Applications Working Group",
+    wg:           "Accessible Platform Architectures Working Group",
 
     // URI of the public WG page
-    wgURI:        "https://www.w3.org/WAI/ARIA/",
+    wgURI:        "https://www.w3.org/WAI/APA/",
 
     // name (with the @w3c.org) of the public mailing to which comments are due
     wgPublicList: "public-personalization-tf",
@@ -110,18 +110,9 @@ var respecConfig = {
     // This is important for Rec-track documents, do not copy a patent URI from a random
     // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
     // Team Contact.
-    wgPatentURI:  "https://www.w3.org/2004/01/pp-impl/83726/status",
+    wgPatentURI:  "https://www.w3.org/2004/01/pp-impl/83907/status",
     //maxTocLevel: 2,
 
     localBiblio: biblio,
-
-    // Spec URLs
-        ariaSpecURLs: {
-          "ED": "https://w3c.github.io/aria/aria/aria",
-          "FPWD": "https://www.w3.org/TR/wai-aria-1.1/",
-          "WD" : "https://www.w3.org/TR/wai-aria-1.1/",
-          "CR": "https://www.w3.org/TR/wai-aria-1.1/",
-          "REC": "https://www.w3.org/TR/wai-aria-1.1/"
-        },
 
   };
