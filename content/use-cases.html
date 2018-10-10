@@ -1,30 +1,54 @@
 <section id="use_case_simplification">
                     <h3>Simplification</h3>
-                    <p><b>Requirement</b>: The user must be able to request a way to identify and differentiate between critical features, medium features and less important features. These need to be defined as important from a user perspective in the content. Typically, critical features may be used by many or most users, 90% of the time or more. Highly important features would be above 60% use. Medium important features would be 20% of users use it 20% of the time. Under 20% usage would be of low importance.</p>
-                    <p><b>User experience</b>: Based on personalization setting the user can see less options. A sample user experience is available at <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html">https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html </a></p>
+                    <p><b>Requirement</b>: There must be a mechanism to  identify and differentiate the  features included in web content based on its importance (e.g. critical, high, medium, low). The definition of a feature's importance should be defined from the user's perspective as:</p>
+                    <ul>
+                        <li>Critical &mdash; used by the majority of users 90% of the time or more.</li>
+                       <li>High &mdash; used at least 60% of the time or more.</li>
+                       <li>Medium &mdash;  used by 20% of users, 20% of the time.</li>
+                       <li>Low &mdash; used less then 20%.</li>
+                    </ul>
+                    
+                    <p><b>User experience</b>: A user changes their personalization settings to simplify the web content that displays based on the importance of various features.  In the sample user experience available at <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html">https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html</a>, the user can select a &quot;More options button or &quot;Less options&quot; button to simplify the web content by hiding or displaying elements that are or of low importance.</p>
+    
                     <p>Relevant properties: <a href="#simplification"><code>simplification</code></a></p>
 </section>
+
 <section id="use_case_adding_context">
-                    <h3>Adding Context</h3>
-                    <p><b>Requirement:</b> Having familiar terms and symbols is key to being able to use the web. However, what is familiar for one user may be strange for another, requiring them to learn new symbols. If a user agent or script knows the context of links, buttons, and other page elements then symbols and text used can be ones that the user understands. This can include: </p>
+
+    <h3>Adding Context</h3>
+                    <p><b>Requirement:</b> Terms and symbols used in web content must be  familiar to the user because what is familiar to one user may be unrecognizable or strange to someone else requiring the user to learn new symbols. Therefore, the user agent or script should understand the context of links, buttons, and other page elements so that symbols and text displayed in a way each  user understands. This can include:</p>
                     <ul>
-                        <li> Symbols and graphics that they are familiar with </li>
-                        <li> Tooltips </li>
-                        <li> Language the use can understand </li>
-                        <li> Keyboard shortcuts </li>
+                        <li>Familiar Symbols and graphics that they are familiar with </li>
+                        <li>Tooltips </li>
+                        <li>Language translation</li>
+                        <li>Keyboard shortcuts </li>
                     </ul>
-                    <p>For that we need to standardize supportive syntax and terms that can be linked to associated symbols, terms, translations and explanations, for the individual, via an attribute.</p>
-                    <p><b>Example user experience:</b> If an author gives to a button a role "send" then, without any work by the author, the button could be automatically rendered with a symbol, term, and/or tooltips that is understandable by a particular user. It could automatically imply F1 help that explains the send function in simple terms. It could be identified with a keyboard shortcut that will always be used for send. In addition, it could be identified as important and always rendered, or rendered as a large button. This would enable a consistent UI experience across applications and websites.</p>
+                    <p>In order to display the appropriate content the supported syntax and terms must be standardized using attributes to associate symbols, terms, translations and explanations that  are presented in a way that is understandable by various user scenarios.</p>
+                    <p><b>Example user experience:</b>: A web content author creates a button with a role="send" then, without any additional work by the author the web content automatically:</p>
+                    <ul>
+                        <li>Renders associated symbols, terms, and/or tooltips that are understandable by a particular user.</li>
+                        <li>Includudes F1 help that explains how the send function works in simple terms. </li>
+                        <li>Has an identified keyboard shortcut that is always used for the send function.</li>
+                        <li>Identifies the send button as important so it is always rendered, or rendered as a large button if needed.</li>
+                    </ul>
+                    <p>Standardizing content with the appropriate attributes can help to ensure a consistent user experience across applications and websites.</p>
+    
                     <p>Relevant properties: <a href="#action"><code>action</code></a>, <a href="#destination"><code>destination</code></a>, <a href="#field"><code>field</code></a></p>
+    
                     <section id="use_case_general_context">
                         <h4>General Context</h4>
-                        <p><b>Requirement: </b> One important factor in optimizing the personalization of a product or service is to ensure that the personalization is appropriate for the current context of use as well as what is relevant for the user. For example a female user with a cognitive disability may need less options, and options that are for men are less likely to be relevant for her and may be demoted to below the scroll or placed under a &quot;more option&quot; button.</p>
+                        <p><b>Requirement</b>: Optimize the personalization of a product or service's content to ensure it is appropriate for the current context of use as well as relevant for the user.</p>
+                        <p><b>User experience</b>: A female user with a cognitive disability may need to select &quot;Less options&quot;, while shopping on a website to eliminate options that are not relevant to a her shopping needs.  In this case it may be appropriate to demote these options  to display below the scroll or placed under a &quot;More option&quot; button.</p>
+                        
                         <p>Relevant properties: <a href="#context">context</a></p>
                     </section>
+    
                     <section id="use_case_interoperable_symbols">
                         <h4>Interoperable Symbols</h4>
-                        <p><b>Requirement:</b> We would like to create interoperable symbol sets for those with complex communication needs using Alternative and Augmentative Communication (AAC) systems. AAC systems designed for people who are non-verbal often use symbols with or without text. End-users tend to only learn one symbol set and cannot easily communicate with other symbol users in a written format or may struggle to understand different symbols used in different applications. Some symbols are subject to copyright and cannot be shared across applications. However, there are open symbol sets that can be shared and mapped against concepts, generating representative text. This text can be translated into different languages and even used to present a different set of symbols. If users' symbols are mapped to the same concepts then user agents can load the user understandable symbols and enable access to the web and other applications.</p>
-                        <p>User experience: AAC users, those working with AAC users and others will be able to load symbols that they understand into different applications that have been made by a different provider.</p>
+                        <p><b>Requirement</b>: Create interoperable symbol sets for users with complex communication needs that require the use of Alternative and Augmentative Communication (AAC) systems. AAC systems are designed for people who are non-verbal that often use symbols with or without text. AAC end-users tend to only learn one symbol set and cannot easily communicate with other symbol users in a written format. In addition, they may struggle to understand different symbols that are used in different applications. It's important to note that some symbols may be subject to copyright, which means they cannot be shared across applications. However, there are open symbol sets that can be shared and mapped against concepts, generating representative text. This text can also be translated into different languages as well as used to display a different set of symbols.</p>
+                        
+                        <p><b>User experience</b>: Mapping an AAC users' symbols to the same concepts enables the user agent to load the appropriate symbols enabling  the user to understand and access content on the web and in other applications. In addition, AAC users, and those working with AAC users will be able to load AAC user symbols into these  applications enabling access to content that has been created by different providers.</p>
+                        
                         <p>Relevant properties: <a href="#concept">concept</a></p>
                     </section>
 </section>
