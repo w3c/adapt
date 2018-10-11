@@ -14,34 +14,32 @@
   <section id="stepindicator-usage-example">
     <h4>Example</h4>
   	<p>Note, the specific mechanism to apply these defined values has not been decided:</p>
-    <div class="example"><div class="example-title marker"><span>Example</span><span style="text-transform: none">: </span></div>
-		<pre>
-      &lt;div aui-stepindicator="book trip">
-        &lt;div aui-status="complete" aria-label="select flight" aui-step="1" aui-steplocation="uri" />
-        &lt;div aui-status="current" aria-label="book hotel" aui-step="2" aui-steplocation="uri" />
-        &lt;div aui-status="" aria-label="book car" aui-step="3" aui-steplocation="uri" />
-        &lt;div aui-status="" aria-label="purchase trip" aui-step="4" steplocation="uri">
-      &lt;/div>
-    </pre>
+    <pre class="example" title="stepindicator using AUI">
+      &lt;div aui-stepindicator="book trip"&gt;
+        &lt;div aui-status="complete" aria-label="select flight" aui-step="1" aui-steplocation="uri" /&gt;
+        &lt;div aui-status="current" aria-label="book hotel" aui-step="2" aui-steplocation="uri" /&gt;
+        &lt;div aui-status="" aria-label="book car" aui-step="3" aui-steplocation="uri" /&gt;
+        &lt;div aui-status="" aria-label="purchase trip" aui-step="4" steplocation="uri" /&gt;
+      &lt;/div&gt;
+
       <p>or the step number can be implied by the DOM</p>
-    <pre>
-      <div aui-stepindicator="book trip">
-          &lt;div aui-status=“complete” aria-labelledby=“select flight”>
-            <a href="uri">Select flight</a>
-          &lt;/div>
-          &lt;div aui-status=“current” aria-labelledby=“book hotel”>
-            <a href="uri">Book Hotel</a>
-          &lt;/div>
-          &lt;div aui-status=“” aria-labelledby=“book car”>
-            <a href="uri">Book car</a>
-          &lt;/div>
-          &lt;div aui-status=“” aria-labelledby=“purchase trip”>
-            <a href="uri">Purchase trip</a>
-          &lt;/div>
-        </div>    
-    </pre>
-    </div>
-    </section>
+
+        &lt;div aui-stepindicator="book trip"&gt;
+          &lt;div aui-status="complete" aria-labelledby="select flight"&gt;
+            &lt;a href="uri">Select flight&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div aui-status="current" aria-labelledby="book hotel"&gt;
+            &lt;a href="uri">Book Hotel&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div aui-status="" aria-labelledby="book car"&gt;
+            &lt;a href="uri">Book car&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div aui-status="" aria-labelledby="purchase trip"&gt;
+            &lt;a href="uri">Purchase trip&lt;/a&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;    
+     </pre>
+     </section>
 </section>
 </section>
 
