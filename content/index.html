@@ -120,6 +120,7 @@ input.task-list-item-checkbox {
 		<title>Personalization Semantics Content Module 1.0</title>
 		
 		
+		
 		<style id="respec-mainstyle">/*****************************************************************
  * ReSpec 3 CSS
  * Robin Berjon - http://berjon.com/
@@ -460,7 +461,6 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   font-weight: bold;
 }
 </style>
-		
 	
 		<link href="../common/css/common.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-content-1.0/"><script id="initialUserConfig" type="application/json">{
@@ -804,17 +804,17 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       ]
     }
   },
-  "publishDate": "2018-10-10",
-  "publishISODate": "2018-10-10T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 10 October 2018"
-}</script><meta name="description" content="This document provides a vocabulary of terms that can be used to enhance web content with information about controls, symbols, and user interface elements. User agents use these semantics to augment or adapt content to the user scenario. This helps the user use and understand the content, and supports simplification and management of distractions."></head>
+  "publishDate": "2018-10-11",
+  "publishISODate": "2018-10-11T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 11 October 2018"
+}</script><meta name="description" content="This document provides use cases and a vocabulary of terms that can be used to enhance web content by providing information about form controls, symbols, and other user interface elements. User agents use the semantics to augment or adapt content to the user’s scenario. This helps users with varying needs to understand the content by providing support for simplification and a way to manage unnecessary distractions."></head>
 	<body class="h-entry toc-inline"><div class="head">
   <a href="https://www.w3.org/" class="logo">
       <img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C">
   </a>
   <h1 id="title" class="title p-name">Personalization Semantics Content Module 1.0</h1>
   
-  <h2><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-10-10">10 October 2018</time></h2>
+  <h2><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-10-11">11 October 2018</time></h2>
   <dl>
     <dt>This version:</dt><dd><a class="u-url" href="https://w3c.github.io/personalization-semantics/content/">https://w3c.github.io/personalization-semantics/content/</a></dd><dt>Latest published version:</dt><dd><a href="https://www.w3.org/TR/personalization-semantics-content-1.0/">https://www.w3.org/TR/personalization-semantics-content-1.0/</a></dd>
     <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/personalization-semantics/content/">https://w3c.github.io/personalization-semantics/content/</a></dd>
@@ -851,8 +851,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 </div>
 
 		<section id="abstract" class="introductory"><!--OddPage--><h2>Abstract</h2>
-			<p>This document provides a vocabulary of terms that can be used to enhance web content with information about controls, symbols, and user interface elements. User agents use these semantics to augment or adapt content to the user scenario. This helps the user use and understand the content, and supports simplification and management of distractions.</p>
-			<p>Personalization Semantics Content Module is a part of Personalization Semantics, which is introduced in the <a href="../">Personalization Semantics Explainer 1.0</a> [<cite><a class="bibref" href="#bib-personalization-semantics-1.0">personalization-semantics-1.0</a></cite>].</p>
+            
+            
+			<p>This document provides use cases and a vocabulary of terms that can be used to enhance web content by providing information about form controls, symbols, and other user interface elements. User agents use the semantics to augment or adapt content to the user’s scenario. This helps users with varying needs to understand the content by providing support for simplification and a way to manage unnecessary distractions.</p>
+			<p>The Personalization Semantics Content Module 1.0 is an extension of the personalization semantics introduced in the <a href="../">Personalization Semantics Explainer 1.0</a> document [<cite><a class="bibref" href="#bib-personalization-semantics-1.0">personalization-semantics-1.0</a></cite>].</p>
 		</section>
 
 		<section id="sotd" class="introductory"><!--OddPage--><h2>Status of This Document</h2><p>
@@ -899,7 +901,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 		<section class="informative" id="introduction">
 
 			<!--OddPage--><h2 id="x1-introduction"><span class="secno">1. </span>Introduction<a class="self-link" aria-label="§" href="#introduction"></a></h2><p><em>This section is non-normative.</em></p>
-			<p>This document is an extension of <a href="../">Personalization Semantics Explainer 1.0</a>. it provided vocabularies that enables user agents to augment or adapt content to the user scenario and helps the user use and understand the content. It includes use cases and vocabularies for identifying the purpose of controls, symbols and user interface elements and supports simplification and distractions.</p>
+     
+            <p>This document provides personalization semantics and vocabularies that can be used to annotate web content enabling user agents to augment or adapt content to various user scenarios based on the user’s personalization settings or preferences.</p>
 			
 			<div class="ednote" id="examples-disclaimer"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="3"><span>Editor's note</span></div><p class="">Personalization semantics defines a set of properties and values to annotate content. The specific mechanism to apply these properties to content has not been decided. <a href="https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content">Several approaches are under consideration</a> and future drafts will show progress. To help with understanding of the properties, this document provides many examples of personalization semantics applied to content, which show attributes beginning with the prefix "aui-". <em>This has not been decided as the chosen approach</em>, but the simplicity supports understanding of the examples.</p></div>
 
@@ -908,31 +911,55 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 			<!--OddPage--><h2 id="x2-use-cases"><span class="secno">2. </span>Use Cases<a class="self-link" aria-label="§" href="#use-cases"></a></h2>
 			<section id="use_case_simplification">
                     <h3 id="x2-1-simplification"><span class="secno">2.1 </span>Simplification<a class="self-link" aria-label="§" href="#use_case_simplification"></a></h3>
-                    <p><b>Requirement</b>: The user must be able to request a way to identify and differentiate between critical features, medium features and less important features. These need to be defined as important from a user perspective in the content. Typically, critical features may be used by many or most users, 90% of the time or more. Highly important features would be above 60% use. Medium important features would be 20% of users use it 20% of the time. Under 20% usage would be of low importance.</p>
-                    <p><b>User experience</b>: Based on personalization setting the user can see less options. A sample user experience is available at <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html">https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html </a></p>
+                    <p><b>Requirement</b>: There must be a mechanism to  identify and differentiate the  features included in web content based on its importance (e.g. critical, high, medium, low). The definition of a feature's importance should be defined from the user's perspective as:</p>
+                    <ul>
+                        <li><code>Critical</code> — used by the majority of users 90% of the time or more.</li>
+                       <li><code>High</code> — used at least 60% of the time or more.</li>
+                       <li><code>Medium</code> —  used by 20% of users, 20% of the time.</li>
+                       <li><code>Low</code> — used less then 20%.</li>
+                    </ul>
+                    
+                    <p><b>User experience</b>: A user changes their personalization settings to simplify the web content that displays based on the importance of various features.  In the sample user experience available at <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html">https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html</a>, the user can select a "More options button or "Less options" button to simplify the web content by hiding or displaying elements that are or of low importance.</p>
+    
                     <p>Relevant properties: <a href="#simplification" class="respec-offending-element"><code>simplification</code></a></p>
 </section>
+
 <section id="use_case_adding_context">
-                    <h3 id="x2-2-adding-context"><span class="secno">2.2 </span>Adding Context<a class="self-link" aria-label="§" href="#use_case_adding_context"></a></h3>
-                    <p><b>Requirement:</b> Having familiar terms and symbols is key to being able to use the web. However, what is familiar for one user may be strange for another, requiring them to learn new symbols. If a user agent or script knows the context of links, buttons, and other page elements then symbols and text used can be ones that the user understands. This can include: </p>
+
+    <h3 id="x2-2-adding-context"><span class="secno">2.2 </span>Adding Context<a class="self-link" aria-label="§" href="#use_case_adding_context"></a></h3>
+                    <p><b>Requirement:</b> Terms and symbols used in web content must be  familiar to the user because what is familiar to one user may be unrecognizable or strange to someone else requiring the user to learn new symbols. Therefore, the user agent or script should understand the context of links, buttons, and other page elements so that symbols and text displayed in a way each  user understands. This can include:</p>
                     <ul>
-                        <li> Symbols and graphics that they are familiar with </li>
-                        <li> Tooltips </li>
-                        <li> Language the use can understand </li>
-                        <li> Keyboard shortcuts </li>
+                        <li>Familiar Symbols and graphics that they are familiar with </li>
+                        <li>Tooltips </li>
+                        <li>Language translation</li>
+                        <li>Keyboard shortcuts </li>
                     </ul>
-                    <p>For that we need to standardize supportive syntax and terms that can be linked to associated symbols, terms, translations and explanations, for the individual, via an attribute.</p>
-                    <p><b>Example user experience:</b> If an author gives to a button a role "send" then, without any work by the author, the button could be automatically rendered with a symbol, term, and/or tooltips that is understandable by a particular user. It could automatically imply F1 help that explains the send function in simple terms. It could be identified with a keyboard shortcut that will always be used for send. In addition, it could be identified as important and always rendered, or rendered as a large button. This would enable a consistent UI experience across applications and websites.</p>
+                    <p>In order to display the appropriate content the supported syntax and terms must be standardized using attributes to associate symbols, terms, translations and explanations that  are presented in a way that is understandable by various user scenarios.</p>
+                    <p><b>Example user experience:</b>: A web content author creates a button with a role="send" then, without any additional work by the author the web content automatically:</p>
+                    <ul>
+                        <li>Renders associated symbols, terms, and/or tooltips that are understandable by a particular user.</li>
+                        <li>Includudes F1 help that explains how the send function works in simple terms. </li>
+                        <li>Has an identified keyboard shortcut that is always used for the send function.</li>
+                        <li>Identifies the send button as important so it is always rendered, or rendered as a large button if needed.</li>
+                    </ul>
+                    <p>Standardizing content with the appropriate attributes can help to ensure a consistent user experience across applications and websites.</p>
+    
                     <p>Relevant properties: <a href="#action" class="respec-offending-element"><code>action</code></a>, <a href="#destination" class="respec-offending-element"><code>destination</code></a>, <a href="#field" class="respec-offending-element"><code>field</code></a></p>
+    
                     <section id="use_case_general_context">
                         <h4 id="x2-2-1-general-context"><span class="secno">2.2.1 </span>General Context<a class="self-link" aria-label="§" href="#use_case_general_context"></a></h4>
-                        <p><b>Requirement: </b> One important factor in optimizing the personalization of a product or service is to ensure that the personalization is appropriate for the current context of use as well as what is relevant for the user. For example a female user with a cognitive disability may need less options, and options that are for men are less likely to be relevant for her and may be demoted to below the scroll or placed under a "more option" button.</p>
+                        <p><b>Requirement</b>: Optimize the personalization of a product or service's content to ensure it is appropriate for the current context of use as well as relevant for the user.</p>
+                        <p><b>User experience</b>: A female user with a cognitive disability may need to select "Less options", while shopping on a website to eliminate options that are not relevant to a her shopping needs.  In this case it may be appropriate to demote these options  to display below the scroll or placed under a "More option" button.</p>
+                        
                         <p>Relevant properties: <a href="#context" class="respec-offending-element">context</a></p>
                     </section>
+    
                     <section id="use_case_interoperable_symbols">
                         <h4 id="x2-2-2-interoperable-symbols"><span class="secno">2.2.2 </span>Interoperable Symbols<a class="self-link" aria-label="§" href="#use_case_interoperable_symbols"></a></h4>
-                        <p><b>Requirement:</b> We would like to create interoperable symbol sets for those with complex communication needs using Alternative and Augmentative Communication (AAC) systems. AAC systems designed for people who are non-verbal often use symbols with or without text. End-users tend to only learn one symbol set and cannot easily communicate with other symbol users in a written format or may struggle to understand different symbols used in different applications. Some symbols are subject to copyright and cannot be shared across applications. However, there are open symbol sets that can be shared and mapped against concepts, generating representative text. This text can be translated into different languages and even used to present a different set of symbols. If users' symbols are mapped to the same concepts then user agents can load the user understandable symbols and enable access to the web and other applications.</p>
-                        <p>User experience: AAC users, those working with AAC users and others will be able to load symbols that they understand into different applications that have been made by a different provider.</p>
+                        <p><b>Requirement</b>: Create interoperable symbol sets for users with complex communication needs that require the use of Alternative and Augmentative Communication (AAC) systems. AAC systems are designed for people who are non-verbal that often use symbols with or without text. AAC end-users tend to only learn one symbol set and cannot easily communicate with other symbol users in a written format. In addition, they may struggle to understand different symbols that are used in different applications. It's important to note that some symbols may be subject to copyright, which means they cannot be shared across applications. However, there are open symbol sets that can be shared and mapped against concepts, generating representative text. This text can also be translated into different languages as well as used to display a different set of symbols.</p>
+                        
+                        <p><b>User experience</b>: Mapping an AAC users' symbols to the same concepts enables the user agent to load the appropriate symbols enabling  the user to understand and access content on the web and in other applications. In addition, AAC users, and those working with AAC users will be able to load AAC user symbols into these  applications enabling access to content that has been created by different providers.</p>
+                        
                         <p>Relevant properties: <a href="#concept" class="respec-offending-element">concept</a></p>
                     </section>
 </section>
@@ -940,6 +967,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 		<section id="content">
 			<!--OddPage--><h2 id="x3-content"><span class="secno">3. </span>Content<a class="self-link" aria-label="§" href="#content"></a></h2>
+            
+            <div class="ednote" id="issue-container-generatedID"><div role="heading" class="ednote-title marker" id="h-ednote-0" aria-level="3"><span>Editor's note</span></div><div class="">Since implementation has not yet been finalized any examples in this document are purely for help in understanding the concept.  All examples will be updated once a final decision has been made on the method for implementation.</div></div>
+            
 			
 <section class="property" id="action-explanation">
 	<h3 id="x3-1-action"><span class="secno">3.1 </span>action<a class="self-link" aria-label="§" href="#action-explanation"></a></h3>
@@ -952,11 +982,12 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </section>
     <section id="action-example">
     	<h4 id="x3-1-2-example"><span class="secno">3.1.2 </span>Example<a class="self-link" aria-label="§" href="#action-example"></a></h4>
-    	<div class="property-example">               	
-                	<p>The below example section show how <code>action</code> used when coding.</p>
-    				<div class="example" id="ex-1-action-using-aria">
-          <div class="marker"><a class="self-link" href="#ex-1-action-using-aria">Example 1</a><span class="example-title">: Action Using ARIA</span></div>
-          <pre class="hljs javascript" aria-busy="false">For example: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aui-action</span>=<span class="hljs-string">"undo"</span> &gt;</span>Revert<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span></pre>
+ 		<p>Here is an example using the <code>action</code> attribute.</p>
+   	    <div class="property-example">               	
+                	
+    				<div class="example" id="ex-1-action-using-aui">
+          <div class="marker"><a class="self-link" href="#ex-1-action-using-aui">Example 1</a><span class="example-title">: Action Using AUI</span></div>
+          <pre class="hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aui-action</span>=<span class="hljs-string">"undo"</span>&gt;</span>Revert<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></pre>
         </div>
         			<p>A personalization agent may add a symbol, replace the text with a more familiar term, or give it a specific presentation. Note that there is no default value.</p>			
     	</div>
@@ -992,7 +1023,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 						</tr>
 					</tbody>
 		</table>
-    	<p>The following could be supported values of <code>action</code> for buttons. Note that The following items represent an option or control that allows you to perform the action. They do not represent page regions.</p>
+    	<p>The following could be supported values of <code>action</code> for buttons. Note that the following items represent an option or control that allows you to perform the action. They do not represent page regions.</p>
     </section>
 
     <section id="values">
@@ -1007,310 +1038,270 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 		</thead>
 		<tbody>
 						<tr>
-							<th class="value-name" scope="row">compose</th>
-							<td class="value-description">compose new item such as an email. (Implied simplification = "critical".)</td>
+							<th class="value-name" scope="row">add</th>
+							<td class="value-description">Add the selected item or the item at the current location to a list.</td>
 						</tr>
 						<tr>
-							<th class="value-name" scope="row">next</th>
-							<td class="value-description">move to the next item in the series. (Implied simplification  = "critical".)</td>
+							<th class="value-name" scope="row">brightness</th>
+							<td class="value-description">Adjust the screen or application  brightness. Often used with increase or decrease but is sometimes used alone as a menu name  or item.
+                            <div class="ednote" id="issue-container-generatedID-0"><div role="heading" class="ednote-title marker" id="h-ednote-1" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div></td>
 						</tr>
-						<tr>
-							<th class="value-name" scope="row">delete</th>
-							<td class="value-description">delete current item, selected control or text</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">previous</th>
-							<td class="value-description">move to the previous item in the series. (Implied simplification  = "critical".)</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">toc</th>
-							<td class="value-description">opens a table of content</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">submit</th>
-							<td class="value-description">submits the form data or request to the server. (Implied simplification  = "critical".)</td>
-						</tr>
-			<tr>
-							<th class="value-name" scope="row">confirm</th>
-							<td class="value-description">confirms the form request to the server. For example, an "ok" button. (Implied simplification  = "critical".)</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">undo</th>
-							<td class="value-description">revert to the state before the user's most recent changes</td>
+  						<tr>
+							<th class="value-name" scope="row">buy</th>
+							<td class="value-description">Buy the selected item or buy the item at the current location. Often involves adding the current item into a shopping cart. (Implied simplification  = "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">cancel</th>
-							<td class="value-description">closes the dialog and discards any changes the user may have made within that dialog. (Implied simplification  = "critical".)</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">reset</th>
-							<td class="value-description">resets all the controls to their initial values</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">label</th>
-							<td class="value-description">add label to the selected item or the item at the current location.</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">buy</th>
-							<td class="value-description">buy the selected item or buy the item at the current location. Often involves adding the current item into a shopping cart. (Implied simplification  = "critical".)</td>
-						</tr>
-			             <tr>
-							<th class="value-name" scope="row">checkout</th>
-							<td class="value-description">proceed to the purchasing process. (Implied simplification  = "critical".)</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">add</th>
-							<td class="value-description">add the selected item or the item at the current location to a list</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">move</th>
-							<td class="value-description">Changes the position of a selected item(s).  Often used with left, right, begin, end, increase (up) or decrease (down)</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">save</th>
-							<td class="value-description">save the current content. (Implied simplification = "critical".)</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">send</th>
-							<td class="value-description">send a form, email or request. (Implied simplification = "critical".)</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">close</th>
-							<td class="value-description">close current dialog. (Implied simplification = "critical".)</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">more</th>
-							<td class="value-description">show more information </td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">print</th>
-							<td class="value-description">print current page, selection or the item at the current location</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">received</th>
-							<td class="value-description">open received folder</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">sent</th>
-							<td class="value-description">open sent folder</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">edit</th>
-							<td class="value-description">edit current item, selection or the item at the current location</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">forward</th>
-							<td class="value-description">forward to current item such as an email</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">reply</th>
-							<td class="value-description">reply to current item such as an email. (Implied simplification = "critical".)</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">upload</th>
-							<td class="value-description">upload file to the server</td>
-						</tr>
-			             <tr>
-							<th class="value-name" scope="row">download</th>
-							<td class="value-description">download file from the server</td>
-						</tr>
-			             <tr>
-							<th class="value-name" scope="row">connect</th>
-							<td class="value-description">connect a communication channel</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">open</th>
-							<td class="value-description">open item. (Implied simplification = "critical".)</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">new</th>
-							<td class="value-description">open new item. (Implied simplification= "critical".)</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">settings</th>
-							<td class="value-description">open settings and options</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">mode</th>
-							<td class="value-description">change the mode or functionality. (Implied simplification= "critical".)</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">increase</th>
-							<td class="value-description">increases the level of the relevant setting. (Implied simplification= "critical".)</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">decrease</th>
-							<td class="value-description">decreases the level of the relevant setting. (Implied simplification= "critical".)</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">play</th>
-							<td class="value-description">play a multimedia, audio or video element or object. (Implied simplification= "critical".)</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">pause</th>
-							<td class="value-description">pause a multimedia, audio or video element or object. (Implied simplification= "critical".)</td>
+							<td class="value-description">Closes the dialog and discards any changes the user may have made within that dialog. (Implied simplification  = "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">captions</th>
-							<td class="value-description">show the settings for captions and subtitles. </td>
+							<td class="value-description">Show the settings for captions and subtitles. </td>
 						</tr>
-			             <tr>
-							<th class="value-name" scope="row">mute</th>
-							<td class="value-description">mute or toggle the mute option. </td>
-						</tr>
-			             <tr>
-							<th class="value-name" scope="row">volume</th>
-							<td class="value-description">change or show the settings for the volume. (Implied simplification = "critical".) </td>
-						</tr>
-			             <tr>
+ 						<tr>
 							<th class="value-name" scope="row">channel</th>
-							<td class="value-description">change or show the settings for the channel. (Implied simplification = "critical".) </td>
+							<td class="value-description">Adjust the channel of a multimedia component. Often used with increase or decrease but is sometimes used alone as a menu name  or item. 
+                            <div class="ednote" id="issue-container-generatedID-1"><div role="heading" class="ednote-title marker" id="h-ednote-2" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div></td>
 						</tr>
 			             <tr>
-							<th class="value-name" scope="row">temperature</th>
-							<td class="value-description">change or show the settings for the temperature. (Implied simplification = "critical".)</td>
-						</tr>
-			             <tr>
-							<th class="value-name" scope="row">brightness</th>
-							<td class="value-description">change or show the settings for the brightness. </td>
+							<th class="value-name" scope="row">checkout</th>
+							<td class="value-description">Proceed to the purchasing process. (Implied simplification  = "critical".)</td>
 						</tr>
 						<tr>
-							<th class="value-name" scope="row">profile</th>
-							<td class="value-description">opens the user's profile page</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">expand</th>
-							<td class="value-description">expand or unexpand the current item</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">refresh</th>
-							<td class="value-description">manually refresh the current contents of the screen</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">properties</th>
-							<td class="value-description">shows the properties of the item</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">help</th>
-							<td class="value-description">opens a help function. (Implied simplification= "critical".)</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">cut</th>
-							<td class="value-description">removes the selected control, item or text and places it on the clipboard</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">copy</th>
-							<td class="value-description">copies the selected control, item or text onto the clipboard</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">paste</th>
-							<td class="value-description">paste the content from the clipboard to the current position</td>
+							<th class="value-name" scope="row">close</th>
+							<td class="value-description">Close the current dialog. (Implied simplification = "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">color</th>
-							<td class="value-description">opens a color picker</td>
+							<td class="value-description">Opens a color picker.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">compose</th>
+							<td class="value-description">Compose a new item such as an email. (Implied simplification = "critical".)</td>
+						</tr>
+                        <tr>
+							<th class="value-name" scope="row">confirm</th>
+							<td class="value-description">Confirms submission of the form request to the server. For example, an "ok" button. (Implied simplification  = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">connect</th>
+							<td class="value-description">Connect to a communication channel, such as an FTP server or Voice over IP channel.  Often used with  [aria-pressed = "true"] for on or [aria-pressed = "false"] for off.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">copy</th>
+							<td class="value-description">Copies the selected control, item or text and places it onto the clipboard</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">cut</th>
+							<td class="value-description">Removes the selected control, item or text and places it onto the clipboard</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">date</th>
-							<td class="value-description">opens a date control. (Implied simplification= "critical".)</td>
+							<td class="value-description">Opens a date control. (Implied simplification= "critical".)</td>
 						</tr>
 						<tr>
-							<th class="value-name" scope="row">remove</th>
-							<td class="value-description">remove an item from a list</td>
+							<th class="value-name" scope="row">decrease</th>
+							<td class="value-description">Decreases the level of the relevant setting. (Implied simplification= "critical".)</td>
 						</tr>
 						<tr>
-							<th class="value-name" scope="row">right</th>
-							<td class="value-description">moves a selected item to the right to another column or list</td>
+							<th class="value-name" scope="row">delete</th>
+							<td class="value-description">Delete the current item, selected control, or text.</td>
+						</tr>
+			             <tr>
+							<th class="value-name" scope="row">download</th>
+							<td class="value-description">Download a file from the server.</td>
 						</tr>
 						<tr>
-							<th class="value-name" scope="row">left</th>
-							<td class="value-description">moves a selected item to the left to another column or list</td>
+							<th class="value-name" scope="row">drag</th>
+							<td class="value-description">Enables a dragged and dropped capabilities.   Often used with  [aria-pressed = "true"] for on or [aria-pressed = "false"] for off.</td>
 						</tr>
 						<tr>
-							<th class="value-name" scope="row">skip</th>
-							<td class="value-description">skips the current step, typically used a  in a sequence of steps</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">scroll</th>
-							<td class="value-description">advances the view. Often used with left, right, begin, end, increase (up) or decrease (down)</td>
+							<th class="value-name" scope="row">edit</th>
+							<td class="value-description">Edit the item or selection at the current location.</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">escape</th>
 							<td class="value-description">Typically used to abort, cancel or change what is currently being displayed on the screen. A common application of the the esc key is to leave full screen mode.</td>
 						</tr>
+            
 						<tr>
-							<th class="value-name" scope="row">voiceCommands</th>
-							<td class="value-description">activate or deactivate voice commands. Often used with  [aria-pressed = "true"] for on or [aria-pressed = "false"] for off.</td>
+							<th class="value-name" scope="row">expand</th>
+							<td class="value-description">Expand or collapse the current item.</td>
 						</tr>
 						<tr>
-							<th class="value-name" scope="row">connect</th>
-							<td class="value-description">connect to a communication channel, such as an FTP server or Voice over IP channel.  Often used with  [aria-pressed = "true"] for on or [aria-pressed = "false"] for off.</td>
+							<th class="value-name" scope="row">forward</th>
+							<td class="value-description">Forward the current item such as an email.</td>
 						</tr>
 						<tr>
-							<th class="value-name" scope="row">drag</th>
-							<td class="value-description">enables a dragged and dropped capabilities.   Often used with  [aria-pressed = "true"] for on or [aria-pressed = "false"] for off.</td>
+							<th class="value-name" scope="row">help</th>
+							<td class="value-description">Opens a help function. (Implied simplification= "critical".)</td>
 						</tr>
 						<tr>
-							<th class="value-name" scope="row">re-size</th>
-							<td class="value-description">increase or decrease font size.  Often used with increase or decrease.</td>
+							<th class="value-name" scope="row">increase</th>
+							<td class="value-description">Increases the level of the relevant setting. (Implied simplification= "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">label</th>
+							<td class="value-description">Add a label to the selected item or the item at the current location.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">left</th>
+							<td class="value-description">Moves a selected item to the left into another column or list.</td>
+						</tr>
+           
+   						<tr>
+							<th class="value-name" scope="row">loop</th>
+							<td class="value-description">Plays the flow, presentation or a movie over and over again, once or without stopping. Often used with  [aria-pressed = "true"] for on or [aria-pressed = "false"] for off.
+                            <div class="ednote" id="issue-container-generatedID-2"><div role="heading" class="ednote-title marker" id="h-ednote-3" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div></td>
+						</tr>            
+						<tr>
+							<th class="value-name" scope="row">mediaPosition</th>
+							<td class="value-description">Adjust the current playback position in the current media.
+                            <div class="ednote" id="issue-container-generatedID-3"><div role="heading" class="ednote-title marker" id="h-ednote-4" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div></td>
+						</tr>
+ 						<tr>
+							<th class="value-name" scope="row">mode</th>
+							<td class="value-description">Change the mode or functionality. (Implied simplification= "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">more</th>
+							<td class="value-description">Show more information. </td>
+						</tr>
+                        <tr>
+							<th class="value-name" scope="row">move</th>
+							<td class="value-description">Changes the position of a selected item(s).  Often used with left, right, begin, end, increase (up) or decrease (down).</td>
+						</tr>
+			             <tr>
+							<th class="value-name" scope="row">mute</th>
+							<td class="value-description">Mute or toggle the mute option. </td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">new</th>
+							<td class="value-description">Open a new item. (Implied simplification= "critical".)</td>
+						</tr>
+                        <tr>
+							<th class="value-name" scope="row">next</th>
+							<td class="value-description">Move to the next item in the series. (Implied simplification  = "critical".)</td>
+						</tr>
+			         	<tr>
+							<th class="value-name" scope="row">open</th>
+							<td class="value-description">Open an item. (Implied simplification = "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">order</th>
-							<td class="value-description">Changes of the selected item position within list items, while each item in the list has a layer position Often used with  increase (forward), decrease (back), first and end.</td>
+							<td class="value-description">Changes the position of the selected item within a list of items, while each item in the list has a layer position. Often used with increase (forward), decrease (back), first and end.</td>
 						</tr>
 						<tr>
-							<th class="value-name" scope="row">mediaPosition</th>
-							<td class="value-description">adjust the current playback position in the current media</td>
+							<th class="value-name" scope="row">paste</th>
+							<td class="value-description">Paste the content from the clipboard to the current position.</td>
 						</tr>
 						<tr>
-							<th class="value-name" scope="row">loop</th>
-							<td class="value-description">plays the flow, presentation or a movie over and over again, once or without stopping. Often used with  [aria-pressed = "true"] for on or [aria-pressed = "false"] for off.</td>
+							<th class="value-name" scope="row">pause</th>
+							<td class="value-description">Pause a multimedia, audio or video element or object. (Implied simplification= "critical".)</td>
 						</tr>
 						<tr>
-							<th class="value-name" scope="row">volume</th>
-							<td class="value-description">adjust the volume of a multi media component. Often used with increase or decrease  but is sometimes used alone as a menu name or item.</td>
+							<th class="value-name" scope="row">play</th>
+							<td class="value-description">Play a multimedia, audio or video element or object. (Implied simplification= "critical".)</td>
 						</tr>
 						<tr>
-							<th class="value-name" scope="row">channel</th>
-							<td class="value-description">adjust the channel of a multi media component. Often used with increase or decrease but is sometimes used alone as a menu name  or item.</td>
+							<th class="value-name" scope="row">previous</th>
+							<td class="value-description">Move to the previous item in the series. (Implied simplification  = "critical".)</td>
 						</tr>
 						<tr>
+							<th class="value-name" scope="row">print</th>
+							<td class="value-description">Print the current page, selection or the item at the current location.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">profile</th>
+							<td class="value-description">Opens the user's profile page</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">properties</th>
+							<td class="value-description">Shows the properties of an item.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">received</th>
+							<td class="value-description">Open the received folder.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">refresh</th>
+							<td class="value-description">Manually refresh the current contents of the screen.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">remove</th>
+							<td class="value-description">Removes an item from a list.</td>
+						</tr>
+            
+						<tr>
+							<th class="value-name" scope="row">reply</th>
+							<td class="value-description">Reply to the current item such as an email. (Implied simplification = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">reset</th>
+							<td class="value-description">Resets all the controls to their initial values.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">resize</th>
+							<td class="value-description">Increase or decrease the font size.  Often used with increase or decrease.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">right</th>
+							<td class="value-description">Moves a selected item to the right into another column or list.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">save</th>
+							<td class="value-description">Save the current content. (Implied simplification = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">scroll</th>
+							<td class="value-description">Advances the view. Often used with left, right, begin, end, increase (up) or decrease (down).</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">send</th>
+							<td class="value-description">Send a form, email or request. (Implied simplification = "critical".)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">sent</th>
+							<td class="value-description">Open the sent folder.</td>
+						</tr>
+  						<tr>
+							<th class="value-name" scope="row">settings</th>
+							<td class="value-description">Open settings and options.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">skip</th>
+							<td class="value-description">Skips the current step. This is typically used in a sequence of steps.</td>
+						</tr>
+          
+						<tr>
+							<th class="value-name" scope="row">submit</th>
+							<td class="value-description">Submits the form data or a request to the server. (Implied simplification  = "critical".)</td>
+						</tr>
+ 						<tr>
 							<th class="value-name" scope="row">temperature</th>
-							<td class="value-description">adjust the temperature. Often used with increase or decrease but is sometimes used alone as a menu name or item.</td>
+							<td class="value-description">Adjust the temperature. Often used with increase or decrease but is sometimes used alone as a menu name  or item. 
+                            <div class="ednote" id="issue-container-generatedID-4"><div role="heading" class="ednote-title marker" id="h-ednote-5" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div></td>
 						</tr>
 						<tr>
-							<th class="value-name" scope="row">brightness</th>
-							<td class="value-description"> adjust the screen or application  brightness. Often used with increase or decrease but is sometimes used alone as a menu name or item.</td>
+							<th class="value-name" scope="row">toc</th>
+							<td class="value-description">Opens a table of contents.</td>
 						</tr>
-   						<tr>
-							<th class="value-name" scope="row">mediaPosition</th>
-							<td class="value-description">Adjust the current playback position in the current media.
-                            <div class="ednote" id="issue-container-generatedID"><div role="heading" class="ednote-title marker" id="h-ednote-0" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div></td>
+						<tr>
+							<th class="value-name" scope="row">undo</th>
+							<td class="value-description">Revert back to the prior state before the user's most recent changes</td>
 						</tr>
-   						<tr>
-							<th class="value-name" scope="row">loop</th>
-							<td class="value-description">plays the flow, presentation or a movie over and over again, once or without stopping. Often used with  [aria-pressed = "true"] for on or [aria-pressed = "false"] for off.
-                            <div class="ednote" id="issue-container-generatedID-0"><div role="heading" class="ednote-title marker" id="h-ednote-1" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div></td>
+						<tr>
+							<th class="value-name" scope="row">upload</th>
+							<td class="value-description">Upload a file to the server.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">voiceCommands</th>
+							<td class="value-description">Activate or deactivate voice commands. Often used with  [aria-pressed = "true"] for on or [aria-pressed = "false"] for off.</td>
 						</tr>
   						<tr>
 							<th class="value-name" scope="row">volume</th>
-							<td class="value-description">adjust the volume of a multi media component. Often used with increase or decrease  but is sometimes used alone as a menu name  or item. 
-                            <div class="ednote" id="issue-container-generatedID-1"><div role="heading" class="ednote-title marker" id="h-ednote-2" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div></td>
-						</tr>
- 						<tr>
-							<th class="value-name" scope="row">channel</th>
-							<td class="value-description">adjust the channel of a multi media component. Often used with increase or decrease but is sometimes used alone as a menu name  or item. 
-                            <div class="ednote" id="issue-container-generatedID-2"><div role="heading" class="ednote-title marker" id="h-ednote-3" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div></td>
-						</tr>
- 						<tr>
-							<th class="value-name" scope="row">temperature</th>
-							<td class="value-description">adjust the temperature. Often used with increase or decrease but is sometimes used alone as a menu name  or item. 
-                            <div class="ednote" id="issue-container-generatedID-3"><div role="heading" class="ednote-title marker" id="h-ednote-4" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div></td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">brightness</th>
-							<td class="value-description">adjust the screen or application  brightness. Often used with increase or decrease but is sometimes used alone as a menu name  or item.
-                            <div class="ednote" id="issue-container-generatedID-4"><div role="heading" class="ednote-title marker" id="h-ednote-5" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div></td>
+							<td class="value-description">Adjust the volume of a multimedia component. Often used with increase or decrease  but is sometimes used alone as a menu name  or item.
+                            <div class="ednote" id="issue-container-generatedID-5"><div role="heading" class="ednote-title marker" id="h-ednote-6" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div></td>
 						</tr>
 			</tbody>
 		</table>
@@ -1327,18 +1318,20 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 	<section id="description-0">
 		<h4 id="x3-2-1-description"><span class="secno">3.2.1 </span>Description<a class="self-link" aria-label="§" href="#description-0"></a></h4>
 		<div class="property-description">
-			<p>The <code>destination</code> term categorizes the target of a hyperlink.</p>
+			<p>The <code>destination</code> attribute categorizes the target of a hyperlink.</p>
 			<p>A personalization agent or user agent may add additional familiar user interface features to help users understand the link and follow the right one easily. User agents might add a familiar customized icon to the link, or style the link in a customized way, or position the link on the page in a location that the user generally expects to find a link of the particular type.</p>
 		</div>
 	</section>
 	<section id="destination-example">
 		<h4 id="x3-2-2-example"><span class="secno">3.2.2 </span>Example<a class="self-link" aria-label="§" href="#destination-example"></a></h4>
 		<p>The below example section show how <code>destination</code> used when coding.</p>
-    	<div class="example" id="ex-2-action-using-aria">
-          <div class="marker"><a class="self-link" href="#ex-2-action-using-aria">Example 2</a><span class="example-title">: Action Using ARIA</span></div>
-          <pre class="hljs xml" aria-busy="false">      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"home.html"</span> <span class="hljs-attr">aui-destination</span>=<span class="hljs-string">"home"</span>&gt;</span>our main page<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-See the destination sample user experience.</pre>
+    	<div class="example" id="ex-2-destination-using-aui">
+          <div class="marker"><a class="self-link" href="#ex-2-destination-using-aui">Example 2</a><span class="example-title">: Destination Using AUI</span></div>
+          <pre class="hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"home.html"</span> <span class="hljs-attr">aui-destination</span>=<span class="hljs-string">"home"</span>&gt;</span>our main page<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></pre>
         </div>
+		<p>See the <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html">destination sample user experience</a>.</p>
+    
+        
     </section>
     <section id="characteristics-0">
     	<h4 id="x3-2-3-characteristics"><span class="secno">3.2.3 </span>Characteristics<a class="self-link" aria-label="§" href="#characteristics-0"></a></h4>
@@ -1382,112 +1375,103 @@ See the destination sample user experience.</pre>
 					</thead>
 					<tbody>
 						<tr>
-							<th class="value-name" scope="row">home</th>
-							<td class="value-description">initial or main page of a website or application</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">contact</th>
-							<td class="value-description">opens contact information for content owner or producer</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">phone</th>
-							<td class="value-description">phone content owner or producer</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">email</th>
-							<td class="value-description">email content owner or producer</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">sitemap</th>
-							<td class="value-description">content containing a list of pages in a web site</td>
+							<th class="value-name" scope="row">about</th>
+							<td class="value-description">Information about the content owner or producer.</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">accessibilityStatement</th>
-							<td class="value-description">information about the accessibility in a web site or web content</td>
+							<td class="value-description">Information about the accessibility features in a web site or web content.</td>
 						</tr>
-						<tr>
-							<th class="value-name" scope="row">help</th>
-							<td class="value-description">a help function, support or instructions</td>
+   						<tr>
+							<th class="value-name" scope="row">begin</th>
+							<td class="value-description">Changes the location to the beginning item from a list of items or redirects the functionality to the first step in a sequence.</td>
 						</tr>
-						<tr>
+                     <tr>
 							<th class="value-name" scope="row">chat</th>
-							<td class="value-description">Human help or a dialog help function such as a chat bot</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">about</th>
-							<td class="value-description">information about the content owner or producer</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">terms</th>
-							<td class="value-description">terms and conditions</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">tools</th>
-							<td class="value-description">available tools for the current content</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">services</th>
-							<td class="value-description">services available from the content provider</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">products</th>
-							<td class="value-description">products available from the content provider</td>
+							<td class="value-description">Human help or a dialog help function such as a chat bot.</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">comment</th>
-							<td class="value-description">submit a comment on the current item</td>
+							<td class="value-description">Submit a comment on the current item.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">contact</th>
+							<td class="value-description">Opens contact information for content owner or producer.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">email</th>
+							<td class="value-description">Email address for the content owner or producer.</td>
+						</tr>
+  						<tr>
+							<th class="value-name" scope="row">end</th>
+							<td class="value-description">Changes the location to the end item from a list of items or redirects the functionality to the last step in a sequence.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">help</th>
+							<td class="value-description">A help function that includes support or instructions.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">home</th>
+							<td class="value-description">Initial or main page of a website or application.</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">language</th>
-							<td class="value-description">language options</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">signin</th>
-							<td class="value-description">sign in to current web site or application</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">signout</th>
-							<td class="value-description">sign out current web site or application</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">register</th>
-							<td class="value-description">register for the current web site or application</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">social</th>
-							<td class="value-description">content provider on social media. Note, that the specific name of the social media platform should be included in the accessible name.
-                            <div class="ednote" id="issue-container-generatedID-5"><div role="heading" class="ednote-title marker" id="h-ednote-6" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div></td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">post</th>
-							<td class="value-description">post current item. Item will be visible to other parties.</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">begin</th>
-							<td class="value-description">Changes the location to the beginning item from a list of items or redirects functionality to the first step in a sequence.</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">end</th>
-							<td class="value-description">Changes the location to the end item from a list of items or redirects functionality to the last step in a sequence.</td>
+							<td class="value-description">Available language options for the website or web content.</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">left</th>
 							<td class="value-description">Changes the location of the selected item(s) to the left.</td>
 						</tr>
 						<tr>
-							<th class="value-name" scope="row">right</th>
-							<td class="value-description">Changes the location of the selected item(s) to the right.</td>
+							<th class="value-name" scope="row">phone</th>
+							<td class="value-description">Phone number for the content owner or producer.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">post</th>
+							<td class="value-description">Post current item. Item will be visible to other parties.</td>
+						</tr>
+                        <tr>
+							<th class="value-name" scope="row">products</th>
+							<td class="value-description">Products available from the content provider.</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">related</th>
 							<td class="value-description">Adds a related item(s) to a pre-selected list of items.</td>
 						</tr>
-                        
-  						<tr>
-							<th class="value-name" scope="row">related</th>
-							<td class="value-description">Adds a related item(s) to a pre-selected list of items.</td>
+						<tr>
+							<th class="value-name" scope="row">right</th>
+							<td class="value-description">Changes the location of the selected item(s) to the right.</td>
 						</tr>
-					</tbody>
+						<tr>
+							<th class="value-name" scope="row">services</th>
+							<td class="value-description">Services available from the content provider.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">signin</th>
+							<td class="value-description">Sign in to the current web site or application.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">signout</th>
+							<td class="value-description">Sign out of the current web site or application.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">sitemap</th>
+							<td class="value-description">Content containing a list of all the pages in a web site.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">social</th>
+							<td class="value-description">Content provider on a social media platform. Note, that the specific name of the social media platform should be included in the accessible name.
+                            <div class="ednote" id="issue-container-generatedID-6"><div role="heading" class="ednote-title marker" id="h-ednote-7" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div></td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">terms</th>
+							<td class="value-description">The terms and conditions of use applicable to the website or web content.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">tools</th>
+							<td class="value-description">Available tools for the current content.</td>
+						</tr>
+ 					</tbody>
 				</table>
     </section>
 </section>
@@ -1501,18 +1485,19 @@ See the destination sample user experience.</pre>
 	<section id="description-1">
 		<h4 id="x3-3-1-description"><span class="secno">3.3.1 </span>Description<a class="self-link" aria-label="§" href="#description-1"></a></h4>
 		<div class="property-description">
-			<p><code>field</code> provides the context of a text input field such as a text box. It is typically used on an input of type text, or element with a responding role.</p>
+			<p>The <code>field</code> attribute provides the context of a text input field such as a text box. It is typically used on an input of type text, or element with a corresponding role.</p>
 			<p>A personalization agent may add a symbol, replace the text with a more familiar term, or give it a specific presentation. Note that there is no default value.</p><p>The user experience may include filling in the field and adding an icon.</p>
-			<p><code>field</code> values that would typically be on form controls and would have a user context - for example phone would relate to the user's phone. Note that there is no default value.</p>
-			<p>Note they can be more then one value for a field, such as <code>aui-field="country postcode"</code></p>
+			<p>The <code>field</code> values that would typically be on form controls should provide context for the user. For example tel would relate to the user's telephone number. Note that there is no default value and there can be more than one value for a field, such as  <code>aui-field="country postcode"</code> which includes both the country and postal code.</p>
 		</div>
 	</section>
 
 	<section id="field-example">
 		<h4 id="x3-3-2-example"><span class="secno">3.3.2 </span>Example<a class="self-link" aria-label="§" href="#field-example"></a></h4>
-		<p>The below example section show how <code>field</code> used when coding.</p>
-    	<pre class="example hljs" title="Fields Using ARIA" aria-busy="false">         &lt;input type="text" name="telnum" aui-field="tel"/&gt;
-		</pre>
+		<p>Here is an example using the <code>field</code> attribute when coding.</p>
+    	<div class="example" id="ex-3-field-using-aui">
+          <div class="marker"><a class="self-link" href="#ex-3-field-using-aui">Example 3</a><span class="example-title">: Field Using AUI</span></div>
+          <pre class="hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"telnum"</span> <span class="hljs-attr">aui-field</span>=<span class="hljs-string">"tel"</span>/&gt;</span></pre>
+        </div>
     </section>
     <section id="characteristics-1">
     	<h4 id="x3-3-3-characteristics"><span class="secno">3.3.3 </span>Characteristics<a class="self-link" aria-label="§" href="#characteristics-1"></a></h4>
@@ -1554,255 +1539,252 @@ See the destination sample user experience.</pre>
 					</thead>
 					<tbody>
 						<tr>
-							<th class="value-name" scope="row">name</th>
-							<td class="value-description">full name</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">honorificPrefix</th>
-							<td class="value-description">prefix or title (Mr., Mrs. Dr., etc.) </td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">givenName</th>
-							<td class="value-description">given or first name</td>
-						</tr>
-						<tr>
 							<th class="value-name" scope="row">additionalName</th>
-							<td class="value-description">additional or middle name</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">additionalNameInitial</th>
-							<td class="value-description">additional or middle name initial</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">familyName</th>
-							<td class="value-description">family name, surname, or last name</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">honorificSuffix</th>
-							<td class="value-description">suffix (Jr., II, etc.)</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">nickname</th>
-							<td class="value-description">nickname</td>
+							<td class="value-description">Additional or middle name.</td>
 						</tr>
                         <tr>
-                            <th class="value-name" scope="row">streetAddress</th>
-                            <td class="value-description">full street address condensed into one line</td>
+							<th class="value-name" scope="row">additionalNameInitial</th>
+							<td class="value-description">Additional or middle name initial.</td>
 						</tr>
-						<tr>
+                        <tr>
 							<th class="value-name" scope="row">addressLine1</th>
-							<td class="value-description">first line of street address </td>
+							<td class="value-description">First line of street address.</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">addressLine2</th>
-							<td class="value-description">second line of street address</td>
+							<td class="value-description">Second line of street address.</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">addressLine3</th>
-							<td class="value-description">third line of street address</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">city</th>
-							<td class="value-description">locality or city</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">area</th>
-							<td class="value-description">administrative area, state, province, or region</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">postalcode</th>
-							<td class="value-description">postal or ZIP code</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">country</th>
-							<td class="value-description">country name</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">fax</th>
-							<td class="value-description">full fax number, including country code</td>
-						</tr>
-                        <tr>
-							<th class="value-name" scope="row">faxCountryCode</th>
-							<td class="value-description">international country code</td>
-						</tr>
-
-                        <tr>
-							<th class="value-name" scope="row">faxNational</th>
-							<td class="value-description">national fax number: full number minus country code</td>
-						</tr>
-                        <tr>
-                            <th class="value-name" scope="row">faxAreaCode</th>
-                            <td class="value-description">area code</td>
-                        </tr>
-                        <tr>
-							<th class="value-name" scope="row">faxLocal</th>
-							<td class="value-description">local fax number: full number minus country and area codes</td>
-						</tr>
-                        <tr>
-							<th class="value-name" scope="row">faxExtension</th>
-							<td class="value-description">fax extension number</td>
-						</tr>
-                        <tr>
-							<th class="value-name" scope="row">email</th>
-							<td class="value-description">email address</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">tel</th>
-							<td class="value-description">full phone number, including country code</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">telCountryCode</th>
-							<td class="value-description">international country code</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">telNational</th>
-							<td class="value-description">national phone number: full number minus country code</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">telAreaCode</th>
-							<td class="value-description">area code</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">telLocal</th>
-							<td class="value-description">local phone number: full number minus country and area codes</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">telExtension</th>
-							<td class="value-description">phone extension number</td>
-						</tr>
-				        <tr>
-							<th class="value-name" scope="row">ccName</th>
-							<td class="value-description">full name, as it appears on credit card</td>
-						</tr>
-						 <tr>
-							<th class="value-name" scope="row">ccType</th>
-							<td class="value-description">type of payment instrument (e.g. Visa). Note that there may be a change to allow for adding options.</td>
-                        </tr>
-						<tr>
-							<th class="value-name" scope="row">ccNumber</th>
-							<td class="value-description">credit card number</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">ccExpMonth</th>
-							<td class="value-description">month of expiration of credit card</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">ccExpYear</th>
-							<td class="value-description">year of expiration of credit card</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">ccExp</th>
-							<td class="value-description">date of expiration of credit card</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">ccCsc</th>
-							<td class="value-description">credit card security code</td>
-						</tr>
-                        <tr>
-							<th class="value-name" scope="row">language</th>
-							<td class="value-description">preferred language</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">bday</th>
-							<td class="value-description">birthday</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">bdayYear</th>
-							<td class="value-description">year of birthday</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">bdayMonth</th>
-							<td class="value-description">month of birthday</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">bdayDay</th>
-							<td class="value-description">day of birthday</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row"></th>
-							<td class="value-description">day of birthday</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">transactionCurrency</th>
-							<td class="value-description">the monetary system being used for the transaction. Note that there may be a change to allow for adding options</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">transactionAmount</th>
-							<td class="value-description">the amount that the user is committing to for a transaction. (Often used when entering a bid or sale price.)</td>
-						</tr>
-						
-						<tr>
-							<th class="value-name" scope="row">topic</th>
-							<td class="value-description">Topic for the form. Typically selected from a list of reserved words</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">comment</th>
-							<td class="value-description">comment section. Typically a free text field</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">subject</th>
-							<td class="value-description">form subject. Typically a free text field</td>
+							<td class="value-description">Third line of street address.</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">answer</th>
-							<td class="value-description">answer to a section question</td>
+							<td class="value-description">Answer to a section question.</td>
 						</tr>
 						<tr>
-							<th class="value-name" scope="row">org</th>
-							<td class="value-description">company or organization</td>
+							<th class="value-name" scope="row">area</th>
+							<td class="value-description">Administrative area, state, province, or region.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">bday</th>
+							<td class="value-description">Birthday.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">bdayDay</th>
+							<td class="value-description">Day of birthday.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">bdayMonth</th>
+							<td class="value-description">Month of birthday.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">bdayYear</th>
+							<td class="value-description">Year of birthday.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">ccCsc</th>
+							<td class="value-description">Credit card security codey.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">ccExp</th>
+							<td class="value-description">Date of expiration of credit card.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">ccExpMonth</th>
+							<td class="value-description">Month of expiration of credit card.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">ccExpYear</th>
+							<td class="value-description">Year of expiration of credit card.</td>
+						</tr>
+				        <tr>
+							<th class="value-name" scope="row">ccName</th>
+							<td class="value-description">Full name, as it appears on credit card.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">ccNumber</th>
+							<td class="value-description">Credit card number.</td>
+						</tr>
+						 <tr>
+							<th class="value-name" scope="row">ccType</th>
+							<td class="value-description">Type of payment instrument (e.g. Visa). Note that there may be a change to allow for adding options.</td>
+                        </tr>
+						<tr>
+							<th class="value-name" scope="row">city</th>
+							<td class="value-description">Locality or city.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">comment</th>
+							<td class="value-description">Form comment section. Typically, a free text field.</td>
 						</tr>
                         <tr>
-							<th class="value-name" scope="row">position</th>
-							<td class="value-description">user's position or title within company or organization</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">sex</th>
-							<td class="value-description">sex or gender</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">gender</th>
-							<td class="value-description">gender identity</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">url</th>
-							<td class="value-description">Website URL</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">photo</th>
-							<td class="value-description">photo or avatar</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">section-*****</th>
-							<td class="value-description">used to group forms together</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">timeStart</th>
-							<td class="value-description"> Set the start time or the time of an event. 
-                            <div class="note" id="issue-container-generatedID-6"><div role="heading" class="note-title marker" id="h-note" aria-level="5"><span>Note</span></div><em class="">We may remove this or harmonize with other date time standards.</em></div>
-                            <div class="ednote" id="issue-container-generatedID-7"><div role="heading" class="ednote-title marker" id="h-ednote-7" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div>
-                            </td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">timeEnd</th>
-							<td class="value-description">Set the end time of an event.
-                            <div class="note" id="issue-container-generatedID-8"><div role="heading" class="note-title marker" id="h-note-0" aria-level="5"><span>Note</span></div><em class="">We may remove this or harmonize with other date time standards.</em></div>
-                            <div class="ednote" id="issue-container-generatedID-9"><div role="heading" class="ednote-title marker" id="h-ednote-8" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div>
-                            </td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">dateStart</th>
-							<td class="value-description">Set the start date or the date of an event.
-                            <div class="note" id="issue-container-generatedID-10"><div role="heading" class="note-title marker" id="h-note-1" aria-level="5"><span>Note</span></div><em class="">We may remove this or harmonize with other date time standards.</em></div>
-                            <div class="ednote" id="issue-container-generatedID-11"><div role="heading" class="ednote-title marker" id="h-ednote-9" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div>
-                            </td>
+							<th class="value-name" scope="row">country</th>
+							<td class="value-description">Country name.</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">dateEnd</th>
 							<td class="value-description">Set the end time of an event  
-                            <div class="note" id="issue-container-generatedID-12"><div role="heading" class="note-title marker" id="h-note-2" aria-level="5"><span>Note</span></div><em class="">We may remove this or harmonize with other date time standards.</em></div>
-                            <div class="ednote" id="issue-container-generatedID-13"><div role="heading" class="ednote-title marker" id="h-ednote-10" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implemetions.</em></div>
+                            <div class="note" id="issue-container-generatedID-7"><div role="heading" class="note-title marker" id="h-note" aria-level="5"><span>Note</span></div><em class="">We may remove this or harmonize with other date time standards.</em></div>
+                            <div class="ednote" id="issue-container-generatedID-8"><div role="heading" class="ednote-title marker" id="h-ednote-8" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div>
                             </td>
                         </tr>
+                        
+						<tr>
+							<th class="value-name" scope="row">dateStart</th>
+							<td class="value-description">Set the start date or the date of an event.
+                            <div class="note" id="issue-container-generatedID-9"><div role="heading" class="note-title marker" id="h-note-0" aria-level="5"><span>Note</span></div><em class="">We may remove this or harmonize with other date time standards.</em></div>
+                            <div class="ednote" id="issue-container-generatedID-10"><div role="heading" class="ednote-title marker" id="h-ednote-9" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div>
+                            </td>
+						</tr>
+                        <tr>
+							<th class="value-name" scope="row">email</th>
+							<td class="value-description">Email address.</td>
+						</tr>
+                        <tr>
+							<th class="value-name" scope="row">familyName</th>
+							<td class="value-description">Family name, surname, or last name.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">fax</th>
+							<td class="value-description">Full fax number, including international country code.</td>
+						</tr>
+                        <tr>
+                            <th class="value-name" scope="row">faxAreaCode</th>
+                            <td class="value-description">Area code.</td>
+                        </tr>
+                        <tr>
+							<th class="value-name" scope="row">faxCountryCode</th>
+							<td class="value-description">International country code.</td>
+						</tr>
+                        <tr>
+							<th class="value-name" scope="row">faxLocal</th>
+							<td class="value-description">Local fax number: full number minus country and area codes.</td>
+						</tr>
+
+                        <tr>
+							<th class="value-name" scope="row">faxNational</th>
+							<td class="value-description">National fax number: full number minus international country code and area code.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">gender</th>
+							<td class="value-description">Gender identity.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">givenName</th>
+							<td class="value-description">Given or first name.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">honorificPrefix</th>
+							<td class="value-description">Prefix or title (Mr., Mrs., Dr., etc.) </td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">honorificSuffix</th>
+							<td class="value-description">Suffix (Jr., II, etc.)</td>
+						</tr>
+                       <tr>
+							<th class="value-name" scope="row">language</th>
+							<td class="value-description">Preferred language.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">name</th>
+							<td class="value-description">Full name.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">nickname</th>
+							<td class="value-description">Nickname.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">org</th>
+							<td class="value-description">Company or organization.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">photo</th>
+							<td class="value-description">Photo or avatar.</td>
+						</tr>
+                        <tr>
+							<th class="value-name" scope="row">position</th>
+							<td class="value-description">User's position or title within a company or organization.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">postalcode</th>
+							<td class="value-description">Postal or ZIP code.</td>
+						</tr>
+ 						<tr>
+							<th class="value-name" scope="row">section-*****</th>
+							<td class="value-description">Used to group forms together.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">sex</th>
+							<td class="value-description">Sex or gender.</td>
+						</tr>
+                       <tr>
+                            <th class="value-name" scope="row">streetAddress</th>
+                            <td class="value-description">Full street address condensed into one line.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">subject</th>
+							<td class="value-description">Form subject. Typically, a free text field.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">tel</th>
+							<td class="value-description">Full telephone number, including international country code.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">telAreaCode</th>
+							<td class="value-description">Area code.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">telCountryCode</th>
+							<td class="value-description">International country code.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">telExtension</th>
+							<td class="value-description">Telephone extension number.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">telLocal</th>
+							<td class="value-description">Local telephone number: full number minus international country code and area codes.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">telNational</th>
+							<td class="value-description">National telephone number: full number minus international country code.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">timeEnd</th>
+							<td class="value-description">Set the end time of an event.
+                            <div class="note" id="issue-container-generatedID-11"><div role="heading" class="note-title marker" id="h-note-1" aria-level="5"><span>Note</span></div><em class="">We may remove this or harmonize with other date time standards.</em></div>
+                            <div class="ednote" id="issue-container-generatedID-12"><div role="heading" class="ednote-title marker" id="h-ednote-10" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div>
+                            </td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">timeStart</th>
+							<td class="value-description"> Set the start time or the time of an event. 
+                            <div class="note" id="issue-container-generatedID-13"><div role="heading" class="note-title marker" id="h-note-2" aria-level="5"><span>Note</span></div><em class="">We may remove this or harmonize with other date time standards.</em></div>
+                            <div class="ednote" id="issue-container-generatedID-14"><div role="heading" class="ednote-title marker" id="h-ednote-11" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div>
+                            </td>
+						</tr>
+                        <tr>
+							<th class="value-name" scope="row">topic</th>
+							<td class="value-description">Topic for the form. Typically, selected from a list of reserved words.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">transactionCurrency</th>
+							<td class="value-description">The monetary system being used for the transaction. Note that there may be a change to allow for adding options.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">transactionAmount</th>
+							<td class="value-description">The amount that the user is committing to pay for a transaction. (Often used when entering a bid or sale price.)</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">url</th>
+							<td class="value-description">Website URL.</td>
+						</tr>
+						
+
+          
+                        
+                        
 					</tbody>
 				</table>
     </section>
@@ -1821,9 +1803,9 @@ See the destination sample user experience.</pre>
 							<p>This allows simplified interfaces with less options or interfaces that emphasize critical features. Adaptations can be based on personalization settings. </p>
 						
 
-							 <div class="ednote" id="issue-container-generatedID-14"><div role="heading" class="ednote-title marker" id="h-ednote-11" aria-level="5"><span>Editor's note</span></div><p class="">This was formerly <code>importance</code>. However different people may feel that sections that would be hidden in a simplified version are still very important, such as marketing content or legal terms.)</p></div>
+							 <div class="ednote" id="issue-container-generatedID-15"><div role="heading" class="ednote-title marker" id="h-ednote-12" aria-level="5"><span>Editor's note</span></div><p class="">This was formerly <code>importance</code>. However different people may feel that sections that would be hidden in a simplified version are still very important, such as marketing content or legal terms.)</p></div>
 
-							<div class="note" id="issue-container-generatedID-15"><div role="heading" class="note-title marker" id="h-note-3" aria-level="5"><span>Note</span></div><div class="">
+							<div class="note" id="issue-container-generatedID-16"><div role="heading" class="note-title marker" id="h-note-3" aria-level="5"><span>Note</span></div><div class="">
 								<p>These semantics aid simplification. But what content is most useful to a user varies from user to user. For example, men may be more interested in men's clothing, and may not be interested in the more frequently use women's clothing option. For that reason we may add context for elements that will help the personalization agent select the most useful content for a given user (see the <a href="#context" class="respec-offending-element">context</a> attribute). This is also necessary for reminders (see below).</p>
 								<p>It is worth mentioning that a lot of this information is known for personalization of advertisements and content optimization. </p>
 							</div></div>
@@ -1831,12 +1813,11 @@ See the destination sample user experience.</pre>
 	</section>
 	<section id="simplification-example">
 		<h4 id="x3-4-2-example"><span class="secno">3.4.2 </span>Example<a class="self-link" aria-label="§" href="#simplification-example"></a></h4>
-		<p>The below example section show how <code>simplification</code> used when coding.</p>
-    	<div class="example">
-    		<div class="example-title marker"><span>Example:</span><span style="text-transform: none"> Simplification Using ARIA</span>
-    		</div>
-			<pre aria-busy="false" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">aui-simplification</span>=<span class="hljs-string">"critical"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Submit"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>/&gt;</span></pre>
-		</div>
+        <p>Here is an example using the <code>simplification</code> attribute in the context of a submit button.</p>
+    	<div class="example" id="ex-4-simplification-using-aui">
+          <div class="marker"><a class="self-link" href="#ex-4-simplification-using-aui">Example 4</a><span class="example-title">: Simplification Using AUI</span></div>
+          <pre class="hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">aui-simplification</span>=<span class="hljs-string">"critical"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Submit"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>/&gt;</span></pre>
+        </div>
     </section>
     <section id="characteristics-2">
     	<h4 id="x3-4-3-characteristics"><span class="secno">3.4.3 </span>Characteristics<a class="self-link" aria-label="§" href="#characteristics-2"></a></h4>
@@ -1878,29 +1859,31 @@ See the destination sample user experience.</pre>
 							</thead>
 							<tbody>
 							<tr>
-														<th class="value-name" scope="row">critical</th>
-														<td class="value-description">This setting should be used on: <ul>
-															<li> Elements that are essential for the key function (from the user perspective) of the page. Example: The send button for an email draft in an email application.</li>
-															<li> Elements that are sometimes critical to use the site, such as "save my work" or "emergency instructions".</li>
-															<li> Elements that are used by over 90% of a user group (such as parents or teachers) most times they interact with the content.<br>
-															</li>
-														</ul>
-														</td>
+                                <th class="value-name" scope="row"><code>critical</code></th>
+                                <td class="value-description">The <code>critical</code> setting should be used on: <ul>
+                                    <li> Elements that are essential for the key function (from the user perspective) of the page. Example: The send button for an email draft in an email application.</li>
+                                    <li> Elements that are sometimes critical to use the site, such as "save my work" or "emergency instructions".</li>
+                                    <li> Elements that are used by over 90% of a user group (such as parents or teachers) most times they interact with the content.<br>
+                                    </li>
+                                </ul>
+                                </td>
 							</tr>
 								<tr>
-									<th class="value-name" scope="row"><strong class="default">medium (default)</strong></th>
+									<th class="value-name" scope="row"><strong class="default"><code>medium</code> (default)</strong></th>
 									<td class="value-description">
-									 This setting should be used on: <ul>
-										<li> Elements that are used frequently but are not essential for the key functioning of the application. Example: The delete button for an email draft in an email application.</li>
-										<li> Elements that are sometimes important for a user to interact with the site, such as settings to change colors or fonts. </li>
-										<li> Elements that are used by over 60% of a user group (such as parents or teachers) when they interact with the content.</li>
+                                        The <code>medium</code> setting should be used on: 
+                                    <ul>
+										<li>Elements that are used frequently but are not essential for the key functioning of the application. Example: The delete button for an email draft in an email application.</li>
+										<li>Elements that are sometimes important for a user to interact with the site, such as settings to change colors or fonts. </li>
+										<li>Elements that are used by over 60% of a user group (such as parents or teachers) when they interact with the content.</li>
 									</ul></td>
 								</tr>
 
 								<tr>
-									<th class="value-name" scope="row">low</th>
-									<td class="value-description">This setting should be used on elements that are rarely used or only used by advanced users. Example: The terms and services or the archive button for an email application. 
-							</td>
+									<th class="value-name" scope="row"><code>low</code></th>
+									<td class="value-description">
+                                        The <code>low</code> setting should be used on elements that are rarely used or only used by advanced users. Example: The terms and services or the archive button for an email application. 
+							     </td>
 								</tr>
 
 							</tbody>
@@ -1912,26 +1895,25 @@ See the destination sample user experience.</pre>
 
 
 
-
 			<section id="distraction-explanation">
 	<h3 id="x3-5-distraction"><span class="secno">3.5 </span>distraction<a class="self-link" aria-label="§" href="#distraction-explanation"></a></h3>
 	<section id="description-3">
 		<h4 id="x3-5-1-description"><span class="secno">3.5.1 </span>Description<a class="self-link" aria-label="§" href="#description-3"></a></h4>
 		<div class="property-description">
-			<p>This attribute should be used on non essential, detracting content, so that people who have problems keeping focus can turn them off. An example user experiences would be to hide all distraction content.</p>
-			<p><strong>Supported values: </strong>animations, auto-starting, moving, ad, message, chat , overlay, popup<br> Auto-changing (logs) third-party, offer ( includes suggestions).</p>
+            <p>The <code>distraction</code> attribute should be used on non-essential detracting content, so that people who have problems keeping focus can turn the content off. An example user experiences would be to hide all non-essential distracting content.</p>
+			<p><strong>Supported values</strong>: animations, auto-starting, moving, ad, message, chat, overlay, popup Auto-changing (logs) third-party, offer (includes suggestions).</p>
 			<p>Note that there is no default value.</p>
 			<p>Note that elements with the <code>distraction</code> attribute should also have a label or accessible name.</p>
 		</div>
 	</section>
 	<section id="distraction-example">
 		<h4 id="x3-5-2-example"><span class="secno">3.5.2 </span>Example<a class="self-link" aria-label="§" href="#distraction-example"></a></h4>
-		<p>The below example section shows how <code>distraction</code> is used when coding.</p>
-   		<div class="example">
-    	<div class="example-title marker"><span>Example:</span><span style="text-transform: none"> Distraction Using ARIA</span>
-    	</div>
-		   <pre aria-busy="false" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"animated.gif"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"animated banner advertising for Foobars"</span> <span class="hljs-attr">aui-distraction</span>=<span class="hljs-string">"moving ad"</span>&gt;</span></pre>
-		</div>
+        <p>Here is an example using the <code>distraction</code> attribute in the context of an animated image.</p>       
+   		<div class="example" id="ex-5-distraction-using-aui">
+          <div class="marker"><a class="self-link" href="#ex-5-distraction-using-aui">Example 5</a><span class="example-title">: Distraction Using AUI</span></div>
+          <pre class="hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"animated.gif"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"animated banner advertising for Foobars"</span> <span class="hljs-attr">aui-distraction</span>=<span class="hljs-string">"moving ad"</span>&gt;</span></pre>
+        </div>
+
     </section>
     <section id="characteristics-3">
     	<h4 id="x3-5-3-characteristics"><span class="secno">3.5.3 </span>Characteristics<a class="self-link" aria-label="§" href="#characteristics-3"></a></h4>
@@ -1978,15 +1960,15 @@ See the destination sample user experience.</pre>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">animations</th>
-							<td class="value-description">computer-generated moving images. Animations are also autoUpdating.</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">autoUpdating</th>
-							<td class="value-description">Information that starts automatically and is presented in parallel with other content that updates frequently without user interaction unless the auto-updating is part of an activity where it is essential.</td>
+							<td class="value-description">Computer-generated moving images. Animations are also automatically updating.</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">autoStarting</th>
 							<td class="value-description">Information that starts automatically without user interaction that is presented in parallel with other content.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">autoUpdating</th>
+							<td class="value-description">Information that starts automatically and is presented in parallel with other content that updates frequently without user interaction unless the auto-updating is part of an activity where it is essential.</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">chat</th>
@@ -1994,7 +1976,7 @@ See the destination sample user experience.</pre>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">message</th>
-							<td class="value-description">communication sent to or left for the user</td>
+							<td class="value-description">Communication sent to or left for the user.</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">moving</th>
@@ -2026,24 +2008,22 @@ See the destination sample user experience.</pre>
 	<section id="description-4">
 		<h4 id="x3-6-1-description"><span class="secno">3.6.1 </span>Description<a class="self-link" aria-label="§" href="#description-4"></a></h4>
 		<div class="property-description">
-					<p><code>symbol</code> identifies the concept for symbols.</p>
-					<p><code>symbol</code> accepts the values of a URI or shortened URI. Note that namespaces are the only additional parsing that maybe required to identify the concept.</p>
-					<p>A personalization agent can then load alternative symbols that the user is familiar with and they do not have to learn new symbols for different applications. </p>
-					<div class="note" id="issue-container-generatedID-16"><div role="heading" class="note-title marker" id="h-note-4" aria-level="5"><span>Note</span></div><p class="">To help this be interoperable without an RDF parser we  recommend referencing the most commonly used ontologies and the highest level concept. (For example, reference "girl" and not "young girl" .) </p></div>
-					<div class="ednote" id="issue-container-generatedID-17"><div role="heading" class="ednote-title marker" id="h-ednote-12" aria-level="5"><span>Editor's note</span></div><p class="">We should have a note of common suggested terms and references. (Maybe with links to http://www.arasaac.org/) </p></div>
+					<p>The <code>symbol</code> attribute identifies the concept for symbols.</p>
+					<p>The <code>symbol</code> attribute accepts the values of a URI or shortened URI. Note that namespaces are the only additional parsing that maybe required to identify the concept.</p>
+					<p>A personalization agent can then load alternative symbols that the user is familiar with so they do not have to learn new symbols for different applications. </p>
+					<div class="note" id="issue-container-generatedID-17"><div role="heading" class="note-title marker" id="h-note-4" aria-level="5"><span>Note</span></div><p class="">To help this be interoperable without an RDF parser we recommend referencing the most commonly used ontologies and the highest-level concept. (For example, reference "girl" and not "young girl".) </p></div>
+					<div class="ednote" id="issue-container-generatedID-18"><div role="heading" class="ednote-title marker" id="h-ednote-13" aria-level="5"><span>Editor's note</span></div><p class="">We should have a note of common suggested terms and references. (Maybe with links to http://www.arasaac.org/) </p></div>
 				</div>
 	</section>
 	<section id="symbol-example">
 		<h4 id="x3-6-2-example"><span class="secno">3.6.2 </span>Example<a class="self-link" aria-label="§" href="#symbol-example"></a></h4>
-		<p>The below example section show how <code>symbol</code> used when coding.</p>
-    	<div class="example">
-    	<div class="example-title marker"><span>Example:</span><span style="text-transform: none"> Symbol Using ARIA</span>
-    	</div>
-		   &lt;img aui-symbol="http://blisssymbolics.org/refnumber/001" href="mysymb.bmp" &gt;
-		</div>
-		
-	<p>
-When there is more than one concept, multiple concepts can be referenced by separating them with white space. The order of multiple concepts should be subject predicate object. Both omissions and  multiple triples are allowed.</p>
+		<p>Here is an example using the <code>symbol</code> attribute.</p>
+    	<div class="example" id="ex-6-symbol-using-aui">
+          <div class="marker"><a class="self-link" href="#ex-6-symbol-using-aui">Example 6</a><span class="example-title">: Symbol Using AUI</span></div>
+          <pre class="hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">aui-symbol</span>=<span class="hljs-string">"http://blisssymbolics.org/refnumber/001"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"mysymb.bmp"</span> &gt;</span></pre>
+        </div>
+
+	   <p>When there is more than one concept, multiple concepts can be referenced by separating them with white space. The order of multiple concepts should be subject predicate object. Both omissions and  multiple triples are allowed.</p>
     </section>
     <section id="characteristics-4">
     	<h4 id="x3-6-3-characteristics"><span class="secno">3.6.3 </span>Characteristics<a class="self-link" aria-label="§" href="#characteristics-4"></a></h4>
@@ -2084,7 +2064,7 @@ When there is more than one concept, multiple concepts can be referenced by sepa
 
 		<section class="appendix" id="vocabulary-implementations">
 			<!--OddPage--><h2 id="a-vocabulary-implementations"><span class="secno">A. </span>Vocabulary Implementations<a class="self-link" aria-label="§" href="#vocabulary-implementations"></a></h2>
-			<p>The vocabulary implementations of this document is available at <a href="../#vocabulary-implementations">Personalization Explainer 1.0 Vocabulary Implementations section</a>.</p>
+			<p>The vocabulary implementations included in this document are available at <a href="../#vocabulary-implementations">Personalization Explainer 1.0 Vocabulary Implementations section</a>.</p>
 		</section>
 
 		<section class="appendix informative section" id="acknowledgements">
