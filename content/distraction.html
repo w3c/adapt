@@ -3,20 +3,18 @@
 	<section>
 		<h3>Description</h3>
 		<div class="property-description">
-			<p>This attribute should be used on non essential, detracting content, so that people who have problems keeping focus can turn them off. An example user experiences would be to hide all distraction content.</p>
-			<p><strong>Supported values: </strong>animations, auto-starting, moving, ad, message, chat , overlay, popup<br /> Auto-changing (logs) third-party, offer ( includes suggestions).</p>
+            <p>The <code>distraction</code> attribute should be used on non-essential detracting content, so that people who have problems keeping focus can turn the content off. An example user experiences would be to hide all non-essential distracting content.</p>
+			<p><strong>Supported values</strong>: animations, auto-starting, moving, ad, message, chat, overlay, popup Auto-changing (logs) third-party, offer (includes suggestions).</p>
 			<p>Note that there is no default value.</p>
 			<p>Note that elements with the <code>distraction</code> attribute should also have a label or accessible name.</p>
 		</div>
 	</section>
 	<section id="distraction-example">
 		<h3>Example</h3>
-		<p>The below example section shows how <code>distraction</code> is used when coding.</p>
-   		<div class="example">
-    	<div class="example-title marker"><span>Example:</span><span style="text-transform: none"> Distraction Using ARIA</span>
-    	</div>
-		   <pre>&lt;img src="animated.gif" alt="animated banner advertising for Foobars" aui-distraction="moving ad"&gt;</pre>
-		</div>
+        <p>Here is an example using the <code>distraction</code> attribute in the context of an animated image.</p>       
+   		<pre class="example" title="Distraction Using AUI">
+		  &lt;img src="animated.gif" alt="animated banner advertising for Foobars" aui-distraction="moving ad"&gt;</pre>
+
     </section>
     <section>
     	<h3>Characteristics</h3>
@@ -63,15 +61,15 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">animations</th>
-							<td class="value-description">computer-generated moving images. Animations are also autoUpdating.</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">autoUpdating</th>
-							<td class="value-description">Information that starts automatically and is presented in parallel with other content that updates frequently without user interaction unless the auto-updating is part of an activity where it is essential.</td>
+							<td class="value-description">Computer-generated moving images. Animations are also automatically updating.</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">autoStarting</th>
 							<td class="value-description">Information that starts automatically without user interaction that is presented in parallel with other content.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">autoUpdating</th>
+							<td class="value-description">Information that starts automatically and is presented in parallel with other content that updates frequently without user interaction unless the auto-updating is part of an activity where it is essential.</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">chat</th>
@@ -79,7 +77,7 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">message</th>
-							<td class="value-description">communication sent to or left for the user</td>
+							<td class="value-description">Communication sent to or left for the user.</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">moving</th>
