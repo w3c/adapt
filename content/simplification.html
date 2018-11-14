@@ -10,19 +10,16 @@
 							 <p class="ednote">This was formerly <code>importance</code>. However different people may feel that sections that would be hidden in a simplified version are still very important, such as marketing content or legal terms.)</p>
 
 							<div class="note">
-								<p>These semantics aid simplification. But what content is most useful to a user varies from user to user. For example, men may be more interested in mens clothing, and may not be interested in the more frequently use womens clothing option. For that reason we may add context for elements that will help the personalization agent select the most useful content for a given user (see the <a href="#context">context</a> attribute). This is also necessary for reminders (see bellow).</p>
+								<p>These semantics aid simplification. But what content is most useful to a user varies from user to user. For example, men may be more interested in men's clothing, and may not be interested in the more frequently use women's clothing option. For that reason we may add context for elements that will help the personalization agent select the most useful content for a given user (see the <a href="#context">context</a> attribute). This is also necessary for reminders (see below).</p>
 								<p>It is worth mentioning that a lot of this information is known for personalization of advertisements and content optimization. </p>
 							</div>
 				</div>
 	</section>
 	<section id="simplification-example">
 		<h3>Example</h3>
-		<p>The below example section show how <code>simplification</code> used when coding.</p>
-    	<div class="example">
-    		<div class="example-title marker"><span>Example:</span><span style="text-transform: none"> Simplification Using ARIA</span>
-    		</div>
-			<pre>&lt;input aui-simplification="critical" aria-function="submit" value="Submit" type="submit"/&gt;</pre>
-		</div>
+        <p>Here is an example using the <code>simplification</code> attribute in the context of a submit button.</p>
+    	<pre class="example" title="Simplification Using AUI">
+    	&lt;input aui-simplification="critical" value="Submit" type="submit"/&gt;</pre>
     </section>
     <section>
     	<h3>Characteristics</h3>
@@ -64,37 +61,37 @@
 							</thead>
 							<tbody>
 							<tr>
-														<th class="value-name" scope="row">simplest</th>
-														<td class="value-description">This setting should be used on: <ul>
-															<li> Elements that are essential for the key function (from the user perspective) of the page (Example: The send button for an email draft in an email application) or</li>
-															<li> Elements that are sometimes critical to a user being able to use the site, such as &quot;save my work&quot; or &quot;emergency instructions&quot; or</li>
-															<li> Elements that are used by over 90% of a user group (such as parents or teachers) use this element most times they use the content<br />
-															</li>
-														</ul>
-
-								<p>Typically 3 links or buttons would be considered &quot;simplest&quot;</p></td>
+                                <th class="value-name" scope="row"><code>critical</code></th>
+                                <td class="value-description">The <code>critical</code> setting should be used on: <ul>
+                                    <li> Elements that are essential for the key function (from the user perspective) of the page. Example: The send button for an email draft in an email application.</li>
+                                    <li> Elements that are sometimes critical to use the site, such as &quot;save my work&quot; or &quot;emergency instructions&quot;.</li>
+                                    <li> Elements that are used by over 90% of a user group (such as parents or teachers) most times they interact with the content.<br />
+                                    </li>
+                                </ul>
+                                </td>
 							</tr>
 								<tr>
-									<th class="value-name" scope="row"><strong class="default">medium (default)</strong></th>
+									<th class="value-name" scope="row"><strong class="default"><code>medium</code> (default)</strong></th>
 									<td class="value-description">
-									 This setting should be used on: <ul>
-										<li> Elements that are used frequent but are not essential for the key functioning pf the application. (Example: The delete button for an email draft in an email application) or</li>
-										<li> Elements that are sometimes important to a user being able to use the site, such as settings or</li>
-										<li> Elements that are used by frequently (over 60%) by a user group (such as parents or teachers) use this element most times they use the content</li>
+                                        The <code>medium</code> setting should be used on: 
+                                    <ul>
+										<li>Elements that are used frequently but are not essential for the key functioning of the application. Example: The delete button for an email draft in an email application.</li>
+										<li>Elements that are sometimes important for a user to interact with the site, such as settings to change colors or fonts. </li>
+										<li>Elements that are used by over 60% of a user group (such as parents or teachers) when they interact with the content.</li>
 									</ul></td>
 								</tr>
 
 								<tr>
-									<th class="value-name" scope="row">low</th>
-									<td class="value-description">This setting should be used on elements that are rarely used or only used by advanced users. (Example: The terms and services or the archive button for an email application.) </li>
-							</td>
+									<th class="value-name" scope="row"><code>low</code></th>
+									<td class="value-description">
+                                        The <code>low</code> setting should be used on elements that are rarely used or only used by advanced users. Example: The terms and services or the archive button for an email application. 
+							     </td>
 								</tr>
 
 							</tbody>
 						</table>
 				</section>
     </section>
-</section>
 
 
 

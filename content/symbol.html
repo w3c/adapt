@@ -3,24 +3,20 @@
 	<section>
 		<h3>Description</h3>
 		<div class="property-description">
-					<p><code>symbol</code> identifies the concept for symbols.</p>
-					<p><code>symbol</code> accepts the values of a URI or shortened URI. Note that namespaces are the only additional parsing that maybe required to identify the concept.</p>
-					<p>A personalization agent can then load alternative symbols that the user is familiar with and they do not have to learn new symbols for different applications. </p>
-					<p class="note">To help this be interoperable without an RDF parser we  recommend referencing the most commonly used ontologies and the highest level concept. (For example, reference "girl" and not "young girl" .) </p>
+					<p>The <code>symbol</code> attribute identifies the concept for symbols.</p>
+					<p>The <code>symbol</code> attribute accepts the values of a URI or shortened URI. Note that namespaces are the only additional parsing that maybe required to identify the concept.</p>
+					<p>A personalization agent can then load alternative symbols that the user is familiar with so they do not have to learn new symbols for different applications. </p>
+					<p class="note">To help this be interoperable without an RDF parser we recommend referencing the most commonly used ontologies and the highest-level concept. (For example, reference "girl" and not "young girl".) </p>
 					<p class="ednote">We should have a note of common suggested terms and references. (Maybe with links to http://www.arasaac.org/) </p>
 				</div>
 	</section>
 	<section id="symbol-example">
 		<h3>Example</h3>
-		<p>The below example section show how <code>symbol</code> used when coding.</p>
-    	<div class="example">
-    	<div class="example-title marker"><span>Example:</span><span style="text-transform: none"> Symbol Using ARIA</span>
-    	</div>
-		   &lt;img aui-symbol="http://blisssymbolics.org/refnumber/001" href="mysymb.bmp" &gt;
-		</div>
-		</div>
-	<p>
-When there is more then one concept, multiple concepts can be referenced by separating them with white space. The order of multiple concepts should be subject predicate object. Both omissions and  multiple triples are allowed.</p>
+		<p>Here is an example using the <code>symbol</code> attribute.</p>
+    	<pre class="example" title="Symbol Using AUI">
+    	   &lt;img aui-symbol="http://blisssymbolics.org/refnumber/001" href="mysymb.bmp" &gt;</pre>
+
+	   <p>When there is more than one concept, multiple concepts can be referenced by separating them with white space. The order of multiple concepts should be subject predicate object. Both omissions and  multiple triples are allowed.</p>
     </section>
     <section>
     	<h3>Characteristics</h3>
