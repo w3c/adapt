@@ -21,7 +21,7 @@
 		<section>
 			<h1>Value list</h1>
 			<section>
-				<h2>Content</h2>
+				<h2>Tokens</h2>
 				<ul>
 					<li>
 						<a href="#action-explanation"><code>action</code></a>
@@ -38,53 +38,42 @@
 					<li>
 						<a href="#distraction-explanation"><code>distraction</code></a>
 					</li>
-					<li>
-						<a href="#symbol-explanation"><code>symbol</code></a>
-					</li>
-				</ul>
-			</section>
-			<section>
-				<h2>Help and Support</h2>
-				<ul>
-					<li>Values for help and supports
+					<li><a href="#supportvalue">Values for alternative content and content accessibility support</a> and <a href="#helpvalue">Values for types of help </a>
 						<ul>
-							<li><a href="#supportvalue">Values for alternative content and content accessibility support</a></li>
-							<li><a href="#helpvalue">Values for types of help </a></li>
+							<li><a href="#alternative-explanation"><code>alternative</code></a></li>
+							<li><a href="#helptype-explanation"><code>helptype</code></a></li>
 						</ul>
-					</li>
-					<li>Vocabulary for implementation
-						<ul>
-							<li>Implementation in different content sections
-								<ul>
-									<li><a href="#alternative-explanation"><code>Alternative</code></a></li>
-									<li><a href="#helptype-explanation"><code>helptype</code></a></li>
-								</ul>
-							</li>
-							<li>
-								Inline Implementation
-								<ul>
-									<li><a href="#literal-explanation"><code>literal</code></a></li>
-									<li><a href="#numberfree-explanation"><code>numberfree</code></a></li>
-									<li><a href="#easylang-explanation"><code>easylang</code></a></li>
-									<li><a href="#explain-explanation"><code>explain</code></a></li>
-									<li><a href="#feedback-explanation"><code>feedback</code></a></li>
-									<li><a href="#moreinfo-explanation"><code>moreinfo</code></a></li>
-									<li><a href="#extrahelp-explanation"><code>extrahelp</code></a></li>
-								</ul>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</section>
-			<section>
-				<h2>Tools</h2>
-				<ul>
+
+					</li>				
 					<li>
-						<a href="#stepindicator-usage-example-explanation"><code>stepindicator</code></a>
+						<a href="#stepindicator-usage-example-explanation"><code>Status (from Step Indicator Usage)</code></a>
 					</li>
 					<li>
 						<a href="#messageimportance-explanation"><code>messageimportance</code></a>
 					</li>
+				</ul>
+			</section>
+			<section>
+				<h2>URI’s</h2>
+				<ul>
+					<li>
+						<a href="#symbol-explanation"><code>symbol</code></a>
+					</li>
+					<li><a href="#moreinfo-explanation"><code>moreinfo</code></a></li>
+					<li><a href="#extrahelp-explanation"><code>extrahelp</code></a></li>
+					<li>
+						<a href="#stepindicator-usage-example-explanation">Steplocation – could we use href instead? (from Step Indicator Usage)</a>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Text</h2>
+				<ul>
+					<li><a href="#literal-explanation"><code>literal</code></a></li>
+					<li><a href="#numberfree-explanation"><code>numberfree</code></a></li>
+					<li><a href="#explain-explanation"><code>explain</code></a></li>
+					<li><a href="#feedback-explanation"><code>feedback</code></a></li>
+					<li><a href="#easylang-explanation"><code>easylang</code></a></li>
 					<li>
 						<a href="#messagefrom-explanation"><code>messagefrom</code></a>
 					</li>
@@ -92,7 +81,10 @@
 						<a href="#messagecontext-explanation"><code>messagecontext</code></a>
 					</li>
 					<li>
-						<a href="#messagetime-explanation"><code>messagetime</code></a>
+						<a href="#messagetime-explanation"><code>messagetime (restricted)</code></a>
+					</li>
+					<li>
+						<a href="#stepindicator-usage-example-explanation">Step (from Step Indicator Usage) numeric</a>
 					</li>
 				</ul>
 			</section>
@@ -101,19 +93,13 @@
 		<section>
 			<h2>Details of vocabulary</h2>
 			<section>
-				<h3>content</h3>
+				<h3>Token</h3>
 				<section data-include="../content/action.html" data-include-replace="false" id="action"><code>Action</code></section>
 				<section data-include="../content/destination.html" data-include-replace="true" id="destination"></section>
 				<section data-include="../content/field.html" data-include-replace="true" id="field"></section>
 				<section data-include="../content/simplification.html" data-include-replace="true" id="simplification"></section>
 				<section data-include="../content/distraction.html" data-include-replace="true" id="distraction"></section>
-				<section data-include="../content/symbol.html" data-include-replace="true" id="symbol"></section>	
-			</section>
-			<section>
-				<h3>help and support</h3>
-				<section>
-					<h3>Values for help and supports </h3>
-					<section id="supportvalue">
+				<section id="supportvalue">
 					      <h3>Values for alternative content and content accessibility support</h3>
 						        <div class="ednote"> This focuses on cognitive accessibility. We may add other collections from https://github.com/w3c/personalization-semantics/wiki/User-needs-collections such as https://www.w3.org/wiki/WebSchemas/Accessibility. </div>
 					    
@@ -244,9 +230,8 @@
 					            </tr>
 					          </tbody>
 					        </table>
-					</section>
-    
-					<section id="helpvalue">
+				</section>
+				<section id="helpvalue">
 					    	<h3> Values for types of help </h3>
 						    <div class="ednote"> This may be added to or harmonized with link destinations in module 1. Or it may be added to the above table. </div>
 					    	<table class="value-descriptions">
@@ -337,31 +322,43 @@
 
 										</tbody>
 								</table>
-					</section>
 				</section>
-				<section>
-					<h2>Implementation</h2>
-					<section id="addn-content">
-					<h2>Implementation in different content sections</h2>
-						<section data-include="../help/alternative.html" data-include-replace="true" id="alternative"></section>
-						<section data-include="../help/helptype.html" data-include-replace="true" id="helptype"></section>
-					</section>
-					<section id="inline">
-					<h2>Inline Implementation </h2>
-					<p>For small inline support and changes, attributes may be used.</p>
+				<section data-include="../help/alternative.html" data-include-replace="true" id="alternative"></section>
+				<section data-include="../help/helptype.html" data-include-replace="true" id="helptype"></section>
 
-					<section data-include="../help/literal.html" data-include-replace="true" id="literal"></section>
-					<section data-include="../help/numberfree.html" data-include-replace="true" id="numberfree"></section>
-					<section data-include="../help/easylang.html" data-include-replace="true" id="easylang"></section>
-					<section data-include="../help/explain.html" data-include-replace="true" id="explain"></section>
-					<section data-include="../help/feedback.html" data-include-replace="true" id="feedback"></section>
-					<section data-include="../help/moreinfo.html" data-include-replace="true" id="moreinfo"></section>
-					<section data-include="../help/extrahelp.html" data-include-replace="true" id="extrahelp"></section>
-					</section>
-				</section>
+				<section data-include="../tools/log.html" data-include-replace="true" id="log"></section>
+
+
+
+
+					
+			</section>
+			<section>
+				<h3>URI‘s</h3>
+				<section data-include="../content/symbol.html" data-include-replace="true" id="symbol"></section>
+				<section data-include="../help/moreinfo.html" data-include-replace="true" id="moreinfo"></section>
+				<section data-include="../help/extrahelp.html" data-include-replace="true" id="extrahelp"></section>
+				<section data-include="../tools/log.html" data-include-replace="true" id="log"></section>
+
+			
+					
+					
+
+					
+					
+					
+					
+					
+					
+				
 			</section>
 			<section>
 				<h3>Tools</h3>
+				<section data-include="../help/literal.html" data-include-replace="true" id="literal"></section>
+				<section data-include="../help/numberfree.html" data-include-replace="true" id="numberfree"></section>
+				<section data-include="../help/easylang.html" data-include-replace="true" id="easylang"></section>
+				<section data-include="../help/explain.html" data-include-replace="true" id="explain"></section>
+				<section data-include="../help/feedback.html" data-include-replace="true" id="feedback"></section>
 				<section data-include="../tools/log.html" data-include-replace="true" id="log"></section>	
 				<section data-include="../tools/message.html" data-include-replace="true" id="message"></section>
 			</section>
