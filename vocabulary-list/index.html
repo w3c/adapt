@@ -1,368 +1,179 @@
-<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-	<head>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 23.8.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <style type="text/css">
+    code {
+
+    color: #c83500;
+
+}
+  </style>
 		<title>Personalization Vocabulary List</title>
-		<meta charset="utf-8"/>
-		<script src="https://www.w3.org/Tools/respec/respec-w3c-common" class="remove"></script>
-		<script src="../common/biblio.js" class="remove"></script>
-		<script src="respec-config.js" class="remove"></script>
+		
+		
 	
-		<link href="common/css/common.css" rel="stylesheet" type="text/css" />
-	</head>
-	<body>
+		<link href="common/css/common.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><script id="initialUserConfig" type="application/json"></script><meta name="description" content="This document list all vocabularies for personalization semantics."></head>
+	<body class="h-entry"><div class="head">
+      <a href="https://www.w3.org/" class="logo"><img alt="W3C" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72" height="48"></a> <h1 id="title" class="title p-name">Personalization Vocabulary List</h1>
+      
+      
+    </div>
 
-		<section id="abstract">
-			<p>This document list all vocabularies for personalization semantics.</p>
-		</section>
+		<section id="abstract" class="introductory"><!--OddPage--><h2>Abstract</h2>
+			<p>This document lists all vocabularies from personalization semantics. In this document, it divides the categories of vocabularies into three categories, they are Tokens, URI's and Text. Each vocabulary simply lists the description and values (Tokens vocabulary), and more information about each vocabulary can be found by "more info". </p>
+		</section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#vocabulary-list"><span class="secno">1. </span>Vocabulary list</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#tokens"><span class="secno">1.1 </span>Tokens</a></li><li class="tocline"><a class="tocxref" href="#uri-s"><span class="secno">1.2 </span>URI’s</a></li><li class="tocline"><a class="tocxref" href="#text"><span class="secno">1.3 </span>Text</a></li></ol></li></ol></nav>
 
 
-		<section class="informative" id="introduction"></section>
 
-		<section>
-			<h1>Value list</h1>
-			<section>
-				<h2>Tokens</h2>
+		<section id="vocabulary-list">
+			<!--OddPage--><h2 id="x1-vocabulary-list"><span class="secno">1. </span>Vocabulary list<a class="self-link" aria-label="§" href="#vocabulary-list"></a></h2>
+			<section id="tokens">
+				<h3 id="x1-1-tokens"><span class="secno">1.1 </span>Tokens<a class="self-link" aria-label="§" href="#tokens"></a></h3>
 				<ul>
 					<li>
-						<a href="#action-explanation"><code>action</code></a>
+						<code>action</code>
+						<p><strong>Description</strong>: The action attribute provides the context of a button. It is typically used on a button element or element with role="button".</p>
+						<p><strong>Values</strong>: add, brightness, buy, cancel, captions, channel, checkout, close, color, compose, confirm, connect, copy, cut, date, decrease, delete, download, drag, edit, escape, expand, forward, help, increase, label, left, loop, mediaPosition, mode, more, move, mute, new, next, open, order, paste, pause, play, previous, print, profile, properties, received, refresh, remove, reply, reset, resize, right, save, scroll, send, sent, settings, skip, submit, temperature, toc, undo, upload, voiceCommands, volume.</p>
+						<p><a href="https://w3c.github.io/personalization-semantics/content/#action-explanation">More info.</a></p>
 					</li>
 					<li>
-						<a href="#destination-explanation"><code>destination</code></a>
+						<code>destination</code>
+						<p><strong>Description</strong>: The destination attribute categorizes the target of a hyperlink.</p>
+						<p><strong>Values</strong>: about, accessibilityStatement, begin, chat, comment, contact, email, end, help, home, language, left, phone, post, products, related, right, services, signin, signout, sitemap, social, terms, tools.</p>
+						<p><a href="https://w3c.github.io/personalization-semantics/content/#destination-explanation">More info.</a></p>
 					</li>
 					<li>
-						<a href="#field-explanation"><code>field</code></a>
+						<code>field</code>
+						<p><strong>Description</strong>: The field attribute provides the context of a text input field such as a text box. It is typically used on an input of type text, or element with a corresponding role.</p>
+						<p><strong>Values</strong>: additionalName, additionalNameInitial, addressLine1, addressLine2, addressLine3, answer, area, bday, bdayDay, bdayMonth, bdayYear, ccCsc, ccExp, ccExpMonth, ccExpYear, ccName, ccNumber, ccType, city, comment, country, dateEnd, dateStart, email, familyName, fax, faxAreaCode, faxCountryCode, faxLocal, faxNational, gender, givenName, honorificPrefix, honorificSuffix, language, name, nickname, org, photo, position, postalcode, section-, sex, streetAddress, subject, tel, telAreaCode, telCountryCode, telExtension, telLocal, telNational, timeEnd, timeStart, topic, transactionCurrency, transactionAmount, url.</p>
+						<p><a href="https://w3c.github.io/personalization-semantics/content/#field-explanation">More info.</a></p>
 					</li>
 					<li>
-						<a href="#simplification-explanation"><code>simplification</code></a>
+						<code>simplification</code>
+						<p><strong>Description</strong>: The simplification attribute differentiates between critical features and less important features for simplification.</p>
+						<p><strong>Values</strong>: critical, medium (default), low.</p>
+						<p><a href="https://w3c.github.io/personalization-semantics/content/#simplification-explanation">More info.</a></p>
 					</li>
 					<li>
-						<a href="#distraction-explanation"><code>distraction</code></a>
+						<code>distraction</code>
+						<p><strong>Description</strong>: The distraction attribute should be used on non-essential detracting content, so that people who have problems keeping focus can turn the content off.</p>
+						<p><strong>Values</strong>: ad, animations, autoStarting, autoUpdating, chat, message, moving, overlay, popup, thirdParty.</p>
+						<p><a href="https://w3c.github.io/personalization-semantics/content/#distraction-explanation">More info.</a></p>
 					</li>
-					<li><a href="#supportvalue">Values for alternative content and content accessibility support</a> and <a href="#helpvalue">Values for types of help </a>
-						<ul>
-							<li><a href="#alternative-explanation"><code>alternative</code></a></li>
-							<li><a href="#helptype-explanation"><code>helptype</code></a></li>
-						</ul>
 
-					</li>				
-					<li>
-						<a href="#stepindicator-usage-example-explanation"><code>Status (from Step Indicator Usage)</code></a>
+					<li><code>alternative</code>
+						<p><strong>Description</strong>: Would be used on an alternative content as an alternative to more detailed or difficult to understand content. alternative can be used on a span, div, link or image that servers as alternative content to it's direct parent element.</p>
+						<p><strong>Values</strong>: easyLangChunks, easyLangAll, lessOptions, literalImage, ImageSupplementary, realisticImage, simplifiedLang, easyLangSmallSentences, symbolic, vocab1000, vocab2000, vocab500, whiteSpace, interoprableSymbols, interoprableControls, userTested, understandableDesign, humanFocus, useableAuthentication, useableMenus, supportAPI, helpAndSupport, remindersAndSteps, noDataLoss. </p>
+						<p><a href="https://w3c.github.io/personalization-semantics/help/#alternative-explanation">More info.</a></p>
+
 					</li>
-					<li>
-						<a href="#messageimportance-explanation"><code>messageimportance</code></a>
+							
+					<li><code>helptype</code>
+						<p><strong>Description</strong>: Would be used on additional content to indicate the type of extra help provided. helptype can be used on a span, div, link or image that provides or redirects the user to additional help information.</p>
+						<p><strong>Values</strong>: automatedStep, automatedBot, dictionary, faqs, glossary, helpform, humanhelp, morehelp, moreinfo, simplified, thesaurus, tooltips, topicsearch, explain, extraHelp, feedback, triggerWarning, hideTimer, useableFeedback.</p>
+						<p><a href="https://w3c.github.io/personalization-semantics/help/#helptype-explanation">More info.</a></p>
+
 					</li>
-				</ul>
-			</section>
-			<section>
-				<h2>URI’s</h2>
-				<ul>
-					<li>
-						<a href="#symbol-explanation"><code>symbol</code></a>
-					</li>
-					<li><a href="#moreinfo-explanation"><code>moreinfo</code></a></li>
-					<li><a href="#extrahelp-explanation"><code>extrahelp</code></a></li>
-					<li>
-						<a href="#stepindicator-usage-example-explanation">Steplocation – could we use href instead? (from Step Indicator Usage)</a>
-					</li>
-				</ul>
-			</section>
-			<section>
-				<h2>Text</h2>
-				<ul>
-					<li><a href="#literal-explanation"><code>literal</code></a></li>
-					<li><a href="#numberfree-explanation"><code>numberfree</code></a></li>
-					<li><a href="#explain-explanation"><code>explain</code></a></li>
-					<li><a href="#feedback-explanation"><code>feedback</code></a></li>
-					<li><a href="#easylang-explanation"><code>easylang</code></a></li>
-					<li>
-						<a href="#messagefrom-explanation"><code>messagefrom</code></a>
-					</li>
-					<li>
-						<a href="#messagecontext-explanation"><code>messagecontext</code></a>
-					</li>
-					<li>
-						<a href="#messagetime-explanation"><code>messagetime (restricted)</code></a>
-					</li>
-					<li>
-						<a href="#stepindicator-usage-example-explanation">Step (from Step Indicator Usage) numeric</a>
-					</li>
-				</ul>
-			</section>
-		</section>
-
-		<section>
-			<h2>Details of vocabulary</h2>
-			<section>
-				<h3>Token</h3>
-				<section data-include="../content/action.html" data-include-replace="false" id="action"><code>Action</code></section>
-				<section data-include="../content/destination.html" data-include-replace="true" id="destination"></section>
-				<section data-include="../content/field.html" data-include-replace="true" id="field"></section>
-				<section data-include="../content/simplification.html" data-include-replace="true" id="simplification"></section>
-				<section data-include="../content/distraction.html" data-include-replace="true" id="distraction"></section>
-				<section id="supportvalue">
-					      <h3>Values for alternative content and content accessibility support</h3>
-						        <div class="ednote"> This focuses on cognitive accessibility. We may add other collections from https://github.com/w3c/personalization-semantics/wiki/User-needs-collections such as https://www.w3.org/wiki/WebSchemas/Accessibility. </div>
-					    
-					      <table class="value-descriptions">
-					          <thead>
-					            <tr>
-					              <th scope="col">Value</th>
-					              <th scope="col">Description</th>
-					            </tr>
-					          </thead>
-					          <tbody>
-					            <tr>
-					              <th class="value-name" scope="row">easyLangChunks</th>
-					              <td class="value-description">Breaks content up into smaller sections with a single topic per section.</td>
-					            </tr>
-											
-									
-					            <tr>
-					              <th class="value-name" scope="row">easyLangAll</th>
-					              <td class="value-description">Provides an alternative version or rewrites the default content for easier comprehension. This may include: 
-					                <ul><li>chunking</li>
-					                <li>simple tense  (used to describe actions without specifically stating whether the actions are completed or ongoing.)</li>
-					                <li>simple voice</li>
-					                <li>clear text</li>
-					                <li>clear</li>
-					                <li>usage of short sentences</li>
-					                <li>summary of long documents</li></ul>
-					              </td>
-					            </tr>
-					            <tr>
-					              <th class="value-name" scope="row">lessOptions</th>
-					              <td class="value-description">Provide fewer choices by combining related choices together.</td>
-					            </tr>
-					            <tr>
-					              <th class="value-name" scope="row">literalImage</th>
-					              <td class="value-description">provide the literal translation of existing casual language or idioms.</td>
-					            </tr>
-											<tr>
-					              <th class="value-name" scope="row">ImageSupplementary</th>
-					              <td class="value-description"><p>symbol or illustration that is typically shown with alt=""</p>
-					                <p>extra illustration that will not distract most people such as at the start of a paragraph or option</p>
-					                <p>disability centric illustrations that can disturb other people and may be mid-sentence.</p>
-					              </td>
-					            </tr>
-											
-											<tr>
-												<th class="value-name" scope="row">realisticImage</th>
-												<td class="value-description">provides a realistic version of a stylized or cartoonish (not real) image.The opposite of symbolic.</td>
-											</tr>
-											
-										
-					            <tr>
-					              <th class="value-name" scope="row">simplifiedLang</th>
-					              <td class="value-description">Provides, a version of the content that is easier to read and understand. Includes <code>easylang</code> and <code>lessOptions</code></td>
-					            </tr>
-					            <tr>
-					              <th class="value-name" scope="row">easyLangSmallSentences</th>
-					              <td class="value-description">provides a version of the content with shorter sentences and simple language.</td>
-					            </tr>
-					            <tr>
-					              <th class="value-name" scope="row">symbolic</th>
-					              <td class="value-description">provides an alternative, symbolic representation of an image, for example a picture rather than a photograph.The opposite of realistic.</td>
-					            </tr>
-					  
-
-											
-					            <tr>
-					              <th class="value-name" scope="row">vocab1000</th>
-					              <td class="value-description">Terms are limited to a core vocabulary of up to 1000 words - unless terms are defined using easy language</td>
-					            </tr>
-					            <tr>
-					              <th class="value-name" scope="row">vocab2000</th>
-					              <td class="value-description">Terms are limited to a core vocabulary of upto 2000 words- unless terms are defined using easy language</td>
-					            </tr>
-					            <tr>
-					              <th class="value-name" scope="row">vocab500</th>
-					              <td class="value-description">Terms are limited to a core vocabulary of upto 500 words- unless terms are defined using easy language</td>
-					            </tr>
-					            <tr>
-					              <th class="value-name" scope="row">whiteSpace</th>
-					              <td class="value-description">add additional whitespace between characters, words, and rows.</td>
-					            </tr>
-					            <tr>
-					              <th class="value-name" scope="row">interoprableSymbols</th>
-					              <td class="value-description">Interoperable symbol sets are supported.</td>
-					            </tr>
-					            <tr>
-					              <th class="value-name" scope="row">interoprableControls</th>
-					              <td class="value-description">Interoperable controls and regions are supported.</td>
-					            </tr>
-					            <tr>
-					              <th class="value-name" scope="row">userTested</th>
-					              <td class="value-description">Core tasks, including submitting all forms, contacting help and feedback, have been successfully tested with people with memory, language, and numeracy impairments.</td>
-					            </tr>
-					            <tr>
-					              <th class="value-name" scope="row">understandableDesign</th>
-					              <td class="value-description">Follows the design for understandable design such as theme 1 in https://docs.google.com/document/d/1WcfVALVq8PS9CLXUuAfV9Op0wXvI2yJYedj5jO23GTk/edit#. Must included: Must include: making each section of a content clear,using hierarchal grouping, consistent back functionality, and consistently visually clear controls.</td>
-					            </tr>
-					            <tr>
-					              <th class="value-name" scope="row">humanFocus</th>
-					              <td class="value-description">Follows the design for helping people keep focus  such as theme 3 in https://docs.google.com/document/d/1WcfVALVq8PS9CLXUuAfV9Op0wXvI2yJYedj5jO23GTk/edit# Must include that:
-					                <ul><li>1. there are no interruptions or interruptions can be easily turned off via one action or via an operating system setting.</li>
-					                <li>2. Purpose of each screen is clear.</li></ul></td>
-					            </tr>
-					            <tr>
-					              <th class="value-name" scope="row">useableAuthentication</th>
-					              <td class="value-description">Follows the design for authetification such as theme 4 in https://docs.google.com/document/d/1WcfVALVq8PS9CLXUuAfV9Op0wXvI2yJYedj5jO23GTk/edit#. Must included that Logging in does not rely on  good memory or other cognitive skills.</td>
-					            </tr>
-					            <tr>
-					              <th class="value-name" scope="row">useableMenus</th>
-					              <td class="value-description">Follows the design for authentication such as theme 4 in  https://docs.google.com/document/d/1WcfVALVq8PS9CLXUuAfV9Op0wXvI2yJYedj5jO23GTk/edit#. Must support the ability that voice menus can be avoided in voice interfaces (alternative mechanism), and clear hierarchical menus and search is available in visual interfaces.</td>
-					            </tr>
-					            <tr>
-					              <th class="value-name" scope="row">supportAPI</th>
-					              <td class="value-description">Browser extensions and APIs are supported</td>
-					            </tr>
-					            <tr>
-					              <th class="value-name" scope="row">helpAndSupport</th>
-					              <td class="value-description">Follows the design for understandable design such as theme 5 in https://docs.googlecom/document/d/1WcfVALVq8PS9CLXUuAfV9Op0wXvI2yJYedj5jO23GTk/edit#. Must include that Content and information is provided that helps users understand complex information, long documents, numerical information, relative and cardinal directions (North, South, East, and West), forms and non-standard controls. Where an understanding of mathematics is not a primary requirement for using this content, reinforce numbers with non-numerical values</td>
-					            </tr>
-					            <tr>
-					              <th class="value-name" scope="row">remindersAndSteps</th>
-					              <td class="value-description">Module 4 is supported</td>
-					            </tr>
-					            <tr>
-					              <th class="value-name" scope="row">noDataLoss</th>
-					              <td class="value-description">Forms do not timeout or data is not lost if the site times out for at least one week. Or provides information about all the information you might need and the time out.</td>
-					            </tr>
-					          </tbody>
-					        </table>
-				</section>
-				<section id="helpvalue">
-					    	<h3> Values for types of help </h3>
-						    <div class="ednote"> This may be added to or harmonized with link destinations in module 1. Or it may be added to the above table. </div>
-					    	<table class="value-descriptions">
-										<thead>
-											<tr>
-												<th scope="col">Value</th>
-												<th scope="col">Description</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<th class="value-name" scope="row">automatedStep</th>
-												<td class="value-description">provides an alternative step by step sequence for completing a task or procedure.</td>
-											</tr>
-											<tr>
-												<th class="value-name" scope="row">automatedBot</th>
-												<td class="value-description">provides an automated conversational help. Typically designed to look like human help.</td>
-											</tr>
-											<tr>
-												<th class="value-name" scope="row">dictionary</th>
-												<td class="value-description">provides a definition of the term or topic. May redirect to another URI or provide the information in-line, via a popup, or other method.</td>
-											</tr>
-											<tr>
-												<th class="value-name" scope="row">faqs</th>
-												<td class="value-description">redirects to a FAQ page with the related topic in view. </td>
-											</tr>
-											<tr>
-												<th class="value-name" scope="row">glossary</th>
-												<td class="value-description">provides a URI to a glossary page with the related topic in view.</td>
-											</tr>
-											<tr>
-												<th class="value-name" scope="row">helpform</th>
-												<td class="value-description">Used with forms when the user may need more or simplified information about the type of information being requested. Provides access/reference to a modified form with more information about each requested item.</td>
-											</tr>
-											<tr>
-												<th class="value-name" scope="row">humanhelp</th>
-												<td class="value-description">Provides the user with access to human help. This may be through a live chat, providing a phone number to call for human assistance, or other mechanism to reach a person for direct assistance. </td>
-											</tr>
-											<tr>
-												<th class="value-name" scope="row">morehelp</th>
-												<td class="value-description">Provides a more detailed explanation about the current topic or process.</td>
-											</tr>
-											          <tr>
-					              <th class="value-name" scope="row">moreinfo</th>
-					              <td class="value-description">provides additional levels of detail.</td>
-					            </tr>
-											<tr>
-												<th class="value-name" scope="row">simplified</th>
-												<td class="value-description"><em>propose this should be easylang rather than simplified.</em>  Provides, a version of the content that is easier to read and understand.</td>
-											</tr>
-											<tr>
-												<th class="value-name" scope="row">thesaurus</th>
-												<td class="value-description">provides a list of synonyms for the current term.  May redirect to another uri or provide a list of synonyms in-line, via a popup, or other method. </td>
-											</tr>
-											<tr>
-												<th class="value-name" scope="row">tooltips</th>
-												<td class="value-description">offers an option of adding tooltips to provide morehelp with more detailed information about the current topic or process. </td>
-											</tr>
-											<tr>
-												<th class="value-name" scope="row">topicsearch</th>
-												<td class="value-description">provides a uri for the user to perform a search on the current topic with the suggested search term included.</td>
-											</tr>
-					            <tr>
-					              <th class="value-name" scope="row">explain</th>
-					              <td class="value-description">provides a more detailed description of a process or term.</td>
-					            </tr>
-					            <tr>
-					              <th class="value-name" scope="row">extraHelp</th>
-					              <td class="value-description">additional information about the current action or process in one or more formats.</td>
-					            </tr>
-					            <tr>
-					              <th class="value-name" scope="row">feedback</th>
-					              <td class="value-description">provides and identifies immediate information about any action that occurs.</td>
-					            </tr>
-					            <tr>
-					              <th class="value-name" scope="row">triggerWarning</th>
-					              <td class="value-description">Provides a label for content that may cause traumatic response.</td>
-					            </tr>
-					            <tr>
-					              <th class="value-name" scope="row">hideTimer</th>
-					              <td class="value-description">Provides a mechanism to hide the countdown clock in timed situations. For example, a timed exam.</td>
-					            </tr>
-					            <tr>
-					              <th class="value-name" scope="row">useableFeedback</th>
-					              <td class="value-description">Follows the design for understandable design such as theme 6 in https://docs.googlecom/document/d/1WcfVALVq8PS9CLXUuAfV9Op0wXvI2yJYedj5jO23GTk/edit#. Must include tat Feedback is usable by each core useability group.</td>
-					            </tr>
-
-
-										</tbody>
-								</table>
-				</section>
-				<section data-include="../help/alternative.html" data-include-replace="true" id="alternative"></section>
-				<section data-include="../help/helptype.html" data-include-replace="true" id="helptype"></section>
-
-				<section data-include="../tools/log.html" data-include-replace="true" id="log"></section>
-
-
-
-
-					
-			</section>
-			<section>
-				<h3>URI‘s</h3>
-				<section data-include="../content/symbol.html" data-include-replace="true" id="symbol"></section>
-				<section data-include="../help/moreinfo.html" data-include-replace="true" id="moreinfo"></section>
-				<section data-include="../help/extrahelp.html" data-include-replace="true" id="extrahelp"></section>
-				<section data-include="../tools/log.html" data-include-replace="true" id="log"></section>
-
-			
-					
-					
-
-					
-					
-					
-					
-					
-					
 				
+					<li>
+						Status (from Step Indicator Usage)
+						<p><strong>Description</strong>: The stepindicator defined values should be used whenever there is a sequence of tasks that the user is required to complete, so that users who have memory issues can keep track of the steps previously completed.</p>
+						<p><a href="https://w3c.github.io/personalization-semantics/tools/#all-stepindicator-explanation">More info.</a></p>
+					</li>
+					<li>
+						<code>messageimportance</code>
+						<p><strong>Description</strong>: The messageimportance attribute is used to indicate the priority level of a message.</p>
+						<p><strong>Values</strong>: critical, medium (default), low.</p>
+						<p><a href="https://w3c.github.io/personalization-semantics/tools/#messageimportance-explanation">More info.</a></p>
+					</li>
+				</ul>
 			</section>
-			<section>
-				<h3>Text</h3>
-				<section data-include="../help/literal.html" data-include-replace="true" id="literal"></section>
-				<section data-include="../help/numberfree.html" data-include-replace="true" id="numberfree"></section>
-				<section data-include="../help/easylang.html" data-include-replace="true" id="easylang"></section>
-				<section data-include="../help/explain.html" data-include-replace="true" id="explain"></section>
-				<section data-include="../help/feedback.html" data-include-replace="true" id="feedback"></section>
-				<section data-include="../tools/log.html" data-include-replace="true" id="log"></section>	
-				<section data-include="../tools/message.html" data-include-replace="true" id="message"></section>
+			<section id="uri-s">
+				<h3 id="x1-2-uri-s"><span class="secno">1.2 </span>URI’s<a class="self-link" aria-label="§" href="#uri-s"></a></h3>
+				<ul>
+					<li>
+						<code>symbol</code>
+						<p><strong>Description</strong>: The symbol attribute identifies the concept for symbols.</p>
+						<p><a href="https://w3c.github.io/personalization-semantics/content/#symbol-explanation">More info.</a></p>
+					</li>
+					<li><code>moreinfo</code>
+						<p><strong>Description</strong>: moreinfo provides users access to additional information about the current content in one of several formats.</p>
+						<p><a href="https://w3c.github.io/personalization-semantics/help/#moreinfo-explanation">More info.</a></p>
+
+					</li>
+					<li><code>extrahelp</code>
+						<p><strong>Description</strong>: extrahelp provides users access to additional information about the current action or process in one or more formats.</p>
+						<p><a href="https://w3c.github.io/personalization-semantics/help/#extrahelp-explanation">More info.</a></p>
+
+					</li>
+					<li>
+						Steplocation – could we use href instead? (from Step Indicator Usage)
+						<p><strong>Description</strong>: The stepindicator defined values should be used whenever there is a sequence of tasks that the user is required to complete, so that users who have memory issues can keep track of the steps previously completed.</p>
+						<p><a href="https://w3c.github.io/personalization-semantics/tools/#all-stepindicator-explanation">More info.</a></p>
+					</li>
+				</ul>
+			</section>
+			<section id="text">
+				<h3 id="x1-3-text"><span class="secno">1.3 </span>Text<a class="self-link" aria-label="§" href="#text"></a></h3>
+				<ul>
+					<li><code>literal</code>
+						<p><strong>Description</strong>: literal provides alternative text for people who prefer content that does not use non literal text, such as metaphors.</p>
+						<p><a href="https://w3c.github.io/personalization-semantics/help/#literal-explanation">More info.</a></p>
+
+					</li>
+
+					<li><code>numberfree</code>
+						<p><strong>Description</strong>: numberfree provides alternative text for people who prefer content that does not use numerical concepts.</p>
+						
+						<p><a href="https://w3c.github.io/personalization-semantics/help/#numberfree-explanation">More info.</a></p>
+
+					</li>
+					<li><code>easylang</code>
+						<p><strong>Description</strong>: easylang provides an alternative text of the content that is easier to read and understand. </p>
+					
+						<p><a href="https://w3c.github.io/personalization-semantics/help/#easylang-explanation">More info.</a></p>
+					</li>
+					<li><code>explain</code>
+						<p><strong>Description</strong>: This attribute provides any information that helps the user anticipate the functionality, such as letting the user know what behavior will trigger an event. </p>
+					
+						<p><a href="https://w3c.github.io/personalization-semantics/help/#explain-explanation">More info.</a></p>
+
+					</li>
+					<li><code>feedback</code>
+						<p><strong>Description</strong>: This attribute provides immediate feedback that can be shown or spoken when any event is triggered on a control.</p>
+				
+						<p><a href="https://w3c.github.io/personalization-semantics/help/#feedback-explanation">More info.</a></p>
+
+					</li>
+					
+					<li>
+						<code>messagefrom</code>
+							<p><strong>Description</strong>: The messagefrom attribute can be used to help identify who a message a user receives is from.</p>
+						
+						<p><a href="https://w3c.github.io/personalization-semantics/tools/#messagefrom-explanation">More info.</a></p>
+						
+					</li>
+					<li>
+						<code>messagecontext</code>
+							<p><strong>Description</strong>: The messagecontext attribute can help clarify where a message is coming from.</p>
+						
+						<p><a href="https://w3c.github.io/personalization-semantics/tools/#messagecontext-explanation">More info.</a></p>
+						
+					</li>
+					<li>
+						<code>messagetime (restricted)</code>
+						<p><strong>Description</strong>: The messagetime attribute helps clarify when the message was sent.</p>
+			
+						<p><a href="https://w3c.github.io/personalization-semantics/tools/#messagetime-explanation">More info.</a></p>
+					</li>
+					<li>
+						Step (from Step Indicator Usage) numeric
+						<p><strong>Description</strong>: The stepindicator defined values should be used whenever there is a sequence of tasks that the user is required to complete, so that users who have memory issues can keep track of the steps previously completed.</p>
+						<p><a href="https://w3c.github.io/personalization-semantics/tools/#all-stepindicator-explanation">More info.</a></p>
+					</li>
+				</ul>
 			</section>
 		</section>
+
 
 
 
@@ -394,5 +205,6 @@
 
 		-->
 		
-	</body>
-</html>
+	
+
+<p role="navigation" id="back-to-top"><a href="#title"><abbr title="Back to Top">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
