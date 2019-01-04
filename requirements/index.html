@@ -1,4 +1,4 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta charset="UTF-8"><meta name="generator" content="ReSpec 23.4.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta charset="UTF-8"><meta name="generator" content="ReSpec 23.8.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
 div.issue-title, div.note-title , div.ednote-title, div.warning-title {
     padding-right:  1em;
     min-width: 7.5em;
@@ -667,113 +667,328 @@ h6>a.self-link::before {
       ]
     }
   },
-  "publishDate": "2018-10-17",
-  "publishISODate": "2018-10-17T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 17 October 2018"
+  "publishDate": "2019-01-04",
+  "publishISODate": "2019-01-04T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 04 January 2019"
 }</script><meta name="description" content="Requirements for Personalization Semantics"></head>
 	<body class="h-entry toc-inline"><div class="head">
-  <a href="https://www.w3.org/" class="logo">
-      <img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C">
-  </a>
-  <h1 id="title" class="title p-name">Requirements for Personalization Semantics</h1>
-  
-  <h2><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-10-17">17 October 2018</time></h2>
-  <dl>
-    <dt>This version:</dt><dd><a class="u-url" href="https://w3c.github.io/personalization-semantics/requirements/">https://w3c.github.io/personalization-semantics/requirements/</a></dd><dt>Latest published version:</dt><dd><a href="https://www.w3.org/TR/personalization-semantics-requirements-1.0/">https://www.w3.org/TR/personalization-semantics-requirements-1.0/</a></dd>
-    <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/personalization-semantics/requirements/">https://w3c.github.io/personalization-semantics/requirements/</a></dd>
-    
-    
-    
-    
-    
-    
-    <dt>Editors:</dt>
-    <dd class="p-author h-card vcard" data-editor-id="16320"><a class="ed_mailto u-email email p-name" href="mailto:lisa.seeman@zoho.com">Lisa Seeman</a></dd><dd class="p-author h-card vcard" data-editor-id="72055"><a class="ed_mailto u-email email p-name" href="mailto:charlesl@benetech.org">Charles LaPierre</a> (Benetech)</dd><dd class="p-author h-card vcard" data-editor-id="34017"><a class="ed_mailto u-email email p-name" href="mailto:cooper@w3.org">Michael Cooper</a> (<abbr title="World Wide Web Consortium">W3C</abbr>)</dd><dd class="p-author h-card vcard" data-editor-id="100586"><a class="ed_mailto u-email email p-name" href="mailto:ran@w3.org">Roy Ran</a> (<abbr title="World Wide Web Consortium">W3C</abbr>)</dd>
-    
-    
-    
-  </dl>
-  
-  
-  
-  <p class="copyright">
-        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> ©
-        2018
+      <a href="https://www.w3.org/" class="logo"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name">Requirements for Personalization Semantics</h1>
+      
+      <h2>
+        <abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft
+        <time class="dt-published" datetime="2019-01-04">04 January 2019</time>
+      </h2>
+      <dl>
+        <dt>This version:</dt><dd>
+                  <a class="u-url" href="https://w3c.github.io/personalization-semantics/requirements/">https://w3c.github.io/personalization-semantics/requirements/</a>
+                </dd><dt>Latest published version:</dt><dd>
+                  <a href="https://www.w3.org/TR/personalization-semantics-requirements-1.0/">https://www.w3.org/TR/personalization-semantics-requirements-1.0/</a>
+                </dd>
+        <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/personalization-semantics/requirements/">https://w3c.github.io/personalization-semantics/requirements/</a></dd>
         
-        <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup>
-        (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
-        <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>,
-        <a href="https://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>).
         
-        <abbr title="World Wide Web Consortium">W3C</abbr> <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
-        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and
-        <a rel="license" href="https://www.w3.org/Consortium/Legal/copyright-documents">document use</a>
-        rules apply.
-      </p>
-  <hr title="Separator for header">
-</div>
+        
+        
+        
+        
+        <dt>Editors:</dt>
+        <dd class="p-author h-card vcard" data-editor-id="16320"><a class="ed_mailto u-email email p-name" href="mailto:lisa.seeman@zoho.com">Lisa Seeman</a></dd><dd class="p-author h-card vcard" data-editor-id="72055"><a class="ed_mailto u-email email p-name" href="mailto:charlesl@benetech.org">Charles LaPierre</a>
+            (Benetech)
+          </dd><dd class="p-author h-card vcard" data-editor-id="34017"><a class="ed_mailto u-email email p-name" href="mailto:cooper@w3.org">Michael Cooper</a>
+            (<abbr title="World Wide Web Consortium">W3C</abbr>)
+          </dd><dd class="p-author h-card vcard" data-editor-id="100586"><a class="ed_mailto u-email email p-name" href="mailto:ran@w3.org">Roy Ran</a>
+            (<abbr title="World Wide Web Consortium">W3C</abbr>)
+          </dd>
+        
+        
+        
+      </dl>
+      
+      
+      
+      <p class="copyright">
+                        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
+                        ©
+                        2018-2019
+                        
+                        <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+                        <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
+                        <a href="http://ev.buaa.edu.cn/">Beihang</a>).
+                        
+                        <abbr title="World Wide Web Consortium">W3C</abbr>
+                        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+                        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a>
+                        and
+                        <a rel="license" href="https://www.w3.org/Consortium/Legal/copyright-documents">document use</a>
+                        rules apply.
+                      </p>
+      <hr title="Separator for header">
+    </div>
 		<section id="abstract" class="introductory"><!--OddPage--><h2>Abstract</h2>
 			<p>Requirements for Personalization Semantics</p>
 		</section>
-		<section id="sotd" class="introductory"><!--OddPage--><h2>Status of This Document</h2><p>
-        <em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em>
-      </p><p>
-          This document was published by the <a href="https://www.w3.org/WAI/APA/">Accessible Platform Architectures Working Group</a> as an Editor's Draft.
-          
-          </p><p>
-            
-            Comments regarding this document are welcome.
-              Please send them to
-              <a href="mailto:public-personalization-tf@w3.org">public-personalization-tf@w3.org</a>
-              (<a href="https://lists.w3.org/Archives/Public/public-personalization-tf/">archives</a>).
-            
-            </p><p>
-            Publication as an Editor's Draft does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr>
-            Membership. This is a draft document and may be updated, replaced or obsoleted by other
-            documents at any time. It is inappropriate to cite this document as other than work in
-            progress.
-          </p><p>
-          
-            This document was produced by
-            a group
-            operating under the
-            <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
-          
-          
-          
-              <abbr title="World Wide Web Consortium">W3C</abbr> maintains a <a rel="disclosure" href="https://www.w3.org/2004/01/pp-impl/83907/status">public list of any patent
-              disclosures</a>
-            made in connection with the deliverables of
-            the group; that page also includes
-            instructions for disclosing a patent. An individual who has actual knowledge of a patent
-            which the individual believes contains
-            <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential
-            Claim(s)</a> must disclose the information in accordance with
-            <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section
-            6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
-          
-          
-        </p><p>This document is governed by the <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-        </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a href="#abstract" class="tocxref">Abstract</a></li><li class="tocline"><a href="#sotd" class="tocxref">Status of This Document</a></li><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a></li><li class="tocline"><a href="#use-cases" class="tocxref"><span class="secno">2. </span>Use Cases</a></li><li class="tocline"><a href="#requirements" class="tocxref"><span class="secno">3. </span>Requirements</a><ol class="toc"><li class="tocline"><a href="#peronalization-features" class="tocxref"><span class="secno">3.1 </span>Peronalization Features</a></li><li class="tocline"><a href="#vocabulary-structure" class="tocxref"><span class="secno">3.2 </span>Vocabulary Structure</a></li><li class="tocline"><a href="#host-language-integration" class="tocxref"><span class="secno">3.3 </span>Host Language Integration</a></li></ol></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">A. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a href="#ack_group" class="tocxref"><span class="secno">A.1 </span>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a href="#ack_others" class="tocxref"><span class="secno">A.2 </span>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a href="#ack_funders" class="tocxref"><span class="secno">A.3 </span>Enabling funders</a></li></ol></li></ol></nav>
+		<section id="sotd" class="introductory"><!--OddPage--><h2>Status of This Document</h2><p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em></p> <p>
+                                              This document was published by
+                                              the <a href="https://www.w3.org/WAI/APA/">Accessible Platform Architectures Working Group</a> as an
+                                              Editor's Draft.
+                                              
+                                            </p><p>
+                                                      
+                                                      Comments regarding this document are welcome.
+                                                              Please send them
+                                                              to
+                                                              <a href="mailto:public-personalization-tf@w3.org">public-personalization-tf@w3.org</a>
+                                                              (<a href="https://lists.w3.org/Archives/Public/public-personalization-tf/">archives</a>).
+                                                            
+                                                    </p><p>
+                                              Publication as an
+                                              Editor's Draft does not imply
+                                              endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr> Membership.
+                                              This is a draft document and may
+                                              be updated, replaced or obsoleted
+                                              by other documents at any time. It
+                                              is inappropriate to cite this
+                                              document as other than work in
+                                              progress.
+                                            </p><p>
+                                      
+                                              This document was produced by
+                                              a group
+                                              operating under the
+                                              <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+                                            
+                                      
+                                      
+                                                      <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
+                                                      <a rel="disclosure" href="https://www.w3.org/2004/01/pp-impl/83907/status">public list of any
+                                                        patent disclosures</a>
+                                              made in connection with the
+                                              deliverables of
+                                              the group; that page also includes
+                                              instructions for disclosing a
+                                              patent. An individual who has
+                                              actual knowledge of a patent which
+                                              the individual believes contains
+                                              <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential Claim(s)</a>
+                                              must disclose the information in
+                                              accordance with
+                                              <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent
+                                                Policy</a>.
+                                            
+                                      
+                                    </p><p>
+                                      This document is governed by the
+                                      <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+                                    </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><span class="secno">1. </span>Introduction</a></li><li class="tocline"><a class="tocxref" href="#use-cases"><span class="secno">2. </span>Use Cases</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#simplification"><span class="secno">2.1 </span>Simplification</a></li><li class="tocline"><a class="tocxref" href="#adding-context"><span class="secno">2.2 </span>Adding Context</a></li><li class="tocline"><a class="tocxref" href="#general-context"><span class="secno">2.3 </span>General Context</a></li><li class="tocline"><a class="tocxref" href="#interoperable-symbols"><span class="secno">2.4 </span>Interoperable Symbols</a></li><li class="tocline"><a class="tocxref" href="#non-numerical-comprehension"><span class="secno">2.5 </span>Non-Numerical Comprehension</a></li><li class="tocline"><a class="tocxref" href="#alternate-language-complexity"><span class="secno">2.6 </span>Alternate Language Complexity</a></li><li class="tocline"><a class="tocxref" href="#non-literal-text-and-images"><span class="secno">2.7 </span>Non-literal Text and Images</a></li><li class="tocline"><a class="tocxref" href="#more-help"><span class="secno">2.8 </span>More Help</a></li><li class="tocline"><a class="tocxref" href="#explain-and-feedback"><span class="secno">2.9 </span>Explain and Feedback</a></li><li class="tocline"><a class="tocxref" href="#indication-of-sequence-in-breadcrumbs"><span class="secno">2.10 </span>Indication of Sequence in Breadcrumbs</a></li><li class="tocline"><a class="tocxref" href="#reminders-and-messages"><span class="secno">2.11 </span>Reminders and Messages</a></li></ol></li><li class="tocline"><a class="tocxref" href="#requirements"><span class="secno">3. </span>Requirements</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#personalization-features"><span class="secno">3.1 </span>Personalization Features</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#importance-identification"><span class="secno">3.1.1 </span>Importance identification</a></li><li class="tocline"><a class="tocxref" href="#familiar-terms-and-symbols"><span class="secno">3.1.2 </span>Familiar Terms and Symbols</a></li><li class="tocline"><a class="tocxref" href="#requirement-related-to-general-context"><span class="secno">3.1.3 </span>Requirement Related to General Context</a></li><li class="tocline"><a class="tocxref" href="#symbol-sets"><span class="secno">3.1.4 </span>Symbol Sets</a></li><li class="tocline"><a class="tocxref" href="#number-free"><span class="secno">3.1.5 </span>Number Free</a></li><li class="tocline"><a class="tocxref" href="#indicate-alternate-language-complexity-of-same-content"><span class="secno">3.1.6 </span>Indicate Alternate Language Complexity of Same Content</a></li><li class="tocline"><a class="tocxref" href="#indicate-non-literal-content"><span class="secno">3.1.7 </span>Indicate Non-Literal Content</a></li><li class="tocline"><a class="tocxref" href="#help-information"><span class="secno">3.1.8 </span>Help Information</a></li><li class="tocline"><a class="tocxref" href="#provide-feedback"><span class="secno">3.1.9 </span>Provide Feedback</a></li><li class="tocline"><a class="tocxref" href="#step-indicator"><span class="secno">3.1.10 </span>Step Indicator</a></li><li class="tocline"><a class="tocxref" href="#message-categorization"><span class="secno">3.1.11 </span>Message Categorization</a></li></ol></li><li class="tocline"><a class="tocxref" href="#vocabulary-structure"><span class="secno">3.2 </span>Vocabulary Structure</a></li><li class="tocline"><a class="tocxref" href="#host-language-integration"><span class="secno">3.3 </span>Host Language Integration</a></li></ol></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><span class="secno">A. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><span class="secno">A.1 </span>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><span class="secno">A.2 </span>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><span class="secno">A.3 </span>Enabling funders</a></li></ol></li></ol></nav>
 		<section id="introduction">
 			<!--OddPage--><h2 id="x1-introduction"><span class="secno">1. </span>Introduction<a class="self-link" aria-label="§" href="#introduction"></a></h2>
 		</section>
 		<section id="use-cases">
 			<!--OddPage--><h2 id="x2-use-cases"><span class="secno">2. </span>Use Cases<a class="self-link" aria-label="§" href="#use-cases"></a></h2>
+			<section id="simplification">
+				<h3 id="x2-1-simplification"><span class="secno">2.1 </span>Simplification<a class="self-link" aria-label="§" href="#simplification"></a></h3>
+				<p>A user changes their personalization settings to simplify the web content that displays based on the importance of various features. In the sample user experience available at <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html">https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html</a>, the user can select a "More options button or "Less options" button to simplify the web content by hiding or displaying elements that are or of low importance.</p>
+			</section>
+
+			<section id="adding-context">
+				<h3 id="x2-2-adding-context"><span class="secno">2.2 </span>Adding Context<a class="self-link" aria-label="§" href="#adding-context"></a></h3>
+				<p>A web content author creates a button with a role="send" then, without any additional work by the author the web content automatically:</p>
+				<ul>
+					<li>Renders associated symbols, terms, and/or tooltips that are understandable by a particular user.</li>
+					<li>Includudes F1 help that explains how the send function works in simple terms. </li>
+					<li>Has an identified keyboard shortcut that is always used for the send function.</li>
+					<li>Identifies the send button as important so it is always rendered, or rendered as a large button if needed.</li>
+				</ul>
+			</section>
+			
+			<section id="general-context">
+				<h3 id="x2-3-general-context"><span class="secno">2.3 </span>General Context<a class="self-link" aria-label="§" href="#general-context"></a></h3>
+				<p>A female user with a cognitive disability may need to select "Less options", while shopping on a website to eliminate options that are not relevant to a her shopping needs. In this case it may be appropriate to demote these options to display below the scroll or placed under a "More option" button.</p>
+				
+			</section>
+			
+			<section id="interoperable-symbols">
+				<h3 id="x2-4-interoperable-symbols"><span class="secno">2.4 </span>Interoperable Symbols<a class="self-link" aria-label="§" href="#interoperable-symbols"></a></h3>
+				<p>Mapping an AAC users' symbols to the same concepts enables the user agent to load the appropriate symbols enabling the user to understand and access content on the web and in other applications. In addition, AAC users, and those working with AAC users will be able to load AAC user symbols into these applications enabling access to content that has been created by different providers.</p>
+				<div class="ednote" id="issue-container-generatedID"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="4"><span>Editor's note</span></div><p class="">This isn't worded in use case language, so needs to be reformulated.</p></div>
+				
+			</section>
+			
+			<section id="non-numerical-comprehension">
+				<h3 id="x2-5-non-numerical-comprehension"><span class="secno">2.5 </span>Non-Numerical Comprehension<a class="self-link" aria-label="§" href="#non-numerical-comprehension"></a></h3>
+				<p>A suggested user experience would be: Numerical concepts could be rendered by the user agent slightly different so that the user knows a number free explanation is available. The user can then focus on the content and a tooltip or other disclosure mechanism would give the number free value.</p>
+				<div class="ednote" id="issue-container-generatedID-0"><div role="heading" class="ednote-title marker" id="h-ednote-0" aria-level="4"><span>Editor's note</span></div><p class="">This isn't worded in use case language, so needs to be reformulated.</p></div>
+			</section>
+			
+			<section id="alternate-language-complexity">
+				<h3 id="x2-6-alternate-language-complexity"><span class="secno">2.6 </span>Alternate Language Complexity<a class="self-link" aria-label="§" href="#alternate-language-complexity"></a></h3>
+				<p>For example, you may wish to provide a simplified summary of legal document, but still have a longer version for other users. </p>
+				<div class="ednote" id="issue-container-generatedID-1"><div role="heading" class="ednote-title marker" id="h-ednote-1" aria-level="4"><span>Editor's note</span></div><p class="">This isn't worded in use case language, so needs to be reformulated.</p></div>
+			</section>
+			
+			<section id="non-literal-text-and-images">
+				<h3 id="x2-7-non-literal-text-and-images"><span class="secno">2.7 </span>Non-literal Text and Images<a class="self-link" aria-label="§" href="#non-literal-text-and-images"></a></h3>
+				<p>Non-literal content could be rendered by the user agent with an indication that signifies to the user that this content should not be taken literally and that a literal explanation is available. The user can then place focus on the content and a tooltip or other disclosure mechanism would give the literal value.</p>
+				<div class="ednote" id="issue-container-generatedID-2"><div role="heading" class="ednote-title marker" id="h-ednote-2" aria-level="4"><span>Editor's note</span></div><p class="">This isn't worded in use case language, so needs to be reformulated.</p></div>
+			</section>
+			
+			<section id="more-help">
+				<h3 id="x2-8-more-help"><span class="secno">2.8 </span>More Help<a class="self-link" aria-label="§" href="#more-help"></a></h3>
+				<p>&gt;Some users may need additional information or specifically additional help information.</p>
+				<div class="ednote" id="issue-container-generatedID-3"><div role="heading" class="ednote-title marker" id="h-ednote-3" aria-level="4"><span>Editor's note</span></div><p class="">This isn't worded in use case language, so needs to be reformulated.</p></div>
+			</section>
+			
+			<section id="explain-and-feedback">
+				<h3 id="x2-9-explain-and-feedback"><span class="secno">2.9 </span>Explain and Feedback<a class="self-link" aria-label="§" href="#explain-and-feedback"></a></h3>
+				<p>Some users need additional feedback about events on the web page.</p>
+				<div class="ednote" id="issue-container-generatedID-4"><div role="heading" class="ednote-title marker" id="h-ednote-4" aria-level="4"><span>Editor's note</span></div><p class="">This isn't worded in use case language, so needs to be reformulated.</p></div>
+			</section>
+			
+			<section id="indication-of-sequence-in-breadcrumbs">
+				<h3 id="x2-10-indication-of-sequence-in-breadcrumbs"><span class="secno">2.10 </span>Indication of Sequence in Breadcrumbs<a class="self-link" aria-label="§" href="#indication-of-sequence-in-breadcrumbs"></a></h3>
+				<p>A hyperlinked, sequential breadcrumb list displays in the header, allowing the user agent to build a sequential indicator that displays a link to each page in the order it was visited by the user. </p>
+				<div class="ednote" id="issue-container-generatedID-5"><div role="heading" class="ednote-title marker" id="h-ednote-5" aria-level="4"><span>Editor's note</span></div><p class="">I believe an important feature is that this mechanism can cross defined tasks and give a more holistic version of the user flow. Typically in a defined sequence of tasks an author will have provided the nessessary afforardance, location in the path, navigation through the path, etc., in the UI by design.</p></div>
+			</section>
+			
+			<section id="reminders-and-messages">
+				<h3 id="x2-11-reminders-and-messages"><span class="secno">2.11 </span>Reminders and Messages<a class="self-link" aria-label="§" href="#reminders-and-messages"></a></h3>
+				<p>Users can disable push notifications and messages on applications such as Skype and Facebook across different devices, however, they may forget to re-enable these notifications and messages. A user's contacts can be organized by importance or by groups. For example, the CEO of the company a user works for and a user's child care giver could both be set to critical. A user's contacts may also be grouped. Family members may be in one group, important colleagues may be in a second group, and friends in a third group.</p>
+				<p><strong>Privacy Implications:</strong>This feature could in theory be implemented pre-authentication. Depending on the implementation, this would expose a users contats to the client in clear text. </p>
+				<p><strong>Existing Technologies:</strong> Would Web push notification with customization by the user satisfy the requirement here as opposed to introducing new semantics?</p>
+				<p>Reference: https://developers.google.com/web/fundamentals/codelabs/push-notifications/</p>
+				<p><strong>Example User Experience:</strong> Question for the group. How would data be shared, if at all, between applications containing, for example, contacts and the proposed mechanism</p>
+				<div class="ednote" id="issue-container-generatedID-6"><div role="heading" class="ednote-title marker" id="h-ednote-6" aria-level="4"><span>Editor's note</span></div><p class="">This isn't worded in use case language, so needs to be reformulated.</p></div>
+			</section>
+			
 		</section>
 		<section id="requirements">
 			<!--OddPage--><h2 id="x3-requirements"><span class="secno">3. </span>Requirements<a class="self-link" aria-label="§" href="#requirements"></a></h2>
-			<section id="peronalization-features">
-				<h3 id="x3-1-peronalization-features"><span class="secno">3.1 </span>Peronalization Features<a class="self-link" aria-label="§" href="#peronalization-features"></a></h3>
-				<div class="ednote" id="issue-container-generatedID"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="4"><span>Editor's note</span></div><p class="">See <a href="https://github.com/w3c/personalization-semantics/labels/features">feature issues</a> for considerations on requirements for specific features of personalization semantics.</p></div>
+			<section id="personalization-features">
+				<h3 id="x3-1-personalization-features"><span class="secno">3.1 </span>Personalization Features<a class="self-link" aria-label="§" href="#personalization-features"></a></h3>
+				<div class="ednote" id="issue-container-generatedID-7"><div role="heading" class="ednote-title marker" id="h-ednote-7" aria-level="4"><span>Editor's note</span></div><p class="">See <a href="https://github.com/w3c/personalization-semantics/labels/features">feature issues</a> for considerations on requirements for specific features of personalization semantics.</p></div>
+				
+				<section id="importance-identification">
+					<h4 id="x3-1-1-importance-identification"><span class="secno">3.1.1 </span>Importance identification<a class="self-link" aria-label="§" href="#importance-identification"></a></h4>
+					<p><b>Requirement</b>: There must be a mechanism to identify and differentiate the features included in web content based on its importance (e.g. critical, high, medium, low). The definition of a feature's importance should be defined from the user's perspective as:</p>
+					<ul>
+						<li><code>Critical</code> — used by the majority of users 90% of the time or more.</li>
+						<li><code>High</code> — used at least 60% of the time or more.</li>
+						<li><code>Medium</code> — used by 20% of users, 20% of the time.</li>
+						<li><code>Low</code> — used less then 20%.</li>
+					</ul>
+
+					<p>Fulfills use cases: <a href="#simplification">Simplification</a></p>
+					<p>Relevant properties: <a href="../content/#simplification"><code>simplification</code></a></p>
+				</section>
+				
+				<section id="familiar-terms-and-symbols">
+					<h4 id="x3-1-2-familiar-terms-and-symbols"><span class="secno">3.1.2 </span>Familiar Terms and Symbols<a class="self-link" aria-label="§" href="#familiar-terms-and-symbols"></a></h4>
+					<p>Terms and symbols used in web content must be familiar to the user because what is familiar to one user may be unrecognizable or strange to someone else requiring the user to learn new symbols. Therefore, the user agent or script should understand the context of links, buttons, and other page elements so that symbols and text displayed in a way each user understands. This can include:</p>
+					<ul>
+						<li>Familiar Symbols and graphics that they are familiar with </li>
+						<li>Tooltips </li>
+						<li>Language translation</li>
+						<li>Keyboard shortcuts </li>
+					</ul>
+					<p>In order to display the appropriate content the supported syntax and terms must be standardized using attributes to associate symbols, terms, translations and explanations that are presented in a way that is understandable by various user scenarios.</p>
+
+					<p>Fulfills use cases: <a href="#adding-context">Adding Context</a></p>
+					<p>Relevant properties: <a href="../content/#action"><code>action</code></a>, <a href="#destination" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured"><code>destination</code></a>, <a href="../content/#field"><code>field</code></a></p>
+				</section>
+
+				<section id="requirement-related-to-general-context">
+					<h4 id="x3-1-3-requirement-related-to-general-context"><span class="secno">3.1.3 </span>Requirement Related to General Context<a class="self-link" aria-label="§" href="#requirement-related-to-general-context"></a></h4>
+					<p>Optimize the personalization of a product or service's content to ensure it is appropriate for the current context of use as well as relevant for the user.</p>
+					<div class="ednote" id="issue-container-generatedID-8"><div role="heading" class="ednote-title marker" id="h-ednote-8" aria-level="5"><span>Editor's note</span></div><p class="">Needs more specific information about what the actual requirement is. Note the related property is a broken link.</p></div>
+					<p>Fulfills use cases: <a href="#general-context">General Context</a></p>
+					<p>Relevant properties: <a href="#context" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-0">@@context</a></p>
+				</section>
+				
+				<section id="symbol-sets">
+					<h4 id="x3-1-4-symbol-sets"><span class="secno">3.1.4 </span>Symbol Sets<a class="self-link" aria-label="§" href="#symbol-sets"></a></h4>
+					<p>Create interoperable symbol sets for users with complex communication needs that require the use of Alternative and Augmentative Communication (AAC) systems. AAC systems are designed for people who are non-verbal that often use symbols with or without text. AAC end-users tend to only learn one symbol set and cannot easily communicate with other symbol users in a written format. In addition, they may struggle to understand different symbols that are used in different applications. It's important to note that some symbols may be subject to copyright, which means they cannot be shared across applications. However, there are open symbol sets that can be shared and mapped against concepts, generating representative text. This text can also be translated into different languages as well as used to display a different set of symbols.</p>
+					
+					<p>Fulfills use case: <a href="#interoperable-symbols">Interoperable Symbols</a></p>
+					<p>Relevant properties: <a href="#concept" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-1">@@concept</a></p>
+				</section>
+				
+				<section id="number-free">
+					<h4 id="x3-1-5-number-free"><span class="secno">3.1.5 </span>Number Free<a class="self-link" aria-label="§" href="#number-free"></a></h4>
+					<p>Not everyone can understand numbers. The <code>numberfree</code> attribute is intended as an alternative text for people who can not understand the main content.</p>
+					<div class="ednote" id="issue-container-generatedID-9"><div role="heading" class="ednote-title marker" id="h-ednote-9" aria-level="5"><span>Editor's note</span></div><p class="">This needs to be made higher-level.</p></div>
+					<p>Fulfills use case: <a href="#non-numerical-comprehension">Non-Numerical Comprehension</a></p>
+					<p>Relevant properties: <a href="../help/#numberfree"><code>numberfree</code></a></p>
+				</section>
+				
+				<section id="indicate-alternate-language-complexity-of-same-content">
+					<h4 id="x3-1-6-indicate-alternate-language-complexity-of-same-content"><span class="secno">3.1.6 </span>Indicate Alternate Language Complexity of Same Content<a class="self-link" aria-label="§" href="#indicate-alternate-language-complexity-of-same-content"></a></h4>
+					<p>Authors may want to provide a simplified version of the page or of a section of a page. These alternative versions may not be identical in content but maintain the intent of the original content.</p>
+					<div class="ednote" id="issue-container-generatedID-10"><div role="heading" class="ednote-title marker" id="h-ednote-10" aria-level="5"><span>Editor's note</span></div><p class="">Needs more specific requirement.</p></div>
+					
+					<p>Fulfills use case: <a href="#alternate-language-complexity">Alternate Language Complexity</a></p>
+					<p>Relevant properties: <a href="../help/#alternative"><code>alternative</code></a>, <a href="#easylang" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-2"><code>easylang</code></a></p>
+				</section>
+				
+				<section id="indicate-non-literal-content">
+					<h4 id="x3-1-7-indicate-non-literal-content"><span class="secno">3.1.7 </span>Indicate Non-Literal Content<a class="self-link" aria-label="§" href="#indicate-non-literal-content"></a></h4>
+					<p>Some users cannot understand non-literal text and icons such as metaphors, idioms etc. The <code>literal</code> property is intended to identify text or images as non-literal and allows the author to explain non-literal text and images to users.</p>
+					<div class="ednote" id="issue-container-generatedID-11"><div role="heading" class="ednote-title marker" id="h-ednote-11" aria-level="5"><span>Editor's note</span></div><p class="">Needs more specific requirement.</p></div>
+					
+					<p>Fulfills use case: <a href="#non-literal-text-and-images">Non-literal Text and Images</a></p>
+					<p>Relevant properties: <a href="../help/#literal"><code>literal</code></a></p>
+				</section>
+				
+				<section id="help-information">
+					<h4 id="x3-1-8-help-information"><span class="secno">3.1.8 </span>Help Information<a class="self-link" aria-label="§" href="#help-information"></a></h4>
+					<p>We propose additional properties so that an author can indicate the existence of this additional information.</p>
+					<div class="ednote" id="issue-container-generatedID-12"><div role="heading" class="ednote-title marker" id="h-ednote-12" aria-level="5"><span>Editor's note</span></div><p class="">Needs more specific requirement.</p></div>
+					
+					<p>Fulfills use case: <a href="#more-help">More Help</a></p>
+					<p>Relevant properties: <a href="../help/#moreinfo"><code>moreinfo</code></a>, <a href="../help/#extrahelp"><code>extrahelp</code></a>, <a href="../help/#helptype">helptype</a></p>
+				</section>
+				
+				<section id="provide-feedback">
+					<h4 id="x3-1-9-provide-feedback"><span class="secno">3.1.9 </span>Provide Feedback<a class="self-link" aria-label="§" href="#provide-feedback"></a></h4>
+					<p>We propose additional properties where the author can provide additional information or explain what just happened.</p>
+					<div class="ednote" id="issue-container-generatedID-13"><div role="heading" class="ednote-title marker" id="h-ednote-13" aria-level="5"><span>Editor's note</span></div><p class="">Needs more specific requirement.</p></div>
+					
+					<p>Fulfills use case: <a href="#explain-and-feedback">Explain and Feedback</a></p>
+					<p>Relevant properties: <a href="../help/#feedback"><code>feedback</code></a>, <a href="../help/#explain"><code>explain</code></a></p>
+				</section>
+				
+				<section id="step-indicator">
+					<h4 id="x3-1-10-step-indicator"><span class="secno">3.1.10 </span>Step Indicator<a class="self-link" aria-label="§" href="#step-indicator"></a></h4>
+					<p>Users may have differences in both working and short-term memory. For some users the duration of working memory may be shorter than the average which is between 10-15 seconds. For some users the duration of short-term memory may be shorter than the average which is between 15-30 seconds.</p>
+					<p>Many processes consist of a sequence of separate steps or actions which must be performed by a user to complete a process or workflow. Users must be able to track completed tasks in order to identify their location in a process. In addition, a user must be able to navigate to completed tasks to make modifications or corrections.</p>
+					<p>The suggested defined values allow an author to transform information associated with steps within a process or represent the entire user path including steps out of the context of a defined process and steps between defined processes into breadcrumbs or linked steps that identify completed tasks, allow the user to make edits to steps that have been completed and identify a user' current location in a user path.</p>
+					<div class="ednote" id="issue-container-generatedID-14"><div role="heading" class="ednote-title marker" id="h-ednote-14" aria-level="5"><span>Editor's note</span></div><p class="">Needs more clear requirement.</p></div>
+					
+					<p>Fulfills use case: <a href="indication-of-sequence-in-breadcrumbs">Indication of Sequence in Breadcrumbs</a></p>
+					<p>Relevant properties: <a href="#x3-1-all-the-stepindicator-properties" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-3">@@stepindicator</a>, <a href="#step" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-4">@@step</a>, <a href="#steplocation" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-5">@@steplocation</a>, <a href="#status" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-6">@@stepstatus</a>
+						<a href="#status" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-7">@@stepnumber</a>
+					</p>
+				</section>
+				
+				<section id="message-categorization">
+					<h4 id="x3-1-11-message-categorization"><span class="secno">3.1.11 </span>Message Categorization<a class="self-link" aria-label="§" href="#message-categorization"></a></h4>
+					<p>A mechanism for managing both system level and application level reminders and messages is a useful tool for people with a variety of cognitive disabilities including, memory impairment and users who are sensitive to distractions. We require a group of defined values that give users control over the amount of reminders and messages that are presented along with a mechanism for managing, prioritizing, managing and grouping reminders and messages.</p>
+					<p>The defined values should allow an alternative solution for users to manage reminders and messages by forming a cross-application and cross-device matrix that manages all reminders and messages. These values are based on a matrix for reminders and messages at the operating system, browser or cloud level. </p>
+					<div class="ednote" id="issue-container-generatedID-15"><div role="heading" class="ednote-title marker" id="h-ednote-15" aria-level="5"><span>Editor's note</span></div><p class="">Needs more clear requirement.</p></div>
+					
+					<p>Fulfills use case: <a href="#reminders-and-messages">Reminders and Messages</a></p>
+					<p>Relevant properties: <a href="../tools/#messagetime">message</a>
+						<a href="../tools/#messageimportance">messageimportance</a>, <a href="../tools/#messagefrom">messagefrom</a>, <a href="../tools/#messagecontext">messagegroup</a>, <a href="../tools/#messagetime">messagetime</a>
+					</p>
+				</section>
+				
 			</section>
 			<section id="vocabulary-structure">
 				<h3 id="x3-2-vocabulary-structure"><span class="secno">3.2 </span>Vocabulary Structure<a class="self-link" aria-label="§" href="#vocabulary-structure"></a></h3>
-				<div class="ednote" id="issue-container-generatedID-0"><div role="heading" class="ednote-title marker" id="h-ednote-0" aria-level="4"><span>Editor's note</span></div><p class="">See <a href="https://github.com/w3c/personalization-semantics/labels/structure">vocabulary structure issues</a> for considerations on requirements for vocabulary structure.</p></div>
+				<div class="ednote" id="issue-container-generatedID-16"><div role="heading" class="ednote-title marker" id="h-ednote-16" aria-level="4"><span>Editor's note</span></div><p class="">See <a href="https://github.com/w3c/personalization-semantics/labels/structure">vocabulary structure issues</a> for considerations on requirements for vocabulary structure.</p></div>
 			</section>
 			<section id="host-language-integration">
 				<h3 id="x3-3-host-language-integration"><span class="secno">3.3 </span>Host Language Integration<a class="self-link" aria-label="§" href="#host-language-integration"></a></h3>
-				<div class="ednote" id="issue-container-generatedID-1"><div role="heading" class="ednote-title marker" id="h-ednote-1" aria-level="4"><span>Editor's note</span></div><p class="">See <a href="https://github.com/w3c/personalization-semantics/labels/implementation">host language implementation issues</a> and <a href="https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content">https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content</a> for considerations on requirements for implementation in content.</p></div>
+				<div class="ednote" id="issue-container-generatedID-17"><div role="heading" class="ednote-title marker" id="h-ednote-17" aria-level="4"><span>Editor's note</span></div><p class="">See <a href="https://github.com/w3c/personalization-semantics/labels/implementation">host language implementation issues</a> and <a href="https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content">https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content</a> for considerations on requirements for implementation in content.</p></div>
 			</section>
 		</section>
 		<section class="appendix informative section" id="acknowledgements">
