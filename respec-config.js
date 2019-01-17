@@ -21,7 +21,7 @@ var respecConfig = {
     // if you wish the publication date to be other than today, set this
     //publishDate:  "2017-05-09",
     copyrightStart:  "2017",
-    license: "document",
+    license: "w3c-software",
 
     // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
     // and its maturity status
