@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 23.8.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
+<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 24.2.1"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
 span.example-title {
     text-transform: none;
 }
@@ -42,8 +42,8 @@ div.note, div.issue, div.ednote, div.warning {
     margin-top: 1em;
     margin-bottom: 1em;
 }
-.note > p:first-child, .ednote > p:first-child, .issue > p:first-child, .warning > p:first-child { margin-top: 0 }
-.issue, .note, .ednote, .warning {
+.warning > p:first-child { margin-top: 0 }
+.warning {
     padding: .5em;
     border-left-width: .5em;
     border-left-style: solid;
@@ -54,7 +54,7 @@ div.issue, div.note , div.ednote,  div.warning {
     position: relative;
     clear: both;
 }
-span.note, span.ednote, span.issue, span.warning { padding: .1em .5em .15em; }
+span.warning { padding: .1em .5em .15em; }
 
 .issue {
     border-color: #e05252;
@@ -62,11 +62,6 @@ span.note, span.ednote, span.issue, span.warning { padding: .1em .5em .15em; }
 }
 .issue.closed span.issue-number {
     text-decoration: line-through;
-}
-
-.note, .ednote {
-    border-color: #52e052;
-    background: #e9fbe9;
 }
 
 .warning {
@@ -118,8 +113,6 @@ input.task-list-item-checkbox {
 }
 </style>
 		<title>Personalization Tools 1.0</title>
-		
-		
 		
 		<style id="respec-mainstyle">/*****************************************************************
  * ReSpec 3 CSS
@@ -461,6 +454,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   font-weight: bold;
 }
 </style>
+		
+		
 	
 		<link href="../common/css/common.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-tools-1.0/"><script id="initialUserConfig" type="application/json">{
@@ -804,16 +799,16 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       ]
     }
   },
-  "publishDate": "2019-01-04",
-  "publishISODate": "2019-01-04T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 04 January 2019"
+  "publishDate": "2019-01-17",
+  "publishISODate": "2019-01-17T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 17 January 2019"
 }</script><meta name="description" content="This document list examples of the tools defined values, this is an extension of Personalization Explainer 1.0."></head>
-	<body class="h-entry toc-inline"><div class="head">
+	<body class="h-entry"><div class="head">
       <a href="https://www.w3.org/" class="logo"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name">Personalization Tools 1.0</h1>
       
       <h2>
         <abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft
-        <time class="dt-published" datetime="2019-01-04">04 January 2019</time>
+        <time class="dt-published" datetime="2019-01-17">17 January 2019</time>
       </h2>
       <dl>
         <dt>This version:</dt><dd>
@@ -846,88 +841,75 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       
       
       <p class="copyright">
-                        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
-                        ©
-                        2017-2019
-                        
-                        <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
-                        <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
-                        <a href="http://ev.buaa.edu.cn/">Beihang</a>).
-                        
-                        <abbr title="World Wide Web Consortium">W3C</abbr>
-                        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
-                        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a>
-                        and
-                        <a rel="license" href="https://www.w3.org/Consortium/Legal/copyright-documents">document use</a>
-                        rules apply.
-                      </p>
+      <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
+      ©
+      2017-2019
+      
+      <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+      <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
+      <a href="http://ev.buaa.edu.cn/">Beihang</a>). 
+      <abbr title="World Wide Web Consortium">W3C</abbr> <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+      <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a rel="license" href="https://www.w3.org/Consortium/Legal/copyright-documents">document use</a> rules
+      apply.
+    </p>
       <hr title="Separator for header">
     </div>
 
-		<section id="abstract" class="introductory"><!--OddPage--><h2>Abstract</h2>
+		<section id="abstract" class="introductory"><h2>Abstract</h2>
 			<p>This document list examples of the tools defined values, this is an extension of <a href="../">Personalization Explainer 1.0</a>. </p>
 		</section>
 		<section class="informative" id="introduction">
 
 			<!--OddPage--><h2 id="x1-introduction"><span class="secno">1. </span>Introduction<a class="self-link" aria-label="§" href="#introduction"></a></h2><p><em>This section is non-normative.</em></p>
 			<p>This document list examples of the tools defined values. This is an extension of <a href="../">Personalization Explainer 1.0</a>. </p>
-			<div class="ednote" id="examples-disclaimer"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="3"><span>Editor's note</span></div><p class="">Personalization semantics defines a set of properties and values to annotate content. The specific mechanism to apply these properties to content has not been decided. <a href="https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content">Several approaches are under consideration</a> and future drafts will show progress. To help with understanding of the properties, this document provides many examples of personalization semantics applied to content, which show attributes beginning with the prefix "aui-". <em>This has not been decided as the chosen approach</em>, but the simplicity supports understanding of the examples.</p></div>
+			<div class="note" id="examples-disclaimer"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="3"><span>Editor's note</span></div><p class="">Personalization semantics defines a set of properties and values to annotate content. The specific mechanism to apply these properties to content has not been decided. <a href="https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content">Several approaches are under consideration</a> and future drafts will show progress. To help with understanding of the properties, this document provides many examples of personalization semantics applied to content, which show attributes beginning with the prefix "aui-". <em>This has not been decided as the chosen approach</em>, but the simplicity supports understanding of the examples.</p></div>
 
 		</section>
 
-		<section id="sotd" class="introductory"><!--OddPage--><h2>Status of This Document</h2><p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em></p><p>
-                                              This document was published by
-                                              the <a href="https://www.w3.org/WAI/APA/">Accessible Platform Architectures Working Group</a> as an
-                                              Editor's Draft.
-                                              
-                                            </p><p>
-                                                      
-                                                      Comments regarding this document are welcome.
-                                                              Please send them
-                                                              to
-                                                              <a href="mailto:public-personalization-tf@w3.org">public-personalization-tf@w3.org</a>
-                                                              (<a href="https://lists.w3.org/Archives/Public/public-personalization-tf/">archives</a>).
-                                                            
-                                                    </p><p>
-                                              Publication as an
-                                              Editor's Draft does not imply
-                                              endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr> Membership.
-                                              This is a draft document and may
-                                              be updated, replaced or obsoleted
-                                              by other documents at any time. It
-                                              is inappropriate to cite this
-                                              document as other than work in
-                                              progress.
-                                            </p><p>
-                                      
-                                              This document was produced by
-                                              a group
-                                              operating under the
-                                              <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
-                                            
-                                      
-                                      
-                                                      <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
-                                                      <a rel="disclosure" href="https://www.w3.org/2004/01/pp-impl/83907/status">public list of any
-                                                        patent disclosures</a>
-                                              made in connection with the
-                                              deliverables of
-                                              the group; that page also includes
-                                              instructions for disclosing a
-                                              patent. An individual who has
-                                              actual knowledge of a patent which
-                                              the individual believes contains
-                                              <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential Claim(s)</a>
-                                              must disclose the information in
-                                              accordance with
-                                              <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent
-                                                Policy</a>.
-                                            
-                                      
-                                    </p><p>
-                                      This document is governed by the
-                                      <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-                                    </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#introduction"><span class="secno">1. </span>Introduction</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#use-cases-and-requirements"><span class="secno">2. </span>Use Cases and Requirements</a></li><li class="tocline"><a class="tocxref" href="#tools"><span class="secno">3. </span>Tools</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#all-stepindicator-explanation"><span class="secno">3.1 </span>All the Step Indicator Properties </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#stepindicator-usage-example-explanation"><span class="secno">3.1.1 </span>Step Indicator Usage</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description"><span class="secno">3.1.1.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#stepindicator-usage-example"><span class="secno">3.1.1.2 </span>Example</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#all-the-message-properties"><span class="secno">3.2 </span>All the message properties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#messageimportance-explanation"><span class="secno">3.2.1 </span>messageimportance</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-0"><span class="secno">3.2.1.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#messageimportance-example"><span class="secno">3.2.1.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics"><span class="secno">3.2.1.3 </span>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values"><span class="secno">3.2.1.4 </span>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#messagefrom-explanation"><span class="secno">3.2.2 </span>messagefrom</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-1"><span class="secno">3.2.2.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#messagefrom-example"><span class="secno">3.2.2.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-0"><span class="secno">3.2.2.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#messagecontext-explanation"><span class="secno">3.2.3 </span>messagecontext</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-2"><span class="secno">3.2.3.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#messagecontext-example"><span class="secno">3.2.3.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-1"><span class="secno">3.2.3.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#messagetime-explanation"><span class="secno">3.2.4 </span>messagetime</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-3"><span class="secno">3.2.4.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#messagetime-example"><span class="secno">3.2.4.2 </span>messagetime</a></li><li class="tocline"><a class="tocxref" href="#characteristics-2"><span class="secno">3.2.4.3 </span>Characteristics</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#vocabulary-implementations"><span class="secno">A. </span>Vocabulary Implementations</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><span class="secno">B.1 </span>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><span class="secno">B.2 </span>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><span class="secno">C.1 </span>Normative references</a></li></ol></li></ol></nav>
+		<section id="sotd" class="introductory"><h2>Status of This Document</h2><p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em></p><p>
+                              This document was published by the <a href="https://www.w3.org/WAI/APA/">Accessible Platform Architectures Working Group</a> as
+                              an Editor's Draft.
+                              
+                            </p><p>
+      
+      Comments regarding this document are welcome.
+              Please send them to
+              <a href="mailto:public-personalization-tf@w3.org">public-personalization-tf@w3.org</a>
+              (<a href="https://lists.w3.org/Archives/Public/public-personalization-tf/">archives</a>).
+            
+    </p><p>
+                              Publication as an Editor's Draft
+                              does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr> Membership.
+                              This is a draft document and may be updated,
+                              replaced or obsoleted by other documents at any
+                              time. It is inappropriate to cite this document as
+                              other than work in progress.
+                            </p><p>
+                      
+                              This document was produced by
+                              a group
+                              operating under the
+                              <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+                            
+                      
+                      
+                                      <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
+                                      <a rel="disclosure" href="https://www.w3.org/2004/01/pp-impl/83907/status">public list of any patent
+                                        disclosures</a>
+                              made in connection with the deliverables of
+                              the group; that page also includes
+                              instructions for disclosing a patent. An
+                              individual who has actual knowledge of a patent
+                              which the individual believes contains
+                              <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential Claim(s)</a>
+                              must disclose the information in accordance with
+                              <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+                            
+                      
+                    </p><p>
+                      This document is governed by the
+                      <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+                    </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#introduction"><span class="secno">1. </span>Introduction</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#use-cases-and-requirements"><span class="secno">2. </span>Use Cases and Requirements</a></li><li class="tocline"><a class="tocxref" href="#tools"><span class="secno">3. </span>Tools</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#all-stepindicator-explanation"><span class="secno">3.1 </span>All the Step Indicator Properties </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#stepindicator-usage-example-explanation"><span class="secno">3.1.1 </span>Step Indicator Usage</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description"><span class="secno">3.1.1.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#stepindicator-usage-example"><span class="secno">3.1.1.2 </span>Example</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#all-the-message-properties"><span class="secno">3.2 </span>All the message properties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#messageimportance-explanation"><span class="secno">3.2.1 </span>messageimportance</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-0"><span class="secno">3.2.1.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#messageimportance-example"><span class="secno">3.2.1.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics"><span class="secno">3.2.1.3 </span>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values"><span class="secno">3.2.1.4 </span>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#messagefrom-explanation"><span class="secno">3.2.2 </span>messagefrom</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-1"><span class="secno">3.2.2.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#messagefrom-example"><span class="secno">3.2.2.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-0"><span class="secno">3.2.2.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#messagecontext-explanation"><span class="secno">3.2.3 </span>messagecontext</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-2"><span class="secno">3.2.3.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#messagecontext-example"><span class="secno">3.2.3.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-1"><span class="secno">3.2.3.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#messagetime-explanation"><span class="secno">3.2.4 </span>messagetime</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-3"><span class="secno">3.2.4.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#messagetime-example"><span class="secno">3.2.4.2 </span>messagetime</a></li><li class="tocline"><a class="tocxref" href="#characteristics-2"><span class="secno">3.2.4.3 </span>Characteristics</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#vocabulary-implementations"><span class="secno">A. </span>Vocabulary Implementations</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><span class="secno">B.1 </span>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><span class="secno">B.2 </span>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><span class="secno">C.1 </span>Normative references</a></li></ol></li></ol></nav>
 
 			
 

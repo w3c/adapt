@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 23.8.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
+<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 24.2.1"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
 span.example-title {
     text-transform: none;
 }
@@ -42,8 +42,8 @@ div.note, div.issue, div.ednote, div.warning {
     margin-top: 1em;
     margin-bottom: 1em;
 }
-.note > p:first-child, .ednote > p:first-child, .issue > p:first-child, .warning > p:first-child { margin-top: 0 }
-.issue, .note, .ednote, .warning {
+.warning > p:first-child { margin-top: 0 }
+.warning {
     padding: .5em;
     border-left-width: .5em;
     border-left-style: solid;
@@ -54,7 +54,7 @@ div.issue, div.note , div.ednote,  div.warning {
     position: relative;
     clear: both;
 }
-span.note, span.ednote, span.issue, span.warning { padding: .1em .5em .15em; }
+span.warning { padding: .1em .5em .15em; }
 
 .issue {
     border-color: #e05252;
@@ -62,11 +62,6 @@ span.note, span.ednote, span.issue, span.warning { padding: .1em .5em .15em; }
 }
 .issue.closed span.issue-number {
     text-decoration: line-through;
-}
-
-.note, .ednote {
-    border-color: #52e052;
-    background: #e9fbe9;
 }
 
 .warning {
@@ -118,8 +113,6 @@ input.task-list-item-checkbox {
 }
 </style>
 		<title>Personalization Semantics Content Module 1.0</title>
-		
-		
 		
 		<style id="respec-mainstyle">/*****************************************************************
  * ReSpec 3 CSS
@@ -461,6 +454,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   font-weight: bold;
 }
 </style>
+		
+		
 	
 		<link href="../common/css/common.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-content-1.0/"><script id="initialUserConfig" type="application/json">{
@@ -804,16 +799,16 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       ]
     }
   },
-  "publishDate": "2019-01-04",
-  "publishISODate": "2019-01-04T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 04 January 2019"
+  "publishDate": "2019-01-17",
+  "publishISODate": "2019-01-17T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 17 January 2019"
 }</script><meta name="description" content="This document provides use cases and a vocabulary of terms that can be used to enhance web content by providing information about form controls, symbols, and other user interface elements. User agents use the semantics to augment or adapt content to the user’s scenario. This helps users with varying needs to understand the content by providing support for simplification and a way to manage unnecessary distractions."></head>
-	<body class="h-entry toc-inline"><div class="head">
+	<body class="h-entry"><div class="head">
       <a href="https://www.w3.org/" class="logo"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name">Personalization Semantics Content Module 1.0</h1>
       
       <h2>
         <abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft
-        <time class="dt-published" datetime="2019-01-04">04 January 2019</time>
+        <time class="dt-published" datetime="2019-01-17">17 January 2019</time>
       </h2>
       <dl>
         <dt>This version:</dt><dd>
@@ -846,84 +841,71 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       
       
       <p class="copyright">
-                        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
-                        ©
-                        2017-2019
-                        
-                        <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
-                        <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
-                        <a href="http://ev.buaa.edu.cn/">Beihang</a>).
-                        
-                        <abbr title="World Wide Web Consortium">W3C</abbr>
-                        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
-                        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a>
-                        and
-                        <a rel="license" href="https://www.w3.org/Consortium/Legal/copyright-documents">document use</a>
-                        rules apply.
-                      </p>
+      <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
+      ©
+      2017-2019
+      
+      <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+      <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
+      <a href="http://ev.buaa.edu.cn/">Beihang</a>). 
+      <abbr title="World Wide Web Consortium">W3C</abbr> <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+      <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a rel="license" href="https://www.w3.org/Consortium/Legal/copyright-documents">document use</a> rules
+      apply.
+    </p>
       <hr title="Separator for header">
     </div>
 
-		<section id="abstract" class="introductory"><!--OddPage--><h2>Abstract</h2>
+		<section id="abstract" class="introductory"><h2>Abstract</h2>
             
             
 			<p>This document provides use cases and a vocabulary of terms that can be used to enhance web content by providing information about form controls, symbols, and other user interface elements. User agents use the semantics to augment or adapt content to the user’s scenario. This helps users with varying needs to understand the content by providing support for simplification and a way to manage unnecessary distractions.</p>
 			<p>The Personalization Semantics Content Module 1.0 is an extension of the personalization semantics introduced in the <a href="../">Personalization Semantics Explainer 1.0</a> document [<cite><a class="bibref" href="#bib-personalization-semantics-1.0">personalization-semantics-1.0</a></cite>].</p>
 		</section>
 
-		<section id="sotd" class="introductory"><!--OddPage--><h2>Status of This Document</h2><p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em></p><p>
-                                              This document was published by
-                                              the <a href="https://www.w3.org/WAI/APA/">Accessible Platform Architectures Working Group</a> as an
-                                              Editor's Draft.
-                                              
-                                            </p><p>
-                                                      
-                                                      Comments regarding this document are welcome.
-                                                              Please send them
-                                                              to
-                                                              <a href="mailto:public-personalization-tf@w3.org">public-personalization-tf@w3.org</a>
-                                                              (<a href="https://lists.w3.org/Archives/Public/public-personalization-tf/">archives</a>).
-                                                            
-                                                    </p><p>
-                                              Publication as an
-                                              Editor's Draft does not imply
-                                              endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr> Membership.
-                                              This is a draft document and may
-                                              be updated, replaced or obsoleted
-                                              by other documents at any time. It
-                                              is inappropriate to cite this
-                                              document as other than work in
-                                              progress.
-                                            </p><p>
-                                      
-                                              This document was produced by
-                                              a group
-                                              operating under the
-                                              <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
-                                            
-                                      
-                                      
-                                                      <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
-                                                      <a rel="disclosure" href="https://www.w3.org/2004/01/pp-impl/83907/status">public list of any
-                                                        patent disclosures</a>
-                                              made in connection with the
-                                              deliverables of
-                                              the group; that page also includes
-                                              instructions for disclosing a
-                                              patent. An individual who has
-                                              actual knowledge of a patent which
-                                              the individual believes contains
-                                              <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential Claim(s)</a>
-                                              must disclose the information in
-                                              accordance with
-                                              <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent
-                                                Policy</a>.
-                                            
-                                      
-                                    </p><p>
-                                      This document is governed by the
-                                      <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-                                    </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><span class="secno">1. </span>Introduction</a></li><li class="tocline"><a class="tocxref" href="#use-cases-and-requirements"><span class="secno">2. </span>Use Cases and Requirements</a></li><li class="tocline"><a class="tocxref" href="#content"><span class="secno">3. </span>Content</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#action-explanation"><span class="secno">3.1 </span>action</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description"><span class="secno">3.1.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#action-example"><span class="secno">3.1.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics"><span class="secno">3.1.3 </span>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values"><span class="secno">3.1.4 </span>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#destination-explanation"><span class="secno">3.2 </span>destination</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-0"><span class="secno">3.2.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#destination-example"><span class="secno">3.2.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-0"><span class="secno">3.2.3 </span>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values-0"><span class="secno">3.2.4 </span>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#field-explanation"><span class="secno">3.3 </span>field</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-1"><span class="secno">3.3.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#field-example"><span class="secno">3.3.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-1"><span class="secno">3.3.3 </span>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values-1"><span class="secno">3.3.4 </span>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#simplification-explanation"><span class="secno">3.4 </span>simplification</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-2"><span class="secno">3.4.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#simplification-example"><span class="secno">3.4.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-2"><span class="secno">3.4.3 </span>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values-2"><span class="secno">3.4.4 </span>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#distraction-explanation"><span class="secno">3.5 </span>distraction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-3"><span class="secno">3.5.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#distraction-example"><span class="secno">3.5.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-3"><span class="secno">3.5.3 </span>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values-3"><span class="secno">3.5.4 </span>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#symbol-explanation"><span class="secno">3.6 </span>symbol</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-4"><span class="secno">3.6.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#symbol-example"><span class="secno">3.6.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-4"><span class="secno">3.6.3 </span>Characteristics</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#vocabulary-implementations"><span class="secno">A. </span>Vocabulary Implementations</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><span class="secno">B.1 </span>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><span class="secno">B.2 </span>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><span class="secno">C.1 </span>Normative references</a></li></ol></li></ol></nav>
+		<section id="sotd" class="introductory"><h2>Status of This Document</h2><p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em></p><p>
+                              This document was published by the <a href="https://www.w3.org/WAI/APA/">Accessible Platform Architectures Working Group</a> as
+                              an Editor's Draft.
+                              
+                            </p><p>
+      
+      Comments regarding this document are welcome.
+              Please send them to
+              <a href="mailto:public-personalization-tf@w3.org">public-personalization-tf@w3.org</a>
+              (<a href="https://lists.w3.org/Archives/Public/public-personalization-tf/">archives</a>).
+            
+    </p><p>
+                              Publication as an Editor's Draft
+                              does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr> Membership.
+                              This is a draft document and may be updated,
+                              replaced or obsoleted by other documents at any
+                              time. It is inappropriate to cite this document as
+                              other than work in progress.
+                            </p><p>
+                      
+                              This document was produced by
+                              a group
+                              operating under the
+                              <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+                            
+                      
+                      
+                                      <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
+                                      <a rel="disclosure" href="https://www.w3.org/2004/01/pp-impl/83907/status">public list of any patent
+                                        disclosures</a>
+                              made in connection with the deliverables of
+                              the group; that page also includes
+                              instructions for disclosing a patent. An
+                              individual who has actual knowledge of a patent
+                              which the individual believes contains
+                              <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential Claim(s)</a>
+                              must disclose the information in accordance with
+                              <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+                            
+                      
+                    </p><p>
+                      This document is governed by the
+                      <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+                    </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><span class="secno">1. </span>Introduction</a></li><li class="tocline"><a class="tocxref" href="#use-cases-and-requirements"><span class="secno">2. </span>Use Cases and Requirements</a></li><li class="tocline"><a class="tocxref" href="#content"><span class="secno">3. </span>Content</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#action-explanation"><span class="secno">3.1 </span>action</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description"><span class="secno">3.1.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#action-example"><span class="secno">3.1.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics"><span class="secno">3.1.3 </span>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values"><span class="secno">3.1.4 </span>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#destination-explanation"><span class="secno">3.2 </span>destination</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-0"><span class="secno">3.2.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#destination-example"><span class="secno">3.2.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-0"><span class="secno">3.2.3 </span>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values-0"><span class="secno">3.2.4 </span>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#field-explanation"><span class="secno">3.3 </span>field</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-1"><span class="secno">3.3.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#field-example"><span class="secno">3.3.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-1"><span class="secno">3.3.3 </span>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values-1"><span class="secno">3.3.4 </span>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#simplification-explanation"><span class="secno">3.4 </span>simplification</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-2"><span class="secno">3.4.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#simplification-example"><span class="secno">3.4.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-2"><span class="secno">3.4.3 </span>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values-2"><span class="secno">3.4.4 </span>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#distraction-explanation"><span class="secno">3.5 </span>distraction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-3"><span class="secno">3.5.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#distraction-example"><span class="secno">3.5.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-3"><span class="secno">3.5.3 </span>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values-3"><span class="secno">3.5.4 </span>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#symbol-explanation"><span class="secno">3.6 </span>symbol</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-4"><span class="secno">3.6.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#symbol-example"><span class="secno">3.6.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-4"><span class="secno">3.6.3 </span>Characteristics</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#vocabulary-implementations"><span class="secno">A. </span>Vocabulary Implementations</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><span class="secno">B.1 </span>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><span class="secno">B.2 </span>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><span class="secno">C.1 </span>Normative references</a></li></ol></li></ol></nav>
 
 		<section class="informative" id="introduction">
 
@@ -931,7 +913,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
      
             <p>This document provides personalization semantics and vocabularies that can be used to annotate web content enabling user agents to augment or adapt content to various user scenarios based on the user’s personalization settings or preferences.</p>
 			
-			<div class="ednote" id="examples-disclaimer"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="3"><span>Editor's note</span></div><p class="">Personalization semantics defines a set of properties and values to annotate content. The specific mechanism to apply these properties to content has not been decided. <a href="https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content">Several approaches are under consideration</a> and future drafts will show progress. To help with understanding of the properties, this document provides many examples of personalization semantics applied to content, which show attributes beginning with the prefix "aui-". <em>This has not been decided as the chosen approach</em>, but the simplicity supports understanding of the examples.</p></div>
+			<div class="note" id="examples-disclaimer"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="3"><span>Editor's note</span></div><p class="">Personalization semantics defines a set of properties and values to annotate content. The specific mechanism to apply these properties to content has not been decided. <a href="https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content">Several approaches are under consideration</a> and future drafts will show progress. To help with understanding of the properties, this document provides many examples of personalization semantics applied to content, which show attributes beginning with the prefix "aui-". <em>This has not been decided as the chosen approach</em>, but the simplicity supports understanding of the examples.</p></div>
 
 		</section>
 		<section id="use-cases-and-requirements">
@@ -942,7 +924,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 		<section id="content">
 			<!--OddPage--><h2 id="x3-content"><span class="secno">3. </span>Content<a class="self-link" aria-label="§" href="#content"></a></h2>
             
-            <div class="ednote" id="issue-container-generatedID"><div role="heading" class="ednote-title marker" id="h-ednote-0" aria-level="3"><span>Editor's note</span></div><div class="">Since implementation has not yet been finalized any examples in this document are purely for help in understanding the concept.  All examples will be updated once a final decision has been made on the method for implementation.</div></div>
+            <div class="note" id="issue-container-generatedID"><div role="heading" class="ednote-title marker" id="h-ednote-0" aria-level="3"><span>Editor's note</span></div><div class="">Since implementation has not yet been finalized any examples in this document are purely for help in understanding the concept.  All examples will be updated once a final decision has been made on the method for implementation.</div></div>
             
 			
 <section class="property" id="action-explanation">
@@ -1018,7 +1000,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 						<tr>
 							<th class="value-name" scope="row">brightness</th>
 							<td class="value-description">Adjust the screen or application  brightness. Often used with increase or decrease but is sometimes used alone as a menu name  or item.
-                            <div class="ednote" id="issue-container-generatedID-0"><div role="heading" class="ednote-title marker" id="h-ednote-1" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div></td>
+                            <div class="note" id="issue-container-generatedID-0"><div role="heading" class="ednote-title marker" id="h-ednote-1" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div></td>
 						</tr>
   						<tr>
 							<th class="value-name" scope="row">buy</th>
@@ -1035,7 +1017,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
  						<tr>
 							<th class="value-name" scope="row">channel</th>
 							<td class="value-description">Adjust the channel of a multimedia component. Often used with increase or decrease but is sometimes used alone as a menu name  or item. 
-                            <div class="ednote" id="issue-container-generatedID-1"><div role="heading" class="ednote-title marker" id="h-ednote-2" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div></td>
+                            <div class="note" id="issue-container-generatedID-1"><div role="heading" class="ednote-title marker" id="h-ednote-2" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div></td>
 						</tr>
 			             <tr>
 							<th class="value-name" scope="row">checkout</th>
@@ -1126,12 +1108,12 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
    						<tr>
 							<th class="value-name" scope="row">loop</th>
 							<td class="value-description">Plays the flow, presentation or a movie over and over again, once or without stopping. Often used with  [aria-pressed = "true"] for on or [aria-pressed = "false"] for off.
-                            <div class="ednote" id="issue-container-generatedID-2"><div role="heading" class="ednote-title marker" id="h-ednote-3" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div></td>
+                            <div class="note" id="issue-container-generatedID-2"><div role="heading" class="ednote-title marker" id="h-ednote-3" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div></td>
 						</tr>            
 						<tr>
 							<th class="value-name" scope="row">mediaPosition</th>
 							<td class="value-description">Adjust the current playback position in the current media.
-                            <div class="ednote" id="issue-container-generatedID-3"><div role="heading" class="ednote-title marker" id="h-ednote-4" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div></td>
+                            <div class="note" id="issue-container-generatedID-3"><div role="heading" class="ednote-title marker" id="h-ednote-4" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div></td>
 						</tr>
  						<tr>
 							<th class="value-name" scope="row">mode</th>
@@ -1254,7 +1236,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
  						<tr>
 							<th class="value-name" scope="row">temperature</th>
 							<td class="value-description">Adjust the temperature. Often used with increase or decrease but is sometimes used alone as a menu name  or item. 
-                            <div class="ednote" id="issue-container-generatedID-4"><div role="heading" class="ednote-title marker" id="h-ednote-5" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div></td>
+                            <div class="note" id="issue-container-generatedID-4"><div role="heading" class="ednote-title marker" id="h-ednote-5" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div></td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">toc</th>
@@ -1275,7 +1257,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   						<tr>
 							<th class="value-name" scope="row">volume</th>
 							<td class="value-description">Adjust the volume of a multimedia component. Often used with increase or decrease  but is sometimes used alone as a menu name  or item.
-                            <div class="ednote" id="issue-container-generatedID-5"><div role="heading" class="ednote-title marker" id="h-ednote-6" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div></td>
+                            <div class="note" id="issue-container-generatedID-5"><div role="heading" class="ednote-title marker" id="h-ednote-6" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div></td>
 						</tr>
 			</tbody>
 		</table>
@@ -1435,7 +1417,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 						<tr>
 							<th class="value-name" scope="row">social</th>
 							<td class="value-description">Content provider on a social media platform. Note, that the specific name of the social media platform should be included in the accessible name.
-                            <div class="ednote" id="issue-container-generatedID-6"><div role="heading" class="ednote-title marker" id="h-ednote-7" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div></td>
+                            <div class="note" id="issue-container-generatedID-6"><div role="heading" class="ednote-title marker" id="h-ednote-7" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div></td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">terms</th>
@@ -1600,7 +1582,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 							<th class="value-name" scope="row">dateEnd</th>
 							<td class="value-description">Set the end time of an event  
                             <div class="note" id="issue-container-generatedID-7"><div role="heading" class="note-title marker" id="h-note" aria-level="5"><span>Note</span></div><em class="">We may remove this or harmonize with other date time standards.</em></div>
-                            <div class="ednote" id="issue-container-generatedID-8"><div role="heading" class="ednote-title marker" id="h-ednote-8" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div>
+                            <div class="note" id="issue-container-generatedID-8"><div role="heading" class="ednote-title marker" id="h-ednote-8" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div>
                             </td>
                         </tr>
                         
@@ -1608,7 +1590,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 							<th class="value-name" scope="row">dateStart</th>
 							<td class="value-description">Set the start date or the date of an event.
                             <div class="note" id="issue-container-generatedID-9"><div role="heading" class="note-title marker" id="h-note-0" aria-level="5"><span>Note</span></div><em class="">We may remove this or harmonize with other date time standards.</em></div>
-                            <div class="ednote" id="issue-container-generatedID-10"><div role="heading" class="ednote-title marker" id="h-ednote-9" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div>
+                            <div class="note" id="issue-container-generatedID-10"><div role="heading" class="ednote-title marker" id="h-ednote-9" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div>
                             </td>
 						</tr>
                         <tr>
@@ -1728,14 +1710,14 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 							<th class="value-name" scope="row">timeEnd</th>
 							<td class="value-description">Set the end time of an event.
                             <div class="note" id="issue-container-generatedID-11"><div role="heading" class="note-title marker" id="h-note-1" aria-level="5"><span>Note</span></div><em class="">We may remove this or harmonize with other date time standards.</em></div>
-                            <div class="ednote" id="issue-container-generatedID-12"><div role="heading" class="ednote-title marker" id="h-ednote-10" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div>
+                            <div class="note" id="issue-container-generatedID-12"><div role="heading" class="ednote-title marker" id="h-ednote-10" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div>
                             </td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">timeStart</th>
 							<td class="value-description"> Set the start time or the time of an event. 
                             <div class="note" id="issue-container-generatedID-13"><div role="heading" class="note-title marker" id="h-note-2" aria-level="5"><span>Note</span></div><em class="">We may remove this or harmonize with other date time standards.</em></div>
-                            <div class="ednote" id="issue-container-generatedID-14"><div role="heading" class="ednote-title marker" id="h-ednote-11" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div>
+                            <div class="note" id="issue-container-generatedID-14"><div role="heading" class="ednote-title marker" id="h-ednote-11" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div>
                             </td>
 						</tr>
                         <tr>
@@ -1777,7 +1759,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 							<p>This allows simplified interfaces with less options or interfaces that emphasize critical features. Adaptations can be based on personalization settings. </p>
 						
 
-							 <div class="ednote" id="issue-container-generatedID-15"><div role="heading" class="ednote-title marker" id="h-ednote-12" aria-level="5"><span>Editor's note</span></div><p class="">This was formerly <code>importance</code>. However different people may feel that sections that would be hidden in a simplified version are still very important, such as marketing content or legal terms.)</p></div>
+							 <div class="note" id="issue-container-generatedID-15"><div role="heading" class="ednote-title marker" id="h-ednote-12" aria-level="5"><span>Editor's note</span></div><p class="">This was formerly <code>importance</code>. However different people may feel that sections that would be hidden in a simplified version are still very important, such as marketing content or legal terms.)</p></div>
 
 							<div class="note" id="issue-container-generatedID-16"><div role="heading" class="note-title marker" id="h-note-3" aria-level="5"><span>Note</span></div><div class="">
 								<p>These semantics aid simplification. But what content is most useful to a user varies from user to user. For example, men may be more interested in men's clothing, and may not be interested in the more frequently use women's clothing option. For that reason we may add context for elements that will help the personalization agent select the most useful content for a given user (see the <a href="#context" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-2">context</a> attribute). This is also necessary for reminders (see below).</p>
@@ -1986,7 +1968,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 					<p>The <code>symbol</code> attribute accepts the values of a URI or shortened URI. Note that namespaces are the only additional parsing that maybe required to identify the concept.</p>
 					<p>A personalization agent can then load alternative symbols that the user is familiar with so they do not have to learn new symbols for different applications. </p>
 					<div class="note" id="issue-container-generatedID-17"><div role="heading" class="note-title marker" id="h-note-4" aria-level="5"><span>Note</span></div><p class="">To help this be interoperable without an RDF parser we recommend referencing the most commonly used ontologies and the highest-level concept. (For example, reference "girl" and not "young girl".) </p></div>
-					<div class="ednote" id="issue-container-generatedID-18"><div role="heading" class="ednote-title marker" id="h-ednote-13" aria-level="5"><span>Editor's note</span></div><p class="">We should have a note of common suggested terms and references. (Maybe with links to http://www.arasaac.org/) </p></div>
+					<div class="note" id="issue-container-generatedID-18"><div role="heading" class="ednote-title marker" id="h-ednote-13" aria-level="5"><span>Editor's note</span></div><p class="">We should have a note of common suggested terms and references. (Maybe with links to http://www.arasaac.org/) </p></div>
 				</div>
 	</section>
 	<section id="symbol-example">

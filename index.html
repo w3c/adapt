@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 23.8.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
+<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 24.2.1"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
 span.example-title {
     text-transform: none;
 }
@@ -42,8 +42,8 @@ div.note, div.issue, div.ednote, div.warning {
     margin-top: 1em;
     margin-bottom: 1em;
 }
-.note > p:first-child, .ednote > p:first-child, .issue > p:first-child, .warning > p:first-child { margin-top: 0 }
-.issue, .note, .ednote, .warning {
+.warning > p:first-child { margin-top: 0 }
+.warning {
     padding: .5em;
     border-left-width: .5em;
     border-left-style: solid;
@@ -54,7 +54,7 @@ div.issue, div.note , div.ednote,  div.warning {
     position: relative;
     clear: both;
 }
-span.note, span.ednote, span.issue, span.warning { padding: .1em .5em .15em; }
+span.warning { padding: .1em .5em .15em; }
 
 .issue {
     border-color: #e05252;
@@ -62,11 +62,6 @@ span.note, span.ednote, span.issue, span.warning { padding: .1em .5em .15em; }
 }
 .issue.closed span.issue-number {
     text-decoration: line-through;
-}
-
-.note, .ednote {
-    border-color: #52e052;
-    background: #e9fbe9;
 }
 
 .warning {
@@ -118,8 +113,6 @@ input.task-list-item-checkbox {
 }
 </style>
 		<title>Personalization Semantics Explainer 1.0</title>
-		
-		
 		
 		<style id="respec-mainstyle">/*****************************************************************
  * ReSpec 3 CSS
@@ -461,6 +454,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   font-weight: bold;
 }
 </style>
+		
+		
 	
 		<link href="common/css/common.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-1.0/"><script id="initialUserConfig" type="application/json">{
@@ -474,7 +469,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   "noRecTrack": true,
   "shortName": "personalization-semantics-1.0",
   "copyrightStart": "2017",
-  "license": "document",
+  "license": "w3c-software",
   "edDraftURI": "https://w3c.github.io/personalization-semantics/",
   "editors": [
     {
@@ -808,16 +803,16 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       ]
     }
   },
-  "publishDate": "2019-01-04",
-  "publishISODate": "2019-01-04T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 04 January 2019"
+  "publishDate": "2019-01-17",
+  "publishISODate": "2019-01-17T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 17 January 2019"
 }</script><meta name="description" content="Personalization involves tailoring aspects of the user experience to meet the needs and preferences of the individual user. For example, having familiar terms and symbols is key to many users being able to use the web. However, what is familiar for one user may not be familiar to another, requiring them to learn new symbols. The challenge has been the ability to identify the types of content in a document that should be adapted to the preferred user experience. The introduction of standardized semantics allows web applications to customize the presentation of that content to one that is familiar to individuals based on their specific needs and preferences. This specification defines standard semantics to enable user driven personalization. For example, the association of user-preferred symbols with elements having those semantics. This ensures that users can quickly find familiar icons, for example, a help icon, within the context of user interface elements."></head>
-	<body class="h-entry toc-inline"><div class="head">
+	<body class="h-entry"><div class="head">
       <a href="https://www.w3.org/" class="logo"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name">Personalization Semantics Explainer 1.0</h1>
       
       <h2>
         <abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft
-        <time class="dt-published" datetime="2019-01-04">04 January 2019</time>
+        <time class="dt-published" datetime="2019-01-17">17 January 2019</time>
       </h2>
       <dl>
         <dt>This version:</dt><dd>
@@ -850,82 +845,69 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       
       
       <p class="copyright">
-                        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
-                        ©
-                        2017-2019
-                        
-                        <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
-                        <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
-                        <a href="http://ev.buaa.edu.cn/">Beihang</a>).
-                        
-                        <abbr title="World Wide Web Consortium">W3C</abbr>
-                        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
-                        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a>
-                        and
-                        <a rel="license" href="https://www.w3.org/Consortium/Legal/copyright-documents">document use</a>
-                        rules apply.
-                      </p>
+      <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
+      ©
+      2017-2019
+      
+      <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+      <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
+      <a href="http://ev.buaa.edu.cn/">Beihang</a>). 
+      <abbr title="World Wide Web Consortium">W3C</abbr> <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+      <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a rel="license" href="https://www.w3.org/Consortium/Legal/copyright-documents">document use</a> rules
+      apply.
+    </p>
       <hr title="Separator for header">
     </div>
 
-		<section id="abstract" class="introductory"><!--OddPage--><h2>Abstract</h2>
+		<section id="abstract" class="introductory"><h2>Abstract</h2>
 			<p>Personalization involves tailoring aspects of the user experience to meet the needs and preferences of the individual user. For example, having familiar terms and symbols is key to many users being able to use the web. However, what is familiar for one user may not be familiar to another, requiring them to learn new symbols. The challenge has been the ability to identify the types of content in a document that should be adapted to the preferred user experience. The introduction of standardized semantics allows web applications to customize the presentation of that content to one that is familiar to individuals based on their specific needs and preferences. This specification defines standard semantics to enable user driven personalization. For example, the association of user-preferred symbols with elements having those semantics. This ensures that users can quickly find familiar icons, for example, a help icon, within the context of user interface elements.</p>
 			<p>This document is an explanation for understanding how to use Personalization properties to personalize an accessible web site.</p>
 		</section>
 
-		<section id="sotd" class="introductory"><!--OddPage--><h2>Status of This Document</h2><p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em></p><p>
-                                              This document was published by
-                                              the <a href="https://www.w3.org/WAI/APA/">Accessible Platform Architectures Working Group</a> as an
-                                              Editor's Draft.
-                                              
-                                            </p><p>
-                                                      
-                                                      Comments regarding this document are welcome.
-                                                              Please send them
-                                                              to
-                                                              <a href="mailto:public-personalization-tf@w3.org">public-personalization-tf@w3.org</a>
-                                                              (<a href="https://lists.w3.org/Archives/Public/public-personalization-tf/">archives</a>).
-                                                            
-                                                    </p><p>
-                                              Publication as an
-                                              Editor's Draft does not imply
-                                              endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr> Membership.
-                                              This is a draft document and may
-                                              be updated, replaced or obsoleted
-                                              by other documents at any time. It
-                                              is inappropriate to cite this
-                                              document as other than work in
-                                              progress.
-                                            </p><p>
-                                      
-                                              This document was produced by
-                                              a group
-                                              operating under the
-                                              <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
-                                            
-                                      
-                                      
-                                                      <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
-                                                      <a rel="disclosure" href="https://www.w3.org/2004/01/pp-impl/83907/status">public list of any
-                                                        patent disclosures</a>
-                                              made in connection with the
-                                              deliverables of
-                                              the group; that page also includes
-                                              instructions for disclosing a
-                                              patent. An individual who has
-                                              actual knowledge of a patent which
-                                              the individual believes contains
-                                              <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential Claim(s)</a>
-                                              must disclose the information in
-                                              accordance with
-                                              <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent
-                                                Policy</a>.
-                                            
-                                      
-                                    </p><p>
-                                      This document is governed by the
-                                      <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-                                    </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><span class="secno">1. </span>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#why_accessibility"><span class="secno">1.1 </span>Why We Need Personalization</a></li><li class="tocline"><a class="tocxref" href="#intro_context"><span class="secno">1.2 </span>Personalization Use Cases (general)</a></li></ol></li><li class="tocline"><a class="tocxref" href="#terms"><span class="secno">2. </span>Important Terms</a></li><li class="tocline"><a class="tocxref" href="#characteristics_semanticproperties"><span class="secno">3. </span>Structure of Properties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#propcharacteristic_value"><span class="secno">3.1 </span>Value</a></li></ol></li><li class="tocline"><a class="tocxref" href="#modules"><span class="secno">4. </span>Modules</a></li><li class="tocline"><a class="tocxref" href="#vocabulary-implementations-0"><span class="secno">A. </span>Vocabulary Implementations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#mapping-values-to-different-syntax"><span class="secno">A.1 </span>Mapping Values to Different Syntax </a></li><li class="tocline"><a class="tocxref" href="#vocabulary-identification"><span class="secno">A.2 </span>Vocabulary Identification</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#prefix"><span class="secno">A.2.1 </span>Prefix</a></li><li class="tocline"><a class="tocxref" href="#identification-uri"><span class="secno">A.2.2 </span>Identification URI</a></li></ol></li><li class="tocline"><a class="tocxref" href="#wai-aria"><span class="secno">A.3 </span><abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr></a><ol class="toc"><li class="tocline"><a class="tocxref" href="#additional-wai-aria-roles"><span class="secno">A.3.1 </span>Additional <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> Roles</a></li></ol></li><li class="tocline"><a class="tocxref" href="#html-microdata"><span class="secno">A.4 </span><abbr title="Hypertext Markup Language">HTML</abbr> Microdata</a></li><li class="tocline"><a class="tocxref" href="#rdfa"><span class="secno">A.5 </span>RDFa</a></li><li class="tocline"><a class="tocxref" href="#autocomplete"><span class="secno">A.6 </span>Autocomplete</a></li></ol></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><span class="secno">B.1 </span>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><span class="secno">B.2 </span>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><span class="secno">C.1 </span>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><span class="secno">C.2 </span>Informative references</a></li></ol></li></ol></nav>
+		<section id="sotd" class="introductory"><h2>Status of This Document</h2><p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em></p><p>
+                              This document was published by the <a href="https://www.w3.org/WAI/APA/">Accessible Platform Architectures Working Group</a> as
+                              an Editor's Draft.
+                              
+                            </p><p>
+      
+      Comments regarding this document are welcome.
+              Please send them to
+              <a href="mailto:public-personalization-tf@w3.org">public-personalization-tf@w3.org</a>
+              (<a href="https://lists.w3.org/Archives/Public/public-personalization-tf/">archives</a>).
+            
+    </p><p>
+                              Publication as an Editor's Draft
+                              does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr> Membership.
+                              This is a draft document and may be updated,
+                              replaced or obsoleted by other documents at any
+                              time. It is inappropriate to cite this document as
+                              other than work in progress.
+                            </p><p>
+                      
+                              This document was produced by
+                              a group
+                              operating under the
+                              <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+                            
+                      
+                      
+                                      <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
+                                      <a rel="disclosure" href="https://www.w3.org/2004/01/pp-impl/83907/status">public list of any patent
+                                        disclosures</a>
+                              made in connection with the deliverables of
+                              the group; that page also includes
+                              instructions for disclosing a patent. An
+                              individual who has actual knowledge of a patent
+                              which the individual believes contains
+                              <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential Claim(s)</a>
+                              must disclose the information in accordance with
+                              <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+                            
+                      
+                    </p><p>
+                      This document is governed by the
+                      <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+                    </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><span class="secno">1. </span>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#why_accessibility"><span class="secno">1.1 </span>Why We Need Personalization</a></li><li class="tocline"><a class="tocxref" href="#intro_context"><span class="secno">1.2 </span>Personalization Use Cases (general)</a></li></ol></li><li class="tocline"><a class="tocxref" href="#terms"><span class="secno">2. </span>Important Terms</a></li><li class="tocline"><a class="tocxref" href="#characteristics_semanticproperties"><span class="secno">3. </span>Structure of Properties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#propcharacteristic_value"><span class="secno">3.1 </span>Value</a></li></ol></li><li class="tocline"><a class="tocxref" href="#modules"><span class="secno">4. </span>Modules</a></li><li class="tocline"><a class="tocxref" href="#vocabulary-implementations-0"><span class="secno">A. </span>Vocabulary Implementations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#mapping-values-to-different-syntax"><span class="secno">A.1 </span>Mapping Values to Different Syntax </a></li><li class="tocline"><a class="tocxref" href="#vocabulary-identification"><span class="secno">A.2 </span>Vocabulary Identification</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#prefix"><span class="secno">A.2.1 </span>Prefix</a></li><li class="tocline"><a class="tocxref" href="#identification-uri"><span class="secno">A.2.2 </span>Identification URI</a></li></ol></li><li class="tocline"><a class="tocxref" href="#wai-aria"><span class="secno">A.3 </span><abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr></a><ol class="toc"><li class="tocline"><a class="tocxref" href="#additional-wai-aria-roles"><span class="secno">A.3.1 </span>Additional <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> Roles</a></li></ol></li><li class="tocline"><a class="tocxref" href="#html-microdata"><span class="secno">A.4 </span><abbr title="Hypertext Markup Language">HTML</abbr> Microdata</a></li><li class="tocline"><a class="tocxref" href="#rdfa"><span class="secno">A.5 </span>RDFa</a></li><li class="tocline"><a class="tocxref" href="#autocomplete"><span class="secno">A.6 </span>Autocomplete</a></li></ol></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><span class="secno">B.1 </span>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><span class="secno">B.2 </span>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><span class="secno">C.1 </span>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><span class="secno">C.2 </span>Informative references</a></li></ol></li></ol></nav>
 
 		<section class="informative" id="introduction">
 
@@ -1157,7 +1139,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <dd>
       <p>A hierarchical definition of how the characteristics of various <a class="termref internalDFN" data-lt="class" href="#dfn-classes" data-link-type="dfn">classes</a> relate to each other, in which classes inherit the properties of superclasses in the hierarchy. A taxonomy can comprise part of the formal definition of an <a href="#dfn-ontology" class="internalDFN" data-link-type="dfn">ontology</a>.</p>
     </dd>
-    <dt><dfn data-dfn-type="dfn" id="dfn-text-node">Text node</dfn></dt>
+    <dt><dfn data-dfn-type="dfn" data-plurals="text nodes" id="dfn-text-node">Text node</dfn></dt>
     <dd>
       <p>Type of <abbr title="Document Object Model">DOM</abbr> <a class="termref internalDFN" data-lt="node" href="#dfn-node" data-link-type="dfn">node</a> that represents the textual content of an <a class="termref internalDFN" href="#dfn-attributes" data-link-type="dfn">attribute</a> or an <a class="termref internalDFN" href="#dfn-elements" data-link-type="dfn">element</a>. A Text node has no child nodes.  </p>
     </dd>
@@ -1269,7 +1251,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 			<section id="wai-aria">
 				<h3 id="a-3-wai-aria"><span class="secno">A.3 </span><abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr><a class="self-link" aria-label="§" href="#wai-aria"></a></h3>
 				<p>Properties in this case can be represented as <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> properties by adding the prefix "aui-" to the attribute name, and the property value as the attribute value.</p>
-				<div class="ednote" id="issue-container-generatedID"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="4"><span>Editor's note</span></div><p class="">The prefix above is not yet accepted by the ARIA Working Group.</p></div>
+				<div class="note" id="issue-container-generatedID"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="4"><span>Editor's note</span></div><p class="">The prefix above is not yet accepted by the ARIA Working Group.</p></div>
 				<div class="example">
                     <div class="example-title marker">
                         <span>Example 1</span><span style="text-transform: none">: Action Using ARIA</span>
@@ -1343,7 +1325,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 			<section id="rdfa">
 				<h3 id="a-5-rdfa"><span class="secno">A.5 </span>RDFa<a class="self-link" aria-label="§" href="#rdfa"></a></h3>
 				
-				<div class="ednote" id="issue-container-generatedID-0"><div role="heading" class="ednote-title marker" id="h-ednote-0" aria-level="4"><span>Editor's note</span></div><p class="">The Personalization Task Force is exploring whether the personalization semantics vocabulary can be used with RDFa. If so, guidance will be added here in a future draft. See <a href="https://github.com/w3c/personalization-semantics/issues/53">Issue 53</a>.</p></div>
+				<div class="note" id="issue-container-generatedID-0"><div role="heading" class="ednote-title marker" id="h-ednote-0" aria-level="4"><span>Editor's note</span></div><p class="">The Personalization Task Force is exploring whether the personalization semantics vocabulary can be used with RDFa. If so, guidance will be added here in a future draft. See <a href="https://github.com/w3c/personalization-semantics/issues/53">Issue 53</a>.</p></div>
 			</section>
 			<section id="autocomplete">
 				<h3 id="a-6-autocomplete"><span class="secno">A.6 </span>Autocomplete<a class="self-link" aria-label="§" href="#autocomplete"></a></h3>
