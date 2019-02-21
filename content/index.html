@@ -35,16 +35,241 @@
 		</section>
 
 		<section>
-			<h1>Content</h1>
+			<h1>Content attributes</h1>
             
             <div class="ednote">Since implementation has not yet been finalized any examples in this document are purely for help in understanding the concept.  All examples will be updated once a final decision has been made on the method for implementation.</div>
-            
-			<section data-include="action.html" data-include-replace="true" id="action"></section>
-			<section data-include="destination.html" data-include-replace="true" id="destination"></section>
-			<section data-include="field.html" data-include-replace="true" id="field"></section>
-			<section data-include="simplification.html" data-include-replace="true" id="simplification"></section>
-			<section data-include="distraction.html" data-include-replace="true" id="distraction"></section>
-			<section data-include="symbol.html" data-include-replace="true" id="symbol"></section>		
+
+            <section>
+            	<h2>Attributes related token</h2>
+            	<p>This section list all attributes related with token, including:</p>
+            	<p><code>action</code></p>
+            	<p><code>destination</code></p>
+            	<p><code>filed</code></p>
+            	<p>...</p>
+            	<section>
+            		<h3>Description</h3>
+            		<p>Below is descriptions for </p>
+            		<p><code>action</code></p>
+            		<p>The action attribute provides the context of a button. It is typically used on a button element or element with role="button".</p>
+            		<p><code>destination</code></p>
+            		<p>The destination attribute categorizes the target of a hyperlink.</p>
+            		<p>A personalization agent or user agent may add additional familiar user interface features to help users understand the link and follow the right one easily. User agents might add a familiar customized icon to the link, or style the link in a customized way, or position the link on the page in a location that the user generally expects to find a link of the particular type.</p>
+            		<p><code>filed</code></p>
+            		<p>The field attribute provides the context of a text input field such as a text box. It is typically used on an input of type text, or element with a corresponding role.</p>
+            		<p>A personalization agent may add a symbol, replace the text with a more familiar term, or give it a specific presentation. Note that there is no default value.</p>
+            		<p>The user experience may include filling in the field and adding an icon.</p>
+            		<p>The field values that would typically be on form controls should provide context for the user. For example tel would relate to the user's telephone number. Note that there is no default value and there can be more than one value for a field, such as aui-field="country postcode" which includes both the country and postal code.</p>
+            		<p>...</p>
+            	</section>
+            	<section>
+            		<h3>Characteristics</h3>
+				        <table class="property-features">
+									
+									<thead>
+										<tr>
+											<th scope="col">Characteristic</th>
+											<th scope="col">Value</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th class="property-related-head" scope="row">Related Concepts:</th>
+											<td class="property-related"><cite><a href="https://www.w3.org/TR/html52/links.html#sec-link-types">link types</a></cite> [[HTML52]] and <cite><a href="https://www.w3.org/TR/html5/forms.html#states-of-the-type-attribute"><abbr title="Hypertext Markup Language ">HTML </abbr> types</a></cite> [[HTML5]]</td>
+										</tr>
+										<tr>
+											<th class="property-applicability-head" scope="row">Used in Roles:</th>
+											<td class="property-applicability">All elements of the base markup</td>
+										</tr>
+										<tr>
+											<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+											<td class="property-descendants">Placeholder</td>
+										</tr>
+										<tr>
+											<th class="property-value-head" scope="row">Value:</th>
+											<td class="property-value"><a href="#valuetype_token">token</a></td>
+										</tr>
+									</tbody>
+						</table>
+            	</section>
+            	<section>
+            		<h3>values</h3>
+            		<p>Below table lists all values used by attributes.</p>
+						<table class="value-descriptions">
+										
+								<thead>
+												<tr>
+													<th>Attributes</th>
+													<th scope="col">Value</th>
+													<th scope="col">Description</th>
+												</tr>
+								</thead>
+								<tbody>
+												<tr>
+													<th rowspan="6">aui-action</th>
+													<th class="value-name" scope="row">add</th>
+													<td class="value-description">Add the selected item or the item at the current location to a list.</td>
+												</tr>
+												<tr>
+													<th class="value-name" scope="row">brightness</th>
+													<td class="value-description">Adjust the screen or application  brightness. Often used with increase or decrease but is sometimes used alone as a menu name  or item.
+						                            <em class="ednote">At risk pending implementations.</em></td>
+												</tr>
+						  						<tr>
+													<th class="value-name" scope="row">buy</th>
+													<td class="value-description">Buy the selected item or buy the item at the current location. Often involves adding the current item into a shopping cart. (Implied simplification  = "critical".)</td>
+												</tr>
+												<tr>
+													<th class="value-name" scope="row">cancel</th>
+													<td class="value-description">Closes the dialog and discards any changes the user may have made within that dialog. (Implied simplification  = "critical".)</td>
+												</tr>
+												<tr>
+													<th class="value-name" scope="row">captions</th>
+													<td class="value-description">Show the settings for captions and subtitles. </td>
+												</tr>
+						 						<tr>
+													<th class="value-name" scope="row">...</th>
+													<td class="value-description">...</td>
+												</tr>
+									            <tr>
+									             	<th rowspan="6">aui-destination</th>
+													<th class="value-name" scope="row">about</th>
+													<td class="value-description">Information about the content owner or producer.</td>
+												</tr>
+												<tr>
+													<th class="value-name" scope="row">accessibilityStatement</th>
+													<td class="value-description">Information about the accessibility features in a web site or web content.</td>
+												</tr>
+												<tr>
+													<th class="value-name" scope="row">begin</th>
+													<td class="value-description">Changes the location to the beginning item from a list of items or redirects the functionality to the first step in a sequence.</td>
+												</tr>
+												<tr>
+													<th class="value-name" scope="row">chat</th>
+													<td class="value-description">Human help or a dialog help function such as a chat bot.</td>
+												</tr>
+						                        <tr>
+													<th class="value-name" scope="row">comment</th>
+													<td class="value-description">Submit a comment on the current item.</td>
+												</tr>
+												<tr>
+
+													<th class="value-name" scope="row">...</th>
+													<td class="value-description">...</td>
+												</tr>
+												<tr>
+													<th rowspan="6">aui-field</th>
+													<th class="value-name" scope="row">additionalName</th>
+													<td class="value-description">Additional or middle name.</td>
+												</tr>
+												<tr>
+													<th class="value-name" scope="row">additionalNameInitial</th>
+													<td class="value-description">Additional or middle name initial.d</td>
+												</tr>
+												<tr>
+													<th class="value-name" scope="row">addressLine1</th>
+													<td class="value-description">First line of street address.</td>
+												</tr>
+												<tr>
+													<th class="value-name" scope="row">addressLine2</th>
+													<td class="value-description">Second line of street address.</td>
+												</tr>
+												<tr>
+													<th class="value-name" scope="row">addressLine3</th>
+													<td class="value-description">Third line of street address.</td>
+												</tr>
+									             <tr>
+													<th class="value-name" scope="row">...</th>
+													<td class="value-description">...</td>
+												</tr>
+												
+									</tbody>
+						</table>
+
+            	</section>
+            	<section>
+            		<h3>Example</h3>
+            		<p>Here is an example using the <code>action</code> attribute.</p>
+				   	    <div class="property-example" >               	
+				                	
+				    				<pre class="example" title="Action Using AUI">
+				       				<p>&lt;button aui-action=&quot;undo&quot;&gt;Revert&lt;/button&gt;</p></pre>
+				        			<p>A personalization agent may add a symbol, replace the text with a more familiar term, or give it a specific presentation. Note that there is no default value.</p>	
+				        			<p></p>		
+
+				    	</div>
+				    	<div>
+				    		<pre class="example" title="Destination Using AUI">
+        &lt;a href=&quot;home.html&quot; aui-destination=&quot;home&quot;&gt;our main page&lt;/a&gt;</pre>
+		<p>See the <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html">destination sample user experience</a>.</p>
+				    	</div>
+				    	<div>
+				    		<pre class="example" title="Field Using AUI">
+         <p>&lt;input type="text" name="telnum" aui-field=&quot;tel&quot;/&gt;</p>
+		</pre>
+				    	</div>
+
+            	</section>
+            </section>
+
+            <section>
+            	<h2>URI's attributes</h2>
+            	<p>This section list all attributes related with URIs. Including:</p>
+            	<p><code>symbol</code></p>
+            	<p>...</p>
+            	<section>
+            		<h3>Description for each attributes</h3>
+            		<p><code>symbol</code></p>
+            		<p><p>The <code>symbol</code> attribute identifies the concept for symbols.</p>
+					<p>The <code>symbol</code> attribute accepts the values of a URI or shortened URI. Note that namespaces are the only additional parsing that maybe required to identify the concept.</p>
+					<p>A personalization agent can then load alternative symbols that the user is familiar with so they do not have to learn new symbols for different applications. </p>
+					<p class="note">To help this be interoperable without an RDF parser we recommend referencing the most commonly used ontologies and the highest-level concept. (For example, reference "girl" and not "young girl".) </p>
+					<p class="ednote">We should have a note of common suggested terms and references. (Maybe with links to http://www.arasaac.org/) </p></p>
+            		<p>...</p>
+            	</section>
+            	<section>
+            		<h3>Characteristics</h3>
+            		<table class="property-features">
+										<thead>
+											<tr>
+												<th scope="col">Characteristic</th>
+												<th scope="col">Value</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th class="property-related-head" scope="row">Related Concepts:</th>
+												<td class="property-related"><cite><a href="https://www.w3.org/TR/microdata/#the-basic-syntax">microdata</a></cite> [[microdata]], <cite><a href="http://www.w3.org/TR/2005/WD-swbp-skos-core-guide-20051102">SKOS Core Guide</a></cite> [[SKOS Core Guide]] and <cite><a href="https://www.w3.org/TR/rdfa-primer/">RDFa [[RDFa 1.1 Primer]]</a></cite></td>
+											</tr>
+											<tr>
+												<th class="property-applicability-head" scope="row">Used in Roles:</th>
+												<td class="property-applicability">All elements of the base markup</td>
+											</tr>
+											<tr>
+												<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+												<td class="property-descendants">Placeholder</td>
+											</tr>
+											<tr>
+												<th class="property-value-head" scope="row">Value:</th>
+												<td class="property-value"><a href="#valuetype_uri">URI</a></td>
+											</tr>
+										</tbody>
+					</table>
+
+
+            	</section>
+            	<section>
+            		<h3>Example</h3>
+            		<p>Here is an example using the <code>symbol</code> attribute.</p>
+    	<pre class="example" title="Symbol Using AUI">
+    	   &lt;img aui-symbol="http://blisssymbolics.org/refnumber/001" href="mysymb.bmp" &gt;</pre>
+
+            	</section>
+            </section>
+            <section>
+            	<h2>Text</h2>
+            	<p>This section list all attributes related with text.</p>
+            </section>
+            	
 		</section>
 
 		<section class="appendix">
