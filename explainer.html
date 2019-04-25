@@ -129,112 +129,14 @@
             
             
 			<h2 id="vocabulary-implementations">Vocabulary Implementations</h2>
-            <section class="issue">
-                <p>HELP NEEDED!</p>
-                <p>The Personalization Task Force is looking for advice on choosing an implementation mechanism.  We have considered a number of different approaches all with varying pros and cons with either excess burden on host languages or on authoring.</p>
-                <p>See our Pros/Cons discussion <a href="https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content">Comparison of ways to use vocabulary in content</a>, on the various alternatives we have identified.  If you have any comments or suggestions on implementation please add a comment to this <a href="https://github.com/w3c/personalization-semantics/issues/77">issue #77</a>.</p>
-            </section>
-  
+ 
+                
+                <p>The Personalization Task Force decide to use the data-* for attributes, Now the the first three attributes have been accepted by Task Force, there are data-purpose, data-action and data-destination. For other attributes, we are still on discussion.</p>
+                <p class="EdNote">See our  discussion <a href="https://github.com/w3c/personalization-semantics/wiki/Prototypes-with-data-dash-*-(Take-2)">Prototypes with data dash</a>.  If you have any comments or suggestions on implementation please add a comment to this <a href="https://github.com/w3c/personalization-semantics/issues/">issue list</a>.</p>
+
+ 
             
-			<section>
-				<h3>Mapping Values to Different Syntax </h3>
-			</section>
-			<section>
-				<h3>Vocabulary Identification</h3>
-				<p>Metadata languages that support this vocabulary need to distinguish terms coming from the personalization semantics vocabulary, from terms in other vocabularies. This document proposes two identifications mechanisms, which may be used separately or together according to the needs of the metadata language. These are the <strong>prefix</strong> and the <strong>identification URI</strong>.</p>
-				<section>
-					<h4>Prefix</h4>
-					<p>The prefix for personalization semantics is "<strong>aui</strong>", which is an acronym of "accessible user interface". Implementations that use a prefix to identify terms from this vocabulary should use that prefix.</p>
-				</section>
-				<section>
-					<h4>Identification URI</h4>
-					<p>The identification URI for personalization semantics is <code>https://www.w3.org/ns/aui/</code>. Implementations that use a URI to identify terms from this vocabulary should use that URI.</p>
-				</section>
-			</section>
-            
-			<section>
-				<h3>WAI-ARIA</h3>
-				<p>Properties in this case can be represented as WAI-ARIA properties by adding the prefix "aui-" to the attribute name, and the property value as the attribute value.</p>
-				<p class="ednote">The prefix above is not yet accepted by the ARIA Working Group.</p>
-				<div class="example">
-                    <div class="example-title marker">
-                        <span>Example 1</span><span style="text-transform: none">: Action Using ARIA</span>
-                    </div>
-                    <pre class="hljs javascript" aria-busy="false">
-                        For example: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aui-action</span>=<span class="hljs-string">"undo"</span> &gt;</span>Revert<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>
-                    </pre>
-                </div>
-				<div class="example">
-                    <div class="example-title marker"><span>Example 2</span><span style="text-transform: none">: Destination Using ARIA</span></div><pre class="hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"home.html"</span> <span class="hljs-attr">aui-destination</span>=<span class="hljs-string">"home"</span>&gt;</span>our main page<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-                    </pre>
-                </div>
 			
-				<div class="example">
-                    <div class="example-title marker">
-                        <span>Example 3</span>
-                        <span style="text-transform: none">: Fields Using ARIA</span>
-                    </div>
-                    <pre class="hljs xml" aria-busy="false">
-                        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"telnum"</span> <span class="hljs-attr">aui-field</span>=<span class="hljs-string">"tel"</span>/&gt;</span>
-                    </pre>
-                </div>
-				<div class="example">
-						<div class="example-title marker"><span>Example 4</span><span style="text-transform: none">: Context Using ARIA</span></div>
-						<pre class="hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"women.html"</span> <span class="hljs-attr">aui-context</span>=<span class="hljs-string">"http://schema.org/Female"</span>&gt;</span>women<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-						</pre>
-					</div>
-				<div class="example">
-						<div class="example-title marker"><span>Example 5</span><span style="text-transform: none">: Symbol Using ARIA</span></div>
-						<pre class="hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">aui-symbol</span>=<span class="hljs-string">"http://wordnet-rdf.princeton.edu/wn31/girl-n"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"mygirlsy.bmp"</span>/&gt;</span>
-						</pre>
-					</div>
-				</div>
-    
-				<section>
-					<h2>Additional WAI-ARIA Roles</h2>
-					<p><b>Requirement</b>: We may want to add landmark role values for sections on a page such as: contact us - for a contact us form.</p>
-					<p><b>User experience: </b>symbols and colors could be used consistently across different content.</p>
-					<p>Nav maps can be automatically generated for people learn via key-points or examples.</p>
-					<p>Further these sections could be hidden in the normal rendering of a page or rendered the top of page depending on user preferences. The location of these sections can also be changed, based on the user preference, enabling the user to find them easily.</p>
-                  
-					<p>Values:</p>
-					<ul>
-						<li>summary</li>
-						<li>keypoints</li>
-						<li>example</li>
-						<li>note</li>
-						<li>warning</li>
-						<li>step</li>
-						<li>external - for external content, such as sponsored or advertising</li>
-						<li>offers - for special offers that are complementary to the main content or task</li>
-						<li>advertisement - advertisement or sponsored content</li>
-						<li>contact us</li>
-						<li>about us</li>
-					</ul>
-				</section>
-            </section>
-			<section>
-				<h3>HTML Microdata</h3>
-				
-				<p>Properties in this vocabulary can be applied via <a href="https://www.w3.org/TR/microdata/">HTML Microdata</a> [[microdata]]. To apply a term from this vocabulary to content using Microdata, use the following steps:</p>
-				<ul>
-					<li>On the element to which a property applies, set the <a href="https://www.w3.org/TR/microdata/#dfn-itemscope"><code>itemscope</code> attribute</a>. </li>
-					<li>On the element for which <code>itemscope</code> is set, set the <a href="https://www.w3.org/TR/microdata/#dfn-itemtype"><code>itemtype</code> attribute</a> to the personalizaton semantics <a href="#identification-uri">identification URI</a>.</li>
-					<li>On the same element or a descendant element, as appropriate to the context, set the <a href="https://www.w3.org/TR/microdata/#dfn-attr-itemprop"><code>itemprop</code> attribute</a>, using the name of the personalization semantics property as the value of the attribute.</li>
-					<li>On the element for which <code>itemprop</code> is set, set the <a href="https://www.w3.org/TR/microdata/#dfn-content"><code>content</code> attribute</a> to the appropriate value for the property.</li>
-				</ul>
-				<pre class="example" title="Action property in HTML using HTML Microdata">
-                    &lt;button itemscope itemtype="https://www.w3.org/ns/aui/" itemprop="action" content="undo"> Revert &lt;/button>
-                </pre>
-			</section>
-			<section>
-				<h3>RDFa</h3>
-				
-				<p class="ednote">The Personalization Task Force is exploring whether the personalization semantics vocabulary can be used with RDFa. If so, guidance will be added here in a future draft. See <a href="https://github.com/w3c/personalization-semantics/issues/53">Issue 53</a>.</p>
-			</section>
-			<section>
-				<h3>Autocomplete</h3>
-			</section>
 		</section>
 
 		<!--
