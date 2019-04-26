@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 24.2.5"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
+<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 24.21.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
 span.example-title {
     text-transform: none;
 }
@@ -27,39 +27,18 @@ aside.example div.example span.example-title {
     color: #999;
 }
 </style><style>/* --- ISSUES/NOTES --- */
-div.issue-title, div.note-title , div.ednote-title, div.warning-title {
-    padding-right:  1em;
-    min-width: 7.5em;
-    color: #b9ab2d;
+.issue-label {
+    text-transform: initial;
 }
-div.issue-title { color: #e05252; }
-div.note-title, div.ednote-title { color: #2b2; }
-div.warning-title { color: #f22; }
-div.issue-title span, div.note-title span, div.ednote-title span, div.warning-title span {
-    text-transform: uppercase;
-}
-div.note, div.issue, div.ednote, div.warning {
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
+
 .warning > p:first-child { margin-top: 0 }
 .warning {
     padding: .5em;
     border-left-width: .5em;
     border-left-style: solid;
 }
-div.issue, div.note , div.ednote,  div.warning {
-    padding: 1em 1.2em 0.5em;
-    margin: 1em 0;
-    position: relative;
-    clear: both;
-}
 span.warning { padding: .1em .5em .15em; }
 
-.issue {
-    border-color: #e05252;
-    background: #fbe9e9;
-}
 .issue.closed span.issue-number {
     text-decoration: line-through;
 }
@@ -100,6 +79,7 @@ input.task-list-item-checkbox {
   border-radius: 4px;
   position: relative;
   bottom: 2px;
+  border: none;
 }
 
 .issue a.respec-label-dark {
@@ -118,6 +98,19 @@ input.task-list-item-checkbox {
  * ReSpec 3 CSS
  * Robin Berjon - http://berjon.com/
  *****************************************************************/
+
+@keyframes pop {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(1.25, 1.25);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
 
 /* Override code highlighter background */
 .hljs {
@@ -155,8 +148,34 @@ a.bibref {
   text-decoration: none;
 }
 
+.respec-offending-element:target {
+  animation: pop 0.25s ease-in-out 0s 1;
+}
+
+/* TODO: Remove once https://github.com/w3c/tr-design/pull/176 is merged. */
+.respec-offending-element a[href] {
+  margin: 0;
+}
+
+.respec-offending-element {
+  display: inline-block;
+  position: relative;
+  /* Red squiggly line */
+  background: url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=)
+    bottom repeat-x;
+}
+@supports (text-decoration-style: wavy) {
+  .respec-offending-element {
+    background: none;
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: red;
+  }
+}
+
 #references :target {
   background: #eaf3ff;
+  animation: pop 0.4s ease-in-out 0s 1;
 }
 
 cite .bibref {
@@ -169,6 +188,15 @@ code {
 
 th code {
   color: inherit;
+}
+
+a[href].orcid {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+a[href].orcid > svg {
+    margin-bottom: -2px;
 }
 
 /* --- TOC --- */
@@ -225,11 +253,11 @@ table.simple {
 
 /* --- DL --- */
 
-.section dd>p:first-child {
+.section dd > p:first-child {
   margin-top: 0;
 }
 
-.section dd>p:last-child {
+.section dd > p:last-child {
   margin-bottom: 0;
 }
 
@@ -242,7 +270,7 @@ table.simple {
   margin-bottom: 0;
 }
 
-#issue-summary>ul,
+#issue-summary > ul,
 .respec-dfn-list {
   column-count: 2;
 }
@@ -258,7 +286,7 @@ details.respec-tests-details {
   vertical-align: top;
 }
 
-details.respec-tests-details>* {
+details.respec-tests-details > * {
   padding-right: 2em;
 }
 
@@ -271,19 +299,19 @@ details.respec-tests-details[open] {
   padding-bottom: 0.5em;
 }
 
-details.respec-tests-details[open]>summary {
+details.respec-tests-details[open] > summary {
   border-bottom: thin solid #cad3e2;
   padding-left: 1em;
   margin-bottom: 1em;
   line-height: 2em;
 }
 
-details.respec-tests-details>ul {
+details.respec-tests-details > ul {
   width: 100%;
   margin-top: -0.3em;
 }
 
-details.respec-tests-details>li {
+details.respec-tests-details > li {
   padding-left: 1em;
 }
 
@@ -305,30 +333,30 @@ aside.example .marker > a.self-link {
   color: inherit;
 }
 
-h2>a.self-link,
-h3>a.self-link,
-h4>a.self-link,
-h5>a.self-link,
-h6>a.self-link {
+h2 > a.self-link,
+h3 > a.self-link,
+h4 > a.self-link,
+h5 > a.self-link,
+h6 > a.self-link {
   border: none;
   color: inherit;
   font-size: 83%;
   height: 2em;
   left: -1.6em;
-  opacity: .5;
+  opacity: 0.5;
   position: absolute;
   text-align: center;
   text-decoration: none;
   top: 0;
-  transition: opacity .2s;
+  transition: opacity 0.2s;
   width: 2em;
 }
 
-h2>a.self-link::before,
-h3>a.self-link::before,
-h4>a.self-link::before,
-h5>a.self-link::before,
-h6>a.self-link::before {
+h2 > a.self-link::before,
+h3 > a.self-link::before,
+h4 > a.self-link::before,
+h5 > a.self-link::before,
+h6 > a.self-link::before {
   content: "§";
   display: block;
 }
@@ -339,11 +367,11 @@ h6>a.self-link::before {
   }
 
   /* Don't position self-link in headings off-screen */
-  h2>a.self-link,
-  h3>a.self-link,
-  h4>a.self-link,
-  h5>a.self-link,
-  h6>a.self-link {
+  h2 > a.self-link,
+  h3 > a.self-link,
+  h4 > a.self-link,
+  h5 > a.self-link,
+  h6 > a.self-link {
     left: auto;
     top: auto;
   }
@@ -354,7 +382,12 @@ h6>a.self-link::before {
     display: none;
   }
 }
-</style><style>/*
+</style>
+		
+		
+	
+		<link href="../common/css/common.css" rel="stylesheet" type="text/css">
+	<link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-tools-1.0/"><style>/*
 
 github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
@@ -453,12 +486,51 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-strong {
   font-weight: bold;
 }
-</style>
-		
-		
-	
-		<link href="../common/css/common.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-tools-1.0/"><script id="initialUserConfig" type="application/json">{
+</style><style>var {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+}
+
+var[data-type]::before,
+var[data-type]::after {
+  position: absolute;
+  left: 50%;
+  top: -6px;
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+
+/* the triangle or arrow or caret or whatever */
+var[data-type]::before {
+  content: "";
+  transform: translateX(-50%);
+  border-width: 4px 6px 0 6px;
+  border-style: solid;
+  border-color: transparent;
+  border-top-color: #000;
+}
+
+/* actual text */
+var[data-type]::after {
+  content: attr(data-type);
+  transform: translateX(-50%) translateY(-100%);
+  background: #000;
+  text-align: center;
+  /* additional styling */
+  font-family: "Dank Mono", "Fira Code", monospace;
+  font-style: normal;
+  padding: 6px;
+  border-radius: 3px;
+  color: #daca88;
+}
+
+var[data-type]:hover::after,
+var[data-type]:hover::before {
+  opacity: 1;
+}
+</style><script id="initialUserConfig" type="application/json">{
   "trace": true,
   "doRDFa": "1.0",
   "includePermalinks": true,
@@ -799,23 +871,23 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       ]
     }
   },
-  "publishDate": "2019-02-04",
-  "publishISODate": "2019-02-04T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 04 February 2019"
-}</script><meta name="description" content="This document list examples of the tools defined values, this is an extension of Personalization Explainer 1.0."></head>
-	<body class="h-entry"><div class="head">
-      <a href="https://www.w3.org/" class="logo"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name">Personalization Tools 1.0</h1>
+  "publishDate": "2019-04-26",
+  "publishISODate": "2019-04-26T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 26 April 2019"
+}</script><meta name="description" content="This document list examples of the tools defined values, this is an extension of Personalization Explainer 1.0."><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
+	<body class="h-entry informative"><div class="head">
+      <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name">Personalization Tools 1.0</h1>
       
       <h2>
-        <abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft
-        <time class="dt-published" datetime="2019-02-04">04 February 2019</time>
+        W3C Editor's Draft
+        <time class="dt-published" datetime="2019-04-26">26 April 2019</time>
       </h2>
       <dl>
         <dt>This version:</dt><dd>
-                  <a class="u-url" href="https://w3c.github.io/personalization-semantics/tools/">https://w3c.github.io/personalization-semantics/tools/</a>
-                </dd><dt>Latest published version:</dt><dd>
-                  <a href="https://www.w3.org/TR/personalization-semantics-tools-1.0/">https://www.w3.org/TR/personalization-semantics-tools-1.0/</a>
-                </dd>
+                <a class="u-url" href="https://w3c.github.io/personalization-semantics/tools/">https://w3c.github.io/personalization-semantics/tools/</a>
+              </dd><dt>Latest published version:</dt><dd>
+                <a href="https://www.w3.org/TR/personalization-semantics-tools-1.0/">https://www.w3.org/TR/personalization-semantics-tools-1.0/</a>
+              </dd>
         <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/personalization-semantics/tools/">https://w3c.github.io/personalization-semantics/tools/</a></dd>
         
         
@@ -827,9 +899,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <dd class="p-author h-card vcard" data-editor-id="16320"><a class="ed_mailto u-email email p-name" href="mailto:lisa.seeman@zoho.com">Lisa Seeman</a></dd><dd class="p-author h-card vcard" data-editor-id="72055"><a class="ed_mailto u-email email p-name" href="mailto:charlesl@benetech.org">Charles LaPierre</a>
             (Benetech)
           </dd><dd class="p-author h-card vcard" data-editor-id="34017"><a class="ed_mailto u-email email p-name" href="mailto:cooper@w3.org">Michael Cooper</a>
-            (<abbr title="World Wide Web Consortium">W3C</abbr>)
+            (W3C)
           </dd><dd class="p-author h-card vcard" data-editor-id="100586"><a class="ed_mailto u-email email p-name" href="mailto:ran@w3.org">Roy Ran</a>
-            (<abbr title="World Wide Web Consortium">W3C</abbr>)
+            (W3C)
           </dd><dd class="p-author h-card vcard" data-editor-id="2460"><span class="p-name fn">Richard Schwerdtfeger</span>
             (<a class="p-org org h-org h-card" href="https://www.knowbility.org/">Knowbility</a>)
            (Editor until October 2017)</dd>
@@ -847,8 +919,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       
       <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
       <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
-      <a href="http://ev.buaa.edu.cn/">Beihang</a>). 
-      <abbr title="World Wide Web Consortium">W3C</abbr> <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+      <a href="https://ev.buaa.edu.cn/">Beihang</a>). 
+      W3C <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
       <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a rel="license" href="https://www.w3.org/Consortium/Legal/copyright-documents">document use</a> rules
       apply.
     </p>
@@ -867,49 +939,43 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 		</section>
 
 		<section id="sotd" class="introductory"><h2>Status of This Document</h2><p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em></p><p>
-                              This document was published by the <a href="https://www.w3.org/WAI/APA/">Accessible Platform Architectures Working Group</a> as
-                              an Editor's Draft.
-                              
-                            </p><p>
+                        This document was published by the <a href="https://www.w3.org/WAI/APA/">Accessible Platform Architectures Working Group</a> as
+                        an Editor's Draft.
+                        
+                      </p><p>
       
       Comments regarding this document are welcome.
-              Please send them to
-              <a href="mailto:public-personalization-tf@w3.org">public-personalization-tf@w3.org</a>
-              (<a href="https://lists.w3.org/Archives/Public/public-personalization-tf/">archives</a>).
-            
+            Please send them to
+            <a href="mailto:public-personalization-tf@w3.org">public-personalization-tf@w3.org</a>
+            (<a href="https://lists.w3.org/Archives/Public/public-personalization-tf/">archives</a>).
+          
     </p><p>
-                              Publication as an Editor's Draft
-                              does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr> Membership.
-                              This is a draft document and may be updated,
-                              replaced or obsoleted by other documents at any
-                              time. It is inappropriate to cite this document as
-                              other than work in progress.
-                            </p><p>
-                      
-                              This document was produced by
-                              a group
-                              operating under the
-                              <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
-                            
-                      
-                      
-                                      <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
-                                      <a rel="disclosure" href="https://www.w3.org/2004/01/pp-impl/83907/status">public list of any patent
-                                        disclosures</a>
-                              made in connection with the deliverables of
-                              the group; that page also includes
-                              instructions for disclosing a patent. An
-                              individual who has actual knowledge of a patent
-                              which the individual believes contains
-                              <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential Claim(s)</a>
-                              must disclose the information in accordance with
-                              <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
-                            
-                      
-                    </p><p>
-                      This document is governed by the
-                      <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-                    </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#introduction"><span class="secno">1. </span>Introduction</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#use-cases-and-requirements"><span class="secno">2. </span>Use Cases and Requirements</a></li><li class="tocline"><a class="tocxref" href="#tools"><span class="secno">3. </span>Tools</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#all-stepindicator-explanation"><span class="secno">3.1 </span>All the Step Indicator Properties </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#stepindicator-usage-example-explanation"><span class="secno">3.1.1 </span>Step Indicator Usage</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description"><span class="secno">3.1.1.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#stepindicator-usage-example"><span class="secno">3.1.1.2 </span>Example</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#all-the-message-properties"><span class="secno">3.2 </span>All the message properties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#messageimportance-explanation"><span class="secno">3.2.1 </span>messageimportance</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-0"><span class="secno">3.2.1.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#messageimportance-example"><span class="secno">3.2.1.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics"><span class="secno">3.2.1.3 </span>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values"><span class="secno">3.2.1.4 </span>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#messagefrom-explanation"><span class="secno">3.2.2 </span>messagefrom</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-1"><span class="secno">3.2.2.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#messagefrom-example"><span class="secno">3.2.2.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-0"><span class="secno">3.2.2.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#messagecontext-explanation"><span class="secno">3.2.3 </span>messagecontext</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-2"><span class="secno">3.2.3.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#messagecontext-example"><span class="secno">3.2.3.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-1"><span class="secno">3.2.3.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#messagetime-explanation"><span class="secno">3.2.4 </span>messagetime</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-3"><span class="secno">3.2.4.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#messagetime-example"><span class="secno">3.2.4.2 </span>messagetime</a></li><li class="tocline"><a class="tocxref" href="#characteristics-2"><span class="secno">3.2.4.3 </span>Characteristics</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#vocabulary-implementations"><span class="secno">A. </span>Vocabulary Implementations</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><span class="secno">B.1 </span>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><span class="secno">B.2 </span>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><span class="secno">C.1 </span>Normative references</a></li></ol></li></ol></nav>
+      Publication as an Editor's Draft does not imply endorsement by the
+      <abbr title="World Wide Web Consortium">W3C</abbr> Membership. This is a draft document and may be updated, replaced or
+      obsoleted by other documents at any time. It is inappropriate to cite this
+      document as other than work in progress.
+    </p><p>
+      
+        This document was produced by a group
+        operating under the
+        <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+       The group does not expect this document to become a <abbr title="World Wide Web Consortium">W3C</abbr> Recommendation.
+      
+                  <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
+                  <a rel="disclosure" href="https://www.w3.org/2004/01/pp-impl/83907/status">public list of any patent disclosures</a>
+            made in connection with the deliverables of
+            the group; that page also includes
+            instructions for disclosing a patent. An individual who has actual
+            knowledge of a patent which the individual believes contains
+            <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential Claim(s)</a>
+            must disclose the information in accordance with
+            <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+          
+      
+    </p><p>
+                  This document is governed by the
+                  <a id="w3c_process_revision" href="https://www.w3.org/2019/Process-20190301/">1 March 2019 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+                </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#introduction"><span class="secno">1. </span>Introduction</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#use-cases-and-requirements"><span class="secno">2. </span>Use Cases and Requirements</a></li><li class="tocline"><a class="tocxref" href="#tools"><span class="secno">3. </span>Tools</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#all-stepindicator-explanation"><span class="secno">3.1 </span>All the Step Indicator Properties </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#stepindicator-usage-example-explanation"><span class="secno">3.1.1 </span>Step Indicator Usage</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description"><span class="secno">3.1.1.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#stepindicator-usage-example"><span class="secno">3.1.1.2 </span>Example</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#all-the-message-properties"><span class="secno">3.2 </span>All the message properties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#messageimportance-explanation"><span class="secno">3.2.1 </span>messageimportance</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-0"><span class="secno">3.2.1.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#messageimportance-example"><span class="secno">3.2.1.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics"><span class="secno">3.2.1.3 </span>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values"><span class="secno">3.2.1.4 </span>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#messagefrom-explanation"><span class="secno">3.2.2 </span>messagefrom</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-1"><span class="secno">3.2.2.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#messagefrom-example"><span class="secno">3.2.2.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-0"><span class="secno">3.2.2.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#messagecontext-explanation"><span class="secno">3.2.3 </span>messagecontext</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-2"><span class="secno">3.2.3.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#messagecontext-example"><span class="secno">3.2.3.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-1"><span class="secno">3.2.3.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#messagetime-explanation"><span class="secno">3.2.4 </span>messagetime</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-3"><span class="secno">3.2.4.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#messagetime-example"><span class="secno">3.2.4.2 </span>messagetime</a></li><li class="tocline"><a class="tocxref" href="#characteristics-2"><span class="secno">3.2.4.3 </span>Characteristics</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#vocabulary-implementations"><span class="secno">A. </span>Vocabulary Implementations</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><span class="secno">B.1 </span>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><span class="secno">B.2 </span>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><span class="secno">C.1 </span>Informative references</a></li></ol></li></ol></nav>
 
 			
 
@@ -937,30 +1003,36 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <h5 id="x3-1-1-2-example"><span class="secno">3.1.1.2 </span>Example<a class="self-link" aria-label="§" href="#stepindicator-usage-example"></a></h5>
   	<p>Note, the specific mechanism to apply these defined values has not been decided:</p>
     <div class="example" id="example-1-stepindicator-using-aui">
-          <div class="marker"><a class="self-link" href="#example-1-stepindicator-using-aui">Example 1</a><span class="example-title">: stepindicator using AUI</span></div>
-          <pre class="hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">aui-stepindicator</span>=<span class="hljs-string">"book trip"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">aui-status</span>=<span class="hljs-string">"complete"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"select flight"</span> <span class="hljs-attr">aui-step</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">aui-steplocation</span>=<span class="hljs-string">"uri"</span> /&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">aui-status</span>=<span class="hljs-string">"current"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"book hotel"</span> <span class="hljs-attr">aui-step</span>=<span class="hljs-string">"2"</span> <span class="hljs-attr">aui-steplocation</span>=<span class="hljs-string">"uri"</span> /&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">aui-status</span>=<span class="hljs-string">""</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"book car"</span> <span class="hljs-attr">aui-step</span>=<span class="hljs-string">"3"</span> <span class="hljs-attr">aui-steplocation</span>=<span class="hljs-string">"uri"</span> /&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">aui-status</span>=<span class="hljs-string">""</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"purchase trip"</span> <span class="hljs-attr">aui-step</span>=<span class="hljs-string">"4"</span> <span class="hljs-attr">steplocation</span>=<span class="hljs-string">"uri"</span> /&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <div class="marker">
+      <a class="self-link" href="#example-1-stepindicator-using-aui">Example 1</a><span class="example-title">: stepindicator using AUI</span>
+    </div> <pre aria-busy="false"><code class="hljs xml">      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">aui-stepindicator</span>=<span class="hljs-string">"book trip"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">aui-status</span>=<span class="hljs-string">"complete"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"select flight"</span> <span class="hljs-attr">aui-step</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">aui-steplocation</span>=<span class="hljs-string">"uri"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">aui-status</span>=<span class="hljs-string">"current"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"book hotel"</span> <span class="hljs-attr">aui-step</span>=<span class="hljs-string">"2"</span> <span class="hljs-attr">aui-steplocation</span>=<span class="hljs-string">"uri"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">aui-status</span>=<span class="hljs-string">""</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"book car"</span> <span class="hljs-attr">aui-step</span>=<span class="hljs-string">"3"</span> <span class="hljs-attr">aui-steplocation</span>=<span class="hljs-string">"uri"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">aui-status</span>=<span class="hljs-string">""</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"purchase trip"</span> <span class="hljs-attr">aui-step</span>=<span class="hljs-string">"4"</span> <span class="hljs-attr">steplocation</span>=<span class="hljs-string">"uri"</span> /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+      
 
 or the step number can be implied by the DOM
 
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">aui-stepindicator</span>=<span class="hljs-string">"book trip"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">aui-status</span>=<span class="hljs-string">"complete"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"select flight"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"uri"</span>&gt;</span>Select flight<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">aui-status</span>=<span class="hljs-string">"current"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"book hotel"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"uri"</span>&gt;</span>Book Hotel<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">aui-status</span>=<span class="hljs-string">""</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"book car"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"uri"</span>&gt;</span>Book car<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">aui-status</span>=<span class="hljs-string">""</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"purchase trip"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"uri"</span>&gt;</span>Purchase trip<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
+
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">aui-stepindicator</span>=<span class="hljs-string">"book trip"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">aui-status</span>=<span class="hljs-string">"complete"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"select flight"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"uri"</span>&gt;</span>Select flight<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">aui-status</span>=<span class="hljs-string">"current"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"book hotel"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"uri"</span>&gt;</span>Book Hotel<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">aui-status</span>=<span class="hljs-string">""</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"book car"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"uri"</span>&gt;</span>Book car<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">aui-status</span>=<span class="hljs-string">""</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"purchase trip"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"uri"</span>&gt;</span>Purchase trip<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>    
+     </code></pre>
         </div>
      </section>
 </section>
@@ -987,10 +1059,12 @@ or the step number can be implied by the DOM
     <h5 id="x3-2-1-2-example"><span class="secno">3.2.1.2 </span>Example<a class="self-link" aria-label="§" href="#messageimportance-example"></a></h5>
 	  <p>The specific mechanism to apply these defined values has not been decided</p>
     <div class="example" id="example-2-messageimportance-using-aui">
-          <div class="marker"><a class="self-link" href="#example-2-messageimportance-using-aui">Example 2</a><span class="example-title">: messageimportance using AUI</span></div>
-          <pre class="hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"alert"</span> <span class="hljs-attr">aui-messageimportance</span>=<span class="hljs-string">"medium"</span>&gt;</span>
-    It is your daughter's birthday tomorrow
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
+          <div class="marker">
+      <a class="self-link" href="#example-2-messageimportance-using-aui">Example 2</a><span class="example-title">: messageimportance using AUI</span>
+    </div> <pre aria-busy="false"><code class="hljs xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"alert"</span> <span class="hljs-attr">aui-messageimportance</span>=<span class="hljs-string">"medium"</span>&gt;</span>
+            It is your daughter's birthday tomorrow
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    </code></pre>
         </div>
 
   </section>
@@ -1018,7 +1092,7 @@ or the step number can be implied by the DOM
             </tr>
             <tr>
               <th class="property-value-head" scope="row">Value:</th>
-              <td class="property-value"><a href="#valuetype_token" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured">token</a></td>
+              <td class="property-value"><a href="#valuetype_token">token</a></td>
             </tr>
           </tbody>
           </table>
@@ -1066,11 +1140,13 @@ or the step number can be implied by the DOM
     <h5 id="x3-2-2-2-example"><span class="secno">3.2.2.2 </span>Example<a class="self-link" aria-label="§" href="#messagefrom-example"></a></h5>
 	<p>The specific mechanism to apply these defined values has not been decided</p>
     <div class="example" id="example-3-messagefrom-using-aui">
-          <div class="marker"><a class="self-link" href="#example-3-messagefrom-using-aui">Example 3</a><span class="example-title">: messagefrom using AUI</span></div>
-          <pre class="hljs javascript" aria-busy="false">&lt;div role=<span class="hljs-string">"alert"</span> aui-messageimportance=<span class="hljs-string">"low"</span>
-    aui-messagefrom=<span class="hljs-string">"lisa seeman, lseeman"</span>&gt;
-    I posted a <span class="hljs-keyword">new</span> version on GitHub <span class="hljs-keyword">for</span> you to review
-&lt;<span class="hljs-regexp">/div&gt;</span></pre>
+          <div class="marker">
+      <a class="self-link" href="#example-3-messagefrom-using-aui">Example 3</a><span class="example-title">: messagefrom using AUI</span>
+    </div> <pre aria-busy="false"><code class="hljs xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"alert"</span> <span class="hljs-attr">aui-messageimportance</span>=<span class="hljs-string">"low"</span>
+            <span class="hljs-attr">aui-messagefrom</span>=<span class="hljs-string">"lisa seeman, lseeman"</span>&gt;</span>
+            I posted a new version on GitHub for you to review
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        </code></pre>
         </div>
       </section>
       <section id="characteristics-0">
@@ -1098,7 +1174,7 @@ or the step number can be implied by the DOM
             </tr>
             <tr>
               <th class="property-value-head" scope="row">Value:</th>
-              <td class="property-value"><a href="#valuetype_string" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-0">string text</a></td>
+              <td class="property-value"><a href="#valuetype_string">string text</a></td>
             </tr>
           </tbody>
           </table>
@@ -1121,13 +1197,15 @@ or the step number can be implied by the DOM
     <h5 id="x3-2-3-2-example"><span class="secno">3.2.3.2 </span>Example<a class="self-link" aria-label="§" href="#messagecontext-example"></a></h5>
 	<p>The specific mechanism to apply these defined values has not been decided</p>
     <div class="example" id="example-4-messagecontext-using-aui">
-          <div class="marker"><a class="self-link" href="#example-4-messagecontext-using-aui">Example 4</a><span class="example-title">: messagecontext using AUI</span></div>
-          <pre class="hljs javascript" aria-busy="false">&lt;div role=<span class="hljs-string">"alert"</span>
-    aui-messageimportance=<span class="hljs-string">"low"</span>
-    aui-messagefrom=<span class="hljs-string">"lisa seeman, lseeman"</span>
-    aui-messagecontext=<span class="hljs-string">"work"</span>&gt;
-    I posted a <span class="hljs-keyword">new</span> version on GitHub <span class="hljs-keyword">for</span> you to review
-&lt;<span class="hljs-regexp">/div&gt;</span></pre>
+          <div class="marker">
+      <a class="self-link" href="#example-4-messagecontext-using-aui">Example 4</a><span class="example-title">: messagecontext using AUI</span>
+    </div> <pre aria-busy="false"><code class="hljs xml">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"alert"</span>
+        <span class="hljs-attr">aui-messageimportance</span>=<span class="hljs-string">"low"</span>
+        <span class="hljs-attr">aui-messagefrom</span>=<span class="hljs-string">"lisa seeman, lseeman"</span>
+        <span class="hljs-attr">aui-messagecontext</span>=<span class="hljs-string">"work"</span>&gt;</span>
+        I posted a new version on GitHub for you to review
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    </code></pre>
         </div>
   </section>
   <section id="characteristics-1">
@@ -1154,7 +1232,7 @@ or the step number can be implied by the DOM
             </tr>
             <tr>
               <th class="property-value-head" scope="row">Value:</th>
-              <td class="property-value"><a href="#valuetype_string" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-1">string text</a></td>
+              <td class="property-value"><a href="#valuetype_string">string text</a></td>
             </tr>
           </tbody>
       </table>
@@ -1176,8 +1254,9 @@ or the step number can be implied by the DOM
 	  <p>The specific mechanism to apply these defined values has not been decided</p>
   <p>@@1-line description</p>
     <div class="example" id="example-5-messagetime-using-aui">
-          <div class="marker"><a class="self-link" href="#example-5-messagetime-using-aui">Example 5</a><span class="example-title">: messagetime using AUI</span></div>
-          <pre class="hljs xml" aria-busy="false">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"alert"</span>
+          <div class="marker">
+      <a class="self-link" href="#example-5-messagetime-using-aui">Example 5</a><span class="example-title">: messagetime using AUI</span>
+    </div> <pre aria-busy="false"><code class="hljs xml">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"alert"</span>
         <span class="hljs-attr">aui-messageimportance</span>=<span class="hljs-string">"medium"</span>
         <span class="hljs-attr">aui-messagefrom</span>=<span class="hljs-string">"my calender"</span>
         <span class="hljs-attr">aui-messagecontext</span>=<span class="hljs-string">"work"</span>
@@ -1185,13 +1264,16 @@ or the step number can be implied by the DOM
         Renew your driving license this week
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
+
+
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"alert"</span>
         <span class="hljs-attr">aui-messageimportance</span>=<span class="hljs-string">"critical"</span>
         <span class="hljs-attr">aui-messagefrom</span>=<span class="hljs-string">"my calender"</span>
         <span class="hljs-attr">aui-messagecontext</span>=<span class="hljs-string">"work"</span>
         <span class="hljs-attr">aui-messagetime</span>=<span class="hljs-string">"16.02.2017.00.00"</span>&gt;</span>
         Renew your driving license ASAP
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    </code></pre>
         </div>
   </section>
   <section id="characteristics-2">
@@ -1219,7 +1301,7 @@ or the step number can be implied by the DOM
             </tr>
             <tr>
               <th class="property-value-head" scope="row">Value:</th>
-              <td class="property-value"><a href="#valuetype_string" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-2">string text</a></td>
+              <td class="property-value"><a href="#valuetype_string">string text</a></td>
             </tr>
             </tbody>
           </table>
@@ -1275,8 +1357,8 @@ or the step number can be implied by the DOM
 <section id="references" class="appendix">
       <!--OddPage--><h2 id="c-references"><span class="secno">C. </span>References<a class="self-link" aria-label="§" href="#references"></a></h2>
       
-    <section id="normative-references">
-        <h3 id="c-1-normative-references"><span class="secno">C.1 </span>Normative references<a class="self-link" aria-label="§" href="#normative-references"></a></h3>
+    <section id="informative-references">
+        <h3 id="c-1-informative-references"><span class="secno">C.1 </span>Informative references<a class="self-link" aria-label="§" href="#informative-references"></a></h3>
       <dl class="bibliography">
         <dt id="bib-dom4">[DOM4]</dt><dd><a href="https://dom.spec.whatwg.org/"><cite>DOM Standard</cite></a>. Anne van Kesteren. WHATWG. Living Standard. URL: <a href="https://dom.spec.whatwg.org/">https://dom.spec.whatwg.org/</a></dd><dt id="bib-svg2">[SVG2]</dt><dd><a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/"><cite>Scalable Vector Graphics (SVG) 2</cite></a>. Nikos Andronikos; Rossen Atanassov; Tavmjong Bah; Amelia Bellamy-Royds; Brian Birtles; Cyril Concolato; Erik Dahlström; Chris Lilley; Cameron McCormack; Doug Schepers; Dirk Schulze; Richard Schwerdtfeger; Satoru Takagi; Jonathan Watt et al. W3C. W3C Working Draft. URL: <a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/">http://www.w3.org/TR/2015/WD-SVG2-20150915/</a></dd>
       </dl></section></section><p role="navigation" id="back-to-top"><a href="#title"><abbr title="Back to Top">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>

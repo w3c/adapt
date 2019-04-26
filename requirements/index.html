@@ -1,37 +1,16 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta charset="UTF-8"><meta name="generator" content="ReSpec 24.2.5"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
-div.issue-title, div.note-title , div.ednote-title, div.warning-title {
-    padding-right:  1em;
-    min-width: 7.5em;
-    color: #b9ab2d;
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta charset="UTF-8"><meta name="generator" content="ReSpec 24.21.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
+.issue-label {
+    text-transform: initial;
 }
-div.issue-title { color: #e05252; }
-div.note-title, div.ednote-title { color: #2b2; }
-div.warning-title { color: #f22; }
-div.issue-title span, div.note-title span, div.ednote-title span, div.warning-title span {
-    text-transform: uppercase;
-}
-div.note, div.issue, div.ednote, div.warning {
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
+
 .warning > p:first-child { margin-top: 0 }
 .warning {
     padding: .5em;
     border-left-width: .5em;
     border-left-style: solid;
 }
-div.issue, div.note , div.ednote,  div.warning {
-    padding: 1em 1.2em 0.5em;
-    margin: 1em 0;
-    position: relative;
-    clear: both;
-}
 span.warning { padding: .1em .5em .15em; }
 
-.issue {
-    border-color: #e05252;
-    background: #fbe9e9;
-}
 .issue.closed span.issue-number {
     text-decoration: line-through;
 }
@@ -72,6 +51,7 @@ input.task-list-item-checkbox {
   border-radius: 4px;
   position: relative;
   bottom: 2px;
+  border: none;
 }
 
 .issue a.respec-label-dark {
@@ -92,6 +72,19 @@ input.task-list-item-checkbox {
  * ReSpec 3 CSS
  * Robin Berjon - http://berjon.com/
  *****************************************************************/
+
+@keyframes pop {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(1.25, 1.25);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
 
 /* Override code highlighter background */
 .hljs {
@@ -129,8 +122,34 @@ a.bibref {
   text-decoration: none;
 }
 
+.respec-offending-element:target {
+  animation: pop 0.25s ease-in-out 0s 1;
+}
+
+/* TODO: Remove once https://github.com/w3c/tr-design/pull/176 is merged. */
+.respec-offending-element a[href] {
+  margin: 0;
+}
+
+.respec-offending-element {
+  display: inline-block;
+  position: relative;
+  /* Red squiggly line */
+  background: url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=)
+    bottom repeat-x;
+}
+@supports (text-decoration-style: wavy) {
+  .respec-offending-element {
+    background: none;
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: red;
+  }
+}
+
 #references :target {
   background: #eaf3ff;
+  animation: pop 0.4s ease-in-out 0s 1;
 }
 
 cite .bibref {
@@ -143,6 +162,15 @@ code {
 
 th code {
   color: inherit;
+}
+
+a[href].orcid {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+a[href].orcid > svg {
+    margin-bottom: -2px;
 }
 
 /* --- TOC --- */
@@ -199,11 +227,11 @@ table.simple {
 
 /* --- DL --- */
 
-.section dd>p:first-child {
+.section dd > p:first-child {
   margin-top: 0;
 }
 
-.section dd>p:last-child {
+.section dd > p:last-child {
   margin-bottom: 0;
 }
 
@@ -216,7 +244,7 @@ table.simple {
   margin-bottom: 0;
 }
 
-#issue-summary>ul,
+#issue-summary > ul,
 .respec-dfn-list {
   column-count: 2;
 }
@@ -232,7 +260,7 @@ details.respec-tests-details {
   vertical-align: top;
 }
 
-details.respec-tests-details>* {
+details.respec-tests-details > * {
   padding-right: 2em;
 }
 
@@ -245,19 +273,19 @@ details.respec-tests-details[open] {
   padding-bottom: 0.5em;
 }
 
-details.respec-tests-details[open]>summary {
+details.respec-tests-details[open] > summary {
   border-bottom: thin solid #cad3e2;
   padding-left: 1em;
   margin-bottom: 1em;
   line-height: 2em;
 }
 
-details.respec-tests-details>ul {
+details.respec-tests-details > ul {
   width: 100%;
   margin-top: -0.3em;
 }
 
-details.respec-tests-details>li {
+details.respec-tests-details > li {
   padding-left: 1em;
 }
 
@@ -279,30 +307,30 @@ aside.example .marker > a.self-link {
   color: inherit;
 }
 
-h2>a.self-link,
-h3>a.self-link,
-h4>a.self-link,
-h5>a.self-link,
-h6>a.self-link {
+h2 > a.self-link,
+h3 > a.self-link,
+h4 > a.self-link,
+h5 > a.self-link,
+h6 > a.self-link {
   border: none;
   color: inherit;
   font-size: 83%;
   height: 2em;
   left: -1.6em;
-  opacity: .5;
+  opacity: 0.5;
   position: absolute;
   text-align: center;
   text-decoration: none;
   top: 0;
-  transition: opacity .2s;
+  transition: opacity 0.2s;
   width: 2em;
 }
 
-h2>a.self-link::before,
-h3>a.self-link::before,
-h4>a.self-link::before,
-h5>a.self-link::before,
-h6>a.self-link::before {
+h2 > a.self-link::before,
+h3 > a.self-link::before,
+h4 > a.self-link::before,
+h5 > a.self-link::before,
+h6 > a.self-link::before {
   content: "§";
   display: block;
 }
@@ -313,11 +341,11 @@ h6>a.self-link::before {
   }
 
   /* Don't position self-link in headings off-screen */
-  h2>a.self-link,
-  h3>a.self-link,
-  h4>a.self-link,
-  h5>a.self-link,
-  h6>a.self-link {
+  h2 > a.self-link,
+  h3 > a.self-link,
+  h4 > a.self-link,
+  h5 > a.self-link,
+  h6 > a.self-link {
     left: auto;
     top: auto;
   }
@@ -329,7 +357,51 @@ h6>a.self-link::before {
   }
 }
 </style>
-	<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-requirements-1.0/"><script id="initialUserConfig" type="application/json">{
+	<link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-requirements-1.0/"><style>var {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+}
+
+var[data-type]::before,
+var[data-type]::after {
+  position: absolute;
+  left: 50%;
+  top: -6px;
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+
+/* the triangle or arrow or caret or whatever */
+var[data-type]::before {
+  content: "";
+  transform: translateX(-50%);
+  border-width: 4px 6px 0 6px;
+  border-style: solid;
+  border-color: transparent;
+  border-top-color: #000;
+}
+
+/* actual text */
+var[data-type]::after {
+  content: attr(data-type);
+  transform: translateX(-50%) translateY(-100%);
+  background: #000;
+  text-align: center;
+  /* additional styling */
+  font-family: "Dank Mono", "Fira Code", monospace;
+  font-style: normal;
+  padding: 6px;
+  border-radius: 3px;
+  color: #daca88;
+}
+
+var[data-type]:hover::after,
+var[data-type]:hover::before {
+  opacity: 1;
+}
+</style><script id="initialUserConfig" type="application/json">{
   "trace": true,
   "doRDFa": "1.0",
   "includePermalinks": true,
@@ -662,23 +734,23 @@ h6>a.self-link::before {
       ]
     }
   },
-  "publishDate": "2019-02-04",
-  "publishISODate": "2019-02-04T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 04 February 2019"
-}</script><meta name="description" content="Requirements for Personalization Semantics"></head>
-	<body class="h-entry toc-inline"><div class="head">
-      <a href="https://www.w3.org/" class="logo"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name">Requirements for Personalization Semantics</h1>
+  "publishDate": "2019-04-26",
+  "publishISODate": "2019-04-26T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 26 April 2019"
+}</script><meta name="description" content="Requirements for Personalization Semantics"><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
+	<body class="h-entry informative"><div class="head">
+      <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name">Requirements for Personalization Semantics</h1>
       
       <h2>
-        <abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft
-        <time class="dt-published" datetime="2019-02-04">04 February 2019</time>
+        W3C Editor's Draft
+        <time class="dt-published" datetime="2019-04-26">26 April 2019</time>
       </h2>
       <dl>
         <dt>This version:</dt><dd>
-                  <a class="u-url" href="https://w3c.github.io/personalization-semantics/requirements/">https://w3c.github.io/personalization-semantics/requirements/</a>
-                </dd><dt>Latest published version:</dt><dd>
-                  <a href="https://www.w3.org/TR/personalization-semantics-requirements-1.0/">https://www.w3.org/TR/personalization-semantics-requirements-1.0/</a>
-                </dd>
+                <a class="u-url" href="https://w3c.github.io/personalization-semantics/requirements/">https://w3c.github.io/personalization-semantics/requirements/</a>
+              </dd><dt>Latest published version:</dt><dd>
+                <a href="https://www.w3.org/TR/personalization-semantics-requirements-1.0/">https://www.w3.org/TR/personalization-semantics-requirements-1.0/</a>
+              </dd>
         <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/personalization-semantics/requirements/">https://w3c.github.io/personalization-semantics/requirements/</a></dd>
         
         
@@ -690,9 +762,9 @@ h6>a.self-link::before {
         <dd class="p-author h-card vcard" data-editor-id="16320"><a class="ed_mailto u-email email p-name" href="mailto:lisa.seeman@zoho.com">Lisa Seeman</a></dd><dd class="p-author h-card vcard" data-editor-id="72055"><a class="ed_mailto u-email email p-name" href="mailto:charlesl@benetech.org">Charles LaPierre</a>
             (Benetech)
           </dd><dd class="p-author h-card vcard" data-editor-id="34017"><a class="ed_mailto u-email email p-name" href="mailto:cooper@w3.org">Michael Cooper</a>
-            (<abbr title="World Wide Web Consortium">W3C</abbr>)
+            (W3C)
           </dd><dd class="p-author h-card vcard" data-editor-id="100586"><a class="ed_mailto u-email email p-name" href="mailto:ran@w3.org">Roy Ran</a>
-            (<abbr title="World Wide Web Consortium">W3C</abbr>)
+            (W3C)
           </dd>
         
         
@@ -708,8 +780,8 @@ h6>a.self-link::before {
       
       <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
       <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
-      <a href="http://ev.buaa.edu.cn/">Beihang</a>). 
-      <abbr title="World Wide Web Consortium">W3C</abbr> <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+      <a href="https://ev.buaa.edu.cn/">Beihang</a>). 
+      W3C <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
       <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a rel="license" href="https://www.w3.org/Consortium/Legal/copyright-documents">document use</a> rules
       apply.
     </p>
@@ -719,49 +791,43 @@ h6>a.self-link::before {
 			<p>Requirements for Personalization Semantics</p>
 		</section>
 		<section id="sotd" class="introductory"><h2>Status of This Document</h2><p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em></p> <p>
-                              This document was published by the <a href="https://www.w3.org/WAI/APA/">Accessible Platform Architectures Working Group</a> as
-                              an Editor's Draft.
-                              
-                            </p><p>
+                        This document was published by the <a href="https://www.w3.org/WAI/APA/">Accessible Platform Architectures Working Group</a> as
+                        an Editor's Draft.
+                        
+                      </p><p>
       
       Comments regarding this document are welcome.
-              Please send them to
-              <a href="mailto:public-personalization-tf@w3.org">public-personalization-tf@w3.org</a>
-              (<a href="https://lists.w3.org/Archives/Public/public-personalization-tf/">archives</a>).
-            
+            Please send them to
+            <a href="mailto:public-personalization-tf@w3.org">public-personalization-tf@w3.org</a>
+            (<a href="https://lists.w3.org/Archives/Public/public-personalization-tf/">archives</a>).
+          
     </p><p>
-                              Publication as an Editor's Draft
-                              does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr> Membership.
-                              This is a draft document and may be updated,
-                              replaced or obsoleted by other documents at any
-                              time. It is inappropriate to cite this document as
-                              other than work in progress.
-                            </p><p>
-                      
-                              This document was produced by
-                              a group
-                              operating under the
-                              <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
-                            
-                      
-                      
-                                      <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
-                                      <a rel="disclosure" href="https://www.w3.org/2004/01/pp-impl/83907/status">public list of any patent
-                                        disclosures</a>
-                              made in connection with the deliverables of
-                              the group; that page also includes
-                              instructions for disclosing a patent. An
-                              individual who has actual knowledge of a patent
-                              which the individual believes contains
-                              <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential Claim(s)</a>
-                              must disclose the information in accordance with
-                              <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
-                            
-                      
-                    </p><p>
-                      This document is governed by the
-                      <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-                    </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><span class="secno">1. </span>Introduction</a></li><li class="tocline"><a class="tocxref" href="#use-cases"><span class="secno">2. </span>Use Cases</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#simplification"><span class="secno">2.1 </span>Simplification</a></li><li class="tocline"><a class="tocxref" href="#adding-context"><span class="secno">2.2 </span>Adding Context</a></li><li class="tocline"><a class="tocxref" href="#general-context"><span class="secno">2.3 </span>General Context</a></li><li class="tocline"><a class="tocxref" href="#interoperable-symbols"><span class="secno">2.4 </span>Interoperable Symbols</a></li><li class="tocline"><a class="tocxref" href="#non-numerical-comprehension"><span class="secno">2.5 </span>Non-Numerical Comprehension</a></li><li class="tocline"><a class="tocxref" href="#alternate-language-complexity"><span class="secno">2.6 </span>Alternate Language Complexity</a></li><li class="tocline"><a class="tocxref" href="#non-literal-text-and-images"><span class="secno">2.7 </span>Non-literal Text and Images</a></li><li class="tocline"><a class="tocxref" href="#more-help"><span class="secno">2.8 </span>More Help</a></li><li class="tocline"><a class="tocxref" href="#explain-and-feedback"><span class="secno">2.9 </span>Explain and Feedback</a></li><li class="tocline"><a class="tocxref" href="#indication-of-sequence-in-breadcrumbs"><span class="secno">2.10 </span>Indication of Sequence in Breadcrumbs</a></li><li class="tocline"><a class="tocxref" href="#reminders-and-messages"><span class="secno">2.11 </span>Reminders and Messages</a></li></ol></li><li class="tocline"><a class="tocxref" href="#requirements"><span class="secno">3. </span>Requirements</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#personalization-features"><span class="secno">3.1 </span>Personalization Features</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#importance-identification"><span class="secno">3.1.1 </span>Importance identification</a></li><li class="tocline"><a class="tocxref" href="#familiar-terms-and-symbols"><span class="secno">3.1.2 </span>Familiar Terms and Symbols</a></li><li class="tocline"><a class="tocxref" href="#requirement-related-to-general-context"><span class="secno">3.1.3 </span>Requirement Related to General Context</a></li><li class="tocline"><a class="tocxref" href="#symbol-sets"><span class="secno">3.1.4 </span>Symbol Sets</a></li><li class="tocline"><a class="tocxref" href="#number-free"><span class="secno">3.1.5 </span>Number Free</a></li><li class="tocline"><a class="tocxref" href="#indicate-alternate-language-complexity-of-same-content"><span class="secno">3.1.6 </span>Indicate Alternate Language Complexity of Same Content</a></li><li class="tocline"><a class="tocxref" href="#indicate-non-literal-content"><span class="secno">3.1.7 </span>Indicate Non-Literal Content</a></li><li class="tocline"><a class="tocxref" href="#help-information"><span class="secno">3.1.8 </span>Help Information</a></li><li class="tocline"><a class="tocxref" href="#provide-feedback"><span class="secno">3.1.9 </span>Provide Feedback</a></li><li class="tocline"><a class="tocxref" href="#step-indicator"><span class="secno">3.1.10 </span>Step Indicator</a></li><li class="tocline"><a class="tocxref" href="#message-categorization"><span class="secno">3.1.11 </span>Message Categorization</a></li></ol></li><li class="tocline"><a class="tocxref" href="#vocabulary-structure"><span class="secno">3.2 </span>Vocabulary Structure</a></li><li class="tocline"><a class="tocxref" href="#host-language-integration"><span class="secno">3.3 </span>Host Language Integration</a></li></ol></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><span class="secno">A. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><span class="secno">A.1 </span>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><span class="secno">A.2 </span>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><span class="secno">A.3 </span>Enabling funders</a></li></ol></li></ol></nav>
+      Publication as an Editor's Draft does not imply endorsement by the
+      <abbr title="World Wide Web Consortium">W3C</abbr> Membership. This is a draft document and may be updated, replaced or
+      obsoleted by other documents at any time. It is inappropriate to cite this
+      document as other than work in progress.
+    </p><p>
+      
+        This document was produced by a group
+        operating under the
+        <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+       The group does not expect this document to become a <abbr title="World Wide Web Consortium">W3C</abbr> Recommendation.
+      
+                  <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
+                  <a rel="disclosure" href="https://www.w3.org/2004/01/pp-impl/83907/status">public list of any patent disclosures</a>
+            made in connection with the deliverables of
+            the group; that page also includes
+            instructions for disclosing a patent. An individual who has actual
+            knowledge of a patent which the individual believes contains
+            <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential Claim(s)</a>
+            must disclose the information in accordance with
+            <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+          
+      
+    </p><p>
+                  This document is governed by the
+                  <a id="w3c_process_revision" href="https://www.w3.org/2019/Process-20190301/">1 March 2019 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+                </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><span class="secno">1. </span>Introduction</a></li><li class="tocline"><a class="tocxref" href="#use-cases"><span class="secno">2. </span>Use Cases</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#simplification"><span class="secno">2.1 </span>Simplification</a></li><li class="tocline"><a class="tocxref" href="#adding-context"><span class="secno">2.2 </span>Adding Context</a></li><li class="tocline"><a class="tocxref" href="#general-context"><span class="secno">2.3 </span>General Context</a></li><li class="tocline"><a class="tocxref" href="#interoperable-symbols"><span class="secno">2.4 </span>Interoperable Symbols</a></li><li class="tocline"><a class="tocxref" href="#non-numerical-comprehension"><span class="secno">2.5 </span>Non-Numerical Comprehension</a></li><li class="tocline"><a class="tocxref" href="#alternate-language-complexity"><span class="secno">2.6 </span>Alternate Language Complexity</a></li><li class="tocline"><a class="tocxref" href="#non-literal-text-and-images"><span class="secno">2.7 </span>Non-literal Text and Images</a></li><li class="tocline"><a class="tocxref" href="#more-help"><span class="secno">2.8 </span>More Help</a></li><li class="tocline"><a class="tocxref" href="#explain-and-feedback"><span class="secno">2.9 </span>Explain and Feedback</a></li><li class="tocline"><a class="tocxref" href="#indication-of-sequence-in-breadcrumbs"><span class="secno">2.10 </span>Indication of Sequence in Breadcrumbs</a></li><li class="tocline"><a class="tocxref" href="#reminders-and-messages"><span class="secno">2.11 </span>Reminders and Messages</a></li></ol></li><li class="tocline"><a class="tocxref" href="#requirements"><span class="secno">3. </span>Requirements</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#personalization-features"><span class="secno">3.1 </span>Personalization Features</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#importance-identification"><span class="secno">3.1.1 </span>Importance identification</a></li><li class="tocline"><a class="tocxref" href="#familiar-terms-and-symbols"><span class="secno">3.1.2 </span>Familiar Terms and Symbols</a></li><li class="tocline"><a class="tocxref" href="#requirement-related-to-general-context"><span class="secno">3.1.3 </span>Requirement Related to General Context</a></li><li class="tocline"><a class="tocxref" href="#symbol-sets"><span class="secno">3.1.4 </span>Symbol Sets</a></li><li class="tocline"><a class="tocxref" href="#number-free"><span class="secno">3.1.5 </span>Number Free</a></li><li class="tocline"><a class="tocxref" href="#indicate-alternate-language-complexity-of-same-content"><span class="secno">3.1.6 </span>Indicate Alternate Language Complexity of Same Content</a></li><li class="tocline"><a class="tocxref" href="#indicate-non-literal-content"><span class="secno">3.1.7 </span>Indicate Non-Literal Content</a></li><li class="tocline"><a class="tocxref" href="#help-information"><span class="secno">3.1.8 </span>Help Information</a></li><li class="tocline"><a class="tocxref" href="#provide-feedback"><span class="secno">3.1.9 </span>Provide Feedback</a></li><li class="tocline"><a class="tocxref" href="#step-indicator"><span class="secno">3.1.10 </span>Step Indicator</a></li><li class="tocline"><a class="tocxref" href="#message-categorization"><span class="secno">3.1.11 </span>Message Categorization</a></li></ol></li><li class="tocline"><a class="tocxref" href="#vocabulary-structure"><span class="secno">3.2 </span>Vocabulary Structure</a></li><li class="tocline"><a class="tocxref" href="#host-language-integration"><span class="secno">3.3 </span>Host Language Integration</a></li></ol></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><span class="secno">A. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><span class="secno">A.1 </span>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><span class="secno">A.2 </span>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><span class="secno">A.3 </span>Enabling funders</a></li></ol></li></ol></nav>
 		<section id="introduction">
 			<!--OddPage--><h2 id="x1-introduction"><span class="secno">1. </span>Introduction<a class="self-link" aria-label="§" href="#introduction"></a></h2>
 		</section>
@@ -875,7 +941,7 @@ h6>a.self-link::before {
 					<p>In order to display the appropriate content the supported syntax and terms must be standardized using attributes to associate symbols, terms, translations and explanations that are presented in a way that is understandable by various user scenarios.</p>
 
 					<p>Fulfills use cases: <a href="#adding-context">Adding Context</a></p>
-					<p>Relevant properties: <a href="../content/#action"><code>action</code></a>, <a href="#destination" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured"><code>destination</code></a>, <a href="../content/#field"><code>field</code></a></p>
+					<p>Relevant properties: <a href="../content/#action"><code>action</code></a>, <a href="#destination"><code>destination</code></a>, <a href="../content/#field"><code>field</code></a></p>
 				</section>
 
 				<section id="requirement-related-to-general-context">
@@ -883,7 +949,7 @@ h6>a.self-link::before {
 					<p>Optimize the personalization of a product or service's content to ensure it is appropriate for the current context of use as well as relevant for the user.</p>
 					<div class="note" id="issue-container-generatedID-8"><div role="heading" class="ednote-title marker" id="h-ednote-8" aria-level="5"><span>Editor's note</span></div><p class="">Needs more specific information about what the actual requirement is. Note the related property is a broken link.</p></div>
 					<p>Fulfills use cases: <a href="#general-context">General Context</a></p>
-					<p>Relevant properties: <a href="#context" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-0">@@context</a></p>
+					<p>Relevant properties: <a href="#context">@@context</a></p>
 				</section>
 				
 				<section id="symbol-sets">
@@ -891,7 +957,7 @@ h6>a.self-link::before {
 					<p>Create interoperable symbol sets for users with complex communication needs that require the use of Alternative and Augmentative Communication (AAC) systems. AAC systems are designed for people who are non-verbal that often use symbols with or without text. AAC end-users tend to only learn one symbol set and cannot easily communicate with other symbol users in a written format. In addition, they may struggle to understand different symbols that are used in different applications. It's important to note that some symbols may be subject to copyright, which means they cannot be shared across applications. However, there are open symbol sets that can be shared and mapped against concepts, generating representative text. This text can also be translated into different languages as well as used to display a different set of symbols.</p>
 					
 					<p>Fulfills use case: <a href="#interoperable-symbols">Interoperable Symbols</a></p>
-					<p>Relevant properties: <a href="#concept" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-1">@@concept</a></p>
+					<p>Relevant properties: <a href="#concept">@@concept</a></p>
 				</section>
 				
 				<section id="number-free">
@@ -908,7 +974,7 @@ h6>a.self-link::before {
 					<div class="note" id="issue-container-generatedID-10"><div role="heading" class="ednote-title marker" id="h-ednote-10" aria-level="5"><span>Editor's note</span></div><p class="">Needs more specific requirement.</p></div>
 					
 					<p>Fulfills use case: <a href="#alternate-language-complexity">Alternate Language Complexity</a></p>
-					<p>Relevant properties: <a href="../help/#alternative"><code>alternative</code></a>, <a href="#easylang" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-2"><code>easylang</code></a></p>
+					<p>Relevant properties: <a href="../help/#alternative"><code>alternative</code></a>, <a href="#easylang"><code>easylang</code></a></p>
 				</section>
 				
 				<section id="indicate-non-literal-content">
@@ -946,8 +1012,8 @@ h6>a.self-link::before {
 					<div class="note" id="issue-container-generatedID-14"><div role="heading" class="ednote-title marker" id="h-ednote-14" aria-level="5"><span>Editor's note</span></div><p class="">Needs more clear requirement.</p></div>
 					
 					<p>Fulfills use case: <a href="indication-of-sequence-in-breadcrumbs">Indication of Sequence in Breadcrumbs</a></p>
-					<p>Relevant properties: <a href="#x3-1-all-the-stepindicator-properties" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-3">@@stepindicator</a>, <a href="#step" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-4">@@step</a>, <a href="#steplocation" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-5">@@steplocation</a>, <a href="#status" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-6">@@stepstatus</a>
-						<a href="#status" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-7">@@stepnumber</a>
+					<p>Relevant properties: <a href="#x3-1-all-the-stepindicator-properties">@@stepindicator</a>, <a href="#step">@@step</a>, <a href="#steplocation">@@steplocation</a>, <a href="#status">@@stepstatus</a>
+						<a href="#status">@@stepnumber</a>
 					</p>
 				</section>
 				

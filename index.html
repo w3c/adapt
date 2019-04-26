@@ -1,65 +1,16 @@
-<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 24.2.5"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
-span.example-title {
-    text-transform: none;
-}
-aside.example, div.example, div.illegal-example {
-    padding: 0.5em;
-    margin: 1em 0;
-    position: relative;
-    clear: both;
-}
-div.illegal-example { color: red }
-div.illegal-example p { color: black }
-aside.example, div.example {
-    padding: .5em;
-    border-left-width: .5em;
-    border-left-style: solid;
-    border-color: #e0cb52;
-    background: #fcfaee;
+<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 24.21.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
+.issue-label {
+    text-transform: initial;
 }
 
-aside.example div.example {
-    border-left-width: .1em;
-    border-color: #999;
-    background: #fff;
-}
-aside.example div.example span.example-title {
-    color: #999;
-}
-</style><style>/* --- ISSUES/NOTES --- */
-div.issue-title, div.note-title , div.ednote-title, div.warning-title {
-    padding-right:  1em;
-    min-width: 7.5em;
-    color: #b9ab2d;
-}
-div.issue-title { color: #e05252; }
-div.note-title, div.ednote-title { color: #2b2; }
-div.warning-title { color: #f22; }
-div.issue-title span, div.note-title span, div.ednote-title span, div.warning-title span {
-    text-transform: uppercase;
-}
-div.note, div.issue, div.ednote, div.warning {
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
 .warning > p:first-child { margin-top: 0 }
 .warning {
     padding: .5em;
     border-left-width: .5em;
     border-left-style: solid;
 }
-div.issue, div.note , div.ednote,  div.warning {
-    padding: 1em 1.2em 0.5em;
-    margin: 1em 0;
-    position: relative;
-    clear: both;
-}
 span.warning { padding: .1em .5em .15em; }
 
-.issue {
-    border-color: #e05252;
-    background: #fbe9e9;
-}
 .issue.closed span.issue-number {
     text-decoration: line-through;
 }
@@ -100,6 +51,7 @@ input.task-list-item-checkbox {
   border-radius: 4px;
   position: relative;
   bottom: 2px;
+  border: none;
 }
 
 .issue a.respec-label-dark {
@@ -118,6 +70,19 @@ input.task-list-item-checkbox {
  * ReSpec 3 CSS
  * Robin Berjon - http://berjon.com/
  *****************************************************************/
+
+@keyframes pop {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(1.25, 1.25);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
 
 /* Override code highlighter background */
 .hljs {
@@ -155,8 +120,34 @@ a.bibref {
   text-decoration: none;
 }
 
+.respec-offending-element:target {
+  animation: pop 0.25s ease-in-out 0s 1;
+}
+
+/* TODO: Remove once https://github.com/w3c/tr-design/pull/176 is merged. */
+.respec-offending-element a[href] {
+  margin: 0;
+}
+
+.respec-offending-element {
+  display: inline-block;
+  position: relative;
+  /* Red squiggly line */
+  background: url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=)
+    bottom repeat-x;
+}
+@supports (text-decoration-style: wavy) {
+  .respec-offending-element {
+    background: none;
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: red;
+  }
+}
+
 #references :target {
   background: #eaf3ff;
+  animation: pop 0.4s ease-in-out 0s 1;
 }
 
 cite .bibref {
@@ -169,6 +160,15 @@ code {
 
 th code {
   color: inherit;
+}
+
+a[href].orcid {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+a[href].orcid > svg {
+    margin-bottom: -2px;
 }
 
 /* --- TOC --- */
@@ -225,11 +225,11 @@ table.simple {
 
 /* --- DL --- */
 
-.section dd>p:first-child {
+.section dd > p:first-child {
   margin-top: 0;
 }
 
-.section dd>p:last-child {
+.section dd > p:last-child {
   margin-bottom: 0;
 }
 
@@ -242,7 +242,7 @@ table.simple {
   margin-bottom: 0;
 }
 
-#issue-summary>ul,
+#issue-summary > ul,
 .respec-dfn-list {
   column-count: 2;
 }
@@ -258,7 +258,7 @@ details.respec-tests-details {
   vertical-align: top;
 }
 
-details.respec-tests-details>* {
+details.respec-tests-details > * {
   padding-right: 2em;
 }
 
@@ -271,19 +271,19 @@ details.respec-tests-details[open] {
   padding-bottom: 0.5em;
 }
 
-details.respec-tests-details[open]>summary {
+details.respec-tests-details[open] > summary {
   border-bottom: thin solid #cad3e2;
   padding-left: 1em;
   margin-bottom: 1em;
   line-height: 2em;
 }
 
-details.respec-tests-details>ul {
+details.respec-tests-details > ul {
   width: 100%;
   margin-top: -0.3em;
 }
 
-details.respec-tests-details>li {
+details.respec-tests-details > li {
   padding-left: 1em;
 }
 
@@ -305,30 +305,30 @@ aside.example .marker > a.self-link {
   color: inherit;
 }
 
-h2>a.self-link,
-h3>a.self-link,
-h4>a.self-link,
-h5>a.self-link,
-h6>a.self-link {
+h2 > a.self-link,
+h3 > a.self-link,
+h4 > a.self-link,
+h5 > a.self-link,
+h6 > a.self-link {
   border: none;
   color: inherit;
   font-size: 83%;
   height: 2em;
   left: -1.6em;
-  opacity: .5;
+  opacity: 0.5;
   position: absolute;
   text-align: center;
   text-decoration: none;
   top: 0;
-  transition: opacity .2s;
+  transition: opacity 0.2s;
   width: 2em;
 }
 
-h2>a.self-link::before,
-h3>a.self-link::before,
-h4>a.self-link::before,
-h5>a.self-link::before,
-h6>a.self-link::before {
+h2 > a.self-link::before,
+h3 > a.self-link::before,
+h4 > a.self-link::before,
+h5 > a.self-link::before,
+h6 > a.self-link::before {
   content: "§";
   display: block;
 }
@@ -339,11 +339,11 @@ h6>a.self-link::before {
   }
 
   /* Don't position self-link in headings off-screen */
-  h2>a.self-link,
-  h3>a.self-link,
-  h4>a.self-link,
-  h5>a.self-link,
-  h6>a.self-link {
+  h2 > a.self-link,
+  h3 > a.self-link,
+  h4 > a.self-link,
+  h5 > a.self-link,
+  h6 > a.self-link {
     left: auto;
     top: auto;
   }
@@ -354,111 +354,56 @@ h6>a.self-link::before {
     display: none;
   }
 }
-</style><style>/*
-
-github.com style (c) Vasily Polovnyov <vast@whiteants.net>
-
-*/
-
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  color: #333;
-  background: #f8f8f8;
-}
-
-.hljs-comment,
-.hljs-quote {
-  color: #998;
-  font-style: italic;
-}
-
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-subst {
-  color: #333;
-  font-weight: bold;
-}
-
-.hljs-number,
-.hljs-literal,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag .hljs-attr {
-  color: #008080;
-}
-
-.hljs-string,
-.hljs-doctag {
-  color: #d14;
-}
-
-.hljs-title,
-.hljs-section,
-.hljs-selector-id {
-  color: #900;
-  font-weight: bold;
-}
-
-.hljs-subst {
-  font-weight: normal;
-}
-
-.hljs-type,
-.hljs-class .hljs-title {
-  color: #458;
-  font-weight: bold;
-}
-
-.hljs-tag,
-.hljs-name,
-.hljs-attribute {
-  color: #000080;
-  font-weight: normal;
-}
-
-.hljs-regexp,
-.hljs-link {
-  color: #009926;
-}
-
-.hljs-symbol,
-.hljs-bullet {
-  color: #990073;
-}
-
-.hljs-built_in,
-.hljs-builtin-name {
-  color: #0086b3;
-}
-
-.hljs-meta {
-  color: #999;
-  font-weight: bold;
-}
-
-.hljs-deletion {
-  background: #fdd;
-}
-
-.hljs-addition {
-  background: #dfd;
-}
-
-.hljs-emphasis {
-  font-style: italic;
-}
-
-.hljs-strong {
-  font-weight: bold;
-}
 </style>
 		
 		
 	
 		<link href="common/css/common.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-1.0/"><script id="initialUserConfig" type="application/json">{
+	<link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-1.0/"><style>var {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+}
+
+var[data-type]::before,
+var[data-type]::after {
+  position: absolute;
+  left: 50%;
+  top: -6px;
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+
+/* the triangle or arrow or caret or whatever */
+var[data-type]::before {
+  content: "";
+  transform: translateX(-50%);
+  border-width: 4px 6px 0 6px;
+  border-style: solid;
+  border-color: transparent;
+  border-top-color: #000;
+}
+
+/* actual text */
+var[data-type]::after {
+  content: attr(data-type);
+  transform: translateX(-50%) translateY(-100%);
+  background: #000;
+  text-align: center;
+  /* additional styling */
+  font-family: "Dank Mono", "Fira Code", monospace;
+  font-style: normal;
+  padding: 6px;
+  border-radius: 3px;
+  color: #daca88;
+}
+
+var[data-type]:hover::after,
+var[data-type]:hover::before {
+  opacity: 1;
+}
+</style><script id="initialUserConfig" type="application/json">{
   "trace": true,
   "doRDFa": "1.0",
   "includePermalinks": true,
@@ -803,23 +748,23 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       ]
     }
   },
-  "publishDate": "2019-02-04",
-  "publishISODate": "2019-02-04T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 04 February 2019"
-}</script><meta name="description" content="Personalization involves tailoring aspects of the user experience to meet the needs and preferences of the individual user. For example, having familiar terms and symbols is key to many users being able to use the web. However, what is familiar for one user may not be familiar to another, requiring them to learn new symbols. The challenge has been the ability to identify the types of content in a document that should be adapted to the preferred user experience. The introduction of standardized semantics allows web applications to customize the presentation of that content to one that is familiar to individuals based on their specific needs and preferences. This specification defines standard semantics to enable user driven personalization. For example, the association of user-preferred symbols with elements having those semantics. This ensures that users can quickly find familiar icons, for example, a help icon, within the context of user interface elements."></head>
-	<body class="h-entry"><div class="head">
-      <a href="https://www.w3.org/" class="logo"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name">Personalization Semantics Explainer 1.0</h1>
+  "publishDate": "2019-04-26",
+  "publishISODate": "2019-04-26T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 26 April 2019"
+}</script><meta name="description" content="Personalization involves tailoring aspects of the user experience to meet the needs and preferences of the individual user. For example, having familiar terms and symbols is key to many users being able to use the web. However, what is familiar for one user may not be familiar to another, requiring them to learn new symbols. The challenge has been the ability to identify the types of content in a document that should be adapted to the preferred user experience. The introduction of standardized semantics allows web applications to customize the presentation of that content to one that is familiar to individuals based on their specific needs and preferences. This specification defines standard semantics to enable user driven personalization. For example, the association of user-preferred symbols with elements having those semantics. This ensures that users can quickly find familiar icons, for example, a help icon, within the context of user interface elements."><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
+	<body class="h-entry informative"><div class="head">
+      <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name">Personalization Semantics Explainer 1.0</h1>
       
       <h2>
-        <abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft
-        <time class="dt-published" datetime="2019-02-04">04 February 2019</time>
+        W3C Editor's Draft
+        <time class="dt-published" datetime="2019-04-26">26 April 2019</time>
       </h2>
       <dl>
         <dt>This version:</dt><dd>
-                  <a class="u-url" href="https://w3c.github.io/personalization-semantics/">https://w3c.github.io/personalization-semantics/</a>
-                </dd><dt>Latest published version:</dt><dd>
-                  <a href="https://www.w3.org/TR/personalization-semantics-1.0/">https://www.w3.org/TR/personalization-semantics-1.0/</a>
-                </dd>
+                <a class="u-url" href="https://w3c.github.io/personalization-semantics/">https://w3c.github.io/personalization-semantics/</a>
+              </dd><dt>Latest published version:</dt><dd>
+                <a href="https://www.w3.org/TR/personalization-semantics-1.0/">https://www.w3.org/TR/personalization-semantics-1.0/</a>
+              </dd>
         <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/personalization-semantics/">https://w3c.github.io/personalization-semantics/</a></dd>
         
         
@@ -831,9 +776,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <dd class="p-author h-card vcard" data-editor-id="16320"><a class="ed_mailto u-email email p-name" href="mailto:lisa.seeman@zoho.com">Lisa Seeman</a></dd><dd class="p-author h-card vcard" data-editor-id="72055"><a class="ed_mailto u-email email p-name" href="mailto:charlesl@benetech.org">Charles LaPierre</a>
             (Benetech)
           </dd><dd class="p-author h-card vcard" data-editor-id="34017"><a class="ed_mailto u-email email p-name" href="mailto:cooper@w3.org">Michael Cooper</a>
-            (<abbr title="World Wide Web Consortium">W3C</abbr>)
+            (W3C)
           </dd><dd class="p-author h-card vcard" data-editor-id="100586"><a class="ed_mailto u-email email p-name" href="mailto:ran@w3.org">Roy Ran</a>
-            (<abbr title="World Wide Web Consortium">W3C</abbr>)
+            (W3C)
           </dd><dd class="p-author h-card vcard" data-editor-id="2460"><span class="p-name fn">Richard Schwerdtfeger</span>
             (<a class="p-org org h-org h-card" href="https://www.knowbility.org/">Knowbility</a>)
            (Editor until October 2017)</dd>
@@ -851,8 +796,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       
       <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
       <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
-      <a href="http://ev.buaa.edu.cn/">Beihang</a>). 
-      <abbr title="World Wide Web Consortium">W3C</abbr> <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+      <a href="https://ev.buaa.edu.cn/">Beihang</a>). 
+      W3C <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
       <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a rel="license" href="https://www.w3.org/Consortium/Legal/copyright-documents">document use</a> rules
       apply.
     </p>
@@ -865,49 +810,43 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 		</section>
 
 		<section id="sotd" class="introductory"><h2>Status of This Document</h2><p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em></p><p>
-                              This document was published by the <a href="https://www.w3.org/WAI/APA/">Accessible Platform Architectures Working Group</a> as
-                              an Editor's Draft.
-                              
-                            </p><p>
+                        This document was published by the <a href="https://www.w3.org/WAI/APA/">Accessible Platform Architectures Working Group</a> as
+                        an Editor's Draft.
+                        
+                      </p><p>
       
       Comments regarding this document are welcome.
-              Please send them to
-              <a href="mailto:public-personalization-tf@w3.org">public-personalization-tf@w3.org</a>
-              (<a href="https://lists.w3.org/Archives/Public/public-personalization-tf/">archives</a>).
-            
+            Please send them to
+            <a href="mailto:public-personalization-tf@w3.org">public-personalization-tf@w3.org</a>
+            (<a href="https://lists.w3.org/Archives/Public/public-personalization-tf/">archives</a>).
+          
     </p><p>
-                              Publication as an Editor's Draft
-                              does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr> Membership.
-                              This is a draft document and may be updated,
-                              replaced or obsoleted by other documents at any
-                              time. It is inappropriate to cite this document as
-                              other than work in progress.
-                            </p><p>
-                      
-                              This document was produced by
-                              a group
-                              operating under the
-                              <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
-                            
-                      
-                      
-                                      <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
-                                      <a rel="disclosure" href="https://www.w3.org/2004/01/pp-impl/83907/status">public list of any patent
-                                        disclosures</a>
-                              made in connection with the deliverables of
-                              the group; that page also includes
-                              instructions for disclosing a patent. An
-                              individual who has actual knowledge of a patent
-                              which the individual believes contains
-                              <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential Claim(s)</a>
-                              must disclose the information in accordance with
-                              <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
-                            
-                      
-                    </p><p>
-                      This document is governed by the
-                      <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-                    </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><span class="secno">1. </span>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#why_accessibility"><span class="secno">1.1 </span>Why We Need Personalization</a></li><li class="tocline"><a class="tocxref" href="#intro_context"><span class="secno">1.2 </span>Personalization Use Cases (general)</a></li></ol></li><li class="tocline"><a class="tocxref" href="#terms"><span class="secno">2. </span>Important Terms</a></li><li class="tocline"><a class="tocxref" href="#characteristics_semanticproperties"><span class="secno">3. </span>Structure of Properties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#propcharacteristic_value"><span class="secno">3.1 </span>Value</a></li></ol></li><li class="tocline"><a class="tocxref" href="#modules"><span class="secno">4. </span>Modules</a></li><li class="tocline"><a class="tocxref" href="#vocabulary-implementations-0"><span class="secno">A. </span>Vocabulary Implementations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#mapping-values-to-different-syntax"><span class="secno">A.1 </span>Mapping Values to Different Syntax </a></li><li class="tocline"><a class="tocxref" href="#vocabulary-identification"><span class="secno">A.2 </span>Vocabulary Identification</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#prefix"><span class="secno">A.2.1 </span>Prefix</a></li><li class="tocline"><a class="tocxref" href="#identification-uri"><span class="secno">A.2.2 </span>Identification URI</a></li></ol></li><li class="tocline"><a class="tocxref" href="#wai-aria"><span class="secno">A.3 </span><abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr></a><ol class="toc"><li class="tocline"><a class="tocxref" href="#additional-wai-aria-roles"><span class="secno">A.3.1 </span>Additional <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> Roles</a></li></ol></li><li class="tocline"><a class="tocxref" href="#html-microdata"><span class="secno">A.4 </span><abbr title="Hypertext Markup Language">HTML</abbr> Microdata</a></li><li class="tocline"><a class="tocxref" href="#rdfa"><span class="secno">A.5 </span>RDFa</a></li><li class="tocline"><a class="tocxref" href="#autocomplete"><span class="secno">A.6 </span>Autocomplete</a></li></ol></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><span class="secno">B.1 </span>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><span class="secno">B.2 </span>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><span class="secno">C.1 </span>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><span class="secno">C.2 </span>Informative references</a></li></ol></li></ol></nav>
+      Publication as an Editor's Draft does not imply endorsement by the
+      <abbr title="World Wide Web Consortium">W3C</abbr> Membership. This is a draft document and may be updated, replaced or
+      obsoleted by other documents at any time. It is inappropriate to cite this
+      document as other than work in progress.
+    </p><p>
+      
+        This document was produced by a group
+        operating under the
+        <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+       The group does not expect this document to become a <abbr title="World Wide Web Consortium">W3C</abbr> Recommendation.
+      
+                  <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
+                  <a rel="disclosure" href="https://www.w3.org/2004/01/pp-impl/83907/status">public list of any patent disclosures</a>
+            made in connection with the deliverables of
+            the group; that page also includes
+            instructions for disclosing a patent. An individual who has actual
+            knowledge of a patent which the individual believes contains
+            <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential Claim(s)</a>
+            must disclose the information in accordance with
+            <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+          
+      
+    </p><p>
+                  This document is governed by the
+                  <a id="w3c_process_revision" href="https://www.w3.org/2019/Process-20190301/">1 March 2019 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+                </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><span class="secno">1. </span>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#why_accessibility"><span class="secno">1.1 </span>Why We Need Personalization</a></li><li class="tocline"><a class="tocxref" href="#intro_context"><span class="secno">1.2 </span>Personalization Use Cases (general)</a></li></ol></li><li class="tocline"><a class="tocxref" href="#terms"><span class="secno">2. </span>Important Terms</a></li><li class="tocline"><a class="tocxref" href="#characteristics_semanticproperties"><span class="secno">3. </span>Structure of Properties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#propcharacteristic_value"><span class="secno">3.1 </span>Value</a></li></ol></li><li class="tocline"><a class="tocxref" href="#modules"><span class="secno">4. </span>Modules</a></li><li class="tocline"><a class="tocxref" href="#vocabulary-implementations-0"><span class="secno">A. </span>Vocabulary Implementations</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><span class="secno">B.1 </span>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><span class="secno">B.2 </span>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><span class="secno">C.1 </span>Informative references</a></li></ol></li></ol></nav>
 
 		<section class="informative" id="introduction">
 
@@ -1008,15 +947,15 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </dd>
     <dt><dfn data-lt="attributes|attribute" data-dfn-type="dfn" id="dfn-attributes">Attribute</dfn></dt>
     <dd>
-      <p>In this specification, attribute is used as it is in markup languages. Attributes are structural features added to <a class="termref respec-offending-element" href="#dfn-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured">elements</a> to provide information about the <a class="termref respec-offending-element" href="#dfn-state" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-0">states</a> and <a class="termref respec-offending-element" href="#dfn-property" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-1">properties</a> of the <a class="termref respec-offending-element" href="#dfn-object" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-2">object</a> represented by the element.</p>
+      <p>In this specification, attribute is used as it is in markup languages. Attributes are structural features added to <a class="termref" href="#dfn-element">elements</a> to provide information about the <a class="termref" href="#dfn-state">states</a> and <a class="termref" href="#dfn-property">properties</a> of the <a class="termref" href="#dfn-object">object</a> represented by the element.</p>
     </dd>
     <dt><dfn data-lt="classes|class" data-dfn-type="dfn" id="dfn-classes">Class</dfn></dt>
     <dd>
-      <p>A set of instance <a class="termref respec-offending-element" href="#dfn-object" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-3">objects</a> that share similar characteristics.</p>
+      <p>A set of instance <a class="termref" href="#dfn-object">objects</a> that share similar characteristics.</p>
     </dd>
     <dt><dfn data-lt="deprecate|deprecation|deprecated" data-dfn-type="dfn" id="dfn-deprecate">Deprecated</dfn></dt>
     <dd>
-      <p>A deprecated <a class="termref respec-offending-element" href="#dfn-role" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-4">role</a>, <a class="termref respec-offending-element" href="#dfn-state" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-5">state</a>, or <a class="termref respec-offending-element" href="#dfn-property" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-6">property</a> is one which has been outdated by newer constructs or changed circumstances, and which may be removed in future versions of the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> specification. <a class="termref internalDFN" data-lt="user agent" href="#dfn-user-agents" data-link-type="dfn">User agents</a> are encouraged to continue to support items identified as deprecated for backward compatibility. For more information, see <a href="#deprecated" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-7">Deprecated Requirements</a> in the Conformance section.</p>
+      <p>A deprecated <a class="termref" href="#dfn-role">role</a>, <a class="termref" href="#dfn-state">state</a>, or <a class="termref" href="#dfn-property">property</a> is one which has been outdated by newer constructs or changed circumstances, and which may be removed in future versions of the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> specification. <a class="termref internalDFN" data-lt="user agent" href="#dfn-user-agents" data-link-type="dfn">User agents</a> are encouraged to continue to support items identified as deprecated for backward compatibility. For more information, see <a href="#deprecated">Deprecated Requirements</a> in the Conformance section.</p>
     </dd>
     <dt><dfn data-dfn-type="dfn" id="dfn-desktop-focus-event">Desktop focus event</dfn></dt>
     <dd>
@@ -1105,7 +1044,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </dd>
     <dt><dfn data-lt="properties|property" data-dfn-type="dfn" id="dfn-properties">Property</dfn></dt>
     <dd>
-      <p><a class="termref internalDFN" data-lt="attribute" href="#dfn-attributes" data-link-type="dfn">Attributes</a> that are essential to the nature of a given <a href="#dfn-objects" class="internalDFN" data-link-type="dfn">object</a>, or that represent a data value associated with the object. A change of a property may significantly impact the meaning or presentation of an object. Certain properties (for example, <pref>aria-multiline</pref>) are less likely to change than <a class="termref respec-offending-element" href="#dfn-state" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-8">states</a>, but note that the frequency of change difference is not a rule. A few properties, such as <pref>aria-activedescendant</pref>, <pref>aria-valuenow</pref>, and <pref>aria-valuetext</pref> are expected to change often. See <a href="http://www.w3.org/TR/wai-aria/states_and_properties#statevsprop">clarification of states versus properties</a>.</p>
+      <p><a class="termref internalDFN" data-lt="attribute" href="#dfn-attributes" data-link-type="dfn">Attributes</a> that are essential to the nature of a given <a href="#dfn-objects" class="internalDFN" data-link-type="dfn">object</a>, or that represent a data value associated with the object. A change of a property may significantly impact the meaning or presentation of an object. Certain properties (for example, <pref>aria-multiline</pref>) are less likely to change than <a class="termref" href="#dfn-state">states</a>, but note that the frequency of change difference is not a rule. A few properties, such as <pref>aria-activedescendant</pref>, <pref>aria-valuenow</pref>, and <pref>aria-valuetext</pref> are expected to change often. See <a href="http://www.w3.org/TR/wai-aria/states_and_properties#statevsprop">clarification of states versus properties</a>.</p>
     </dd>
     <dt><dfn data-lt="relationships|relationship" data-dfn-type="dfn" id="dfn-relationships">Relationship</dfn></dt>
     <dd>
@@ -1125,7 +1064,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </dd>
     <dt><dfn data-lt="states|state" data-dfn-type="dfn" id="dfn-states">State</dfn></dt>
     <dd>
-      <p>A state is a dynamic <a class="termref respec-offending-element" href="#dfn-property" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-9">property</a> expressing characteristics of an <a href="#dfn-objects" class="internalDFN" data-link-type="dfn">object</a> that may change in response to user action or automated processes. States do not affect the essential nature of the object, but represent data associated with the object or user interaction possibilities. See <a href="http://www.w3.org/TR/wai-aria/states_and_properties#statevsprop">clarification of states versus properties</a>.</p>
+      <p>A state is a dynamic <a class="termref" href="#dfn-property">property</a> expressing characteristics of an <a href="#dfn-objects" class="internalDFN" data-link-type="dfn">object</a> that may change in response to user action or automated processes. States do not affect the essential nature of the object, but represent data associated with the object or user interaction possibilities. See <a href="http://www.w3.org/TR/wai-aria/states_and_properties#statevsprop">clarification of states versus properties</a>.</p>
     </dd>
     <dt><dfn data-dfn-type="dfn" id="dfn-sub-document">Sub-document</dfn></dt>
     <dd>
@@ -1157,7 +1096,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </dd>
     <dt><dfn data-lt="widgets|widget" data-dfn-type="dfn" id="dfn-widgets">Widget</dfn></dt>
     <dd>
-      <p>Discrete user interface <a class="termref respec-offending-element" href="#dfn-object" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-10">object</a> with which the user can interact. Widgets range from simple objects that have one value or operation (e.g., check boxes and menu items), to complex objects that contain many managed sub-objects (e.g., trees and grids).</p>
+      <p>Discrete user interface <a class="termref" href="#dfn-object">object</a> with which the user can interact. Widgets range from simple objects that have one value or operation (e.g., check boxes and menu items), to complex objects that contain many managed sub-objects (e.g., trees and grids).</p>
     </dd>
   </dl>
 </div>
@@ -1192,7 +1131,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 					<dd>A Uniform Resource Identifier as defined by <cite><a href="http://www.ietf.org/rfc/rfc3986.txt">RFC 3986</a></cite> [<cite><a class="bibref" href="#bib-rfc3986">RFC3986</a></cite>]. It may reference a separate document, or a content fragment identifier in a separate document, or a content fragment identifier within the same document.</dd>
 				</dl>
 				<p>The "undefined" value, when allowed on a state or property, is an explicit indication that the state or property is not set. The value is used on states and properties that support tokens, and the "undefined" value is a string that is one of the allowed tokens. It is also used on some states and properties that accept true/false values, when "undefined" has a different meaning than "false".</p>
-				<p>These are generic types for states and properties, but do not define specific representation. See <a href="#state_property_processing" class="specref respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-11">State and Property Attribute Processing</a> for details on how these values are expressed and handled in host languages.</p>
+				<p>These are generic types for states and properties, but do not define specific representation. See <a href="#state_property_processing" class="specref">State and Property Attribute Processing</a> for details on how these values are expressed and handled in host languages.</p>
 			</section>
 		</section>
 
@@ -1225,111 +1164,14 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             
             
 			<!--OddPage--><h2 id="vocabulary-implementations"><span class="secno">A. </span>Vocabulary Implementations<a class="self-link" aria-label="§" href="#vocabulary-implementations-0"></a></h2>
-            <div class="issue" id="issue-container-number-1"><div role="heading" class="issue-title marker" id="h-issue" aria-level="3"><span>Issue 1</span></div><section class="respec-offending-element" title="Linter (no-headingless-sections): All sections must start with a `h2-6` element. Add a `h2-6` to the offending section or use a `<div>`. See developer console. Occured" id="respec-offender-linter-no-headingless-sections-all-sections-must-start-with-a-h2-6-element-add-a-h2-6-to-the-offending-section-or-use-a-div-see-developer-console-occured">
-                <p>HELP NEEDED!</p>
-                <p>The Personalization Task Force is looking for advice on choosing an implementation mechanism.  We have considered a number of different approaches all with varying pros and cons with either excess burden on host languages or on authoring.</p>
-                <p>See our Pros/Cons discussion <a href="https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content">Comparison of ways to use vocabulary in content</a>, on the various alternatives we have identified.  If you have any comments or suggestions on implementation please add a comment to this <a href="https://github.com/w3c/personalization-semantics/issues/77">issue #77</a>.</p>
-            </section></div>
-  
+ 
+                
+                <p>The Personalization Task Force decide to use the data-* for attributes, Now the the first three attributes have been accepted by Task Force, there are data-purpose, data-action and data-destination. For other attributes, we are still on discussion.</p>
+                <div class="note" id="issue-container-generatedID"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="3"><span>Editor's note</span></div><p class="">See our  discussion <a href="https://github.com/w3c/personalization-semantics/wiki/Prototypes-with-data-dash-*-(Take-2)">Prototypes with data dash</a>.  If you have any comments or suggestions on implementation please add a comment to this <a href="https://github.com/w3c/personalization-semantics/issues/">issue list</a>.</p></div>
+
+ 
             
-			<section id="mapping-values-to-different-syntax">
-				<h3 id="a-1-mapping-values-to-different-syntax"><span class="secno">A.1 </span>Mapping Values to Different Syntax <a class="self-link" aria-label="§" href="#mapping-values-to-different-syntax"></a></h3>
-			</section>
-			<section id="vocabulary-identification">
-				<h3 id="a-2-vocabulary-identification"><span class="secno">A.2 </span>Vocabulary Identification<a class="self-link" aria-label="§" href="#vocabulary-identification"></a></h3>
-				<p>Metadata languages that support this vocabulary need to distinguish terms coming from the personalization semantics vocabulary, from terms in other vocabularies. This document proposes two identifications mechanisms, which may be used separately or together according to the needs of the metadata language. These are the <strong>prefix</strong> and the <strong>identification URI</strong>.</p>
-				<section id="prefix">
-					<h4 id="a-2-1-prefix"><span class="secno">A.2.1 </span>Prefix<a class="self-link" aria-label="§" href="#prefix"></a></h4>
-					<p>The prefix for personalization semantics is "<strong>aui</strong>", which is an acronym of "accessible user interface". Implementations that use a prefix to identify terms from this vocabulary should use that prefix.</p>
-				</section>
-				<section id="identification-uri">
-					<h4 id="a-2-2-identification-uri"><span class="secno">A.2.2 </span>Identification URI<a class="self-link" aria-label="§" href="#identification-uri"></a></h4>
-					<p>The identification URI for personalization semantics is <code>https://www.w3.org/ns/aui/</code>. Implementations that use a URI to identify terms from this vocabulary should use that URI.</p>
-				</section>
-			</section>
-            
-			<section id="wai-aria">
-				<h3 id="a-3-wai-aria"><span class="secno">A.3 </span><abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr><a class="self-link" aria-label="§" href="#wai-aria"></a></h3>
-				<p>Properties in this case can be represented as <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> properties by adding the prefix "aui-" to the attribute name, and the property value as the attribute value.</p>
-				<div class="note" id="issue-container-generatedID"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="4"><span>Editor's note</span></div><p class="">The prefix above is not yet accepted by the ARIA Working Group.</p></div>
-				<div class="example">
-                    <div class="example-title marker">
-                        <span>Example 1</span><span style="text-transform: none">: Action Using ARIA</span>
-                    </div>
-                    <pre class="hljs javascript" aria-busy="false">                        For example: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aui-action</span>=<span class="hljs-string">"undo"</span> &gt;</span>Revert<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>
-                    </pre>
-                </div>
-				<div class="example">
-                    <div class="example-title marker"><span>Example 2</span><span style="text-transform: none">: Destination Using ARIA</span></div><pre class="hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"home.html"</span> <span class="hljs-attr">aui-destination</span>=<span class="hljs-string">"home"</span>&gt;</span>our main page<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-                    </pre>
-                </div>
 			
-				<div class="example">
-                    <div class="example-title marker">
-                        <span>Example 3</span>
-                        <span style="text-transform: none">: Fields Using ARIA</span>
-                    </div>
-                    <pre class="hljs xml" aria-busy="false">                        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"telnum"</span> <span class="hljs-attr">aui-field</span>=<span class="hljs-string">"tel"</span>/&gt;</span>
-                    </pre>
-                </div>
-				<div class="example">
-						<div class="example-title marker"><span>Example 4</span><span style="text-transform: none">: Context Using ARIA</span></div>
-						<pre class="hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"women.html"</span> <span class="hljs-attr">aui-context</span>=<span class="hljs-string">"http://schema.org/Female"</span>&gt;</span>women<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-						</pre>
-					</div>
-				<div class="example">
-						<div class="example-title marker"><span>Example 5</span><span style="text-transform: none">: Symbol Using ARIA</span></div>
-						<pre class="hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">aui-symbol</span>=<span class="hljs-string">"http://wordnet-rdf.princeton.edu/wn31/girl-n"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"mygirlsy.bmp"</span>/&gt;</span>
-						</pre>
-					</div>
-				
-    
-				<section id="additional-wai-aria-roles">
-					<h4 id="a-3-1-additional-wai-aria-roles"><span class="secno">A.3.1 </span>Additional <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> Roles<a class="self-link" aria-label="§" href="#additional-wai-aria-roles"></a></h4>
-					<p><b>Requirement</b>: We may want to add landmark role values for sections on a page such as: contact us - for a contact us form.</p>
-					<p><b>User experience: </b>symbols and colors could be used consistently across different content.</p>
-					<p>Nav maps can be automatically generated for people learn via key-points or examples.</p>
-					<p>Further these sections could be hidden in the normal rendering of a page or rendered the top of page depending on user preferences. The location of these sections can also be changed, based on the user preference, enabling the user to find them easily.</p>
-                  
-					<p>Values:</p>
-					<ul>
-						<li>summary</li>
-						<li>keypoints</li>
-						<li>example</li>
-						<li>note</li>
-						<li>warning</li>
-						<li>step</li>
-						<li>external - for external content, such as sponsored or advertising</li>
-						<li>offers - for special offers that are complementary to the main content or task</li>
-						<li>advertisement - advertisement or sponsored content</li>
-						<li>contact us</li>
-						<li>about us</li>
-					</ul>
-				</section>
-            </section>
-			<section id="html-microdata">
-				<h3 id="a-4-html-microdata"><span class="secno">A.4 </span><abbr title="Hypertext Markup Language">HTML</abbr> Microdata<a class="self-link" aria-label="§" href="#html-microdata"></a></h3>
-				
-				<p>Properties in this vocabulary can be applied via <a href="https://www.w3.org/TR/microdata/"><abbr title="Hypertext Markup Language">HTML</abbr> Microdata</a> [<cite><a class="bibref" href="#bib-microdata">microdata</a></cite>]. To apply a term from this vocabulary to content using Microdata, use the following steps:</p>
-				<ul>
-					<li>On the element to which a property applies, set the <a href="https://www.w3.org/TR/microdata/#dfn-itemscope"><code>itemscope</code> attribute</a>. </li>
-					<li>On the element for which <code>itemscope</code> is set, set the <a href="https://www.w3.org/TR/microdata/#dfn-itemtype"><code>itemtype</code> attribute</a> to the personalizaton semantics <a href="#identification-uri">identification URI</a>.</li>
-					<li>On the same element or a descendant element, as appropriate to the context, set the <a href="https://www.w3.org/TR/microdata/#dfn-attr-itemprop"><code>itemprop</code> attribute</a>, using the name of the personalization semantics property as the value of the attribute.</li>
-					<li>On the element for which <code>itemprop</code> is set, set the <a href="https://www.w3.org/TR/microdata/#dfn-content"><code>content</code> attribute</a> to the appropriate value for the property.</li>
-				</ul>
-				<div class="example" id="example-1-action-property-in-html-using-html-microdata">
-          <div class="marker"><a class="self-link" href="#example-1-action-property-in-html-using-html-microdata">Example 1</a><span class="example-title">: Action property in HTML using HTML Microdata</span></div>
-          <pre class="hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">itemscope</span> <span class="hljs-attr">itemtype</span>=<span class="hljs-string">"https://www.w3.org/ns/aui/"</span> <span class="hljs-attr">itemprop</span>=<span class="hljs-string">"action"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"undo"</span>&gt;</span> Revert <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></pre>
-        </div>
-			</section>
-			<section id="rdfa">
-				<h3 id="a-5-rdfa"><span class="secno">A.5 </span>RDFa<a class="self-link" aria-label="§" href="#rdfa"></a></h3>
-				
-				<div class="note" id="issue-container-generatedID-0"><div role="heading" class="ednote-title marker" id="h-ednote-0" aria-level="4"><span>Editor's note</span></div><p class="">The Personalization Task Force is exploring whether the personalization semantics vocabulary can be used with RDFa. If so, guidance will be added here in a future draft. See <a href="https://github.com/w3c/personalization-semantics/issues/53">Issue 53</a>.</p></div>
-			</section>
-			<section id="autocomplete">
-				<h3 id="a-6-autocomplete"><span class="secno">A.6 </span>Autocomplete<a class="self-link" aria-label="§" href="#autocomplete"></a></h3>
-			</section>
 		</section>
 
 		<!--
@@ -1391,12 +1233,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 <section id="references" class="appendix">
       <!--OddPage--><h2 id="c-references"><span class="secno">C. </span>References<a class="self-link" aria-label="§" href="#references"></a></h2>
       
-    <section id="normative-references">
-        <h3 id="c-1-normative-references"><span class="secno">C.1 </span>Normative references<a class="self-link" aria-label="§" href="#normative-references"></a></h3>
+    <section id="informative-references">
+        <h3 id="c-1-informative-references"><span class="secno">C.1 </span>Informative references<a class="self-link" aria-label="§" href="#informative-references"></a></h3>
       <dl class="bibliography">
-        <dt id="bib-microdata">[microdata]</dt><dd><a href="https://www.w3.org/TR/microdata/"><cite>HTML Microdata</cite></a>. Charles McCathie Nevile; Dan Brickley; Ian Hickson. W3C. 26 April 2018. W3C Working Draft. URL: <a href="https://www.w3.org/TR/microdata/">https://www.w3.org/TR/microdata/</a></dd><dt id="bib-rfc3986">[RFC3986]</dt><dd><a href="https://tools.ietf.org/html/rfc3986"><cite>Uniform Resource Identifier (URI): Generic Syntax</cite></a>. T. Berners-Lee; R. Fielding; L. Masinter. IETF. January 2005. Internet Standard. URL: <a href="https://tools.ietf.org/html/rfc3986">https://tools.ietf.org/html/rfc3986</a></dd>
-      </dl></section><section id="informative-references">
-        <h3 id="c-2-informative-references"><span class="secno">C.2 </span>Informative references<a class="self-link" aria-label="§" href="#informative-references"></a></h3>
-      <dl class="bibliography">
-        <dt id="bib-at-spi">[AT-SPI]</dt><dd><a href="https://developer.gnome.org/libatspi/stable/"><cite>Assistive Technology Service Provider Interface</cite></a>.  The GNOME Project. URL: <a href="https://developer.gnome.org/libatspi/stable/">https://developer.gnome.org/libatspi/stable/</a></dd><dt id="bib-atk">[ATK]</dt><dd><a href="https://developer.gnome.org/atk/stable/"><cite>ATK - Accessibility Toolkit</cite></a>.  The GNOME Project. URL: <a href="https://developer.gnome.org/atk/stable/">https://developer.gnome.org/atk/stable/</a></dd><dt id="bib-axapi">[AXAPI]</dt><dd><a href="https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078"><cite>Accessibility Programming Guide for OS X</cite></a>.  Apple Corporation. URL: <a href="https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078">https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078</a></dd><dt id="bib-iaccessible2">[IAccessible2]</dt><dd><a href="https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2"><cite>IAccessible2</cite></a>.  Linux Foundation. URL: <a href="https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2">https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2</a></dd><dt id="bib-msaa">[MSAA]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/ms697707.aspx"><cite>Microsoft Active Accessibility (MSAA) 2.0</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/ms697707.aspx">https://msdn.microsoft.com/en-us/library/ms697707.aspx</a></dd><dt id="bib-ui-automation">[UI-AUTOMATION]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx"><cite>UI Automation</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx">https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx</a></dd><dt id="bib-uia-express">[UIA-EXPRESS]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx"><cite>The IAccessibleEx Interface</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx">https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx</a></dd><dt id="bib-wai-aria-implementation">[WAI-ARIA-IMPLEMENTATION]</dt><dd><a href="https://www.w3.org/TR/wai-aria-implementation/"><cite>WAI-ARIA 1.0 User Agent Implementation Guide</cite></a>. Joseph Scheuhammer; Michael Cooper. W3C. 20 March 2014. W3C Recommendation. URL: <a href="https://www.w3.org/TR/wai-aria-implementation/">https://www.w3.org/TR/wai-aria-implementation/</a></dd><dt id="bib-wai-aria-practices">[WAI-ARIA-PRACTICES]</dt><dd><a href="https://www.w3.org/TR/wai-aria-practices/"><cite>WAI-ARIA 1.0 Authoring Practices</cite></a>. Joseph Scheuhammer; Michael Cooper. W3C. 14 July 2016. W3C Working Draft. URL: <a href="https://www.w3.org/TR/wai-aria-practices/">https://www.w3.org/TR/wai-aria-practices/</a></dd><dt id="bib-wcag20">[WCAG20]</dt><dd><a href="https://www.w3.org/TR/WCAG20/"><cite>Web Content Accessibility Guidelines (WCAG) 2.0</cite></a>. Ben Caldwell; Michael Cooper; Loretta Guarino Reid; Gregg Vanderheiden et al. W3C. 11 December 2008. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WCAG20/">https://www.w3.org/TR/WCAG20/</a></dd>
+        <dt id="bib-at-spi">[AT-SPI]</dt><dd><a href="https://developer.gnome.org/libatspi/stable/"><cite>Assistive Technology Service Provider Interface</cite></a>.  The GNOME Project. URL: <a href="https://developer.gnome.org/libatspi/stable/">https://developer.gnome.org/libatspi/stable/</a></dd><dt id="bib-atk">[ATK]</dt><dd><a href="https://developer.gnome.org/atk/stable/"><cite>ATK - Accessibility Toolkit</cite></a>.  The GNOME Project. URL: <a href="https://developer.gnome.org/atk/stable/">https://developer.gnome.org/atk/stable/</a></dd><dt id="bib-axapi">[AXAPI]</dt><dd><a href="https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078"><cite>Accessibility Programming Guide for OS X</cite></a>.  Apple Corporation. URL: <a href="https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078">https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078</a></dd><dt id="bib-iaccessible2">[IAccessible2]</dt><dd><a href="https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2"><cite>IAccessible2</cite></a>.  Linux Foundation. URL: <a href="https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2">https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2</a></dd><dt id="bib-msaa">[MSAA]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/ms697707.aspx"><cite>Microsoft Active Accessibility (MSAA) 2.0</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/ms697707.aspx">https://msdn.microsoft.com/en-us/library/ms697707.aspx</a></dd><dt id="bib-rfc3986">[RFC3986]</dt><dd><a href="https://tools.ietf.org/html/rfc3986"><cite>Uniform Resource Identifier (URI): Generic Syntax</cite></a>. T. Berners-Lee; R. Fielding; L. Masinter. IETF. January 2005. Internet Standard. URL: <a href="https://tools.ietf.org/html/rfc3986">https://tools.ietf.org/html/rfc3986</a></dd><dt id="bib-ui-automation">[UI-AUTOMATION]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx"><cite>UI Automation</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx">https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx</a></dd><dt id="bib-uia-express">[UIA-EXPRESS]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx"><cite>The IAccessibleEx Interface</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx">https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx</a></dd><dt id="bib-wai-aria-implementation">[WAI-ARIA-IMPLEMENTATION]</dt><dd><a href="https://www.w3.org/TR/wai-aria-implementation/"><cite>WAI-ARIA 1.0 User Agent Implementation Guide</cite></a>. Joseph Scheuhammer; Michael Cooper. W3C. 20 March 2014. W3C Recommendation. URL: <a href="https://www.w3.org/TR/wai-aria-implementation/">https://www.w3.org/TR/wai-aria-implementation/</a></dd><dt id="bib-wai-aria-practices">[WAI-ARIA-PRACTICES]</dt><dd><a href="https://www.w3.org/TR/wai-aria-practices/"><cite>WAI-ARIA 1.0 Authoring Practices</cite></a>. Joseph Scheuhammer; Michael Cooper. W3C. 14 July 2016. W3C Working Draft. URL: <a href="https://www.w3.org/TR/wai-aria-practices/">https://www.w3.org/TR/wai-aria-practices/</a></dd><dt id="bib-wcag20">[WCAG20]</dt><dd><a href="https://www.w3.org/TR/WCAG20/"><cite>Web Content Accessibility Guidelines (WCAG) 2.0</cite></a>. Ben Caldwell; Michael Cooper; Loretta Guarino Reid; Gregg Vanderheiden et al. W3C. 11 December 2008. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WCAG20/">https://www.w3.org/TR/WCAG20/</a></dd>
       </dl></section></section><p role="navigation" id="back-to-top"><a href="#title"><abbr title="Back to Top">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>

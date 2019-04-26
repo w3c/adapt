@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 24.2.5"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
+<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 24.21.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
 span.example-title {
     text-transform: none;
 }
@@ -27,39 +27,18 @@ aside.example div.example span.example-title {
     color: #999;
 }
 </style><style>/* --- ISSUES/NOTES --- */
-div.issue-title, div.note-title , div.ednote-title, div.warning-title {
-    padding-right:  1em;
-    min-width: 7.5em;
-    color: #b9ab2d;
+.issue-label {
+    text-transform: initial;
 }
-div.issue-title { color: #e05252; }
-div.note-title, div.ednote-title { color: #2b2; }
-div.warning-title { color: #f22; }
-div.issue-title span, div.note-title span, div.ednote-title span, div.warning-title span {
-    text-transform: uppercase;
-}
-div.note, div.issue, div.ednote, div.warning {
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
+
 .warning > p:first-child { margin-top: 0 }
 .warning {
     padding: .5em;
     border-left-width: .5em;
     border-left-style: solid;
 }
-div.issue, div.note , div.ednote,  div.warning {
-    padding: 1em 1.2em 0.5em;
-    margin: 1em 0;
-    position: relative;
-    clear: both;
-}
 span.warning { padding: .1em .5em .15em; }
 
-.issue {
-    border-color: #e05252;
-    background: #fbe9e9;
-}
 .issue.closed span.issue-number {
     text-decoration: line-through;
 }
@@ -100,6 +79,7 @@ input.task-list-item-checkbox {
   border-radius: 4px;
   position: relative;
   bottom: 2px;
+  border: none;
 }
 
 .issue a.respec-label-dark {
@@ -118,6 +98,19 @@ input.task-list-item-checkbox {
  * ReSpec 3 CSS
  * Robin Berjon - http://berjon.com/
  *****************************************************************/
+
+@keyframes pop {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(1.25, 1.25);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
 
 /* Override code highlighter background */
 .hljs {
@@ -155,8 +148,34 @@ a.bibref {
   text-decoration: none;
 }
 
+.respec-offending-element:target {
+  animation: pop 0.25s ease-in-out 0s 1;
+}
+
+/* TODO: Remove once https://github.com/w3c/tr-design/pull/176 is merged. */
+.respec-offending-element a[href] {
+  margin: 0;
+}
+
+.respec-offending-element {
+  display: inline-block;
+  position: relative;
+  /* Red squiggly line */
+  background: url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=)
+    bottom repeat-x;
+}
+@supports (text-decoration-style: wavy) {
+  .respec-offending-element {
+    background: none;
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: red;
+  }
+}
+
 #references :target {
   background: #eaf3ff;
+  animation: pop 0.4s ease-in-out 0s 1;
 }
 
 cite .bibref {
@@ -169,6 +188,15 @@ code {
 
 th code {
   color: inherit;
+}
+
+a[href].orcid {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+a[href].orcid > svg {
+    margin-bottom: -2px;
 }
 
 /* --- TOC --- */
@@ -225,11 +253,11 @@ table.simple {
 
 /* --- DL --- */
 
-.section dd>p:first-child {
+.section dd > p:first-child {
   margin-top: 0;
 }
 
-.section dd>p:last-child {
+.section dd > p:last-child {
   margin-bottom: 0;
 }
 
@@ -242,7 +270,7 @@ table.simple {
   margin-bottom: 0;
 }
 
-#issue-summary>ul,
+#issue-summary > ul,
 .respec-dfn-list {
   column-count: 2;
 }
@@ -258,7 +286,7 @@ details.respec-tests-details {
   vertical-align: top;
 }
 
-details.respec-tests-details>* {
+details.respec-tests-details > * {
   padding-right: 2em;
 }
 
@@ -271,19 +299,19 @@ details.respec-tests-details[open] {
   padding-bottom: 0.5em;
 }
 
-details.respec-tests-details[open]>summary {
+details.respec-tests-details[open] > summary {
   border-bottom: thin solid #cad3e2;
   padding-left: 1em;
   margin-bottom: 1em;
   line-height: 2em;
 }
 
-details.respec-tests-details>ul {
+details.respec-tests-details > ul {
   width: 100%;
   margin-top: -0.3em;
 }
 
-details.respec-tests-details>li {
+details.respec-tests-details > li {
   padding-left: 1em;
 }
 
@@ -305,30 +333,30 @@ aside.example .marker > a.self-link {
   color: inherit;
 }
 
-h2>a.self-link,
-h3>a.self-link,
-h4>a.self-link,
-h5>a.self-link,
-h6>a.self-link {
+h2 > a.self-link,
+h3 > a.self-link,
+h4 > a.self-link,
+h5 > a.self-link,
+h6 > a.self-link {
   border: none;
   color: inherit;
   font-size: 83%;
   height: 2em;
   left: -1.6em;
-  opacity: .5;
+  opacity: 0.5;
   position: absolute;
   text-align: center;
   text-decoration: none;
   top: 0;
-  transition: opacity .2s;
+  transition: opacity 0.2s;
   width: 2em;
 }
 
-h2>a.self-link::before,
-h3>a.self-link::before,
-h4>a.self-link::before,
-h5>a.self-link::before,
-h6>a.self-link::before {
+h2 > a.self-link::before,
+h3 > a.self-link::before,
+h4 > a.self-link::before,
+h5 > a.self-link::before,
+h6 > a.self-link::before {
   content: "§";
   display: block;
 }
@@ -339,11 +367,11 @@ h6>a.self-link::before {
   }
 
   /* Don't position self-link in headings off-screen */
-  h2>a.self-link,
-  h3>a.self-link,
-  h4>a.self-link,
-  h5>a.self-link,
-  h6>a.self-link {
+  h2 > a.self-link,
+  h3 > a.self-link,
+  h4 > a.self-link,
+  h5 > a.self-link,
+  h6 > a.self-link {
     left: auto;
     top: auto;
   }
@@ -354,7 +382,12 @@ h6>a.self-link::before {
     display: none;
   }
 }
-</style><style>/*
+</style>
+		
+		
+
+		<link href="../common/css/common.css" rel="stylesheet" type="text/css">
+	<link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-help-1.0/"><style>/*
 
 github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
@@ -453,12 +486,51 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-strong {
   font-weight: bold;
 }
-</style>
-		
-		
+</style><style>var {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+}
 
-		<link href="../common/css/common.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-help-1.0/"><script id="initialUserConfig" type="application/json">{
+var[data-type]::before,
+var[data-type]::after {
+  position: absolute;
+  left: 50%;
+  top: -6px;
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+
+/* the triangle or arrow or caret or whatever */
+var[data-type]::before {
+  content: "";
+  transform: translateX(-50%);
+  border-width: 4px 6px 0 6px;
+  border-style: solid;
+  border-color: transparent;
+  border-top-color: #000;
+}
+
+/* actual text */
+var[data-type]::after {
+  content: attr(data-type);
+  transform: translateX(-50%) translateY(-100%);
+  background: #000;
+  text-align: center;
+  /* additional styling */
+  font-family: "Dank Mono", "Fira Code", monospace;
+  font-style: normal;
+  padding: 6px;
+  border-radius: 3px;
+  color: #daca88;
+}
+
+var[data-type]:hover::after,
+var[data-type]:hover::before {
+  opacity: 1;
+}
+</style><script id="initialUserConfig" type="application/json">{
   "trace": true,
   "doRDFa": "1.0",
   "includePermalinks": true,
@@ -799,23 +871,23 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       ]
     }
   },
-  "publishDate": "2019-02-04",
-  "publishISODate": "2019-02-04T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 04 February 2019"
-}</script><meta name="description" content="This document lists examples of the personalized help and support properties. This is an extension of Personalization Explainer 1.0. including the properties of literal, numberfree, easylang, alternative, explain, feedback, moreinfo,extrahelp, helptype."></head>
-	<body class="h-entry"><div class="head">
-      <a href="https://www.w3.org/" class="logo"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name">Personalization Help and Support 1.0</h1>
+  "publishDate": "2019-04-26",
+  "publishISODate": "2019-04-26T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 26 April 2019"
+}</script><meta name="description" content="This document lists examples of the personalized help and support properties. This is an extension of Personalization Explainer 1.0. including the properties of literal, numberfree, easylang, alternative, explain, feedback, moreinfo,extrahelp, helptype."><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
+	<body class="h-entry informative"><div class="head">
+      <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name">Personalization Help and Support 1.0</h1>
       
       <h2>
-        <abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft
-        <time class="dt-published" datetime="2019-02-04">04 February 2019</time>
+        W3C Editor's Draft
+        <time class="dt-published" datetime="2019-04-26">26 April 2019</time>
       </h2>
       <dl>
         <dt>This version:</dt><dd>
-                  <a class="u-url" href="https://w3c.github.io/personalization-semantics/help/">https://w3c.github.io/personalization-semantics/help/</a>
-                </dd><dt>Latest published version:</dt><dd>
-                  <a href="https://www.w3.org/TR/personalization-semantics-help-1.0/">https://www.w3.org/TR/personalization-semantics-help-1.0/</a>
-                </dd>
+                <a class="u-url" href="https://w3c.github.io/personalization-semantics/help/">https://w3c.github.io/personalization-semantics/help/</a>
+              </dd><dt>Latest published version:</dt><dd>
+                <a href="https://www.w3.org/TR/personalization-semantics-help-1.0/">https://www.w3.org/TR/personalization-semantics-help-1.0/</a>
+              </dd>
         <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/personalization-semantics/help/">https://w3c.github.io/personalization-semantics/help/</a></dd>
         
         
@@ -827,9 +899,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <dd class="p-author h-card vcard" data-editor-id="16320"><a class="ed_mailto u-email email p-name" href="mailto:lisa.seeman@zoho.com">Lisa Seeman</a></dd><dd class="p-author h-card vcard" data-editor-id="72055"><a class="ed_mailto u-email email p-name" href="mailto:charlesl@benetech.org">Charles LaPierre</a>
             (Benetech)
           </dd><dd class="p-author h-card vcard" data-editor-id="34017"><a class="ed_mailto u-email email p-name" href="mailto:cooper@w3.org">Michael Cooper</a>
-            (<abbr title="World Wide Web Consortium">W3C</abbr>)
+            (W3C)
           </dd><dd class="p-author h-card vcard" data-editor-id="100586"><a class="ed_mailto u-email email p-name" href="mailto:ran@w3.org">Roy Ran</a>
-            (<abbr title="World Wide Web Consortium">W3C</abbr>)
+            (W3C)
           </dd><dd class="p-author h-card vcard" data-editor-id="2460"><span class="p-name fn">Richard Schwerdtfeger</span>
             (<a class="p-org org h-org h-card" href="https://www.knowbility.org/">Knowbility</a>)
            (Editor until October 2017)</dd>
@@ -847,8 +919,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       
       <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
       <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
-      <a href="http://ev.buaa.edu.cn/">Beihang</a>). 
-      <abbr title="World Wide Web Consortium">W3C</abbr> <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+      <a href="https://ev.buaa.edu.cn/">Beihang</a>). 
+      W3C <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
       <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a rel="license" href="https://www.w3.org/Consortium/Legal/copyright-documents">document use</a> rules
       apply.
     </p>
@@ -860,49 +932,43 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 		</section>
 
 		<section id="sotd" class="introductory"><h2>Status of This Document</h2><p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em></p><p>
-                              This document was published by the <a href="https://www.w3.org/WAI/APA/">Accessible Platform Architectures Working Group</a> as
-                              an Editor's Draft.
-                              
-                            </p><p>
+                        This document was published by the <a href="https://www.w3.org/WAI/APA/">Accessible Platform Architectures Working Group</a> as
+                        an Editor's Draft.
+                        
+                      </p><p>
       
       Comments regarding this document are welcome.
-              Please send them to
-              <a href="mailto:public-personalization-tf@w3.org">public-personalization-tf@w3.org</a>
-              (<a href="https://lists.w3.org/Archives/Public/public-personalization-tf/">archives</a>).
-            
+            Please send them to
+            <a href="mailto:public-personalization-tf@w3.org">public-personalization-tf@w3.org</a>
+            (<a href="https://lists.w3.org/Archives/Public/public-personalization-tf/">archives</a>).
+          
     </p><p>
-                              Publication as an Editor's Draft
-                              does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr> Membership.
-                              This is a draft document and may be updated,
-                              replaced or obsoleted by other documents at any
-                              time. It is inappropriate to cite this document as
-                              other than work in progress.
-                            </p><p>
-                      
-                              This document was produced by
-                              a group
-                              operating under the
-                              <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
-                            
-                      
-                      
-                                      <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
-                                      <a rel="disclosure" href="https://www.w3.org/2004/01/pp-impl/83907/status">public list of any patent
-                                        disclosures</a>
-                              made in connection with the deliverables of
-                              the group; that page also includes
-                              instructions for disclosing a patent. An
-                              individual who has actual knowledge of a patent
-                              which the individual believes contains
-                              <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential Claim(s)</a>
-                              must disclose the information in accordance with
-                              <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
-                            
-                      
-                    </p><p>
-                      This document is governed by the
-                      <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-                    </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><span class="secno">1. </span>Introduction</a></li><li class="tocline"><a class="tocxref" href="#use-cases-and-requirements"><span class="secno">2. </span>Use Cases and Requirements</a></li><li class="tocline"><a class="tocxref" href="#vocabulary"><span class="secno">3. </span>Vocabulary </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#vocabulary-explanation"><span class="secno">3.1 </span>vocabulary</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description"><span class="secno">3.1.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#values-for-alternative-content-and-content-accessibility-support"><span class="secno">3.1.2 </span>Values for alternative content and content accessibility support</a></li><li class="tocline"><a class="tocxref" href="#values-for-types-of-help"><span class="secno">3.1.3 </span> Values for types of help </a></li><li class="tocline"><a class="tocxref" href="#characteristics"><span class="secno">3.1.4 </span>Characteristics</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#implementation"><span class="secno">4. </span>Example Implementations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#addn-content"><span class="secno">4.1 </span>Implementation in different content sections</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#alternative-explanation"><span class="secno">4.1.1 </span>Alternative</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-0"><span class="secno">4.1.1.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#alternative-example"><span class="secno">4.1.1.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-0"><span class="secno">4.1.1.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#helptype-explanation"><span class="secno">4.1.2 </span>helptype</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-1"><span class="secno">4.1.2.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#helptype-example"><span class="secno">4.1.2.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-1"><span class="secno">4.1.2.3 </span>Characteristics</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#inline"><span class="secno">4.2 </span>Inline Implementation </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#literal-explanation"><span class="secno">4.2.1 </span>literal</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-2"><span class="secno">4.2.1.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#literal-example"><span class="secno">4.2.1.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-2"><span class="secno">4.2.1.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#numberfree-explanation"><span class="secno">4.2.2 </span>numberfree</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-3"><span class="secno">4.2.2.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#numberfree-example"><span class="secno">4.2.2.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-3"><span class="secno">4.2.2.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#easylang-explanation"><span class="secno">4.2.3 </span>easylang</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-4"><span class="secno">4.2.3.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#easylang-example"><span class="secno">4.2.3.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-4"><span class="secno">4.2.3.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#explain-explanation"><span class="secno">4.2.4 </span>explain</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-5"><span class="secno">4.2.4.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#explain-example"><span class="secno">4.2.4.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-5"><span class="secno">4.2.4.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#feedback-explanation"><span class="secno">4.2.5 </span>feedback</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-6"><span class="secno">4.2.5.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#feedback-example"><span class="secno">4.2.5.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-6"><span class="secno">4.2.5.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#moreinfo-explanation"><span class="secno">4.2.6 </span>moreinfo</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-7"><span class="secno">4.2.6.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#moreinfo-example"><span class="secno">4.2.6.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-7"><span class="secno">4.2.6.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#extrahelp-explanation"><span class="secno">4.2.7 </span>extrahelp</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-8"><span class="secno">4.2.7.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#extrahelp-example"><span class="secno">4.2.7.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-8"><span class="secno">4.2.7.3 </span>Characteristics</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#vocabulary-implementations"><span class="secno">A. </span>Vocabulary Implementations</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><span class="secno">B.1 </span>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><span class="secno">B.2 </span>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><span class="secno">C.1 </span>Normative references</a></li></ol></li></ol></nav>
+      Publication as an Editor's Draft does not imply endorsement by the
+      <abbr title="World Wide Web Consortium">W3C</abbr> Membership. This is a draft document and may be updated, replaced or
+      obsoleted by other documents at any time. It is inappropriate to cite this
+      document as other than work in progress.
+    </p><p>
+      
+        This document was produced by a group
+        operating under the
+        <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+       The group does not expect this document to become a <abbr title="World Wide Web Consortium">W3C</abbr> Recommendation.
+      
+                  <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
+                  <a rel="disclosure" href="https://www.w3.org/2004/01/pp-impl/83907/status">public list of any patent disclosures</a>
+            made in connection with the deliverables of
+            the group; that page also includes
+            instructions for disclosing a patent. An individual who has actual
+            knowledge of a patent which the individual believes contains
+            <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential Claim(s)</a>
+            must disclose the information in accordance with
+            <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+          
+      
+    </p><p>
+                  This document is governed by the
+                  <a id="w3c_process_revision" href="https://www.w3.org/2019/Process-20190301/">1 March 2019 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+                </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><span class="secno">1. </span>Introduction</a></li><li class="tocline"><a class="tocxref" href="#use-cases-and-requirements"><span class="secno">2. </span>Use Cases and Requirements</a></li><li class="tocline"><a class="tocxref" href="#vocabulary"><span class="secno">3. </span>Vocabulary </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#vocabulary-explanation"><span class="secno">3.1 </span>vocabulary</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description"><span class="secno">3.1.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#values-for-alternative-content-and-content-accessibility-support"><span class="secno">3.1.2 </span>Values for alternative content and content accessibility support</a></li><li class="tocline"><a class="tocxref" href="#values-for-types-of-help"><span class="secno">3.1.3 </span> Values for types of help </a></li><li class="tocline"><a class="tocxref" href="#characteristics"><span class="secno">3.1.4 </span>Characteristics</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#implementation"><span class="secno">4. </span>Example Implementations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#addn-content"><span class="secno">4.1 </span>Implementation in different content sections</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#alternative-explanation"><span class="secno">4.1.1 </span>Alternative</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-0"><span class="secno">4.1.1.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#alternative-example"><span class="secno">4.1.1.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-0"><span class="secno">4.1.1.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#helptype-explanation"><span class="secno">4.1.2 </span>helptype</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-1"><span class="secno">4.1.2.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#helptype-example"><span class="secno">4.1.2.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-1"><span class="secno">4.1.2.3 </span>Characteristics</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#inline"><span class="secno">4.2 </span>Inline Implementation </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#literal-explanation"><span class="secno">4.2.1 </span>literal</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-2"><span class="secno">4.2.1.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#literal-example"><span class="secno">4.2.1.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-2"><span class="secno">4.2.1.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#numberfree-explanation"><span class="secno">4.2.2 </span>numberfree</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-3"><span class="secno">4.2.2.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#numberfree-example"><span class="secno">4.2.2.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-3"><span class="secno">4.2.2.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#easylang-explanation"><span class="secno">4.2.3 </span>easylang</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-4"><span class="secno">4.2.3.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#easylang-example"><span class="secno">4.2.3.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-4"><span class="secno">4.2.3.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#explain-explanation"><span class="secno">4.2.4 </span>explain</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-5"><span class="secno">4.2.4.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#explain-example"><span class="secno">4.2.4.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-5"><span class="secno">4.2.4.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#feedback-explanation"><span class="secno">4.2.5 </span>feedback</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-6"><span class="secno">4.2.5.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#feedback-example"><span class="secno">4.2.5.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-6"><span class="secno">4.2.5.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#moreinfo-explanation"><span class="secno">4.2.6 </span>moreinfo</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-7"><span class="secno">4.2.6.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#moreinfo-example"><span class="secno">4.2.6.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-7"><span class="secno">4.2.6.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#extrahelp-explanation"><span class="secno">4.2.7 </span>extrahelp</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-8"><span class="secno">4.2.7.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#extrahelp-example"><span class="secno">4.2.7.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-8"><span class="secno">4.2.7.3 </span>Characteristics</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#vocabulary-implementations"><span class="secno">A. </span>Vocabulary Implementations</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><span class="secno">B.1 </span>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><span class="secno">B.2 </span>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><span class="secno">C.1 </span>Informative references</a></li></ol></li></ol></nav>
 
 		<section class="informative" id="introduction">
 
@@ -1187,7 +1253,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             </tr>
             <tr>
               <th class="property-value-head" scope="row">Value:</th>
-              <td class="property-value"><a href="#valuetype_token_list" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured">token list</a></td>
+              <td class="property-value"><a href="#valuetype_token_list">token list</a></td>
             </tr>
           </tbody>
         </table>
@@ -1227,8 +1293,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <h5 id="x4-1-1-2-example"><span class="secno">4.1.1.2 </span>Example<a class="self-link" aria-label="§" href="#alternative-example"></a></h5>
 		<p>The below example section show how <code>alternative</code> used when coding.</p>
     <div class="example" id="example-1-alternative-using-aui">
-          <div class="marker"><a class="self-link" href="#example-1-alternative-using-aui">Example 1</a><span class="example-title">: Alternative Using AUI</span></div>
-          <pre class="hljs javascript" aria-busy="false">    &lt;div&gt;
+          <div class="marker">
+      <a class="self-link" href="#example-1-alternative-using-aui">Example 1</a><span class="example-title">: Alternative Using AUI</span>
+    </div> <pre aria-busy="false"><code class="hljs javascript">    &lt;div&gt;
 	<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">aui-alternative</span>=<span class="hljs-string">"easylang numberfree vocab1000"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hidden"</span>&gt;</span>
  	   most people prefer simple text
   	<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span>
@@ -1236,7 +1303,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   	<span class="hljs-keyword">with</span> obtuse words and lots <span class="hljs-keyword">of</span> numbers,
   	<span class="hljs-keyword">with</span> <span class="hljs-number">56</span>% claiming there preferred the simplified text,
   	<span class="hljs-keyword">with</span> the remainder unsure or stated it depends on the context.
-&lt;<span class="hljs-regexp">/div&gt;</span></pre>
+&lt;<span class="hljs-regexp">/div&gt;</span></code></pre>
         </div>
         
     </section>
@@ -1264,7 +1331,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             </tr>
             <tr>
               <th class="property-value-head" scope="row">Value:</th>
-              <td class="property-value"><a href="#valuetype_token_list" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-0">token list</a></td>
+              <td class="property-value"><a href="#valuetype_token_list">token list</a></td>
             </tr>
           </tbody>
         </table>
@@ -1292,9 +1359,14 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 		<h5 id="x4-1-2-2-example"><span class="secno">4.1.2.2 </span>Example<a class="self-link" aria-label="§" href="#helptype-example"></a></h5>
 	<p>The below example section show how <code>helptype</code> used when coding.</p>
 <div class="example" id="example-2-helptype-using-aui">
-          <div class="marker"><a class="self-link" href="#example-2-helptype-using-aui">Example 2</a><span class="example-title">: Helptype Using AUI</span></div>
-          <pre class="hljs xml" aria-busy="false">    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">aui-extrahelp</span>=<span class="hljs-string">"uri2 uri3"</span> &gt;</span>undo<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+          <div class="marker">
+      <a class="self-link" href="#example-2-helptype-using-aui">Example 2</a><span class="example-title">: Helptype Using AUI</span>
+    </div> <pre aria-busy="false"><code class="hljs xml">    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">aui-extrahelp</span>=<span class="hljs-string">"uri2 uri3"</span> &gt;</span>undo<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+
+
 URI 2 may read: 
+
+
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"uri2"</span> <span class="hljs-attr">aui-helptype</span>=<span class="hljs-string">"morehelp"</span> <span class="hljs-attr">aui-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
         pressing the undo button will erase all your work on this page.
         Use this button with care.
@@ -1305,7 +1377,8 @@ URI 2 may read:
 <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"functiongethelp()"</span> <span class="hljs-attr">aui-helptype</span>=<span class="hljs-string">"humanhelp"</span> <span class="hljs-attr">aui-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
   I want a person to help me<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"uri3"</span> <span class="hljs-attr">aui-extrahelp</span>=<span class="hljs-string">"glossary"</span> <span class="hljs-attr">aui-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span></pre>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"uri3"</span> <span class="hljs-attr">aui-extrahelp</span>=<span class="hljs-string">"glossary"</span> <span class="hljs-attr">aui-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
+</code></pre>
         </div>
 
     </section>
@@ -1334,7 +1407,7 @@ URI 2 may read:
 						</tr>
 						<tr>
 							<th class="property-value-head" scope="row">Value:</th>
-							<td class="property-value"><a href="#valuetype_token" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-1">token</a></td>
+							<td class="property-value"><a href="#valuetype_token">token</a></td>
 						</tr>
 					</tbody>
 				</table>
@@ -1422,8 +1495,9 @@ URI 2 may read:
 		<h5 id="x4-2-1-2-example"><span class="secno">4.2.1.2 </span>Example<a class="self-link" aria-label="§" href="#literal-example"></a></h5>
 		<p>The below example section show how <code>literal</code> used when coding.</p>
     	<div class="example" id="example-3-literal-using-aui">
-          <div class="marker"><a class="self-link" href="#example-3-literal-using-aui">Example 3</a><span class="example-title">: Literal Using AUI</span></div>
-          <pre class="hljs xml" aria-busy="false">It is <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">aui-literal</span>=<span class="hljs-string">"raining hard"</span>&gt;</span>raining cats and dogs<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></pre>
+          <div class="marker">
+      <a class="self-link" href="#example-3-literal-using-aui">Example 3</a><span class="example-title">: Literal Using AUI</span>
+    </div> <pre aria-busy="false"><code class="hljs xml">    	   It is <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">aui-literal</span>=<span class="hljs-string">"raining hard"</span>&gt;</span>raining cats and dogs<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre>
         </div>
     </section>
     <section id="characteristics-2">
@@ -1450,7 +1524,7 @@ URI 2 may read:
 						</tr>
 						<tr>
 							<th class="property-value-head" scope="row">Value:</th>
-							<td class="property-value"><a href="#valuetype_string" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-2">string text</a></td>
+							<td class="property-value"><a href="#valuetype_string">string text</a></td>
 						</tr>
 					</tbody>
 				</table>
@@ -1478,13 +1552,15 @@ URI 2 may read:
 		<h5 id="x4-2-2-2-example"><span class="secno">4.2.2.2 </span>Example<a class="self-link" aria-label="§" href="#numberfree-example"></a></h5>
 		<p>The below example section show how <code>numberfree</code> used when coding.</p>
   		  <div class="example" id="example-4-numberfree-using-aui">
-          <div class="marker"><a class="self-link" href="#example-4-numberfree-using-aui">Example 4</a><span class="example-title">: Numberfree Using AUI</span></div>
-          <pre class="hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">aui-numberfree</span>=<span class="hljs-string">"almost all"</span>&gt;</span>9 out of 10 <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></pre>
+          <div class="marker">
+      <a class="self-link" href="#example-4-numberfree-using-aui">Example 4</a><span class="example-title">: Numberfree Using AUI</span>
+    </div> <pre aria-busy="false"><code class="hljs xml">			<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">aui-numberfree</span>=<span class="hljs-string">"almost all"</span>&gt;</span>9 out of 10 <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre>
         </div>
 	
 			<div class="example" id="example-5-numberfree-using-aui">
-          <div class="marker"><a class="self-link" href="#example-5-numberfree-using-aui">Example 5</a><span class="example-title">: Numberfree Using AUI</span></div>
-          <pre class="hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">aui-numberfree</span>=<span class="hljs-string">"hat and coat weather"</span>&gt;</span>The weather is 9 degrees<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></pre>
+          <div class="marker">
+      <a class="self-link" href="#example-5-numberfree-using-aui">Example 5</a><span class="example-title">: Numberfree Using AUI</span>
+    </div> <pre aria-busy="false"><code class="hljs xml">			<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">aui-numberfree</span>=<span class="hljs-string">"hat and coat weather"</span>&gt;</span>The weather is 9 degrees<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre>
         </div>
     </section>
     <section id="characteristics-3">
@@ -1511,7 +1587,7 @@ URI 2 may read:
 						</tr>
 						<tr>
 							<th class="property-value-head" scope="row">Value:</th>
-							<td class="property-value"><a href="#valuetype_string" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-3">string</a></td>
+							<td class="property-value"><a href="#valuetype_string">string</a></td>
 						</tr>
 					</tbody>
 				</table>
@@ -1539,8 +1615,9 @@ URI 2 may read:
 		<h5 id="x4-2-3-2-example"><span class="secno">4.2.3.2 </span>Example<a class="self-link" aria-label="§" href="#easylang-example"></a></h5>
 		<p>The below example section show how <code>easylang</code> used when coding.</p>
    		<div class="example" id="example-6-easylang-using-aui">
-          <div class="marker"><a class="self-link" href="#example-6-easylang-using-aui">Example 6</a><span class="example-title">: Easylang Using AUI</span></div>
-          <pre class="hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">aui-easylang</span>=<span class="hljs-string">"some text that is easy to read"</span>&gt;</span> some convoluted obtuse text<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></pre>
+          <div class="marker">
+      <a class="self-link" href="#example-6-easylang-using-aui">Example 6</a><span class="example-title">: Easylang Using AUI</span>
+    </div> <pre aria-busy="false"><code class="hljs xml">			<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">aui-easylang</span>=<span class="hljs-string">"some text that is easy to read"</span>&gt;</span> some convoluted obtuse text<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre>
         </div>
     </section>
     <section id="characteristics-4">
@@ -1567,7 +1644,7 @@ URI 2 may read:
 									</tr>
 									<tr>
 										<th class="property-value-head" scope="row">Value:</th>
-										<td class="property-value"><a href="#valuetype_string" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-4">string text</a></td>
+										<td class="property-value"><a href="#valuetype_string">string text</a></td>
 									</tr>
 								</tbody>
 		</table>
@@ -1593,8 +1670,9 @@ URI 2 may read:
 		<h5 id="x4-2-4-2-example"><span class="secno">4.2.4.2 </span>Example<a class="self-link" aria-label="§" href="#explain-example"></a></h5>
 		<p>The example section below shows how <code>explain</code> used when coding.</p>
   		<div class="example" id="example-7-explain-using-aui">
-          <div class="marker"><a class="self-link" href="#example-7-explain-using-aui">Example 7</a><span class="example-title">: Explain Using AUI</span></div>
-          <pre class="hljs javascript" aria-busy="false">aui-explain=<span class="hljs-string">"press enter to send the email"</span></pre>
+          <div class="marker">
+      <a class="self-link" href="#example-7-explain-using-aui">Example 7</a><span class="example-title">: Explain Using AUI</span>
+    </div> <pre aria-busy="false"><code class="hljs javascript">			aui-explain=<span class="hljs-string">"press enter to send the email"</span> </code></pre>
         </div>
 
     </section>
@@ -1622,7 +1700,7 @@ URI 2 may read:
 						</tr>
 						<tr>
 							<th class="property-value-head" scope="row">Value:</th>
-							<td class="property-value"><a href="#valuetype_string" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-5">string text</a></td>
+							<td class="property-value"><a href="#valuetype_string">string text</a></td>
 						</tr>
 					</tbody>
 				</table>
@@ -1646,8 +1724,9 @@ URI 2 may read:
 		<h5 id="x4-2-5-2-example"><span class="secno">4.2.5.2 </span>Example<a class="self-link" aria-label="§" href="#feedback-example"></a></h5>
 		<p>The example section below shows how <code>feedback</code> might be used when coding.</p>
    		<div class="example" id="example-8-feedback-using-aui">
-          <div class="marker"><a class="self-link" href="#example-8-feedback-using-aui">Example 8</a><span class="example-title">: Feedback Using AUI</span></div>
-          <pre class="hljs javascript" aria-busy="false">aui-feedback=<span class="hljs-string">"your email on %topic% was sent"</span></pre>
+          <div class="marker">
+      <a class="self-link" href="#example-8-feedback-using-aui">Example 8</a><span class="example-title">: Feedback Using AUI</span>
+    </div> <pre aria-busy="false"><code class="hljs javascript">			aui-feedback=<span class="hljs-string">"your email on %topic% was sent"</span> </code></pre>
         </div>
 
     </section>
@@ -1675,7 +1754,7 @@ URI 2 may read:
 						</tr>
 						<tr>
 							<th class="property-value-head" scope="row">Value:</th>
-							<td class="property-value"><a href="#valuetype_string" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-6">string text</a></td>
+							<td class="property-value"><a href="#valuetype_string">string text</a></td>
 						</tr>
 					</tbody>
 				</table>
@@ -1702,8 +1781,9 @@ URI 2 may read:
 		<h5 id="x4-2-6-2-example"><span class="secno">4.2.6.2 </span>Example<a class="self-link" aria-label="§" href="#moreinfo-example"></a></h5>
 		<p>The example section below shows how <code>moreinfo</code> would be used when coding.</p>
     	<div class="example" id="example-9-moreinfo-using-aui">
-          <div class="marker"><a class="self-link" href="#example-9-moreinfo-using-aui">Example 9</a><span class="example-title">: Moreinfo Using AUI</span></div>
-          <pre class="hljs" aria-busy="false">N/A - Example needed.</pre>
+          <div class="marker">
+      <a class="self-link" href="#example-9-moreinfo-using-aui">Example 9</a><span class="example-title">: Moreinfo Using AUI</span>
+    </div> <pre aria-busy="false"><code class="hljs">			N/A - Example needed.</code></pre>
         </div>
 
     </section>
@@ -1731,7 +1811,7 @@ URI 2 may read:
 						</tr>
 						<tr>
 							<th class="property-value-head" scope="row">Value:</th>
-							<td class="property-value"><a href="#valuetype_uri" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-7">URI</a></td>
+							<td class="property-value"><a href="#valuetype_uri">URI</a></td>
 						</tr>
 					</tbody>
 				</table>
@@ -1754,8 +1834,9 @@ URI 2 may read:
 		<h5 id="x4-2-7-2-example"><span class="secno">4.2.7.2 </span>Example<a class="self-link" aria-label="§" href="#extrahelp-example"></a></h5>
 		<p>The example section below shows how <code>extrahelp</code> would be used when coding.</p>
     	<div class="example" id="example-10-extrahelp-using-aui">
-          <div class="marker"><a class="self-link" href="#example-10-extrahelp-using-aui">Example 10</a><span class="example-title">: Extrahelp Using AUI</span></div>
-          <pre class="hljs" aria-busy="false">N/A - Example Needed</pre>
+          <div class="marker">
+      <a class="self-link" href="#example-10-extrahelp-using-aui">Example 10</a><span class="example-title">: Extrahelp Using AUI</span>
+    </div> <pre aria-busy="false"><code class="hljs">			N/A - Example Needed</code></pre>
         </div>
 
     </section>
@@ -1783,7 +1864,7 @@ URI 2 may read:
 						</tr>
 						<tr>
 							<th class="property-value-head" scope="row">Value:</th>
-							<td class="property-value"><a href="#valuetype_uri" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-8">URI</a></td>
+							<td class="property-value"><a href="#valuetype_uri">URI</a></td>
 						</tr>
 					</tbody>
 				</table>
@@ -1837,8 +1918,8 @@ URI 2 may read:
 <section id="references" class="appendix">
       <!--OddPage--><h2 id="c-references"><span class="secno">C. </span>References<a class="self-link" aria-label="§" href="#references"></a></h2>
       
-    <section id="normative-references">
-        <h3 id="c-1-normative-references"><span class="secno">C.1 </span>Normative references<a class="self-link" aria-label="§" href="#normative-references"></a></h3>
+    <section id="informative-references">
+        <h3 id="c-1-informative-references"><span class="secno">C.1 </span>Informative references<a class="self-link" aria-label="§" href="#informative-references"></a></h3>
       <dl class="bibliography">
         <dt id="bib-dom4">[DOM4]</dt><dd><a href="https://dom.spec.whatwg.org/"><cite>DOM Standard</cite></a>. Anne van Kesteren. WHATWG. Living Standard. URL: <a href="https://dom.spec.whatwg.org/">https://dom.spec.whatwg.org/</a></dd><dt id="bib-svg2">[SVG2]</dt><dd><a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/"><cite>Scalable Vector Graphics (SVG) 2</cite></a>. Nikos Andronikos; Rossen Atanassov; Tavmjong Bah; Amelia Bellamy-Royds; Brian Birtles; Cyril Concolato; Erik Dahlström; Chris Lilley; Cameron McCormack; Doug Schepers; Dirk Schulze; Richard Schwerdtfeger; Satoru Takagi; Jonathan Watt et al. W3C. W3C Working Draft. URL: <a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/">http://www.w3.org/TR/2015/WD-SVG2-20150915/</a></dd>
       </dl></section></section><p role="navigation" id="back-to-top"><a href="#title"><abbr title="Back to Top">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
