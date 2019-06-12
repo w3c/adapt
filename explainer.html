@@ -83,11 +83,15 @@
 		</section>
 
 		<section id="characteristics_semanticproperties">
-			<h1>Structure of Properties</h1>
-			<p>Semantic properties have the characteristics described in the following sections.</p>
+			<h1>Vocabulary Structure</h1>
+			<p>Personalization Semantics is made of a vocabulary of properties and their values. This generic structure makes it possible to apply Personalization Semantics in a variety of contexts by adapting how the vocabulary is instantiated. The <a href="#vocabulary-implementations">Vocabulary Implementations</a> section below describes current ways to use the vocabulary.</p>
+            <section>
+                <h2>Properties</h2>
+                <p>Properties are the main units of personalization types supported by the vocabulary. A given property supports a specific type of personalization. That property would only be used once on a given piece of content, but multiple different properties could be used on the same piece of content to address different needs.</p>
+            </section>
 			<section id="propcharacteristic_value">
-				<h2>Value</h2>
-				<p>Value type of the semantic property. The value may be one of the following types:</p>
+				<h2>Values</h2>
+				<p>Values provide the specific personalization information for the property. The possible values for each property are elabrated in the definition of the property in the modules. Some properties require the value to come from a predefined list of possible values, others can accept arbitrary strings, and some may accept multiple values. The value may be one of the following types:</p>
 				<dl>
 					<dt id="valuetype_true-false">true/false</dt>
 					<dd>Value representing either true or false, with a default &quot;false&quot; value.</dd>
