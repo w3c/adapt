@@ -56,47 +56,9 @@
 					<p>Another use-case we would like to see is interoperable symbol set codes for non-verbal people. Products for people who are non-vocal often use symbols to help users communicate. These symbols are in fact an individual's language. Unfortunately many of these symbols are both subject to copyright and are not interoperable. That means end-users can only use one device, and can not use applications or assistive technologies from a different company. An open set of references for symbol codes for these symbol sets however, could be interoperable. That means the end user could use an open source symbol set or buy the symbols and use them across different devices or applications. Symbols could still be proprietary but they would also be interoperable.</p>
 			</section>
 
-			<section class="section" id="intro_context">
-				<h2>Personalization Use Cases (general)</h2>
-				<p>Personalization Use Cases covers use cases that can be addressed by personalization, and references the vocabulary items that help meet the use cases.</p>
-			</section>
-		</section>
-
-		<section class="informative" id="terms">
-			<h1>Important Terms</h1>
-			<div data-include="common/terms.html" data-oninclude="restrictReferences"></div>
-		</section>
-
-		<section id="characteristics_semanticproperties">
-			<h1>Structure of Properties</h1>
-			<p>Semantic properties have the characteristics described in the following sections.</p>
-			<section id="propcharacteristic_value">
-				<h2>Value</h2>
-				<p>Value type of the semantic property. The value may be one of the following types:</p>
-				<dl>
-					<dt id="valuetype_true-false">true/false</dt>
-					<dd>Value representing either true or false, with a default &quot;false&quot; value.</dd>
-					<dt id="valuetype_true-false-undefined">true/false/undefined</dt>
-					<dd>Value representing true or false, with a default &quot;undefined&quot; value indicating the state or property is not relevant.</dd>
-					<dt id="valuetype_idref">ID reference</dt>
-					<dd>Reference to the ID of another element in the same document</dd>
-					<dt id="valuetype_idref_list">ID reference list</dt>
-					<dd>A list of one or more ID references.</dd>
-					<dt id="valuetype_integer">integer</dt>
-					<dd>A numerical value without a fractional component.</dd>
-					<dt id="valuetype_number">number</dt>
-					<dd>Any real numerical value.</dd>
-					<dt id="valuetype_string">string</dt>
-					<dd>Unconstrained value type.</dd>
-					<dt id="valuetype_token">token</dt>
-					<dd>One of a limited set of allowed values.</dd>
-					<dt id="valuetype_token_list">token list</dt>
-					<dd>A list of one or more tokens.</dd>
-					<dt id="valuetype_uri">URI</dt>
-					<dd>A Uniform Resource Identifier as defined by <cite><a href="http://www.ietf.org/rfc/rfc3986.txt">RFC 3986</a></cite> [[RFC3986]]. It may reference a separate document, or a content fragment identifier in a separate document, or a content fragment identifier within the same document.</dd>
-				</dl>
-				<p>The "undefined" value, when allowed on a state or property, is an explicit indication that the state or property is not set. The value is used on states and properties that support tokens, and the &quot;undefined&quot; value is a string that is one of the allowed tokens. It is also used on some states and properties that accept true/false values, when &quot;undefined&quot; has a different meaning than &quot;false&quot;.</p>
-				<p>These are generic types for states and properties, but do not define specific representation. See <a href="#state_property_processing" class="specref">State and Property Attribute Processing</a> for details on how these values are expressed and handled in host languages.</p>
+			<section>
+				<h2>Use Cases</h2>
+				<p><a href="requirements/">Requirements for Personalization Semantics</a> [[personalization-semantics-requirements]] elaborates many use cases that further contextualize the above summary of user needs. These use cases form the basis of requirements for this technology.</p>
 			</section>
 		</section>
 
@@ -120,22 +82,60 @@
 				</ul>
 		</section>
 
+		<section id="characteristics_semanticproperties">
+			<h1>Vocabulary Structure</h1>
+			<p>Personalization Semantics is made of a vocabulary of properties and their values. This generic structure makes it possible to apply Personalization Semantics in a variety of contexts by adapting how the vocabulary is instantiated. The <a href="#vocabulary-implementations">Vocabulary Implementations</a> section below describes current ways to use the vocabulary.</p>
+            <section>
+                <h2>Properties</h2>
+                <p>Properties are the main units of personalization types supported by the vocabulary. A given property supports a specific type of personalization. That property would only be used once on a given piece of content, but multiple different properties could be used on the same piece of content to address different needs.</p>
+            </section>
+			<section id="propcharacteristic_value">
+				<h2>Values</h2>
+				<p>Values provide the specific personalization information for the property. The possible values for each property are elabrated in the definition of the property in the modules. Some properties require the value to come from a predefined list of possible values, others can accept arbitrary strings, and some may accept multiple values. The value may be one of the following types:</p>
+				<dl>
+					<dt id="valuetype_true-false">true/false</dt>
+					<dd>Value representing either true or false, with a default &quot;false&quot; value.</dd>
+					<dt id="valuetype_true-false-undefined">true/false/undefined</dt>
+					<dd>Value representing true or false, with a default &quot;undefined&quot; value indicating the state or property is not relevant.</dd>
+					<dt id="valuetype_idref">ID reference</dt>
+					<dd>Reference to the ID of another element in the same document</dd>
+					<dt id="valuetype_idref_list">ID reference list</dt>
+					<dd>A list of one or more ID references.</dd>
+					<dt id="valuetype_integer">integer</dt>
+					<dd>A numerical value without a fractional component.</dd>
+					<dt id="valuetype_number">number</dt>
+					<dd>Any real numerical value.</dd>
+					<dt id="valuetype_string">string</dt>
+					<dd>Unconstrained value type.</dd>
+					<dt id="valuetype_token">token</dt>
+					<dd>One of a limited set of allowed values.</dd>
+					<dt id="valuetype_token_list">token list</dt>
+					<dd>A list of one or more tokens.</dd>
+					<dt id="valuetype_uri">URI</dt>
+					<dd>A Uniform Resource Identifier as defined by <cite><a href="http://www.ietf.org/rfc/rfc3986.txt">RFC 3986</a></cite> [[RFC3986]]. It may reference a separate document, or a content fragment identifier in a separate document, or a content fragment identifier within the same document.</dd>
+				</dl>
+			</section>
+		</section>
 
 
 
 
 
-		<section class="appendix">
+
+		<section>
             
             
-			<h2 id="vocabulary-implementations">Vocabulary Implementations</h2>
+			<h2>Vocabulary Implementations</h2>
  
-                
-                <p>The Personalization Task Force decide to use the data-* for attributes, Now the the first three attributes have been accepted by Task Force, there are data-purpose, data-action and data-destination. For other attributes, we are still on discussion.</p>
-                <p class="ednote">See our  discussion <a href="https://github.com/w3c/personalization-semantics/wiki/Prototypes-with-data-dash-*-(Take-2)">Prototypes with data dash</a>.  If you have any comments or suggestions on implementation please add a comment to this <a href="https://github.com/w3c/personalization-semantics/issues/">issue list</a>.</p>
-
- 
-            
+            <p>At the present stage of development, the Personalization Semantics vocabulary can be used in HTML content using <a href="https://www.w3.org/TR/html5/dom.html#embedding-custom-non-visible-data-with-the-data-attributes">data- attributes</a> [[html5]]. Attributes in this form can be used in valid HTML to implement features recognized by browser extensions or other special processors. Personalization Semantics is using this approach to gain early implementation experience of the features in a way that is simple and likely to be accepted within the web ecosystem as an interim approach.</p>
+            <p>For this publication of Personalization Semantics, the task force has accepted the name and values of three attributes for the Content module:</p>
+            <ul>
+                <li><a href="content/#action-explanation">data-action</a></li>
+                <li><a href="content/#destination-explanation">data-destination</a></li>
+                <li><a href="content/#purpose-explanation">data-purpose</a></li>
+            </ul>
+            <p>Other properties in the vocabulary are not yet mature enough to suggest using them in production HTML with data- attributes. Examples of those properties in the modules are to facilitate review, not to suggest implementation. See the discussion <a href="https://github.com/w3c/personalization-semantics/wiki/Prototypes-with-data-dash-*-(Take-2)">Prototypes with data dash</a>.</p>
+            <p class="note">The HTML data- attribute syntax is not intended to be used for long-term wide-scale features. The task force is using this approach at the moment to gain implementation experience and demonstrate the usefulness of Personalization Semantics in practice. Content authors and user agent implementers should be aware that the recommended approach to use the vocubulary is expected to change, and structure their implemetation in a manner that will facilitate the transition to a new syntax.</p>
 			
 		</section>
 
