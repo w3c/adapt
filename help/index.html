@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 24.21.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
+<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 24.23.2"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
 span.example-title {
     text-transform: none;
 }
@@ -489,7 +489,6 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 </style><style>var {
   position: relative;
   cursor: pointer;
-  display: inline-block;
 }
 
 var[data-type]::before,
@@ -524,6 +523,8 @@ var[data-type]::after {
   padding: 6px;
   border-radius: 3px;
   color: #daca88;
+  text-indent: 0;
+  font-weight: normal;
 }
 
 var[data-type]:hover::after,
@@ -871,16 +872,16 @@ var[data-type]:hover::before {
       ]
     }
   },
-  "publishDate": "2019-04-26",
-  "publishISODate": "2019-04-26T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 26 April 2019"
+  "publishDate": "2019-06-13",
+  "publishISODate": "2019-06-13T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 13 June 2019"
 }</script><meta name="description" content="This document lists examples of the personalized help and support properties. This is an extension of Personalization Explainer 1.0. including the properties of literal, numberfree, easylang, alternative, explain, feedback, moreinfo,extrahelp, helptype."><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
 	<body class="h-entry informative"><div class="head">
       <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name">Personalization Help and Support 1.0</h1>
       
       <h2>
         W3C Editor's Draft
-        <time class="dt-published" datetime="2019-04-26">26 April 2019</time>
+        <time class="dt-published" datetime="2019-06-13">13 June 2019</time>
       </h2>
       <dl>
         <dt>This version:</dt><dd>
@@ -968,28 +969,28 @@ var[data-type]:hover::before {
     </p><p>
                   This document is governed by the
                   <a id="w3c_process_revision" href="https://www.w3.org/2019/Process-20190301/">1 March 2019 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-                </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><span class="secno">1. </span>Introduction</a></li><li class="tocline"><a class="tocxref" href="#use-cases-and-requirements"><span class="secno">2. </span>Use Cases and Requirements</a></li><li class="tocline"><a class="tocxref" href="#vocabulary"><span class="secno">3. </span>Vocabulary </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#vocabulary-explanation"><span class="secno">3.1 </span>vocabulary</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description"><span class="secno">3.1.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#values-for-alternative-content-and-content-accessibility-support"><span class="secno">3.1.2 </span>Values for alternative content and content accessibility support</a></li><li class="tocline"><a class="tocxref" href="#values-for-types-of-help"><span class="secno">3.1.3 </span> Values for types of help </a></li><li class="tocline"><a class="tocxref" href="#characteristics"><span class="secno">3.1.4 </span>Characteristics</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#implementation"><span class="secno">4. </span>Example Implementations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#addn-content"><span class="secno">4.1 </span>Implementation in different content sections</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#alternative-explanation"><span class="secno">4.1.1 </span>Alternative</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-0"><span class="secno">4.1.1.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#alternative-example"><span class="secno">4.1.1.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-0"><span class="secno">4.1.1.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#helptype-explanation"><span class="secno">4.1.2 </span>helptype</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-1"><span class="secno">4.1.2.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#helptype-example"><span class="secno">4.1.2.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-1"><span class="secno">4.1.2.3 </span>Characteristics</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#inline"><span class="secno">4.2 </span>Inline Implementation </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#literal-explanation"><span class="secno">4.2.1 </span>literal</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-2"><span class="secno">4.2.1.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#literal-example"><span class="secno">4.2.1.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-2"><span class="secno">4.2.1.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#numberfree-explanation"><span class="secno">4.2.2 </span>numberfree</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-3"><span class="secno">4.2.2.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#numberfree-example"><span class="secno">4.2.2.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-3"><span class="secno">4.2.2.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#easylang-explanation"><span class="secno">4.2.3 </span>easylang</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-4"><span class="secno">4.2.3.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#easylang-example"><span class="secno">4.2.3.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-4"><span class="secno">4.2.3.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#explain-explanation"><span class="secno">4.2.4 </span>explain</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-5"><span class="secno">4.2.4.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#explain-example"><span class="secno">4.2.4.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-5"><span class="secno">4.2.4.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#feedback-explanation"><span class="secno">4.2.5 </span>feedback</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-6"><span class="secno">4.2.5.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#feedback-example"><span class="secno">4.2.5.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-6"><span class="secno">4.2.5.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#moreinfo-explanation"><span class="secno">4.2.6 </span>moreinfo</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-7"><span class="secno">4.2.6.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#moreinfo-example"><span class="secno">4.2.6.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-7"><span class="secno">4.2.6.3 </span>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#extrahelp-explanation"><span class="secno">4.2.7 </span>extrahelp</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-8"><span class="secno">4.2.7.1 </span>Description</a></li><li class="tocline"><a class="tocxref" href="#extrahelp-example"><span class="secno">4.2.7.2 </span>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-8"><span class="secno">4.2.7.3 </span>Characteristics</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#vocabulary-implementations"><span class="secno">A. </span>Vocabulary Implementations</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><span class="secno">B.1 </span>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><span class="secno">B.2 </span>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><span class="secno">C.1 </span>Informative references</a></li></ol></li></ol></nav>
+                </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a></li><li class="tocline"><a class="tocxref" href="#use-cases-and-requirements"><bdi class="secno">2. </bdi>Use Cases and Requirements</a></li><li class="tocline"><a class="tocxref" href="#vocabulary"><bdi class="secno">3. </bdi>Vocabulary </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#vocabulary-explanation"><bdi class="secno">3.1 </bdi>vocabulary</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description"><bdi class="secno">3.1.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#values-for-alternative-content-and-content-accessibility-support"><bdi class="secno">3.1.2 </bdi>Values for alternative content and content accessibility support</a></li><li class="tocline"><a class="tocxref" href="#values-for-types-of-help"><bdi class="secno">3.1.3 </bdi> Values for types of help </a></li><li class="tocline"><a class="tocxref" href="#characteristics"><bdi class="secno">3.1.4 </bdi>Characteristics</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#implementation"><bdi class="secno">4. </bdi>Example Implementations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#addn-content"><bdi class="secno">4.1 </bdi>Implementation in different content sections</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#alternative-explanation"><bdi class="secno">4.1.1 </bdi>Alternative</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-0"><bdi class="secno">4.1.1.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#alternative-example"><bdi class="secno">4.1.1.2 </bdi>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-0"><bdi class="secno">4.1.1.3 </bdi>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#helptype-explanation"><bdi class="secno">4.1.2 </bdi>helptype</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-1"><bdi class="secno">4.1.2.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#helptype-example"><bdi class="secno">4.1.2.2 </bdi>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-1"><bdi class="secno">4.1.2.3 </bdi>Characteristics</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#inline"><bdi class="secno">4.2 </bdi>Inline Implementation </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#literal-explanation"><bdi class="secno">4.2.1 </bdi>literal</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-2"><bdi class="secno">4.2.1.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#literal-example"><bdi class="secno">4.2.1.2 </bdi>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-2"><bdi class="secno">4.2.1.3 </bdi>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#numberfree-explanation"><bdi class="secno">4.2.2 </bdi>numberfree</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-3"><bdi class="secno">4.2.2.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#numberfree-example"><bdi class="secno">4.2.2.2 </bdi>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-3"><bdi class="secno">4.2.2.3 </bdi>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#easylang-explanation"><bdi class="secno">4.2.3 </bdi>easylang</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-4"><bdi class="secno">4.2.3.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#easylang-example"><bdi class="secno">4.2.3.2 </bdi>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-4"><bdi class="secno">4.2.3.3 </bdi>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#explain-explanation"><bdi class="secno">4.2.4 </bdi>explain</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-5"><bdi class="secno">4.2.4.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#explain-example"><bdi class="secno">4.2.4.2 </bdi>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-5"><bdi class="secno">4.2.4.3 </bdi>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#feedback-explanation"><bdi class="secno">4.2.5 </bdi>feedback</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-6"><bdi class="secno">4.2.5.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#feedback-example"><bdi class="secno">4.2.5.2 </bdi>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-6"><bdi class="secno">4.2.5.3 </bdi>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#moreinfo-explanation"><bdi class="secno">4.2.6 </bdi>moreinfo</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-7"><bdi class="secno">4.2.6.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#moreinfo-example"><bdi class="secno">4.2.6.2 </bdi>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-7"><bdi class="secno">4.2.6.3 </bdi>Characteristics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#extrahelp-explanation"><bdi class="secno">4.2.7 </bdi>extrahelp</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-8"><bdi class="secno">4.2.7.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#extrahelp-example"><bdi class="secno">4.2.7.2 </bdi>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-8"><bdi class="secno">4.2.7.3 </bdi>Characteristics</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#vocabulary-implementations"><bdi class="secno">A. </bdi>Vocabulary Implementations</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">B. </bdi>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><bdi class="secno">B.1 </bdi>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><bdi class="secno">B.2 </bdi>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><bdi class="secno">B.3 </bdi>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">C. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">C.1 </bdi>Informative references</a></li></ol></li></ol></nav>
 
 		<section class="informative" id="introduction">
 
-			<!--OddPage--><h2 id="x1-introduction"><span class="secno">1. </span>Introduction<a class="self-link" aria-label="§" href="#introduction"></a></h2><p><em>This section is non-normative.</em></p>
+			<h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction<a class="self-link" aria-label="§" href="#introduction"></a></h2><p><em>This section is non-normative.</em></p>
 			<p>This document lists examples of the personalized help and support properties, this is an extension of <a href="../">Personalization Explainer 1.0</a>. including the properties of <code>literal</code>, <code>numberfree</code>, <code>easylang</code>, <code>alternative</code>, <code>explain</code>, <code>feedback</code>, <code>moreinfo</code>, <code>extrahelp</code>, <code>helptype</code>. </p>
 
-			<div class="note" id="examples-disclaimer"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="3"><span>Editor's note</span></div><p class="">Personalization semantics defines a set of properties and values to annotate content. The specific mechanism to apply these properties to content and semantics has not been decided. <a href="https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content">Several approaches are under consideration</a> and future drafts will show progress. To help understand the proposed properties, this document provides many examples of personalization semantics applied to content, which show attributes beginning with the prefix "aui-". <em>This prefix has not been decided on as the definitive approach</em>, but is used as a way to illustrate the examples.</p></div>
+			<div class="note" id="examples-disclaimer"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="3"><span>Editor's note</span></div><p class="">Personalization semantics defines a set of properties and values to annotate content. The specific mechanism to apply these properties to content and semantics has not been decided. <a href="https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content">Several approaches are under consideration</a> and future drafts will show progress. To help understand the proposed properties, this document provides many examples of personalization semantics applied to content, which show attributes beginning with the prefix "data-". <em>This prefix has not been decided on as the definitive approach</em>, but is used as a way to illustrate the examples.</p></div>
 
 		</section>
 		<section id="use-cases-and-requirements">
-			<!--OddPage--><h2 id="x2-use-cases-and-requirements"><span class="secno">2. </span>Use Cases and Requirements<a class="self-link" aria-label="§" href="#use-cases-and-requirements"></a></h2>
+			<h2 id="x2-use-cases-and-requirements"><bdi class="secno">2. </bdi>Use Cases and Requirements<a class="self-link" aria-label="§" href="#use-cases-and-requirements"></a></h2>
 			<p>The <a href="../requirements/">Requirements for Personalization Semantics</a> describes use cases and requirements. This module provides properties to fulfill requirements related to providing help and support.</p>
 		</section>
 		
 		<section id="vocabulary">
-			<!--OddPage--><h2 id="x3-vocabulary"><span class="secno">3. </span>Vocabulary <a class="self-link" aria-label="§" href="#vocabulary"></a></h2>
+			<h2 id="x3-vocabulary"><bdi class="secno">3. </bdi>Vocabulary <a class="self-link" aria-label="§" href="#vocabulary"></a></h2>
 
 				<section id="vocabulary-explanation">
-	<h3 id="x3-1-vocabulary"><span class="secno">3.1 </span>vocabulary<a class="self-link" aria-label="§" href="#vocabulary-explanation"></a></h3>
+	<h3 id="x3-1-vocabulary"><bdi class="secno">3.1 </bdi>vocabulary<a class="self-link" aria-label="§" href="#vocabulary-explanation"></a></h3>
   <section id="description">
-    <h4 id="x3-1-1-description"><span class="secno">3.1.1 </span>Description<a class="self-link" aria-label="§" href="#description"></a></h4>
+    <h4 id="x3-1-1-description"><bdi class="secno">3.1.1 </bdi>Description<a class="self-link" aria-label="§" href="#description"></a></h4>
     <div>
           <p>The following are property terms used to describe alternative or supportive content that may be useful for people with disabilities. The current list focuses on cognitive disabilities, hover we intended to merge the vocabularies for other disabilities in the next version. </p>
           <p><strong>Overview of supported values:</strong>
@@ -1004,7 +1005,7 @@ var[data-type]:hover::before {
   </section>
 
   <section id="values-for-alternative-content-and-content-accessibility-support">
-      <h4 id="x3-1-2-values-for-alternative-content-and-content-accessibility-support"><span class="secno">3.1.2 </span>Values for alternative content and content accessibility support<a class="self-link" aria-label="§" href="#values-for-alternative-content-and-content-accessibility-support"></a></h4>
+      <h4 id="x3-1-2-values-for-alternative-content-and-content-accessibility-support"><bdi class="secno">3.1.2 </bdi>Values for alternative content and content accessibility support<a class="self-link" aria-label="§" href="#values-for-alternative-content-and-content-accessibility-support"></a></h4>
 	        <div class="note" id="issue-container-generatedID"><div role="heading" class="ednote-title marker" id="h-ednote-0" aria-level="5"><span>Editor's note</span></div><div class=""> This focuses on cognitive accessibility. We may add other collections from https://github.com/w3c/personalization-semantics/wiki/User-needs-collections such as https://www.w3.org/wiki/WebSchemas/Accessibility. </div></div>
     
       <table class="value-descriptions">
@@ -1137,7 +1138,7 @@ var[data-type]:hover::before {
   </section>
     
   <section id="values-for-types-of-help">
-    	<h4 id="x3-1-3-values-for-types-of-help"><span class="secno">3.1.3 </span> Values for types of help <a class="self-link" aria-label="§" href="#values-for-types-of-help"></a></h4>
+    	<h4 id="x3-1-3-values-for-types-of-help"><bdi class="secno">3.1.3 </bdi> Values for types of help <a class="self-link" aria-label="§" href="#values-for-types-of-help"></a></h4>
 	    <div class="note" id="issue-container-generatedID-0"><div role="heading" class="ednote-title marker" id="h-ednote-1" aria-level="5"><span>Editor's note</span></div><div class=""> This may be added to or harmonized with link destinations in module 1. Or it may be added to the above table. </div></div>
     	<table class="value-descriptions">
 					<thead>
@@ -1230,7 +1231,7 @@ var[data-type]:hover::before {
 	</section>
 
   <section id="characteristics">
-      <h4 id="x3-1-4-characteristics"><span class="secno">3.1.4 </span>Characteristics<a class="self-link" aria-label="§" href="#characteristics"></a></h4>
+      <h4 id="x3-1-4-characteristics"><bdi class="secno">3.1.4 </bdi>Characteristics<a class="self-link" aria-label="§" href="#characteristics"></a></h4>
       <table class="property-features">
           <thead>
             <tr>
@@ -1241,7 +1242,7 @@ var[data-type]:hover::before {
           <tbody>
             <tr>
               <th class="property-related-head" scope="row">Related Concepts:</th>
-              <td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-svg2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-dom4">DOM4</a></cite>] active</td>
+              <td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-svg2" title="Scalable Vector Graphics (SVG) 2" data-link-type="biblio">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-dom4" title="DOM Standard" data-link-type="biblio">DOM4</a></cite>] active</td>
             </tr>
             <tr>
               <th class="property-applicability-head" scope="row">Used in Roles:</th>
@@ -1266,15 +1267,15 @@ var[data-type]:hover::before {
 			</section>
 
 			<section id="implementation">
-				<!--OddPage--><h2 id="x4-example-implementations"><span class="secno">4. </span>Example Implementations<a class="self-link" aria-label="§" href="#implementation"></a></h2>
+				<h2 id="x4-example-implementations"><bdi class="secno">4. </bdi>Example Implementations<a class="self-link" aria-label="§" href="#implementation"></a></h2>
 				<p>The Working Group is currently exploring different methods of implementing help and support in the context of the Personalization effort. The following examples are for illustration only, to assist in visualizing how this may work. The examples illustrate "large" amounts of alternative content, contained inline but hidden from traditional views. This content would be exposed to the end user on demand. For smaller pieces of content, additional information and support can be provided inline within the relative context of the content.</p>
-				<div class="note" id="issue-container-generatedID-1"><div role="heading" class="ednote-title marker" id="h-ednote-2" aria-level="3"><span>Editor's note</span></div><p class="">Currently all examples are implemented through attribute/value pairs. This does not imply that attribute/value pairs are the only implemenation strategy. The Working Group plans to add additional examples using other mechanisms as previously indicated.</p></div>
+				<div class="note" id="issue-container-generatedID-1"><div role="heading" class="ednote-title marker" id="h-ednote-2" aria-level="3"><span>Editor's note</span></div><p class="">Currently all examples are implemented through attribute/value pairs. This does not imply that attribute/value pairs are the only implementation strategy. The Working Group plans to add additional examples using other mechanisms as previously indicated.</p></div>
 				<section id="addn-content">
-					<h3 id="x4-1-implementation-in-different-content-sections"><span class="secno">4.1 </span>Implementation in different content sections<a class="self-link" aria-label="§" href="#addn-content"></a></h3>
+					<h3 id="x4-1-implementation-in-different-content-sections"><bdi class="secno">4.1 </bdi>Implementation in different content sections<a class="self-link" aria-label="§" href="#addn-content"></a></h3>
 						<section id="alternative-explanation">
-	<h4 id="x4-1-1-alternative"><span class="secno">4.1.1 </span>Alternative<a class="self-link" aria-label="§" href="#alternative-explanation"></a></h4>
+	<h4 id="x4-1-1-alternative"><bdi class="secno">4.1.1 </bdi>Alternative<a class="self-link" aria-label="§" href="#alternative-explanation"></a></h4>
   <section id="description-0">
-    <h5 id="x4-1-1-1-description"><span class="secno">4.1.1.1 </span>Description<a class="self-link" aria-label="§" href="#description-0"></a></h5>
+    <h5 id="x4-1-1-1-description"><bdi class="secno">4.1.1.1 </bdi>Description<a class="self-link" aria-label="§" href="#description-0"></a></h5>
     <div class="property-description">
           <p>Would be used on an alternative content as an alternative to more detailed or difficult to understand content. <code>alternative</code> can be used on a span, div, link or image that servers as alternative content to it's direct parent element.</p>
           <div class="note" id="issue-container-generatedID-2"><div role="heading" class="ednote-title marker" id="h-ednote-3" aria-level="6"><span>Editor's note</span></div><p class="">This data model may be too complex, so this property could undergo substantial changes.</p></div>
@@ -1290,11 +1291,11 @@ var[data-type]:hover::before {
     </div>
   </section>
 	<section id="alternative-example">
-    <h5 id="x4-1-1-2-example"><span class="secno">4.1.1.2 </span>Example<a class="self-link" aria-label="§" href="#alternative-example"></a></h5>
+    <h5 id="x4-1-1-2-example"><bdi class="secno">4.1.1.2 </bdi>Example<a class="self-link" aria-label="§" href="#alternative-example"></a></h5>
 		<p>The below example section show how <code>alternative</code> used when coding.</p>
     <div class="example" id="example-1-alternative-using-aui">
           <div class="marker">
-      <a class="self-link" href="#example-1-alternative-using-aui">Example 1</a><span class="example-title">: Alternative Using AUI</span>
+      <a class="self-link" href="#example-1-alternative-using-aui">Example<bdi> 1</bdi></a><span class="example-title">: Alternative Using AUI</span>
     </div> <pre aria-busy="false"><code class="hljs javascript">    &lt;div&gt;
 	<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">aui-alternative</span>=<span class="hljs-string">"easylang numberfree vocab1000"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hidden"</span>&gt;</span>
  	   most people prefer simple text
@@ -1308,7 +1309,7 @@ var[data-type]:hover::before {
         
     </section>
     <section id="characteristics-0">
-      <h5 id="x4-1-1-3-characteristics"><span class="secno">4.1.1.3 </span>Characteristics<a class="self-link" aria-label="§" href="#characteristics-0"></a></h5>
+      <h5 id="x4-1-1-3-characteristics"><bdi class="secno">4.1.1.3 </bdi>Characteristics<a class="self-link" aria-label="§" href="#characteristics-0"></a></h5>
       <table class="property-features">
           <thead>
             <tr>
@@ -1319,7 +1320,7 @@ var[data-type]:hover::before {
           <tbody>
             <tr>
               <th class="property-related-head" scope="row">Related Concepts:</th>
-              <td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-svg2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-dom4">DOM4</a></cite>] active</td>
+              <td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-svg2" title="Scalable Vector Graphics (SVG) 2" data-link-type="biblio">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-dom4" title="DOM Standard" data-link-type="biblio">DOM4</a></cite>] active</td>
             </tr>
             <tr>
               <th class="property-applicability-head" scope="row">Used in Roles:</th>
@@ -1339,9 +1340,9 @@ var[data-type]:hover::before {
 </section>
 
 						<section id="helptype-explanation">
-	<h4 id="x4-1-2-helptype"><span class="secno">4.1.2 </span>helptype<a class="self-link" aria-label="§" href="#helptype-explanation"></a></h4>
+	<h4 id="x4-1-2-helptype"><bdi class="secno">4.1.2 </bdi>helptype<a class="self-link" aria-label="§" href="#helptype-explanation"></a></h4>
 	<section id="description-1">
-		<h5 id="x4-1-2-1-description"><span class="secno">4.1.2.1 </span>Description<a class="self-link" aria-label="§" href="#description-1"></a></h5>
+		<h5 id="x4-1-2-1-description"><bdi class="secno">4.1.2.1 </bdi>Description<a class="self-link" aria-label="§" href="#description-1"></a></h5>
 		<div class="property-description">
 					<p>Would be used on additional content to indicate the type of extra help provided. <code>helptype</code> can be used on a span, div, link or image that provides or redirects the user to additional help information.</p>
 					<p><strong>Overview of supported values:</strong>
@@ -1356,35 +1357,35 @@ var[data-type]:hover::before {
 
 	</section>
 	<section id="helptype-example">
-		<h5 id="x4-1-2-2-example"><span class="secno">4.1.2.2 </span>Example<a class="self-link" aria-label="§" href="#helptype-example"></a></h5>
+		<h5 id="x4-1-2-2-example"><bdi class="secno">4.1.2.2 </bdi>Example<a class="self-link" aria-label="§" href="#helptype-example"></a></h5>
 	<p>The below example section show how <code>helptype</code> used when coding.</p>
-<div class="example" id="example-2-helptype-using-aui">
+<div class="example" id="example-2-helptype-using-data">
           <div class="marker">
-      <a class="self-link" href="#example-2-helptype-using-aui">Example 2</a><span class="example-title">: Helptype Using AUI</span>
-    </div> <pre aria-busy="false"><code class="hljs xml">    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">aui-extrahelp</span>=<span class="hljs-string">"uri2 uri3"</span> &gt;</span>undo<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <a class="self-link" href="#example-2-helptype-using-data">Example<bdi> 2</bdi></a><span class="example-title">: Helptype Using data-</span>
+    </div> <pre aria-busy="false"><code class="hljs xml">    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">data-extrahelp</span>=<span class="hljs-string">"uri2 uri3"</span> &gt;</span>undo<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 
 
 URI 2 may read: 
 
 
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"uri2"</span> <span class="hljs-attr">aui-helptype</span>=<span class="hljs-string">"morehelp"</span> <span class="hljs-attr">aui-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"uri2"</span> <span class="hljs-attr">data-helptype</span>=<span class="hljs-string">"morehelp"</span> <span class="hljs-attr">data-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
         pressing the undo button will erase all your work on this page.
         Use this button with care.
         If you press it by mistake, press control and y at the same time
         and your answers will come back.
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"functiongethelp()"</span> <span class="hljs-attr">aui-helptype</span>=<span class="hljs-string">"humanhelp"</span> <span class="hljs-attr">aui-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"functiongethelp()"</span> <span class="hljs-attr">data-helptype</span>=<span class="hljs-string">"humanhelp"</span> <span class="hljs-attr">data-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
   I want a person to help me<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"uri3"</span> <span class="hljs-attr">aui-extrahelp</span>=<span class="hljs-string">"glossary"</span> <span class="hljs-attr">aui-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"uri3"</span> <span class="hljs-attr">data-extrahelp</span>=<span class="hljs-string">"glossary"</span> <span class="hljs-attr">data-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
 </code></pre>
         </div>
 
     </section>
 
     <section id="characteristics-1">
-    	<h5 id="x4-1-2-3-characteristics"><span class="secno">4.1.2.3 </span>Characteristics<a class="self-link" aria-label="§" href="#characteristics-1"></a></h5>
+    	<h5 id="x4-1-2-3-characteristics"><bdi class="secno">4.1.2.3 </bdi>Characteristics<a class="self-link" aria-label="§" href="#characteristics-1"></a></h5>
     	<table class="property-features">
 					<thead>
 						<tr>
@@ -1395,7 +1396,7 @@ URI 2 may read:
 					<tbody>
 						<tr>
 							<th class="property-related-head" scope="row">Related Concepts:</th>
-							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-svg2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-dom4">DOM4</a></cite>] active</td>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-svg2" title="Scalable Vector Graphics (SVG) 2" data-link-type="biblio">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-dom4" title="DOM Standard" data-link-type="biblio">DOM4</a></cite>] active</td>
 						</tr>
 						<tr>
 							<th class="property-applicability-head" scope="row">Used in Roles:</th>
@@ -1413,75 +1414,17 @@ URI 2 may read:
 				</table>
     </section>
 </section>
-	<!--
-    <section>
-    	<h3>Values</h3>
-    	<table class="value-descriptions">
-					<thead>
-						<tr>
-							<th scope="col">Value</th>
-							<th scope="col">Description</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<th class="value-name" scope="row">automated</th>
-							<td class="value-description">provides an alternative step by step sequence for completing a task or procedure.</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">dictionary</th>
-							<td class="value-description">provides a definition of the term or topic. May redirect to another uri or provide the information in-line, via a popup, or other method.</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">faqs</th>
-							<td class="value-description">redirects to a FAQ page with the related topic in view. </td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">glossary</th>
-							<td class="value-description">provides a uri to a glossary page with the related topic in view.</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">helpform</th>
-							<td class="value-description">Used with forms when the user may need more or simplified information about the type of information being requested. Provides with a modified form with more information about each requested item.</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">humanhelp</th>
-							<td class="value-description">Provides the user with access to human help. This may be through a live chat, providing a phone number to call for human assistance, or other mechanism to reach a person for direct assistance. </td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">morehelp</th>
-							<td class="value-description">Provides a more detailed explanation about the current topic or process.</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">simplified</th>
-							<td class="value-description"><em>propose this should be easylang rather than simplified.</em>  Provides, a version of the content that is easier to read and understand.</td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">thesaurus</th>
-							<td class="value-description">provides a list of synonyms for the current term.  May redirect to another uri or provide a list of synonyms in-line, via a popup, or other method. </td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">tooltips</th>
-							<td class="value-description">offers an option of adding tooltips to provide morehelp with more detailed information about the current topic or process. </td>
-						</tr>
-						<tr>
-							<th class="value-name" scope="row">topicsearch</th>
-							<td class="value-description">provides a uri for the user to perform a search on the current topic with the suggested search term included.</td>
-						</tr>
-					</tbody>
-				</table>
-    </section>
-	-->
+	
 
 				</section>
 				<section id="inline">
-					<h3 id="x4-2-inline-implementation"><span class="secno">4.2 </span>Inline Implementation <a class="self-link" aria-label="§" href="#inline"></a></h3>
+					<h3 id="x4-2-inline-implementation"><bdi class="secno">4.2 </bdi>Inline Implementation <a class="self-link" aria-label="§" href="#inline"></a></h3>
 					<p>For small inline support and changes, attributes may be used.</p>
 
 					<section id="literal-explanation">
-	<h4 id="x4-2-1-literal"><span class="secno">4.2.1 </span>literal<a class="self-link" aria-label="§" href="#literal-explanation"></a></h4>
+	<h4 id="x4-2-1-literal"><bdi class="secno">4.2.1 </bdi>literal<a class="self-link" aria-label="§" href="#literal-explanation"></a></h4>
 	<section id="description-2">
-		<h5 id="x4-2-1-1-description"><span class="secno">4.2.1.1 </span>Description<a class="self-link" aria-label="§" href="#description-2"></a></h5>
+		<h5 id="x4-2-1-1-description"><bdi class="secno">4.2.1.1 </bdi>Description<a class="self-link" aria-label="§" href="#description-2"></a></h5>
 		<div class="property-description">
 					<p><code>literal</code> provides alternative text for people who prefer content that does not use non literal text, such as metaphors.</p>
 					<p>A personalization agent may replace the content with the literal alternative, or it may put the literal alternative in a tooltip.</p>
@@ -1492,16 +1435,16 @@ URI 2 may read:
 				</div>
 	</section>
 	<section id="literal-example">
-		<h5 id="x4-2-1-2-example"><span class="secno">4.2.1.2 </span>Example<a class="self-link" aria-label="§" href="#literal-example"></a></h5>
+		<h5 id="x4-2-1-2-example"><bdi class="secno">4.2.1.2 </bdi>Example<a class="self-link" aria-label="§" href="#literal-example"></a></h5>
 		<p>The below example section show how <code>literal</code> used when coding.</p>
-    	<div class="example" id="example-3-literal-using-aui">
+    	<div class="example" id="example-3-literal-using-data">
           <div class="marker">
-      <a class="self-link" href="#example-3-literal-using-aui">Example 3</a><span class="example-title">: Literal Using AUI</span>
-    </div> <pre aria-busy="false"><code class="hljs xml">    	   It is <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">aui-literal</span>=<span class="hljs-string">"raining hard"</span>&gt;</span>raining cats and dogs<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre>
+      <a class="self-link" href="#example-3-literal-using-data">Example<bdi> 3</bdi></a><span class="example-title">: Literal Using data-</span>
+    </div> <pre aria-busy="false"><code class="hljs xml">    	   It is <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">data-literal</span>=<span class="hljs-string">"raining hard"</span>&gt;</span>raining cats and dogs<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre>
         </div>
     </section>
     <section id="characteristics-2">
-    	<h5 id="x4-2-1-3-characteristics"><span class="secno">4.2.1.3 </span>Characteristics<a class="self-link" aria-label="§" href="#characteristics-2"></a></h5>
+    	<h5 id="x4-2-1-3-characteristics"><bdi class="secno">4.2.1.3 </bdi>Characteristics<a class="self-link" aria-label="§" href="#characteristics-2"></a></h5>
     	<table class="property-features">
 					<thead>
 						<tr>
@@ -1536,9 +1479,9 @@ URI 2 may read:
 
 
 					<section id="numberfree-explanation">
-	<h4 id="x4-2-2-numberfree"><span class="secno">4.2.2 </span>numberfree<a class="self-link" aria-label="§" href="#numberfree-explanation"></a></h4>
+	<h4 id="x4-2-2-numberfree"><bdi class="secno">4.2.2 </bdi>numberfree<a class="self-link" aria-label="§" href="#numberfree-explanation"></a></h4>
 	<section id="description-3">
-		<h5 id="x4-2-2-1-description"><span class="secno">4.2.2.1 </span>Description<a class="self-link" aria-label="§" href="#description-3"></a></h5>
+		<h5 id="x4-2-2-1-description"><bdi class="secno">4.2.2.1 </bdi>Description<a class="self-link" aria-label="§" href="#description-3"></a></h5>
 		<div class="property-description">
 					<p><code>numberfree</code> provides alternative text for people who prefer content that does not use numerical concepts.</p>
 					<p>A personalization agent may replace the content with the number free alternative, or it may put the number free alternative in a tooltip or sidebar. The content must still be understandable when a user agent replaces the original content with the number free alternative.</p>
@@ -1549,22 +1492,22 @@ URI 2 may read:
 				</div>
 	</section>
 	<section id="numberfree-example">
-		<h5 id="x4-2-2-2-example"><span class="secno">4.2.2.2 </span>Example<a class="self-link" aria-label="§" href="#numberfree-example"></a></h5>
+		<h5 id="x4-2-2-2-example"><bdi class="secno">4.2.2.2 </bdi>Example<a class="self-link" aria-label="§" href="#numberfree-example"></a></h5>
 		<p>The below example section show how <code>numberfree</code> used when coding.</p>
-  		  <div class="example" id="example-4-numberfree-using-aui">
+  		  <div class="example" id="example-4-numberfree-using-data">
           <div class="marker">
-      <a class="self-link" href="#example-4-numberfree-using-aui">Example 4</a><span class="example-title">: Numberfree Using AUI</span>
-    </div> <pre aria-busy="false"><code class="hljs xml">			<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">aui-numberfree</span>=<span class="hljs-string">"almost all"</span>&gt;</span>9 out of 10 <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre>
+      <a class="self-link" href="#example-4-numberfree-using-data">Example<bdi> 4</bdi></a><span class="example-title">: Numberfree Using data-</span>
+    </div> <pre aria-busy="false"><code class="hljs xml">			<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">data-numberfree</span>=<span class="hljs-string">"almost all"</span>&gt;</span>9 out of 10 <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre>
         </div>
 	
-			<div class="example" id="example-5-numberfree-using-aui">
+			<div class="example" id="example-5-numberfree-using-data">
           <div class="marker">
-      <a class="self-link" href="#example-5-numberfree-using-aui">Example 5</a><span class="example-title">: Numberfree Using AUI</span>
-    </div> <pre aria-busy="false"><code class="hljs xml">			<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">aui-numberfree</span>=<span class="hljs-string">"hat and coat weather"</span>&gt;</span>The weather is 9 degrees<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre>
+      <a class="self-link" href="#example-5-numberfree-using-data">Example<bdi> 5</bdi></a><span class="example-title">: Numberfree Using data-</span>
+    </div> <pre aria-busy="false"><code class="hljs xml">			<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">data-numberfree</span>=<span class="hljs-string">"hat and coat weather"</span>&gt;</span>The weather is 9 degrees<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre>
         </div>
     </section>
     <section id="characteristics-3">
-    	<h5 id="x4-2-2-3-characteristics"><span class="secno">4.2.2.3 </span>Characteristics<a class="self-link" aria-label="§" href="#characteristics-3"></a></h5>
+    	<h5 id="x4-2-2-3-characteristics"><bdi class="secno">4.2.2.3 </bdi>Characteristics<a class="self-link" aria-label="§" href="#characteristics-3"></a></h5>
     	<table class="property-features">
 					<thead>
 						<tr>
@@ -1599,9 +1542,9 @@ URI 2 may read:
 
 
 					<section id="easylang-explanation">
-	<h4 id="x4-2-3-easylang"><span class="secno">4.2.3 </span>easylang<a class="self-link" aria-label="§" href="#easylang-explanation"></a></h4>
+	<h4 id="x4-2-3-easylang"><bdi class="secno">4.2.3 </bdi>easylang<a class="self-link" aria-label="§" href="#easylang-explanation"></a></h4>
 	<section id="description-4">
-		<h5 id="x4-2-3-1-description"><span class="secno">4.2.3.1 </span>Description<a class="self-link" aria-label="§" href="#description-4"></a></h5>
+		<h5 id="x4-2-3-1-description"><bdi class="secno">4.2.3.1 </bdi>Description<a class="self-link" aria-label="§" href="#description-4"></a></h5>
 		<div class="property-description">
 				<p><code>easylang</code> provides an alternative text of the content that is easier to read and understand. Note that this only works on small sections of text as the <code>easylang attribute</code> does not support full HTML, such as lists and tables.</p>
 				<p>A personalization agent (3rd-party tool or browser extension) may replace the content with the simpler alternative, or it may put the  alternative in a tooltip or help panel.</p>
@@ -1612,16 +1555,16 @@ URI 2 may read:
 		</div>
 	</section>
 	<section id="easylang-example">
-		<h5 id="x4-2-3-2-example"><span class="secno">4.2.3.2 </span>Example<a class="self-link" aria-label="§" href="#easylang-example"></a></h5>
+		<h5 id="x4-2-3-2-example"><bdi class="secno">4.2.3.2 </bdi>Example<a class="self-link" aria-label="§" href="#easylang-example"></a></h5>
 		<p>The below example section show how <code>easylang</code> used when coding.</p>
-   		<div class="example" id="example-6-easylang-using-aui">
+   		<div class="example" id="example-6-easylang-using-data">
           <div class="marker">
-      <a class="self-link" href="#example-6-easylang-using-aui">Example 6</a><span class="example-title">: Easylang Using AUI</span>
-    </div> <pre aria-busy="false"><code class="hljs xml">			<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">aui-easylang</span>=<span class="hljs-string">"some text that is easy to read"</span>&gt;</span> some convoluted obtuse text<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre>
+      <a class="self-link" href="#example-6-easylang-using-data">Example<bdi> 6</bdi></a><span class="example-title">: Easylang Using data-</span>
+    </div> <pre aria-busy="false"><code class="hljs xml">			<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">data-easylang</span>=<span class="hljs-string">"some text that is easy to read"</span>&gt;</span> some convoluted obtuse text<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre>
         </div>
     </section>
     <section id="characteristics-4">
-    	<h5 id="x4-2-3-3-characteristics"><span class="secno">4.2.3.3 </span>Characteristics<a class="self-link" aria-label="§" href="#characteristics-4"></a></h5>
+    	<h5 id="x4-2-3-3-characteristics"><bdi class="secno">4.2.3.3 </bdi>Characteristics<a class="self-link" aria-label="§" href="#characteristics-4"></a></h5>
     	<table class="property-features">
 								<thead>
 									<tr>
@@ -1656,9 +1599,9 @@ URI 2 may read:
 
 
 					<section id="explain-explanation">
-	<h4 id="x4-2-4-explain"><span class="secno">4.2.4 </span>explain<a class="self-link" aria-label="§" href="#explain-explanation"></a></h4>
+	<h4 id="x4-2-4-explain"><bdi class="secno">4.2.4 </bdi>explain<a class="self-link" aria-label="§" href="#explain-explanation"></a></h4>
 	<section id="description-5">
-		<h5 id="x4-2-4-1-description"><span class="secno">4.2.4.1 </span>Description<a class="self-link" aria-label="§" href="#description-5"></a></h5>
+		<h5 id="x4-2-4-1-description"><bdi class="secno">4.2.4.1 </bdi>Description<a class="self-link" aria-label="§" href="#description-5"></a></h5>
 		<div class="property-description">
 					<p>This attribute provides any information that helps the user anticipate the functionality, such as letting the user know what behavior will trigger an event. This is most important if the mechanism is not standard. </p>
 					<p>User experience: This help can be rendered as a tool tip, help link or read when the control or link is read. Most users will not want this text rendered or spoken, but other users however will need it to understand the behavior of the element.</p>
@@ -1667,17 +1610,17 @@ URI 2 may read:
 		</div>
 	</section>
 	<section id="explain-example">
-		<h5 id="x4-2-4-2-example"><span class="secno">4.2.4.2 </span>Example<a class="self-link" aria-label="§" href="#explain-example"></a></h5>
+		<h5 id="x4-2-4-2-example"><bdi class="secno">4.2.4.2 </bdi>Example<a class="self-link" aria-label="§" href="#explain-example"></a></h5>
 		<p>The example section below shows how <code>explain</code> used when coding.</p>
-  		<div class="example" id="example-7-explain-using-aui">
+  		<div class="example" id="example-7-explain-using-data">
           <div class="marker">
-      <a class="self-link" href="#example-7-explain-using-aui">Example 7</a><span class="example-title">: Explain Using AUI</span>
-    </div> <pre aria-busy="false"><code class="hljs javascript">			aui-explain=<span class="hljs-string">"press enter to send the email"</span> </code></pre>
+      <a class="self-link" href="#example-7-explain-using-data">Example<bdi> 7</bdi></a><span class="example-title">: Explain Using data-</span>
+    </div> <pre aria-busy="false"><code class="hljs javascript">			data-explain=<span class="hljs-string">"press enter to send the email"</span> </code></pre>
         </div>
 
     </section>
     <section id="characteristics-5">
-    	<h5 id="x4-2-4-3-characteristics"><span class="secno">4.2.4.3 </span>Characteristics<a class="self-link" aria-label="§" href="#characteristics-5"></a></h5>
+    	<h5 id="x4-2-4-3-characteristics"><bdi class="secno">4.2.4.3 </bdi>Characteristics<a class="self-link" aria-label="§" href="#characteristics-5"></a></h5>
     	<table class="property-features">
 					<thead>
 						<tr>
@@ -1688,7 +1631,7 @@ URI 2 may read:
 					<tbody>
 						<tr>
 							<th class="property-related-head" scope="row">Related Concepts:</th>
-							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-svg2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-dom4">DOM4</a></cite>] active</td>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-svg2" title="Scalable Vector Graphics (SVG) 2" data-link-type="biblio">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-dom4" title="DOM Standard" data-link-type="biblio">DOM4</a></cite>] active</td>
 						</tr>
 						<tr>
 							<th class="property-applicability-head" scope="row">Used in Roles:</th>
@@ -1712,26 +1655,26 @@ URI 2 may read:
 
 
 					<section id="feedback-explanation">
-	<h4 id="x4-2-5-feedback"><span class="secno">4.2.5 </span>feedback<a class="self-link" aria-label="§" href="#feedback-explanation"></a></h4>
+	<h4 id="x4-2-5-feedback"><bdi class="secno">4.2.5 </bdi>feedback<a class="self-link" aria-label="§" href="#feedback-explanation"></a></h4>
 	<section id="description-6">
-		<h5 id="x4-2-5-1-description"><span class="secno">4.2.5.1 </span>Description<a class="self-link" aria-label="§" href="#description-6"></a></h5>
+		<h5 id="x4-2-5-1-description"><bdi class="secno">4.2.5.1 </bdi>Description<a class="self-link" aria-label="§" href="#description-6"></a></h5>
 		<div class="property-description">
 					<p>This attribute provides immediate feedback that can be shown or spoken when any event is triggered on a control.</p>
 					<p><strong>User experience: </strong>This can be rendered as text at the top of the page and read immediately. Most users will not want this text rendered and spoken. Other users however will need it to know what has just happened. </p>
 		</div>
 	</section>
 	<section id="feedback-example">
-		<h5 id="x4-2-5-2-example"><span class="secno">4.2.5.2 </span>Example<a class="self-link" aria-label="§" href="#feedback-example"></a></h5>
+		<h5 id="x4-2-5-2-example"><bdi class="secno">4.2.5.2 </bdi>Example<a class="self-link" aria-label="§" href="#feedback-example"></a></h5>
 		<p>The example section below shows how <code>feedback</code> might be used when coding.</p>
-   		<div class="example" id="example-8-feedback-using-aui">
+   		<div class="example" id="example-8-feedback-using-data">
           <div class="marker">
-      <a class="self-link" href="#example-8-feedback-using-aui">Example 8</a><span class="example-title">: Feedback Using AUI</span>
-    </div> <pre aria-busy="false"><code class="hljs javascript">			aui-feedback=<span class="hljs-string">"your email on %topic% was sent"</span> </code></pre>
+      <a class="self-link" href="#example-8-feedback-using-data">Example<bdi> 8</bdi></a><span class="example-title">: Feedback Using data-</span>
+    </div> <pre aria-busy="false"><code class="hljs javascript">			data-feedback=<span class="hljs-string">"your email on %topic% was sent"</span> </code></pre>
         </div>
 
     </section>
     <section id="characteristics-6">
-    	<h5 id="x4-2-5-3-characteristics"><span class="secno">4.2.5.3 </span>Characteristics<a class="self-link" aria-label="§" href="#characteristics-6"></a></h5>
+    	<h5 id="x4-2-5-3-characteristics"><bdi class="secno">4.2.5.3 </bdi>Characteristics<a class="self-link" aria-label="§" href="#characteristics-6"></a></h5>
     	<table class="property-features">
 					<thead>
 						<tr>
@@ -1742,7 +1685,7 @@ URI 2 may read:
 					<tbody>
 						<tr>
 							<th class="property-related-head" scope="row">Related Concepts:</th>
-							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-svg2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-dom4">DOM4</a></cite>] active</td>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-svg2" title="Scalable Vector Graphics (SVG) 2" data-link-type="biblio">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-dom4" title="DOM Standard" data-link-type="biblio">DOM4</a></cite>] active</td>
 						</tr>
 						<tr>
 							<th class="property-applicability-head" scope="row">Used in Roles:</th>
@@ -1766,9 +1709,9 @@ URI 2 may read:
 
 
 					<section id="moreinfo-explanation">
-	<h4 id="x4-2-6-moreinfo"><span class="secno">4.2.6 </span>moreinfo<a class="self-link" aria-label="§" href="#moreinfo-explanation"></a></h4>
+	<h4 id="x4-2-6-moreinfo"><bdi class="secno">4.2.6 </bdi>moreinfo<a class="self-link" aria-label="§" href="#moreinfo-explanation"></a></h4>
 	<section id="description-7">
-		<h5 id="x4-2-6-1-description"><span class="secno">4.2.6.1 </span>Description<a class="self-link" aria-label="§" href="#description-7"></a></h5>
+		<h5 id="x4-2-6-1-description"><bdi class="secno">4.2.6.1 </bdi>Description<a class="self-link" aria-label="§" href="#description-7"></a></h5>
 		<div class="property-description">
 					<p><code>moreinfo</code> provides users access to additional information about the current content in one of several formats.</p>
 					<p>A personalization agent may add additional explanatory text or provide an action for the user to take to obtain more detailed information about the content.</p>
@@ -1778,17 +1721,17 @@ URI 2 may read:
 
 	</section>
 	<section id="moreinfo-example">
-		<h5 id="x4-2-6-2-example"><span class="secno">4.2.6.2 </span>Example<a class="self-link" aria-label="§" href="#moreinfo-example"></a></h5>
+		<h5 id="x4-2-6-2-example"><bdi class="secno">4.2.6.2 </bdi>Example<a class="self-link" aria-label="§" href="#moreinfo-example"></a></h5>
 		<p>The example section below shows how <code>moreinfo</code> would be used when coding.</p>
-    	<div class="example" id="example-9-moreinfo-using-aui">
+    	<div class="example" id="example-9-moreinfo-using-data">
           <div class="marker">
-      <a class="self-link" href="#example-9-moreinfo-using-aui">Example 9</a><span class="example-title">: Moreinfo Using AUI</span>
+      <a class="self-link" href="#example-9-moreinfo-using-data">Example<bdi> 9</bdi></a><span class="example-title">: Moreinfo Using data-</span>
     </div> <pre aria-busy="false"><code class="hljs">			N/A - Example needed.</code></pre>
         </div>
 
     </section>
     <section id="characteristics-7">
-    	<h5 id="x4-2-6-3-characteristics"><span class="secno">4.2.6.3 </span>Characteristics<a class="self-link" aria-label="§" href="#characteristics-7"></a></h5>
+    	<h5 id="x4-2-6-3-characteristics"><bdi class="secno">4.2.6.3 </bdi>Characteristics<a class="self-link" aria-label="§" href="#characteristics-7"></a></h5>
     	<table class="property-features">
 					<thead>
 						<tr>
@@ -1799,7 +1742,7 @@ URI 2 may read:
 					<tbody>
 						<tr>
 							<th class="property-related-head" scope="row">Related Concepts:</th>
-							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-svg2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-dom4">DOM4</a></cite>] active</td>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-svg2" title="Scalable Vector Graphics (SVG) 2" data-link-type="biblio">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-dom4" title="DOM Standard" data-link-type="biblio">DOM4</a></cite>] active</td>
 						</tr>
 						<tr>
 							<th class="property-applicability-head" scope="row">Used in Roles:</th>
@@ -1819,9 +1762,9 @@ URI 2 may read:
 </section>
 
 					<section id="extrahelp-explanation">
-	<h4 id="x4-2-7-extrahelp"><span class="secno">4.2.7 </span>extrahelp<a class="self-link" aria-label="§" href="#extrahelp-explanation"></a></h4>
+	<h4 id="x4-2-7-extrahelp"><bdi class="secno">4.2.7 </bdi>extrahelp<a class="self-link" aria-label="§" href="#extrahelp-explanation"></a></h4>
 	<section id="description-8">
-		<h5 id="x4-2-7-1-description"><span class="secno">4.2.7.1 </span>Description<a class="self-link" aria-label="§" href="#description-8"></a></h5>
+		<h5 id="x4-2-7-1-description"><bdi class="secno">4.2.7.1 </bdi>Description<a class="self-link" aria-label="§" href="#description-8"></a></h5>
 		<div class="property-description">
 					<p><code>extrahelp</code> provides users access to additional information about the current action or process in one or more formats.</p>
 					<p>A personalization agent may add additional explanatory text or provide an action for the user to take to obtain more detailed information or assistance in completing a task</p>
@@ -1831,17 +1774,17 @@ URI 2 may read:
 
 	</section>
 	<section id="extrahelp-example">
-		<h5 id="x4-2-7-2-example"><span class="secno">4.2.7.2 </span>Example<a class="self-link" aria-label="§" href="#extrahelp-example"></a></h5>
+		<h5 id="x4-2-7-2-example"><bdi class="secno">4.2.7.2 </bdi>Example<a class="self-link" aria-label="§" href="#extrahelp-example"></a></h5>
 		<p>The example section below shows how <code>extrahelp</code> would be used when coding.</p>
-    	<div class="example" id="example-10-extrahelp-using-aui">
+    	<div class="example" id="example-10-extrahelp-using-data">
           <div class="marker">
-      <a class="self-link" href="#example-10-extrahelp-using-aui">Example 10</a><span class="example-title">: Extrahelp Using AUI</span>
+      <a class="self-link" href="#example-10-extrahelp-using-data">Example<bdi> 10</bdi></a><span class="example-title">: Extrahelp Using data-</span>
     </div> <pre aria-busy="false"><code class="hljs">			N/A - Example Needed</code></pre>
         </div>
 
     </section>
     <section id="characteristics-8">
-    	<h5 id="x4-2-7-3-characteristics"><span class="secno">4.2.7.3 </span>Characteristics<a class="self-link" aria-label="§" href="#characteristics-8"></a></h5>
+    	<h5 id="x4-2-7-3-characteristics"><bdi class="secno">4.2.7.3 </bdi>Characteristics<a class="self-link" aria-label="§" href="#characteristics-8"></a></h5>
     	<table class="property-features">
 					<thead>
 						<tr>
@@ -1852,7 +1795,7 @@ URI 2 may read:
 					<tbody>
 						<tr>
 							<th class="property-related-head" scope="row">Related Concepts:</th>
-							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-svg2">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-dom4">DOM4</a></cite>] active</td>
+							<td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [<cite><a class="bibref" href="#bib-svg2" title="Scalable Vector Graphics (SVG) 2" data-link-type="biblio">SVG2</a></cite>] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [<cite><a class="bibref" href="#bib-dom4" title="DOM Standard" data-link-type="biblio">DOM4</a></cite>] active</td>
 						</tr>
 						<tr>
 							<th class="property-applicability-head" scope="row">Used in Roles:</th>
@@ -1876,15 +1819,15 @@ URI 2 may read:
 		</section>
 
 		<section class="appendix" id="vocabulary-implementations">
-			<!--OddPage--><h2 id="a-vocabulary-implementations"><span class="secno">A. </span>Vocabulary Implementations<a class="self-link" aria-label="§" href="#vocabulary-implementations"></a></h2>
+			<h2 id="a-vocabulary-implementations"><bdi class="secno">A. </bdi>Vocabulary Implementations<a class="self-link" aria-label="§" href="#vocabulary-implementations"></a></h2>
 			<p>The vocabulary implementations of this document are available at <a href="../#vocabulary-implementations">Personalization Explainer 1.0 Vocabulary Implementations section</a>.</p>
 		</section>
 
 		<section class="appendix informative section" id="acknowledgements">
-	<!--OddPage--><h2 id="b-acknowledgments"><span class="secno">B. </span>Acknowledgments<a class="self-link" aria-label="§" href="#acknowledgements"></a></h2><p><em>This section is non-normative.</em></p>
+	<h2 id="b-acknowledgments"><bdi class="secno">B. </bdi>Acknowledgments<a class="self-link" aria-label="§" href="#acknowledgements"></a></h2><p><em>This section is non-normative.</em></p>
 	<p>The following people contributed to the development of this document.</p>
 	<section class="section" id="ack_group">
-		<h3 id="b-1-participants-active-in-the-personalization-tf-at-the-time-of-publication"><span class="secno">B.1 </span>Participants active in the Personalization TF at the time of publication<a class="self-link" aria-label="§" href="#ack_group"></a></h3>
+		<h3 id="b-1-participants-active-in-the-personalization-tf-at-the-time-of-publication"><bdi class="secno">B.1 </bdi>Participants active in the Personalization TF at the time of publication<a class="self-link" aria-label="§" href="#ack_group"></a></h3>
 		<ul>
 			<li>Thaddeus Cambron (Invited Expert)</li>
 			<li>Michael Cooper (<abbr title="World Wide Web Consortium">W3C</abbr>/<abbr title="Massachusetts Institute of Technology">MIT</abbr>)</li>
@@ -1897,7 +1840,7 @@ URI 2 may read:
 		</ul>
   </section>
 	<section class="section" id="ack_others">
-		<h3 id="b-2-other-personalization-tf-contributors-commenters-and-previously-active-participants"><span class="secno">B.2 </span>Other Personalization TF contributors, commenters, and previously active participants<a class="self-link" aria-label="§" href="#ack_others"></a></h3>
+		<h3 id="b-2-other-personalization-tf-contributors-commenters-and-previously-active-participants"><bdi class="secno">B.2 </bdi>Other Personalization TF contributors, commenters, and previously active participants<a class="self-link" aria-label="§" href="#ack_others"></a></h3>
 		<ul>
 			<li>Joanmarie Diggs (Igalia)</li>
 			<li>Richard Schwerdtfeger (Knowbility, Inc.)</li>
@@ -1905,7 +1848,7 @@ URI 2 may read:
 		</ul>
 	</section>
 	<section class="section" id="ack_funders">
-		<h3 id="b-3-enabling-funders"><span class="secno">B.3 </span>Enabling funders<a class="self-link" aria-label="§" href="#ack_funders"></a></h3>
+		<h3 id="b-3-enabling-funders"><bdi class="secno">B.3 </bdi>Enabling funders<a class="self-link" aria-label="§" href="#ack_funders"></a></h3>
 		<p>This publication has been funded in part with U.S. Federal funds from the Health and Human Services, National Institute on Disability, Independent Living, and Rehabilitation Research (NIDILRR) under contract number HHSP23301500054C. The content of this publication does not necessarily reflect the views or policies of the U.S. Department of Health and Human Services, nor does mention of trade names, commercial products, or organizations imply endorsement by the U.S. Government.</p>
 	</section>
 </section>
@@ -1916,10 +1859,10 @@ URI 2 may read:
 	
 
 <section id="references" class="appendix">
-      <!--OddPage--><h2 id="c-references"><span class="secno">C. </span>References<a class="self-link" aria-label="§" href="#references"></a></h2>
+      <h2 id="c-references"><bdi class="secno">C. </bdi>References<a class="self-link" aria-label="§" href="#references"></a></h2>
       
     <section id="informative-references">
-        <h3 id="c-1-informative-references"><span class="secno">C.1 </span>Informative references<a class="self-link" aria-label="§" href="#informative-references"></a></h3>
+        <h3 id="c-1-informative-references"><bdi class="secno">C.1 </bdi>Informative references<a class="self-link" aria-label="§" href="#informative-references"></a></h3>
       <dl class="bibliography">
-        <dt id="bib-dom4">[DOM4]</dt><dd><a href="https://dom.spec.whatwg.org/"><cite>DOM Standard</cite></a>. Anne van Kesteren. WHATWG. Living Standard. URL: <a href="https://dom.spec.whatwg.org/">https://dom.spec.whatwg.org/</a></dd><dt id="bib-svg2">[SVG2]</dt><dd><a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/"><cite>Scalable Vector Graphics (SVG) 2</cite></a>. Nikos Andronikos; Rossen Atanassov; Tavmjong Bah; Amelia Bellamy-Royds; Brian Birtles; Cyril Concolato; Erik Dahlström; Chris Lilley; Cameron McCormack; Doug Schepers; Dirk Schulze; Richard Schwerdtfeger; Satoru Takagi; Jonathan Watt et al. W3C. W3C Working Draft. URL: <a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/">http://www.w3.org/TR/2015/WD-SVG2-20150915/</a></dd>
+        <dt id="bib-dom4">[DOM4]</dt><dd><a href="https://dom.spec.whatwg.org/"><cite>DOM Standard</cite></a>. Anne van Kesteren.  WHATWG. Living Standard. URL: <a href="https://dom.spec.whatwg.org/">https://dom.spec.whatwg.org/</a></dd><dt id="bib-svg2">[SVG2]</dt><dd><a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/"><cite>Scalable Vector Graphics (SVG) 2</cite></a>. Nikos Andronikos; Rossen Atanassov; Tavmjong Bah; Amelia Bellamy-Royds; Brian Birtles; Cyril Concolato; Erik Dahlström; Chris Lilley; Cameron McCormack; Doug Schepers; Dirk Schulze; Richard Schwerdtfeger; Satoru Takagi; Jonathan Watt et al.  W3C. W3C Working Draft. URL: <a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/">http://www.w3.org/TR/2015/WD-SVG2-20150915/</a></dd>
       </dl></section></section><p role="navigation" id="back-to-top"><a href="#title"><abbr title="Back to Top">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
