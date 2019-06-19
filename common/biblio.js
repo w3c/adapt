@@ -180,7 +180,7 @@ var biblio = {
 		"title": "Microsoft Active Accessibility (MSAA) 2.0",
 		"publisher": "Microsoft Corporation"
 	},
-	"Personalization Semantics Requirements": {
+	"personalization-semantics-requirements": {
 		"title": "Requirements for Personalization Semantics",
 		"href": "https://w3c.github.io/personalization-semantics/requirements/",
 		"publisher": "W3C",
