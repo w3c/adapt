@@ -59,9 +59,6 @@ var biblio = {
 		"etAl": "false",
 		"deliveredBy": "https://www.w3.org/WAI/PF/cognitive-a11y-tf/"
 	},
-	
-	
-	
 	"coga-issue-papers": {
 		"title": "Issue Papers for the The Cognitive and Learning Disabilities Accessibility Task Force (COGA)",
 		"href": "https://w3c.github.io/coga/issue-papers/",
@@ -180,21 +177,6 @@ var biblio = {
 		"title": "Microsoft Active Accessibility (MSAA) 2.0",
 		"publisher": "Microsoft Corporation"
 	},
-
-	"personalization-semantics-requirements": {
-		"title": "Requirements for Personalization Semantics",
-		"href": "https://w3c.github.io/personalization-semantics/requirements/",
-		"publisher": "W3C",
-		"editors":
-		[    
-			"Lisa Seeman",
-			"Charles LaPierre",
-			"Michael Cooper",
-			"Roy Ran"
-		],
-		"etAl": "false",
-		"deliveredBy": "https://www.w3.org/WAI/APA/task-forces/personalization/"
-	},
 	"SVG-AAM": {
 		"title": "SVG2 Accessibility API Mappings 1.0",
 		"href": "http://www.w3.org/TR/svg-aam-1.0/",
@@ -296,6 +278,22 @@ var biblio = {
 			"http://www.w3.org/WAI/PF/"
 		]
 	},
+
+	"personalization-semantics-requirements": {
+		"title": "Requirements for Personalization Semantics",
+		"href": "https://w3c.github.io/personalization-semantics/requirements/",
+		"publisher": "W3C",
+		"editors":
+		[    
+			"Lisa Seeman",
+			"Charles LaPierre",
+			"Michael Cooper",
+			"Roy Ran"
+		],
+		"etAl": "false",
+		"deliveredBy": "https://www.w3.org/WAI/APA/task-forces/personalization/"
+	},
+	
 	"WAI-ARIA-10": {
 		"authors": [
 			"James Craig",
