@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 24.23.2"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
+<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 24.30.3"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
 span.example-title {
     text-transform: none;
 }
@@ -152,24 +152,18 @@ a.bibref {
   animation: pop 0.25s ease-in-out 0s 1;
 }
 
-/* TODO: Remove once https://github.com/w3c/tr-design/pull/176 is merged. */
-.respec-offending-element a[href] {
-  margin: 0;
+.respec-offending-element,
+a[href].respec-offending-element {
+  text-decoration: red wavy underline;
 }
-
-.respec-offending-element {
-  display: inline-block;
-  position: relative;
-  /* Red squiggly line */
-  background: url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=)
-    bottom repeat-x;
-}
-@supports (text-decoration-style: wavy) {
+@supports not (text-decoration: red wavy underline) {
+  .respec-offending-element:not(pre) {
+    display: inline-block;
+  }
   .respec-offending-element {
-    background: none;
-    text-decoration-line: underline;
-    text-decoration-style: wavy;
-    text-decoration-color: red;
+    /* Red squiggly line */
+    background: url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=)
+      bottom repeat-x;
   }
 }
 
@@ -885,16 +879,16 @@ var[data-type]:hover::before {
       ]
     }
   },
-  "publishDate": "2019-06-19",
-  "publishISODate": "2019-06-19T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 19 June 2019"
+  "publishDate": "2019-08-16",
+  "publishISODate": "2019-08-16T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 16 August 2019"
 }</script><meta name="description" content="This document provides use cases and a vocabulary of terms that can be used to enhance web content by providing information about form controls, symbols, and other user interface elements. User agents use the semantics to augment or adapt content to the user’s scenario. This helps users with varying needs to understand the content by providing support for simplification and a way to manage unnecessary distractions."><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
 	<body class="h-entry informative"><div class="head">
       <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name">Personalization Semantics Content Module 1.0</h1>
       
       <h2>
         W3C Editor's Draft
-        <time class="dt-published" datetime="2019-06-19">19 June 2019</time>
+        <time class="dt-published" datetime="2019-08-16">16 August 2019</time>
       </h2>
       <dl>
         <dt>This version:</dt><dd>
@@ -949,10 +943,10 @@ var[data-type]:hover::before {
 		</section>
 
 		<section id="sotd" class="introductory"><h2>Status of This Document</h2><p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em></p><p>
-                        This document was published by the <a href="https://www.w3.org/WAI/APA/">Accessible Platform Architectures Working Group</a> as
-                        an Editor's Draft.
-                        
-                      </p><p>
+      This document was published by the <a href="https://www.w3.org/WAI/APA/">Accessible Platform Architectures Working Group</a> as an
+      Editor's Draft.
+      
+    </p><p>
       
       Comments regarding this document are welcome.
             Please send them to
@@ -985,7 +979,7 @@ var[data-type]:hover::before {
     </p><p>
                   This document is governed by the
                   <a id="w3c_process_revision" href="https://www.w3.org/2019/Process-20190301/">1 March 2019 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-                </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a></li><li class="tocline"><a class="tocxref" href="#use-cases-and-requirements"><bdi class="secno">2. </bdi>Use Cases and Requirements</a></li><li class="tocline"><a class="tocxref" href="#content"><bdi class="secno">3. </bdi>Content</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#action-explanation"><bdi class="secno">3.1 </bdi>action</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description"><bdi class="secno">3.1.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#action-example"><bdi class="secno">3.1.2 </bdi>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics"><bdi class="secno">3.1.3 </bdi>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values"><bdi class="secno">3.1.4 </bdi>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#destination-explanation"><bdi class="secno">3.2 </bdi>destination</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-0"><bdi class="secno">3.2.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#destination-example"><bdi class="secno">3.2.2 </bdi>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-0"><bdi class="secno">3.2.3 </bdi>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values-0"><bdi class="secno">3.2.4 </bdi>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#purpose-explanation"><bdi class="secno">3.3 </bdi>purpose</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-1"><bdi class="secno">3.3.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#purpose-example"><bdi class="secno">3.3.2 </bdi>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-1"><bdi class="secno">3.3.3 </bdi>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values-1"><bdi class="secno">3.3.4 </bdi>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#simplification-explanation"><bdi class="secno">3.4 </bdi>simplification</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-2"><bdi class="secno">3.4.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#simplification-example"><bdi class="secno">3.4.2 </bdi>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-2"><bdi class="secno">3.4.3 </bdi>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values-2"><bdi class="secno">3.4.4 </bdi>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#distraction-explanation"><bdi class="secno">3.5 </bdi>distraction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-3"><bdi class="secno">3.5.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#distraction-example"><bdi class="secno">3.5.2 </bdi>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-3"><bdi class="secno">3.5.3 </bdi>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values-3"><bdi class="secno">3.5.4 </bdi>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#symbol-explanation"><bdi class="secno">3.6 </bdi>symbol</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-4"><bdi class="secno">3.6.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#symbol-example"><bdi class="secno">3.6.2 </bdi>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-4"><bdi class="secno">3.6.3 </bdi>Characteristics</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#vocabulary-implementations"><bdi class="secno">A. </bdi>Vocabulary Implementations</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">B. </bdi>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><bdi class="secno">B.1 </bdi>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><bdi class="secno">B.2 </bdi>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><bdi class="secno">B.3 </bdi>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">C. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">C.1 </bdi>Informative references</a></li></ol></li></ol></nav>
+                </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a></li><li class="tocline"><a class="tocxref" href="#use-cases-and-requirements"><bdi class="secno">2. </bdi>Use Cases and Requirements</a></li><li class="tocline"><a class="tocxref" href="#content"><bdi class="secno">3. </bdi>Content</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#action-explanation"><bdi class="secno">3.1 </bdi>action</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description"><bdi class="secno">3.1.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#action-example"><bdi class="secno">3.1.2 </bdi>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics"><bdi class="secno">3.1.3 </bdi>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values"><bdi class="secno">3.1.4 </bdi>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#destination-explanation"><bdi class="secno">3.2 </bdi>destination</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-0"><bdi class="secno">3.2.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#destination-example"><bdi class="secno">3.2.2 </bdi>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-0"><bdi class="secno">3.2.3 </bdi>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values-0"><bdi class="secno">3.2.4 </bdi>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#purpose-explanation"><bdi class="secno">3.3 </bdi>purpose</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-1"><bdi class="secno">3.3.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#purpose-example"><bdi class="secno">3.3.2 </bdi>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-1"><bdi class="secno">3.3.3 </bdi>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values-1"><bdi class="secno">3.3.4 </bdi>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#simplification-explanation"><bdi class="secno">3.4 </bdi>simplification</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-2"><bdi class="secno">3.4.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#simplification-example"><bdi class="secno">3.4.2 </bdi>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-2"><bdi class="secno">3.4.3 </bdi>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values-2"><bdi class="secno">3.4.4 </bdi>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#distraction-explanation"><bdi class="secno">3.5 </bdi>distraction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-3"><bdi class="secno">3.5.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#distraction-example"><bdi class="secno">3.5.2 </bdi>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-3"><bdi class="secno">3.5.3 </bdi>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values-3"><bdi class="secno">3.5.4 </bdi>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#symbol-explanation"><bdi class="secno">3.6 </bdi>symbol</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-4"><bdi class="secno">3.6.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#symbol-example"><bdi class="secno">3.6.2 </bdi>Examples</a></li><li class="tocline"><a class="tocxref" href="#characteristics-4"><bdi class="secno">3.6.3 </bdi>Characteristics</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#vocabulary-implementations"><bdi class="secno">A. </bdi>Vocabulary Implementations</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">B. </bdi>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><bdi class="secno">B.1 </bdi>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><bdi class="secno">B.2 </bdi>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><bdi class="secno">B.3 </bdi>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">C. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">C.1 </bdi>Informative references</a></li></ol></li></ol></nav>
 
 		<section class="informative" id="introduction">
 
@@ -1527,7 +1521,7 @@ var[data-type]:hover::before {
 		<div class="property-description">
 			<p>The <code>purpose</code> attribute provides the context of a text input field such as a text box. It is typically used on an input of type text, or element with a corresponding role.</p>
 			<p>A personalization agent may add a symbol, replace the text with a more familiar term, or give it a specific presentation. Note that there is no default value.</p><p>The user experience may include filling in the field and adding an icon.</p>
-			<p>The <code>purpose</code> values that would typically be on form controls should provide context for the user. For example tel would relate to the user's telephone number. Note that there is no default value and there can be more than one value for a field, such as  <code>data-purpose="country postcode"</code> which includes both the country and postal code.</p>
+			<p>The <code>purpose</code> values that would typically be on form controls should provide context for the user. For example tel would relate to the user's telephone number. Note that there is no default value and there can be more than one value for a field, such as  <code>data-purpose="country-name postal-code"</code> which includes both the country and postal code.</p>
 		</div>
 	</section>
 
@@ -2105,21 +2099,36 @@ var[data-type]:hover::before {
 		<h4 id="x3-6-1-description"><bdi class="secno">3.6.1 </bdi>Description<a class="self-link" aria-label="§" href="#description-4"></a></h4>
 		<div class="property-description">
 					<p>The <code>symbol</code> attribute identifies the concept for symbols.</p>
-					<p>The <code>symbol</code> attribute accepts the values of a URI or shortened URI. Note that namespaces are the only additional parsing that maybe required to identify the concept.</p>
+					<p>The <code>symbol</code> attribute accepts a numeric reference number.</p>
 					<p>A personalization agent can then load alternative symbols that the user is familiar with so they do not have to learn new symbols for different applications. </p>
 					<div class="note" role="note" id="issue-container-generatedID-17"><div role="heading" class="note-title marker" id="h-note-4" aria-level="5"><span>Note</span></div><p class="">To help this be interoperable without an RDF parser we recommend referencing the most commonly used ontologies and the highest-level concept. (For example, reference "girl" and not "young girl".) </p></div>
 					<div class="note" id="issue-container-generatedID-18"><div role="heading" class="ednote-title marker" id="h-ednote-13" aria-level="5"><span>Editor's note</span></div><p class="">We should have a note of common suggested terms and references. (Maybe with links to http://www.arasaac.org/) </p></div>
+                    <div class="note" id="issue-container-generatedID-19"><div role="heading" class="ednote-title marker" id="h-ednote-14" aria-level="5"><span>Editor's note</span></div><p class="">For a list of current reference numbers please refer to our <a href=" https://github.com/w3c/personalization-semantics/wiki/About-Data-Symbol">data-symbol wiki page</a>.</p></div> 
 				</div>
 	</section>
 	<section id="symbol-example">
-		<h4 id="x3-6-2-example"><bdi class="secno">3.6.2 </bdi>Example<a class="self-link" aria-label="§" href="#symbol-example"></a></h4>
-		<p>Here is an example using the <code>symbol</code> attribute.</p>
-    	<div class="example" id="example-6-symbol-using-data">
+		<h4 id="x3-6-2-examples"><bdi class="secno">3.6.2 </bdi>Examples<a class="self-link" aria-label="§" href="#symbol-example"></a></h4>
+		<p>Here are some examples using the <code>symbol</code> attribute.</p>
+        <div class="example" id="example-6-symbol-using-data">
           <div class="marker">
       <a class="self-link" href="#example-6-symbol-using-data">Example<bdi> 6</bdi></a><span class="example-title">: Symbol Using data-</span>
-    </div> <pre aria-busy="false"><code class="hljs xml">    	   <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">data-symbol</span>=<span class="hljs-string">"http://blisssymbolics.org/refnumber/001"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"mysymb.bmp"</span> &gt;</span></code></pre>
+    </div> <pre aria-busy="false"><code class="hljs xml">    	   <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">data-symbol</span>=<span class="hljs-string">"13621"</span>&gt;</span>Cup<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">data-symbol</span>=<span class="hljs-string">"12324"</span>&gt;</span>of<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">data-symbol</span>=<span class="hljs-string">"17511"</span> &gt;</span>Tea<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre>
         </div>
 
+        You could also say 
+        <div class="example" id="example-7-symbol-using-data">
+          <div class="marker">
+      <a class="self-link" href="#example-7-symbol-using-data">Example<bdi> 7</bdi></a><span class="example-title">: Symbol Using data-</span>
+    </div> <pre aria-busy="false"><code class="hljs xml">            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">data-symbol</span>=<span class="hljs-string">"13621 12324 17511"</span>&gt;</span>cup of Tea<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        </code></pre>
+        </div>
+        or
+        <div class="example" id="example-8-symbol-using-data">
+          <div class="marker">
+      <a class="self-link" href="#example-8-symbol-using-data">Example<bdi> 8</bdi></a><span class="example-title">: Symbol Using data-</span>
+    </div> <pre aria-busy="false"><code class="hljs xml">            <span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">data-symbol</span>=<span class="hljs-string">"13621 12324 17511"</span> <span class="hljs-attr">alt</span> = <span class="hljs-string">"cup of Tea"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"cuptea.gif"</span> /&gt;</span>
+        </code></pre>
+        </div>
 	   <p>When there is more than one concept, multiple concepts can be referenced by separating them with white space. The order of multiple concepts should be subject predicate object. Both omissions and  multiple triples are allowed.</p>
     </section>
     <section id="characteristics-4">
@@ -2205,5 +2214,5 @@ var[data-type]:hover::before {
     <section id="informative-references">
         <h3 id="c-1-informative-references"><bdi class="secno">C.1 </bdi>Informative references<a class="self-link" aria-label="§" href="#informative-references"></a></h3>
       <dl class="bibliography">
-        <dt id="bib-dom4">[DOM4]</dt><dd><a href="https://dom.spec.whatwg.org/"><cite>DOM Standard</cite></a>. Anne van Kesteren.  WHATWG. Living Standard. URL: <a href="https://dom.spec.whatwg.org/">https://dom.spec.whatwg.org/</a></dd><dt id="bib-html5">[HTML5]</dt><dd><a href="https://www.w3.org/TR/html5/"><cite>HTML5</cite></a>. Ian Hickson; Robin Berjon; Steve Faulkner; Travis Leithead; Erika Doyle Navara; Theresa O'Connor; Silvia Pfeiffer.  W3C. 27 March 2018. W3C Recommendation. URL: <a href="https://www.w3.org/TR/html5/">https://www.w3.org/TR/html5/</a></dd><dt id="bib-html52">[HTML52]</dt><dd><a href="https://www.w3.org/TR/html52/"><cite>HTML 5.2</cite></a>. Steve Faulkner; Arron Eicholz; Travis Leithead; Alex Danilo; Sangwhan Moon.  W3C. 14 December 2017. W3C Recommendation. URL: <a href="https://www.w3.org/TR/html52/">https://www.w3.org/TR/html52/</a></dd><dt id="bib-microdata">[microdata]</dt><dd><a href="https://www.w3.org/TR/microdata/"><cite>HTML Microdata</cite></a>. Charles McCathie Nevile; Dan Brickley; Ian Hickson.  W3C. 26 April 2018. W3C Working Draft. URL: <a href="https://www.w3.org/TR/microdata/">https://www.w3.org/TR/microdata/</a></dd><dt id="bib-personalization-semantics-1.0">[personalization-semantics-1.0]</dt><dd><a href="https://www.w3.org/TR/personalization-semantics-1.0/"><cite>Personalization Semantics Explainer 1.0</cite></a>. Lisa Seeman-Kestenbaum; Charles LaPierre; Richard Schwerdtfeger; Michael Cooper; Ruoxi Ran.  W3C. 18 October 2018. W3C Working Draft. URL: <a href="https://www.w3.org/TR/personalization-semantics-1.0/">https://www.w3.org/TR/personalization-semantics-1.0/</a></dd><dt id="bib-svg2">[SVG2]</dt><dd><a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/"><cite>Scalable Vector Graphics (SVG) 2</cite></a>. Nikos Andronikos; Rossen Atanassov; Tavmjong Bah; Amelia Bellamy-Royds; Brian Birtles; Cyril Concolato; Erik Dahlström; Chris Lilley; Cameron McCormack; Doug Schepers; Dirk Schulze; Richard Schwerdtfeger; Satoru Takagi; Jonathan Watt et al.  W3C. W3C Working Draft. URL: <a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/">http://www.w3.org/TR/2015/WD-SVG2-20150915/</a></dd>
+        <dt id="bib-dom4">[DOM4]</dt><dd><a href="https://dom.spec.whatwg.org/"><cite>DOM Standard</cite></a>. Anne van Kesteren.  WHATWG. Living Standard. URL: <a href="https://dom.spec.whatwg.org/">https://dom.spec.whatwg.org/</a></dd><dt id="bib-html5">[HTML5]</dt><dd><a href="https://www.w3.org/TR/html5/"><cite>HTML5</cite></a>. Ian Hickson; Robin Berjon; Steve Faulkner; Travis Leithead; Erika Doyle Navara; Theresa O'Connor; Silvia Pfeiffer.  W3C. 27 March 2018. W3C Recommendation. URL: <a href="https://www.w3.org/TR/html5/">https://www.w3.org/TR/html5/</a></dd><dt id="bib-html52">[HTML52]</dt><dd><a href="https://www.w3.org/TR/html52/"><cite>HTML 5.2</cite></a>. Steve Faulkner; Arron Eicholz; Travis Leithead; Alex Danilo; Sangwhan Moon.  W3C. 14 December 2017. W3C Recommendation. URL: <a href="https://www.w3.org/TR/html52/">https://www.w3.org/TR/html52/</a></dd><dt id="bib-microdata">[microdata]</dt><dd><a href="https://www.w3.org/TR/microdata/"><cite>HTML Microdata</cite></a>. Charles 'chaals' (McCathie) Nevile; Dan Brickley; Ian Hickson.  W3C. 26 April 2018. W3C Working Draft. URL: <a href="https://www.w3.org/TR/microdata/">https://www.w3.org/TR/microdata/</a></dd><dt id="bib-personalization-semantics-1.0">[personalization-semantics-1.0]</dt><dd><a href="https://www.w3.org/TR/personalization-semantics-1.0/"><cite>Personalization Semantics Explainer 1.0</cite></a>. Lisa Seeman-Kestenbaum; Charles LaPierre; Michael Cooper; Ruoxi Ran; Richard Schwerdtfeger.  W3C. 11 July 2019. W3C Working Draft. URL: <a href="https://www.w3.org/TR/personalization-semantics-1.0/">https://www.w3.org/TR/personalization-semantics-1.0/</a></dd><dt id="bib-svg2">[SVG2]</dt><dd><a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/"><cite>Scalable Vector Graphics (SVG) 2</cite></a>. Nikos Andronikos; Rossen Atanassov; Tavmjong Bah; Amelia Bellamy-Royds; Brian Birtles; Cyril Concolato; Erik Dahlström; Chris Lilley; Cameron McCormack; Doug Schepers; Dirk Schulze; Richard Schwerdtfeger; Satoru Takagi; Jonathan Watt et al.  W3C. W3C Working Draft. URL: <a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/">http://www.w3.org/TR/2015/WD-SVG2-20150915/</a></dd>
       </dl></section></section><p role="navigation" id="back-to-top"><a href="#title"><abbr title="Back to Top">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
