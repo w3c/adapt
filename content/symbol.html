@@ -4,18 +4,27 @@
 		<h3>Description</h3>
 		<div class="property-description">
 					<p>The <code>symbol</code> attribute identifies the concept for symbols.</p>
-					<p>The <code>symbol</code> attribute accepts the values of a URI or shortened URI. Note that namespaces are the only additional parsing that maybe required to identify the concept.</p>
+					<p>The <code>symbol</code> attribute accepts a numeric reference number.</p>
 					<p>A personalization agent can then load alternative symbols that the user is familiar with so they do not have to learn new symbols for different applications. </p>
 					<p class="note">To help this be interoperable without an RDF parser we recommend referencing the most commonly used ontologies and the highest-level concept. (For example, reference "girl" and not "young girl".) </p>
 					<p class="ednote">We should have a note of common suggested terms and references. (Maybe with links to http://www.arasaac.org/) </p>
+                    <p class="ednote">For a list of current reference numbers please refer to our <a href=" https://github.com/w3c/personalization-semantics/wiki/About-Data-Symbol">data-symbol wiki page</a>.</p> 
 				</div>
 	</section>
 	<section id="symbol-example">
-		<h3>Example</h3>
-		<p>Here is an example using the <code>symbol</code> attribute.</p>
-    	<pre class="example" title="Symbol Using data-">
-    	   &lt;img data-symbol="http://blisssymbolics.org/refnumber/001" href="mysymb.bmp" &gt;</pre>
+		<h3>Examples</h3>
+		<p>Here are some examples using the <code>symbol</code> attribute.</p>
+        <pre class="example" title="Symbol Using data-">
+    	   &lt;span data-symbol=&quot;13621&quot;&gt;Cup&lt;/span&gt; &lt;span data-symbol=&quot;12324&quot;&gt;of&lt;/span&gt; &lt;span data-symbol=&quot;17511&quot; &gt;Tea&lt;/span&gt;</pre>
 
+        You could also say 
+        <pre class="example" title="Symbol Using data-">
+            &lt;span data-symbol=&quot;13621 12324 17511&quot;&gt;cup of Tea&lt;/span&gt;
+        </pre>
+        or
+        <pre class="example" title="Symbol Using data-">
+            &lt;image data-symbol=&quot;13621 12324 17511&quot; alt = &quot;cup of Tea&quot; href=&quot;cuptea.gif&quot; /&gt;
+        </pre>
 	   <p>When there is more than one concept, multiple concepts can be referenced by separating them with white space. The order of multiple concepts should be subject predicate object. Both omissions and  multiple triples are allowed.</p>
     </section>
     <section>
