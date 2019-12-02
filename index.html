@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 24.34.1"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
+<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 24.35.1"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
 .issue-label {
     text-transform: initial;
 }
@@ -357,7 +357,7 @@ h6 > a.self-link::before {
 		
 	
 		<link href="common/css/common.css" rel="stylesheet" type="text/css">
-	<link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-1.0/"><style>var {
+	<meta name="description" content="Personalization involves tailoring aspects of the user experience to meet the needs and preferences of the individual user. For example, having familiar terms and symbols is key to many users being able to use the web. However, what is familiar for one user may not be familiar to another, requiring them to learn new symbols. The challenge has been the ability to identify the types of content in a document that should be adapted to the preferred user experience. The introduction of standardized semantics allows web applications to customize the presentation of that content to one that is familiar to individuals based on their specific needs and preferences. This specification defines standard semantics to enable user driven personalization. For example, the association of user-preferred symbols with elements having those semantics. This ensures that users can quickly find familiar icons, for example, a help icon, within the context of user interface elements."><link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-1.0/"><style>var {
   position: relative;
   cursor: pointer;
 }
@@ -458,314 +458,91 @@ var[data-type]:hover::before {
   "wgPublicList": "public-personalization-tf",
   "wgPatentURI": "https://www.w3.org/2004/01/pp-impl/83907/status",
   "localBiblio": {
-    "ACCNAME-AAM": {
-      "title": "Accessible Name and Description: Computation and API Mappings 1.1",
-      "href": "http://www.w3.org/TR/accname-aam-1.1/",
-      "status": "WD",
-      "publisher": "W3C",
+    "RFC3986": {
+      "aliasOf": "rfc3986",
+      "id": "RFC3986"
+    },
+    "rfc3986": {
+      "href": "https://tools.ietf.org/html/rfc3986",
+      "title": "Uniform Resource Identifier (URI): Generic Syntax",
       "authors": [
-        "Joseph Scheuhammer",
-        "Michael Cooper",
-        "Andi Snow-Weaver",
-        "Aaron Leventhal"
+        "T. Berners-Lee",
+        "R. Fielding",
+        "L. Masinter"
       ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/WAI/ARIA/"
-      ]
+      "status": "Internet Standard",
+      "obsoletes": [
+        "RFC2732",
+        "RFC2396",
+        "RFC1808"
+      ],
+      "publisher": "IETF",
+      "id": "rfc3986",
+      "date": "January 2005"
     },
-    "ARIA-PRACTICES": {
-      "title": "WAI-ARIA Authoring Practicess 1.1",
-      "href": "http://www.w3.org/TR/wai-aria-practices-1.1/",
-      "status": "WD",
-      "publisher": "W3C",
+    "html5": {
       "authors": [
-        "Matt King",
-        "James Nurthen",
-        "Michael Cooper",
-        "Michiel Bijl",
-        "Joseph Scheuhammer",
-        "Lisa Pappas",
-        "Richard Schwerdtfeger"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/WAI/ARIA/"
-      ]
-    },
-    "ATK": {
-      "href": "https://developer.gnome.org/atk/stable/",
-      "title": "ATK - Accessibility Toolkit",
-      "publisher": "The GNOME Project"
-    },
-    "AXAPI": {
-      "href": "https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078",
-      "title": "Accessibility Programming Guide for OS X",
-      "publisher": "Apple Corporation"
-    },
-    "coga-gap-analysis": {
-      "title": "Cognitive Accessibility Roadmap and Gap Analysis",
-      "href": "https://w3c.github.io/coga/gap-analysis/",
-      "publisher": "W3C",
-      "editors": [
-        "Lisa Seeman",
-        "Michael Cooper"
-      ],
-      "etAl": "false",
-      "deliveredBy": "https://www.w3.org/WAI/PF/cognitive-a11y-tf/"
-    },
-    "coga-issue-papers": {
-      "title": "Issue Papers for the The Cognitive and Learning Disabilities Accessibility Task Force (COGA)",
-      "href": "https://w3c.github.io/coga/issue-papers/",
-      "publisher": "W3C",
-      "editors": [
-        "Lisa Seeman",
-        "Michael Cooper"
-      ],
-      "etAl": "false",
-      "deliveredBy": "https://www.w3.org/WAI/PF/cognitive-a11y-tf/"
-    },
-    "CORE-AAM": {
-      "title": "Core Accessibility API Mappings 1.1",
-      "href": "http://www.w3.org/TR/core-aam-1.1/",
-      "status": "WD",
-      "publisher": "W3C",
-      "authors": [
-        "Joseph Scheuhammer",
-        "Michael Cooper",
-        "Andi Snow-Weaver",
-        "Aaron Leventhal"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/WAI/ARIA/"
-      ]
-    },
-    "DPUB-ARIA": {
-      "title": "Digital Publishing WAI-ARIA Module 1.0",
-      "href": "http://www.w3.org/TR/dpub-aria-1.0/",
-      "status": "WD",
-      "publisher": "W3C",
-      "authors": [
-        "Matt Garrish",
-        "Tzviya Siegman",
-        "Markus Gylling",
-        "Shane McCarron"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/WAI/ARIA/"
-      ]
-    },
-    "GRAPHICS-ARIA": {
-      "title": "WAI-ARIA Graphics",
-      "href": "http://www.w3.org/TR/graphics-aria-1.0/",
-      "status": "WD",
-      "publisher": "W3C",
-      "authors": [
-        "Amelia Bellamy-Royds",
-        "Fred Esch",
-        "Rich Schwerdtfeger",
-        "Leonie Watson"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/WAI/ARIA/",
-        "http://www.w3.org/SVG/"
-      ]
-    },
-    "GRAPHICS-AAM": {
-      "title": "Graphics Accessibility API Mappings",
-      "href": "http://www.w3.org/TR/graphics-aam-1.0/",
-      "status": "WD",
-      "publisher": "W3C",
-      "authors": [
-        "Amelia Bellamy-Royds",
-        "Fred Esch",
-        "Richard Schwerdtfeger"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/WAI/ARIA/",
-        "http://www.w3.org/SVG/"
-      ]
-    },
-    "EPUB-SSV": {
-      "href": "http://www.idpf.org/epub/vocab/structure/",
-      "title": "EPUB Structural Semantics Vocabulary",
-      "publisher": "IDPF"
-    },
-    "EPUB-Content": {
-      "href": "http://www.idpf.org/epub/31/spec/epub-contentdocs.html",
-      "title": "EPUB Content Documents 3.1",
-      "publisher": "IDPF"
-    },
-    "GTK": {
-      "href": "https://developer.gnome.org/gtk3/stable/",
-      "title": "GTK+ 3 Reference Manual",
-      "publisher": "The GNOME Project"
-    },
-    "HTML-AAM": {
-      "authors": [
+        "Ian Hickson",
+        "Robin Berjon",
         "Steve Faulkner",
-        "Jason Kiss",
-        "Cynthia Shelly",
-        "Alexander Surkov"
+        "Travis Leithead",
+        "Erika Doyle Navara",
+        "Theresa O'Connor",
+        "Silvia Pfeiffer"
       ],
-      "etAl": true,
-      "href": "http://www.w3.org/TR/html-aam-1.0/",
-      "title": "HTML Accessibility API Mappings 1.0",
-      "status": "WD",
-      "publisher": "W3C",
-      "deliveredBy": [
-        "http://www.w3.org/html",
-        "http://www.w3.org/WAI/PF/"
-      ]
-    },
-    "MSAA": {
-      "href": "https://msdn.microsoft.com/en-us/library/ms697707.aspx",
-      "title": "Microsoft Active Accessibility (MSAA) 2.0",
-      "publisher": "Microsoft Corporation"
-    },
-    "SVG-AAM": {
-      "title": "SVG2 Accessibility API Mappings 1.0",
-      "href": "http://www.w3.org/TR/svg-aam-1.0/",
-      "status": "WD",
-      "publisher": "W3C",
-      "authors": [
-        "Amelia Bellamy-Royds",
-        "Richard Schwerdtfeger"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/WAI/PF/"
-      ]
-    },
-    "SVG1": {
-      "title": "Scalable Vector Graphics (SVG) 1.0 Specification",
-      "href": "http://www.w3.org/TR/SVG10/",
-      "status": "REC",
-      "publisher": "W3C",
-      "authors": [
-        "John Ferraiolo"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/SVG"
-      ]
-    },
-    "SVG11": {
-      "title": "Scalable Vector Graphics (SVG) 1.1 (Second Edition)",
-      "href": "http://www.w3.org/TR/SVG11/",
-      "status": "REC",
-      "publisher": "W3C",
-      "authors": [
-        "Erik Dahlström",
-        "Patrick Dengler",
-        "Anthony Grasso",
-        "Chris Lilley",
-        "Cameron McCormack",
-        "Doug Schepers",
-        "Jonathan Watt",
-        "John Ferraiolo",
-        "藤沢 淳 (FUJISAWA Jun)",
-        "Dean Jackson"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/SVG"
-      ]
-    },
-    "SVG2": {
-      "title": "Scalable Vector Graphics (SVG) 2",
-      "href": "http://www.w3.org/TR/2015/WD-SVG2-20150915/",
-      "status": "WD",
-      "publisher": "W3C",
-      "authors": [
-        "Nikos Andronikos",
-        "Rossen Atanassov",
-        "Tavmjong Bah",
-        "Amelia Bellamy-Royds",
-        "Brian Birtles",
-        "Cyril Concolato",
-        "Erik Dahlström",
-        "Chris Lilley",
-        "Cameron McCormack",
-        "Doug Schepers",
-        "Dirk Schulze",
-        "Richard Schwerdtfeger",
-        "Satoru Takagi",
-        "Jonathan Watt"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/WAI/PF/"
-      ]
-    },
-    "UI-AUTOMATION": {
-      "href": "https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx",
-      "title": "UI Automation",
-      "publisher": "Microsoft Corporation"
-    },
-    "UIA-EXPRESS": {
-      "href": "https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx",
-      "title": "The IAccessibleEx Interface",
-      "publisher": "Microsoft Corporation"
-    },
-    "WAI-ARIA": {
-      "title": "Accessible Rich Internet Applications (WAI-ARIA) 1.1",
-      "href": "http://www.w3.org/TR/wai-aria-1.1/",
-      "status": "WD",
-      "publisher": "W3C",
-      "authors": [
-        "James Craig",
-        "Michael Cooper",
-        "Shane McCarron"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/WAI/PF/"
-      ]
-    },
-    "personalization-semantics-requirements": {
-      "title": "Requirements for Personalization Semantics",
-      "href": "https://w3c.github.io/personalization-semantics/requirements/",
-      "publisher": "W3C",
-      "editors": [
-        "Lisa Seeman",
-        "Charles LaPierre",
-        "Michael Cooper",
-        "Roy Ran"
-      ],
-      "etAl": "false",
-      "deliveredBy": "https://www.w3.org/WAI/APA/task-forces/personalization/",
-      "id": "personalization-semantics-requirements"
-    },
-    "WAI-ARIA-10": {
-      "authors": [
-        "James Craig",
-        "Michael Cooper"
-      ],
-      "etAl": true,
-      "href": "http://www.w3.org/TR/wai-aria/",
-      "title": "Accessible Rich Internet Applications (WAI-ARIA) 1.0",
+      "href": "https://www.w3.org/TR/html5/",
+      "title": "HTML5",
       "status": "REC",
       "publisher": "W3C",
       "deliveredBy": [
-        "http://www.w3.org/WAI/PF/"
-      ]
+        {
+          "url": "https://www.w3.org/html/wg/",
+          "shortname": "html"
+        }
+      ],
+      "versions": [
+        "html5-20180327",
+        "html5-20141028",
+        "html5-20140916",
+        "html5-20140731",
+        "html5-20140617",
+        "html5-20140429",
+        "html5-20140204",
+        "html5-20130806",
+        "html5-20121217",
+        "html5-20121025",
+        "html5-20120329",
+        "html5-20110525",
+        "html5-20110405",
+        "html5-20110113",
+        "html5-20101019",
+        "html5-20100624",
+        "html5-20100304",
+        "html5-20090825",
+        "html5-20090423",
+        "html5-20090212",
+        "html5-20080610",
+        "html5-20080122"
+      ],
+      "edDraft": "https://www.w3.org/html/wg/drafts/html/master/",
+      "obsoletes": [
+        "Window",
+        "web-forms-2"
+      ],
+      "id": "html5",
+      "date": "27 March 2018"
     }
   },
-  "publishDate": "2019-11-14",
-  "publishISODate": "2019-11-14T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 14 November 2019"
-}</script><meta name="description" content="Personalization involves tailoring aspects of the user experience to meet the needs and preferences of the individual user. For example, having familiar terms and symbols is key to many users being able to use the web. However, what is familiar for one user may not be familiar to another, requiring them to learn new symbols. The challenge has been the ability to identify the types of content in a document that should be adapted to the preferred user experience. The introduction of standardized semantics allows web applications to customize the presentation of that content to one that is familiar to individuals based on their specific needs and preferences. This specification defines standard semantics to enable user driven personalization. For example, the association of user-preferred symbols with elements having those semantics. This ensures that users can quickly find familiar icons, for example, a help icon, within the context of user interface elements."><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
+  "publishDate": "2019-12-02",
+  "publishISODate": "2019-12-02T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 02 December 2019"
+}</script><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
 	<body class="h-entry informative"><div class="head">
       <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name">Personalization Semantics Explainer 1.0</h1>
       
       <h2>
         W3C Editor's Draft
-        <time class="dt-published" datetime="2019-11-14">14 November 2019</time>
+        <time class="dt-published" datetime="2019-12-02">02 December 2019</time>
       </h2>
       <dl>
         <dt>This version:</dt><dd>
@@ -872,21 +649,20 @@ var[data-type]:hover::before {
 				<h3 id="x1-1-why-we-need-personalization"><bdi class="secno">1.1 </bdi>Why We Need Personalization<a class="self-link" aria-label="§" href="#why_accessibility"></a></h3>
 				<p>We need personalization because: </p>
 				<ul>
-					<li>The needs of individual user may conflict.</li>
-					<li>Learning new design patterns, widgets, and user interfaces can be confusing. We would like to give users the ability to decide what works best for them based on preference and ability.</li>
-					<li>Extra support can be a distraction for people who do not need it.</li>
-					<li>Making content predictable is necessary for accessibility but can often lead to less innovate design.</li>
+					<li>The needs of an individual user may conflict with certain established mainstream user-patterns.</li>
+					<li>Learning new design patterns, widgets, and user interfaces can be confusing. The goal is to give users the ability to decide what works best for them based on preference and ability. Personalization enable websites to adapt to and meet the user's needs.</li>
+					<li>Extra support can be a distraction for people who do not need it, so a robust solution requires the ability to increase or decrease levels of complexity as people's skills improve or decline over time.</li>
 					<li>Ability to increase or decrease levels of complexity as people's skills improve or decline over time.</li>
 					<li>Enable websites to adapt to and meet the user's needs.</li>
 				</ul>
 				<p>Some users need extra support. This can include: </p>
 				<ul>
-					<li>Symbols and graphics that they are familiar with</li>
-					<li>Tooltips</li>
+					<li>Symbols, iconography and graphics that they are familiar with</li>
+					<li>Tooltips or similar on-demand help or clue</li>
 					<li>Language they understand</li>
-					<li>Less features</li>
-					<li>Separating advertisements so users don't confuse them with native content </li>
-					<li>Keyboard short cuts</li>
+					<li>Fewer or more constrained features</li>
+					<li>The ability to programmatically distinguish between native content and third-party content on a page or screen</li>
+					<li>The ability to implement custom keyboard short cuts at the user-end</li>
 				</ul>
 				<p>To achieve this we need standardized terms and supportive syntax. These can be linked to associated symbols, terms, translations and explanations. They are then provided to an individual based on personal preferences.</p>
 				<p>For example, assume an author can make it programmatically known that a button sends an email. Based on user preferences, the button renders with a symbol, term, and/or tooltips that are understandable by this particular user. It could automatically include F1 help that explains the send function in simple terms. It could be identified with a keyboard short cut that is always used for send. In addition, the button could be identified as important and always rendered, or always rendered very large. </p>
@@ -896,7 +672,7 @@ var[data-type]:hover::before {
 
 			<section id="use-cases">
 				<h3 id="x1-2-use-cases"><bdi class="secno">1.2 </bdi>Use Cases<a class="self-link" aria-label="§" href="#use-cases"></a></h3>
-				<p><a href="requirements/">Requirements for Personalization Semantics</a> [<cite><a class="bibref" href="#bib-personalization-semantics-requirements" title="Requirements for Personalization Semantics" data-link-type="biblio">personalization-semantics-requirements</a></cite>] elaborates many use cases that further contextualize the above summary of user needs. These use cases form the basis of requirements for this technology.</p>
+				<p><a href="requirements/">Requirements for Personalization Semantics</a> [<cite><a class="bibref" href="#bib-personalization-semantics-requirements">personalization-semantics-requirements</a></cite>] elaborates many use cases that further contextualize the above summary of user needs. These use cases form the basis of requirements for this technology.</p>
 			</section>
 		</section>
 
@@ -1017,5 +793,5 @@ var[data-type]:hover::before {
     <section id="informative-references">
         <h3 id="b-1-informative-references"><bdi class="secno">B.1 </bdi>Informative references<a class="self-link" aria-label="§" href="#informative-references"></a></h3>
       <dl class="bibliography">
-        <dt id="bib-html5">[html5]</dt><dd><a href="https://www.w3.org/TR/html5/"><cite>HTML5</cite></a>. Ian Hickson; Robin Berjon; Steve Faulkner; Travis Leithead; Erika Doyle Navara; Theresa O'Connor; Silvia Pfeiffer.  W3C. 27 March 2018. W3C Recommendation. URL: <a href="https://www.w3.org/TR/html5/">https://www.w3.org/TR/html5/</a></dd><dt id="bib-personalization-semantics-requirements">[personalization-semantics-requirements]</dt><dd><a href="https://w3c.github.io/personalization-semantics/requirements/"><cite>Requirements for Personalization Semantics</cite></a>.  W3C. URL: <a href="https://w3c.github.io/personalization-semantics/requirements/">https://w3c.github.io/personalization-semantics/requirements/</a></dd><dt id="bib-rfc3986">[RFC3986]</dt><dd><a href="https://tools.ietf.org/html/rfc3986"><cite>Uniform Resource Identifier (URI): Generic Syntax</cite></a>. T. Berners-Lee; R. Fielding; L. Masinter.  IETF. January 2005. Internet Standard. URL: <a href="https://tools.ietf.org/html/rfc3986">https://tools.ietf.org/html/rfc3986</a></dd>
+        <dt id="bib-html5">[html5]</dt><dd><a href="https://www.w3.org/TR/html5/"><cite>HTML5</cite></a>. Ian Hickson; Robin Berjon; Steve Faulkner; Travis Leithead; Erika Doyle Navara; Theresa O'Connor; Silvia Pfeiffer.  W3C. 27 March 2018. W3C Recommendation. URL: <a href="https://www.w3.org/TR/html5/">https://www.w3.org/TR/html5/</a></dd><dt id="bib-personalization-semantics-requirements">[personalization-semantics-requirements]</dt><dd><em class="respec-offending-element">Reference not found.</em></dd><dt id="bib-rfc3986">[RFC3986]</dt><dd><a href="https://tools.ietf.org/html/rfc3986"><cite>Uniform Resource Identifier (URI): Generic Syntax</cite></a>. T. Berners-Lee; R. Fielding; L. Masinter.  IETF. January 2005. Internet Standard. URL: <a href="https://tools.ietf.org/html/rfc3986">https://tools.ietf.org/html/rfc3986</a></dd>
       </dl></section></section><p role="navigation" id="back-to-top"><a href="#title"><abbr title="Back to Top">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
