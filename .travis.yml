@@ -20,7 +20,6 @@ script:
   - cd gh-pages
   - git clone --depth=1 --branch=gh-pages https://github.com/w3c/personalization-semantics.git
   - cd personalization-semantics
-  - curl https://labs.w3.org/spec-generator/?type=respec"&"url=https://raw.githack.com/w3c/personalization-semantics/master/requirements/index.html -o requirements/index.html -f  --retry 3
   - curl https://labs.w3.org/spec-generator/?type=respec"&"url=https://raw.githack.com/w3c/personalization-semantics/master/explainer.html -o index.html -f  --retry 3
   - curl https://labs.w3.org/spec-generator/?type=respec"&"url=https://raw.githack.com/w3c/personalization-semantics/master/content/index.html -o content/index.html -f  --retry 3
   - curl https://labs.w3.org/spec-generator/?type=respec"&"url=https://raw.githack.com/w3c/personalization-semantics/master/help/index.html -o help/index.html -f  --retry 3
