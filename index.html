@@ -534,16 +534,16 @@ var[data-type]:hover::before {
       "date": "27 March 2018"
     }
   },
-  "publishDate": "2019-12-16",
-  "publishISODate": "2019-12-16T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 16 December 2019"
+  "publishDate": "2019-12-17",
+  "publishISODate": "2019-12-17T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 17 December 2019"
 }</script><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
 	<body class="h-entry informative"><div class="head">
       <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name">Personalization Semantics Explainer 1.0</h1>
       
       <h2>
         W3C Editor's Draft
-        <time class="dt-published" datetime="2019-12-16">16 December 2019</time>
+        <time class="dt-published" datetime="2019-12-17">17 December 2019</time>
       </h2>
       <dl>
         <dt>This version:</dt><dd>
@@ -665,15 +665,36 @@ var[data-type]:hover::before {
 					<li>The ability to programmatically distinguish between native content and third-party content on a page or screen</li>
 					<li>The ability to implement custom keyboard short cuts at the user-end</li>
 				</ul>
-				<p>To achieve this we need standardized terms and supportive syntax. These can be linked to associated symbols, terms, translations and explanations. They are then provided to an individual based on personal preferences.</p>
-				<p>For example, assume an author can make it programmatically known that a button sends an email. Based on user preferences, the button renders with a symbol, term, and/or tooltips that are understandable by this particular user. It could automatically include F1 help that explains the send function in simple terms. It could be identified with a keyboard short cut that is always used for send. In addition, the button could be identified as important and always rendered, or always rendered very large. </p>
-				<p>Working examples of how this could be used in practice, with user preferences, are available on the task force <a href="https://github.com/w3c/personalization-semantics/wiki/Implementations-of-Semantics">implementations page</a>. </p>
-					<p>Another use-case we would like to see is interoperable symbol set codes for non-verbal people. Products for people who are non-vocal often use symbols to help users communicate. These symbols are in fact an individual's language. Unfortunately many of these symbols are both subject to copyright and are not interoperable. That means end-users can only use one device, and can not use applications or assistive technologies from a different company. An open set of references for symbol codes for these symbol sets however, could be interoperable. That means the end user could use an open source symbol set or buy the symbols and use them across different devices or applications. Symbols could still be proprietary but they would also be interoperable.</p>
+				<p>To achieve this, we need standardized terms and supportive syntax. These can be linked to associated symbols, terms, translations and explanations. They are then provided to an individual based on personal preferences.</p>
 			</section>
 
 			<section id="use-cases">
 				<h3 id="x1-2-use-cases"><bdi class="secno">1.2 </bdi>Use Cases<a class="self-link" aria-label="§" href="#use-cases"></a></h3>
 				<p><a href="requirements/">Requirements for Personalization Semantics</a> [<cite><a class="bibref" href="#bib-personalization-semantics-requirements">personalization-semantics-requirements</a></cite>] elaborates many use cases that further contextualize the above summary of user needs. These use cases form the basis of requirements for this technology.</p>
+                <p>Examples include:</p>
+                <p>Assuming an author can make it programmatically known that a button sends an email, and based on user preference settings:</p>
+                <ul>
+                    <li>The button might then render as an alternative term, and/or furnish an additional tooltip that is understandable by the individual user.</li>
+                    <li>It could automatically include F1 help that explains the send function in simple terms.</li>
+                    <li>It could be identified with a keyboard shortcut that is always used for send (Submit).</li>
+                </ul>
+                <p>In addition, the button could be identified as important and always rendered or rendered in an emphasized form.</p>
+              <p>Another use-case is the use of Symbols. Some users might have a severe speech and/or physical impairment and communicate using symbols, rather than written text, as part of an Augmentative and Alternative Communication (AAC) system. The use of symbols to represent words is their primary means of communication for both consuming and producing information.</p>
+              <p>Symbol users face a wide variety of barriers to accessing web content, but one of the main challenges is a lack of standard interoperability between different symbol-sets, or a mechanism for translating how a concept is represented in one symbol-set to how it may be represented in another symbol-set.</p>
+                <ul>
+                    <li>An assisted living home authors adult education courses and life-skills content, for example, how to make dinner using a microwave. Even within their core user-base, different users are accustomed to different symbol-sets. The authors need to be able to create content for all their users. </li>
+                    <li>A large banking site wants people to be as autonomous as possible while using their services. They have provided augmented symbol references onto their core services so that the user-interface can be rendered usable for users of symbol-sets, without specifying which symbol-set is being used: they need to programmatically support multiple symbol-sets.</li>
+                    <li>People who know different symbol-sets wish to talk to each other. A government agency is making information sheets about human rights and patient rights and are seeking feedback from impacted users. They add symbols from a common symbol-set to support a majority of different users, but they wish to also support people who use or require different symbols, to enable them to both read the content, as well as edit it.</li>
+                </ul>
+              <p>It should be noted that users who depend on symbols for daily communication needs often also struggle the most with mistranslations, as they have severe language disabilities. Inferring what was meant by using an incorrect symbol will not be achievable for many users. This rules out relying on machine learning until it is almost error free.</p>
+              <p>In another use-case, a user has dyscalculia and has difficulty understanding numbers. They struggle with understanding websites that use numbers to convey information. For this reason, the numeric information must also be provided in an alternative format that the user can understand.</p>
+                <ul>
+                <li>The user wishes to get the latest weather report for their city and goes to an online weather site. For the day’s forecast, it shows a high of 95 ℉ and a low of 40 ℉, which is not helpful for this particular user. Allowing this numeric information to be presented instead as an image, symbol, or as written text would benefit the user (i.e. instead of 95 ℉, a picture of someone wearing shorts and a tee-shirt with the sun above or simply a text alternative of “Very warm”, and instead of 40 ℉ a picture of someone wearing a jacket with pants, or a text alternative of “Very cold”). </li>
+                </ul>  
+            <p>It is important to note that people with dyscalculia are often very good with words, so long text can be better than short numbers.</p>
+              <p>Finally, consider someone with autistic spectrum disorder and with a learning disability. They may be a slow reader but find numbers clear and precise. They may go to the same website and find all the word and images unclear and the animations cause cognitive overload. They want the same information with more numbers and less words.  </p>
+              <p>More examples can be found on <a href="https://github.com/w3c/personalization-semantics/wiki/Use-cases">https://github.com/w3c/personalization-semantics/wiki/Use-cases</a>.</p>
+              <p>More information on persona and user needs can be found in <a href="https://www.w3.org/TR/coga-usable/">https://www.w3.org/TR/coga-usable/</a>.</p>
 			</section>
 		</section>
 
