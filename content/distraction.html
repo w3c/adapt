@@ -4,7 +4,7 @@
 		<h3>Description</h3>
 		<div class="property-description">
             <p>The <code>distraction</code> attribute should be used on non-essential detracting content, so that people who have problems keeping focus can turn the content off. An example user experiences would be to hide all non-essential distracting content.</p>
-			<p><strong>Supported values</strong>: animations, auto-starting, moving, ad, message, chat, overlay, popup Auto-changing (logs) third-party, offer (includes suggestions).</p>
+			<p><strong>Supported values</strong>: messages, offer, overlay, and sensory.</p>
 			<p>Note that there is no default value.</p>
 			<p>Note that elements with the <code>distraction</code> attribute should also have a label or accessible name.</p>
 		</div>
@@ -13,15 +13,15 @@
 		<h3>Examples</h3>
         <p>Example using the <code>distraction</code> attribute in the context of an animated image.</p>       
    		<pre class="example" title="Distraction Using data-">
-		  &lt;img src="animated.gif" alt="animated banner advertising for Foobars" data-distraction="moving ad"&gt;</pre>
+		  &lt;img src="animated.gif" alt="animated banner advertising for Widgets" data-distraction="sensory offer"&gt;</pre>
         
        <p>Example using the <code>distraction</code> attribute in the context of a stock ticker that starts and displays upon page load.</p>       
    		<pre class="example" title="Distraction Using data-">
-		  &lt;div data-distraction="moving auto-starting auto-updating"&gt; ... &lt;/div&gt;</pre>
+		  &lt;div data-distraction="sensory message"&gt; ... &lt;/div&gt;</pre>
 
         <p>Example of a count-down timer that starts at the user’s request and updates in real-time the hours, minutes, and seconds until an event.</p>       
    		<pre class="example" title="Distraction Using data-">
-		  &lt;div data-distraction="auto-updating"&gt; ... &lt;/div&gt;</pre>
+		  &lt;div data-distraction="sensory"&gt; ... &lt;/div&gt;</pre>
         
     </section>
     <section>
