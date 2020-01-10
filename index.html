@@ -598,16 +598,16 @@ var[data-type]:hover::before {
       "date": "27 March 2018"
     }
   },
-  "publishDate": "2020-01-09",
-  "publishISODate": "2020-01-09T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 09 January 2020"
+  "publishDate": "2020-01-10",
+  "publishISODate": "2020-01-10T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 10 January 2020"
 }</script><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
 	<body class="h-entry informative"><div class="head">
       <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name">Personalization Semantics Explainer 1.0</h1>
       
       <h2>
         W3C Editor's Draft
-        <time class="dt-published" datetime="2020-01-09">09 January 2020</time>
+        <time class="dt-published" datetime="2020-01-10">10 January 2020</time>
       </h2>
       <dl>
         <dt>This version:</dt><dd>
@@ -695,7 +695,7 @@ var[data-type]:hover::before {
     </p><p>
                   This document is governed by the
                   <a id="w3c_process_revision" href="https://www.w3.org/2019/Process-20190301/">1 March 2019 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-                </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#why_accessibility"><bdi class="secno">1.1 </bdi>Why We Need Personalization</a></li><li class="tocline"><a class="tocxref" href="#use-cases"><bdi class="secno">1.2 </bdi>Use Cases</a></li></ol></li><li class="tocline"><a class="tocxref" href="#modules"><bdi class="secno">2. </bdi>Modules</a></li><li class="tocline"><a class="tocxref" href="#characteristics_semanticproperties"><bdi class="secno">3. </bdi>Vocabulary Structure</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#properties"><bdi class="secno">3.1 </bdi>Properties</a></li><li class="tocline"><a class="tocxref" href="#propcharacteristic_value"><bdi class="secno">3.2 </bdi>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#vocabulary-implementations"><bdi class="secno">4. </bdi>Vocabulary Implementations</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">A. </bdi>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><bdi class="secno">A.1 </bdi>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><bdi class="secno">A.2 </bdi>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><bdi class="secno">A.3 </bdi>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">B.1 </bdi>Informative references</a></li></ol></li></ol></nav>
+                </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#why_accessibility"><bdi class="secno">1.1 </bdi>Why We Need Personalization</a></li><li class="tocline"><a class="tocxref" href="#use-cases"><bdi class="secno">1.2 </bdi>Use Cases</a></li></ol></li><li class="tocline"><a class="tocxref" href="#modules"><bdi class="secno">2. </bdi>Modules</a></li><li class="tocline"><a class="tocxref" href="#characteristics_semanticproperties"><bdi class="secno">3. </bdi>Vocabulary Structure</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#properties"><bdi class="secno">3.1 </bdi>Properties</a></li><li class="tocline"><a class="tocxref" href="#propcharacteristic_value"><bdi class="secno">3.2 </bdi>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#vocabulary-implementations"><bdi class="secno">4. </bdi>Vocabulary Implementations</a></li><li class="tocline"><a class="tocxref" href="#stakeholders"><bdi class="secno">5. </bdi>Stakeholders</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">A.1 </bdi>Informative references</a></li></ol></li></ol></nav>
 
 		<section class="informative" id="introduction">
 
@@ -837,13 +837,30 @@ var[data-type]:hover::before {
             <div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="3"><span>Note</span></div><p class="">The HTML data- attribute syntax is not intended to be used for long-term wide-scale features. The task force is using this approach at the moment to gain implementation experience and demonstrate the usefulness of Personalization Semantics in practice. Content authors and user agent implementers should be aware that the recommended approach to use the vocubulary is expected to change, and structure their implemetation in a manner that will facilitate the transition to a new syntax.</p></div>
 			
 		</section>
-
+        <section id="stakeholders">
+            <h2 id="x5-stakeholders"><bdi class="secno">5. </bdi>Stakeholders<a class="self-link" aria-label="§" href="#stakeholders"></a></h2>
+            <p>
+                This document is useful for:
+            </p>
+            <ul>
+                <li>Content creators who want to be as usable as possible for as many people as possible, including people with learning and cognitive disabilities, and AAC users</li>
+                <li>Content creators who want to create adaptable content that meets the users preferred experience</li>
+                <li>Technology developers and providers who want to build technologies that enable more people to use the web effectively</li>
+                <li>Developers of symbol languages and related technologies </li>
+                <li>Students who wish to make a new software project for that meets a real need</li>
+                <li>Policy makers who want to know what is possible for inclusion</li>
+            </ul>
+        
+        <p>For early implementations of content we suggest including a link to an <a href="https://github.com/w3c/personalization-semantics/wiki/Implementations-of-Semantics">extension an implementation</a> that can maximize the benefit for users.</p>
+         </section>   
+        
 		
+        <section class="respec-offending-element" title="Linter (no-headingless-sections): All sections must start with a `h2-6` element. Add a `h2-6` to the offending section or use a `<div>`. See developer console. Occured" id="respec-offender-linter-no-headingless-sections-all-sections-must-start-with-a-h2-6-element-add-a-h2-6-to-the-offending-section-or-use-a-div-see-developer-console-occured">
 		<section class="appendix informative section" id="acknowledgements">
-	<h2 id="a-acknowledgments"><bdi class="secno">A. </bdi>Acknowledgments<a class="self-link" aria-label="§" href="#acknowledgements"></a></h2><p><em>This section is non-normative.</em></p>
+	<h3 id="acknowledgments">Acknowledgments<a class="self-link" aria-label="§" href="#acknowledgements"></a></h3><p><em>This section is non-normative.</em></p>
 	<p>The following people contributed to the development of this document.</p>
 	<section class="section" id="ack_group">
-		<h3 id="a-1-participants-active-in-the-personalization-tf-at-the-time-of-publication"><bdi class="secno">A.1 </bdi>Participants active in the Personalization TF at the time of publication<a class="self-link" aria-label="§" href="#ack_group"></a></h3>
+		<h4 id="participants-active-in-the-personalization-tf-at-the-time-of-publication">Participants active in the Personalization TF at the time of publication<a class="self-link" aria-label="§" href="#ack_group"></a></h4>
 		<ul>
 			<li>Thaddeus Cambron (Invited Expert)</li>
 			<li>Michael Cooper (<abbr title="World Wide Web Consortium">W3C</abbr>/<abbr title="Massachusetts Institute of Technology">MIT</abbr>)</li>
@@ -856,7 +873,7 @@ var[data-type]:hover::before {
 		</ul>
   </section>
 	<section class="section" id="ack_others">
-		<h3 id="a-2-other-personalization-tf-contributors-commenters-and-previously-active-participants"><bdi class="secno">A.2 </bdi>Other Personalization TF contributors, commenters, and previously active participants<a class="self-link" aria-label="§" href="#ack_others"></a></h3>
+		<h4 id="other-personalization-tf-contributors-commenters-and-previously-active-participants">Other Personalization TF contributors, commenters, and previously active participants<a class="self-link" aria-label="§" href="#ack_others"></a></h4>
 		<ul>
 			<li>Joanmarie Diggs (Igalia)</li>
 			<li>Richard Schwerdtfeger (Knowbility, Inc.)</li>
@@ -864,16 +881,17 @@ var[data-type]:hover::before {
 		</ul>
 	</section>
 	<section class="section" id="ack_funders">
-		<h3 id="a-3-enabling-funders"><bdi class="secno">A.3 </bdi>Enabling funders<a class="self-link" aria-label="§" href="#ack_funders"></a></h3>
+		<h4 id="enabling-funders">Enabling funders<a class="self-link" aria-label="§" href="#ack_funders"></a></h4>
 		<p>This publication has been funded in part with U.S. Federal funds from the Health and Human Services, National Institute on Disability, Independent Living, and Rehabilitation Research (NIDILRR) under contract number HHSP23301500054C. The content of this publication does not necessarily reflect the views or policies of the U.S. Department of Health and Human Services, nor does mention of trade names, commercial products, or organizations imply endorsement by the U.S. Government. Some of the work on this project has also received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No.780529 and 643399. </p>
 	</section>
 </section>
 
+            </section>
 
 	
 
-<section id="references" class="appendix"><h2 id="b-references"><bdi class="secno">B. </bdi>References<a class="self-link" aria-label="§" href="#references"></a></h2><section id="informative-references">
-        <h3 id="b-1-informative-references"><bdi class="secno">B.1 </bdi>Informative references<a class="self-link" aria-label="§" href="#informative-references"></a></h3>
+<section id="references" class="appendix"><h2 id="a-references"><bdi class="secno">A. </bdi>References<a class="self-link" aria-label="§" href="#references"></a></h2><section id="informative-references">
+        <h3 id="a-1-informative-references"><bdi class="secno">A.1 </bdi>Informative references<a class="self-link" aria-label="§" href="#informative-references"></a></h3>
       <dl class="bibliography">
         <dt id="bib-html5">[html5]</dt><dd><a href="https://www.w3.org/TR/html5/"><cite>HTML5</cite></a>. Ian Hickson; Robin Berjon; Steve Faulkner; Travis Leithead; Erika Doyle Navara; Theresa O'Connor; Silvia Pfeiffer.  W3C. 27 March 2018. W3C Recommendation. URL: <a href="https://www.w3.org/TR/html5/">https://www.w3.org/TR/html5/</a></dd><dt id="bib-personalization-semantics-requirements">[personalization-semantics-requirements]</dt><dd><em class="respec-offending-element">Reference not found.</em></dd><dt id="bib-rfc3986">[RFC3986]</dt><dd><a href="https://tools.ietf.org/html/rfc3986"><cite>Uniform Resource Identifier (URI): Generic Syntax</cite></a>. T. Berners-Lee; R. Fielding; L. Masinter.  IETF. January 2005. Internet Standard. URL: <a href="https://tools.ietf.org/html/rfc3986">https://tools.ietf.org/html/rfc3986</a></dd>
       </dl></section></section><p role="navigation" id="back-to-top"><a href="#title"><abbr title="Back to Top">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
