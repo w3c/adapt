@@ -3,10 +3,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
 	<head>
 		<title>Requirements for Personalization Semantics</title>
-		<meta charset="UTF-8" />
+		<meta charset="utf-8"/>
+		<script src="https://www.w3.org/Tools/respec/respec-w3c-common" class="remove"></script>
 		<script src="../common/biblio.js" class="remove"></script>
 		<script src="respec-config.js" class="remove"></script>
-		<script src="https://www.w3.org/Tools/respec/respec-w3c-common" class="remove"></script>
+	
+		<link href="../common/css/common.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
 		<section id="abstract">
@@ -17,12 +19,498 @@
 			<h2>Introduction</h2>
 		</section>
 		<section>
-			<h2>Use Cases</h2>
+			<h2>Stories</h2>
+            
+            <section>
+                <h3>Summary</h3>
+                <ul>
+                    <li>A single attribute can be used for many tokens if they are able to be separated with whitespace. In real life, they have been shown to be confusing to implementors who may not read and understand every word in the specification when the context is not clear</li>
+                    <li>a single attribute for may text values: would require a very complex data model if it is even possible - all the disadvantages of value pairs come into play</li>
+                    <li>a single attribute for may URI values: would require a very complex data model if it is even possible- all the disadvantages of value pairs come into play</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Easily Distracted / Overwhelmed</h3>   
+                <p>
+                   Someone who is either easily distracted or can be easily overwhelmed with too much information on a web page needs the ability to simplify the page to just the critical information and suppress anything that is not integral to the understanding and use of the page. 
+                </p>
+                 <p>
+                    Example: You want to get the latest weather report for your city and go to the <a href="www.weather.com">www.weather.com</a> website. Finding the actual weather forecast is actually a little challenging even if you have no disabilities due to all the advertisements above, beside and below the information you actually want, there is also today's top stories, trending news, and social media to ignore. If you are easily overwhelmed or distracted getting the key information about today's weather is a challenge. Having the ability to personalize and strip away all but the key information (i.e. just the weather forecast for my city) is critical for this user.
+                </p>
+                <p>
+                    In this example the author of this webpage would mark the &lt;section&gt;, &lt;p&gt;, or &lt;div&gt; that contains the actual weather report and any associated tools to manipulate the weather report (i.e. city search, hourly vs. 5 day forecast, etc.) as <code>data-simplification=critical</code>, and mark the other content as medium (default) or low.
+                </p>
+                <p>For websites which rely on Advertisement revenue, this may be difficult to completely suppress but maybe there is a way to move the most critical sections of a website above anything that is a lower priority.
+                </p>
+           </section>
+            
+            <section>
+                <h3>Difficulty understanding Numbers</h3>   
+                <p>
+                    Someone who has dyscalculia and therefore has difficulty understanding numbers which means they have a hard time understanding websites that use numbers to convey information. Therefore this numeric information must be provided in an alternative format that the user can understand.
+                </p>
+                 <p>
+                    Example: You want to get the latest weather report for your city and go to <a href="www.weather.com">www.weather.com</a>  website. For today’s forecast, it shows a high of 95&deg;F and a low of 40&deg;F, which is not helpful for this particular user. Allowing this numeric information to be presented instead as an image, symbol, or text would benefit the user (i.e. instead of 95&deg;F, a picture of someone wearing shorts and a tee-shirt with the sun above or simply a text alternative of &quot;Very warm&quot;, and instead of 40&deg;F a picture of someone wearing a jacket with pants, or a text alternative of “Very cold”. Also for something like the humidity index of 90%, there could be a text alternative of “muggy”.
+                </p>
+                <p>
+                    In this example, the author would have the numbers marked up using <code>data-numberfree</code> where the default would show the numeric value but for those needing an alternative representation for numbers would get an associated image or description to be presented instead.
+                </p>
+                <p>
+                    It is important to note that people with dyscalculia are often very good with words, so long text can be better than short numbers.
+                </p>
+           </section>
+
+            
+            <section>
+                <h3>Mild-Moderate Language Impairment / Learning Disability</h3>   
+                <p>
+                    Those who have a moderate Language Impairment / Learning Disability may have a limited vocabulary so they will only know terms that are in the core vocabulary that they have learned. They also use symbols to represent words and concepts.
+                </p>
+                <p>
+                   So, they may know the word name or last name but have not learned the term &quot;family name&quote;. learning new terms is very slow, requiring hours of work. Reading is also very slow so finding the right information can be a barrier. Symbols help people get to the section they need faster. 
+                </p>
+                <p>
+                    Solutions:
+                    
+                </p>
+                <ol>
+                    <li>The ability to personalize a web page and present symbols instead can help users to easily understand the content being provided
+                   <p>
+                        I.E: Marking up the Help button so the user agent can render a familiar term and present the symbol for help. i.e. <code>&lt;a data-action=&quot;help&quot;&gt;support /&lt;/a&gt;</code>
+                         may be rendered as / ? help (possibly as a tool tip)
+                    </p>
+                    </li>
+                    
+                    <li>Allow the author to add a simple language equivalent to complex but important text such as 
+                        <code>
+                            &lt;h1 data-easylang=&quot;form to ask for money if you have a disability or if you are ill&quot;&gt;
+                        </code>
+                         Disability claims under CD 356 / US `. In this example, the user agent replaces the complex text with the simple text or puts the simple text in a popup message if the easy text needs to be longer.
+                            <p>Note some people with language disabilities are good at numbers, so there could be times you want to replace a long string of text with a short number <code>&lt;span data-easylang=&quot;&gt;90% of the time this happens&quot;&gt; normally this is expected &lt;/span&gt;</code> Note this is the opposite of the numberfree example.
+                        </p>
+                        </li>
+                    <li>Because reading is so slow some users may also want less content and features on the web page, as per the above use cases.</li>
+                </ol>
+
+            </section>
+
+            
+            <section>
+                <h3>Severe Language Impairment</h3>   
+                <p>Those who have a severe speech and physical impairment can use symbols to represent words is their primary means of communication for both consuming and producing information. Some users communicate through the use of symbols, rather than written text, as part of an Augmentative and Alternative Communication (AAC) system. Symbol users face a wide variety of barriers to accessing web content, but one of the main challenges is a lack of standard interoperability or a mechanism for translating the same concept in different symbol sets.
+                </p>
+                <p>
+                   Examples include: 
+                </p>
+                <ul>
+                    <li>An assisted living home creates adult education course and life-skills content. For example, they have content on how to make dinner using a microwave, but they have people who read differing symbol sets. The assisted living home needs to provide content that works for all their users. In some cases, the symbols or pictures used are unique to a single user, such as the picture of an actual person, phone, or cup, etc.</li>
+                    <li>People who know different symbol sets wish to talk to each other</li>
+                    <li>A government agency that is making information sheets about human rights and patient rights. The agency wants to add symbols to accommodate the needs of lots of different users but they also want to ensure people who can read different symbols are able to read the information as well.</li>
+                    <li>A large banking site wants people to be as autonomous as possible when they access their services so they include augmented symbol references onto their core services.</li>
+                </ul>
+                <p>
+                    It should be noted that the users who depend primarily on symbols to obtain information may struggle the most with incorrect translations because they have severe language disabilities when trying to understand what is meant by the use of an incorrect symbol which makes it unachievable for many users. This rules out relying on machine learning until machine learning output is reliable and stops making errors.
+                </p>
+                  <p>
+                    The task force understands that making a scalable solution may, therefore, make a solution not useable for the earlier use cases. We may need a multi-phase solution so that the earlier use cases are supported sooner.
+                </p>
+           </section>
+
+            
+            <section>
+                <h3>Solutions for Symbol</h3>   
+                <p>Map symbol libraries to common concepts, so that symbols can be accurately converted to text in any language and then presented to other users in their preferred symbol library. The ability to personalize a web page by presenting the user's preferred symbols can help symbol users to easily understand the content being provided.
+                </p>
+                 <p>
+                    Example: In this example the author would add data-symbol=”name space references for the image” <code>&lt;img data-symbol=&quot;http://blisssymbolics.org/refnumber/001&quot; href="mysymb.bmp"&gt;</code>
+                </p>
+                <p>
+                    When there is more than one concept, multiple concepts can be referenced by separating them with white space. The order of multiple concepts should be subject predicate object. Both omissions and multiple triples are allowed.
+                </p>
+                <p>
+                    Note that a UNICEF consortium is mapping the different open symbol libraries to a reference symbol (at Blisssymbolics) to enable this. See the implementations page.
+                </p>
+           </section>
+            
+            <section>
+                <h3>Working Memory and Short-term Memory Impairment</h3>
+                <p>
+                Users may have differences in both working and short-term memory. For some users, the duration of working memory may be shorter than the average which is between 10-15 seconds. For some users, the duration of short-term memory may be shorter than the average which is between 15-30 seconds.
+                </p>
+                <p>
+                Example: Many processes consist of a sequence of separate steps or actions which must be performed by a user to complete a process or workflow. Users must be able to remember completed tasks in order to identify their location in a process. In addition, a user must be able to navigate to completed tasks to make modifications or corrections.
+                </p>
+                <p>
+                Solution: <code>data-stepIndicator</code> allows an author to define steps within a process or represent an entire user path outside of the context of a defined process, including steps between defined processes into breadcrumbs or linked steps that identify completed tasks. This allows the user to navigate back to completed steps and identify a user's current location in a path.
+                </p>
+               <ul>
+                    <li><code>data-stepIndicator</code></li>
+                    <li><code>data-step</code></li>
+                    <li><code>data-stepLocation</code></li>
+                    <li><code>data-stepStatus</code></li>
+                    <li><code>data-stepNumber</code></li>
+                </ul>
+            </section>
+     </section>
+        <section>
+             <h2>Use-Cases</h2>
+            <section>
+                <h3>Simplification - 1</h3>
+                <p>
+                Use case: The user would prefer to see only the critical information and required fields to complete a task.
+                </p>
+                <h4>Original</h4>
+                <pre>
+                    &lt;div>
+                        &lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;&lt;br /&gt; 
+                            &lt;p&gt;Enter your e-mail address to subscribe to our mailing list.&lt;/p&gt;
+                            &lt;br /&gt; 
+                            &lt;label for=&quot;address&quot;&gt;Enter email address:&lt;/label&gt;
+                            &lt;input type=&quot;text&quot; id=&quot;address&quot; name=&quot;address&quot;/&gt;&lt;/p&gt;
+                            &lt;br /&gt;
+                            &lt;input type=&quot;submit&quot; value=&quot;Subscribe&quot; /&gt;
+                        &lt;/form&gt;
+                    &lt;/div&gt;
+                </pre>
+                <h4>data-* Attributes</h4>
+                
+                <pre>
+                    &lt;div&gt;
+                          &lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;&lt;br /&gt; 
+                            &lt;p&gt;Note: [*]denotes mandatory field&lt;/p&gt;
+                            &lt;p&gt;Enter your e-mail address to subscribe to our mailing list.&lt;/p&gt;
+                            &lt;br /&gt; 
+                            &lt;label for=&quot;address&quot;&gt;Enter email address:&lt;/label&gt;
+                            &lt;input type=&quot;text&quot; id=&quot;address&quot; name=&quot;address&quot; data-purpose=&quot;email&quot; 
+                                data-simplification=&quot;critical&quot; 
+                                aria-required=&quot;true&quot;/&gt;[*]
+                            &lt;br /&gt;
+                            &lt;input type=&quot;submit&quot; data-simplification=&quot;critical&quot; 
+                                value=&quot;Subscribe&quot; /&gt;
+                            &lt;br /&gt; 
+                        &lt;/form&gt;
+                    &lt;/div&gt;
+                
+                </pre>
+                <p>
+                
+                </p>
+            </section>
+            
 			<section>
-				<h3>Simplification</h3>
+				<h3>Simplification - 2</h3>
 				<p>A user changes their personalization settings to simplify the web content that displays based on the importance of various features. In the sample user experience available at <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html">https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html</a>, the user can select a &quot;More options button or &quot;Less options&quot; button to simplify the web content by hiding or displaying elements that are or of low importance.</p>
 			</section>
+            
+                   
 
+           <section>
+                <h3>Simplification with required fields</h3>
+                <p>
+                    The user would prefer to see only the critical information and required fields to complete a task.
+                </p>
+                <h4>Original - Simplification/Required</h4>
+                <pre>
+                    &lt;div&gt;
+                        &lt;button id=&quot;1&quot;&gt;send&lt;/button&gt;
+                        &lt;button id=&quot;2&quot;&gt;undo&lt;/button&gt;
+                        &lt;button id=&quot;3&quot;"&gt;lable&lt;/button&gt;
+                        &lt;button id=&quot;4&quot;&gt;send later&lt;/button&gt;
+                        &lt;button id=&quot;5&quot;&gt;mark urgent&lt;/button&gt;
+                    &lt;/div&gt;
+                </pre>
+                <h4>data-* Attributes - Simplification/Required</h4>
+                <pre>
+                    &lt;div&gt;
+                        &lt;input type=&quot;submit&quot; data-simplification=&quot;critical&quot; 
+                            data-action="send" value=&quot;send&quot; /&gt;
+                        &lt;button id=&quot;2&quot; data-simplification=&quot;high&quot; data-action=&quot;undo&quot;&gt;undo&lt;/button&gt;
+                        &lt;button id=&quot;3&quot; data-simplification=&quot;normal&quot;&gt;lable&lt;/button&gt;
+                        &lt;button id=&quot;4&quot; data-simplification=&quot;normal&quot;&gt;send later&lt;/button&gt;
+                        &lt;button id=&quot;5&quot; data-simplification=&quot;normal&quot;&gt;mark urgent&lt;/button&gt;
+                    &lt;/div&gt;
+                </pre>
+                <h4>Attributes Only - Simplification/Required</h4>
+                <pre>
+                    &lt;div&gt;
+                        &lt;input type=&quot;submit&quot; context =&quot;critical send&quot; value=&quot;send&quot; /&gt;
+                        &lt;button id=&quot;2&quot; context=&quot;high undo&quot;&gt;undo&lt;/button&gt;
+                        &lt;button id=&quot;3&quot; context="normal"&gt;lable&lt;/button&gt;
+                        &lt;button id=&quot;4&quot; context=&quot;normal&quot;&gt;send later&lt;/button&gt;
+                        &lt;button id=&quot;5&quot; context=&quot;normal&quot;&gt;mark urgent&lt;/button&gt;
+                    &lt;/div>
+
+                </pre>
+            </section>
+            
+            
+
+           <section>
+                <h3>Content Filtering (inception)</h3>
+                <p>
+                User may have a sensitivity to certain words or topics; based on personal preference, culture or disability which are expressed on a page using text, images or video.
+                </p>
+                <p>
+                Given one or more strings representing a specified word or category, for example, content marked as explicit, violent, etc., hide or remove that string and associated elements from the DOM.
+                </p>
+               <ul>
+                    <li>data-action = hide</li>
+                   <li>URI = JSON file of words</li>
+               </ul>
+                <p>
+                Consideration: How are we bringing in data sets to support use cases that depend on external data, for example, symbols or simple language vocabularies? Is this through separate JS or is the vision to have that abstracted by the implementation.
+                </p>
+                <p>
+                    <b>Alternative (by lisa)</b> data-triggers = list of words
+                </p>
+                <p>
+                at the user end the content will be hidden under a warning button if any of the words match a word identified as a tiger in the user preferences
+                </p>
+                <p>
+                for example data-triggers = "violent rape"
+                </p>
+            </section>
+            
+            
+
+           <section>
+                <h3>Two text field Use Cases</h3>
+                
+                <section>
+                    <h4>Numberfree and Extrahelp</h4>
+                    <p class="ednote">
+                        This example proved much harder to create than I expected. I will admit that I am still confused at how to create the examples and am not confident that these are correct. I also intended to have this be an example that needed two types of replacement but when I implemented it, I realized I could split it into two separate substitutions. becky
+                    </p>
+                    <p>
+                        The user needs content that does not use numbers and needs extra help and information to complete a task.
+                    </p>
+                    <h5>Original</h5>
+                    <pre>
+                        &lt;div&gt;
+                            7 out of 10 people order pizza with some kind of meat topping. 
+                            Select the toppings below in order of preference that you would 
+                            order on pizza.
+                        &lt;/div&gt;
+                        &lt;form&gt;
+                            sophisticated form to select/rank pizza toppings in order of preference
+                        &lt;/form&gt;
+                    </pre>
+                    <h5>3 Attributes</h5>
+                    <pre>
+                        &lt;div>
+                            &lt;span context=&quot;numberfree&quot; easylang=&quot;most people&quot;&gt;
+                                 7 out of 10 people
+                            &lt;/span&gt; 
+                                order pizza with some kind of meat topping. 
+                            &lt;span context=&quot;extrahelp&quot; reference=&quot;href-to-simplifiedInstructions&quot;&gt;
+                                Select the toppings below in order of preference that you would 
+                                order on pizza.
+                            &lt;/span&gt;
+                        &lt;/div&gt;
+                    </pre>
+                    <h5>data-* Attributes</h5>
+                    <pre>
+                        &lt;div&gt;
+                          &lt;span data-numberfree=&quot;Most people&quot;&gt;
+                             7 out of 10 people
+                          &lt;/span&gt; 
+                          order pizza with some kind of meat topping. 
+                          &lt;span data-extrahelp=&quot;href-to-simplifiedInstructions&quot;&gt;
+                             Select the toppings below in order of preference that 
+                             you would order on pizza.
+                          &lt;/span&gt;
+                        &lt;/div&gt;
+                    </pre>
+                    </section>
+
+                    <section>
+                        <h4>Numberfree and easylang - 1</h4>
+                        <p>
+                             The user prefers alternative text that does not use numerical concepts as well as content that is easier to read and understand.
+                        </p>
+                            <h5>Original - 1 </h5>
+                        <pre>
+                            &lt;p&gt;
+                               Comparing the present clock-reported time which is 5 minutes
+                               after 09:00 AM with what we previously discussed 
+                               yesterday, and made an agreement about, 
+                               it seems that I myself may not be exactly on schedule
+                            &lt;/p&gt;
+                        </pre>
+                            <h5>data-* Attributes - 1</h5>
+                        <pre>
+                            <div>
+                                &lt;span easylang=&quot;I'm running late&quot;&gt;
+                                    Comparing the present clock-reported time which is 
+                                    &lt;span data-numberfree=&quot;midmorning&quot;&gt;
+                                       5 minutes after 09:00 AM
+                                    &lt;/span&gt; 
+                                    with what we previously discussed 
+                                    yesterday, and made an agreement about, it seems that 
+                                    I myself may not be exactly on schedule
+                                &lt;/span&gt;
+                            </div>
+                        </pre>
+                    </section>
+                   <section>
+                        <h4>Numberfree and easylang - 2</h4>
+                        <p>
+                             The user prefers alternative text that is easy to read and understand but is good with numbers (eg dyslexic)
+                        </p>
+                            <h5>Original - 2</h5>
+                        <pre>
+                            &lt;p&gt;
+                               Comparing the present clock-reported time 
+                               you many wish to come a bit later than the normal time.
+                            &lt;/p&gt;
+                        </pre>
+                            <h5>data-* Attributes -2</h5>
+                        <pre>
+                            &lt;div&gt;
+                                  &lt;span data-easylang="come to the meeting at 9:10"&gt;
+                                       Comparing the present clock-reported time you many wish 
+                                       to come a bit later then the normal time
+                                  &lt;/span&gt; 
+                                &lt;/div&gt;
+                        </pre>
+                       <h5>Three Attributes -2</h5>
+                        <pre>
+                            &lt;div&gt;
+                                &lt;span data-easylang=&quot;come to the meeting at 9:10&quot;&gt;
+                                    Comparing the present clock-reported time 
+                                    you many wish to come a bit later then the normal time
+                                &lt;/span&gt; 
+                            &lt;/div&gt;
+                        </pre>
+                    </section>
+                 
+               <section>
+                        <h4>Numberfree and easylang - 3</h4>
+                        <p>
+                             The user can understand words well but has dyscalculia and does not understand numbers
+                        </p>
+                            <h5>Original - 3</h5>
+                        <pre>
+                            &lt;p&gt;
+                              meeting is starting 10 minutes late
+                            &lt;/p&gt;
+                        </pre>
+                            <h5>data-* Attributes -3</h5>
+                        <pre>
+                            &lt;div&gt;
+                               &lt;span data-easylang="come a bit later than the normal time - enough time for a cup of tea... "&gt;
+                                  meeting is starting 10 minutes late
+                               &lt;/span&gt; 
+                            &lt;/div&gt;
+                        </pre>
+                        
+                        <h5>Three Attributes -2</h5>
+                        <pre>
+                            &lt;div&gt;
+                                  &lt;span data-easylang=&quot;come a bit later then the normal time - enough time for a cup of tea... &quot; context=&quot;numbers&quot;&gt;
+                                     meeting is starting 10 minuets late
+                                  &lt;/span&gt; 
+                            &lt;/div&gt;  
+                        </pre>
+                    </section>
+    
+        <section>
+                <h3>Three text field Use Cases</h3>
+                
+                <section>
+                    <h4>Feedback, Explain and Easylang</h4>
+                    <p>
+                        The user needs
+                    </p>
+                    <ul>
+                        <li>easy language and</li>
+                        <li>a bit more information about how the interface works</li>
+                        <li>what just happened - i.e. did they need to click something else, did it work?</li>
+                    </ul>
+                    <p>
+                        In this example search criteria in one part of a page controls the results in anther region which shows the side effects of a drug. Other buttons may show dosage etc. in the results region
+                    </p>
+                    <h5>Original</h5>
+                        <pre>
+                            &lt;input  
+                                data-context =&quot;critical&quot; value=&quot;refresh&quot; 
+                                aria-controls=&quot;region2&quot; 
+                            /&gt;
+                        </pre>
+                    <h5>data-*</h5>
+                        <pre>
+                            &lt;input  data-simplification=&quot;critical&quot;  
+                                data-feedback=&quot;the results now are for ibuprofen side effect&quot; 
+                                value=&quot;refresh&quot; 
+                                aria-controls=&quot;region2&quot; 
+                                data-easyLang=&quot;get the side effects&quot; 
+                                data-explain=&quot;press this button to see the side effects of a drug&quot;  
+                            /&gt;
+                        </pre>
+                    <h5>Three Attributes</h5>
+                        <p class="ednote">I could not do this in three attributes. So I did what I could</p>
+                        <pre>
+                            &lt;input context=&quot;critical&quot; 
+                               data-feedback=&quot;the results now are for ibuprofen side effect&quot; 
+                               value=&quot;refresh&quot; 
+                               aria-controls=&quot;region2&quot; 
+                               data-easyLang=&quot;get the side effects&quot; 
+                               data-explain=&quot;press this button to see the side effects of a drug&quot;  
+                            /&gt;
+                        </pre>
+                    </section>
+
+            </section>
+
+               <section>
+                <h3>More than one URI use case</h3>
+                
+                <section>
+                    <h4>symbol and extra help</h4>
+                    <p>
+                        The user needs
+                    </p>
+                    <ul>
+                        <li>symbols</li>
+                        <li>extra text</li>
+                        <li>help</li>
+                    </ul>
+                    <h5>Original</h5>
+                        <pre>
+                            &lt;div&gt;
+                              &lt;strong&gt;warning&lt;/strong&gt; 
+                              in the event of a siren go to the designated protected area
+                            &lt;/div&gt;
+                        </pre>
+                    <h5>data-*</h5>
+                        <pre>
+                            &lt;div&gt;
+                              &lt;strong region=&quot;warning&quot;&gt;warning&lt;/strong&gt; 
+                              &lt;span data-symbol=&quot;blissymbolics.org/siren&quot;> in the event of a siren &lt;/span&gt;
+                              &lt;span data-symbol=&quot;blissymbolics.org/goto&quot;> go to &lt;/span&gt;
+                              &lt;span data-symbol=&quot;blissymbolics.org/shelter&quot; 
+                                data-extrahelp=&quot;mysite/whatisashelter-easylang.html&quot;&gt;the designated protected area
+                              &lt;/span&gt;
+                            &lt;/div&gt;
+                        </pre>
+                    <h5>Three Attributes</h5>
+                        <p class="ednote">I could not do this in three attributes. So I did what I could</p>
+                        <pre>
+                            &lt;div&gt; 
+                              &lt;strong  context=&quot;warning&quot;&gt;warning&lt;/strong&gt; 
+                              &lt;span reference=&quot;blissymbolics.org/siren&quot;&gt;in the event of a siren&lt;/span&gt;   
+                              &lt;span reference=&quot;blissymbolics.org/goto&quot;&gt; go to &lt;/span&gt;
+                              &lt;span reference=&quot;blissymbolics.org/shelter&quot; extrahelp=&quot;mysite/whatisashelter-easylang.html&quot;&gt;
+                                the designated protected area
+                              &lt;/span&gt; 
+                            &lt;/div&gt;
+                        </pre>
+                      
+                    </section>
+
+            </section>
+        
+            
 			<section>
 				<h3>Adding Context</h3>
 				<p>A web content author creates a button with a role="send" then, without any additional work by the author the web content automatically:</p>
@@ -86,10 +574,10 @@
 			<section>
 				<h3>Reminders and Messages</h3>
 				<p>Users can disable push notifications and messages on applications such as Skype and Facebook across different devices, however, they may forget to re-enable these notifications and messages. A user's contacts can be organized by importance or by groups. For example, the CEO of the company a user works for and a user's child care giver could both be set to critical. A user's contacts may also be grouped. Family members may be in one group, important colleagues may be in a second group, and friends in a third group.</p>
-				<p><strong>Privacy Implications:</strong>This feature could in theory be implemented pre-authentication. Depending on the implementation, this would expose a users contats to the client in clear text. </p>
-				<p><strong>Existing Technologies:</strong> Would Web push notification with customization by the user satisfy the requirement here as opposed to introducing new semantics?</p>
+				<p><b>Privacy Implications:</b>This feature could in theory be implemented pre-authentication. Depending on the implementation, this would expose a users contats to the client in clear text. </p>
+				<p><b>Existing Technologies:</b> Would Web push notification with customization by the user satisfy the requirement here as opposed to introducing new semantics?</p>
 				<p>Reference: https://developers.google.com/web/fundamentals/codelabs/push-notifications/</p>
-				<p><strong>Example User Experience:</strong> Question for the group. How would data be shared, if at all, between applications containing, for example, contacts and the proposed mechanism</p>
+				<p><b>Example User Experience:</b> Question for the group. How would data be shared, if at all, between applications containing, for example, contacts and the proposed mechanism</p>
 				<p class="ednote">This isn't worded in use case language, so needs to be reformulated.</p>
 			</section>
 			
