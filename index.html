@@ -695,7 +695,7 @@ var[data-type]:hover::before {
     </p><p>
                   This document is governed by the
                   <a id="w3c_process_revision" href="https://www.w3.org/2019/Process-20190301/">1 March 2019 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-                </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#why_accessibility"><bdi class="secno">1.1 </bdi>Why We Need Personalization</a></li><li class="tocline"><a class="tocxref" href="#use-cases"><bdi class="secno">1.2 </bdi>Use Cases</a></li></ol></li><li class="tocline"><a class="tocxref" href="#modules"><bdi class="secno">2. </bdi>Modules</a></li><li class="tocline"><a class="tocxref" href="#characteristics_semanticproperties"><bdi class="secno">3. </bdi>Vocabulary Structure</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#properties"><bdi class="secno">3.1 </bdi>Properties</a></li><li class="tocline"><a class="tocxref" href="#propcharacteristic_value"><bdi class="secno">3.2 </bdi>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#vocabulary-implementations"><bdi class="secno">4. </bdi>Vocabulary Implementations</a></li><li class="tocline"><a class="tocxref" href="#stakeholders"><bdi class="secno">5. </bdi>Stakeholders</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">A. </bdi>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><bdi class="secno">A.1 </bdi>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><bdi class="secno">A.2 </bdi>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><bdi class="secno">A.3 </bdi>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">B.1 </bdi>Informative references</a></li></ol></li></ol></nav>
+                </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#why_accessibility"><bdi class="secno">1.1 </bdi>Why We Need Personalization</a></li><li class="tocline"><a class="tocxref" href="#use-cases"><bdi class="secno">1.2 </bdi>Use Cases</a></li><li class="tocline"><a class="tocxref" href="#out-of-scope"><bdi class="secno">1.3 </bdi>Out of Scope</a></li></ol></li><li class="tocline"><a class="tocxref" href="#modules"><bdi class="secno">2. </bdi>Modules</a></li><li class="tocline"><a class="tocxref" href="#characteristics_semanticproperties"><bdi class="secno">3. </bdi>Vocabulary Structure</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#properties"><bdi class="secno">3.1 </bdi>Properties</a></li><li class="tocline"><a class="tocxref" href="#propcharacteristic_value"><bdi class="secno">3.2 </bdi>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#vocabulary-implementations"><bdi class="secno">4. </bdi>Vocabulary Implementations</a></li><li class="tocline"><a class="tocxref" href="#stakeholders"><bdi class="secno">5. </bdi>Stakeholders</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">A. </bdi>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><bdi class="secno">A.1 </bdi>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><bdi class="secno">A.2 </bdi>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><bdi class="secno">A.3 </bdi>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">B.1 </bdi>Informative references</a></li></ol></li></ol></nav>
 
 		<section class="informative" id="introduction">
 
@@ -759,6 +759,18 @@ var[data-type]:hover::before {
               <p>More examples can be found on <a href="https://github.com/w3c/personalization-semantics/wiki/Use-cases">https://github.com/w3c/personalization-semantics/wiki/Use-cases</a>.</p>
               <p>More information on persona and user needs can be found in <a href="https://www.w3.org/TR/coga-usable/">https://www.w3.org/TR/coga-usable/</a>.</p>
 			</section>
+            
+            <section id="out-of-scope">
+            <h3 id="x1-3-out-of-scope"><bdi class="secno">1.3 </bdi>Out of Scope<a class="self-link" aria-label="§" href="#out-of-scope"></a></h3>
+                <p>While the intention of this work is to introduce a new set of attributes to support Personalization, the following work items are out of scope:</p>
+                <ul>
+                    <li>Develop an API for browsers or other user-agents</li>
+                    <li>Develop or produce supporting technology (browser extension, stand-alone software, etc.)</li>
+                    <li>Develop or produce an authoring tool to support the new attributes</li>
+                    <li>Produce a symbol set for <code>data-symbol</code></li>
+                </ul>
+                <p>We encourage a the development of these items and a list of implementations can be found on our wiki.</p>
+            </section>
 		</section>
 
 		<section class="section" id="modules">
@@ -843,12 +855,12 @@ var[data-type]:hover::before {
                 This document is useful for:
             </p>
             <ul>
-                <li>Content creators who want to be as usable as possible for as many people as possible, including people with learning and cognitive disabilities, and AAC users</li>
+                <li>Content creators who want to accommodate as many users as possible, including AAC users, and people with learning &amp; cognitive disabilities.</li>
                 <li>Content creators who want to create adaptable content that meets the users preferred experience</li>
                 <li>Technology developers and providers who want to build technologies that enable more people to use the web effectively</li>
                 <li>Developers of symbol languages and related technologies </li>
-                <li>Students who wish to make a new software project for that meets a real need</li>
-                <li>Policy makers who want to know what is possible for inclusion</li>
+                <li>Students who wish to develop a new software project that meets a real need</li>
+                <li>Policy makers who want to understand what is possible for inclusion</li>
             </ul>
         
         <p>For early implementations of content we suggest including a link to an <a href="https://github.com/w3c/personalization-semantics/wiki/Implementations-of-Semantics">extension an implementation</a> that can maximize the benefit for users.</p>
