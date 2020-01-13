@@ -17,8 +17,78 @@
 		<section id="sotd"> </section>
 		<section>
 			<h2>Introduction</h2>
-		</section>
-		<section>
+			<section>
+				<h3>Adding Context</h3>
+				<p>A web content author creates a button with a role="send" then, without any additional work by the author the web content automatically:</p>
+				<ul>
+					<li>Renders associated symbols, terms, and/or tooltips that are understandable by a particular user.</li>
+					<li>Includudes F1 help that explains how the send function works in simple terms. </li>
+					<li>Has an identified keyboard shortcut that is always used for the send function.</li>
+					<li>Identifies the send button as important so it is always rendered, or rendered as a large button if needed.</li>
+				</ul>
+			</section>
+			
+			<section>
+				<h4>General Context</h4>
+				<p>A female user with a cognitive disability may need to select &quot;Less options&quot;, while shopping on a website to eliminate options that are not relevant to a her shopping needs. In this case it may be appropriate to demote these options to display below the scroll or placed under a &quot;More option&quot; button.</p>
+				
+			</section>
+			
+			<section>
+				<h4>Interoperable Symbols</h4>
+				<p>Mapping an AAC users' symbols to the same concepts enables the user agent to load the appropriate symbols enabling the user to understand and access content on the web and in other applications. In addition, AAC users, and those working with AAC users will be able to load AAC user symbols into these applications enabling access to content that has been created by different providers.</p>
+				<p class="ednote">This isn't worded in use case language, so needs to be reformulated.</p>
+				
+			</section>
+			
+			<section>
+				<h3>Non-Numerical Comprehension</h3>
+				<p>A suggested user experience would be: Numerical concepts could be rendered by the user agent slightly different so that the user knows a number free explanation is available. The user can then focus on the content and a tooltip or other disclosure mechanism would give the number free value.</p>
+				<p class="ednote">This isn't worded in use case language, so needs to be reformulated.</p>
+			</section>
+			
+			<section>
+				<h3>Alternate Language Complexity</h3>
+				<p>For example, you may wish to provide a simplified summary of legal document, but still have a longer version for other users. </p>
+				<p class="ednote">This isn't worded in use case language, so needs to be reformulated.</p>
+			</section>
+			
+			<section>
+				<h3>Non-literal Text and Images</h3>
+				<p>Non-literal content could be rendered by the user agent with an indication that signifies to the user that this content should not be taken literally and that a literal explanation is available. The user can then place focus on the content and a tooltip or other disclosure mechanism would give the literal value.</p>
+				<p class="ednote">This isn't worded in use case language, so needs to be reformulated.</p>
+			</section>
+			
+			<section>
+				<h3>More Help</h3>
+				<p>>Some users may need additional information or specifically additional help information.</p>
+				<p class="ednote">This isn't worded in use case language, so needs to be reformulated.</p>
+			</section>
+			
+			<section>
+				<h3>Explain and Feedback</h3>
+				<p>Some users need additional feedback about events on the web page.</p>
+				<p class="ednote">This isn't worded in use case language, so needs to be reformulated.</p>
+			</section>
+			
+			<section>
+				<h3>Indication of Sequence in Breadcrumbs</h3>
+				<p>A hyperlinked, sequential breadcrumb list displays in the header, allowing the user agent to build a sequential indicator that displays a link to each page in the order it was visited by the user. </p>
+				<p class="ednote">I believe an important feature is that this mechanism can cross defined tasks and give a more holistic version of the user flow. Typically in a defined sequence of tasks an author will have provided the nessessary afforardance, location in the path, navigation through the path, etc., in the UI by design.</p>
+			</section>
+			
+			<section>
+				<h3>Reminders and Messages</h3>
+				<p>Users can disable push notifications and messages on applications such as Skype and Facebook across different devices, however, they may forget to re-enable these notifications and messages. A user's contacts can be organized by importance or by groups. For example, the CEO of the company a user works for and a user's child care giver could both be set to critical. A user's contacts may also be grouped. Family members may be in one group, important colleagues may be in a second group, and friends in a third group.</p>
+				<p><b>Privacy Implications:</b>This feature could in theory be implemented pre-authentication. Depending on the implementation, this would expose a users contats to the client in clear text. </p>
+				<p><b>Existing Technologies:</b> Would Web push notification with customization by the user satisfy the requirement here as opposed to introducing new semantics?</p>
+				<p>Reference: https://developers.google.com/web/fundamentals/codelabs/push-notifications/</p>
+				<p><b>Example User Experience:</b> Question for the group. How would data be shared, if at all, between applications containing, for example, contacts and the proposed mechanism</p>
+				<p class="ednote">This isn't worded in use case language, so needs to be reformulated.</p>
+			</section>
+	</section>
+
+        <section>
 			<h2>Stories</h2>
             
             <section>
@@ -510,77 +580,7 @@
 
             </section>
         
-            
-			<section>
-				<h3>Adding Context</h3>
-				<p>A web content author creates a button with a role="send" then, without any additional work by the author the web content automatically:</p>
-				<ul>
-					<li>Renders associated symbols, terms, and/or tooltips that are understandable by a particular user.</li>
-					<li>Includudes F1 help that explains how the send function works in simple terms. </li>
-					<li>Has an identified keyboard shortcut that is always used for the send function.</li>
-					<li>Identifies the send button as important so it is always rendered, or rendered as a large button if needed.</li>
-				</ul>
-			</section>
-			
-			<section>
-				<h4>General Context</h4>
-				<p>A female user with a cognitive disability may need to select &quot;Less options&quot;, while shopping on a website to eliminate options that are not relevant to a her shopping needs. In this case it may be appropriate to demote these options to display below the scroll or placed under a &quot;More option&quot; button.</p>
-				
-			</section>
-			
-			<section>
-				<h4>Interoperable Symbols</h4>
-				<p>Mapping an AAC users' symbols to the same concepts enables the user agent to load the appropriate symbols enabling the user to understand and access content on the web and in other applications. In addition, AAC users, and those working with AAC users will be able to load AAC user symbols into these applications enabling access to content that has been created by different providers.</p>
-				<p class="ednote">This isn't worded in use case language, so needs to be reformulated.</p>
-				
-			</section>
-			
-			<section>
-				<h3>Non-Numerical Comprehension</h3>
-				<p>A suggested user experience would be: Numerical concepts could be rendered by the user agent slightly different so that the user knows a number free explanation is available. The user can then focus on the content and a tooltip or other disclosure mechanism would give the number free value.</p>
-				<p class="ednote">This isn't worded in use case language, so needs to be reformulated.</p>
-			</section>
-			
-			<section>
-				<h3>Alternate Language Complexity</h3>
-				<p>For example, you may wish to provide a simplified summary of legal document, but still have a longer version for other users. </p>
-				<p class="ednote">This isn't worded in use case language, so needs to be reformulated.</p>
-			</section>
-			
-			<section>
-				<h3>Non-literal Text and Images</h3>
-				<p>Non-literal content could be rendered by the user agent with an indication that signifies to the user that this content should not be taken literally and that a literal explanation is available. The user can then place focus on the content and a tooltip or other disclosure mechanism would give the literal value.</p>
-				<p class="ednote">This isn't worded in use case language, so needs to be reformulated.</p>
-			</section>
-			
-			<section>
-				<h3>More Help</h3>
-				<p>>Some users may need additional information or specifically additional help information.</p>
-				<p class="ednote">This isn't worded in use case language, so needs to be reformulated.</p>
-			</section>
-			
-			<section>
-				<h3>Explain and Feedback</h3>
-				<p>Some users need additional feedback about events on the web page.</p>
-				<p class="ednote">This isn't worded in use case language, so needs to be reformulated.</p>
-			</section>
-			
-			<section>
-				<h3>Indication of Sequence in Breadcrumbs</h3>
-				<p>A hyperlinked, sequential breadcrumb list displays in the header, allowing the user agent to build a sequential indicator that displays a link to each page in the order it was visited by the user. </p>
-				<p class="ednote">I believe an important feature is that this mechanism can cross defined tasks and give a more holistic version of the user flow. Typically in a defined sequence of tasks an author will have provided the nessessary afforardance, location in the path, navigation through the path, etc., in the UI by design.</p>
-			</section>
-			
-			<section>
-				<h3>Reminders and Messages</h3>
-				<p>Users can disable push notifications and messages on applications such as Skype and Facebook across different devices, however, they may forget to re-enable these notifications and messages. A user's contacts can be organized by importance or by groups. For example, the CEO of the company a user works for and a user's child care giver could both be set to critical. A user's contacts may also be grouped. Family members may be in one group, important colleagues may be in a second group, and friends in a third group.</p>
-				<p><b>Privacy Implications:</b>This feature could in theory be implemented pre-authentication. Depending on the implementation, this would expose a users contats to the client in clear text. </p>
-				<p><b>Existing Technologies:</b> Would Web push notification with customization by the user satisfy the requirement here as opposed to introducing new semantics?</p>
-				<p>Reference: https://developers.google.com/web/fundamentals/codelabs/push-notifications/</p>
-				<p><b>Example User Experience:</b> Question for the group. How would data be shared, if at all, between applications containing, for example, contacts and the proposed mechanism</p>
-				<p class="ednote">This isn't worded in use case language, so needs to be reformulated.</p>
-			</section>
-			
+            </section>
 		</section>
 		<section>
 			<h2>Requirements</h2>
