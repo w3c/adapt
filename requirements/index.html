@@ -1,4 +1,4 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 25.0.4"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 25.1.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
 .issue-label {
     text-transform: initial;
 }
@@ -609,16 +609,16 @@ var[data-type]:hover::before {
   "wgPublicList": "public-personalization-tf",
   "wgPatentURI": "https://www.w3.org/2004/01/pp-impl/83907/status",
   "localBiblio": {},
-  "publishDate": "2020-01-13",
-  "publishISODate": "2020-01-13T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 13 January 2020"
+  "publishDate": "2020-01-16",
+  "publishISODate": "2020-01-16T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 16 January 2020"
 }</script><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
 	<body class="h-entry informative"><div class="head">
       <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name">Requirements for Personalization Semantics</h1>
       
       <h2>
         W3C Editor's Draft
-        <time class="dt-published" datetime="2020-01-13">13 January 2020</time>
+        <time class="dt-published" datetime="2020-01-16">16 January 2020</time>
       </h2>
       <dl>
         <dt>This version:</dt><dd>
@@ -701,11 +701,81 @@ var[data-type]:hover::before {
     </p><p>
                   This document is governed by the
                   <a id="w3c_process_revision" href="https://www.w3.org/2019/Process-20190301/">1 March 2019 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-                </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a></li><li class="tocline"><a class="tocxref" href="#stories"><bdi class="secno">2. </bdi>Stories</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#summary"><bdi class="secno">2.1 </bdi>Summary</a></li><li class="tocline"><a class="tocxref" href="#easily-distracted-overwhelmed"><bdi class="secno">2.2 </bdi>Easily Distracted / Overwhelmed</a></li><li class="tocline"><a class="tocxref" href="#difficulty-understanding-numbers"><bdi class="secno">2.3 </bdi>Difficulty understanding Numbers</a></li><li class="tocline"><a class="tocxref" href="#mild-moderate-language-impairment-learning-disability"><bdi class="secno">2.4 </bdi>Mild-Moderate Language Impairment / Learning Disability</a></li><li class="tocline"><a class="tocxref" href="#severe-language-impairment"><bdi class="secno">2.5 </bdi>Severe Language Impairment</a></li><li class="tocline"><a class="tocxref" href="#solutions-for-symbol"><bdi class="secno">2.6 </bdi>Solutions for Symbol</a></li><li class="tocline"><a class="tocxref" href="#working-memory-and-short-term-memory-impairment"><bdi class="secno">2.7 </bdi>Working Memory and Short-term Memory Impairment</a></li></ol></li><li class="tocline"><a class="tocxref" href="#use-cases"><bdi class="secno">3. </bdi>Use-Cases</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#simplification-1"><bdi class="secno">3.1 </bdi>Simplification - 1</a></li><li class="tocline"><a class="tocxref" href="#simplification-2"><bdi class="secno">3.2 </bdi>Simplification - 2</a></li><li class="tocline"><a class="tocxref" href="#simplification-with-required-fields"><bdi class="secno">3.3 </bdi>Simplification with required fields</a></li><li class="tocline"><a class="tocxref" href="#content-filtering-inception"><bdi class="secno">3.4 </bdi>Content Filtering (inception)</a></li><li class="tocline"><a class="tocxref" href="#two-text-field-use-cases"><bdi class="secno">3.5 </bdi>Two text field Use Cases</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#numberfree-and-extrahelp"><bdi class="secno">3.5.1 </bdi>Numberfree and Extrahelp</a></li><li class="tocline"><a class="tocxref" href="#numberfree-and-easylang-1"><bdi class="secno">3.5.2 </bdi>Numberfree and easylang - 1</a></li><li class="tocline"><a class="tocxref" href="#numberfree-and-easylang-2"><bdi class="secno">3.5.3 </bdi>Numberfree and easylang - 2</a></li><li class="tocline"><a class="tocxref" href="#numberfree-and-easylang-3"><bdi class="secno">3.5.4 </bdi>Numberfree and easylang - 3</a></li><li class="tocline"><a class="tocxref" href="#three-text-field-use-cases"><bdi class="secno">3.5.5 </bdi>Three text field Use Cases</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#feedback-explain-and-easylang"><bdi class="secno">3.5.5.1 </bdi>Feedback, Explain and Easylang</a></li></ol></li><li class="tocline"><a class="tocxref" href="#more-than-one-uri-use-case"><bdi class="secno">3.5.6 </bdi>More than one URI use case</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#symbol-and-extra-help"><bdi class="secno">3.5.6.1 </bdi>symbol and extra help</a></li></ol></li><li class="tocline"><a class="tocxref" href="#adding-context"><bdi class="secno">3.5.7 </bdi>Adding Context</a></li><li class="tocline"><a class="tocxref" href="#general-context"><bdi class="secno">3.5.8 </bdi>General Context</a></li><li class="tocline"><a class="tocxref" href="#interoperable-symbols"><bdi class="secno">3.5.9 </bdi>Interoperable Symbols</a></li><li class="tocline"><a class="tocxref" href="#non-numerical-comprehension"><bdi class="secno">3.5.10 </bdi>Non-Numerical Comprehension</a></li><li class="tocline"><a class="tocxref" href="#alternate-language-complexity"><bdi class="secno">3.5.11 </bdi>Alternate Language Complexity</a></li><li class="tocline"><a class="tocxref" href="#non-literal-text-and-images"><bdi class="secno">3.5.12 </bdi>Non-literal Text and Images</a></li><li class="tocline"><a class="tocxref" href="#more-help"><bdi class="secno">3.5.13 </bdi>More Help</a></li><li class="tocline"><a class="tocxref" href="#explain-and-feedback"><bdi class="secno">3.5.14 </bdi>Explain and Feedback</a></li><li class="tocline"><a class="tocxref" href="#indication-of-sequence-in-breadcrumbs"><bdi class="secno">3.5.15 </bdi>Indication of Sequence in Breadcrumbs</a></li><li class="tocline"><a class="tocxref" href="#reminders-and-messages"><bdi class="secno">3.5.16 </bdi>Reminders and Messages</a></li></ol></li><li class="tocline"><a class="tocxref" href="#requirements"><bdi class="secno">3.6 </bdi>Requirements</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#personalization-features"><bdi class="secno">3.6.1 </bdi>Personalization Features</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#importance-identification"><bdi class="secno">3.6.1.1 </bdi>Importance identification</a></li><li class="tocline"><a class="tocxref" href="#familiar-terms-and-symbols"><bdi class="secno">3.6.1.2 </bdi>Familiar Terms and Symbols</a></li><li class="tocline"><a class="tocxref" href="#requirement-related-to-general-context"><bdi class="secno">3.6.1.3 </bdi>Requirement Related to General Context</a></li><li class="tocline"><a class="tocxref" href="#symbol-sets"><bdi class="secno">3.6.1.4 </bdi>Symbol Sets</a></li><li class="tocline"><a class="tocxref" href="#number-free"><bdi class="secno">3.6.1.5 </bdi>Number Free</a></li><li class="tocline"><a class="tocxref" href="#indicate-alternate-language-complexity-of-same-content"><bdi class="secno">3.6.1.6 </bdi>Indicate Alternate Language Complexity of Same Content</a></li><li class="tocline"><a class="tocxref" href="#indicate-non-literal-content"><bdi class="secno">3.6.1.7 </bdi>Indicate Non-Literal Content</a></li><li class="tocline"><a class="tocxref" href="#help-information"><bdi class="secno">3.6.1.8 </bdi>Help Information</a></li><li class="tocline"><a class="tocxref" href="#provide-feedback"><bdi class="secno">3.6.1.9 </bdi>Provide Feedback</a></li><li class="tocline"><a class="tocxref" href="#step-indicator"><bdi class="secno">3.6.1.10 </bdi>Step Indicator</a></li><li class="tocline"><a class="tocxref" href="#message-categorization"><bdi class="secno">3.6.1.11 </bdi>Message Categorization</a></li></ol></li><li class="tocline"><a class="tocxref" href="#vocabulary-structure"><bdi class="secno">3.6.2 </bdi>Vocabulary Structure</a></li><li class="tocline"><a class="tocxref" href="#host-language-integration"><bdi class="secno">3.6.3 </bdi>Host Language Integration</a></li></ol></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">3.7 </bdi>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><bdi class="secno">3.7.1 </bdi>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><bdi class="secno">3.7.2 </bdi>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><bdi class="secno">3.7.3 </bdi>Enabling funders</a></li></ol></li></ol></li></ol></nav>
+                </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#adding-context"><bdi class="secno">1.1 </bdi>Adding Context</a></li><li class="tocline"><a class="tocxref" href="#general-context"><bdi class="secno">1.2 </bdi>General Context</a></li><li class="tocline"><a class="tocxref" href="#interoperable-symbols"><bdi class="secno">1.3 </bdi>Interoperable Symbols</a></li><li class="tocline"><a class="tocxref" href="#non-numerical-comprehension"><bdi class="secno">1.4 </bdi>Non-Numerical Comprehension</a></li><li class="tocline"><a class="tocxref" href="#alternate-language-complexity"><bdi class="secno">1.5 </bdi>Alternate Language Complexity</a></li><li class="tocline"><a class="tocxref" href="#non-literal-text-and-images"><bdi class="secno">1.6 </bdi>Non-literal Text and Images</a></li><li class="tocline"><a class="tocxref" href="#more-help"><bdi class="secno">1.7 </bdi>More Help</a></li><li class="tocline"><a class="tocxref" href="#explain-and-feedback"><bdi class="secno">1.8 </bdi>Explain and Feedback</a></li><li class="tocline"><a class="tocxref" href="#indication-of-sequence-in-breadcrumbs"><bdi class="secno">1.9 </bdi>Indication of Sequence in Breadcrumbs</a></li><li class="tocline"><a class="tocxref" href="#reminders-and-messages"><bdi class="secno">1.10 </bdi>Reminders and Messages</a></li></ol></li><li class="tocline"><a class="tocxref" href="#stories"><bdi class="secno">2. </bdi>Stories</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#summary"><bdi class="secno">2.1 </bdi>Summary</a></li><li class="tocline"><a class="tocxref" href="#easily-distracted-overwhelmed"><bdi class="secno">2.2 </bdi>Easily Distracted / Overwhelmed</a></li><li class="tocline"><a class="tocxref" href="#difficulty-understanding-numbers"><bdi class="secno">2.3 </bdi>Difficulty understanding Numbers</a></li><li class="tocline"><a class="tocxref" href="#mild-moderate-language-impairment-learning-disability"><bdi class="secno">2.4 </bdi>Mild-Moderate Language Impairment / Learning Disability</a></li><li class="tocline"><a class="tocxref" href="#severe-language-impairment"><bdi class="secno">2.5 </bdi>Severe Language Impairment</a></li><li class="tocline"><a class="tocxref" href="#solutions-for-symbol"><bdi class="secno">2.6 </bdi>Solutions for Symbol</a></li><li class="tocline"><a class="tocxref" href="#working-memory-and-short-term-memory-impairment"><bdi class="secno">2.7 </bdi>Working Memory and Short-term Memory Impairment</a></li></ol></li><li class="tocline"><a class="tocxref" href="#use-cases"><bdi class="secno">3. </bdi>Use-Cases</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#simplification-1"><bdi class="secno">3.1 </bdi>Simplification - 1</a></li><li class="tocline"><a class="tocxref" href="#simplification-2"><bdi class="secno">3.2 </bdi>Simplification - 2</a></li><li class="tocline"><a class="tocxref" href="#simplification-with-required-fields"><bdi class="secno">3.3 </bdi>Simplification with required fields</a></li><li class="tocline"><a class="tocxref" href="#content-filtering-inception"><bdi class="secno">3.4 </bdi>Content Filtering (inception)</a></li><li class="tocline"><a class="tocxref" href="#two-text-field-use-cases"><bdi class="secno">3.5 </bdi>Two text field Use Cases</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#numberfree-and-extrahelp"><bdi class="secno">3.5.1 </bdi>Numberfree and Extrahelp</a></li><li class="tocline"><a class="tocxref" href="#numberfree-and-easylang-1"><bdi class="secno">3.5.2 </bdi>Numberfree and easylang - 1</a></li><li class="tocline"><a class="tocxref" href="#numberfree-and-easylang-2"><bdi class="secno">3.5.3 </bdi>Numberfree and easylang - 2</a></li><li class="tocline"><a class="tocxref" href="#numberfree-and-easylang-3"><bdi class="secno">3.5.4 </bdi>Numberfree and easylang - 3</a></li><li class="tocline"><a class="tocxref" href="#three-text-field-use-cases"><bdi class="secno">3.5.5 </bdi>Three text field Use Cases</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#feedback-explain-and-easylang"><bdi class="secno">3.5.5.1 </bdi>Feedback, Explain and Easylang</a></li></ol></li><li class="tocline"><a class="tocxref" href="#more-than-one-uri-use-case"><bdi class="secno">3.5.6 </bdi>More than one URI use case</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#symbol-and-extra-help"><bdi class="secno">3.5.6.1 </bdi>symbol and extra help</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#requirements"><bdi class="secno">4. </bdi>Requirements</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#personalization-features"><bdi class="secno">4.1 </bdi>Personalization Features</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#importance-identification"><bdi class="secno">4.1.1 </bdi>Importance identification</a></li><li class="tocline"><a class="tocxref" href="#familiar-terms-and-symbols"><bdi class="secno">4.1.2 </bdi>Familiar Terms and Symbols</a></li><li class="tocline"><a class="tocxref" href="#requirement-related-to-general-context"><bdi class="secno">4.1.3 </bdi>Requirement Related to General Context</a></li><li class="tocline"><a class="tocxref" href="#symbol-sets"><bdi class="secno">4.1.4 </bdi>Symbol Sets</a></li><li class="tocline"><a class="tocxref" href="#number-free"><bdi class="secno">4.1.5 </bdi>Number Free</a></li><li class="tocline"><a class="tocxref" href="#indicate-alternate-language-complexity-of-same-content"><bdi class="secno">4.1.6 </bdi>Indicate Alternate Language Complexity of Same Content</a></li><li class="tocline"><a class="tocxref" href="#indicate-non-literal-content"><bdi class="secno">4.1.7 </bdi>Indicate Non-Literal Content</a></li><li class="tocline"><a class="tocxref" href="#help-information"><bdi class="secno">4.1.8 </bdi>Help Information</a></li><li class="tocline"><a class="tocxref" href="#provide-feedback"><bdi class="secno">4.1.9 </bdi>Provide Feedback</a></li><li class="tocline"><a class="tocxref" href="#step-indicator"><bdi class="secno">4.1.10 </bdi>Step Indicator</a></li><li class="tocline"><a class="tocxref" href="#message-categorization"><bdi class="secno">4.1.11 </bdi>Message Categorization</a></li></ol></li><li class="tocline"><a class="tocxref" href="#vocabulary-structure"><bdi class="secno">4.2 </bdi>Vocabulary Structure</a></li><li class="tocline"><a class="tocxref" href="#host-language-integration"><bdi class="secno">4.3 </bdi>Host Language Integration</a></li></ol></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">A. </bdi>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><bdi class="secno">A.1 </bdi>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><bdi class="secno">A.2 </bdi>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><bdi class="secno">A.3 </bdi>Enabling funders</a></li></ol></li></ol></nav>
 		<section id="introduction">
 			<h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction<a class="self-link" aria-label="§" href="#introduction"></a></h2>
-		</section>
-		<section id="stories">
+			<section id="adding-context">
+				<h3 id="x1-1-adding-context"><bdi class="secno">1.1 </bdi>Adding Context<a class="self-link" aria-label="§" href="#adding-context"></a></h3>
+				<p>A web content author creates a button with a role="send" then, without any additional work by the author the web content automatically:</p>
+				<ul>
+					<li>Renders associated symbols, terms, and/or tooltips that are understandable by a particular user.</li>
+					<li>Includudes F1 help that explains how the send function works in simple terms. </li>
+					<li>Has an identified keyboard shortcut that is always used for the send function.</li>
+					<li>Identifies the send button as important so it is always rendered, or rendered as a large button if needed.</li>
+				</ul>
+			</section>
+			
+			<section id="general-context">
+				<h3 id="x1-2-general-context"><bdi class="secno">1.2 </bdi>General Context<a class="self-link" aria-label="§" href="#general-context"></a></h3>
+				<p>A female user with a cognitive disability may need to select "Less options", while shopping on a website to eliminate options that are not relevant to a her shopping needs. In this case it may be appropriate to demote these options to display below the scroll or placed under a "More option" button.</p>
+				
+			</section>
+			
+			<section id="interoperable-symbols">
+				<h3 id="x1-3-interoperable-symbols"><bdi class="secno">1.3 </bdi>Interoperable Symbols<a class="self-link" aria-label="§" href="#interoperable-symbols"></a></h3>
+				<p>Mapping an AAC users' symbols to the same concepts enables the user agent to load the appropriate symbols enabling the user to understand and access content on the web and in other applications. In addition, AAC users, and those working with AAC users will be able to load AAC user symbols into these applications enabling access to content that has been created by different providers.</p>
+				<div class="note" id="issue-container-generatedID"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="4"><span>Editor's note</span></div><p class="">This isn't worded in use case language, so needs to be reformulated.</p></div>
+				
+			</section>
+			
+			<section id="non-numerical-comprehension">
+				<h3 id="x1-4-non-numerical-comprehension"><bdi class="secno">1.4 </bdi>Non-Numerical Comprehension<a class="self-link" aria-label="§" href="#non-numerical-comprehension"></a></h3>
+				<p>A suggested user experience would be: Numerical concepts could be rendered by the user agent slightly different so that the user knows a number free explanation is available. The user can then focus on the content and a tooltip or other disclosure mechanism would give the number free value.</p>
+				<div class="note" id="issue-container-generatedID-0"><div role="heading" class="ednote-title marker" id="h-ednote-0" aria-level="4"><span>Editor's note</span></div><p class="">This isn't worded in use case language, so needs to be reformulated.</p></div>
+			</section>
+			
+			<section id="alternate-language-complexity">
+				<h3 id="x1-5-alternate-language-complexity"><bdi class="secno">1.5 </bdi>Alternate Language Complexity<a class="self-link" aria-label="§" href="#alternate-language-complexity"></a></h3>
+				<p>For example, you may wish to provide a simplified summary of legal document, but still have a longer version for other users. </p>
+				<div class="note" id="issue-container-generatedID-1"><div role="heading" class="ednote-title marker" id="h-ednote-1" aria-level="4"><span>Editor's note</span></div><p class="">This isn't worded in use case language, so needs to be reformulated.</p></div>
+			</section>
+			
+			<section id="non-literal-text-and-images">
+				<h3 id="x1-6-non-literal-text-and-images"><bdi class="secno">1.6 </bdi>Non-literal Text and Images<a class="self-link" aria-label="§" href="#non-literal-text-and-images"></a></h3>
+				<p>Non-literal content could be rendered by the user agent with an indication that signifies to the user that this content should not be taken literally and that a literal explanation is available. The user can then place focus on the content and a tooltip or other disclosure mechanism would give the literal value.</p>
+				<div class="note" id="issue-container-generatedID-2"><div role="heading" class="ednote-title marker" id="h-ednote-2" aria-level="4"><span>Editor's note</span></div><p class="">This isn't worded in use case language, so needs to be reformulated.</p></div>
+			</section>
+			
+			<section id="more-help">
+				<h3 id="x1-7-more-help"><bdi class="secno">1.7 </bdi>More Help<a class="self-link" aria-label="§" href="#more-help"></a></h3>
+				<p>&gt;Some users may need additional information or specifically additional help information.</p>
+				<div class="note" id="issue-container-generatedID-3"><div role="heading" class="ednote-title marker" id="h-ednote-3" aria-level="4"><span>Editor's note</span></div><p class="">This isn't worded in use case language, so needs to be reformulated.</p></div>
+			</section>
+			
+			<section id="explain-and-feedback">
+				<h3 id="x1-8-explain-and-feedback"><bdi class="secno">1.8 </bdi>Explain and Feedback<a class="self-link" aria-label="§" href="#explain-and-feedback"></a></h3>
+				<p>Some users need additional feedback about events on the web page.</p>
+				<div class="note" id="issue-container-generatedID-4"><div role="heading" class="ednote-title marker" id="h-ednote-4" aria-level="4"><span>Editor's note</span></div><p class="">This isn't worded in use case language, so needs to be reformulated.</p></div>
+			</section>
+			
+			<section id="indication-of-sequence-in-breadcrumbs">
+				<h3 id="x1-9-indication-of-sequence-in-breadcrumbs"><bdi class="secno">1.9 </bdi>Indication of Sequence in Breadcrumbs<a class="self-link" aria-label="§" href="#indication-of-sequence-in-breadcrumbs"></a></h3>
+				<p>A hyperlinked, sequential breadcrumb list displays in the header, allowing the user agent to build a sequential indicator that displays a link to each page in the order it was visited by the user. </p>
+				<div class="note" id="issue-container-generatedID-5"><div role="heading" class="ednote-title marker" id="h-ednote-5" aria-level="4"><span>Editor's note</span></div><p class="">I believe an important feature is that this mechanism can cross defined tasks and give a more holistic version of the user flow. Typically in a defined sequence of tasks an author will have provided the nessessary afforardance, location in the path, navigation through the path, etc., in the UI by design.</p></div>
+			</section>
+			
+			<section id="reminders-and-messages">
+				<h3 id="x1-10-reminders-and-messages"><bdi class="secno">1.10 </bdi>Reminders and Messages<a class="self-link" aria-label="§" href="#reminders-and-messages"></a></h3>
+				<p>Users can disable push notifications and messages on applications such as Skype and Facebook across different devices, however, they may forget to re-enable these notifications and messages. A user's contacts can be organized by importance or by groups. For example, the CEO of the company a user works for and a user's child care giver could both be set to critical. A user's contacts may also be grouped. Family members may be in one group, important colleagues may be in a second group, and friends in a third group.</p>
+				<p><b>Privacy Implications:</b>This feature could in theory be implemented pre-authentication. Depending on the implementation, this would expose a users contats to the client in clear text. </p>
+				<p><b>Existing Technologies:</b> Would Web push notification with customization by the user satisfy the requirement here as opposed to introducing new semantics?</p>
+				<p>Reference: https://developers.google.com/web/fundamentals/codelabs/push-notifications/</p>
+				<p><b>Example User Experience:</b> Question for the group. How would data be shared, if at all, between applications containing, for example, contacts and the proposed mechanism</p>
+				<div class="note" id="issue-container-generatedID-6"><div role="heading" class="ednote-title marker" id="h-ednote-6" aria-level="4"><span>Editor's note</span></div><p class="">This isn't worded in use case language, so needs to be reformulated.</p></div>
+			</section>
+	</section>
+
+        <section id="stories">
 			<h2 id="x2-stories"><bdi class="secno">2. </bdi>Stories<a class="self-link" aria-label="§" href="#stories"></a></h2>
             
             <section id="summary">
@@ -953,7 +1023,7 @@ var[data-type]:hover::before {
                 
                 <section id="numberfree-and-extrahelp">
                     <h4 id="x3-5-1-numberfree-and-extrahelp"><bdi class="secno">3.5.1 </bdi>Numberfree and Extrahelp<a class="self-link" aria-label="§" href="#numberfree-and-extrahelp"></a></h4>
-                    <div class="note" id="issue-container-generatedID"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="5"><span>Editor's note</span></div><p class="">
+                    <div class="note" id="issue-container-generatedID-7"><div role="heading" class="ednote-title marker" id="h-ednote-7" aria-level="5"><span>Editor's note</span></div><p class="">
                         This example proved much harder to create than I expected. I will admit that I am still confused at how to create the examples and am not confident that these are correct. I also intended to have this be an example that needed two types of replacement but when I implemented it, I realized I could split it into two separate substitutions. becky
                     </p></div>
                     <p>
@@ -1097,7 +1167,7 @@ var[data-type]:hover::before {
     <span class="hljs-attr">data-explain</span>=<span class="hljs-string">"press this button to see the side effects of a drug"</span>  
 /&gt;</span></code></pre>
                     <h5 id="three-attributes">Three Attributes<a class="self-link" aria-label="§" href="#feedback-explain-and-easylang"></a></h5>
-                        <div class="note" id="issue-container-generatedID-0"><div role="heading" class="ednote-title marker" id="h-ednote-0" aria-level="6"><span>Editor's note</span></div><p class="">I could not do this in three attributes. So I did what I could</p></div>
+                        <div class="note" id="issue-container-generatedID-8"><div role="heading" class="ednote-title marker" id="h-ednote-8" aria-level="6"><span>Editor's note</span></div><p class="">I could not do this in three attributes. So I did what I could</p></div>
                         <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">context</span>=<span class="hljs-string">"critical"</span> 
    <span class="hljs-attr">data-feedback</span>=<span class="hljs-string">"the results now are for ibuprofen side effect"</span> 
    <span class="hljs-attr">value</span>=<span class="hljs-string">"refresh"</span> 
@@ -1137,7 +1207,7 @@ var[data-type]:hover::before {
   <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
                     <h5 id="three-attributes-0">Three Attributes<a class="self-link" aria-label="§" href="#symbol-and-extra-help"></a></h5>
-                        <div class="note" id="issue-container-generatedID-1"><div role="heading" class="ednote-title marker" id="h-ednote-1" aria-level="6"><span>Editor's note</span></div><p class="">I could not do this in three attributes. So I did what I could</p></div>
+                        <div class="note" id="issue-container-generatedID-9"><div role="heading" class="ednote-title marker" id="h-ednote-9" aria-level="6"><span>Editor's note</span></div><p class="">I could not do this in three attributes. So I did what I could</p></div>
                         <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span> 
   <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>  <span class="hljs-attr">context</span>=<span class="hljs-string">"warning"</span>&gt;</span>warning<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span> 
   <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">reference</span>=<span class="hljs-string">"blissymbolics.org/siren"</span>&gt;</span>in the event of a siren<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>   
@@ -1151,86 +1221,16 @@ var[data-type]:hover::before {
 
             </section>
         
-            
-			<section id="adding-context">
-				<h4 id="x3-5-7-adding-context"><bdi class="secno">3.5.7 </bdi>Adding Context<a class="self-link" aria-label="§" href="#adding-context"></a></h4>
-				<p>A web content author creates a button with a role="send" then, without any additional work by the author the web content automatically:</p>
-				<ul>
-					<li>Renders associated symbols, terms, and/or tooltips that are understandable by a particular user.</li>
-					<li>Includudes F1 help that explains how the send function works in simple terms. </li>
-					<li>Has an identified keyboard shortcut that is always used for the send function.</li>
-					<li>Identifies the send button as important so it is always rendered, or rendered as a large button if needed.</li>
-				</ul>
-			</section>
-			
-			<section id="general-context">
-				<h4 id="x3-5-8-general-context"><bdi class="secno">3.5.8 </bdi>General Context<a class="self-link" aria-label="§" href="#general-context"></a></h4>
-				<p>A female user with a cognitive disability may need to select "Less options", while shopping on a website to eliminate options that are not relevant to a her shopping needs. In this case it may be appropriate to demote these options to display below the scroll or placed under a "More option" button.</p>
-				
-			</section>
-			
-			<section id="interoperable-symbols">
-				<h4 id="x3-5-9-interoperable-symbols"><bdi class="secno">3.5.9 </bdi>Interoperable Symbols<a class="self-link" aria-label="§" href="#interoperable-symbols"></a></h4>
-				<p>Mapping an AAC users' symbols to the same concepts enables the user agent to load the appropriate symbols enabling the user to understand and access content on the web and in other applications. In addition, AAC users, and those working with AAC users will be able to load AAC user symbols into these applications enabling access to content that has been created by different providers.</p>
-				<div class="note" id="issue-container-generatedID-2"><div role="heading" class="ednote-title marker" id="h-ednote-2" aria-level="5"><span>Editor's note</span></div><p class="">This isn't worded in use case language, so needs to be reformulated.</p></div>
-				
-			</section>
-			
-			<section id="non-numerical-comprehension">
-				<h4 id="x3-5-10-non-numerical-comprehension"><bdi class="secno">3.5.10 </bdi>Non-Numerical Comprehension<a class="self-link" aria-label="§" href="#non-numerical-comprehension"></a></h4>
-				<p>A suggested user experience would be: Numerical concepts could be rendered by the user agent slightly different so that the user knows a number free explanation is available. The user can then focus on the content and a tooltip or other disclosure mechanism would give the number free value.</p>
-				<div class="note" id="issue-container-generatedID-3"><div role="heading" class="ednote-title marker" id="h-ednote-3" aria-level="5"><span>Editor's note</span></div><p class="">This isn't worded in use case language, so needs to be reformulated.</p></div>
-			</section>
-			
-			<section id="alternate-language-complexity">
-				<h4 id="x3-5-11-alternate-language-complexity"><bdi class="secno">3.5.11 </bdi>Alternate Language Complexity<a class="self-link" aria-label="§" href="#alternate-language-complexity"></a></h4>
-				<p>For example, you may wish to provide a simplified summary of legal document, but still have a longer version for other users. </p>
-				<div class="note" id="issue-container-generatedID-4"><div role="heading" class="ednote-title marker" id="h-ednote-4" aria-level="5"><span>Editor's note</span></div><p class="">This isn't worded in use case language, so needs to be reformulated.</p></div>
-			</section>
-			
-			<section id="non-literal-text-and-images">
-				<h4 id="x3-5-12-non-literal-text-and-images"><bdi class="secno">3.5.12 </bdi>Non-literal Text and Images<a class="self-link" aria-label="§" href="#non-literal-text-and-images"></a></h4>
-				<p>Non-literal content could be rendered by the user agent with an indication that signifies to the user that this content should not be taken literally and that a literal explanation is available. The user can then place focus on the content and a tooltip or other disclosure mechanism would give the literal value.</p>
-				<div class="note" id="issue-container-generatedID-5"><div role="heading" class="ednote-title marker" id="h-ednote-5" aria-level="5"><span>Editor's note</span></div><p class="">This isn't worded in use case language, so needs to be reformulated.</p></div>
-			</section>
-			
-			<section id="more-help">
-				<h4 id="x3-5-13-more-help"><bdi class="secno">3.5.13 </bdi>More Help<a class="self-link" aria-label="§" href="#more-help"></a></h4>
-				<p>&gt;Some users may need additional information or specifically additional help information.</p>
-				<div class="note" id="issue-container-generatedID-6"><div role="heading" class="ednote-title marker" id="h-ednote-6" aria-level="5"><span>Editor's note</span></div><p class="">This isn't worded in use case language, so needs to be reformulated.</p></div>
-			</section>
-			
-			<section id="explain-and-feedback">
-				<h4 id="x3-5-14-explain-and-feedback"><bdi class="secno">3.5.14 </bdi>Explain and Feedback<a class="self-link" aria-label="§" href="#explain-and-feedback"></a></h4>
-				<p>Some users need additional feedback about events on the web page.</p>
-				<div class="note" id="issue-container-generatedID-7"><div role="heading" class="ednote-title marker" id="h-ednote-7" aria-level="5"><span>Editor's note</span></div><p class="">This isn't worded in use case language, so needs to be reformulated.</p></div>
-			</section>
-			
-			<section id="indication-of-sequence-in-breadcrumbs">
-				<h4 id="x3-5-15-indication-of-sequence-in-breadcrumbs"><bdi class="secno">3.5.15 </bdi>Indication of Sequence in Breadcrumbs<a class="self-link" aria-label="§" href="#indication-of-sequence-in-breadcrumbs"></a></h4>
-				<p>A hyperlinked, sequential breadcrumb list displays in the header, allowing the user agent to build a sequential indicator that displays a link to each page in the order it was visited by the user. </p>
-				<div class="note" id="issue-container-generatedID-8"><div role="heading" class="ednote-title marker" id="h-ednote-8" aria-level="5"><span>Editor's note</span></div><p class="">I believe an important feature is that this mechanism can cross defined tasks and give a more holistic version of the user flow. Typically in a defined sequence of tasks an author will have provided the nessessary afforardance, location in the path, navigation through the path, etc., in the UI by design.</p></div>
-			</section>
-			
-			<section id="reminders-and-messages">
-				<h4 id="x3-5-16-reminders-and-messages"><bdi class="secno">3.5.16 </bdi>Reminders and Messages<a class="self-link" aria-label="§" href="#reminders-and-messages"></a></h4>
-				<p>Users can disable push notifications and messages on applications such as Skype and Facebook across different devices, however, they may forget to re-enable these notifications and messages. A user's contacts can be organized by importance or by groups. For example, the CEO of the company a user works for and a user's child care giver could both be set to critical. A user's contacts may also be grouped. Family members may be in one group, important colleagues may be in a second group, and friends in a third group.</p>
-				<p><b>Privacy Implications:</b>This feature could in theory be implemented pre-authentication. Depending on the implementation, this would expose a users contats to the client in clear text. </p>
-				<p><b>Existing Technologies:</b> Would Web push notification with customization by the user satisfy the requirement here as opposed to introducing new semantics?</p>
-				<p>Reference: https://developers.google.com/web/fundamentals/codelabs/push-notifications/</p>
-				<p><b>Example User Experience:</b> Question for the group. How would data be shared, if at all, between applications containing, for example, contacts and the proposed mechanism</p>
-				<div class="note" id="issue-container-generatedID-9"><div role="heading" class="ednote-title marker" id="h-ednote-9" aria-level="5"><span>Editor's note</span></div><p class="">This isn't worded in use case language, so needs to be reformulated.</p></div>
-			</section>
-			
+            </section>
 		</section>
 		<section id="requirements">
-			<h3 id="x3-6-requirements"><bdi class="secno">3.6 </bdi>Requirements<a class="self-link" aria-label="§" href="#requirements"></a></h3>
+			<h2 id="x4-requirements"><bdi class="secno">4. </bdi>Requirements<a class="self-link" aria-label="§" href="#requirements"></a></h2>
 			<section id="personalization-features">
-				<h4 id="x3-6-1-personalization-features"><bdi class="secno">3.6.1 </bdi>Personalization Features<a class="self-link" aria-label="§" href="#personalization-features"></a></h4>
-				<div class="note" id="issue-container-generatedID-10"><div role="heading" class="ednote-title marker" id="h-ednote-10" aria-level="5"><span>Editor's note</span></div><p class="">See <a href="https://github.com/w3c/personalization-semantics/labels/features">feature issues</a> for considerations on requirements for specific features of personalization semantics.</p></div>
+				<h3 id="x4-1-personalization-features"><bdi class="secno">4.1 </bdi>Personalization Features<a class="self-link" aria-label="§" href="#personalization-features"></a></h3>
+				<div class="note" id="issue-container-generatedID-10"><div role="heading" class="ednote-title marker" id="h-ednote-10" aria-level="4"><span>Editor's note</span></div><p class="">See <a href="https://github.com/w3c/personalization-semantics/labels/features">feature issues</a> for considerations on requirements for specific features of personalization semantics.</p></div>
 				
 				<section id="importance-identification">
-					<h5 id="x3-6-1-1-importance-identification"><bdi class="secno">3.6.1.1 </bdi>Importance identification<a class="self-link" aria-label="§" href="#importance-identification"></a></h5>
+					<h4 id="x4-1-1-importance-identification"><bdi class="secno">4.1.1 </bdi>Importance identification<a class="self-link" aria-label="§" href="#importance-identification"></a></h4>
 					<p><b>Requirement</b>: There must be a mechanism to identify and differentiate the features included in web content based on its importance (e.g. critical, high, medium, low). The definition of a feature's importance should be defined from the user's perspective as:</p>
 					<ul>
 						<li><code>Critical</code> — used by the majority of users 90% of the time or more.</li>
@@ -1244,7 +1244,7 @@ var[data-type]:hover::before {
 				</section>
 				
 				<section id="familiar-terms-and-symbols">
-					<h5 id="x3-6-1-2-familiar-terms-and-symbols"><bdi class="secno">3.6.1.2 </bdi>Familiar Terms and Symbols<a class="self-link" aria-label="§" href="#familiar-terms-and-symbols"></a></h5>
+					<h4 id="x4-1-2-familiar-terms-and-symbols"><bdi class="secno">4.1.2 </bdi>Familiar Terms and Symbols<a class="self-link" aria-label="§" href="#familiar-terms-and-symbols"></a></h4>
 					<p>Terms and symbols used in web content must be familiar to the user because what is familiar to one user may be unrecognizable or strange to someone else requiring the user to learn new symbols. Therefore, the user agent or script should understand the context of links, buttons, and other page elements so that symbols and text displayed in a way each user understands. This can include:</p>
 					<ul>
 						<li>Familiar Symbols and graphics that they are familiar with </li>
@@ -1259,15 +1259,15 @@ var[data-type]:hover::before {
 				</section>
 
 				<section id="requirement-related-to-general-context">
-					<h5 id="x3-6-1-3-requirement-related-to-general-context"><bdi class="secno">3.6.1.3 </bdi>Requirement Related to General Context<a class="self-link" aria-label="§" href="#requirement-related-to-general-context"></a></h5>
+					<h4 id="x4-1-3-requirement-related-to-general-context"><bdi class="secno">4.1.3 </bdi>Requirement Related to General Context<a class="self-link" aria-label="§" href="#requirement-related-to-general-context"></a></h4>
 					<p>Optimize the personalization of a product or service's content to ensure it is appropriate for the current context of use as well as relevant for the user.</p>
-					<div class="note" id="issue-container-generatedID-11"><div role="heading" class="ednote-title marker" id="h-ednote-11" aria-level="6"><span>Editor's note</span></div><p class="">Needs more specific information about what the actual requirement is. Note the related property is a broken link.</p></div>
+					<div class="note" id="issue-container-generatedID-11"><div role="heading" class="ednote-title marker" id="h-ednote-11" aria-level="5"><span>Editor's note</span></div><p class="">Needs more specific information about what the actual requirement is. Note the related property is a broken link.</p></div>
 					<p>Fulfills use cases: <a href="#general-context">General Context</a></p>
 					<p>Relevant properties: <a href="#context" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-1">@@context</a></p>
 				</section>
 				
 				<section id="symbol-sets">
-					<h5 id="x3-6-1-4-symbol-sets"><bdi class="secno">3.6.1.4 </bdi>Symbol Sets<a class="self-link" aria-label="§" href="#symbol-sets"></a></h5>
+					<h4 id="x4-1-4-symbol-sets"><bdi class="secno">4.1.4 </bdi>Symbol Sets<a class="self-link" aria-label="§" href="#symbol-sets"></a></h4>
 					<p>Create interoperable symbol sets for users with complex communication needs that require the use of Alternative and Augmentative Communication (AAC) systems. AAC systems are designed for people who are non-verbal that often use symbols with or without text. AAC end-users tend to only learn one symbol set and cannot easily communicate with other symbol users in a written format. In addition, they may struggle to understand different symbols that are used in different applications. It's important to note that some symbols may be subject to copyright, which means they cannot be shared across applications. However, there are open symbol sets that can be shared and mapped against concepts, generating representative text. This text can also be translated into different languages as well as used to display a different set of symbols.</p>
 					
 					<p>Fulfills use case: <a href="#interoperable-symbols">Interoperable Symbols</a></p>
@@ -1275,55 +1275,55 @@ var[data-type]:hover::before {
 				</section>
 				
 				<section id="number-free">
-					<h5 id="x3-6-1-5-number-free"><bdi class="secno">3.6.1.5 </bdi>Number Free<a class="self-link" aria-label="§" href="#number-free"></a></h5>
+					<h4 id="x4-1-5-number-free"><bdi class="secno">4.1.5 </bdi>Number Free<a class="self-link" aria-label="§" href="#number-free"></a></h4>
 					<p>Not everyone can understand numbers. The <code>numberfree</code> attribute is intended as an alternative text for people who can not understand the main content.</p>
-					<div class="note" id="issue-container-generatedID-12"><div role="heading" class="ednote-title marker" id="h-ednote-12" aria-level="6"><span>Editor's note</span></div><p class="">This needs to be made higher-level.</p></div>
+					<div class="note" id="issue-container-generatedID-12"><div role="heading" class="ednote-title marker" id="h-ednote-12" aria-level="5"><span>Editor's note</span></div><p class="">This needs to be made higher-level.</p></div>
 					<p>Fulfills use case: <a href="#non-numerical-comprehension">Non-Numerical Comprehension</a></p>
 					<p>Relevant properties: <a href="../help/#numberfree"><code>numberfree</code></a></p>
 				</section>
 				
 				<section id="indicate-alternate-language-complexity-of-same-content">
-					<h5 id="x3-6-1-6-indicate-alternate-language-complexity-of-same-content"><bdi class="secno">3.6.1.6 </bdi>Indicate Alternate Language Complexity of Same Content<a class="self-link" aria-label="§" href="#indicate-alternate-language-complexity-of-same-content"></a></h5>
+					<h4 id="x4-1-6-indicate-alternate-language-complexity-of-same-content"><bdi class="secno">4.1.6 </bdi>Indicate Alternate Language Complexity of Same Content<a class="self-link" aria-label="§" href="#indicate-alternate-language-complexity-of-same-content"></a></h4>
 					<p>Authors may want to provide a simplified version of the page or of a section of a page. These alternative versions may not be identical in content but maintain the intent of the original content.</p>
-					<div class="note" id="issue-container-generatedID-13"><div role="heading" class="ednote-title marker" id="h-ednote-13" aria-level="6"><span>Editor's note</span></div><p class="">Needs more specific requirement.</p></div>
+					<div class="note" id="issue-container-generatedID-13"><div role="heading" class="ednote-title marker" id="h-ednote-13" aria-level="5"><span>Editor's note</span></div><p class="">Needs more specific requirement.</p></div>
 					
 					<p>Fulfills use case: <a href="#alternate-language-complexity">Alternate Language Complexity</a></p>
 					<p>Relevant properties: <a href="../help/#alternative"><code>alternative</code></a>, <a href="#easylang" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-3"><code>easylang</code></a></p>
 				</section>
 				
 				<section id="indicate-non-literal-content">
-					<h5 id="x3-6-1-7-indicate-non-literal-content"><bdi class="secno">3.6.1.7 </bdi>Indicate Non-Literal Content<a class="self-link" aria-label="§" href="#indicate-non-literal-content"></a></h5>
+					<h4 id="x4-1-7-indicate-non-literal-content"><bdi class="secno">4.1.7 </bdi>Indicate Non-Literal Content<a class="self-link" aria-label="§" href="#indicate-non-literal-content"></a></h4>
 					<p>Some users cannot understand non-literal text and icons such as metaphors, idioms etc. The <code>literal</code> property is intended to identify text or images as non-literal and allows the author to explain non-literal text and images to users.</p>
-					<div class="note" id="issue-container-generatedID-14"><div role="heading" class="ednote-title marker" id="h-ednote-14" aria-level="6"><span>Editor's note</span></div><p class="">Needs more specific requirement.</p></div>
+					<div class="note" id="issue-container-generatedID-14"><div role="heading" class="ednote-title marker" id="h-ednote-14" aria-level="5"><span>Editor's note</span></div><p class="">Needs more specific requirement.</p></div>
 					
 					<p>Fulfills use case: <a href="#non-literal-text-and-images">Non-literal Text and Images</a></p>
 					<p>Relevant properties: <a href="../help/#literal"><code>literal</code></a></p>
 				</section>
 				
 				<section id="help-information">
-					<h5 id="x3-6-1-8-help-information"><bdi class="secno">3.6.1.8 </bdi>Help Information<a class="self-link" aria-label="§" href="#help-information"></a></h5>
+					<h4 id="x4-1-8-help-information"><bdi class="secno">4.1.8 </bdi>Help Information<a class="self-link" aria-label="§" href="#help-information"></a></h4>
 					<p>We propose additional properties so that an author can indicate the existence of this additional information.</p>
-					<div class="note" id="issue-container-generatedID-15"><div role="heading" class="ednote-title marker" id="h-ednote-15" aria-level="6"><span>Editor's note</span></div><p class="">Needs more specific requirement.</p></div>
+					<div class="note" id="issue-container-generatedID-15"><div role="heading" class="ednote-title marker" id="h-ednote-15" aria-level="5"><span>Editor's note</span></div><p class="">Needs more specific requirement.</p></div>
 					
 					<p>Fulfills use case: <a href="#more-help">More Help</a></p>
 					<p>Relevant properties: <a href="../help/#moreinfo"><code>moreinfo</code></a>, <a href="../help/#extrahelp"><code>extrahelp</code></a>, <a href="../help/#helptype">helptype</a></p>
 				</section>
 				
 				<section id="provide-feedback">
-					<h5 id="x3-6-1-9-provide-feedback"><bdi class="secno">3.6.1.9 </bdi>Provide Feedback<a class="self-link" aria-label="§" href="#provide-feedback"></a></h5>
+					<h4 id="x4-1-9-provide-feedback"><bdi class="secno">4.1.9 </bdi>Provide Feedback<a class="self-link" aria-label="§" href="#provide-feedback"></a></h4>
 					<p>We propose additional properties where the author can provide additional information or explain what just happened.</p>
-					<div class="note" id="issue-container-generatedID-16"><div role="heading" class="ednote-title marker" id="h-ednote-16" aria-level="6"><span>Editor's note</span></div><p class="">Needs more specific requirement.</p></div>
+					<div class="note" id="issue-container-generatedID-16"><div role="heading" class="ednote-title marker" id="h-ednote-16" aria-level="5"><span>Editor's note</span></div><p class="">Needs more specific requirement.</p></div>
 					
 					<p>Fulfills use case: <a href="#explain-and-feedback">Explain and Feedback</a></p>
 					<p>Relevant properties: <a href="../help/#feedback"><code>feedback</code></a>, <a href="../help/#explain"><code>explain</code></a></p>
 				</section>
 				
 				<section id="step-indicator">
-					<h5 id="x3-6-1-10-step-indicator"><bdi class="secno">3.6.1.10 </bdi>Step Indicator<a class="self-link" aria-label="§" href="#step-indicator"></a></h5>
+					<h4 id="x4-1-10-step-indicator"><bdi class="secno">4.1.10 </bdi>Step Indicator<a class="self-link" aria-label="§" href="#step-indicator"></a></h4>
 					<p>Users may have differences in both working and short-term memory. For some users the duration of working memory may be shorter than the average which is between 10-15 seconds. For some users the duration of short-term memory may be shorter than the average which is between 15-30 seconds.</p>
 					<p>Many processes consist of a sequence of separate steps or actions which must be performed by a user to complete a process or workflow. Users must be able to track completed tasks in order to identify their location in a process. In addition, a user must be able to navigate to completed tasks to make modifications or corrections.</p>
 					<p>The suggested defined values allow an author to transform information associated with steps within a process or represent the entire user path including steps out of the context of a defined process and steps between defined processes into breadcrumbs or linked steps that identify completed tasks, allow the user to make edits to steps that have been completed and identify a user' current location in a user path.</p>
-					<div class="note" id="issue-container-generatedID-17"><div role="heading" class="ednote-title marker" id="h-ednote-17" aria-level="6"><span>Editor's note</span></div><p class="">Needs more clear requirement.</p></div>
+					<div class="note" id="issue-container-generatedID-17"><div role="heading" class="ednote-title marker" id="h-ednote-17" aria-level="5"><span>Editor's note</span></div><p class="">Needs more clear requirement.</p></div>
 					
 					<p>Fulfills use case: <a href="indication-of-sequence-in-breadcrumbs">Indication of Sequence in Breadcrumbs</a></p>
 					<p>Relevant properties: <a href="#x3-1-all-the-stepindicator-properties" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-4">@@stepindicator</a>, <a href="#step" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-5">@@step</a>, <a href="#steplocation" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-6">@@steplocation</a>, <a href="#status" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-7">@@stepstatus</a>
@@ -1332,10 +1332,10 @@ var[data-type]:hover::before {
 				</section>
 				
 				<section id="message-categorization">
-					<h5 id="x3-6-1-11-message-categorization"><bdi class="secno">3.6.1.11 </bdi>Message Categorization<a class="self-link" aria-label="§" href="#message-categorization"></a></h5>
+					<h4 id="x4-1-11-message-categorization"><bdi class="secno">4.1.11 </bdi>Message Categorization<a class="self-link" aria-label="§" href="#message-categorization"></a></h4>
 					<p>A mechanism for managing both system level and application level reminders and messages is a useful tool for people with a variety of cognitive disabilities including, memory impairment and users who are sensitive to distractions. We require a group of defined values that give users control over the amount of reminders and messages that are presented along with a mechanism for managing, prioritizing, managing and grouping reminders and messages.</p>
 					<p>The defined values should allow an alternative solution for users to manage reminders and messages by forming a cross-application and cross-device matrix that manages all reminders and messages. These values are based on a matrix for reminders and messages at the operating system, browser or cloud level. </p>
-					<div class="note" id="issue-container-generatedID-18"><div role="heading" class="ednote-title marker" id="h-ednote-18" aria-level="6"><span>Editor's note</span></div><p class="">Needs more clear requirement.</p></div>
+					<div class="note" id="issue-container-generatedID-18"><div role="heading" class="ednote-title marker" id="h-ednote-18" aria-level="5"><span>Editor's note</span></div><p class="">Needs more clear requirement.</p></div>
 					
 					<p>Fulfills use case: <a href="#reminders-and-messages">Reminders and Messages</a></p>
 					<p>Relevant properties: <a href="../tools/#messagetime">message</a>
@@ -1345,19 +1345,19 @@ var[data-type]:hover::before {
 				
 			</section>
 			<section id="vocabulary-structure">
-				<h4 id="x3-6-2-vocabulary-structure"><bdi class="secno">3.6.2 </bdi>Vocabulary Structure<a class="self-link" aria-label="§" href="#vocabulary-structure"></a></h4>
-				<div class="note" id="issue-container-generatedID-19"><div role="heading" class="ednote-title marker" id="h-ednote-19" aria-level="5"><span>Editor's note</span></div><p class="">See <a href="https://github.com/w3c/personalization-semantics/labels/structure">vocabulary structure issues</a> for considerations on requirements for vocabulary structure.</p></div>
+				<h3 id="x4-2-vocabulary-structure"><bdi class="secno">4.2 </bdi>Vocabulary Structure<a class="self-link" aria-label="§" href="#vocabulary-structure"></a></h3>
+				<div class="note" id="issue-container-generatedID-19"><div role="heading" class="ednote-title marker" id="h-ednote-19" aria-level="4"><span>Editor's note</span></div><p class="">See <a href="https://github.com/w3c/personalization-semantics/labels/structure">vocabulary structure issues</a> for considerations on requirements for vocabulary structure.</p></div>
 			</section>
 			<section id="host-language-integration">
-				<h4 id="x3-6-3-host-language-integration"><bdi class="secno">3.6.3 </bdi>Host Language Integration<a class="self-link" aria-label="§" href="#host-language-integration"></a></h4>
-				<div class="note" id="issue-container-generatedID-20"><div role="heading" class="ednote-title marker" id="h-ednote-20" aria-level="5"><span>Editor's note</span></div><p class="">See <a href="https://github.com/w3c/personalization-semantics/labels/implementation">host language implementation issues</a> and <a href="https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content">https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content</a> for considerations on requirements for implementation in content.</p></div>
+				<h3 id="x4-3-host-language-integration"><bdi class="secno">4.3 </bdi>Host Language Integration<a class="self-link" aria-label="§" href="#host-language-integration"></a></h3>
+				<div class="note" id="issue-container-generatedID-20"><div role="heading" class="ednote-title marker" id="h-ednote-20" aria-level="4"><span>Editor's note</span></div><p class="">See <a href="https://github.com/w3c/personalization-semantics/labels/implementation">host language implementation issues</a> and <a href="https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content">https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content</a> for considerations on requirements for implementation in content.</p></div>
 			</section>
 		</section>
 		<section class="appendix informative section" id="acknowledgements">
-	<h3 id="x3-7-acknowledgments"><bdi class="secno">3.7 </bdi>Acknowledgments<a class="self-link" aria-label="§" href="#acknowledgements"></a></h3><p><em>This section is non-normative.</em></p>
+	<h2 id="a-acknowledgments"><bdi class="secno">A. </bdi>Acknowledgments<a class="self-link" aria-label="§" href="#acknowledgements"></a></h2><p><em>This section is non-normative.</em></p>
 	<p>The following people contributed to the development of this document.</p>
 	<section class="section" id="ack_group">
-		<h4 id="x3-7-1-participants-active-in-the-personalization-tf-at-the-time-of-publication"><bdi class="secno">3.7.1 </bdi>Participants active in the Personalization TF at the time of publication<a class="self-link" aria-label="§" href="#ack_group"></a></h4>
+		<h3 id="a-1-participants-active-in-the-personalization-tf-at-the-time-of-publication"><bdi class="secno">A.1 </bdi>Participants active in the Personalization TF at the time of publication<a class="self-link" aria-label="§" href="#ack_group"></a></h3>
 		<ul>
 			<li>Thaddeus Cambron (Invited Expert)</li>
 			<li>Michael Cooper (<abbr title="World Wide Web Consortium">W3C</abbr>/<abbr title="Massachusetts Institute of Technology">MIT</abbr>)</li>
@@ -1370,7 +1370,7 @@ var[data-type]:hover::before {
 		</ul>
   </section>
 	<section class="section" id="ack_others">
-		<h4 id="x3-7-2-other-personalization-tf-contributors-commenters-and-previously-active-participants"><bdi class="secno">3.7.2 </bdi>Other Personalization TF contributors, commenters, and previously active participants<a class="self-link" aria-label="§" href="#ack_others"></a></h4>
+		<h3 id="a-2-other-personalization-tf-contributors-commenters-and-previously-active-participants"><bdi class="secno">A.2 </bdi>Other Personalization TF contributors, commenters, and previously active participants<a class="self-link" aria-label="§" href="#ack_others"></a></h3>
 		<ul>
 			<li>Joanmarie Diggs (Igalia)</li>
 			<li>Richard Schwerdtfeger (Knowbility, Inc.)</li>
@@ -1378,11 +1378,11 @@ var[data-type]:hover::before {
 		</ul>
 	</section>
 	<section class="section" id="ack_funders">
-		<h4 id="x3-7-3-enabling-funders"><bdi class="secno">3.7.3 </bdi>Enabling funders<a class="self-link" aria-label="§" href="#ack_funders"></a></h4>
+		<h3 id="a-3-enabling-funders"><bdi class="secno">A.3 </bdi>Enabling funders<a class="self-link" aria-label="§" href="#ack_funders"></a></h3>
 		<p>This publication has been funded in part with U.S. Federal funds from the Health and Human Services, National Institute on Disability, Independent Living, and Rehabilitation Research (NIDILRR) under contract number HHSP23301500054C. The content of this publication does not necessarily reflect the views or policies of the U.S. Department of Health and Human Services, nor does mention of trade names, commercial products, or organizations imply endorsement by the U.S. Government. Some of the work on this project has also received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No.780529 and 643399. </p>
 	</section>
 </section>
 
 	
 
-</section><p role="navigation" id="back-to-top"><a href="#title"><abbr title="Back to Top">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
+<p role="navigation" id="back-to-top"><a href="#title"><abbr title="Back to Top">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
