@@ -92,9 +92,43 @@
                 </ul>
                 <p>We encourage a the development of these items and a list of implementations can be found on our wiki.</p>
             </section>
+            
+            <section>
+                <h2>Technology Comparison Summary</h2>
+                <p>The task force reviewed various vocabulary options before deciding upon the use of the data- HTML attribute syntax.  The list of technologies included:</p>
+                <ul>
+                    <li> RDFa Lite - (<a href="https://www.w3.org/TR/rdfa-lite/">https://www.w3.org/TR/rdfa-lite/</a>)</li>
+                    <li>HTML Microdata (<a href="https://www.w3.org/TR/microdata/">https://www.w3.org/TR/microdata/</a>)</li>
+                    <li>Additional ARIA-* attributes</li>
+                    <li>AUI-* a new, personalization specific set of attributes</li>
+                    <li>A new single attribute, purpose, to encode both properties and values</li>
+                    <li>A new single attribute with properties and values encoded using inline css syntax of key/value pairs</li>
+                    <li>An extension of the above single attribute using CSS key/value pairs and simple text content</li>
+                    <li>Three new attributes for token, value, and URI, respectively</li>
+                    <li>Value pairs - a personalization type attribute and an associated value attribute. </li>
+                    <li>Negotiate new personalization attributes into native host languages</li>
+                    <li>Embed personalization data via JavaScript Object Notation (JSON)</li>
+                    <li>Use of the existing data- attribute mechanism of HTML</li>
+                </ul>
+                <p></p>
+                  <ul>
+                    <li>Authoring - ease of authoring and potential ambiguity between personalization and existing features</li>
+                    <li>User Agents - ease of determining and parsing the properties &amp; values and the ability to implement as an extension</li>
+                    <li>Host Languages - requirement for special host language support, works in multiple languages, integrates with ARIA and HTML, easy extension of the vocabulary, and needed number of new features</li>
+                    <li>Functionality - necessity of multiple properties and interaction between properties, integration with other vocabularies, likely search engine support for content alternatives, and typed value support</li>
+                    <li>Strategy - avoid segregation of accessibility from other features, provide a clear path to join with other W3C personalization efforts, and stable enough to avoid modification of authored content over time</li>
+                    
+                </ul>  
+                
+                <p>The details of our research and discussion is documented on the Comparison of ways to use vocabulary in content (<a href="https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content">https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content</a>) and Prototypes with data dash(<a href="https://github.com/w3c/personalization-semantics/wiki/Prototypes-with-data-dash-*-(Take-2)">https://github.com/w3c/personalization-semantics/wiki/Prototypes-with-data-dash-*-(Take-2)</a>)  pages in our Wiki. </p>
+                <p>
+                    We presented some of these options at the TPAC 2018 Personalization Plenary Day presentation and provided a working example using the data- attribute to add personalization features.  The data- solution was recommended by representatives of several working groups attending our presentation and discussions. See the Vocabulary Implementations section in the Expainer document (<a href="https://w3c.github.io/personalization-semantics/#vocabulary-implementations">https://w3c.github.io/personalization-semantics/#vocabulary-implementations</a>) for further details on the use of data- attributes. 
+                </p>
+                
+            </section>
 		</section>
 
-		<section class="section" >
+		<section class="section informative" >
 				<h2>Modules</h2>
 				<p>This specification has been divided into modules. </p>
 				<p>Each module has use cases and vocabularies: </p>
@@ -114,7 +148,7 @@
 				</ul>
 		</section>
 
-		<section id="characteristics_semanticproperties">
+		<section class="informative" id="characteristics_semanticproperties">
 			<h1>Vocabulary Structure</h1>
 			<p>Personalization Semantics is made of a vocabulary of properties and their values. This generic structure makes it possible to apply Personalization Semantics in a variety of contexts by adapting how the vocabulary is instantiated. The <a href="#vocabulary-implementations">Vocabulary Implementations</a> section below describes current ways to use the vocabulary.</p>
             <section>
@@ -154,7 +188,7 @@
 
 
 
-		<section>
+		<section class="informative">
             
             
 			<h2>Vocabulary Implementations</h2>
@@ -170,7 +204,7 @@
             <p class="note">The HTML data- attribute syntax is not intended to be used for long-term wide-scale features. The task force is using this approach at the moment to gain implementation experience and demonstrate the usefulness of Personalization Semantics in practice. Content authors and user agent implementers should be aware that the recommended approach to use the vocubulary is expected to change, and structure their implemetation in a manner that will facilitate the transition to a new syntax.</p>
 			
 		</section>
-        <section>
+        <section class="informative">
             <h2>Stakeholders</h2>
             <p>
                 This document is useful for:
