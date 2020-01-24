@@ -278,21 +278,6 @@ var biblio = {
 			"http://www.w3.org/WAI/PF/"
 		]
 	},
-
-	"personalization-semantics-requirements": {
-		"title": "Requirements for Personalization Semantics",
-		"href": "https://w3c.github.io/personalization-semantics/requirements/",
-		"publisher": "W3C",
-		"editors":
-		[    
-			"Lisa Seeman",
-			"Charles LaPierre",
-			"Michael Cooper",
-			"Roy Ran"
-		],
-		"etAl": "false",
-		"deliveredBy": "https://www.w3.org/WAI/APA/task-forces/personalization/"
-	},
 	
 	"WAI-ARIA-10": {
 		"authors": [
