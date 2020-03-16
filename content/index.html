@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 25.1.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
+<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 25.4.1"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
 span.example-title {
     text-transform: none;
 }
@@ -79,16 +79,6 @@ input.task-list-item-checkbox {
   bottom: 2px;
   border: none;
   display: inline-block;
-}
-
-.issue a.respec-label-dark {
-  color: #fff;
-  background-color: #000;
-}
-
-.issue a.respec-label-light {
-  color: #000;
-  background-color: #fff;
 }
 </style><style>/* dfn popup panel that list all local references to a dfn */
 dfn {
@@ -240,7 +230,7 @@ cite .bibref {
 }
 
 code {
-  color: #c83500;
+  color: #c63501;
 }
 
 th code {
@@ -451,7 +441,7 @@ h6 > a.self-link::before {
 	
 		<link href="../common/css/common.css" rel="stylesheet" type="text/css">
 	<meta name="description" content="This document provides use cases and a vocabulary of terms that can be used to enhance web content by providing information about form controls, symbols, and other user interface elements. User agents use the semantics to augment or adapt content to the user’s scenario. This helps users with varying needs to understand the content by providing support for simplification and a way to manage unnecessary distractions."><link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-content-1.0/"><style>/*
-Atom One Light by Daniel Gamage
+Adapted from Atom One Light by Daniel Gamage for ReSpec, with better color contrast
 Original One Light Syntax theme from https://github.com/atom/one-light-syntax
 base:    #fafafa
 mono-1:  #383a42
@@ -477,7 +467,7 @@ hue-6-2: #c18401
 
 .hljs-comment,
 .hljs-quote {
-  color: #a0a1a7;
+  color: #717277;
   font-style: italic;
 }
 
@@ -492,11 +482,12 @@ hue-6-2: #c18401
 .hljs-selector-tag,
 .hljs-deletion,
 .hljs-subst {
-  color: #e45649;
+  color: #ca4706;
+  font-weight: bold;
 }
 
 .hljs-literal {
-  color: #0184bb;
+  color: #0b76c5;
 }
 
 .hljs-string,
@@ -504,12 +495,12 @@ hue-6-2: #c18401
 .hljs-addition,
 .hljs-attribute,
 .hljs-meta-string {
-  color: #50a14f;
+  color: #42803C;
 }
 
 .hljs-built_in,
 .hljs-class .hljs-title {
-  color: #c18401;
+  color: #9a6a01;
 }
 
 .hljs-attr,
@@ -529,7 +520,7 @@ hue-6-2: #c18401
 .hljs-meta,
 .hljs-selector-id,
 .hljs-title {
-  color: #4078f2;
+  color: #336ae3;
 }
 
 .hljs-emphasis {
@@ -644,232 +635,301 @@ var[data-type]:hover::before {
   "wgPublicList": "public-personalization-tf",
   "wgPatentURI": "https://www.w3.org/2004/01/pp-impl/83907/status",
   "localBiblio": {
-    "DOM4": {
-      "aliasOf": "DOM",
-      "id": "DOM4"
-    },
-    "DOM": {
-      "authors": [
-        "Anne van Kesteren"
-      ],
-      "href": "https://dom.spec.whatwg.org/",
-      "title": "DOM Standard",
-      "status": "Living Standard",
-      "publisher": "WHATWG",
-      "repository": "https://github.com/whatwg/dom",
-      "id": "DOM"
-    },
-    "HTML5": {
-      "aliasOf": "html5",
-      "id": "HTML5"
-    },
-    "html5": {
-      "authors": [
-        "Ian Hickson",
-        "Robin Berjon",
-        "Steve Faulkner",
-        "Travis Leithead",
-        "Erika Doyle Navara",
-        "Theresa O'Connor",
-        "Silvia Pfeiffer"
-      ],
-      "href": "https://www.w3.org/TR/html5/",
-      "title": "HTML5",
-      "status": "REC",
-      "publisher": "W3C",
-      "deliveredBy": [
-        {
-          "url": "https://www.w3.org/html/wg/",
-          "shortname": "html"
-        }
-      ],
-      "versions": [
-        "html5-20180327",
-        "html5-20141028",
-        "html5-20140916",
-        "html5-20140731",
-        "html5-20140617",
-        "html5-20140429",
-        "html5-20140204",
-        "html5-20130806",
-        "html5-20121217",
-        "html5-20121025",
-        "html5-20120329",
-        "html5-20110525",
-        "html5-20110405",
-        "html5-20110113",
-        "html5-20101019",
-        "html5-20100624",
-        "html5-20100304",
-        "html5-20090825",
-        "html5-20090423",
-        "html5-20090212",
-        "html5-20080610",
-        "html5-20080122"
-      ],
-      "edDraft": "https://www.w3.org/html/wg/drafts/html/master/",
-      "obsoletes": [
-        "Window",
-        "web-forms-2"
-      ],
-      "id": "html5",
-      "date": "27 March 2018"
-    },
-    "HTML52": {
-      "aliasOf": "html52",
-      "id": "HTML52"
-    },
-    "html52": {
-      "authors": [
-        "Steve Faulkner",
-        "Arron Eicholz",
-        "Travis Leithead",
-        "Alex Danilo",
-        "Sangwhan Moon"
-      ],
-      "href": "https://www.w3.org/TR/html52/",
-      "title": "HTML 5.2",
-      "status": "REC",
-      "publisher": "W3C",
-      "edDraft": "https://w3c.github.io/html/",
-      "deliveredBy": [
-        {
-          "url": "https://www.w3.org/WebPlatform/WG/",
-          "shortname": "webplatform"
-        }
-      ],
-      "versions": [
-        "html52-20171214",
-        "html52-20171102",
-        "html52-20170808",
-        "html52-20170718",
-        "html52-20170509",
-        "html52-20170406",
-        "html52-20170228",
-        "html52-20170117",
-        "html52-20161206",
-        "html52-20161025",
-        "html52-20160818"
-      ],
-      "repository": "https://github.com/w3c/html",
-      "id": "html52",
-      "date": "14 December 2017"
-    },
-    "SVG2": {
-      "authors": [
-        "Amelia Bellamy-Royds",
-        "Bogdan Brinza",
-        "Chris Lilley",
-        "Dirk Schulze",
-        "David Storey",
-        "Eric Willigers"
-      ],
-      "href": "https://www.w3.org/TR/SVG2/",
-      "title": "Scalable Vector Graphics (SVG) 2",
-      "status": "CR",
-      "publisher": "W3C",
-      "deliveredBy": [
-        {
-          "url": "https://www.w3.org/Graphics/SVG/WG/",
-          "shortname": "svg"
-        }
-      ],
-      "versions": [
-        "SVG2-20181004",
-        "SVG2-20180807",
-        "SVG2-20160915",
-        "SVG2-20150915",
-        "SVG2-20150709",
-        "SVG2-20150409",
-        "SVG2-20140211",
-        "SVG2-20130618",
-        "SVG2-20130409",
-        "SVG2-20120828"
-      ],
-      "edDraft": "https://svgwg.org/svg2-draft/",
-      "repository": "https://github.com/w3c/svgwg",
-      "id": "SVG2",
-      "date": "4 October 2018"
-    },
-    "microdata": {
-      "authors": [
-        "Charles 'chaals' (McCathie) Nevile",
-        "Dan Brickley",
-        "Ian Hickson"
-      ],
-      "href": "https://www.w3.org/TR/microdata/",
-      "title": "HTML Microdata",
+    "ACCNAME-AAM": {
+      "title": "Accessible Name and Description: Computation and API Mappings 1.1",
+      "href": "http://www.w3.org/TR/accname-aam-1.1/",
       "status": "WD",
       "publisher": "W3C",
-      "deliveredBy": [
-        {
-          "url": "https://www.w3.org/WebPlatform/WG/",
-          "shortname": "webplatform"
-        }
-      ],
-      "versions": [
-        "microdata-20180426",
-        "microdata-20171010",
-        "microdata-20171009",
-        "microdata-20170626",
-        "microdata-20170504",
-        "microdata-20131029",
-        "microdata-20121025",
-        "microdata-20120329",
-        "microdata-20110525",
-        "microdata-20110405",
-        "microdata-20110113",
-        "microdata-20101019",
-        "microdata-20100624",
-        "microdata-20100304"
-      ],
-      "edDraft": "https://w3c.github.io/microdata/",
-      "repository": "https://github.com/w3c/microdata",
-      "id": "microdata",
-      "date": "26 April 2018"
-    },
-    "personalization-semantics-1.0": {
       "authors": [
-        "Lisa Seeman-Kestenbaum",
-        "Charles LaPierre",
+        "Joseph Scheuhammer",
         "Michael Cooper",
-        "Ruoxi Ran",
+        "Andi Snow-Weaver",
+        "Aaron Leventhal"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/ARIA/"
+      ]
+    },
+    "ARIA-PRACTICES": {
+      "title": "WAI-ARIA Authoring Practicess 1.1",
+      "href": "http://www.w3.org/TR/wai-aria-practices-1.1/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "Matt King",
+        "James Nurthen",
+        "Michael Cooper",
+        "Michiel Bijl",
+        "Joseph Scheuhammer",
+        "Lisa Pappas",
         "Richard Schwerdtfeger"
       ],
-      "href": "https://www.w3.org/TR/personalization-semantics-1.0/",
-      "title": "Personalization Semantics Explainer 1.0",
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/ARIA/"
+      ]
+    },
+    "ATK": {
+      "href": "https://developer.gnome.org/atk/stable/",
+      "title": "ATK - Accessibility Toolkit",
+      "publisher": "The GNOME Project"
+    },
+    "AXAPI": {
+      "href": "https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078",
+      "title": "Accessibility Programming Guide for OS X",
+      "publisher": "Apple Corporation"
+    },
+    "coga-gap-analysis": {
+      "title": "Cognitive Accessibility Roadmap and Gap Analysis",
+      "href": "https://w3c.github.io/coga/gap-analysis/",
+      "publisher": "W3C",
+      "editors": [
+        "Lisa Seeman",
+        "Michael Cooper"
+      ],
+      "etAl": "false",
+      "deliveredBy": "https://www.w3.org/WAI/PF/cognitive-a11y-tf/"
+    },
+    "coga-issue-papers": {
+      "title": "Issue Papers for the The Cognitive and Learning Disabilities Accessibility Task Force (COGA)",
+      "href": "https://w3c.github.io/coga/issue-papers/",
+      "publisher": "W3C",
+      "editors": [
+        "Lisa Seeman",
+        "Michael Cooper"
+      ],
+      "etAl": "false",
+      "deliveredBy": "https://www.w3.org/WAI/PF/cognitive-a11y-tf/"
+    },
+    "CORE-AAM": {
+      "title": "Core Accessibility API Mappings 1.1",
+      "href": "http://www.w3.org/TR/core-aam-1.1/",
       "status": "WD",
       "publisher": "W3C",
-      "edDraft": "https://w3c.github.io/personalization-semantics/",
+      "authors": [
+        "Joseph Scheuhammer",
+        "Michael Cooper",
+        "Andi Snow-Weaver",
+        "Aaron Leventhal"
+      ],
+      "etAl": true,
       "deliveredBy": [
-        {
-          "url": "https://www.w3.org/WAI/APA/",
-          "shortname": "wai_apa"
-        }
+        "http://www.w3.org/WAI/ARIA/"
+      ]
+    },
+    "DPUB-ARIA": {
+      "title": "Digital Publishing WAI-ARIA Module 1.0",
+      "href": "http://www.w3.org/TR/dpub-aria-1.0/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "Matt Garrish",
+        "Tzviya Siegman",
+        "Markus Gylling",
+        "Shane McCarron"
       ],
-      "versions": [
-        "personalization-semantics-1.0-20200127",
-        "personalization-semantics-1.0-20190711",
-        "personalization-semantics-1.0-20181018",
-        "personalization-semantics-1.0-20180316",
-        "personalization-semantics-1.0-20180213",
-        "personalization-semantics-1.0-20170606"
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/ARIA/"
+      ]
+    },
+    "GRAPHICS-ARIA": {
+      "title": "WAI-ARIA Graphics",
+      "href": "http://www.w3.org/TR/graphics-aria-1.0/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "Amelia Bellamy-Royds",
+        "Fred Esch",
+        "Rich Schwerdtfeger",
+        "Leonie Watson"
       ],
-      "repository": "https://github.com/w3c/personalization-semantics",
-      "id": "personalization-semantics-1.0",
-      "date": "27 January 2020"
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/ARIA/",
+        "http://www.w3.org/SVG/"
+      ]
+    },
+    "GRAPHICS-AAM": {
+      "title": "Graphics Accessibility API Mappings",
+      "href": "http://www.w3.org/TR/graphics-aam-1.0/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "Amelia Bellamy-Royds",
+        "Fred Esch",
+        "Richard Schwerdtfeger"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/ARIA/",
+        "http://www.w3.org/SVG/"
+      ]
+    },
+    "EPUB-SSV": {
+      "href": "http://www.idpf.org/epub/vocab/structure/",
+      "title": "EPUB Structural Semantics Vocabulary",
+      "publisher": "IDPF"
+    },
+    "EPUB-Content": {
+      "href": "http://www.idpf.org/epub/31/spec/epub-contentdocs.html",
+      "title": "EPUB Content Documents 3.1",
+      "publisher": "IDPF"
+    },
+    "GTK": {
+      "href": "https://developer.gnome.org/gtk3/stable/",
+      "title": "GTK+ 3 Reference Manual",
+      "publisher": "The GNOME Project"
+    },
+    "HTML-AAM": {
+      "authors": [
+        "Steve Faulkner",
+        "Jason Kiss",
+        "Cynthia Shelly",
+        "Alexander Surkov"
+      ],
+      "etAl": true,
+      "href": "http://www.w3.org/TR/html-aam-1.0/",
+      "title": "HTML Accessibility API Mappings 1.0",
+      "status": "WD",
+      "publisher": "W3C",
+      "deliveredBy": [
+        "http://www.w3.org/html",
+        "http://www.w3.org/WAI/PF/"
+      ]
+    },
+    "MSAA": {
+      "href": "https://msdn.microsoft.com/en-us/library/ms697707.aspx",
+      "title": "Microsoft Active Accessibility (MSAA) 2.0",
+      "publisher": "Microsoft Corporation"
+    },
+    "SVG-AAM": {
+      "title": "SVG2 Accessibility API Mappings 1.0",
+      "href": "http://www.w3.org/TR/svg-aam-1.0/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "Amelia Bellamy-Royds",
+        "Richard Schwerdtfeger"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/PF/"
+      ]
+    },
+    "SVG1": {
+      "title": "Scalable Vector Graphics (SVG) 1.0 Specification",
+      "href": "http://www.w3.org/TR/SVG10/",
+      "status": "REC",
+      "publisher": "W3C",
+      "authors": [
+        "John Ferraiolo"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/SVG"
+      ]
+    },
+    "SVG11": {
+      "title": "Scalable Vector Graphics (SVG) 1.1 (Second Edition)",
+      "href": "http://www.w3.org/TR/SVG11/",
+      "status": "REC",
+      "publisher": "W3C",
+      "authors": [
+        "Erik Dahlström",
+        "Patrick Dengler",
+        "Anthony Grasso",
+        "Chris Lilley",
+        "Cameron McCormack",
+        "Doug Schepers",
+        "Jonathan Watt",
+        "John Ferraiolo",
+        "藤沢 淳 (FUJISAWA Jun)",
+        "Dean Jackson"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/SVG"
+      ]
+    },
+    "SVG2": {
+      "title": "Scalable Vector Graphics (SVG) 2",
+      "href": "http://www.w3.org/TR/2015/WD-SVG2-20150915/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "Nikos Andronikos",
+        "Rossen Atanassov",
+        "Tavmjong Bah",
+        "Amelia Bellamy-Royds",
+        "Brian Birtles",
+        "Cyril Concolato",
+        "Erik Dahlström",
+        "Chris Lilley",
+        "Cameron McCormack",
+        "Doug Schepers",
+        "Dirk Schulze",
+        "Richard Schwerdtfeger",
+        "Satoru Takagi",
+        "Jonathan Watt"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/PF/"
+      ],
+      "id": "svg2"
+    },
+    "UI-AUTOMATION": {
+      "href": "https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx",
+      "title": "UI Automation",
+      "publisher": "Microsoft Corporation"
+    },
+    "UIA-EXPRESS": {
+      "href": "https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx",
+      "title": "The IAccessibleEx Interface",
+      "publisher": "Microsoft Corporation"
+    },
+    "WAI-ARIA": {
+      "title": "Accessible Rich Internet Applications (WAI-ARIA) 1.1",
+      "href": "http://www.w3.org/TR/wai-aria-1.1/",
+      "status": "WD",
+      "publisher": "W3C",
+      "authors": [
+        "James Craig",
+        "Michael Cooper",
+        "Shane McCarron"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/PF/"
+      ]
+    },
+    "WAI-ARIA-10": {
+      "authors": [
+        "James Craig",
+        "Michael Cooper"
+      ],
+      "etAl": true,
+      "href": "http://www.w3.org/TR/wai-aria/",
+      "title": "Accessible Rich Internet Applications (WAI-ARIA) 1.0",
+      "status": "REC",
+      "publisher": "W3C",
+      "deliveredBy": [
+        "http://www.w3.org/WAI/PF/"
+      ]
     }
   },
-  "publishDate": "2020-02-10",
-  "publishISODate": "2020-02-10T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 10 February 2020"
+  "publishDate": "2020-03-16",
+  "publishISODate": "2020-03-16T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 16 March 2020"
 }</script><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
 	<body class="h-entry informative"><div class="head">
-      <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name">Personalization Semantics Content Module 1.0</h1>
+      <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title">Personalization Semantics Content Module 1.0</h1>
       
       <h2>
         W3C Editor's Draft
-        <time class="dt-published" datetime="2020-02-10">10 February 2020</time>
+        <time class="dt-published" datetime="2020-03-16">16 March 2020</time>
       </h2>
       <dl>
         <dt>This version:</dt><dd>
@@ -998,9 +1058,7 @@ var[data-type]:hover::before {
     				<div class="example" id="example-1-action-using-data">
           <div class="marker">
       <a class="self-link" href="#example-1-action-using-data">Example<bdi> 1</bdi></a><span class="example-title">: Action Using data-</span>
-    </div> <pre aria-busy="false"><code class="hljs http">       				
-
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">data-action</span>=<span class="hljs-string">"undo"</span>&gt;</span>Revert<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span></code></pre>
+    </div> <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">data-action</span>=<span class="hljs-string">"undo"</span>&gt;</span>Revert<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
         </div>
         			<p>A personalization agent may add a symbol, replace the text with a more familiar term, or give it a specific presentation. Note that there is no default value.</p>			
     	</div>
@@ -1345,7 +1403,7 @@ var[data-type]:hover::before {
     	<div class="example" id="example-2-destination-using-data">
           <div class="marker">
       <a class="self-link" href="#example-2-destination-using-data">Example<bdi> 2</bdi></a><span class="example-title">: Destination Using data-</span>
-    </div> <pre aria-busy="false"><code class="hljs xml">        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"home.html"</span> <span class="hljs-attr">data-destination</span>=<span class="hljs-string">"home"</span>&gt;</span>our main page<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre>
+    </div> <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"home.html"</span> <span class="hljs-attr">data-destination</span>=<span class="hljs-string">"home"</span>&gt;</span>our main page<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre>
         </div>
 		<p>See the <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html">destination sample user experience</a>.</p>
     
@@ -1503,12 +1561,7 @@ var[data-type]:hover::before {
     	<div class="example" id="example-3-field-using-data">
           <div class="marker">
       <a class="self-link" href="#example-3-field-using-data">Example<bdi> 3</bdi></a><span class="example-title">: Field Using data-</span>
-    </div> <pre aria-busy="false"><code class="hljs http">         
-
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"telnum"</span> <span class="hljs-attr">data-purpose</span>=<span class="hljs-string">"tel"</span>/&gt;</span>
-
-
-		</span></code></pre>
+    </div> <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"telnum"</span> <span class="hljs-attr">data-purpose</span>=<span class="hljs-string">"tel"</span>/&gt;</span></code></pre>
         </div>
     </section>
     <section id="characteristics-1">
@@ -1877,13 +1930,13 @@ var[data-type]:hover::before {
     	<div class="example" id="example-4-simplification-using-data">
           <div class="marker">
       <a class="self-link" href="#example-4-simplification-using-data">Example<bdi> 4</bdi></a><span class="example-title">: Simplification Using data-</span>
-    </div> <pre aria-busy="false"><code class="hljs xml">    	<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">data-simplification</span>=<span class="hljs-string">"critical"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Submit"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>/&gt;</span></code></pre>
+    </div> <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">data-simplification</span>=<span class="hljs-string">"critical"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Submit"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>/&gt;</span></code></pre>
         </div>
 		  <p>In the example bellow the <code>simplification</code> attribute is used on critical content a newsletter from an elementary school. Important announcements about an early school dismissal is in a list of other activities. If this important information is missed, the parents might not be home in time, putting children at risk.</p>
     	<div class="example" id="example-5-simplification-using-data">
           <div class="marker">
       <a class="self-link" href="#example-5-simplification-using-data">Example<bdi> 5</bdi></a><span class="example-title">: Simplification Using data-</span>
-    </div> <pre aria-busy="false"><code class="hljs xml">    	<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Years 2 - 3 are putting on a play next week on tuesday <span class="hljs-tag">&lt;<span class="hljs-name">b</span> <span class="hljs-attr">data-simplification</span>=<span class="hljs-string">"critical"</span>/&gt;</span>Thefore school will close at 1 pm on tuesday <span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span> so we can get the school hall ready &amp;alt;/p/&gt;</code></pre>
+    </div> <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Years 2 - 3 are putting on a play next week on tuesday <span class="hljs-tag">&lt;<span class="hljs-name">b</span> <span class="hljs-attr">data-simplification</span>=<span class="hljs-string">"critical"</span>/&gt;</span>Thefore school will close at 1 pm on tuesday <span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span> so we can get the school hall ready &amp;alt;/p/&gt;</code></pre>
         </div>
     </section>
     <section id="characteristics-2">
@@ -1978,21 +2031,21 @@ var[data-type]:hover::before {
    		<div class="example" id="example-6-distraction-using-data">
           <div class="marker">
       <a class="self-link" href="#example-6-distraction-using-data">Example<bdi> 6</bdi></a><span class="example-title">: Distraction Using data-</span>
-    </div> <pre aria-busy="false"><code class="hljs xml">		  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"animated.gif"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"animated banner advertising for Widgets"</span> <span class="hljs-attr">data-distraction</span>=<span class="hljs-string">"sensory offer"</span>&gt;</span></code></pre>
+    </div> <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"animated.gif"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"animated banner advertising for Widgets"</span> <span class="hljs-attr">data-distraction</span>=<span class="hljs-string">"sensory offer"</span>&gt;</span></code></pre>
         </div>
         
        <p>Example using the <code>distraction</code> attribute in the context of a stock ticker that starts and displays upon page load.</p>       
    		<div class="example" id="example-7-distraction-using-data">
           <div class="marker">
       <a class="self-link" href="#example-7-distraction-using-data">Example<bdi> 7</bdi></a><span class="example-title">: Distraction Using data-</span>
-    </div> <pre aria-busy="false"><code class="hljs xml">		  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-distraction</span>=<span class="hljs-string">"sensory message"</span>&gt;</span> ... <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+    </div> <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-distraction</span>=<span class="hljs-string">"sensory message"</span>&gt;</span> ... <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
         </div>
 
         <p>Example of a count-down timer that starts at the user’s request and updates in real-time the hours, minutes, and seconds until an event.</p>       
    		<div class="example" id="example-8-distraction-using-data">
           <div class="marker">
       <a class="self-link" href="#example-8-distraction-using-data">Example<bdi> 8</bdi></a><span class="example-title">: Distraction Using data-</span>
-    </div> <pre aria-busy="false"><code class="hljs xml">		  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-distraction</span>=<span class="hljs-string">"sensory"</span>&gt;</span> ... <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+    </div> <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-distraction</span>=<span class="hljs-string">"sensory"</span>&gt;</span> ... <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
         </div>
         
     </section>
@@ -2078,22 +2131,20 @@ var[data-type]:hover::before {
         <div class="example" id="example-9-symbols-for-individual-words">
           <div class="marker">
       <a class="self-link" href="#example-9-symbols-for-individual-words">Example<bdi> 9</bdi></a><span class="example-title">: Symbols for individual words</span>
-    </div> <pre aria-busy="false"><code class="hljs xml">    	   <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">data-symbol</span>=<span class="hljs-string">"13621"</span>&gt;</span>Cup<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">data-symbol</span>=<span class="hljs-string">"12324"</span>&gt;</span>of<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">data-symbol</span>=<span class="hljs-string">"17511"</span> &gt;</span>Tea<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre>
+    </div> <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">data-symbol</span>=<span class="hljs-string">"13621"</span>&gt;</span>Cup<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">data-symbol</span>=<span class="hljs-string">"12324"</span>&gt;</span>of<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">data-symbol</span>=<span class="hljs-string">"17511"</span> &gt;</span>Tea<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre>
         </div>
 
         You could also say 
         <div class="example" id="example-10-list-of-symbols-for-a-text-phrase">
           <div class="marker">
       <a class="self-link" href="#example-10-list-of-symbols-for-a-text-phrase">Example<bdi> 10</bdi></a><span class="example-title">: List of symbols for a text phrase</span>
-    </div> <pre aria-busy="false"><code class="hljs xml">            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">data-symbol</span>=<span class="hljs-string">"13621 12324 17511"</span>&gt;</span>cup of Tea<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-        </code></pre>
+    </div> <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">data-symbol</span>=<span class="hljs-string">"13621 12324 17511"</span>&gt;</span>cup of Tea<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre>
         </div>
         or
         <div class="example" id="example-11-symbols-used-with-an-image">
           <div class="marker">
       <a class="self-link" href="#example-11-symbols-used-with-an-image">Example<bdi> 11</bdi></a><span class="example-title">: Symbols used with an image</span>
-    </div> <pre aria-busy="false"><code class="hljs xml">            <span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">data-symbol</span>=<span class="hljs-string">"13621 12324 17511"</span> <span class="hljs-attr">alt</span> = <span class="hljs-string">"cup of Tea"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"cuptea.gif"</span> /&gt;</span>
-        </code></pre>
+    </div> <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">data-symbol</span>=<span class="hljs-string">"13621 12324 17511"</span> <span class="hljs-attr">alt</span> = <span class="hljs-string">"cup of Tea"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"cuptea.gif"</span> /&gt;</span></code></pre>
         </div>
 	   <p>When there is more than one concept, multiple concepts can be referenced by separating them with white space. The order of multiple concepts should be subject predicate object. Both omissions and  multiple triples are allowed.</p>
     </section>
@@ -2177,5 +2228,5 @@ var[data-type]:hover::before {
 <section id="references" class="appendix"><h2 id="c-references"><bdi class="secno">C. </bdi>References<a class="self-link" aria-label="§" href="#references"></a></h2><section id="informative-references">
         <h3 id="c-1-informative-references"><bdi class="secno">C.1 </bdi>Informative references<a class="self-link" aria-label="§" href="#informative-references"></a></h3>
       <dl class="bibliography">
-        <dt id="bib-dom4">[DOM4]</dt><dd><a href="https://dom.spec.whatwg.org/"><cite>DOM Standard</cite></a>. Anne van Kesteren.  WHATWG. Living Standard. URL: <a href="https://dom.spec.whatwg.org/">https://dom.spec.whatwg.org/</a></dd><dt id="bib-html5">[HTML5]</dt><dd><a href="https://www.w3.org/TR/html5/"><cite>HTML5</cite></a>. Ian Hickson; Robin Berjon; Steve Faulkner; Travis Leithead; Erika Doyle Navara; Theresa O'Connor; Silvia Pfeiffer.  W3C. 27 March 2018. W3C Recommendation. URL: <a href="https://www.w3.org/TR/html5/">https://www.w3.org/TR/html5/</a></dd><dt id="bib-html52">[HTML52]</dt><dd><a href="https://www.w3.org/TR/html52/"><cite>HTML 5.2</cite></a>. Steve Faulkner; Arron Eicholz; Travis Leithead; Alex Danilo; Sangwhan Moon.  W3C. 14 December 2017. W3C Recommendation. URL: <a href="https://www.w3.org/TR/html52/">https://www.w3.org/TR/html52/</a></dd><dt id="bib-microdata">[microdata]</dt><dd><a href="https://www.w3.org/TR/microdata/"><cite>HTML Microdata</cite></a>. Charles 'chaals' (McCathie) Nevile; Dan Brickley; Ian Hickson.  W3C. 26 April 2018. W3C Working Draft. URL: <a href="https://www.w3.org/TR/microdata/">https://www.w3.org/TR/microdata/</a></dd><dt id="bib-personalization-semantics-1.0">[personalization-semantics-1.0]</dt><dd><a href="https://www.w3.org/TR/personalization-semantics-1.0/"><cite>Personalization Semantics Explainer 1.0</cite></a>. Lisa Seeman-Kestenbaum; Charles LaPierre; Michael Cooper; Ruoxi Ran; Richard Schwerdtfeger.  W3C. 27 January 2020. W3C Working Draft. URL: <a href="https://www.w3.org/TR/personalization-semantics-1.0/">https://www.w3.org/TR/personalization-semantics-1.0/</a></dd><dt id="bib-svg2">[SVG2]</dt><dd><a href="https://www.w3.org/TR/SVG2/"><cite>Scalable Vector Graphics (SVG) 2</cite></a>. Amelia Bellamy-Royds; Bogdan Brinza; Chris Lilley; Dirk Schulze; David Storey; Eric Willigers.  W3C. 4 October 2018. W3C Candidate Recommendation. URL: <a href="https://www.w3.org/TR/SVG2/">https://www.w3.org/TR/SVG2/</a></dd>
+        <dt id="bib-dom4">[DOM4]</dt><dd><a href="https://dom.spec.whatwg.org/"><cite>DOM Standard</cite></a>. Anne van Kesteren.  WHATWG. Living Standard. URL: <a href="https://dom.spec.whatwg.org/">https://dom.spec.whatwg.org/</a></dd><dt id="bib-html5">[HTML5]</dt><dd><a href="https://www.w3.org/TR/html5/"><cite>HTML5</cite></a>. Ian Hickson; Robin Berjon; Steve Faulkner; Travis Leithead; Erika Doyle Navara; Theresa O'Connor; Silvia Pfeiffer.  W3C. 27 March 2018. W3C Recommendation. URL: <a href="https://www.w3.org/TR/html5/">https://www.w3.org/TR/html5/</a></dd><dt id="bib-html52">[HTML52]</dt><dd><a href="https://www.w3.org/TR/html52/"><cite>HTML 5.2</cite></a>. Steve Faulkner; Arron Eicholz; Travis Leithead; Alex Danilo; Sangwhan Moon.  W3C. 14 December 2017. W3C Recommendation. URL: <a href="https://www.w3.org/TR/html52/">https://www.w3.org/TR/html52/</a></dd><dt id="bib-microdata">[microdata]</dt><dd><a href="https://www.w3.org/TR/microdata/"><cite>HTML Microdata</cite></a>. Charles 'chaals' (McCathie) Nevile; Dan Brickley; Ian Hickson.  W3C. 26 April 2018. W3C Working Draft. URL: <a href="https://www.w3.org/TR/microdata/">https://www.w3.org/TR/microdata/</a></dd><dt id="bib-personalization-semantics-1.0">[personalization-semantics-1.0]</dt><dd><a href="https://www.w3.org/TR/personalization-semantics-1.0/"><cite>Personalization Semantics Explainer 1.0</cite></a>. Lisa Seeman-Kestenbaum; Charles LaPierre; Michael Cooper; Ruoxi Ran; Richard Schwerdtfeger.  W3C. 27 January 2020. W3C Working Draft. URL: <a href="https://www.w3.org/TR/personalization-semantics-1.0/">https://www.w3.org/TR/personalization-semantics-1.0/</a></dd><dt id="bib-svg2">[SVG2]</dt><dd><a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/"><cite>Scalable Vector Graphics (SVG) 2</cite></a>. Nikos Andronikos; Rossen Atanassov; Tavmjong Bah; Amelia Bellamy-Royds; Brian Birtles; Cyril Concolato; Erik Dahlström; Chris Lilley; Cameron McCormack; Doug Schepers; Dirk Schulze; Richard Schwerdtfeger; Satoru Takagi; Jonathan Watt et al.  W3C. W3C Working Draft. URL: <a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/">http://www.w3.org/TR/2015/WD-SVG2-20150915/</a></dd>
       </dl></section></section><p role="navigation" id="back-to-top"><a href="#title"><abbr title="Back to Top">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
