@@ -61,7 +61,7 @@
 			
 			<section>
 				<h3>More Help</h3>
-				<p>>Some users may need additional information or specifically additional help information.</p>
+				<p>Some users may need additional information or specifically additional help information.</p>
 				<p class="ednote">This isn't worded in use case language, so needs to be reformulated.</p>
 			</section>
 			
@@ -146,7 +146,7 @@
                 <ol>
                     <li>The ability to personalize a web page and present symbols instead can help users to easily understand the content being provided
                    <p>
-                        I.E: Marking up the Help button so the user agent can render a familiar term and present the symbol for help. i.e. <code>&lt;a data-action=&quot;help&quot;&gt;support /&lt;/a&gt;</code>
+                        I.E: Marking up the Help button so the user agent can render a familiar term and present the symbol for help. i.e. <code>&lt;a data-action=&quot;opens-in-page-help&quot;&gt;support /&lt;/a&gt;</code>
                          may be rendered as / ? help (possibly as a tool tip)
                     </p>
                     </li>
@@ -294,10 +294,10 @@
                     &lt;div&gt;
                         &lt;input type=&quot;submit&quot; data-simplification=&quot;critical&quot; 
                             data-action="send" value=&quot;send&quot; /&gt;
-                        &lt;button id=&quot;2&quot; data-simplification=&quot;high&quot; data-action=&quot;undo&quot;&gt;undo&lt;/button&gt;
-                        &lt;button id=&quot;3&quot; data-simplification=&quot;normal&quot;&gt;lable&lt;/button&gt;
-                        &lt;button id=&quot;4&quot; data-simplification=&quot;normal&quot;&gt;send later&lt;/button&gt;
-                        &lt;button id=&quot;5&quot; data-simplification=&quot;normal&quot;&gt;mark urgent&lt;/button&gt;
+                        &lt;button id=&quot;2&quot; data-simplification=&quot;critical&quot; data-action=&quot;undo&quot;&gt;undo&lt;/button&gt;
+                        &lt;button id=&quot;3&quot; data-simplification=&quot;medium&quot;&gt;lable&lt;/button&gt;
+                        &lt;button id=&quot;4&quot; data-simplification=&quot;medium&quot;&gt;send later&lt;/button&gt;
+                        &lt;button id=&quot;5&quot; data-simplification=&quot;medium&quot;&gt;mark urgent&lt;/button&gt;
                     &lt;/div&gt;
                 </pre>
                 <h4>Attributes Only - Simplification/Required</h4>
@@ -324,7 +324,10 @@
                 Given one or more strings representing a specified word or category, for example, content marked as explicit, violent, etc., hide or remove that string and associated elements from the DOM.
                 </p>
                <ul>
-                    <li>data-action = hide</li>
+                    <li>data-action = hide
+                    <div class="ednote">The Task Force has not yet confirmed an implementation for value of hide. We may delete or add it in our Content Module in future.</div>
+
+                    </li>
                    <li>URI = JSON file of words</li>
                </ul>
                 <p>
