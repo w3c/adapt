@@ -23,17 +23,34 @@
 		<section class="informative" id="introduction">
 
 			<h1>Introduction</h1>
-     
-            <p>This document provides personalization semantics and vocabularies that can be used to annotate web content enabling user agents to augment or adapt content to various user scenarios based on the user’s personalization settings or preferences. The whole personalization semantics introduced in the <a href="../">Personalization Semantics Explainer 1.0</a> document [[personalization-semantics-1.0]].</p>
-			
-			<p class="ednote" id="examples-disclaimer">Personalization semantics defines a set of properties and values to annotate content. The Personalization Task Force decide to use the data-* for attributes, Now the the first three attributes have been accepted by Task Force, there are data-purpose, data-action and data-destination. For other attributes, we are still on discussion. See our  discussion <a href="https://github.com/w3c/personalization-semantics/wiki/Prototypes-with-data-dash-*-(Take-2)">Prototypes with data dash</a>.  If you have any comments or suggestions on implementation please add a comment to this <a href="https://github.com/w3c/personalization-semantics/issues/">issue list</a>.</p>
 			<section>
-				<h1>Use Cases and Requirements</h1>
+				<h2>Background on Personalization Semantics</h2>
+				<p>Personalization semantics is a series of technical specifications that provide the element-level attributes and values enable user agents and helper-applications to adapt the content for the individual needs of the user. Rather than developing complex solutions for a wide range of users, designing sites in a way that they can be personalized to the needs of each user provides more optimal accessibility, including providing extra support, transforming the user interface (UI) through the addition, removal, or adaptation of content that has a negative impact on the primary user-group, and enabling new user agents for people with learning and cognitive disabilities. </p>
+				<p>Personalization semantic consists of three modules, they are Content, Help and Support, Tools. This Personalization Semantics Content Module specification is one of personalization semantics modules.</p>
+
+				<p>The whole personalization semantics introduced in the <a href="../">Personalization Semantics Explainer 1.0</a> document [[personalization-semantics-1.0]], please also find more details in our <a href="https://github.com/w3c/personalization-semantics/wiki/Explainer-%28restructured%29">Explainer for Personalization in Wiki</a>.</p>
+			</section>
+			<section>
+				<h2>Personalization Semantics Content Module</h2>
+				<p>Personalization Semantics Content Module is one of Personalization semantics technical specification, which provides personalization semantics and vocabularies that can be used to annotate web content enabling user agents to augment or adapt content to various user scenarios based on the user’s personalization settings or preferences. The Content Module enhance web content by providing information about form controls, symbols, and other user interface elements. User agents use the semantics to augment or adapt content to the user’s scenario. This helps users with varying needs to understand the content by providing support for simplification and a way to manage unnecessary distractions.</p>
+			</section>
+			<section>
+				<h2>Vocabulary Structure and Implementations</h2>
+				<p>All the vocabulary in Personalization Semantics Content Module are made of properties and their values. Please see our <a href="../#characteristics_semanticproperties">explainer for Vocabulary Structure</a>.</p>
+				<p>The vocabulary implementations included in this document are available at our <a href="../#vocabulary-implementations">explainer for Vocabulary Implementations section</a>.</p>
+			</section>
+			
+			<section>
+				<h2>Use Cases and Requirements</h2>
 				<p>The <a href="../requirements/">Requirements for Personalization Semantics</a> describes use cases and requirements. This module provides properties to fulfill requirements related to adaptable content.</p>
 			</section>
 
 		</section>
-		<section data-include="terms.html" data-include-replace="true" id="terms"></section>
+		<section>
+			<h1>Terms</h1>
+			<p>This document uses the terms as defined by the COGA task force, please find it in <a href="">COGA Glossary</a>.</p>
+
+		</section>
 		
 	
 
@@ -51,13 +68,11 @@
 		</section>
 		<section>
 			<h1>Privacy and Security Considerations</h1>
-			<p>This specification introduces no new privacy or security considerations.</p>
+			<p>The Privacy and Security Considerations of Personalization Semantics Content Module discussed in <a href="https://github.com/w3c/personalization-semantics/issues/131">issue #131</a>, with regard to third-party issue, we gave the explanations as follow:</p>
+			<p>The user agent contains any user setting, and they are recommended to follow best practice to keep threat secure, however, adding context information  to the document should not affect security.</p>
+			<p>Personal preferences the user requires on how a webpage is presented to them will be something that the third party user agent or proxy server acting upon our semantic information will need to deal with on protecting PI and PII information. Our specification does not expose any of this information.</p>
 		</section>
 
-		<section class="appendix">
-			<h2>Vocabulary Implementations</h2>
-			<p>The vocabulary implementations included in this document are available at <a href="../#vocabulary-implementations">Personalization Explainer 1.0 Vocabulary Implementations section</a>.</p>
-		</section>
 
 		<div data-include="../common/acknowledgements.html" data-oninclude="fixIncludes" data-include-replace="true">Acknowledgements placeholder</div>
 
