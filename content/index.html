@@ -25,10 +25,15 @@
 			<h1>Introduction</h1>
 			<section>
 				<h2>Background on Personalization Semantics</h2>
-				<p>Personalization semantics is a series of technical specifications that provide the element-level attributes and values enable user agents and helper-applications to adapt the content for the individual needs of the user. Rather than developing complex solutions for a wide range of users, designing sites in a way that they can be personalized to the needs of each user provides more optimal accessibility, including providing extra support, transforming the user interface (UI) through the addition, removal, or adaptation of content that has a negative impact on the primary user-group, and enabling new user agents for people with learning and cognitive disabilities. </p>
+				<p>This specification is designed to enable authors to add extra semantic information about content to enable personalization for the individual user, including providing extra support and enabling user agents for people with learning and cognitive disabilities.</p>
+				<p>The goal of these attributes and values is to enable personalization for the individual user, including providing extra support, transforming the user interface (UI) through the addition, removal, or adaptation of content that has a negative impact on the primary user-group, and enabling new user agents for people with learning and cognitive disabilities.</p>
+				
+				<p>Personalization semantics is a series of technical specifications that provide the element-level attributes and values enable user agents and helper-applications to adapt the content for the individual needs of the user. Rather than developing complex solutions for a wide range of users, 
+	
+authors can add personalization semantics, so that the content can be personalized to the needs of each user. They aim to  provide more optimal accessibility, including providing extra support, transforming the user interface (UI) through the addition, removal, or adaptation of content that has a negative impact on the primary user-group, and enabling new user agents for people with learning and cognitive disabilities. </p>
 				<p>Personalization semantic consists of three modules, they are Content, Help and Support, Tools. This Personalization Semantics Content Module specification is one of personalization semantics modules.</p>
 
-				<p>The whole personalization semantics introduced in the <a href="../">Personalization Semantics Explainer 1.0</a> document [[personalization-semantics-1.0]], please also find more details in our <a href="https://github.com/w3c/personalization-semantics/wiki/Explainer-%28restructured%29">Explainer for Personalization in Wiki</a>.</p>
+				<p>Personalization semantics are fully introduced in  our <a href="https://github.com/w3c/personalization-semantics/wiki/Explainer-for-Personalization-Semantics">Explainer for Personalization Wiki</a> and [[personalization-semantics-1.0]].</p>
 			</section>
 			<section>
 				<h2>Personalization Semantics Content Module</h2>
@@ -36,19 +41,19 @@
 			</section>
 			<section>
 				<h2>Vocabulary Structure and Implementations</h2>
-				<p>All the vocabulary in Personalization Semantics Content Module are made of properties and their values. Please see our <a href="../#characteristics_semanticproperties">explainer for Vocabulary Structure</a>.</p>
+				<p>All the vocabulary in Personalization Semantics Content Module are made of properties and their values. Please see our  our <a href="https://github.com/w3c/personalization-semantics/wiki/Explainer-for-Personalization-Semantics">Explainer for Personalization Wiki</a>. </p>
 				<p>The vocabulary implementations included in this document are available at our <a href="../#vocabulary-implementations">explainer for Vocabulary Implementations section</a>.</p>
 			</section>
 			
 			<section>
 				<h2>Use Cases and Requirements</h2>
-				<p>The <a href="../requirements/">Requirements for Personalization Semantics</a> describes use cases and requirements. This module provides properties to fulfill requirements related to adaptable content.</p>
+				<p>The <a href="https://github.com/w3c/personalization-semantics/wiki/Requirements">Requirements for Personalization Semantics</a> describes use cases and requirements. This module provides properties to fulfill requirements related to adaptable content.</p>
 			</section>
 
 		</section>
 		<section>
 			<h1>Terms</h1>
-			<p>This document uses the terms as defined by the COGA task force, please find it in <a href="https://raw.githack.com/w3c/coga/Glossary-draft/glossary/index.html">COGA Glossary</a>.</p>
+			<p>This document uses the terms as defined by the COGA task force. See <a href="https://raw.githack.com/w3c/coga/Glossary-draft/glossary/index.html">COGA Glossary</a>.</p>
 
 		</section>
 		
@@ -68,9 +73,15 @@
 		</section>
 		<section>
 			<h1>Privacy and Security Considerations</h1>
-			<p>The Privacy and Security Considerations of Personalization Semantics Content Module discussed in <a href="https://github.com/w3c/personalization-semantics/issues/131">issue #131</a>, with regard to third-party issue, we gave the explanations as follow:</p>
-			<p>The user agent contains any user setting, and they are recommended to follow best practice to keep threat secure, however, adding context information  to the document should not affect security.</p>
-			<p>Personal preferences the user requires on how a webpage is presented to them will be something that the third party user agent or proxy server acting upon our semantic information will need to deal with on protecting PI and PII information. Our specification does not expose any of this information.</p>
+						<p>This specification adds context information about content to the document should not affect security.</p>
+
+			<p>Although this specification does not expose personal preferences and personal information,
+
+third party user agent or proxy server acting upon our semantic information may need to store personal preferences on how to  present content to a specific user. We recommend any user agent or proxy server implements best practices to protect all personal preferences and personal information.</p>
+		
+<p>Any user agent with user setting are recommended to follow best practices to keep user information secure.</p>
+		<p>The Privacy and Security Considerations of Personalization Semantics Content Module is also discussed at <a href="https://github.com/w3c/personalization-semantics/issues/131">issue #131</a>.</p>
+		
 		</section>
 
 
