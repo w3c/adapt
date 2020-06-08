@@ -6,7 +6,14 @@
 					<p>The <code>symbol</code> attribute identifies the concept for symbols.</p>
 					<p>The <code>symbol</code> attribute accepts a numeric reference number.</p>
 					<p>A personalization agent can then load alternative symbols that the user is familiar with so they do not have to learn new symbols for different applications. </p>
-                    <p>In some languages words and symbols are conjugated with sex or tense. In these case more then one value maybe need to map to a symbol. Authors should join values that map to a single conjugated word with a \+\ sign. See <a href="https://github.com/w3c/personalization-semantics/wiki/Best-practices-for-symbol-values">best practices for symbol values</a>. 
+                    <p>In some languages words and symbols are conjugated with sex or tense. In these case more then one value maybe need to map to a symbol. Authors should join values that map to a single conjugated word with a \ + \ sign with a space in each side of the \+\ sign. 
+			    User agent can choose to accept values for a conjugated term that have been separated with out the spaces.
+. See <a href="https://github.com/w3c/personalization-semantics/wiki/Best-practices-for-symbol-values">best practices for symbol values</a>.
+			</p>			    
+			    
+ <p>When there is more than one concept that are not part of a single conjugated term, multiple concepts can be referenced by separating them 
+with white space. The order of multiple concepts should be the same as used in typical speech in the natural language of the content.
+</p>
 
 			<p class="ednote">For a list of current reference numbers please refer to our <a href=" https://github.com/w3c/personalization-semantics/wiki/About-Data-Symbol">data-symbol wiki page</a>. The reference numbers are the same references numbers used in Bliss (BCI numbers). Here is a link to the <a href="http://www.blissymbolics.org/index.php/licensing">copyright licensing from Bliss</a>.</p> 
 				</div>
@@ -25,7 +32,19 @@
         <pre class="example" title="Symbols used with an image">
             &lt;image data-symbol=&quot;13621 12324 17511&quot; alt = &quot;cup of Tea&quot; href=&quot;cuptea.gif&quot; /&gt;
         </pre>
-	   <p>When there is more than one concept, multiple concepts can be referenced by separating them with white space. The order of multiple concepts should be subject predicate object. Both omissions and  multiple triples are allowed.</p>
+	   <p>When there is more than one concept  that are not part of a single conjugated term, multiple concepts are referenced by separating them with white space.</p>
+	<pre class="example" title="Symbols with conjugation ">
+		 &lt;image 
+
+data-symbol=&quot;15691+14707" &quot; alt = &quot;שמה &quot; href=&quot;her-name.gif&quot; 
+
+/&gt; </pre>
+		<p>In this example a 
+
+symbol is used for "her name" in a conjugated Hebrew word. The /+/ is used to join the conjugated values.  If the sex is 
+
+not important you can just use the value for name (15691).</p>
+			
     </section>
     <section>
     	<h3>Characteristics</h3>
