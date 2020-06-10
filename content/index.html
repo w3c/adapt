@@ -13,11 +13,15 @@
 
 		<section id="abstract">
             
-            
-			<p>This document provides use cases and a vocabulary of terms that can be used to enhance web content by providing information about form controls, symbols, and other user interface elements. User agents use the semantics to augment or adapt content to the user’s scenario. This helps users with varying needs to understand the content by providing support for simplification and a way to manage unnecessary distractions.</p>
-			<p>The Personalization Semantics Content Module 1.0 is an extension of the personalization semantics introduced in the <a href="../">Personalization Semantics Explainer 1.0</a> document [[personalization-semantics-1.0]].</p>
-		</section>
 
+		                        <p>This specification provides web content authors a standard approach to support web users who are persons with various cognitive and learning disabilities who communicate using symbolic languages generally known
+					as augmentative and alternative communications (AAC). The technology described in this specification can be used to enhance typical web content to facilitate automated translation of form controls, icons,, and other user interface elements
+					into an AAC rendering. Use cases and relevant vocabulary terms are defined allowing user agents to augment or adapt content to the user■s particular needs. This helps AAC users with varying needs to understand web content more readily, by
+					simplifying the web interaction,  and avoiding forcing the user to grapple with language they are ill equipped to comprehend.p>
+					                        <p>This Personalization Semantics Content Module 1.0 is an extension of the personalization semantics introduced in the <a href="../">Personalization Semantics Explainer 1.0</a> document [[personalization-semantics-
+								1.0]].</p>
+								                </section>
+										 
 		<section id="sotd"></section>
 
 		<section class="informative" id="introduction">
@@ -25,15 +29,21 @@
 			<h1>Introduction</h1>
 			<section>
 				<h2>Background on Personalization Semantics</h2>
-				<p>This specification is designed to enable authors to add extra semantic information about content to enable personalization for the individual user, including providing extra support and enabling user agents for people with learning and cognitive disabilities.</p>
-				<p>The goal of these attributes and values is to enable personalization for the individual user, including providing extra support, transforming the user interface (UI) through the addition, removal, or adaptation of content that has a negative impact on the primary user-group, and enabling new user agents for people with learning and cognitive disabilities.</p>
-				
-				<p>Personalization semantics is a series of technical specifications that provide the element-level attributes and values enable user agents and helper-applications to adapt the content for the individual needs of the user. Rather than developing complex solutions for a wide range of users, 
-	
-authors can add personalization semantics, so that the content can be personalized to the needs of each user. They aim to  provide more optimal accessibility, including providing extra support, transforming the user interface (UI) through the addition, removal, or adaptation of content that has a negative impact on the primary user-group, and enabling new user agents for people with learning and cognitive disabilities. </p>
-				<p>Personalization semantic consists of three modules, they are Content, Help and Support, Tools. This Personalization Semantics Content Module specification is one of personalization semantics modules.</p>
+				<p>This specification enables authors to add additional semantic information about content to facilitate personalization for the individual AAC user. While AAC systems have proven highly effective for users who do better with symbolic communication, the proliferation of proprietary and mutually incomprehensible AAC systems has also long hampered the ability of AAC users to communicate one with another. Fortunately, a de facto index standard is now also available making it possible for us to support all varieties of AAC, and inter-communication among AAC users, regardless their particular AAC symbol set.</p>
+				<p>The goal of the attributes and values described in this specification is to enable personalized communication and web content interaction for the individual AAC user. This specification includes facilities to:</p>
 
-				<p>Personalization semantics are fully introduced in  our <a href="https://github.com/w3c/personalization-semantics/wiki/Explainer-for-Personalization-Semantics">Explainer for Personalization Wiki</a> and [[personalization-semantics-1.0]].</p>
+				<ul>
+					<li>Provide extra support to the use;</li>
+					</li>Transform the user interface (UI) through the addition, removal, or adaptation of content which otherwise tends to have a negative impact on AAC users;</li>
+					<li>Enable new adapted user agents for people with learning and cognitive disabilities.</li>
+				</ul>
+
+				<p>Personalization semantics is conceived as a series of technical specifications that provide the element-level attributes and values which enable user agents and helper-applications to adapt content to the individual user's needs. 
+				It does rely on author supplied page and element level metadata in order to achieve individualized personalization.</p>
+
+				<p>Personalization semantics is currently conceived to consist of three modules: Content, Help, and Support Tools. The specification defined in this document is the Personalization Semantics Content Module&mdashthe first of the Personalization Semantics Modules series.</p>
+
+				<p>Personalization Semantics is more fully introduced in  our <a href="https://github.com/w3c/personalization-semantics/wiki/Explainer-for-Personalization-Semantics">Explainer for Personalization Wiki</a> and [[personalization-semantics-1.0]].</p>
 			</section>
 			<section>
 				<h2>Personalization Semantics Content Module</h2>
