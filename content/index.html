@@ -14,10 +14,18 @@
 		<section id="abstract">
             
 
-		                        <p>This specification provides web content authors a standard approach to support web users who are persons with various cognitive and learning disabilities who communicate using symbolic languages generally known
-					as augmentative and alternative communications (AAC). The technology described in this specification can be used to enhance typical web content to facilitate automated translation of form controls, icons,, and other user interface elements
-					into an AAC rendering. Use cases and relevant vocabulary terms are defined allowing user agents to augment or adapt content to the user■s particular needs. This helps AAC users with varying needs to understand web content more readily, by
-					simplifying the web interaction,  and by avoiding forcing the user to grapple with language representations they are ill equipped to comprehend.p>
+		                        <p>This specification provides web content authors a standard approach to support web users who are persons with various cognitive and learning disabilities including users who:</p
+
+					<ul>
+						<li>Customarily communicate using symbolic languages generally known as augmentative and alternative communications (AAC);</li>
+						<li>Need more familiar icons (and other graphical symbols) in order to comprehend page content;</li>
+						<li>Benefit from additional help resources;</li>
+						<li>Require a simplified page in order to interact successfully.</li>
+					</ul>
+
+							<p>The technology described in this specification can be used to automatically transform the appearance of typical web content including form controls, icons,, and other user interface elements
+					into a rendering more familiar and comprehensible to an individual user. Providing additional help is supported, as is automated page simplification. Use cases and relevant vocabulary terms are defined which allow user agents to augment or adapt content to better fit a particular user■s particular needs. This helps users with varying needs to understand web content more readily, by
+					simplifying the web interaction,  and by avoiding forcing the user to grapple with unfamiliar representations they are ill equipped to comprehend.p>
 					                        <p>This Personalization Semantics Content Module 1.0 is a component of the Personalization Semantics series introduced in the <a href="../">Personalization Semantics Explainer 1.0</a> document [[personalization-semantics-
 								1.0]].</p>
 								                </section>
@@ -29,8 +37,8 @@
 			<h1>Introduction</h1>
 			<section>
 				<h2>Background</h2>
-				<p>This specification module enables authors to add additional semantic information about content in order to produce a more familiar interface  to the individual AAC user. While AAC systems have proven highly effective for users who do better with symbolic communication, the proliferation of proprietary and mutually incomprehensible AAC symbol systems has also long hampered the ability of AAC users even to communicate one with another. Fortunately, a de facto index standard is now also available making it possible for us to support all varieties of AAC, including communication among AAC users, regardless their particular AAC symbol set. It also serves as the basis by which we can enable users to see a web page using the specific AAC symbol set which they know best.</p>
-				<p>The goal of the attributes and values described in this specification is to enable personalized communication and web content interaction for the individual AAC user. This specification includes facilities to:</p>
+				<p>This specification module enables authors to add additional semantic information about content in order to produce a more familiar interface  to the individual user. A multiplicity of renderings are supported in order to support the differing needs of different users. Which rendering is auto-generated is defined by a user's configuration settings</p>
+				<p>The goal of the attributes and values described in this specification is to enable personalized communication and web content interaction for the individual user. This specification includes facilities to:</p>
 
 				<ul>
 					</li>Transform the user interface (UI) through the addition, removal, or adaptation of content which otherwise tends to have a negative impact on AAC users;</li>
