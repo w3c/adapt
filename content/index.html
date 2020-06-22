@@ -13,41 +13,59 @@
 
 		<section id="abstract">
             
-            
-			<p>This document provides use cases and a vocabulary of terms that can be used to enhance web content by providing information about form controls, symbols, and other user interface elements. User agents use the semantics to augment or adapt content to the user’s scenario. This helps users with varying needs to understand the content by providing support for simplification and a way to manage unnecessary distractions.</p>
-			<p>The Personalization Semantics Content Module 1.0 is an extension of the personalization semantics introduced in the <a href="../">Personalization Semantics Explainer 1.0</a> document [[personalization-semantics-1.0]].</p>
-		</section>
 
+		                        <p>This specification provides web content authors a standard approach to support web users who are persons with various cognitive and learning disabilities including users who:</p
+
+					<ul>
+						<li>Customarily communicate using symbolic languages generally known as augmentative and alternative communications (AAC);</li>
+						<li>Need more familiar icons (and other graphical symbols) in order to comprehend page content;</li>
+						<li>Benefit from additional help resources;</li>
+						<li>Require a simplified page in order to interact successfully.</li>
+					</ul>
+
+							<p>The technology described in this specification can be used to automatically transform the appearance of typical web content including form controls, icons,, and other user interface elements
+					into a rendering more familiar and comprehensible to an individual user. Providing additional help is supported, as is automated page simplification. Use cases and relevant vocabulary terms are defined which allow user agents to augment or adapt content to better fit a particular user■s particular needs. This helps users with varying needs to understand web content more readily, by
+					simplifying the web interaction,  and by avoiding forcing the user to grapple with unfamiliar representations they are ill equipped to comprehend.p>
+					                        <p>This Personalization Semantics Content Module 1.0 is a component of the Personalization Semantics series introduced in the <a href="../">Personalization Semantics Explainer 1.0</a> document [[personalization-semantics-
+								1.0]].</p>
+								                </section>
+										 
 		<section id="sotd"></section>
 
 		<section class="informative" id="introduction">
 
 			<h1>Introduction</h1>
 			<section>
-				<h2>Background on Personalization Semantics</h2>
-				<p>This specification is designed to enable authors to add extra semantic information about content to enable personalization for the individual user, including providing extra support and enabling user agents for people with learning and cognitive disabilities.</p>
-				<p>The goal of these attributes and values is to enable personalization for the individual user, including providing extra support, transforming the user interface (UI) through the addition, removal, or adaptation of content that has a negative impact on the primary user-group, and enabling new user agents for people with learning and cognitive disabilities.</p>
-				
-				<p>Personalization semantics is a series of technical specifications that provide the element-level attributes and values enable user agents and helper-applications to adapt the content for the individual needs of the user. Rather than developing complex solutions for a wide range of users, 
-	
-authors can add personalization semantics, so that the content can be personalized to the needs of each user. They aim to  provide more optimal accessibility, including providing extra support, transforming the user interface (UI) through the addition, removal, or adaptation of content that has a negative impact on the primary user-group, and enabling new user agents for people with learning and cognitive disabilities. </p>
-				<p>Personalization semantic consists of three modules, they are Content, Help and Support, Tools. This Personalization Semantics Content Module specification is one of personalization semantics modules.</p>
+				<h2>Background</h2>
+				<p>This specification module enables authors to add additional semantic information about content in order to produce a more familiar interface  to the individual user. A multiplicity of renderings are supported in order to support the differing needs of different users. Which rendering is auto-generated is defined by a user's configuration settings</p>
+				<p>The goal of the attributes and values described in this specification is to enable personalized communication and web content interaction for the individual user. This specification includes facilities to:</p>
 
-				<p>Personalization semantics are fully introduced in  our <a href="https://github.com/w3c/personalization-semantics/wiki/Explainer-for-Personalization-Semantics">Explainer for Personalization Wiki</a> and [[personalization-semantics-1.0]].</p>
+				<ul>
+					</li>Transform the user interface (UI) through the addition, removal, or adaptation of content which otherwise tends to have a negative impact on AAC users;</li>
+					<li>Provide extra support to the user;</li>
+					<li>Enable new adapted user agents for people with learning and cognitive disabilities.</li>
+				</ul>
+
+				<p>Personalization semantics is conceived as a series of technical specifications that provide the element-level attributes and values which enable user agents and helper-applications to adapt content to an individual user's needs. 
+				It does rely on author supplied page and element level metadata in order to achieve individualized personalization.</p>
+
+				<p>Personalization semantics is currently conceived to consist of three modules: Content, Help, and Support Tools. The specification defined in this document is the Personalization Semantics Content Module&mdash;the first of the Personalization Semantics Modules series.</p>
+
+				<p>Personalization Semantics is more fully introduced in  our <a href="https://github.com/w3c/personalization-semantics/wiki/Explainer-for-Personalization-Semantics">Explainer for Personalization Wiki</a> and [[personalization-semantics-1.0]].</p>
 			</section>
 			<section>
 				<h2>Personalization Semantics Content Module</h2>
-				<p>Personalization Semantics Content Module is one of Personalization semantics technical specification, which provides personalization semantics and vocabularies that can be used to annotate web content enabling user agents to augment or adapt content to various user scenarios based on the user’s personalization settings or preferences. The Content Module enhance web content by providing information about form controls, symbols, and other user interface elements. User agents use the semantics to augment or adapt content to the user’s scenario. This helps users with varying needs to understand the content by providing support for simplification and a way to manage unnecessary distractions.</p>
+				<p>The Personalization Semantics Content Module is the first of three Personalization Semantics' technical specifications. It specifies semantics and vocabularies that can be used to annotate web content enabling user agents to augment or adapt content to various user needs based on a individual user’s personalization settings (or preferences). The Content Module enhances web content by providing information about form controls, icons, and other user interface elements. User agents use the semantics to augment or adapt content to the user’s requirements. This helps individual users with varying needs to understand the content better&mdash;by supporting UX simplification and a means for avoiding distractions.</p>
 			</section>
 			<section>
 				<h2>Vocabulary Structure and Implementations</h2>
-				<p>All the vocabulary in Personalization Semantics Content Module are made of properties and their values. Please see our  our <a href="https://github.com/w3c/personalization-semantics/wiki/Explainer-for-Personalization-Semantics">Explainer for Personalization Wiki</a>. </p>
+				<p>All the vocabulary in Personalization Semantics Content Module is constructed of properties and their values. Please see our  our <a href="https://github.com/w3c/personalization-semantics/wiki/Explainer-for-Personalization-Semantics">Explainer for Personalization Wiki</a>. </p>
 				<p>The vocabulary implementations included in this document are available at our <a href="https://github.com/w3c/personalization-semantics/wiki/Implementations-of-Semantics">implementations wiki page</a>.</p>
 			</section>
 			
 			<section>
 				<h2>Use Cases and Requirements</h2>
-				<p>The <a href="https://github.com/w3c/personalization-semantics/wiki/Requirements">Requirements for Personalization Semantics</a> describes use cases and requirements. This module provides properties to fulfill requirements related to adaptable content.</p>
+				<p>The <a href="https://github.com/w3c/personalization-semantics/wiki/Requirements">Requirements for Personalization Semantics</a> describes use cases and requirements. This module provides properties to fulfill those requirements related to adapting content.</p>
 			</section>
 
 		</section>
