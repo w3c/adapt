@@ -7,7 +7,7 @@
 			
 			<p>A personalization agent may add a symbol, replace the text with a more familiar term, or give it a specific presentation. Note that there is no default value.</p>
 			<p>The user experience may include filling in the field (autocomplete) or adding an icon to augment the input label.</p>
-			<p>The <code>purpose</code> values that would typically be on form inputs should provide context for the user. For example <code>tel</code> would relate to the user's telephone number.</p><p> Note that there is no default value, and there can be more than one space-seperated value for a field, such as  <code>data-purpose=&quot;country-name postal-code&quot;</code> which includes both the country and postal code.</p>
+			<p>The <code>purpose</code> values that would typically be on form inputs should provide context for the user. For example <code>tel</code> would relate to the user's telephone number.</p><p> Note that there is no default value, and there can be more than one space-seperated value for a field.</p>
 		</div>
 	</section>
 
@@ -20,7 +20,7 @@
 		 
 			<li>The following is an example using the <code>purpose</code> attribute on a textare input collecting both Country and Postal-code information.
     	<pre class="example" title="Field Using data-purpose - space sperated values">
-         &lt;textarea name="country_zip" data-purpose=&quot;tel&quot;/&gt;</pre></li>
+         &lt;textarea name="country_zip" data-purpose=&quot;country-name postal-code&quot;/&gt;</pre></li>
 	
 		</ol>
 		
