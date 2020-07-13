@@ -4,15 +4,16 @@
 		<h3>Description</h3>
 		<div class="property-description">
 			<p>The <code>destination</code> attribute categorizes the target of a hyperlink.</p>
-			<p>A personalization agent or user agent may add additional familiar user interface features to help users understand the link and follow the right one easily. User agents might add a familiar customized icon to the link, or style the link in a customized way, or position the link on the page in a location that the user generally expects to find a link of the particular type.</p>
+			<p>A personalization agent or user agent may add additional familiar user interface features to help users understand the link and follow the right one easily. User agents might add a familiar customized icon to the link, style the link in a customized way, or position the link on the page in a location that the user generally expects to find a link of the particular type.</p>
 		</div>
 	</section>
 	<section id="destination-example">
 		<h3>Example</h3>
-		<p>The below example section show how <code>destination</code> used when coding.</p>
-    	<pre class="example" title="Destination Using data-">
+		<p>The following is an example using the <code>destination</code> attribute.</p>
+    	<pre class="example" title="Destination Using data-destination">
         &lt;a href=&quot;home.html&quot; data-destination=&quot;home&quot;&gt;our main page&lt;/a&gt;</pre>
 		<p>See the <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html">destination sample user experience</a>.</p>
+		<p> Note that this attribute can only take a single token value, and there is no default value.</p>	
     
         
     </section>
@@ -131,7 +132,7 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">social</th>
-							<td class="value-description">Content provider on a social media platform. Note, that the specific name of the social media platform should be included in the accessible name.
+							<td class="value-description">Content provider on a social media platform. Note: the specific name of the social media platform should be included in the accessible name.
                             <em class="ednote">At risk pending implementations.</em></td>
 						</tr>
 						<tr>

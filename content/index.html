@@ -14,20 +14,18 @@
 		<section id="abstract">
             
 
-		                        <p>This specification provides web content authors a standard approach to support web users who are persons with various cognitive and learning disabilities including users who:</p
+		                        <p>This specification provides web content authors a standard approach to support web users who are persons with various cognitive and learning disabilities, including users who:</p>
 
 					<ul>
-						<li>Customarily communicate using symbolic languages generally known as augmentative and alternative communications (AAC);</li>
+						<li>Customarily communicate using symbolic languages generally known as Augmentative and Alternative Communications (<abbr title="Augmentative and Alternative Communication">AAC</abbr>);</li>
 						<li>Need more familiar icons (and other graphical symbols) in order to comprehend page content;</li>
 						<li>Benefit from additional help resources;</li>
 						<li>Require a simplified page in order to interact successfully.</li>
 					</ul>
 
-							<p>The technology described in this specification can be used to automatically transform the appearance of typical web content including form controls, icons,, and other user interface elements
-					into a rendering more familiar and comprehensible to an individual user. Providing additional help is supported, as is automated page simplification. Use cases and relevant vocabulary terms are defined which allow user agents to augment or adapt content to better fit a particular user■s particular needs. This helps users with varying needs to understand web content more readily, by
-					simplifying the web interaction,  and by avoiding forcing the user to grapple with unfamiliar representations they are ill equipped to comprehend.p>
-					                        <p>This Personalization Semantics Content Module 1.0 is a component of the Personalization Semantics series introduced in the <a href="../">Personalization Semantics Explainer 1.0</a> document [[personalization-semantics-
-								1.0]].</p>
+							<p>The technology described in this specification is intended to be used to programmatically transform the appearance of typical web content including form controls, icons, and other user interface elements	into a rendering more familiar and comprehensible to an individual user. Providing additional help is supported, as is automated page simplification. Use cases and relevant vocabulary terms are defined which allow user agents to augment or adapt content to better fit a particular user's particular needs. This helps users with varying needs to understand web content more readily, by
+					simplifying the web interaction, and by avoiding forcing the user to grapple with unfamiliar representations they are ill equipped to comprehend.</p>
+					                        <p>This Personalization Semantics Content Module 1.0 is a component of the Personalization Semantics series introduced in the <a href="../">Personalization Semantics Explainer 1.0</a> document [[personalization-semantics-1.0]].</p>
 								                </section>
 										 
 		<section id="sotd"></section>
@@ -37,25 +35,25 @@
 			<h1>Introduction</h1>
 			<section>
 				<h2>Background</h2>
-				<p>This specification module enables authors to add additional semantic information about content in order to produce a more familiar interface  to the individual user. A multiplicity of renderings are supported in order to support the differing needs of different users. Which rendering is auto-generated is defined by a user's configuration settings</p>
+				<p>This specification module enables authors to add semantic information about content at the element level, in order to facilitate a more familiar or comprehensible interface for the individual user. Multiple screen renderings (transformations) are supported in order to meet the differing needs of different users. Final renderings &mdash; generated via helper apps or 3rd-party tools &mdash; are ultimately defined by the user's configuration settings.</p>
+				
 				<p>The goal of the attributes and values described in this specification is to enable personalized communication and web content interaction for the individual user. This specification includes facilities to:</p>
 
 				<ul>
-					</li>Transform the user interface (UI) through the addition, removal, or adaptation of content which otherwise tends to have a negative impact on AAC users;</li>
+					<li>Transform the user interface (UI) through the addition, removal, or adaptation of content which otherwise tends to have a negative impact on Augmentative and Alternative Communications (<abbr title="Augmentative and Alternative Communication">AAC</abbr>) users;</li>
 					<li>Provide extra support to the user;</li>
 					<li>Enable new adapted user agents for people with learning and cognitive disabilities.</li>
 				</ul>
 
-				<p>Personalization semantics is conceived as a series of technical specifications that provide the element-level attributes and values which enable user agents and helper-applications to adapt content to an individual user's needs. 
-				It does rely on author supplied page and element level metadata in order to achieve individualized personalization.</p>
+				<p>Personalization Semantics is a series of technical specifications that provide the element-level attributes and values which enable user agents and helper-applications to adapt content to an individual user's needs. It relies on author-supplied page and element level metadata in order to achieve individualized personalization.</p>
 
-				<p>Personalization semantics is currently conceived to consist of three modules: Content, Help, and Support Tools. The specification defined in this document is the Personalization Semantics Content Module&mdash;the first of the Personalization Semantics Modules series.</p>
+				<p>Personalization Semantics currently consists of three modules: Content, Help, and Support Tools. The specification defined in this document is the Personalization Semantics Content Module&mdash;the first of the Personalization Semantics Modules series.</p>
 
-				<p>Personalization Semantics is more fully introduced in  our <a href="https://github.com/w3c/personalization-semantics/wiki/Explainer-for-Personalization-Semantics">Explainer for Personalization Wiki</a> and [[personalization-semantics-1.0]].</p>
+				<p>Personalization Semantics is more fully introduced in our <a href="https://www.w3.org/TR/personalization-semantics-1.0/">Explainer for Personalization</a> and [[personalization-semantics-1.0]].</p>
 			</section>
 			<section>
 				<h2>Personalization Semantics Content Module</h2>
-				<p>The Personalization Semantics Content Module is the first of three Personalization Semantics' technical specifications. It specifies semantics and vocabularies that can be used to annotate web content enabling user agents to augment or adapt content to various user needs based on a individual user’s personalization settings (or preferences). The Content Module enhances web content by providing information about form controls, icons, and other user interface elements. User agents use the semantics to augment or adapt content to the user’s requirements. This helps individual users with varying needs to understand the content better&mdash;by supporting UX simplification and a means for avoiding distractions.</p>
+				<p>Personalization Semantics Content Module is the first part of the Personalization Semantics technical specification, which provides personalization semantics and vocabularies that can be used to mark-up web content with additional semantic information, enabling user agents to augment or adapt content to various user-scenarios based on the user’s personalization settings or preferences. The Content Module enhances web content by providing additional information about form controls, buttons, links, and other user interface elements. User agents use these semantics to augment or adapt content to the user’s scenario &mdash; for example allowing for the conversion of text to symbols. This helps users with varying needs to understand the content by providing support for simplification and/or a way to manage unnecessary distractions.</p>
 			</section>
 			<section>
 				<h2>Vocabulary Structure and Implementations</h2>
@@ -75,23 +73,11 @@
 
   <dt>Age Appropriate Forgetfulness (sometimes called “age related memory loss”)</dt>
 
-  <dd>
-
-
-People with age appropriate forgetfulness have impaired memory issues that can be a normal part of healthy aging. They may take longer to learn new things, forget something but remember it later, or occasionally forget particular words. (This differs from dementia where forgetfulness is due to a  disorder and is more pronounced.)
-
-
-</dd>
+  <dd>People with age appropriate forgetfulness have impaired memory issues that can be a normal part of healthy aging. They may take longer to learn new things, forget something but remember it later, or occasionally forget particular words. (This differs from dementia where forgetfulness is due to a  disorder and is more pronounced.)</dd>
 
   <dt>Alternative and Augmentative Communication System (sometimes referred to as “AAC”)</dt>
 
-  <dd>
-
-
-Any method, device or app that can be used to help those who cannot use spoken language and need additional support by means of symbols, images and/or text. For example a screen with symbols that the user can select to speak the appropriate words or add them to a document.
-
-
-</dd>
+  <dd>Any method, device or app that can be used to help those who cannot use spoken language and need additional support by means of symbols, images and/or text. For example a screen with symbols that the user can select to speak the appropriate words or add them to a document.</dd>
 
 </dl>
 
@@ -99,7 +85,7 @@ Any method, device or app that can be used to help those who cannot use spoken l
 
 
 
-<div class="ednote">We intend to incorporate additional terms from the glossary from the Cognitive and Learning Disabilities Accessibility Task Force, when it is ready. If there are non editorial differences, we will use the term definitions above.
+<div class="ednote">We intend to incorporate additional terms from the glossary from the Cognitive and Learning Disabilities Accessibility Task Force, when it is ready. If there are non-editorial differences, we will use the term definitions above.
 
  See the <a href="https://raw.githack.com/w3c/coga/Glossary-draft/glossary/index.html">COGA Glossary</a>.</div>
 
@@ -110,7 +96,7 @@ Any method, device or app that can be used to help those who cannot use spoken l
 		<section>
 			<h1>Content</h1>
             
-            <div class="ednote">Since implementation has not yet been finalized any examples in this document are purely for help in understanding the concept.  All examples will be updated once a final decision has been made on the method for implementation.</div>
+            <div class="ednote">Since implementations have not yet been finalized, any examples in this document are illustrative only, and are provided to help in understanding the concept.  All examples will be updated once implementation examples are finalized.</div>
             
 			<section data-include="action.html" data-include-replace="true" id="action"></section>
 			<section data-include="destination.html" data-include-replace="true" id="destination"></section>
@@ -121,11 +107,9 @@ Any method, device or app that can be used to help those who cannot use spoken l
 		</section>
 		<section>
 			<h1>Privacy and Security Considerations</h1>
-						<p>This specification adds context information about content to the document should not affect security.</p>
+						<p>This specification adds context information about content to the document, and should not affect security.</p>
 
-			<p>Although this specification does not expose personal preferences and personal information,
-
-third party user agent or proxy server acting upon our semantic information may need to store personal preferences on how to  present content to a specific user. We recommend any user agent or proxy server implements best practices to protect all personal preferences and personal information.</p>
+			<p>Although this specification does not expose personal preferences and personal information, third party user agents or proxy server(s) acting upon our semantic information may need to store personal preferences on how to  present content to a specific user. We recommend any user agent or proxy server implements best practices to protect all personal preferences and personal information.</p>
 		
 <p>Any user agent with user setting are recommended to follow best practices to keep user information secure.</p>
 		<p>The Privacy and Security Considerations of Personalization Semantics Content Module is also discussed at <a href="https://github.com/w3c/personalization-semantics/issues/131">issue #131</a>.</p>

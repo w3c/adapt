@@ -10,12 +10,12 @@
     </section>
     <section id="action-example">
     	<h3>Example</h3>
- 		<p>Here is an example using the <code>action</code> attribute.</p>
+ 		<p>The following is an example using the <code>action</code> attribute.</p>
    	    <div class="property-example" >               	
                 	
-    				<pre class="example" title="Action Using data-">
+    				<pre class="example" title="Action Using data-action">
        				<p>&lt;button data-action=&quot;undo&quot;&gt;Revert&lt;/button&gt;</p></pre>
-        			<p>A personalization agent may add a symbol, replace the text with a more familiar term, or give it a specific presentation. Note that there is no default value.</p>			
+        			<p>A personalization agent may add a symbol, replace the text (button label) with a more familiar term, or give it a specific presentation.</p><p> Note that this attribute can only take a single token value, and there is no default value.</p>			
     	</div>
     </section>
 
@@ -49,7 +49,7 @@
 						</tr>
 					</tbody>
 		</table>
-    	<p>The following could be supported values of <code>action</code> for buttons. Note that the following items represent an option or control that allows you to perform the action. They do not represent page regions.</p>
+    	<p>The following is the proposed token values used with <code>action</code> for buttons. Note that the following items represent an option or control that allows you to perform the action. They do not represent page regions.</p>
     </section>
 
     <section>
@@ -69,16 +69,16 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">brightness</th>
-							<td class="value-description">Adjust the screen or application  brightness. Often used with increase or decrease but is sometimes used alone as a menu name  or item.
+							<td class="value-description">Adjust the screen or application  brightness. Often used with increase or decrease but is sometimes used alone as a menu name or item.
                             <em class="ednote">At risk pending implementations.</em></td>
 						</tr>
   						<tr>
 							<th class="value-name" scope="row">buy</th>
-							<td class="value-description">Buy the selected item or buy the item at the current location. Often involves adding the current item into a shopping cart. (Implied simplification  = "critical".)</td>
+							<td class="value-description">Buy the selected item or buy the item at the current location. Often involves adding the current item into a shopping cart. (Implied simplification = "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">cancel</th>
-							<td class="value-description">Closes the dialog and discards any changes the user may have made within that dialog. (Implied simplification  = "critical".)</td>
+							<td class="value-description">Closes the dialog and discards any changes the user may have made within that dialog. (Implied simplification = "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">captions</th>
@@ -268,7 +268,7 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">reset</th>
-							<td class="value-description">Resets all the controls to their initial values.</td>
+							<td class="value-description">Resets all the controls to their initial or default values.</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">resize</th>
@@ -318,7 +318,7 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">undo</th>
-							<td class="value-description">Revert back to the prior state before the user's most recent changes.</td>
+							<td class="value-description">Revert to the prior state before the user's most recent changes.</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">upload</th>
@@ -326,7 +326,7 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">voice-commands</th>
-							<td class="value-description">Activate or deactivate voice commands. Often used with  [aria-pressed = "true"] for on or [aria-pressed = "false"] for off.</td>
+							<td class="value-description">Activate or deactivate voice commands. Often used with  <code>[aria-pressed = "true"]</code> for on or <code>[aria-pressed = "false"]</code> for off.</td>
 						</tr>
   						<tr>
 							<th class="value-name" scope="row">volume</th>

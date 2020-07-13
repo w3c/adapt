@@ -3,26 +3,25 @@
 	<section>
 		<h3>Description</h3>
 		<div class="property-description">
-							<p>The <code>simplification</code> attribute differentiates between critical features and less important features for simplification.</p>
+							<p>The <code>simplification</code> attribute differentiates between critical features and less important features for user interface simplification.</p>
 							<p>This allows simplified interfaces with less options or interfaces that emphasize critical features. Adaptations can be based on personalization settings. </p>
-						
-
-							 <p class="ednote">This was formerly <code>importance</code>. However different people may feel that sections that would be hidden in a simplified version are still very important, such as marketing content or legal terms.)</p>
-
-							<div class="note">
-								<p>These semantics aid simplification. But what content is most useful to a user varies from user to user. For example, men may be more interested in men's clothing, and may not be interested in the more frequently use women's clothing option. For that reason we may add context for elements that will help the personalization agent select the most useful content for a given user (see the <a href="#context">context</a> attribute). This is also necessary for reminders (see below).</p>
-								<p>It is worth mentioning that a lot of this information is known for personalization of advertisements and content optimization. </p>
+							<p>Note that this attribute can only take a single token value, and there is no default value.</p>
 							</div>
 				</div>
 	</section>
 	<section id="simplification-example">
 		<h3>Examples</h3>
-        <p>Here is an example using the <code>simplification</code> attribute in the context of a submit button.</p>
-    	<pre class="example" title="Simplification Using data-">
-    	&lt;input value="Submit" type="submit" data-simplification="critical"/&gt;</pre>
-		  <p>In the example bellow the <code>simplification</code> attribute is used on critical content a newsletter from an elementary school. Important announcements about an early school dismissal is in a list of other activities. If this important information is missed, the parents might not be home in time, putting children at risk.</p>
-    	<pre class="example" title="Simplification Using data-">
-    	&lt;p&gt;Years 2 - 3 are putting on a play next week on tuesday &lt;b data-simplification="critical"&gt;Thefore school will close at 1 pm on tuesday&lt;/b&gt; so we can get the school hall ready.&lt;/p&gt;</pre>
+		<ol>
+			<li>An example using the <code>simplification</code> attribute in the context of a submit button.
+		    	<pre class="example" title="Simplification Using data-simplification">
+    	&lt;input value="Submit" type="submit" data-simplification="critical"/&gt;</pre></li>
+			<li>In this example, the <code>simplification</code> attribute is used on critical content &mdash; a newsletter from an elementary school. Important announcements about an early school dismissal is in a list of other activities. If this important information is missed, the parents might not be home in time, putting children at risk.
+		      	<pre class="example" title="Simplification Using data-simplification">
+&lt;p&gt;Years 2 - 3 are putting on a play next Tuesday. 
+&lt;b data-simplification="critical"&gt;Thefore school will close at 1 pm on Tuesday &lt;/b&gt; 
+ so we can get the school hall ready.&lt;/p&gt;</pre></li>
+		</ol>
+
     </section>
     <section>
     	<h3>Characteristics</h3>
@@ -66,10 +65,10 @@
 							<tr>
                                 <th class="value-name" scope="row"><code>critical</code></th>
                                 <td class="value-description">The <code>critical</code> setting should be used on: <ul>
-                                    <li> Controls and content that are essential for the key function (from the user perspective) of the page. Example: The send button for an email draft in an email application.</li>
+                                    <li> Controls and content that are essential for the key function (from the user perspective) of the page or application. Example: The send button for an email draft in an email application.</li>
                                     <li> Controls and content that are sometimes critical to use the site, such as &quot;save my work&quot; or &quot;emergency instructions&quot;.</li>
-                                    <li> Controls and content that are used by over 90% of a user group (such as parents or teachers) most times they interact with the content.<br />
-                                    </li>
+                                    <li> Controls and content that are used by over 90% of a user group (such as parents or teachers) most times they interact with the content.</li>
+									<li> Other controls or content that is critical to the page or application, at the author's discretion. (Authors are cautioned not to over-use this attribute value)</li>
                                 </ul>
                                 </td>
 							</tr>
@@ -81,13 +80,15 @@
 										<li> Controls and content that are used frequently but are not essential for the key functioning of the application. Example: The delete button for an email draft in an email application.</li>
 										<li> Controls and content that are sometimes important for a user to interact with the site, such as settings to change colors or fonts. </li>
 										<li> Controls and content that are used by over 60% of a user group (such as parents or teachers) when they interact with the content.</li>
+										<li> Other controls or content, at the author's discretion.</li>
 									</ul></td>
 								</tr>
 
 								<tr>
 									<th class="value-name" scope="row"><code>low</code></th>
 									<td class="value-description">
-                                        The <code>low</code> setting should be used on controls and content that are rarely used or only used by advanced users. Example: The terms and services or the archive button for an email application. 
+                                        The <code>low</code> setting should be used on:
+									<ul><li>Controls and content that are rarely used or only used by advanced users. Example: The terms and services or the archive button for an email application.</li></ul> 
 							     </td>
 								</tr>
 

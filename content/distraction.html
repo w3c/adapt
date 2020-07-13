@@ -3,24 +3,25 @@
 	<section>
 		<h3>Description</h3>
 		<div class="property-description">
-            <p>The <code>distraction</code> attribute should be used on non-essential detracting content, so that people who have problems keeping focus can turn the content off. An example user experiences would be to hide all non-essential distracting content.</p>
+            <p>The <code>distraction</code> attribute is intended to be used on non-essential distracting content, so that people who have problems keeping focus can minimize or turn the content off. An example user experiences would be to hide all non-essential distracting content.</p>
 			<p>Note that there is no default value.</p>
 			<p>Note that elements with the <code>distraction</code> attribute should also have a label or accessible name.</p>
 		</div>
 	</section>
 	<section id="distraction-example">
 		<h3>Examples</h3>
-        <p>Example using the <code>distraction</code> attribute in the context of an animated image.</p>       
-   		<pre class="example" title="Distraction Using data-">
-		  &lt;img src="animated.gif" alt="animated banner advertising for Widgets" data-distraction="sensory offer"&gt;</pre>
-        
-       <p>Example using the <code>distraction</code> attribute in the context of a stock ticker that starts and displays upon page load.</p>       
-   		<pre class="example" title="Distraction Using data-">
-		  &lt;div data-distraction="sensory messages"&gt; ... &lt;/div&gt;</pre>
-
-        <p>Example of a count-down timer that starts at the user’s request and updates in real-time the hours, minutes, and seconds until an event.</p>       
-   		<pre class="example" title="Distraction Using data-">
-		  &lt;div data-distraction="sensory"&gt; ... &lt;/div&gt;</pre>
+		<ol>
+			<li>Example using the <code>distraction</code> attribute in the context of an animated image.       
+   		<pre class="example" title="Distraction Using data-distraction">
+		  &lt;img src="animated.gif" alt="animated banner advertising for Widgets" 
+		    data-distraction="sensory offer"&gt;</pre></li>
+			<li>Example using the <code>distraction</code> attribute in the context of a stock ticker that starts and displays upon page load.       
+   		<pre class="example" title="Distraction Using data-distraction">
+		  &lt;div data-distraction="sensory messages" class="stockticker-widget-container"&gt;&lt;/div&gt;</pre></li>
+			<li>Example using the <code>distraction</code> attribute in the context of a count-down timer that starts at the user’s request and updates in real-time the hours, minutes, and seconds until an event starts (or ends).       
+   		<pre class="example" title="Distraction Using data-distraction">
+		  &lt;div data-distraction="sensory" class="countdown-widget-container"&gt;&lt;/div&gt;</pre></li>
+		</ol>
         
     </section>
     <section>
@@ -65,19 +66,19 @@
 					
 						<tr>
 							<th class="value-name" scope="row">messages</th>
-							<td class="value-description">Communication (auditory or visual) sent to or left for the user or the interface that allows interaction of text-based messages. Messages may also be automaticaly updating. Essential system messages should not be tagged as distractions. This includes but is not limited to WebRTC.</td>
+							<td class="value-description">Communication (auditory or visual) sent to or left for the user or the interface that allows interaction of text-based messages. Messages may also be automatically  updating. Essential system messages should not be tagged as distractions. This includes but is not limited to WebRTC.</td>
 						</tr>
 				        <tr>
 							<th class="value-name" scope="row">offer</th>
-							<td class="value-description">An advertisement or offer for a product, feature or service, or content that is not essential to the user's current task.</td>
+							<td class="value-description">An advertisement or offer for a product, feature, service, or content that is not essential to the user's current task.</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">overlay</th>
-							<td class="value-description">Part of an application or content that is displayed over the top of the other content in a secondary window or popup, that blocks user interaction to the parent window. The content of the popup is not essential to the users task and are not intentionally initiated by the user.</td>
+							<td class="value-description">Part of an application or content that is displayed over the top of other content in a secondary window or popup that blocks user interaction to the parent window. The content of the popup is not essential to the users task and was not intentionally initiated by the user.</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">sensory</th>
-							<td class="value-description">Non-essential distracting content that includes movement, sound or other forms of sensory feedback. This includes: moving images (videos, animated GIFs,etc.); content that starts automatically or is automatically updating; and elements that change locations or generate audio feedback on the user's system.</td>
+							<td class="value-description">Non-essential distracting content that includes movement, sound or other forms of sensory feedback. This includes: moving images (videos, animated GIFs, etc.); content that starts automatically or is automatically updating; and elements that change locations or generate audio feedback on the user's system.</td>
 						</tr>
 					</tbody>
 				</table>

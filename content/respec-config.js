@@ -53,6 +53,13 @@ var respecConfig = {
         w3cid: 72055
       },
       {
+        name: "John Foliot",
+        url: 'http://www.deque.com',
+        mailto: "john.foliot@deque.com",
+        company: "Deque",
+        w3cid: 41450
+      },
+      {
         name: "Michael Cooper",
         url: 'https://www.w3.org',
         mailto: "cooper@w3.org",
