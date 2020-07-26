@@ -12,8 +12,11 @@
 	<body>
 
 		<section id="abstract">
-			<p>Personalization involves tailoring aspects of the user experience to meet the needs and preferences of the individual user. For example, having familiar terms and symbols is key to many users being able to use the web. However, what is familiar for one user may not be familiar to another, requiring them to learn new symbols. The challenge has been the ability to identify the types of content in a document that should be adapted to the preferred user experience. The introduction of standardized semantics allows web applications to customize the presentation of that content to one that is familiar to individuals based on their specific needs and preferences. This specification defines standard semantics to enable user driven personalization. For example, the association of user-preferred symbols with elements having those semantics. This ensures that users can quickly find familiar icons, for example, a help icon, within the context of user interface elements.</p>
-			<p>This document is an explanation for understanding how to use Personalization properties to personalize an accessible web site.</p>
+			<p>People have very different needs. Some people cannot process numeric information (dyscalculia), but others understand numbers better than words. Some people with severe language disabilities use symbols to represent words; some people need (or want) simplified user-interfaces. One of the main challenges is transforming content for these different needs.</p>
+
+<p>This specification is designed to enable authors to add extra semantic information about content to enable personalization for the individual user, including providing extra support and enabling user agents for people with learning and cognitive disabilities.</p>
+
+<p>Authors will be able to add extra semantic information using a collection of new attribute(s) and values, with (in most cases) a fixed token list (taxonomies). This document is an explanation for understanding how to use Personalization properties to personalize an accessible web site.</p>
 		</section>
 
 		<section id="sotd"></section>
@@ -34,22 +37,25 @@
 				<h2>Why We Need Personalization</h2>
 				<p>We need personalization because: </p>
 				<ul>
-					<li>The needs of an individual user may conflict with certain established mainstream user-patterns.</li>
-					<li>Learning new design patterns, widgets, and user interfaces can be confusing. The goal is to give users the ability to decide what works best for them based on preference and ability. Personalization enable websites to adapt to and meet the user's needs.</li>
-					<li>Extra support can be a distraction for people who do not need it, so a robust solution requires the ability to increase or decrease levels of complexity as people's skills improve or decline over time.</li>
-					<li>Ability to increase or decrease levels of complexity as people's skills improve or decline over time.</li>
-					<li>Enable websites to adapt to and meet the user's needs.</li>
-				</ul>
-				<p>Some users need extra support. This can include: </p>
+					<li>Enable websites to adapt to and meet the user's needs.  The goal is to give users the ability to decide what works best for them based on preference and ability.</li>
+					<ul>
+						<li>The needs of an individual user may conflict with certain established mainstream user-patterns.</li>
+						<li>Learning new design patterns, widgets, and user interfaces can be confusing.</li>
+					<ul>
+					</li>
+					<li>Ability to increase or decrease levels of complexity as people's skills improve or decline over time. Extra support can be a distraction for some while it may be critical for others.</li>
+				<li>Provide extra support to users who may need: 				
 				<ul>
 					<li>Symbols, iconography and graphics that they are familiar with</li>
-					<li>Tooltips or similar on-demand help or clue</li>
+					<li>Tooltips or similar on-demand help or clues</li>
 					<li>Language they understand</li>
 					<li>Fewer or more constrained features</li>
 					<li>The ability to programmatically distinguish between native content and third-party content on a page or screen</li>
 					<li>The ability to implement custom keyboard short cuts at the user-end</li>
 				</ul>
-				<p>To achieve this, we need standardized terms and supportive syntax. These can be linked to associated symbols, terms, translations and explanations. They are then provided to an individual based on personal preferences.</p>
+				</li>
+			</ul>
+			<p>To achieve this, we need standardized terms and supportive syntax. These can be linked to associated symbols, terms, translations and explanations. They are then provided to an individual based on personal preferences.</p>
 			</section>
 
 			<section>
