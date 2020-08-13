@@ -14,9 +14,9 @@
 		<section id="abstract">
 			<p>People have very different needs. Some people cannot process numeric information (dyscalculia), but others understand numbers better than words. Some people with severe language disabilities use symbols to represent words; some people need (or want) simplified user-interfaces. One of the main challenges is transforming content for these different needs.</p>
 
-<p>This specification is designed to enable authors to add extra semantic information about content to enable personalization for the individual user, including providing extra support and enabling user agents for people with learning and cognitive disabilities.</p>
+<p>This specification enables authors to add extra semantic information about content to enable personalization for the individual user. This provides extra support and facilitates user agents for people with learning and cognitive disabilities.</p>
 
-<p>Authors will be able to add extra semantic information using a collection of new attribute(s) and values, with (in most cases) a fixed token list (taxonomies). This document is an explanation for understanding how to use Personalization properties to personalize an accessible web site.</p>
+<p>Authors add extra semantic information using a collection of new attribute(s) and values, with (in most cases) a fixed token list (taxonomies). This document is an explanation for understanding how to use Personalization properties to personalize an accessible web site.</p>
 		</section>
 
 		<section id="sotd"></section>
@@ -24,49 +24,43 @@
 		<section class="informative" id="introduction">
 
 			<h1>Introduction</h1>
-			<p>The goals of this specification include:</p>
+			<p>This specification:</p>
 			<ul>
-				<li> Expanding the accessibility information that may be supplied by the author;</li>
-				<li> Facilitate preference driven individual personalization;</li>
-				<li> Enable the author to specify key semantics needed to support users with cognitive impairments</li>
+				<li> Expands the accessibility information supplied by the author;</li>
+				<li> Facilitates preference driven individual personalization;</li>
+				<li> Enables the author to specify key semantics to support users with cognitive impairments</li>
 			</ul>
 			<p>This is a proposal for defining syntax for adaptable content such as: links, buttons, symbols, help and keyboard. The proposed syntax will start by using the data-* mechanism provided by HTML5.</p>
 			<!--<p>Personalization involves tailoring aspects of the user experience to meet the preferences or needs of the user. For example, having familiar terms and symbols is key to being able to use the web. However what is familiar for one user may be new for another requiring them to learn new symbols. Personalization could include loading a set of symbols that is appropriate for the specific user, ensuring that all users find the icons simple and familiar.</p> -->
-			<p>Technology holds the promise of being extremely flexible and the design of many systems includes the expectation that users will be able to optimize their interaction experience according to their personal preferences or accessibility needs. </p>
+			<p>Technology holds the promise of being extremely flexible and the design of many systems includes the expectation that users can optimize their interaction experience according to their personal preferences or accessibility needs. </p>
 			
 			<section class="section" id="why_accessibility">
 				<h2>Why We Need Personalization</h2>
-				<p>We need personalization because: </p>
+				<p>Personalization will allow assitive technology to: </p>
 				<ol>
-					<li>Enable websites to adapt to and meet the user's needs.  The goal is to give users the ability to decide what works best for them based on preference and ability.
-						<ul>
-							<li>The needs of an individual user may conflict with certain established mainstream user-patterns.</li>
-							<li>Learning new design patterns, widgets, and user interfaces can be confusing.</li>
-						</ul>
-					</li>
-					<li>Ability to increase or decrease levels of complexity as people's skills improve or decline over time. Extra support can be a distraction for some while it may be critical for others.</li>
+					<li>adapt to and meet the user's needs. Users who have difficulty with established, mainstream patterns can interact with interfaces modified to their preferences and abilities. </li>
+					<li>modify levels of complexity as people's skills improve or decline over time. For example, extra support may be critical for some people but distracting for others.</li>
 	
-					<li>Provide extra support to users who may need: 				
+					<li>provide extra support to users who require: 				
 					<ul>
-						<li>Symbols, iconography and graphics that they are familiar with</li>
-						<li>Tooltips or similar on-demand help or clues</li>
-						<li>Language they understand</li>
-						<li>Fewer or more constrained features</li>
-						<li>The ability to programmatically distinguish between native content and third-party content on a page or screen</li>
-						<li>The ability to implement custom keyboard short cuts at the user-end</li>
+						<li>familiar and consistent symbols, iconography, and graphics </li>
+						<li>tooltips or similar on-demand help or clues</li>
+						<li>language they understand</li>
+						<li>fewer or more constrained features</li>
+						<li>distinction between native and third-party content</li>
+						<li>custom keyboard short cuts</li>
 					</ul>
 					</li>
 			</ol>
-			<p>To achieve this, we need standardized terms and supportive syntax. These can be linked to associated symbols, terms, translations and explanations. They are then provided to an individual based on personal preferences.</p>
+			<p>To achieve this, we need standardized terms and supportive syntax. These can be linked to associated symbols, terms, translations and explanations. This allows modifications based on an individual's personal preferences.</p>
 			<p>Example of sending an email</p>
-				<p>An author can makes it programmatically known that a button sends an email. Based on user preference settings:</p>
+				<p>An author programmatically identifies that a button sends an email. Based on user preference settings the interface can be modified to:</p>
 				<ul>
-                    <li>The button might then render as an alternative term, and/or furnish an additional tooltip that is understandable by the individual user.</li>
-                    <li>It could automatically include F1 help that explains the send function in simple terms.</li>
-                    <li>It could be identified with a keyboard shortcut that is always used for send (Submit).</li>
-                </ul>
-                <p>In addition, the button could be identified as important and always rendered or rendered in an emphasized form.</p>
-			
+                    <li>render the button with an alternative term, and/or furnish an additional tooltip that is understandable by the individual user.</li>
+                    <li>include F1 help that explains the send function in simple terms.</li>
+                    <li>associate the button with a keyboard shortcut that is always used for send (Submit).</li>
+                    <li>identify the button as important and always rendered in an emphasized form.</li>
+				</ul>
 			</section>
 
 			<section>
@@ -83,43 +77,43 @@
 				</ul>
 				<section class="section" id="distracted">
 				<h3>Easily Distracted / Overwhelmed</h3>
-				<p>Someone who is either easily distracted or can be easily overwhelmed with too much information on a web page needs the ability to simplify the page to just the critical information and suppress anything that is not integral to the understanding and use of the page.</p>
+				<p>Someone who is either easily distracted or can be easily overwhelmed with too much information on a web page needs the ability to simplify the page. They want just the critical information and need anything that is not integral to the understanding and use of the page suppressed.</p>
 
 <p>Example: You want to get the latest weather report for your city and go to the www.weather.com website. Finding the actual weather forecast is actually a little challenging even if you have no disabilities due to all the advertisements above, beside and below the information you actually want, there is also today's top stories, trending news, and social media to ignore. If you are easily overwhelmed or distracted getting the key information about today's weather is a challenge. Having the ability to personalize and strip away all but the key information (i.e. just the weather forecast for my city) is critical for this user.</p>
-In this example, the author of this web page would mark the <code>&lt;section&gt;, &lt;p&gt;, or &lt;div&gt; </code>that contains the actual weather report and any associated tools to manipulate the weather report (i.e. city search, hourly vs. 5 day forecast, etc.) as data-simplification = "critical", and mark the other content as "medium" (default) or "low".</p>
+In this example, the author of this web page marks the <code>&lt;section&gt;, &lt;p&gt;, or &lt;div&gt; </code>that contains the actual weather report and any associated tools to manipulate the weather report (i.e. city search, hourly vs. 5 day forecast, etc.) as data-simplification = "critical", and marks the other content as "medium" (default) or "low".</p>
 
-<p>For websites which rely on advertising revenue, this may be difficult to completely suppress however we envision that this attribute could also facilitate relocating the most critical sections of a website above anything that is a lower priority. (i.e. Content re-ordering)</p>
+<p>For websites which rely on advertising revenue, it may be difficult to completely suppress advertisements. We envision that this attribute could also facilitate relocating the most critical sections of a website above anything that is a lower priority. (i.e. Content re-ordering)</p>
 				</section>
 				<section class="section" id="difficulty_numbers">
 				<h3>Difficulty Understanding Numbers</h3>
-<p>Someone who has dyscalculia and therefore has difficulty understanding numbers which means they have a hard time understanding websites that use numbers to convey information. Therefore this numeric information must be provided in an alternative format that the user can understand.</p>
+<p>Someone who has dyscalculia, difficulty understanding numbers, will have a hard time interacting with websites that use numbers to convey information. Therefore, this numeric information must be provided in an alternative format that the user can understand.</p>
 
-<p>Example: The user wants to get the latest weather report for their city and goes to a weather website. For today’s forecast, it shows a high of 95℉ and a low of 40℉, which is not helpful for this particular user. Allowing this numeric information to be presented instead as a symbol or text would benefit the user (i.e. instead of 95℉, a picture of someone wearing shorts and a tee-shirt with the sun above or simply a text alternative of “Very warm”, and instead of 40℉ a picture of someone wearing a jacket with pants, or a text alternative of “Very cold”. Also for something like the humidity index of 90%, there could be a text alternative of “muggy”.)</p>
-<p>In this example, the author would have the numbers marked up using data-numberfree where the default would show the numeric value but for those needing an alternative representation for numbers, they could get an associated image or description/values as simplified text to be presented instead.</p>
+<p>Example: The user wants to get the latest weather report for their city and goes to a weather website. For today’s forecast, it shows a high of 95℉ and a low of 40℉. This representation is not helpful for this particular user. Presenting this numeric information as a symbol or text would benefit the user. For example, instead of 95℉, a picture of someone wearing shorts and a tee-shirt with the sun above or simply a text alternative of “Very warm”. And, instead of 40℉ a picture of someone wearing a jacket with pants, or a text alternative of “Very cold”. For something like the humidity index of 90%, a text alternative of “muggy”.</p>
+<p>In this example, the author would mark up the numbers using data-numberfree. The default would show the numeric value. Those needing an alternative representation for numbers, would get an associated image or description/values as simplified text instead.</p>
 
 <p>It is important to note that people with dyscalculia are often very good with words, so long text can be better than short numbers.</p>
 			</section>
 			<section class="section" id="learning_disability">
 			<h3>Mild-Moderate Language Impairment / Learning Disability</h3>
-<p>Those who have a moderate Language Impairment / Learning Disability may have a limited vocabulary so they will only know terms that are in the core vocabulary that they have learned. They may also use symbols to represent words and concepts.</p>
+<p>Those who have a moderate Language Impairment / Learning Disability may have a limited vocabulary. They will only know terms that are in the core vocabulary they have learned. They may also use symbols to represent words and concepts.</p>
 
-<p>Example: The user may know the word _name_ or _last name_ but have not learned the term "family name". For some users, learning new terms is very slow, requiring hours of work. For these users, reading may also be very slow so finding the right information can be a barrier. The ability to personalize a web page and present symbols instead can help users to easily understand the content being provided</p>
-<p>Note that some people with language disabilities are good at numbers, so there could be times you want to replace a long string of text with a short number: <code>&lt;span data-easylang="90% of the time this happens"&gt; normally this is the expected outcome&lt;/span&gt;</code>. Note this is the opposite of the numberfree example.</p>
+<p>Example: The user may know the word _name_ or _last name_ but have not learned the term "family name". For some users, learning new terms is very slow, requiring hours of work. For these users, reading may also be very slow so finding the right information can be a barrier. The ability to personalize a web page and present symbols instead helps users to easily understand the content being provided</p>
+<p>Note that some people with language disabilities are good at numbers. They will want a long string of text replaced with a short number: <code>&lt;span data-easylang="90% of the time this happens"&gt; normally this is the expected outcome&lt;/span&gt;</code>. This is the opposite of the numberfree example.</p>
 
-<p>Additionally, because reading content for some users is extremely time-consuming, some users may also want less content and features on the web page, as per the above use cases.<p>
+<p>Additionally, because reading content for some users is extremely time-consuming, they also want less content and features on the web page.<p>
 			</section>
 			<section class="section" id="language_impairment">
 			<h3>Severe Language Impairment</h3>
-<p>Some users might have a severe speech and/or physical impairment and communicate using symbols, rather than written text, as part of an Augmentative and Alternative Communication (AAC) system. The use of symbols to represent words is their primary means of communication for both consuming and producing information. Symbol users face a wide variety of barriers to accessing web content, but one of the main challenges is a lack of standard inter-operability or a mechanism for translating the same concept in different symbol sets.</p>
+<p>Some users with a severe speech and/or physical impairment may communicate using symbols, rather than written text, as part of an Augmentative and Alternative Communication (AAC) system. The use of symbols to represent words is their primary means of communication when both consuming and producing information. Symbol users face a wide variety of barriers to accessing web content, but one of the main challenges is a lack of standard inter-operability or a mechanism for translating the same concept into different symbol sets.</p>
 
 <p>User-stories include:</p>
 
 <ul>
-	<li>An assisted living home authors adult education courses and life-skills content, for example, how to make dinner using a microwave. Even within their core user-base, different users are accustomed to different symbol-sets. The authors need to be able to create content for all their users.</li>
-<li>A large banking site wants people to be as autonomous as possible while using their services. They have provided augmented symbol references onto their core services so that the user-interface can be rendered usable for users of symbol-sets, without specifying which symbol-set is being used: they need to programmatically support multiple symbol-sets.</li>
-<li>People who know different symbol-sets wish to talk to each other. A government agency is making information sheets about human rights and patient rights and are seeking feedback from impacted users. They add symbols from a common symbol-set to support a majority of different users, but they wish to also support people who use or require different symbols, to enable them to both read the content, as well as edit it.	</li>
+	<li>An assisted living home authors adult education courses and life-skills content, for example, how to make dinner using a microwave. Within their core user-base, users are accustomed to different symbol-sets. The authors want to create content for all users across various symbol sets.</li>
+<li>A large banking site wants people to be as autonomous as possible while using their services. They provide augmented symbol references onto their core services. They need a mechanism to programmatically support multiple symbol-sets witin the code. </li>
+<li>People who know different symbol-sets wish to talk to each other. A government agency creating information sheets about human rights and patient rights are seeking feedback from impacted users. They add symbols from a common symbol-set to support a majority of different users. The agency would prefer to use a common symbol reference to support people who use or require different symbols. This allows all symbol-set users to both read and edit the content.	</li>
 </ul>
-		<p><code>data-symbol</code>: Using the data-symbol attribute, an author can make it programmatically known that a button sends an email, and based on user preference settings, a browser helper application or stand-alone tool could then render that concept using an appropriate symbol, alternative term, and/or furnish an additional tool-tip that is understandable by the individual user. Using the Bliss Symbolics set's unique reference numbers as our 'taxonomy', other symbol sets can map their equivalent symbols against the Bliss set.</p>
+		<p><code>data-symbol</code>: Using the data-symbol attribute, an author programmatically identifies the function of the button that sends an email. Based on user preference settings, a browser helper application or stand-alone tool renders that concept using an appropriate symbol, alternative term, and/or furnish an additional tool-tip that is understandable by the individual user. Using the Bliss Symbolics set's unique reference numbers as our 'taxonomy', other symbol sets can map their equivalent symbols against the Bliss set.</p>
 
 	<code>
 	&lt;label for="bar" data-symbol="14885"&gt;Your Principle Residence&lt;/label&gt; &lt;input type="textarea" id="bar" name="address" data-purpose="street-address"&gt;
@@ -133,15 +127,15 @@ In this example, the author of this web page would mark the <code>&lt;section&gt
 <img src="https://user-images.githubusercontent.com/8376341/79741694-5cea6c00-830a-11ea-80f6-6c7b632a451d.png" alt="screen shot with less content and symbols "></p>
 <p>Here we have  the same page loaded, but the user agent has removed content and added different symbols that this user is more familiar with:
 <img src="https://user-images.githubusercontent.com/8376341/79741698-5d830280-830a-11ea-9976-f7816c4748be.png" alt="screen shot with different symbols (bliss)"></p>
-<p>It should be noted that for users who depend on symbols for daily communication needs, they often also struggle the most with mis-translations, as they frequently have severe language disabilities. Inferring what was meant by using an incorrect symbol will not be achievable for many users. This rules out relying on machine learning until it is almost error-free.</p>		
+<p>It should be noted that users with severe language disabilities who depend on symbols for daily communication needs often have the most difficulty with mis-translations. Inferring what was meant from an incorrect symbol is not achievable for many users. This need for exactness rules out relying on machine learning until it is nearly error-free.</p>		
 		</section>
 		<section class="section" id="memory_impairment">
 		<h3>Working Memory and Short-term Memory Impairment</h3>
-<p>Users may have differences in both working and short-term memory. For some users, the duration of working memory may be shorter than the average which is between 10-15 seconds.</p>
+<p>Users may have differences in both working and short-term memory. For some users, the duration of working memory may be shorter than the average of between 10-15 seconds.</p>
 
-<p>Example: Many processes consist of a sequence of separate steps or actions which must be performed by a user to complete a process or workflow. Users must be able to remember completed tasks in order to identify their location in a process. In addition, a user must be able to navigate to completed tasks to make modifications or corrections.</p>
+<p>Example: Many processes consist of a sequence of separate steps or actions which must be performed by a user to complete a process or workflow. Users need to remember completed tasks in order to identify their location in a process. In addition, a user must be able to navigate to completed tasks to make modifications or corrections.</p>
 
-<p>A step Indicator allows an author to define steps within a process or represent an entire user path outside of the context of a defined process, including steps between defined processes into breadcrumbs or linked steps that identify completed tasks. This allows the user to navigate back to completed steps and identify a user's current location in a path.</p>
+<p>A step indicator allows an author to define steps within a process or represent an entire user path outside of the context of a defined process. This includes turning steps between defined processes into breadcrumbs or linked steps that identify completed tasks. This allows the user to navigate back to completed steps and identify a user's current location in a path.</p>
 
 <p>More information on persona and user needs can be found in  <a href="https://www.w3.org/TR/coga-usable/" rel="nofollow">Making content usable for people with cognitive and learning disabilities</a>.</p> 
 		</section>
