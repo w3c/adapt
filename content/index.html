@@ -354,16 +354,16 @@
       ]
     }
   },
-  "publishDate": "2020-09-15",
-  "publishISODate": "2020-09-15T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 15 September 2020"
+  "publishDate": "2020-09-29",
+  "publishISODate": "2020-09-29T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 29 September 2020"
 }</script><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
 	<body class="h-entry informative"><div class="head">
     <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title">Personalization Semantics Content Module 1.0</h1>
     
     <h2>
       W3C Editor's Draft
-      <time class="dt-published" datetime="2020-09-15">15 September 2020</time>
+      <time class="dt-published" datetime="2020-09-29">29 September 2020</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd>
@@ -672,6 +672,10 @@
 							<th class="value-name" scope="row">delete</th>
 							<td class="value-description">Delete the current item, selected control, or text.</td>
 						</tr>
+						<tr>
+							<th class="value-name" scope="row">down</th>
+							<td class="value-description">Changes the location of the selected item(s) downward.</td>
+						</tr>
 			             <tr>
 							<th class="value-name" scope="row">download</th>
 							<td class="value-description">Download a file from the server.</td>
@@ -683,6 +687,10 @@
 						<tr>
 							<th class="value-name" scope="row">edit</th>
 							<td class="value-description">Edit the item or selection at the current location.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">end</th>
+							<td class="value-description">Moves to the terminus of a range, list, or sequence. This is typically used in a sequence of steps.</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">escape</th>
@@ -715,7 +723,7 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">left</th>
-							<td class="value-description">Changes the location of the selected item(s) to the left.</td>
+							<td class="value-description">Changes the location of the selected item(s) to the left based on physical positioning. Note that the logical implication may depend on the dirction of the page. If the logic is important, use next or previous.</td>
 						</tr>
            
    						<tr>
@@ -815,7 +823,7 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">right</th>
-							<td class="value-description">Changes the location of the selected item(s) to the right.</td>
+							<td class="value-description">Changes the location of the selected item(s) to the right based on physical positioning. Note that the logical implication may depend on the dirction of the page. If the logic is important, use next or previous.</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">save</th>
@@ -841,7 +849,10 @@
 							<th class="value-name" scope="row">skip</th>
 							<td class="value-description">Skips the current step. This is typically used in a sequence of steps.</td>
 						</tr>
-          
+						<tr>
+							<th class="value-name" scope="row">start</th>
+							<td class="value-description">Moves to the beginning of a range, list, or sequence. This is typically used in a sequence of steps.</td>
+						</tr>
 						<tr>
 							<th class="value-name" scope="row">submit</th>
 							<td class="value-description">Submits the form data or a request to the server. (Implied simplification  = "critical".)</td>
@@ -858,6 +869,10 @@
 						<tr>
 							<th class="value-name" scope="row">undo</th>
 							<td class="value-description">Revert to the prior state before the user's most recent changes.</td>
+						</tr>
+						<tr>
+							<th class="value-name" scope="row">up</th>
+							<td class="value-description">Changes the location of the selected item(s) upward.</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">upload</th>
