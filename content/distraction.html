@@ -24,6 +24,11 @@
 			<li>Example using the <code>distraction</code> attribute in the context of a count-down timer that starts at the user’s request and updates in real-time the hours, minutes, and seconds until an event starts (or ends).       
    		<pre class="example" title="Distraction Using data-distraction">
 		  &lt;div data-distraction="sensory" class="countdown-widget-container"&gt;&lt;/div&gt;</pre></li>
+		  <li>Example using the <code>distraction</code> attribute in the context of an audio clip that is played
+each time a step in a sequence of steps on a set of web pages is completed. Some users may find this sound distracting.
+<pre class="example" title="Distraction Using data-distraction">
+&lt;audio src="step-complete.mp3" data-distraction="sensory"&gt;</pre></li>
+<li>Example where haptic feedback is provided when items are added into a shopping cart. The user's device is fixed onto their wheelchair and the haptic feedback is distracting because it rattles the device within the mount. Implementation of this scenario may rely on the <a href="https://notifications.spec.whatwg.org/#alerting-the-user">Notification API</a> to implement the haptic feedback.</li> 
 		</ol>
         
     </section>
