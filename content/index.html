@@ -354,16 +354,16 @@
       ]
     }
   },
-  "publishDate": "2020-11-17",
-  "publishISODate": "2020-11-17T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 17 November 2020"
+  "publishDate": "2021-01-11",
+  "publishISODate": "2021-01-11T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 11 January 2021"
 }</script><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
 	<body class="h-entry informative"><div class="head">
     <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title">Personalization Semantics Content Module 1.0</h1>
     
     <h2>
       W3C Editor's Draft
-      <time class="dt-published" datetime="2020-11-17">17 November 2020</time>
+      <time class="dt-published" datetime="2021-01-11">11 January 2021</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd>
@@ -391,7 +391,7 @@
     <p class="copyright">
     <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
     ©
-    2017-2020
+    2017-2021
     
     <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
     <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
@@ -1576,6 +1576,14 @@
     <a class="self-link" href="#example-9-distraction-using-data-distraction">Example<bdi> 9</bdi></a><span class="example-title">: Distraction Using data-distraction</span>
   </div> <pre aria-busy="false"><code class="hljs javascript">&lt;div data-distraction=<span class="hljs-string">"sensory"</span> <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"countdown-widget-container"</span>&gt;&lt;/div&gt;</code></pre>
       </div></li>
+		  <li>Example using the <code>distraction</code> attribute in the context of an audio clip that is played
+each time a step in a sequence of steps on a set of web pages is completed. Some users may find this sound distracting.
+<div class="example" id="example-10-distraction-using-data-distraction">
+        <div class="marker">
+    <a class="self-link" href="#example-10-distraction-using-data-distraction">Example<bdi> 10</bdi></a><span class="example-title">: Distraction Using data-distraction</span>
+  </div> <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">audio</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"step-complete.mp3"</span> <span class="hljs-attr">data-distraction</span>=<span class="hljs-string">"sensory"</span>&gt;</span></code></pre>
+      </div></li>
+<li>Example where haptic feedback is provided when items are added into a shopping cart. The user's device is fixed onto their wheelchair and the haptic feedback is distracting because it rattles the device within the mount. Implementation of this scenario may rely on the <a href="https://notifications.spec.whatwg.org/#alerting-the-user">Notification API</a> to implement the haptic feedback.</li> 
 		</ol>
         
     </section>
@@ -1673,28 +1681,28 @@ with white space. The order of multiple concepts should be the same as used in t
 		<p>Here are some examples using the <code>symbol</code> attribute.</p>
 		<ol>
 		<li>Symbols for individual words.
-        <div class="example" id="example-10-symbols-for-individual-words">
+        <div class="example" id="example-11-symbols-for-individual-words">
         <div class="marker">
-    <a class="self-link" href="#example-10-symbols-for-individual-words">Example<bdi> 10</bdi></a><span class="example-title">: Symbols for individual words</span>
+    <a class="self-link" href="#example-11-symbols-for-individual-words">Example<bdi> 11</bdi></a><span class="example-title">: Symbols for individual words</span>
   </div> <pre aria-busy="false"><code class="hljs xml">	   <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">data-symbol</span>=<span class="hljs-string">"13621"</span>&gt;</span>Cup<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">data-symbol</span>=<span class="hljs-string">"12324"</span>&gt;</span>of<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> 
 <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">data-symbol</span>=<span class="hljs-string">"17511"</span> &gt;</span>Tea<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre>
       </div>		   </li>
         <li>List of space-separated symbols for a text phrase. When there is more than one concept that is not part of a single conjugated term, multiple concepts are referenced by separating them with white space. 
-        <div class="example" id="example-11-list-of-symbols-for-a-text-phrase">
+        <div class="example" id="example-12-list-of-symbols-for-a-text-phrase">
         <div class="marker">
-    <a class="self-link" href="#example-11-list-of-symbols-for-a-text-phrase">Example<bdi> 11</bdi></a><span class="example-title">: List of symbols for a text phrase</span>
+    <a class="self-link" href="#example-12-list-of-symbols-for-a-text-phrase">Example<bdi> 12</bdi></a><span class="example-title">: List of symbols for a text phrase</span>
   </div> <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">data-symbol</span>=<span class="hljs-string">"13621 12324 17511"</span>&gt;</span>cup of Tea<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre>
       </div></li>
         <li>Symbols used with an image. (alt text represented as symbols)
-        <div class="example" id="example-12-symbols-used-with-an-image">
+        <div class="example" id="example-13-symbols-used-with-an-image">
         <div class="marker">
-    <a class="self-link" href="#example-12-symbols-used-with-an-image">Example<bdi> 12</bdi></a><span class="example-title">: Symbols used with an image</span>
+    <a class="self-link" href="#example-13-symbols-used-with-an-image">Example<bdi> 13</bdi></a><span class="example-title">: Symbols used with an image</span>
   </div> <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"cuptea.png"</span> <span class="hljs-attr">data-symbol</span>=<span class="hljs-string">"13621 12324 17511"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"cup of Tea"</span>/&gt;</span></code></pre>
       </div></li>
 		<li>Symbols with conjugation. In this example a symbol is used for "her name" for the conjugated Hebrew word, <span lang="he" dir="rtl">שמה</span>. The / + / is used to join the conjugated values, "her" (14707) and "name" (15691).  If the gender is not important, you can just use the value for name (15691).
-	<div class="example" id="example-13-symbols-with-conjugation">
+	<div class="example" id="example-14-symbols-with-conjugation">
         <div class="marker">
-    <a class="self-link" href="#example-13-symbols-with-conjugation">Example<bdi> 13</bdi></a><span class="example-title">: Symbols with conjugation</span>
+    <a class="self-link" href="#example-14-symbols-with-conjugation">Example<bdi> 14</bdi></a><span class="example-title">: Symbols with conjugation</span>
   </div> <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"her-name.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"שמה"</span> <span class="hljs-attr">data-symbol</span>=<span class="hljs-string">"15691 + 14707"</span>/&gt;</span></code></pre>
       </div></li>
 	   
