@@ -12,7 +12,7 @@
 	<body>
 
 		<section id="abstract">
-			<p>People have very different needs. There are many people with cognitive and learning disabilities that affect their ability to interact with the web. Some people cannot process numeric information (dyscalculia), but others understand numbers better than words. Some people with severe language disabilities use symbols to represent words; some people need (or want) simplified user-interfaces. One of the main challenges that has not been addressed on the web is transforming content for these varying needs. This specification provides a means for web technologies to address these requirements.</p>
+			<p>People have very different needs. There are many people with cognitive and learning disabilities that affect their ability to interact with the web. Some people cannot process numeric information (dyscalculia), but others understand numbers better than words. Some people with severe language disabilities use symbols to represent words; some people need (or want) simplified user-interfaces. Different people find different layouts and types of content easier to understand, and what is useable and understandable by one person can be be too complex for another. One of the main challenges is to address the varied and conflicting user needs,  so that content can be understandable by the individual users. This specification provides a means for web technologies to address these requirements.</p>
 
 <p>The personalization specification enables authors to add extra semantic information about content to enable personalization for the individual user. This provides extra support and facilitates user agents for people with learning and cognitive disabilities.</p>
 
@@ -80,16 +80,25 @@
 				<h3>Easily Distracted / Overwhelmed</h3>
 				<p>Someone who is either easily distracted or can be easily overwhelmed with too much information on a web page needs the ability to simplify the page. They want just the critical information and need anything that is not integral to the understanding and use of the page suppressed.</p>
 
-<p>Example: You want to get the latest weather report for your city and go to the www.weather.com website. Finding the actual weather forecast is actually a little challenging even if you have no disabilities due to all the advertisements above, beside and below the information you actually want, there is also today's top stories, trending news, and social media to ignore. If you are easily overwhelmed or distracted getting the key information about today's weather is a challenge. Having the ability to personalize and strip away all but the key information (i.e. just the weather forecast for my city) is critical for this user.</p>
+<p>Example: You want to get the latest weather report for your city and go to a weather website. Finding the actual weather forecast is actually a little challenging even if you have no disabilities due to all the advertisements above, there is also today's top stories, trending news, and social media to ignore. If you are easily overwhelmed or distracted getting the key information about today's weather is a challenge. Having the ability to personalize and strip away all but the key information (i.e. just the weather forecast for my city) is critical for this user.</p>
 In this example, the author of this web page marks the <code>&lt;section&gt;, &lt;p&gt;, or &lt;div&gt; </code>that contains the actual weather report and any associated tools to manipulate the weather report (i.e. city search, hourly vs. 5 day forecast, etc.) as data-simplification = "critical", and marks the other content as "medium" (default) or "low".</p>
 
 <p>For websites which rely on advertising revenue, it may be difficult to completely suppress advertisements. We envision that this attribute could also facilitate relocating the most critical sections of a website above anything that is a lower priority. (i.e. Content re-ordering)</p>
 				</section>
 				<section class="section" id="difficulty_numbers">
 				<h3>Difficulty Understanding Numbers</h3>
-<p>Someone who has dyscalculia, difficulty understanding numbers, will have a hard time interacting with websites that use numbers to convey information. Therefore, this numeric information must be provided in an alternative format that the user can understand.</p>
+<p>Someone who has dyscalculia will have difficulty understanding numbers and will have a hard time interacting with websites that use numbers to convey information. Therefore, this numeric information must be provided in an alternative format that the user can understand.</p>
 
-<p>Example: The user wants to get the latest weather report for their city and goes to a weather website. For today’s forecast, it shows a high of 95℉ and a low of 40℉. This representation is not helpful for this particular user. Presenting this numeric information as a symbol or text would benefit the user. For example, instead of 95℉, a picture of someone wearing shorts and a tee-shirt with the sun above or simply a text alternative of “Very warm”. And, instead of 40℉ a picture of someone wearing a jacket with pants, or a text alternative of “Very cold”. For something like the humidity index of 90%, a text alternative of “muggy”.</p>
+<p>Example: The user wants to get the latest weather report for their city and goes to a weather website. For today’s forecast, it shows a high of 95℉ and a low of 40℉. This representation is not understandable for particular user. Presenting this numeric information as a symbol or text would benefit the user. For example, next to the number 95, there could be:<ul>
+<li>a picture of someone wearing shorts and a tee-shirt with the sun above or </li>
+<li>simply a text alternative of “Very warm”. </li></ul>
+
+Next to the number 40, there can be: <ul>
+<li> a picture of someone wearing a jacket with pants, or </li>
+<li>a text alternative of “Very cold”.  </li></ul>
+					Next to the humidity index of 90%, there could be a text alternative of “muggy”.
+</p>
+			
 <p>In this example, the author would mark up the numbers using data-numberfree. The default would show the numeric value. Those needing an alternative representation for numbers, would get an associated image or description/values as simplified text instead.</p>
 
 <p>It is important to note that people with dyscalculia are often very good with words, so long text can be better than short numbers.</p>
@@ -98,7 +107,7 @@ In this example, the author of this web page marks the <code>&lt;section&gt;, &l
 			<h3>Mild-Moderate Language Impairment / Learning Disability</h3>
 <p>Those who have a moderate Language Impairment / Learning Disability may have a limited vocabulary. They will only know terms that are in the core vocabulary they have learned. They may also use symbols to represent words and concepts.</p>
 
-<p>Example: The user may know the word _name_ or _last name_ but have not learned the term "family name". For some users, learning new terms is very slow, requiring hours of work. For these users, reading may also be very slow so finding the right information can be a barrier. The ability to personalize a web page and present symbols instead helps users to easily understand the content being provided</p>
+<p>Example: The user may know the word "name" or "last name" but have not learned the term "family name". For some users, learning new terms is very slow, requiring hours of work. For these users, reading may also be very slow, so finding the right information can be a barrier. The ability to personalize a web page and present symbols instead helps users to easily understand the content being provided</p>
 <p>Note that some people with language disabilities are good at numbers. They will want a long string of text replaced with a short number: <code>&lt;span data-easylang="90% of the time this happens"&gt; normally this is the expected outcome&lt;/span&gt;</code>. This is the opposite of the numberfree example.</p>
 
 <p>Additionally, because reading content for some users is extremely time-consuming, they also want less content and features on the web page.<p>
@@ -112,27 +121,30 @@ In this example, the author of this web page marks the <code>&lt;section&gt;, &l
 <ul>
 	<li>An assisted living home authors adult education courses and life-skills content, for example, how to make dinner using a microwave. Within their core user-base, users are accustomed to different symbol-sets. The authors want to create content for all users across various symbol sets.</li>
 <li>A large banking site wants people to be as autonomous as possible while using their services. They provide augmented symbol references onto their core services. They need a mechanism to programmatically support multiple symbol-sets witin the code. </li>
-<li>People who know different symbol-sets wish to talk to each other. A government agency creating information sheets about human rights and patient rights are seeking feedback from impacted users. They add symbols from a common symbol-set to support a majority of different users. The agency would prefer to use a common symbol reference to support people who use or require different symbols. This allows all symbol-set users to both read and edit the content.	</li>
+<li>People who know different symbol-sets wish to talk to each other.</li>
+	<li>A government agency creating information sheets about human rights and patient rights are seeking feedback from impacted users. They add symbols from a common symbol-set to support a majority of different users. The agency would prefer to use a common symbol reference to support people who use or require different symbols. This allows all symbol-set users to both read and edit the content.	</li>
 </ul>
-		<p><code>data-symbol</code>: Using the data-symbol attribute, an author programmatically identifies the function of the button that sends an email. Based on user preference settings, a browser helper application or stand-alone tool renders that concept using an appropriate symbol, alternative term, and/or furnish an additional tool-tip that is understandable by the individual user. Using the Bliss Symbolics set's unique reference numbers as our 'taxonomy', other symbol sets can map their equivalent symbols against the Bliss set.</p>
+		<p><strong>data-symbol</strong>: Using the data-symbol attribute, an author programmatically identifies the function of the button that sends an email. Based on user preference settings, a browser helper application or stand-alone tool renders that concept using an appropriate symbol, alternative term, and/or furnish an additional tool-tip that is understandable by the individual user. Using the Bliss Symbolics set's unique reference numbers as our 'taxonomy', other symbol sets can map their equivalent symbols against the Bliss set.</p>
 
 	<code>
 	&lt;label for="bar" data-symbol="14885"&gt;Your Principle Residence&lt;/label&gt; &lt;input type="textarea" id="bar" name="address" data-purpose="street-address"&gt;
 	</code>	
 
 <p>Where the symbol value 14855 maps back to "Home".</p>
-<p>Proof of Concept Symbol Example</p>
+<h2>Proof of Concept Symbol Example</h2>
+<p>In the screen shots below, a browser extension uses the data-symbol attribute to load symbols that are familiar to the user.</p>	
+				<p>Note that users learn a specific symbol vocabulary. However, the various vocabularies are mutually unintelligible. Personalization offers a mechanism to translate between symbol sets to allow people to communicate with one another where it was previously not possible.</p>		
 <p>Original
 <img src="https://user-images.githubusercontent.com/8376341/79741687-5b20a880-830a-11ea-814d-97ed7132d7d1.png" alt="screen shot, no symbols"></p>
 <p>Here we have  the same page loaded, but the user agent has removed content and added symbols
 <img src="https://user-images.githubusercontent.com/8376341/79741694-5cea6c00-830a-11ea-80f6-6c7b632a451d.png" alt="screen shot with less content and symbols "></p>
 <p>Here we have  the same page loaded, but the user agent has removed content and added different symbols that this user is more familiar with:
 <img src="https://user-images.githubusercontent.com/8376341/79741698-5d830280-830a-11ea-9976-f7816c4748be.png" alt="screen shot with different symbols (bliss)"></p>
-<p>Note that users learn a specific symbol vocabulary. However, the various vocabularies are mutually unintelligible. Personalization offers a mechanism to translate between symbol sets to allow people to communicate with one another where it was previously not possible.</p>		
+
 		</section>
 		<section class="section" id="memory_impairment">
 		<h3>Working Memory and Short-term Memory Impairment</h3>
-<p>Users may have differences in both working and short-term memory. For some users, the duration of working memory may be shorter than the average of between 10-15 seconds.</p>
+<p>Users may have differences in both working and short-term memory.  For some users, the number of items or data that can be stored in working memory is a fraction of the populations average. Whereas most adults can repeat about seven digits in correct order, a specific user may only manage two or three numbers. When they become distracted, they are also likely to forget any information in their working memory.</p>
 
 <p>Example: Many processes consist of a sequence of separate steps or actions which must be performed by a user to complete a process or workflow. Users need to remember completed tasks in order to identify their location in a process. In addition, a user must be able to navigate to completed tasks to make modifications or corrections.</p>
 
