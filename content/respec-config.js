@@ -55,8 +55,8 @@ var respecConfig = {
       {
         name: "John Foliot",
         url: 'http://www.deque.com',
-        mailto: "john.foliot@deque.com",
-        company: "Deque",
+        mailto: "john@foliot.ca",
+        company: "Invited Expert",
         w3cid: 41450
       },
       {
