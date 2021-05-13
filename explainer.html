@@ -212,12 +212,8 @@
             </section>
 			<section id="propcharacteristic_value">
 				<h2>Values</h2>
-				<p>Values provide the specific personalization information for the property. The possible values for each property are elaborated in the definition of the property in the modules. Some properties require the value to come from a predefined list of possible values, others can accept arbitrary strings, and some may accept multiple values. The value may be one of the following types:</p>
+				<p>Values provide the specific personalization information for the property. The possible values for each property are elaborated in the definition of the property in the modules. Some properties require the value to come from a predefined list of possible values, others can accept arbitrary strings, and some may accept multiple values. The attribute value may be one of the following types:</p>
 				<dl>
-					<dt id="valuetype_true-false">true/false</dt>
-					<dd>Value representing either true or false, with a default &quot;false&quot; value.</dd>
-					<dt id="valuetype_true-false-undefined">true/false/undefined</dt>
-					<dd>Value representing true or false, with a default &quot;undefined&quot; value indicating the state or property is not relevant.</dd> <!-- dd>Value representing true or false, with a default "undefined" value indicating the state or property is not relevant. If the attribute value matches none of the given keywords, but the attribute has an invalid value default, then the attribute represents that state. Otherwise, there is no default, and invalid values mean that there is no state represented.  When the attribute is not specified, if there is a missing value default state defined, then that is the state represented by the (missing) attribute. Otherwise, the absence of the attribute means that there is no state represented.</dd -->
 					<dt id="valuetype_idref">ID reference</dt>
 					<dd>Reference to the ID of another element in the same document</dd>
 					<dt id="valuetype_idref_list">ID reference list</dt>
@@ -235,6 +231,8 @@
 					<dt id="valuetype_uri">URI</dt>
 					<dd>A Uniform Resource Identifier as defined by <cite><a href="http://www.ietf.org/rfc/rfc3986.txt">RFC 3986</a></cite> [[RFC3986]]. It may reference a separate document, or a content fragment identifier in a separate document, or a content fragment identifier within the same document.</dd>
 				</dl>
+				<div class="note">The attributes and values in this specification are not intended to overide the semantics exposed in the Accessibility Tree, but rather augment them. In the case of conflict between an element's semantics and the attribute values, validation algorithms should issue a warning but not an error.</div>
+				
 			</section>
 		</section>
 
