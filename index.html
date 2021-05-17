@@ -6,7 +6,7 @@
 		
 	
 		<link href="common/css/common.css" rel="stylesheet" type="text/css">
-	<meta name="description" content="People have very different needs. There are many people with cognitive and learning disabilities that affect their ability to interact with the web. Some people cannot process numeric information (dyscalculia), but others understand numbers better than words. Some people with severe language disabilities use symbols to represent words; some people need (or want) simplified user-interfaces. Different people find different layouts and types of content easier to understand, and what is useable and understandable by one person can be be too complex for another. One of the main challenges is to address the varied and conflicting user needs,  so that content can be understandable by the individual users. This specification provides a means for web technologies to address these requirements."><link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-1.0/"><style>var{position:relative;cursor:pointer}var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}</style><script id="initialUserConfig" type="application/json">{
+	<meta name="description" content="People have very different needs. There are many people with cognitive and learning disabilities that affect their ability to interact with the web. Some people cannot process numeric information (dyscalculia), but others understand numbers better than words. Some people with severe language disabilities use symbols to represent words; some people need (or want) simplified user-interfaces. Different people find different layouts and types of content easier to understand, and what is useable and understandable by one person can be be too complex for another. One of the main challenges is to address the varied and conflicting user needs,  so that content can be understandable by the individual users. The specification (and modules) described in this Explainer provide a means for web technologies to address these requirements."><link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-1.0/"><style>var{position:relative;cursor:pointer}var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}</style><script id="initialUserConfig" type="application/json">{
   "trace": true,
   "doRDFa": "1.0",
   "includePermalinks": true,
@@ -345,16 +345,16 @@
       ]
     }
   },
-  "publishDate": "2021-05-15",
-  "publishISODate": "2021-05-15T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 15 May 2021"
+  "publishDate": "2021-05-17",
+  "publishISODate": "2021-05-17T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 17 May 2021"
 }</script><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
 	<body class="h-entry informative"><div class="head">
     <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title">Personalization Semantics Explainer 1.0</h1>
     
     <h2>
       W3C Editor's Draft
-      <time class="dt-published" datetime="2021-05-15">15 May 2021</time>
+      <time class="dt-published" datetime="2021-05-17">17 May 2021</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd>
@@ -395,11 +395,11 @@
   </div>
 
 		<section id="abstract" class="introductory"><h2>Abstract</h2>
-			<p>People have very different needs. There are many people with cognitive and learning disabilities that affect their ability to interact with the web. Some people cannot process numeric information (dyscalculia), but others understand numbers better than words. Some people with severe language disabilities use symbols to represent words; some people need (or want) simplified user-interfaces. Different people find different layouts and types of content easier to understand, and what is useable and understandable by one person can be be too complex for another. One of the main challenges is to address the varied and conflicting user needs,  so that content can be understandable by the individual users. This specification provides a means for web technologies to address these requirements.</p>
+			<p>People have very different needs. There are many people with cognitive and learning disabilities that affect their ability to interact with the web. Some people cannot process numeric information (dyscalculia), but others understand numbers better than words. Some people with severe language disabilities use symbols to represent words; some people need (or want) simplified user-interfaces. Different people find different layouts and types of content easier to understand, and what is useable and understandable by one person can be be too complex for another. One of the main challenges is to address the varied and conflicting user needs,  so that content can be understandable by the individual users. The specification (and modules) described in this Explainer provide a means for web technologies to address these requirements.</p>
 
-<p>The personalization specification enables authors to add extra semantic information about content to enable personalization for the individual user. This provides extra support and facilitates user agents for people with learning and cognitive disabilities.</p>
+			<p>The personalization specification enables authors to add extra semantic information about content to enable personalization for the individual user. This provides extra support and facilitates user-agents for people with learning and cognitive disabilities.</p>
 
-<p>Authors add extra semantic information using a collection of new attribute(s) and values, with (in most cases) a fixed token list (taxonomies). This document is an explanation for understanding how to use Personalization properties to personalize an accessible web site.</p>
+			<p>Authors add extra semantic information using a collection of new attribute(s) and values, with (in most cases) a fixed token list (taxonomies). This document is an explanation for understanding how the Personalization attributes are used to personalize an accessible web site.</p>
 		</section>
 
 		<section id="sotd" class="introductory"><h2>Status of This Document</h2><p><em>This section describes the status of this
@@ -453,10 +453,10 @@
 			<h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction<a class="self-link" aria-label="§" href="#introduction"></a></h2><p><em>This section is non-normative.</em></p>
 			<p>The personalization specification:</p>
 			<ul>
-				<li> Expands the accessibility information supplied by the author;</li>
-				<li> Facilitates preference driven individual personalization;</li>
-				<li> Enables the author to specify key semantics to support users with cognitive impairments</li>
-				<li>Defines a syntax for adaptable content such as: links, buttons, symbols, help and keyboard.
+				<li>Expands upon the types of accessibility information that the author can provide;</li>
+				<li>Facilitates preference-driven individual personalization;</li>
+				<li>Enables the author to specify key semantics to support users with cognitive impairments;</li>
+				<li>Defines a syntax for adaptable content such as: links, buttons, symbols, help, and keyboard shortcuts.
 			</li></ul>
 			
 			<p>Technology holds the promise of being extremely flexible and the design of many systems includes the expectation that users can optimize their interaction experience according to their personal preferences or accessibility needs. </p>
@@ -475,23 +475,23 @@
 						<li>language they understand</li>
 						<li>fewer or more constrained features</li>
 						<li>distinction between native and third-party content</li>
-						<li>custom keyboard short cuts</li>
+						<li>custom keyboard shortcuts</li>
 					</ul>
 					</li>
 			</ol>
 			<p>To achieve this, we need standardized terms and supportive syntax. These can be linked to associated symbols, terms, translations and explanations. This allows modifications based on an individual's personal preferences.</p>
-			<p>Example of sending an email</p>
+			<div class="example"><p>Example of sending an email:</p>
 				<p>An author programmatically identifies that a button sends an email. Based on user preference settings the interface can be modified to:</p>
 				<ul>
-                    <li>render the button with an alternative term, and/or furnish an additional tooltip that is understandable by the individual user.</li>
-                    <li>include F1 help that explains the send function in simple terms.</li>
-                    <li>associate the button with a keyboard shortcut that is always used for send (Submit).</li>
+                    <li>render the button with an alternative term, and/or furnish an additional tooltip that is understandable by the individual user;</li>
+                    <li>include F1 help that explains the send function in simple terms;</li>
+                    <li>associate the button with a keyboard shortcut that is always used for send (Submit);</li>
                     <li>identify the button as important and always rendered in an emphasized form.</li>
-				</ul>
+				</ul></div>
 			</section>
 
 			<section id="use-case-examples">
-				<h3 id="x1-2-use-case-examples"><bdi class="secno">1.2 </bdi>Use Case Examples<a class="self-link" aria-label="§" href="#use-case-examples"></a></h3>
+			<h3 id="x1-2-use-case-examples"><bdi class="secno">1.2 </bdi>Use Case Examples<a class="self-link" aria-label="§" href="#use-case-examples"></a></h3>
 				<p><a href="requirements/">Requirements for Personalization Semantics</a> elaborates many use cases that further contextualize the above summary of user needs. These example use cases form the basis of requirements for this technology. Personalization enables developers to create targeted extensions as additional use cases are encountered.</p>
 				
                 <p>Examples</p>
@@ -502,81 +502,95 @@
 					<li><a href="#language_impairment">Severe Language Impairment</a></li>
 					<li><a href="#memory_impairment">Working Memory and Short-term Memory Impairment</a></li>
 				</ul>
-				<section class="section" id="distracted">
+			<section class="section" id="distracted">
 				<h4 id="x1-2-1-easily-distracted-overwhelmed"><bdi class="secno">1.2.1 </bdi>Easily Distracted / Overwhelmed<a class="self-link" aria-label="§" href="#distracted"></a></h4>
 				<p>Someone who is either easily distracted or can be easily overwhelmed with too much information on a web page needs the ability to simplify the page. They want just the critical information and need anything that is not integral to the understanding and use of the page suppressed.</p>
 
-<p>Example: You want to get the latest weather report for your city and go to a weather website. Finding the actual weather forecast is actually a little challenging even if you have no disabilities due to all the advertisements above, there is also today's top stories, trending news, and social media to ignore. If you are easily overwhelmed or distracted getting the key information about today's weather is a challenge. Having the ability to personalize and strip away all but the key information (i.e. just the weather forecast for my city) is critical for this user.</p>
-In this example, the author of this web page marks the <code>&lt;section&gt;, &lt;p&gt;, or &lt;div&gt; </code>that contains the actual weather report and any associated tools to manipulate the weather report (i.e. city search, hourly vs. 5 day forecast, etc.) as data-simplification = "critical", and marks the other content as "medium" (default) or "low".<p></p>
+				<div class="example"><p>Example: The user wants to get the latest weather report for their city and goes to a weather website.</p>
+				<p>Finding the actual weather forecast is actually a little challenging even if you have no disabilities due to all the additional content on the screen; along with advertisements, there is also the day's top stories, trending news, and social media to ignore. If you are easily overwhelmed or distracted getting the key information about today's weather is a challenge. Having the ability to personalize and strip away all but the key information (i.e. just the weather forecast for my city) is critical for this user.</p></div>
+				<p>In this example, the author of this web page can mark the <code>&lt;section&gt;</code>, <code>&lt;p&gt;</code>, or <code>&lt;div&gt;</code> that contains the actual weather report and any associated tools to manipulate the weather report (i.e. city search, hourly vs. 5 day forecast, etc.) with the <code>data-simplification</code> attribute (with a value of "critical"), and mark the other on-screen content as "medium" (default) or "low". (e.g. <code>&lt;p data-simplification="critical"&gt;</code><em>Today’s forecast is a high of 95℉ and a low of 40℉</em><code>&lt;/p&gt;</code>)
 
-<p>For websites which rely on advertising revenue, it may be difficult to completely suppress advertisements. We envision that this attribute could also facilitate relocating the most critical sections of a website above anything that is a lower priority. (i.e. Content re-ordering)</p>
-				</section>
-				<section class="section" id="difficulty_numbers">
-				<h4 id="x1-2-2-difficulty-understanding-numbers"><bdi class="secno">1.2.2 </bdi>Difficulty Understanding Numbers<a class="self-link" aria-label="§" href="#difficulty_numbers"></a></h4>
-<p>Someone who has dyscalculia will have difficulty understanding numbers and will have a hard time interacting with websites that use numbers to convey information. Therefore, this numeric information must be provided in an alternative format that the user can understand.</p>
-
-<p>Example: The user wants to get the latest weather report for their city and goes to a weather website. For today’s forecast, it shows a high of 95℉ and a low of 40℉. This representation is not understandable for particular user. Presenting this numeric information as a symbol or text would benefit the user. For example, next to the number 95, there could be:</p><ul>
-<li>a picture of someone wearing shorts and a tee-shirt with the sun above or </li>
-<li>simply a text alternative of “Very warm”. </li></ul>
-
-Next to the number 40, there can be: <ul>
-<li> a picture of someone wearing a jacket with pants, or </li>
-<li>a text alternative of “Very cold”.  </li></ul>
-					Next to the humidity index of 90%, there could be a text alternative of “muggy”.
-<p></p>
-			
-<p>In this example, the author would mark up the numbers using data-numberfree. The default would show the numeric value. Those needing an alternative representation for numbers, would get an associated image or description/values as simplified text instead.</p>
-
-<p>It is important to note that people with dyscalculia are often very good with words, so long text can be better than short numbers.</p>
+				</p><p>For websites which rely on advertising revenue, it may be difficult to completely suppress advertisements. We envision that this attribute could also facilitate relocating the most critical sections of a website above anything that is a lower priority. (i.e. Content re-ordering)</p>
 			</section>
+				
+			<section class="section" id="difficulty_numbers">
+				<h4 id="x1-2-2-difficulty-understanding-numbers"><bdi class="secno">1.2.2 </bdi>Difficulty Understanding Numbers<a class="self-link" aria-label="§" href="#difficulty_numbers"></a></h4>
+				<p>Someone who has dyscalculia will have difficulty understanding numbers and will have a hard time interacting with websites that use numbers to convey information. Therefore, this numeric information must be provided in an alternative format that the user can understand.</p>
+
+				<div class="example"><p>Example: The user wants to get the latest weather report for their city and goes to a weather website.</p>
+				<p> For today’s forecast, it shows a high of 95℉ and a low of 40℉. This representation is not understandable for particular user. Presenting this numeric information as a symbol or text would benefit the user. For example, next to the number 95, there could be:</p>
+				<ul>
+					<li>a picture of someone wearing shorts and a tee-shirt with the sun above or </li>
+					<li>simply a text alternative of “Very warm”. </li>
+				</ul>
+				<p>Next to the number 40, there can be: </p>
+				<ul>
+					<li>a picture of someone wearing a jacket with pants, or </li>
+					<li>a text alternative of “Very cold”.  </li>
+				</ul>
+				<p>Next to the humidity index of 90%, there could be a text alternative of “muggy”.</p>
+				</div>
+				<p>In this example, the author would mark up the numbers using the <code>data-numberfree</code> attribute. The default would show the numeric value. Those needing an alternative representation for numbers, would get an associated image or description/values as simplified text instead.</p>
+
+				<p>It is important to note that people with dyscalculia are often very good with words, so long text can be better than short numbers.</p>
+			</section>
+			
 			<section class="section" id="learning_disability">
 			<h4 id="x1-2-3-mild-moderate-language-impairment-learning-disability"><bdi class="secno">1.2.3 </bdi>Mild-Moderate Language Impairment / Learning Disability<a class="self-link" aria-label="§" href="#learning_disability"></a></h4>
-<p>Those who have a moderate Language Impairment / Learning Disability may have a limited vocabulary. They will only know terms that are in the core vocabulary they have learned. They may also use symbols to represent words and concepts.</p>
+				<p>Those who have a moderate Language Impairment / Learning Disability may have a limited vocabulary. They will only know terms that are in the core vocabulary they have learned. They may also use symbols to represent words and concepts.</p>
 
-<p>Example: The user may know the word "name" or "last name" but have not learned the term "family name". For some users, learning new terms is very slow, requiring hours of work. For these users, reading may also be very slow, so finding the right information can be a barrier. The ability to personalize a web page and present symbols instead helps users to easily understand the content being provided</p>
-<p>Note that some people with language disabilities are good at numbers. They will want a long string of text replaced with a short number: <code>&lt;span data-easylang="90% of the time this happens"&gt; normally this is the expected outcome&lt;/span&gt;</code>. This is the opposite of the numberfree example.</p>
+				<div class="example" )<p="">Example: The user may know the word "name" or "last name" but have not learned the term "family name".<p></p><p> For some users, learning new terms is very slow, requiring hours of work. For these users, reading may also be very slow, so finding the right information can be a barrier. The ability to personalize a web page and present symbols instead helps users to easily understand the content being provided</p></div>
+				<p>Note that some people with language disabilities are good at numbers. They will want a long string of text replaced with a short number: <code>&lt;span <strong>data-easylang="90% of the time this happens"</strong>&gt; normally this is the expected outcome&lt;/span&gt;</code>. This is the opposite of the numberfree example.</p>
 
-<p>Additionally, because reading content for some users is extremely time-consuming, they also want less content and features on the web page.</p><p>
+				<p>Additionally, because reading content for some users is extremely time-consuming, they will also want less content and features on the web page.</p><p>
 			</p></section>
+			
 			<section class="section" id="language_impairment">
 			<h4 id="x1-2-4-severe-language-impairment"><bdi class="secno">1.2.4 </bdi>Severe Language Impairment<a class="self-link" aria-label="§" href="#language_impairment"></a></h4>
-<p>Some users with a severe speech and/or physical impairment may communicate using symbols, rather than written text, as part of an Augmentative and Alternative Communication (AAC) system. The use of symbols to represent words is their primary means of communication when both consuming and producing information. Symbol users face a wide variety of barriers to accessing web content, but one of the main challenges is a lack of standard inter-operability or a mechanism for translating the same concept into different symbol sets.</p>
+			<p>Some users with a severe speech and/or physical impairment may communicate using symbols, rather than written text, as part of an Augmentative and Alternative Communication (AAC) system. The use of symbols to represent words is their primary means of communication when both consuming and producing information. Symbol users face a wide variety of barriers to accessing web content, but one of the main challenges is a lack of standard inter-operability between different proprietary symbol sets, or a mechanism for translating the same concept from one symbol set to another.</p>
 
-<p>User-stories include:</p>
+			<p>User Stories include:</p>
+			<ul>
+			<li>An assisted living home authors adult education courses and life-skills content, for example, how to make dinner using a microwave. Within their core user-base, users are accustomed to different symbol sets. The authors want to create content for all users across various symbol sets.</li>
+			<li>A large banking site wants people to be as autonomous as possible while using their services. They provide augmented symbol references onto their core services. They need a mechanism to programmatically support multiple symbol sets witin the code. </li>
+			<li>People who know different symbol sets wish to talk to each other.</li>
+			<li>A government agency creating information sheets about human rights and patient rights are seeking feedback from impacted users. They add symbols from a common symbol set to support a majority of different users. The agency would prefer to use a common symbol reference to support people who use or require different symbols. This allows all symbol set users to both read and edit the content.	</li>
+			</ul>
+			<div class="example"><p>Example: Using the <code>data-symbol</code> attribute, an author programmatically tags the label for a form input with the appropriate symbol value. Based on user preference settings, a browser helper application or stand-alone tool could then render that label using an appropriate symbol, alternative term, and/or furnishes an additional tool-tip that is understandable by the individual user. Using the <a href="https://www.blissymbolics.org/">Bliss Symbolics</a> set's unique reference numbers as our 'taxonomy', other symbol sets can map their equivalent symbols against the Bliss set.</p>
 
-<ul>
-	<li>An assisted living home authors adult education courses and life-skills content, for example, how to make dinner using a microwave. Within their core user-base, users are accustomed to different symbol-sets. The authors want to create content for all users across various symbol sets.</li>
-<li>A large banking site wants people to be as autonomous as possible while using their services. They provide augmented symbol references onto their core services. They need a mechanism to programmatically support multiple symbol-sets witin the code. </li>
-<li>People who know different symbol-sets wish to talk to each other.</li>
-	<li>A government agency creating information sheets about human rights and patient rights are seeking feedback from impacted users. They add symbols from a common symbol-set to support a majority of different users. The agency would prefer to use a common symbol reference to support people who use or require different symbols. This allows all symbol-set users to both read and edit the content.	</li>
-</ul>
-		<p><strong>data-symbol</strong>: Using the data-symbol attribute, an author programmatically identifies the function of the button that sends an email. Based on user preference settings, a browser helper application or stand-alone tool renders that concept using an appropriate symbol, alternative term, and/or furnish an additional tool-tip that is understandable by the individual user. Using the Bliss Symbolics set's unique reference numbers as our 'taxonomy', other symbol sets can map their equivalent symbols against the Bliss set.</p>
+			<code>
+			&lt;label for="bar" <strong>data-symbol="14885"</strong>&gt;Your Principle Residence&lt;/label&gt; <br>
+			&lt;input type="textarea" id="bar" name="address" data-purpose="street-address"&gt;
+			</code>	
+			<p>Where the symbol value 14855 maps back to "Home".</p>
+			</div>
+<h4 id="proof-of-concept-symbol-example">Proof of Concept: Symbol Example<a class="self-link" aria-label="§" href="#language_impairment"></a></h4>
+<p>In the screen shots below, a browser extension uses the <code>data-symbol</code> attribute to load symbols that are familiar to the user.</p>	
+				<p>Note that users learn a specific symbol vocabulary. However, the various symbol vocabularies are mutually unintelligible: users familiar with one set of symbols may not be familiar with or understand an alternative set. Personalization offers a mechanism to translate between symbol sets to allow people to communicate with one another where it was previously not possible.</p>	
 
-	<code>
-	&lt;label for="bar" data-symbol="14885"&gt;Your Principle Residence&lt;/label&gt; &lt;input type="textarea" id="bar" name="address" data-purpose="street-address"&gt;
-	</code>	
-
-<p>Where the symbol value 14855 maps back to "Home".</p>
-<h2 id="proof-of-concept-symbol-example">Proof of Concept Symbol Example<a class="self-link" aria-label="§" href="#language_impairment"></a></h2>
-<p>In the screen shots below, a browser extension uses the data-symbol attribute to load symbols that are familiar to the user.</p>	
-				<p>Note that users learn a specific symbol vocabulary. However, the various vocabularies are mutually unintelligible. Personalization offers a mechanism to translate between symbol sets to allow people to communicate with one another where it was previously not possible.</p>		
-<p>Original
-<img src="https://user-images.githubusercontent.com/8376341/79741687-5b20a880-830a-11ea-814d-97ed7132d7d1.png" alt="screen shot, no symbols" height="560" width="1199"></p>
-<p>Here we have  the same page loaded, but the user agent has removed content and added symbols
-<img src="https://user-images.githubusercontent.com/8376341/79741694-5cea6c00-830a-11ea-80f6-6c7b632a451d.png" alt="screen shot with less content and symbols " height="583" width="1211"></p>
-<p>Here we have  the same page loaded, but the user agent has removed content and added different symbols that this user is more familiar with:
-<img src="https://user-images.githubusercontent.com/8376341/79741698-5d830280-830a-11ea-9976-f7816c4748be.png" alt="screen shot with different symbols (bliss)" height="627" width="1209"></p>
-
+			<figure id="fig-the-original-page">
+				<img src="https://user-images.githubusercontent.com/8376341/79741687-5b20a880-830a-11ea-814d-97ed7132d7d1.png" alt="screen shot, no symbols" style="height:95%; width:95%" height="560" width="1199">
+				<figcaption>Figure <bdi class="figno">1</bdi> <span class="fig-title">The original page</span></figcaption>
+			</figure>
+			<figure id="fig-the-same-page-loaded-but-the-user-agent-has-removed-content-and-added-symbols">
+				<img src="https://user-images.githubusercontent.com/8376341/79741694-5cea6c00-830a-11ea-80f6-6c7b632a451d.png" alt="screen shot with less content and symbols" style="height:95%; width:95%" height="583" width="1211">
+				<figcaption>Figure <bdi class="figno">2</bdi> <span class="fig-title">The same page loaded, but the user-agent has removed content and added symbols</span></figcaption>
+			</figure>
+			<figure id="fig-the-same-page-loaded-but-the-user-agent-has-removed-content-and-added-different-symbols-that-this-user-is-more-familiar-with">
+				<img src="https://user-images.githubusercontent.com/8376341/79741698-5d830280-830a-11ea-9976-f7816c4748be.png" alt="screen shot with different symbols (bliss)" style="height:95%; width:95%" height="627" width="1209">
+				<figcaption>Figure <bdi class="figno">3</bdi> <span class="fig-title">The same page loaded, but the user-agent has removed content and added different symbols that this user is more familiar with</span></figcaption>
+			</figure>
 		</section>
+		
 		<section class="section" id="memory_impairment">
-		<h4 id="x1-2-5-working-memory-and-short-term-memory-impairment"><bdi class="secno">1.2.5 </bdi>Working Memory and Short-term Memory Impairment<a class="self-link" aria-label="§" href="#memory_impairment"></a></h4>
-<p>Users may have differences in both working and short-term memory.  For some users, the number of items or data that can be stored in working memory is a fraction of the populations average. Whereas most adults can repeat about seven digits in correct order, a specific user may only manage two or three numbers. When they become distracted, they are also likely to forget any information in their working memory.</p>
+			<h4 id="x1-2-5-working-memory-and-short-term-memory-impairment"><bdi class="secno">1.2.5 </bdi>Working Memory and Short-term Memory Impairment<a class="self-link" aria-label="§" href="#memory_impairment"></a></h4>
+			<p>Users may have differences in both working and short-term memory.  For some users, the number of items or data that can be stored in working memory is a fraction of the populations average. Whereas most adults can repeat about seven digits in correct order, a specific user may only manage two or three numbers. When they become distracted, they are also likely to forget any information in their working memory.</p>
 
-<p>Example: Many processes consist of a sequence of separate steps or actions which must be performed by a user to complete a process or workflow. Users need to remember completed tasks in order to identify their location in a process. In addition, a user must be able to navigate to completed tasks to make modifications or corrections.</p>
+			<div class="example"><p>Example: Many processes consist of a sequence of separate steps or actions which must be performed by a user to complete a process or workflow.</p><p>Users need to remember completed tasks in order to identify their location in a process. In addition, a user must be able to navigate to completed tasks to make modifications or corrections.</p></div>
 
-<p>A step indicator allows an author to define steps within a process or represent an entire user path outside of the context of a defined process. This includes turning steps between defined processes into breadcrumbs or linked steps that identify completed tasks. This allows the user to navigate back to completed steps and identify a user's current location in a path.</p>
+			<p>A step indicator allows an author to define steps within a process or represent an entire user path outside of the context of a defined process. This includes turning steps between defined processes into breadcrumbs or linked steps that identify completed tasks. This allows the user to navigate back to completed steps and identify a user's current location in a path.</p>
 
-<p>More information on persona and user needs can be found in  <a href="https://www.w3.org/TR/coga-usable/" rel="nofollow">Making content usable for people with cognitive and learning disabilities</a>.</p> 
+			<p>More information on persona and user needs can be found in  <a href="https://www.w3.org/TR/coga-usable/" rel="nofollow">Making content usable for people with cognitive and learning disabilities</a>.</p> 
 		</section>
 	</section>
             
@@ -589,7 +603,7 @@ Next to the number 40, there can be: <ul>
                     <li>Develop or produce an authoring tool to support the new attributes</li>
                     <li>Produce a symbol set for <code>data-symbol</code></li>
                 </ul>
-                <p>We encourage a the development of these items and a list of implementations can be found on our wiki.</p>
+                <p>We encourage a the development of these items and a list of implementations can be found on <a href="https://github.com/w3c/personalization-semantics/wiki">our wiki</a>.</p>
             </section>
             
            
@@ -601,7 +615,7 @@ Next to the number 40, there can be: <ul>
 				<p>Each module has use cases and vocabularies: </p>
 				<ul>
 					<li><a href="content/index.html">Adaptable Content:</a>
-					<p>This section provides vocabularies that enable user agents to augment or adapt content to the user scenario and helps the user use and understand the content.</p>
+					<p>This section provides vocabularies that enable user-agents to augment or adapt content to the user scenario and helps the user use and understand the content.</p>
 					<p>It includes use cases and vocabularies for identifying the purpose of controls, symbols  and user interface elements and supports simplification and avoiding distractions.</p></li>
 				
 					<li><a href="help/index.html">Adaptable Help and Support:</a>
@@ -610,7 +624,7 @@ Next to the number 40, there can be: <ul>
 				
 					<li><a href="tools/index.html">Adaptable Tools</a>
 					<p>The first working draft of this module is now available.</p>
-					<p>It addresses adding information about the content to enable user agents and extensions to provide additional support to the user. One example is adaptable breadcrumbs.</p></li>
+					<p>It addresses adding information about the content to enable user-agents and extensions to provide additional support to the user. One example is adaptable breadcrumbs.</p></li>
 				
 				</ul>
 		</section>
@@ -624,12 +638,8 @@ Next to the number 40, there can be: <ul>
             </section>
 			<section id="propcharacteristic_value">
 				<h3 id="x3-2-values"><bdi class="secno">3.2 </bdi>Values<a class="self-link" aria-label="§" href="#propcharacteristic_value"></a></h3>
-				<p>Values provide the specific personalization information for the property. The possible values for each property are elaborated in the definition of the property in the modules. Some properties require the value to come from a predefined list of possible values, others can accept arbitrary strings, and some may accept multiple values. The value may be one of the following types:</p>
+				<p>Values provide the specific personalization information for the property. The possible values for each property are elaborated in the definition of the property in the modules. Some properties require the value to come from a predefined list of possible values, others can accept arbitrary strings, and some may accept multiple values. The attribute value may be one of the following types:</p>
 				<dl>
-					<dt id="valuetype_true-false">true/false</dt>
-					<dd>Value representing either true or false, with a default "false" value.</dd>
-					<dt id="valuetype_true-false-undefined">true/false/undefined</dt>
-					<dd>Value representing true or false, with a default "undefined" value indicating the state or property is not relevant.</dd>
 					<dt id="valuetype_idref">ID reference</dt>
 					<dd>Reference to the ID of another element in the same document</dd>
 					<dt id="valuetype_idref_list">ID reference list</dt>
@@ -647,6 +657,8 @@ Next to the number 40, there can be: <ul>
 					<dt id="valuetype_uri">URI</dt>
 					<dd>A Uniform Resource Identifier as defined by <cite><a href="http://www.ietf.org/rfc/rfc3986.txt">RFC 3986</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3986" title="Uniform Resource Identifier (URI): Generic Syntax">RFC3986</a></cite>]. It may reference a separate document, or a content fragment identifier in a separate document, or a content fragment identifier within the same document.</dd>
 				</dl>
+				<div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="4"><span>Note</span></div><div class="">The attributes and values in this specification are not intended to overide the semantics exposed in the Accessibility Tree, but rather augment them. In the case of conflict between an element's semantics and the attribute values, validation algorithms should issue a warning but not an error.</div></div>
+				
 			</section>
 		</section>
 
@@ -660,8 +672,8 @@ Next to the number 40, there can be: <ul>
 			<section class="section" id="current-usage">
 			<h3 id="x4-1-current-usage"><bdi class="secno">4.1 </bdi>Current Usage<a class="self-link" aria-label="§" href="#current-usage"></a></h3>
  
-            <p>At the present stage of development, the Personalization Semantics vocabulary can be used in HTML content using <a href="https://www.w3.org/TR/html5/dom.html#embedding-custom-non-visible-data-with-the-data-attributes">data- attributes</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-html5" title="HTML5">html5</a></cite>]. Attributes in this form can be used in valid HTML to implement features recognized by browser extensions or other special processors. Personalization Semantics is using this approach to gain early implementation experience of the features in a way that is simple and likely to be accepted within the web ecosystem as an interim approach.</p>
-            <p>This publication of the personalization semantics provides several name value pairs. These include but are not limted to:</p>
+            <p>At the present stage of development, the Personalization Semantics vocabulary can be used in HTML content using <a href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes">data-* attributes</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-html5" title="HTML5">html5</a></cite>]. Attributes in this form can be used in valid HTML to implement features recognized by browser extensions or other special processors. Personalization Semantics is using this approach to gain early implementation experience of the features in a way that is simple and likely to be accepted within the web ecosystem as an interim approach.</p>
+            <p>This publication of the personalization semantics provides several <em>key-value pairs</em> (attribute = value). These attributes include but are not limted to:</p>
             <ul>
                 <li><a href="content/#action-explanation">data-action</a></li>
                 <li><a href="content/#destination-explanation">data-destination</a></li>
@@ -669,8 +681,8 @@ Next to the number 40, there can be: <ul>
                 <li><a href="content/#symbol-explanation">data-symbol</a></li>
             </ul>
             <p>Other properties exist or will be developed as the modules mature. See the discussion <a href="https://github.com/w3c/personalization-semantics/wiki/Prototypes-with-data-dash-*-(Take-2)">Prototypes with data dash</a>.</p>
-            <div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="4"><span>Note</span></div><p class="">The personalization specification currently defines and relies on multiple entity attributes
-constructed according to the requirements of Sec. 3.2.6.6 of the HTML Specification, <a href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes"> Embedding custom non visible data with the data-* attributes</a> and by express request of <abbr title="World Wide Web Consortium">W3C</abbr>'s Technical Advisory Group (TAG). The HTML data- attribute syntax is not intended to be used for long-term wide-scale features. The task force is using this approach at the moment to gain implementation experience and demonstrate the usefulness of Personalization Semantics in practice. Implementers are cautioned that the "data-" prefix will be removed or replaced for some or all attribute values in succeeding iterations of this specification following additional consideration in <abbr title="World Wide Web Consortium">W3C</abbr> and the WHAT-WG.</p></div>
+            <div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="4"><span>Note</span></div><div class=""><p>The personalization specification currently defines and relies on multiple entity attributes
+constructed according to the requirements of Sec. 3.2.6.6 of the HTML Specification, <a href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes"> Embedding custom non visible data with the data-* attributes</a> and by express request of <abbr title="World Wide Web Consortium">W3C</abbr>'s Technical Advisory Group (TAG). The HTML data- attribute syntax is not intended to be used for long-term wide-scale features. The task force is using this approach at the moment to gain implementation experience and demonstrate the usefulness of Personalization Semantics in practice.</p><p>Implementers are cautioned that the "data-" prefix will be removed or replaced for some or all attribute values in succeeding iterations of this specification following additional consideration in <abbr title="World Wide Web Consortium">W3C</abbr> and the WHATWG.</p></div></div>
 			</section>
 			<section class="section" id="technology-comparison-summary">
                 <h3 id="x4-2-technology-comparison-summary"><bdi class="secno">4.2 </bdi>Technology Comparison Summary<a class="self-link" aria-label="§" href="#technology-comparison-summary"></a></h3>
@@ -678,8 +690,8 @@ constructed according to the requirements of Sec. 3.2.6.6 of the HTML Specificat
                 <ul>
                     <li><a href="https://www.w3.org/TR/rdfa-lite/">RDFa Lite</a></li>
                     <li><a href="https://www.w3.org/TR/microdata/">HTML Microdata</a></li>
-                    <li>Additional ARIA-* attributes</li>
-                    <li>AUI-* a new, personalization specific set of attributes</li>
+                    <li>Additional ARIA attributes (e.g. <code>aria-action</code>)</li>
+                    <li>AUI-prefixed attributes: a new, personalization specific set of attributes (e.g. <code>aui-action</code>)</li>
                     <li>A new single attribute, purpose, to encode both properties and values</li>
                     <li>A new single attribute with properties and values encoded using inline css syntax of key/value pairs</li>
                     <li>An extension of the above single attribute using CSS key/value pairs and simple text content</li>
@@ -689,20 +701,22 @@ constructed according to the requirements of Sec. 3.2.6.6 of the HTML Specificat
                     <li>Embed personalization data via JavaScript Object Notation (JSON)</li>
                     <li>Use of the existing data- attribute mechanism of HTML</li>
                 </ul>
-                <p></p>
-                  <ul>
-                    <li>Authoring - ease of authoring and potential ambiguity between personalization and existing features</li>
-                    <li>User Agents - ease of determining and parsing the properties &amp; values and the ability to implement as an extension</li>
-                    <li>Host Languages - requirement for special host language support, works in multiple languages, integrates with ARIA and HTML, easy extension of the vocabulary, and needed number of new features</li>
-                    <li>Functionality - necessity of multiple properties and interaction between properties, integration with other vocabularies, likely search engine support for content alternatives, and typed value support</li>
-                    <li>Strategy - avoid segregation of accessibility from other features, provide a clear path to join with other <abbr title="World Wide Web Consortium">W3C</abbr> personalization efforts, and stable enough to avoid modification of authored content over time</li>
-                    
-                </ul>  
-                
-                <p>The details of our research and discussion is documented on the <a href="https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content">Comparison of ways to use vocabulary in content</a> and <a href="https://github.com/w3c/personalization-semantics/wiki/Prototypes-with-data-dash-*-(Take-2)">Prototypes with data dash</a> pages in our Wiki. </p>
-                <p>
-                    We presented some of these options at the TPAC 2018 Personalization Plenary Day presentation and provided a working example using the data- attribute to add personalization features.  The data- solution was recommended by representatives of several working groups attending our presentation and discussions. See the <a href="https://w3c.github.io/personalization-semantics/#vocabulary-implementations">Vocabulary Implementations section in the Explainer document</a> for further details on the use of data- attributes. 
-                </p>
+                <h3 id="considerations-in-the-decision-process">Considerations in the decision process:<a class="self-link" aria-label="§" href="#technology-comparison-summary"></a></h3>
+				<dl>
+					<dt>Authoring</dt>
+					<dd>ease of authoring and potential ambiguity between personalization and existing features;</dd>
+					<dt>User-Agents</dt>
+					<dd>ease of determining and parsing the properties &amp; values and the ability to implement as an extension;</dd>
+					<dt>Host Languages</dt>
+					<dd>requirement for special host language support, works in multiple languages, integrates with ARIA and HTML, easy extension of the vocabulary, and needed number of new features;</dd>
+					<dt>Functionality</dt>
+					<dd>necessity of multiple properties and interaction between properties, integration with other vocabularies, likely search engine support for content alternatives, and typed value support;</dd>
+					<dt>Strategy</dt>
+					<dd>avoid segregation of accessibility from other features, provide a clear path to join with other <abbr title="World Wide Web Consortium">W3C</abbr> personalization efforts, and stable enough to avoid modification of authored content over time;</dd>
+				</dl>
+
+                <p>The details of our research and discussion are documented on the <a href="https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content">Comparison of ways to use vocabulary in content</a> and <a href="https://github.com/w3c/personalization-semantics/wiki/Prototypes-with-data-dash-*-(Take-2)">Prototypes with data dash</a> pages in our Wiki. </p>
+                <p>We presented some of these options at the TPAC 2018 Personalization Plenary Day presentation and provided a working example using the data- attribute to add personalization features.  The data- solution was recommended by representatives of several working groups attending our presentation and discussions. See the <a href="https://w3c.github.io/personalization-semantics/#vocabulary-implementations">Vocabulary Implementations section in this Explainer document</a> for further details on the use of data- attributes.</p>
                 
             </section>
 		</section>
