@@ -52,6 +52,12 @@ var respecConfig = {
         w3cid: 72055
       },
       {
+        name: "John Foliot",
+        mailto: "john@foliot.ca",
+        company: "Invited Expert",
+        w3cid: 41450
+      },
+      {
         name: "Michael Cooper",
         url: 'https://www.w3.org',
         mailto: "cooper@w3.org",
