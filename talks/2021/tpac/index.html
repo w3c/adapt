@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="UTF-8" />
+		<meta content="width=device-width" name="viewport" />
+		<title>Personalization Semantics</title>
+		<link rel="stylesheet" href="TPAC-2020-slides.css" />
+		<script src="shower.js" type="text/javascript"></script>
+		<!--<script src="../Templates/b6plus.js" type="text/javascript"></script>-->
+	</head>
+	<body class="shower fade-in">
+		<section class="comment">
+			<p>This is a <strong>work in progress</strong>. Things missing include setting out the case for personalization.</p>
+		</section>
+
+		<div class="progress">
+			<!-- Remove this element if you don't want a progress bar -->
+		</div>
+
+		<section class="slide cover clear" id="start" aria-label="slide">
+			<h1>Personalization Semantics</h1>
+			<address>Personalization Semantics Task Force</address>
+		</section>
+
+		<section class="slide" id="lists" aria-label="slide">
+			<h2>Goal</h2>
+			<p>Developing support for personalization of content on the web.</p>
+		</section>
+
+		<section class="slide" id="lists" aria-label="slide">
+			<img class="fit" src="cup-of-tea-1.png" alt="FIXME">
+		</section>
+
+		<section class="slide" id="lists" aria-label="slide">
+			<img class="fit" src="cup-of-tea-2.png" alt="FIXME">
+		</section>
+
+		<section class="slide" id="lists" aria-label="slide">
+			<h2>Authoring/Bootstrapping</h2>
+			<ul>
+				<li>The approach needs input from authors.</li>
+				<li>We aim to make this as easy as possible.</li>
+				<li>We've seen things like <code>&lt;main&gt;</code> work very well, because there is wide potential applicability/neatness for developers.</li>
+				<li>If we can show the potential gains for users, we can create demand&hellip;</li>
+				<li>&hellip;and the sorts of things we’re expressing are quite fundamental.</li>
+			</ul>
+		</section>
+
+		<section class="slide" id="lists" aria-label="slide">
+			<h2>W3C Personalization Task Force</h2>
+			<ul>
+				<li>Part of the Accessible Platform Architectures Working Group</li>
+				<li>&hellip;within the Web Accessibility Initiative</li>
+				<li>&hellip;of the World Wide Web Consortium.</li>
+				<li>More importantly: part of your web!</li>
+			</ul>
+		</section>
+
+		<section class="slide" id="lists" aria-label="slide">
+			<h2>This is BIG</h2>
+			<ul>
+				<li>Multiple stages to the plan
+					<ul>
+						<li><a href="https://www.w3.org/TR/personalization-semantics-1.0/">Personalization Semantics Explainer</a></li>
+						<li>Module 1 <a href="https://www.w3.org/TR/personalization-semantics-content-1.0/">Adaptable Content</a> (nearing wide community review)</li>
+						<li>Module 2 <a href="https://w3c.github.io/personalization-semantics/help/index.html">Adaptable Help and Support</a></li>
+						<li>Module 3 <a href="https://w3c.github.io/personalization-semantics/tools/index.html">Adaptable Tools</a></li>
+					</ul>
+				</li>
+				<li>Years in the making, and to come—get in on the ground floor!</li>
+			</ul>
+		</section>
+
+		<section class="slide" id="lists" aria-label="slide">
+			<h2>This is REALLY BIG</h2>
+			<ul>
+				<li>Focus on cognition, cognitive disabilities and usability.
+					<ul>
+						<li>Related: <a href="https://www.w3.org/TR/coga-usable/">Making Content Usable for People with Cognitive and Learning Disabilities</a></li>
+					</ul>
+				</li>
+				<li>Universally applicable (to varying degrees).</li>
+				<li>Could help make the web a lot more mailable and adaptive for people.</li>
+				<li>Built on simple and robust tech, so has a good chance!</li>
+				<li>&hellip;with much room to grow later on.</li>
+			</ul>
+		</section>
+
+		<section class="slide" id="lists" aria-label="slide">
+			<h2>Personalization Semantics Module 1</h2>
+			<ul>
+				<li>Programmatically identify the purpose of various interface elements.</li>
+				<li>Support simplification of user interfaces and content.
+					<ul>
+						<li>Showing what’s important.</li>
+						<li>Removing distractions.</li>
+					</ul>
+				</li>
+				<li>Support presenting symbols instead of words.</li>
+				<li>&hellip;and more!</li>
+			</ul>
+		</section>
+
+		<section class="slide" id="lists" aria-label="slide">
+			<h2>Action, Destination and Purpose attributes</h2>
+			<ul>
+				<li><code>&lt;button action="checkout"&gt;Check out&lt;/button&gt;</code></li>
+				<li><mark>TODO: check</mark> <code>&lt;a href="..." destination=“help”&gt;Help&lt;/a&gt;</code></li>
+				<li><code>&lt;input type="text" purpose="home tel" /&gt;</code></li>
+				<li><p><strong>Note:</strong> we are using <code>data-*</code> attributes for now.</p></li>
+			</ul>
+		</section>
+
+		<section class="slide" id="lists" aria-label="slide">
+			<h2>Demo</h2>
+			<p><a href="http://matatk.agrip.org.uk/personalization-semantics-explorations/demo.html">http://matatk.agrip.org.uk/personalization-semantics-explorations/demo.html</a></p>
+			<p><mark>TODO: work is in progress to harmonise with the latest Editor's Draft.</mark></p>
+		</section>
+
+		<section class="slide" id="lists" aria-label="slide">
+			<h2>Complementing native/ARIA semantics</h2>
+			<ul>
+				<li>Our attributes are informational, suggestive.</li>
+				<li>We don’t override elements’ semantics.</li>
+				<li>Anticipate many different adaptations/user agents/extensions, for different user groups and cases.</li>
+			</ul>
+		</section>
+
+		<section class="slide" id="lists" aria-label="slide">
+			<h2>Simplification attribute</h2>
+			<p><mark>TODO: insert latest simplification example—my edits don't seem to have made it into the Editor's Draft.</mark></p>
+		</section>
+
+		<section class="slide" id="lists" aria-label="slide">
+			<h2>Your web needs YOU!</h2>
+			<ul>
+				<li>There is an upcoming wide review of <a href="https://w3c.github.io/personalization-semantics/content/">The Content Module ("Module 1")</a>.</li>
+				<li>We will need feedback from authors, implementers and users.</li>
+				<li>You can provide feedback via <a href="https://github.com/w3c/personalization-semantics">our GitHub repo</a>&mdash;no need to be a W3C member.</li>
+				<li>You can follow the <a href="https://lists.w3.org/Archives/Public/public-personalization-tf/">mailing list</a> (again, no need to be a member).</li>
+				<li>Or even join the group. (Please do!)</li>
+			</ul>
+		</section>
+	</body>
+</html>
