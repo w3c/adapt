@@ -34,25 +34,15 @@
 			<h1>Introduction</h1>
 			<section id="background">
 				<h2>Background</h2>
-				<p>This specification module enables authors to add semantic information about content at the element level, in order to facilitate a more familiar or comprehensible interface for the individual user. Multiple screen renderings (transformations) are supported in order to meet the differing needs of different users. Final renderings &mdash; generated via helper apps or 3rd-party tools &mdash; are ultimately defined by the user's configuration settings.</p>
+				<p>This specification module enables authors to add semantic information about content at the element level, in order to indicate the priority level of a message for the individual user, or programmatically enumerate tasks that the user is required to complete, so that users who have memory issues can keep track of the steps previously completed. It is anticipated that multiple screen renderings (transformations) will be supported in order to meet the differing needs of different users. Final renderings &mdash; generated via helper apps or 3rd-party tools &mdash; will be ultimately defined by the user's configuration settings.</p>
 				
-				<p>The goal of the attributes and values described in this specification is to enable personalized communication and web content interaction for the individual user. This specification includes facilities to:</p>
-
-				<ul>
-					<li>Transform the user interface (UI) through the addition, removal, or adaptation of content which otherwise tends to have a negative impact on Augmentative and Alternative Communications (<abbr title="Augmentative and Alternative Communication">AAC</abbr>) users;</li>
-					<li>Provide extra support to the user;</li>
-					<li>Enable new adapted user agents for people with learning and cognitive disabilities.</li>
-				</ul>
-
-				<p>Personalization Semantics is a series of technical specifications that provide the element-level attributes and values which enable user agents and helper-applications to adapt content to an individual user's needs. It relies on author-supplied page and element level metadata in order to achieve individualized personalization.</p>
-
-				<p>Personalization Semantics currently consists of three modules: Content, Help and Support, and Personalization Tools. The specification defined in this document is the Personalization Semantics Content Module&mdash;the first of the Personalization Semantics Modules series.</p>
-
-				<p>Personalization Semantics is more fully introduced in our <a href="https://www.w3.org/TR/personalization-semantics-1.0/">Personalization Semantics Explainer</a> [[personalization-semantics-1.0]].</p>
+				<p>This document lists examples of the personalized tools properties, an extension of <a href="../">Personalization Explainer 1.0</a>, including the properties of <code>messageimportance</code>, <code>messagefrom</code>, <code>messagecontext</code>, <code>messagetime</code>,	and <code>stepindicator</code>. </p>
+				
+				<p class="ednote" id="examples-disclaimer">Personalization semantics defines a set of properties and values to annotate content. The specific mechanism to apply these properties to content and semantics has not been decided. <a href="https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content">Several approaches are under consideration</a> and future drafts will show progress. To help understand the proposed properties, this document provides many examples of personalization semantics applied to content, which show attributes beginning with the prefix "data-". <em>This prefix has not been decided on as the definitive approach</em>, but is used as a way to illustrate the examples.</p>
 			</section>
 			<section id="module">
-				<h2>Personalization Semantics Content Module</h2>
-				<p>Personalization Semantics Content Module is the first part of the Personalization Semantics technical specification, which provides personalization semantics and vocabularies that can be used to mark-up web content with additional semantic information, enabling user agents to augment or adapt content to various user-scenarios based on the user’s personalization settings or preferences. The Content Module enhances web content by providing additional information about form controls, buttons, links, and other user interface elements. User agents use these semantics to augment or adapt content to the user’s scenario &mdash; for example allowing for the conversion of text to symbols. This helps users with varying needs to understand the content by providing support for simplification and/or a way to manage unnecessary distractions.</p>
+				<h2>Personalization Tools Module</h2>
+				<p>Personalization Tools Module is the third and final part of the Personalization Semantics technical specification, which provides personalization semantics and vocabularies that can be used to mark-up web content with additional semantic information, enabling user agents to augment or adapt content to various user-scenarios based on the user’s personalization settings or preferences. The Tools Module enhances web content by providing additional information about message importance (for filtering), and tracking multi-step activities. User agents can use these semantics to augment or adapt content to the user’s scenario &mdash; for example allowing for the prioritization or filtering of on-screen messages. This helps users with varying needs to filter the content by providing support for a way to manage unnecessary distractions.</p>
 			</section>
 			<section id="vocabulary_explainer">
 				<h2>Vocabulary Structure and Implementations</h2>
@@ -63,7 +53,7 @@
 			</section>		
 			<section id="usecases">
 				<h2>Use Cases and Requirements</h2>
-				<p>The <a href="https://github.com/w3c/personalization-semantics/wiki/Requirements">Requirements for Personalization Semantics</a> describes use cases and requirements. This module provides properties to fulfill those requirements related to adapting content.</p>
+				<p>The <a href="https://github.com/w3c/personalization-semantics/wiki/Requirements">Requirements for Personalization Semantics</a> describes use cases and requirements. This module provides properties to fulfill requirements related to user support tools.</p>
 			</section>
 		</section>
 		<section id="terms">
@@ -72,12 +62,8 @@
 		</section>
 		<section id="vocabulary">
 			<h1>Vocabulary</h1>
-			<section data-include="action.html" data-include-replace="true" id="action"></section>
-			<section data-include="destination.html" data-include-replace="true" id="destination"></section>
-			<section data-include="purpose.html" data-include-replace="true" id="purpose"></section>
-			<section data-include="simplification.html" data-include-replace="true" id="simplification"></section>
-			<section data-include="distraction.html" data-include-replace="true" id="distraction"></section>
-			<section data-include="symbol.html" data-include-replace="true" id="symbol"></section>		
+			<section data-include="log.html" data-include-replace="true" id="log"></section>	
+			<section data-include="message.html" data-include-replace="true" id="message"></section>		
 		</section>
 		<section id="privacy">
 			<h1>Privacy and Security Considerations</h1>
