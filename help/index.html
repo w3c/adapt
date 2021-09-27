@@ -14,10 +14,8 @@
 				padding: 0.3em;
 			}
 		</style>
-	
 	</head>
 	<body>
-		<!-- edit 1 -->
 		<section id="abstract">
             <p>This specification provides web content authors a standard approach to support web users who are persons with various cognitive and learning disabilities, including users who require:</p>
 			<ul>
@@ -27,50 +25,40 @@
 			</ul>
 			<p>This Personalization Help and Support Module 1.0 is a component of the Personalization Semantics series introduced in the <a href="../">Personalization Semantics Explainer 1.0</a> document [[personalization-semantics-1.0]].</p>
 		</section>
-		<!-- End Edit -->
-		
+
 		<section id="sotd"></section>
 
 		<section class="informative" id="introduction">
 			<h1>Introduction</h1>
-			<section>
-			<h2>Background</h2>
-			
-			<!-- edit 2 -->
-			<p>This document lists examples of the personalized help and support properties, this is an extension of <a href="../">Personalization Explainer 1.0</a>. including the properties of <code>literal</code>, <code>numberfree</code>, <code>easylang</code>, <code>alternative</code>, <code>explain</code>, <code>feedback</code>, <code>moreinfo</code>, <code>extrahelp</code>, <code>helptype</code>. </p>
-			<!-- End Edit -->
-			
+			<section id="background">
+				<h2>Background</h2>
+			<p>This document lists examples of the personalized help and support properties, this is an extension of <a href="../">Personalization Explainer 1.0</a>. including the properties of <code>literal</code>, <code>numberfree</code>, <code>easylang</code>, <code>alternative</code>, <code>explain</code>, <code>feedback</code>, <code>moreinfo</code>, <code>extrahelp</code>, <code>helptype</code>. </p>	
 			<p class="ednote" id="examples-disclaimer">Personalization semantics defines a set of properties and values to annotate content. The specific mechanism to apply these properties to content and semantics has not been decided. <a href="https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content">Several approaches are under consideration</a> and future drafts will show progress. To help understand the proposed properties, this document provides many examples of personalization semantics applied to content, which show attributes beginning with the prefix "data-". <em>This prefix has not been decided on as the definitive approach</em>, but is used as a way to illustrate the examples.</p>
+			</section>
+			<section id="module">
+				<h2>Personalization Help and Support Module</h2>
+				<p>Personalization Help and Support Module is the second part of the Personalization Semantics technical specification, which provides personalization semantics and vocabularies that can be used to mark-up web content with additional semantic information, enabling user agents to augment or adapt content to various user-scenarios based on the user’s personalization settings or preferences. User agents use these semantics to augment or provide alternative content tailored to the user’s specific needs &mdash; for example, a user who has dyscalculia will have difficulty understanding numbers and will have a hard time interacting with websites that use numbers to convey information. Therefore, critical numeric information must be provided in an alternative format that the user can understand.</p>
+			</section>
+			<section id="vocabulary_explainer">
+				<h2>Vocabulary Structure and Implementations</h2>
+				<p>All the vocabulary in Personalization Help and Support Module is constructed of properties and their values. Please see our <a href="https://www.w3.org/TR/personalization-semantics-1.0/">Personalization Semantics Explainer</a>. </p>
+				<p>The vocabulary implementations included in this document are available at our <a href="https://github.com/w3c/personalization-semantics/wiki/Implementations-of-Semantics">implementations wiki page</a>.</p>
+				<p><strong>Note that the attributes and values in this specification do not overide the semantics exposed in the accessibility tree, but rather augment them.</strong> In the case of conflict between an element's semantics and the attribute values, validation algorithms should issue a warning but not an error.</p>
+				<div class="ednote">Since implementations have not yet been finalized, any examples in this document are illustrative only, and are provided to help in understanding the concept.  All examples will be updated once implementation examples are finalized.</div>
+			</section>		
+			<section id="usecases">
+				<h2>Use Cases and Requirements</h2>
+				<p>The <a href="https://github.com/w3c/personalization-semantics/wiki/Requirements">Requirements for Personalization Semantics</a> describes use cases and requirements. This module provides properties to fulfill those requirements related to adapting content.</p>
+			</section>
 		</section>
-		
-		<!-- edit 3 -->
-		<section>
-			<h2>Personalization Help and Support Module</h2>
-			<p>Personalization Help and Support Module is the second part of the Personalization Semantics technical specification, which provides personalization semantics and vocabularies that can be used to mark-up web content with additional semantic information, enabling user agents to augment or adapt content to various user-scenarios based on the user’s personalization settings or preferences. User agents use these semantics to augment or provide alternative content tailored to the user’s specific needs &mdash; for example, a user who has dyscalculia will have difficulty understanding numbers and will have a hard time interacting with websites that use numbers to convey information. Therefore, critical numeric information must be provided in an alternative format that the user can understand.</p>
-		</section>
-		<!-- End Edit -->
-		<section>
-			<h2>Vocabulary Structure and Implementations</h2>
-			<p>All the vocabulary in Personalization Help and Support Module is constructed of properties and their values. Please see our <a href="https://www.w3.org/TR/personalization-semantics-1.0/">Personalization Semantics Explainer</a>. </p>
-			<p>The vocabulary implementations included in this document are available at our <a href="https://github.com/w3c/personalization-semantics/wiki/Implementations-of-Semantics">implementations wiki page</a>.</p>
-			<p><strong>Note that the attributes and values in this specification do not overide the semantics exposed in the accessibility tree, but rather augment them.</strong> In the case of conflict between an element's semantics and the attribute values, validation algorithms should issue a warning but not an error.</p>
-			<div class="ednote">Since implementations have not yet been finalized, any examples in this document are illustrative only, and are provided to help in understanding the concept.  All examples will be updated once implementation examples are finalized.</div>
-		</section>
-		<section>
-			<h2>Use Cases and Requirements</h2>
-			<p>The <a href="https://github.com/w3c/personalization-semantics/wiki/Requirements">Requirements for Personalization Semantics</a> describes use cases and requirements. This module provides properties to fulfill those requirements related to adapting content.</p>
-		</section>
-		<section>
+		<section id="terms">
 			<h1>Terms</h1>
 			<p>This document uses a number of specific terms related to various cognitive disabilities and related user-needs. Those terms have been defined by the Cognitive and Learning Disabilities Accessibility Task Force. See the <a href="https://www.w3.org/TR/coga-usable/#glossary">COGA Glossary</a> for specific definitions.</p>
 		</section>
-		<!-- edit 4 -->
-		<section>
+		<section id="vocabulary">
 			<h1>Vocabulary</h1>
-            
 			<section data-include="vocabulary.html" data-include-replace="true" id="literal"></section>
 			</section>
-
 			<section id="implementation">
 				<h2>Example Implementations</h2>
 				<p>The Working Group is currently exploring different methods of implementing help and support in the context of the Personalization effort. The following examples are for illustration only, to assist in visualizing how this may work. The examples illustrate &quot;large&quot; amounts of alternative content, contained inline but hidden from traditional views. This content would be exposed to the end user on demand. For smaller pieces of content, additional information and support can be provided inline within the relative context of the content.</p>
@@ -91,9 +79,9 @@
 						<section data-include="moreinfo.html" data-include-replace="true" id="moreinfo"></section>
 						<section data-include="extrahelp.html" data-include-replace="true" id="extrahelp"></section>
 					</section>		
-			</section>
-		<!-- End Edit -->
-		<section>
+			</section>	
+		</section>
+		<section id="privacy">
 			<h1>Privacy and Security Considerations</h1>
 				<p>This specification adds context information about content to the document, and should not affect security.</p>
 				<p>Although this specification does not expose personal preferences and personal information, third party user agents or proxy server(s) acting upon our semantic information may need to store personal preferences on how to present content to a specific user. It is recommended that any user agent or proxy server implements best practices to protect all personal preferences and personal information.</p>
