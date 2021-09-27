@@ -8,14 +8,14 @@ var respecConfig = {
     tocIntroductory: true,
     // specification status (e.g., WD, LC, NOTE, etc.). If in doubt use ED.
     specStatus:           "ED",
-    noRecTrack: no,
+    noRecTrack: false,
     //crEnd:                "2012-04-30",
     //perEnd:               "2013-07-23",
     //publishDate:          "2013-08-22",
     //diffTool:             "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
 
     // the specifications short name, as in http://www.w3.org/TR/short-name/
-    shortName:            "personalization-semantics-tools-1.0",
+    shortName:            "personalization-semantics-content-1.0",
 
 
     // if you wish the publication date to be other than today, set this
@@ -31,7 +31,7 @@ var respecConfig = {
     //previousDiffURI: "",
 
     // if there a publicly available Editors Draft, this is the link
-    edDraftURI: "https://w3c.github.io/personalization-semantics/tools/",
+    edDraftURI: "https://w3c.github.io/personalization-semantics/content/",
 
     // if this is a LCWD, uncomment and set the end of its review period
     // lcEnd: "2012-02-21",
@@ -51,6 +51,12 @@ var respecConfig = {
         mailto: "charlesl@benetech.org",
         company: "Benetech",
         w3cid: 72055
+      },
+      {
+        name: "John Foliot",
+        mailto: "john@foliot.ca",
+        company: "Invited Expert",
+        w3cid: 41450
       },
       {
         name: "Michael Cooper",
@@ -114,8 +120,5 @@ var respecConfig = {
     //maxTocLevel: 2,
 
     localBiblio: biblio,
-
-    // Spec URLs
-
 
   };
