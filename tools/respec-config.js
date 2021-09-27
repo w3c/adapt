@@ -1,6 +1,6 @@
 var respecConfig = {
     // embed RDFa data in the output
-    trace:  true,
+    trace:  true, 
     doRDFa: '1.0',
     includePermalinks: true,
     permalinkEdge:     true,
