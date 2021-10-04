@@ -24,12 +24,22 @@
 }
 
 .big-text { font-size: 1.5rem; }
+.huge-text { font-size: 3rem; }
 
-#gnome-pic {
+.emoji-stack {
+	display: flex;
+	flex-direction: column;
+	line-height: 3rem;
+}
+
+.side-pic {
 	float: left;
 	max-height: 80%;
-	margin-right: 1rem;
+	margin-right: 1em;
 }
+
+.side-by-side { display: flex; }
+.side-by-side > :first-child { margin-right: 0.5em; }
 		</style>
 	</head>
 	<body class="shower fade-in">
@@ -87,17 +97,27 @@
 
 		<section class="slide" aria-label="slide">
 			<h2>The Icon/Emojis Trend</h2>
-			<ul>
-				<li class="next">Mixing of letters and symbols is accepted in most communication</li>
-				<li class="next">Many instant messages are emojis only</li>
-				<li class="next">Challenges
-					<ul>
-						<li class="next">Announced emojis can be difficult to interpret</li>
-						<li class="next">Symbols always changing</li>
-						<li class="next">Prejudices: icons are professional, emojis are not</li>
-					</ul>
-				</li>
-			</ul>
+			<div class="side-by-side">
+				<div class="huge-text emoji-stack">
+					<p class="visually-hidden">Some example emojis&hellip;</p>
+					<span>&#x1f603;</span>
+					<span>&#x1f44c;</span>
+					<span>&#x1f602;</span>
+					<span>&#x1f648;</span>
+					<span>&#x1f4f7;</span>
+				</div>
+				<ul>
+					<li class="next">Mixing of letters and symbols is accepted in most communication</li>
+					<li class="next">Many instant messages are emojis only</li>
+					<li class="next">Challenges
+						<ul>
+							<li class="next">Announced emojis can be difficult to interpret</li>
+							<li class="next">Symbols always changing</li>
+							<li class="next">Prejudices: icons are professional, emojis are not</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
 		</section>
 
 		<section class="slide" aria-label="slide">
@@ -131,7 +151,7 @@
 
 		<section class="slide" aria-label="slide">
 			<h2>User needs differ (1/2)</h2>
-			<img id="gnome-pic" src="images/menu-and-toolbar-preferences.gif" alt="FIXME"/>
+			<img class="side-pic" src="images/menu-and-toolbar-preferences.gif" alt="FIXME"/>
 			<p class="next">GNOME 1.x &quot;Menu and Toolbar Preferences&quot; c. 2001</p>
 			<p class="next">You can choose to have text, icons, or both&mdash;great!</p>
 			<p class="next">But what if the user is unfamiliar with those icons?</p>
