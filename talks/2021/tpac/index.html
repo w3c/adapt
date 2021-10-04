@@ -8,6 +8,11 @@
 		<script src="Templates/shower.js" type="text/javascript"></script>
 		<script src="Templates/iframe-fixup.js" type="text/javascript"></script>
 		<style>
+/* Fix accessibility issue: */
+.full .incremental > .visited,
+.full .overlay > .visited,
+.full .next.visited { color: rgb(101,118,130); }
+
 .visually-hidden {
 	clip: rect(0 0 0 0);
 	clip-path: inset(50%);
