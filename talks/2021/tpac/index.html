@@ -7,6 +7,25 @@
 		<link rel="stylesheet" href="TPAC-2020-slides.css" />
 		<script src="shower.js" type="text/javascript"></script>
 		<!--<script src="../Templates/b6plus.js" type="text/javascript"></script>-->
+		<style>
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+.big-text { font-size: 1.5rem; }
+
+#gnome-pic {
+	float: left;
+	max-height: 80%;
+	margin-right: 1rem;
+}
+		</style>
 	</head>
 	<body class="shower fade-in">
 		<section class="comment">
@@ -25,37 +44,52 @@
 		<section class="slide" aria-label="slide">
 			<h2><mark>Presenters?</mark></h2>
 			<ul>
-				<li><mark>Presenter 1 details</mark></li>
-				<li><mark>Presenter A details</mark></li>
+				<li class="next"><mark>Presenter 1 details</mark></li>
+				<li class="next"><mark>Presenter A details</mark></li>
 			</ul>
 		</section>
 
 		<section class="slide" aria-label="slide">
+			<h2>What is this all about?</h2>
+			<ol class="big-text">
+				<li class="next">
+					<p>We want to support the next billion users in accessing the web.</p>
+				</li>
+				<li class="next">
+					<p>We've developed a specification that will help content authors do this.</p>
+				</li>
+				<li class="next">
+					<p>We are looking for implementations (and other feedback).</p>
+				</li>
+			</ol>
+		</section>
+
+		<section class="slide big-text" aria-label="slide">
 			<h2>Reaching the next billion users</h2>
 			<p><mark>Who are the next billion users?</mark></p>
 		</section>
 
 		<section class="slide" aria-label="slide">
 			<h2>Yuki: A Yoga Teacher who has AD(H)D (1/2)</h2>
-			<p>Yuki could not really explain her apparent forgetfulness and not being able to focus or complete tasks. She knew that if she came across a long document or web page with dense text she had to find the key points. If the web page failed to have a clear structure, well-spaced and highlighted headings she would be lost and lose concentration. Yuki also said that if she was reading her mobile screen, advertisements appearing between chunks of text upset her focus and she had to stop reading.</p>
+			<p><span class="next">Yuki could not really explain her apparent forgetfulness and not being able to focus or complete tasks.</span><span class="next"> She knew that if she came across a long document or web page with dense text she had to find the key points.</span><span class="next"> If the web page failed to have a clear structure, well-spaced and highlighted headings she would be lost and lose concentration.</span><span class="next"> Yuki also said that if she was reading her mobile screen, advertisements appearing between chunks of text upset her focus and she had to stop reading.</span></p>
 		</section>
 
 		<section class="slide" aria-label="slide">
 			<h2>Yuki: A Yoga Teacher who has AD(H) (2/2)</h2>
-			<p>However, when there was good use of white space, recognizable icons linking to simple bold text clarifying the important points, Yuki could target these areas and find out what she needed.</p>
-			<p><strong>A clear summary helped Yuki understand and she could remember much of what she had read.</strong></p>
+			<p class="next">However, when there was good use of white space, recognizable icons linking to simple bold text clarifying the important points, Yuki could target these areas and find out what she needed.</p>
+			<p class="next"><strong>A clear summary helped Yuki understand and she could remember much of what she had read.</strong></p>
 		</section>
 
 		<section class="slide" aria-label="slide">
 			<h2>The Icon/Emojis Trend</h2>
 			<ul>
-				<li>Mixing of letters and symbols is accepted in most communication</li>
-				<li>Many instant messages are emojis only</li>
-				<li>Challenges
+				<li class="next">Mixing of letters and symbols is accepted in most communication</li>
+				<li class="next">Many instant messages are emojis only</li>
+				<li class="next">Challenges
 					<ul>
-						<li>Announced emojis can be difficult to interpret</li>
-						<li>Symbols always changing</li>
-						<li>Prejudices: icons are professional, emojis are not</li>
+						<li class="next">Announced emojis can be difficult to interpret</li>
+						<li class="next">Symbols always changing</li>
+						<li class="next">Prejudices: icons are professional, emojis are not</li>
 					</ul>
 				</li>
 			</ul>
@@ -63,25 +97,25 @@
 
 		<section class="slide" aria-label="slide">
 			<h2>Day-to-day impact (1/2)</h2>
-			<p>Many systems have become increasingly complex</p>
+			<p class="next">Many systems have become increasingly complex</p>
 			<ul>
-				<li>Web applications</li>
-				<li>TV interfaces, heating</li>
-				<li>Phone systems</li>
+				<li class="next">Web applications</li>
+				<li class="next">TV interfaces, heating</li>
+				<li class="next">Phone systems</li>
 			</ul>
-			<p>Including critical services&hellip;</p>
+			<p class="next">Including critical services&hellip;</p>
 		</section>
 
 		<section class="slide" aria-label="slide">
 			<h2>Day-to-day impact (2/2)</h2>
-			<p>Including critical services&hellip;</p>
+			<p class="next">Including critical services&hellip;</p>
 			<ul>
-				<li>Joining meetings at work (on time…)</li>
-				<li>Can I make a doctor’s appointment?</li>
-				<li>Can I make a complaint to the water company?</li>
-				<li>Can I turn on the heating????</li>
+				<li class="next">Joining meetings at work (on time…)</li>
+				<li class="next">Can I make a doctor’s appointment?</li>
+				<li class="next">Can I make a complaint to the water company?</li>
+				<li class="next">Can I turn on the heating????</li>
 			</ul>
-			<p>Standards exist to make these interfaces accessible such as WCAG</p>
+			<p class="next">Standards exist to make these interfaces accessible such as WCAG</p>
 			<p><mark>but?</mark></p>
 		</section>
 
@@ -90,15 +124,22 @@
 			<p><mark>multiple intersecting accessibility barriers/needs</mark></p>
 		</section>
 
+		<section class="slide" aria-label="slide">
+			<h2>User needs differ (1/2)</h2>
+			<img id="gnome-pic" src="menu-and-toolbar-preferences.gif" alt="FIXME"/>
+			<p class="next">GNOME 1.x &quot;Menu and Toolbar Preferences&quot; c. 2001</p>
+			<p class="next">You can choose to have text, icons, or both&mdash;great!</p>
+			<p class="next">But what if the user is unfamiliar with those icons?</p>
+		</section>
 
 		<section class="slide" aria-label="slide">
-			<h2>User needs differ</h2>
+			<h2>User needs differ (2/2)</h2>
 			<img src="placeholder-user-needs-differ.png" alt="FIXME"/>
 		</section>
 
 		<section class="slide" aria-label="slide">
-			<h2><mark>Placeholder for Content Usable slide</mark></h2>
-			<p><mark>summarise and link to Content Usable</mark></p>
+			<h2 class="visually-hidden">Content Usable</h2>
+			<a href="https://www.w3.org/TR/coga-usable/"><img src="content-usable.png" alt="The Cognitive and Learning Disabilities Accessibility Task Force's document on making content usable"/></a>
 		</section>
 
 		<section class="slide" aria-label="slide">
@@ -119,101 +160,90 @@
 
 		<section class="slide" aria-label="slide">
 			<h2>Goal</h2>
-			<p>Reach the next billion users, by&hellip;</p>
-			<p>Developing support for personalization of content on the web.</p>
-		</section>
-
-		<section class="slide" aria-label="slide">
-			<h2>Mechanisms to achieve this</h2>
-			<p>Providing the means for authors to supply <em>element-level</em> semantics.</p>
+			<p class="next">Reach the next billion users, by&hellip;</p>
+			<p class="next">Developing support for personalization of content on the web.</p>
+			<h2 class="next">Mechanism</h2>
+			<p class="next">Providing the means for authors to supply <strong>element-level</strong> semantics.</p>
+			<h2 class="next">What we need&hellip;</h2>
+			<p class="next">Implementations.</p>
 		</section>
 
 		<section class="slide" aria-label="slide">
 			<h2>Authoring/Bootstrapping</h2>
 			<ul>
-				<li>The approach needs input from authors.</li>
-				<li>We aim to make this as easy as possible.</li>
-				<li>We've seen things like <code>&lt;main&gt;</code> work very well, because there is wide potential applicability/neatness for developers.</li>
-				<li>If we can show the potential gains for users, we can create demand&hellip;</li>
-				<li>&hellip;and the sorts of things we’re expressing are quite fundamental.</li>
+				<li class="next">The approach needs input from authors.</li>
+				<li class="next">We aim to make this as easy as possible.</li>
+				<li class="next">We've seen things like <code>&lt;main&gt;</code> work very well, because there is wide potential applicability/neatness for developers.</li>
+				<li class="next">If we can show the potential gains for users, we can create demand.</li>
 			</ul>
 		</section>
 
 		<section class="slide" aria-label="slide">
-			<h2>W3C Personalization Task Force</h2>
+			<h2>Personalization Task Force</h2>
 			<ul>
-				<li>Part of the Accessible Platform Architectures Working Group</li>
-				<li>&hellip;within the Web Accessibility Initiative</li>
-				<li>&hellip;of the World Wide Web Consortium.</li>
-				<li>More importantly: part of your web!</li>
+				<li class="next">The <a href="https://www.w3.org/WAI/APA/task-forces/personalization/">Personalization Task Force (TF)</a> is&hellip;</li>
+				<li class="next">&hellip;part of the Accessible Platform Architectures Working Group (APA WG)&hellip;</li>
+				<li class="next">&hellip;within the Web Accessibility Initiative (WAI)&hellip;</li>
+				<li class="next">&hellip;of the World Wide Web Consortium (W3C), and&hellip;</li>
+				<li class="next">most importantly: part of your web!</li>
 			</ul>
 		</section>
 
 		<section class="slide" aria-label="slide">
 			<h2>Began with ARIA and WCAG 1.0</h2>
 			<ul>
-				<li>Personalization was the aim from the start</li>
-				<li>Focus at first on scripts and screen readers: avoiding undue burden.</li>
-				<li>ARIA then split from <mark>COGA</mark> (under APA and AG)</li>
-				<li>Codified ‘input purpose’ in WCAG 2.1 (SC 1.3.5)</li>
-				<li>Personalization was created to carry on this work</li>
-				<li>Informational, suggestive attributes available to authors that do not override other semantics.</li>
-				<li>Now ready for candidate review status</li>
+				<li class="next">Personalization was the aim from the start.</li>
+				<li class="next">Focus at first on scripts and screen readers: avoiding undue burden.</li>
+				<li class="next"><mark>ARIA</mark> then split from the <a href="https://www.w3.org/WAI/GL/task-forces/coga/">Cognitive and Learning Disabilties (COGA) TF</a> (under the APA and Accessibility Guidelines WGs).</li>
+				<li class="next">Codified &quot;input purpose&quot; in <a href="https://www.w3.org/WAI/WCAG21/Understanding/identify-input-purpose.html">WCAG 2.1 (SC 1.3.5)</a>.</li>
+				<li class="next">The Personalization TF was created to carry on this work.</li>
+				<li class="next">Informational, suggestive attributes available to authors that do not override other semantics.</li>
+				<li class="next">Now ready for candidate review status</li>
 			</ul>
 		</section>
 
 		<section class="slide" aria-label="slide">
 			<h2>This is BIG</h2>
 			<ul>
-				<li>Multiple stages to the plan
+				<li class="next">Multiple stages to the plan
 					<ul>
-						<li><a href="https://www.w3.org/TR/personalization-semantics-1.0/">Personalization Semantics Explainer</a></li>
-						<li>Module 1 <a href="https://www.w3.org/TR/personalization-semantics-content-1.0/">Adaptable Content</a> (nearing wide community review)</li>
-						<li>Module 2 <a href="https://w3c.github.io/personalization-semantics/help/index.html">Adaptable Help and Support</a></li>
-						<li>Module 3 <a href="https://w3c.github.io/personalization-semantics/tools/index.html">Adaptable Tools</a></li>
+						<li class="next"><a href="https://www.w3.org/TR/personalization-semantics-1.0/">Personalization Semantics Explainer</a></li>
+						<li class="next">Module 1 <a href="https://www.w3.org/TR/personalization-semantics-content-1.0/">Adaptable Content</a> (nearing wide community review)</li>
+						<li class="next">Module 2 <a href="https://w3c.github.io/personalization-semantics/help/index.html">Adaptable Help and Support</a></li>
+						<li class="next">Module 3 <a href="https://w3c.github.io/personalization-semantics/tools/index.html">Adaptable Tools</a></li>
 					</ul>
 				</li>
-				<li>Years in the making, and to come—get in on the ground floor!</li>
+				<li class="next">Years in the making, and to come—get in on the ground floor!</li>
 			</ul>
 		</section>
 
 		<section class="slide" aria-label="slide">
 			<h2>This is REALLY BIG</h2>
 			<ul>
-				<li>Focus on cognition, cognitive disabilities and usability.
+				<li class="next">Focus on cognition, cognitive disabilities and usability.
 					<ul>
-						<li>Related: <a href="https://www.w3.org/TR/coga-usable/">Making Content Usable for People with Cognitive and Learning Disabilities</a></li>
+						<li class="next">Related: <a href="https://www.w3.org/TR/coga-usable/">Making Content Usable for People with Cognitive and Learning Disabilities</a></li>
 					</ul>
 				</li>
-				<li>Universally applicable (to varying degrees).</li>
-				<li>Could help make the web a lot more mailable and adaptive for people.</li>
-				<li>Built on simple and robust tech, so has a good chance!</li>
-				<li>&hellip;with much room to grow later on.</li>
+				<li class="next">Universally applicable (to varying degrees).</li>
+				<li class="next">Could help make the web a lot more mailable and adaptive for people.</li>
+				<li class="next">Built on simple and robust tech, so has a good chance!</li>
+				<li class="next">&hellip;with much room to grow later on.</li>
 			</ul>
 		</section>
 
 		<section class="slide" aria-label="slide">
 			<h2>Personalization Semantics Module 1</h2>
 			<ul>
-				<li>Programmatically identify the purpose of various interface elements.</li>
-				<li>Support simplification of user interfaces and content.
+				<li class="next">Programmatically identify the purpose of various interface elements.</li>
+				<li class="next">Support simplification of user interfaces and content.
 					<ul>
-						<li>Showing what’s important.</li>
-						<li>Removing distractions.</li>
+						<li class="next">Showing what’s important.</li>
+						<li class="next">Removing distractions.</li>
 					</ul>
 				</li>
-				<li>Support presenting symbols instead of words.</li>
-				<li>&hellip;and more!</li>
-			</ul>
-		</section>
-
-		<section class="slide" aria-label="slide">
-			<h2>Action, Destination and Purpose attributes</h2>
-			<ul>
-				<li><code>&lt;button action="checkout"&gt;Check out&lt;/button&gt;</code></li>
-				<li><mark>TODO: check</mark> <code>&lt;a href="..." destination=“help”&gt;Help&lt;/a&gt;</code></li>
-				<li><code>&lt;input type="text" purpose="home tel" /&gt;</code></li>
-				<li><p><strong>Note:</strong> we are using <code>data-*</code> attributes for now.</p></li>
+				<li class="next">Support presenting symbols instead of words.</li>
+				<li class="next">&hellip;and more!</li>
 			</ul>
 		</section>
 
@@ -227,9 +257,19 @@
 		<section class="slide" aria-label="slide">
 			<h2>Complementing native/ARIA semantics</h2>
 			<ul>
-				<li>Our attributes are informational, suggestive.</li>
-				<li>We don’t override elements’ semantics.</li>
-				<li>Anticipate many different adaptations/user agents/extensions, for different user groups and cases.</li>
+				<li class="next">Our attributes are informational, suggestive.</li>
+				<li class="next">We don’t override elements’ semantics.</li>
+				<li class="next">Anticipate many different adaptations/user agents/extensions, for different user groups and cases.</li>
+			</ul>
+		</section>
+
+		<section class="slide" aria-label="slide">
+			<h2>Action, Destination and Purpose attributes</h2>
+			<ul>
+				<li class="next"><code>&lt;button action="checkout"&gt;Check out&lt;/button&gt;</code></li>
+				<li class="next"><mark>TODO: check</mark> <code>&lt;a href="..." destination=“help”&gt;Help&lt;/a&gt;</code></li>
+				<li class="next"><code>&lt;input type="text" purpose="home tel" /&gt;</code></li>
+				<li class="next"><p><strong>Note:</strong> we are using <code>data-*</code> attributes for now.</p></li>
 			</ul>
 		</section>
 
@@ -241,11 +281,11 @@
 		<section class="slide" aria-label="slide">
 			<h2>Your web needs YOU!</h2>
 			<ul>
-				<li>There is an upcoming wide review of <a href="https://w3c.github.io/personalization-semantics/content/">The Content Module ("Module 1")</a>.</li>
-				<li>We will need feedback from authors, implementers and users.</li>
-				<li>You can provide feedback via <a href="https://github.com/w3c/personalization-semantics">our GitHub repo</a>&mdash;no need to be a W3C member.</li>
-				<li>You can follow the <a href="https://lists.w3.org/Archives/Public/public-personalization-tf/">mailing list</a> (again, no need to be a member).</li>
-				<li>Or even join the group. (Please do!)</li>
+				<li class="next">There is an upcoming wide review of <a href="https://w3c.github.io/personalization-semantics/content/">The Content Module ("Module 1")</a>.</li>
+				<li class="next">We will need feedback from authors, implementers and users.</li>
+				<li class="next">You can provide feedback via <a href="https://github.com/w3c/personalization-semantics">our GitHub repo</a>&mdash;no need to be a W3C member.</li>
+				<li class="next">You can follow the <a href="https://lists.w3.org/Archives/Public/public-personalization-tf/">mailing list</a> (again, no need to be a member).</li>
+				<li class="next">Or even join the group. (Please do!)</li>
 			</ul>
 		</section>
 	</body>
