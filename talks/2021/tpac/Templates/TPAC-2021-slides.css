@@ -371,11 +371,31 @@ figure img, summary img {display: block; margin: 0.6em auto;
 /* Reveal elements one by one */
 .full .next:not(.active):not(.visited) {visibility: hidden}
 
-/* Dim previously revealed elements */
-.full .incremental > .visited,
-.full .overlay > .visited,
-.full .next.visited {color: hsl(204,17%,65%)}
-.full .next.active {color: hsl(204,67%,19%)}
+/* Animate the active element when it appears. By default, the element
+   is progressively revealed, starting from the left. Setting
+   class=emerge instead causes the element to go from transparent to
+   opaque. Class=strong also fades in the element and in addition
+   makes its text red as long as it is the active item. And
+   class=quick omits the animation. The class can be set on the
+   element itself, on the ancestor that has class=incremental or
+   class=overlay, or on any ancestor of the elements with class=next.
+*/
+.incremental .active, .overlay .active, .next.active {animation: unfold 1s}
+.incremental .active.emerge, .overlay .active.emerge,
+.incremental.emerge .active, .overlay.emerge .active,
+.emerge .next.active, .next.active.emerge {animation: fade-in 0.5s}
+.incremental .active.quick, .overlay .active.quick,
+.incremental.quick .active, .overlay.quick .active,
+.quick .next.active, .next.active.quick {animation: none}
+.incremental .active.strong, .overlay .active.strong,
+.incremental.strong .active, .overlay.strong .active,
+.strong .next.active, .next.active.strong {color: hsl(356,67%,40%);
+  animation: fade-in 0.5s}
+
+@keyframes unfold {
+  from {clip-path: inset(0% 100% 0% -100%)}
+  to {clip-path: inset(0% 0% 0% -100%)}
+}
 
 /* Transitions between slides */
 .full .slide.active ~ .visited {animation: none} /* Moving backwards */
