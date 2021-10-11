@@ -49,12 +49,14 @@
 			<address>Personalization Semantics Task Force</address>
 		</section>
 
-		<section class="slide" aria-label="slide">
-			<h2><mark>Presenters?</mark></h2>
+		<section class="slide quite-big-text" aria-label="slide">
+			<h2>Welcome</h2>
+			<p>Your presenters are&hellip;</p>
 			<ul>
 				<li class="next"><mark>Presenter 1 details</mark></li>
 				<li class="next"><mark>Presenter A details</mark></li>
 			</ul>
+			<p><mark>Your chair is/chairs are&hellip;</mark></p>
 		</section>
 
 		<section class="slide" aria-label="slide">
@@ -85,18 +87,7 @@
 
 		<section class="slide" aria-label="slide">
 			<h2 class="visually-hidden">Augmentative and alternative communication (AAC)</h2>
-			<img src="images/global-symbols-home.png" alt="Home page of Global Symbols, a site that helps people find and publish symbol sets"/>
-		</section>
-
-		<section class="slide" aria-label="slide">
-			<h2>Yuki: A Yoga Teacher who has AD(H)D (1/2)</h2>
-			<p><span class="next">Yuki could not really explain her apparent forgetfulness and not being able to focus or complete tasks.</span><span class="next"> She knew that if she came across a long document or web page with dense text she had to find the key points.</span><span class="next"> If the web page failed to have a clear structure, well-spaced and highlighted headings she would be lost and lose concentration.</span><span class="next"> Yuki also said that if she was reading her mobile screen, advertisements appearing between chunks of text upset her focus and she had to stop reading.</span></p>
-		</section>
-
-		<section class="slide" aria-label="slide">
-			<h2>Yuki: A Yoga Teacher who has AD(H) (2/2)</h2>
-			<p class="next">However, when there was good use of white space, recognizable icons linking to simple bold text clarifying the important points, Yuki could target these areas and find out what she needed.</p>
-			<p class="next"><strong>A clear summary helped Yuki understand and she could remember much of what she had read.</strong></p>
+			<a href="https://globalsymbols.com/"><img src="images/global-symbols-home.png" alt="Home page of Global Symbols, a site that helps people find and publish symbol sets"/></a>
 		</section>
 
 		<section class="slide" aria-label="slide">
@@ -122,6 +113,17 @@
 					</li>
 				</ul>
 			</div>
+		</section>
+
+		<section class="slide" aria-label="slide">
+			<h2>Yuki: A Yoga Teacher who has AD(H)D (1/2)</h2>
+			<p><span class="next">Yuki could not really explain her apparent forgetfulness and not being able to focus or complete tasks.</span><span class="next"> She knew that if she came across a long document or web page with dense text she had to find the key points.</span><span class="next"> If the web page failed to have a clear structure, well-spaced and highlighted headings she would be lost and lose concentration.</span><span class="next"> Yuki also said that if she was reading her mobile screen, advertisements appearing between chunks of text upset her focus and she had to stop reading.</span></p>
+		</section>
+
+		<section class="slide" aria-label="slide">
+			<h2>Yuki: A Yoga Teacher who has AD(H) (2/2)</h2>
+			<p class="next">However, when there was good use of white space, recognizable icons linking to simple bold text clarifying the important points, Yuki could target these areas and find out what she needed.</p>
+			<p class="next"><strong>A clear summary helped Yuki understand and she could remember much of what she had read.</strong></p>
 		</section>
 
 		<section class="slide" aria-label="slide">
@@ -189,7 +191,7 @@
 		</section>
 
 		<section class="slide" aria-label="slide">
-			<h2><mark>Personalization Task Force</mark></h2>
+			<h2>Personalization Task Force</h2>
 			<ul>
 				<li class="next">The <a href="https://www.w3.org/WAI/APA/task-forces/personalization/">Personalization Task Force (TF)</a> is&hellip;</li>
 				<li class="next">&hellip;part of the Accessible Platform Architectures Working Group (APA WG)&hellip;</li>
@@ -200,7 +202,7 @@
 		</section>
 
 		<section class="slide" aria-label="slide">
-			<h2>Began with ARIA and WCAG 1.0</h2>
+			<h2><mark>Began with ARIA and WCAG 1.0</mark></h2>
 			<ul>
 				<li class="next">Personalization was the aim from the start.</li>
 				<li class="next">Focus at first on scripts and screen readers: avoiding undue burden.</li>
@@ -228,15 +230,8 @@
 		</section>
 
 		<section class="slide" aria-label="slide">
-			<h2>Demo</h2>
-			<p><mark>Demonstrate the browser extension&mdash;possible?</mark></p>
-			<p><a href="http://matatk.agrip.org.uk/personalization-semantics-explorations/demo.html">http://matatk.agrip.org.uk/personalization-semantics-explorations/demo.html</a></p>
-			<p><mark>TODO: work is in progress to harmonise with the latest Editor's Draft.</mark></p>
-		</section>
-
-		<section class="slide" aria-label="slide">
-			<h2>Complementing native/ARIA semantics</h2>
-			<ul>
+			<h2>Complementing native or ARIA semantics</h2>
+			<ul class="quite-big-text">
 				<li class="next">Our attributes are informational, suggestive.</li>
 				<li class="next">We don’t override elements’ semantics.</li>
 				<li class="next">Anticipate many different adaptations/user agents/extensions, for different user groups and cases.</li>
@@ -244,22 +239,99 @@
 		</section>
 
 		<section class="slide" aria-label="slide">
-			<h2>Action, Destination and Purpose attributes</h2>
+			<div class="big-text">
+				<h2>Simplification (1/2)</h2>
+			</div>
+			<div class="quite-big-text">
+				<p class="next"><strong>User need:</strong> Many people find too many on-screen options to be problematic.<span class="next"> Extra example: someone with a migraine.</span></p>
+				<p class="next"><strong>Solution:</strong> Authors indicate which features are most important.</p>
+				<p class="next"><strong>Demo:</strong> <mark><a href="https://raw.githack.com/ayelet-seeman/coga.personalisation/demo/">https://raw.githack.com/ayelet-seeman/coga.personalisation/demo/</a></mark></p>
+			</div>
+		</section>
+
+		<section class="slide" aria-label="slide">
+			<div class="big-text">
+				<h2>Simplification (2/2)</h2>
+			</div>
+			<div class="quite-big-text">
+				<p class="next"><code>&lt;p&gt;&lt;strong <mark>data-simplification="critical"</mark>&gt;School will close at 1 pm on Tuesday.&lt;/strong&gt; This is because Years 2-3 are putting on a play and we need to get the school hall ready.&lt;/p&gt;</code></p>
+				<p class="next"><code>&lt;input value="Submit" type="submit" <mark>data-simplification="critical"</mark>/&gt;</code></p>
+			</div>
+		</section>
+
+		<section class="slide" aria-label="slide">
+			<div class="big-text">
+				<h2>Purpose (1/2)</h2>
+			</div>
+			<div class="quite-big-text">
+				<p class="next"><strong>User need:</strong> Icons, symbols and pictograms help people identify the purpose of interactive elements.<span class="next"> There are many different icons and symbols.</span></p>
+				<p class="next"><strong>Solution:</strong> Authors can markup content to semantically indicate the purpose of an interactive element.<span class="next"> The markup will render in the user’s chosen symbol set.</span></p>
+			</div>
+		</section>
+
+		<section class="slide" aria-label="slide">
+			<div class="big-text">
+				<h2>Purpose (2/2)</h2>
+			</div>
+			<div class="quite-big-text">
+				<p class="next"><code>&lt;input type="text" <mark>data-purpose="home tel"</mark>/&gt;</code></p>
+				<p class="next"><strong>Benefits:</strong> <a href="https://www.w3.org/WAI/WCAG21/Understanding/identify-input-purpose.html">The different purposes of user input controls are already standard</a>.</p>
+				<p class="next"><strong>Demo:</strong> <mark><a href="http://matatk.agrip.org.uk/personalization-semantics-explorations/demo.html">http://matatk.agrip.org.uk/personalization-semantics-explorations/demo.html</a></mark></p>
+			</div>
+		</section>
+
+		<section class="slide" aria-label="slide">
+			<div class="quite-big-text">
+				<h2>Action and Destination (1/2)</h2>
+			</div>
+			<div class="quite-big-text">
+				<p class="next"><strong>User need:</strong> Users need to understand what a button will do, or where a link will take them.</p>
+				<p class="next"><strong>Solution:</strong> Standardise actions and destinations alongside the existing purposes.<span class="next"> Support the use of symbols here too.</span></p>
+				<p class="next"><strong>Demo:</strong> <mark><a href="http://matatk.agrip.org.uk/personalization-semantics-explorations/demo.html">http://matatk.agrip.org.uk/personalization-semantics-explorations/demo.html</a></mark></p>
+			</div>
+		</section>
+
+		<section class="slide" aria-label="slide">
+			<div class="quite-big-text">
+				<h2>Action and Destination (2/2)</h2>
+			</div>
+			<div class="quite-big-text">
+				<pre class="next">
+&lt;button <mark>data-action="checkout"</mark>&gt;
+  Check out
+&lt;/button&gt;</pre>
+				<pre class="next">&lt;a href="..." <mark>data-destination="help"</mark>&gt;Help&lt;/a&gt;</pre>
+			</div>
+			<p><mark>FIXME: check 2nd code</mark></p>
+		</section>
+
+		<section class="slide" aria-label="slide">
+			<div class="big-text">
+				<h2>Distraction, Symbol</h2>
+			</div>
+			<div class="quite-big-text">
+				<p class="next">Further attributes are provided to allow authors to&hellip;</p>
+				<ul>
+					<li class="next">Indicate elements that may cause distractions.</li>
+					<li class="next">Indicate the <strong>concepts</strong> conveyed by particular elements, so they can be mapped to the appropriate symbol set.</li>
+				</ul>
+				<p><mark>TODO: Elaborate on the concept mapping&mdash;it's a key feature of the spec!</mark></p>
+			</div>
+		</section>
+
+		<section class="slide quite-big-text" aria-label="slide">
+			<h2>We need your help</h2>
+			<p>We need <strong>implementations</strong> based on the specification.</p>
 			<ul>
-				<li class="next"><code>&lt;button action="checkout"&gt;Check out&lt;/button&gt;</code></li>
-				<li class="next"><mark>TODO: check</mark> <code>&lt;a href="..." destination=“help”&gt;Help&lt;/a&gt;</code></li>
-				<li class="next"><code>&lt;input type="text" purpose="home tel" /&gt;</code></li>
-				<li class="next"><p><strong>Note:</strong> we are using <code>data-*</code> attributes for now.</p></li>
+				<li class="next">Sites, content</li>
+				<li class="next">Extensions</li>
+				<li class="next">User Agent changes</li>
+				<li class="next"><mark>&hellip;</mark></li>
 			</ul>
 		</section>
 
 		<section class="slide" aria-label="slide">
-			<h2>Simplification attribute</h2>
-			<p><mark>TODO: insert latest simplification example—my edits don't seem to have made it into the Editor's Draft.</mark></p>
-		</section>
-
-		<section class="slide" aria-label="slide">
-			<h2>Your web needs YOU!</h2>
+			<h2>More ways you can help</h2>
 			<ul>
 				<li class="next">There is an upcoming wide review of <a href="https://w3c.github.io/personalization-semantics/content/">The Content Module ("Module 1")</a>.</li>
 				<li class="next">We will need feedback from authors, implementers and users.</li>
@@ -267,6 +339,11 @@
 				<li class="next">You can follow the <a href="https://lists.w3.org/Archives/Public/public-personalization-tf/">mailing list</a> (again, no need to be a member).</li>
 				<li class="next">Or even join the group. (Please do!)</li>
 			</ul>
+		</section>
+
+		<section class="slide quite-big-text" aria-label="slide">
+			<h2>Thank you for listening</h2>
+			<p>We look forward to working with you!</p>
 		</section>
 	</body>
 </html>
