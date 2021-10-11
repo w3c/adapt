@@ -28,14 +28,11 @@
 	line-height: 3rem;
 }
 
-.side-pic {
-	float: left;
-	max-height: 80%;
-	margin-right: 1em;
+.side-by-side {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
 }
-
-.side-by-side { display: flex; }
-.side-by-side > :first-child { margin-right: 0.5em; }
 		</style>
 	</head>
 	<body class="shower fade-in emerge">
@@ -127,19 +124,6 @@
 			</div>
 		</section>
 
-		<!--
-		<section class="slide" aria-label="slide">
-			<h2>Day-to-day impact (1/2)</h2>
-			<p class="next">Many systems have become increasingly complex</p>
-			<ul>
-				<li class="next">Web applications</li>
-				<li class="next">TV interfaces, heating</li>
-				<li class="next">Phone systems</li>
-			</ul>
-			<p class="next">Including critical services&hellip;</p>
-		</section>
-		-->
-
 		<section class="slide" aria-label="slide">
 			<h2>Day-to-day impact</h2>
 			<p class="next">Accessing critical services&hellip;</p>
@@ -153,42 +137,28 @@
 			<p class="next">But&hellip;</p>
 		</section>
 
-		<!--
-		<section class="slide" aria-label="slide">
-			<h2><mark>Placeholder for multiple needs</mark></h2>
-			<p><mark>multiple intersecting accessibility barriers/needs</mark></p>
-		</section>
-		-->
-
-		<!--
-		<section class="slide" aria-label="slide">
-			<h2>User needs differ (1/2)</h2>
-			<img class="side-pic" src="images/menu-and-toolbar-preferences.gif" alt="FIXME"/>
-			<p class="next">GNOME 1.x &quot;Menu and Toolbar Preferences&quot; c. 2001</p>
-			<p class="next">You can choose to have text, icons, or both&mdash;great!</p>
-			<p class="next">But what if the user is unfamiliar with those icons?</p>
-		</section>
-		-->
-
 		<section class="slide" aria-label="slide">
 			<h2>User needs differ</h2>
-			<img src="images/placeholder-user-needs-differ.png" alt="FIXME"/>
+			<div class="side-by-side">
+				<div>
+					<img src="images/save-1.png" alt="Textual 'save' button"/>
+				</div>
+				<div>
+					<img src="images/save-2.png" alt="Save button that is a floppy disk icon"/>
+				</div>
+				<div>
+					<img src="images/save-3.png" alt="Save button that is a floppy disk icon with the text 'save' beneath"/>
+				</div>
+				<div>
+					<img src="images/save-4.png" alt="Save button that is a picture of a hand holding a USB flash drive"/>
+				</div>
+			</div>
 		</section>
 
 		<section class="slide" aria-label="slide">
 			<h2 class="visually-hidden">Content Usable</h2>
 			<a href="https://www.w3.org/TR/coga-usable/"><img src="images/content-usable.png" alt="The Cognitive and Learning Disabilities Accessibility Task Force's document on making content usable"/></a>
 		</section>
-
-		<!--
-		<section class="slide" aria-label="slide">
-			<h2><mark>Placeholder for examples slide</mark></h2>
-			<p>Simplification</p>
-			<p>Purpose</p>
-			<p>Symbols</p>
-			<p><mark>mention more to come here?</mark></p>
-		</section>
-		-->
 
 		<section class="slide" aria-label="slide">
 			<img class="fit" src="images/cup-of-tea-1.png" alt="FIXME"/>
@@ -219,7 +189,7 @@
 		</section>
 
 		<section class="slide" aria-label="slide">
-			<h2>Personalization Task Force</h2>
+			<h2><mark>Personalization Task Force</mark></h2>
 			<ul>
 				<li class="next">The <a href="https://www.w3.org/WAI/APA/task-forces/personalization/">Personalization Task Force (TF)</a> is&hellip;</li>
 				<li class="next">&hellip;part of the Accessible Platform Architectures Working Group (APA WG)&hellip;</li>
@@ -256,40 +226,6 @@
 				<li class="next">Years in the making, and to come—get in on the ground floor!</li>
 			</ul>
 		</section>
-
-		<!--
-		<section class="slide" aria-label="slide">
-			<h2>This is REALLY BIG</h2>
-			<ul>
-				<li class="next">Focus on cognition, cognitive disabilities and usability.
-					<ul>
-						<li class="next">Related: <a href="https://www.w3.org/TR/coga-usable/">Making Content Usable for People with Cognitive and Learning Disabilities</a></li>
-					</ul>
-				</li>
-				<li class="next">Universally applicable (to varying degrees).</li>
-				<li class="next">Could help make the web a lot more mailable and adaptive for people.</li>
-				<li class="next">Built on simple and robust tech, so has a good chance!</li>
-				<li class="next">&hellip;with much room to grow later on.</li>
-			</ul>
-		</section>
-		-->
-
-		<!--
-		<section class="slide" aria-label="slide">
-			<h2>Personalization Semantics Module 1</h2>
-			<ul>
-				<li class="next">Programmatically identify the purpose of various interface elements.</li>
-				<li class="next">Support simplification of user interfaces and content.
-					<ul>
-						<li class="next">Showing what’s important.</li>
-						<li class="next">Removing distractions.</li>
-					</ul>
-				</li>
-				<li class="next">Support presenting symbols instead of words.</li>
-				<li class="next">&hellip;and more!</li>
-			</ul>
-		</section>
-		-->
 
 		<section class="slide" aria-label="slide">
 			<h2>Demo</h2>
