@@ -76,43 +76,31 @@
 
 		<section class="slide" aria-label="slide">
 			<h2>Who are the next billion users?</h2>
-			<ul class="next quite-big-text">
-				<li>People who use Augmentative and alternative communication (AAC) (with varying vocabulary sizes)</li>
-				<li>People who struggle to learn/recognise commonly-used symbols and emoji</li>
-				<li>People with dyscalculia</li>
-				<li>People who are busy</li>
-				<li>&hellip;</li>
+			<ul class="quite-big-text">
+				<li class="next">People who use Augmentative and alternative communication (AAC) (with varying vocabulary sizes)</li>
+				<li class="next">People who struggle to learn/recognise new icons</li>
+				<li class="next">People with cognitive and learning disabilities, such as dyscalculia</li>
+				<li class="next">People who are in a time of crisis<span class="next">, or have a migraine</span><span class="next">, or are busy&hellip;</span></li>
 			</ul>
 		</section>
 
 		<section class="slide" aria-label="slide">
 			<h2 class="visually-hidden">Augmentative and alternative communication (AAC)</h2>
 			<a href="https://globalsymbols.com/"><img src="images/global-symbols-home.png" alt="Home page of Global Symbols, a site that helps people find and publish symbol sets"/></a>
-		</section>
+			<!--
+			Mutliple sets
+			People know different sets
+			Proprietary sets centred on natural language (i.e. local env)
+				cup of tea (brown; not green)
+				draw engaging pictures
+					=> modern sets are about natural language (yes/thank you)
 
-		<section class="slide" aria-label="slide">
-			<h2>The Icon/Emojis Trend</h2>
-			<div class="side-by-side">
-				<div class="huge-text emoji-stack">
-					<p class="visually-hidden">Some example emojis&hellip;</p>
-					<span>&#x1f603;</span>
-					<span>&#x1f44c;</span>
-					<span>&#x1f602;</span>
-					<span>&#x1f648;</span>
-					<span>&#x1f4f7;</span>
-				</div>
-				<ul>
-					<li class="next">Mixing of letters and symbols is accepted in most communication</li>
-					<li class="next">Many instant messages are emojis only</li>
-					<li class="next">Challenges
-						<ul>
-							<li class="next">Announced emojis can be difficult to interpret</li>
-							<li class="next">Symbols always changing</li>
-							<li class="next">Prejudices: icons are professional, emojis are not</li>
-						</ul>
-					</li>
-				</ul>
-			</div>
+			1. already have Mapping from bliss to ARASAAC (EU project) (better than starting off with English)
+			2. bliss concept committee
+			3. not translating between e.g. English and Arabic.
+
+			prefix concept id?
+			-->
 		</section>
 
 		<section class="slide" aria-label="slide">
@@ -128,6 +116,7 @@
 
 		<section class="slide" aria-label="slide">
 			<h2>Day-to-day impact</h2>
+			<!-- ...we are trying to solve -->
 			<p class="next">Accessing critical services&hellip;</p>
 			<ul>
 				<li class="next">Joining meetings at work (on time…)</li>
@@ -141,7 +130,7 @@
 
 		<section class="slide" aria-label="slide">
 			<h2>User needs differ</h2>
-			<div class="side-by-side">
+			<div class="next side-by-side">
 				<div>
 					<img src="images/save-1.png" alt="Textual 'save' button"/>
 				</div>
@@ -155,11 +144,19 @@
 					<img src="images/save-4.png" alt="Save button that is a picture of a hand holding a USB flash drive"/>
 				</div>
 			</div>
+			<p class="next">An approach like this needs semantics.</p>
 		</section>
 
 		<section class="slide" aria-label="slide">
 			<h2 class="visually-hidden">Content Usable</h2>
 			<a href="https://www.w3.org/TR/coga-usable/"><img src="images/content-usable.png" alt="The Cognitive and Learning Disabilities Accessibility Task Force's document on making content usable"/></a>
+			<!--
+				Content Usable needs good content design
+
+				We are aiming for the sweet spot where, with a little bit of
+				semantic information provided by the author, the machine can
+				make quite profound and helpful adaptations.
+			-->
 		</section>
 
 		<section class="slide" aria-label="slide">
@@ -178,6 +175,36 @@
 			<p class="next">Providing the means for authors to supply <strong>element-level</strong> semantics.</p>
 			<h2 class="next">What we need&hellip;</h2>
 			<p class="next">Implementations.</p>
+			<!--
+				From COGA: we need more than this (per next slide)
+			-->
+		</section>
+
+		<section class="slide" aria-label="slide">
+			<h2>Roadmap</h2>
+			<ul>
+				<li class="next">Multiple stages to the plan
+					<ul>
+						<li class="next"><a href="https://www.w3.org/TR/personalization-semantics-1.0/">Personalization Semantics Explainer</a></li>
+						<li class="next">Module 1 <a href="https://www.w3.org/TR/personalization-semantics-content-1.0/">Adaptable Content</a> <strong>(at wide community review)</strong></li>
+						<li class="next">Module 2 <a href="https://w3c.github.io/personalization-semantics/help/index.html">Adaptable Help and Support</a></li>
+						<li class="next">Module 3 <a href="https://w3c.github.io/personalization-semantics/tools/index.html">Adaptable Tools</a></li>
+					</ul>
+				</li>
+				<li class="next">Years in the making, and to come—get in on the ground floor!</li>
+				<!--
+					COGA need to know in more details:
+
+					* What's in modules 1, 2 and 3.
+					* Talk through module 1 (coming up?)
+
+					What do we need from COGA?
+
+					* Detailed review of module 1
+					* Analysis of use cases to support module 2
+					* Direction of 2/3/other?
+				-->
+			</ul>
 		</section>
 
 		<section class="slide" aria-label="slide">
@@ -187,45 +214,7 @@
 				<li class="next">We aim to make this as easy as possible.</li>
 				<li class="next">We've seen things like <code>&lt;main&gt;</code> work very well, because there is wide potential applicability/neatness for developers.</li>
 				<li class="next">If we can show the potential gains for users, we can create demand.</li>
-			</ul>
-		</section>
-
-		<section class="slide" aria-label="slide">
-			<h2>Personalization Task Force</h2>
-			<ul>
-				<li class="next">The <a href="https://www.w3.org/WAI/APA/task-forces/personalization/">Personalization Task Force (TF)</a> is&hellip;</li>
-				<li class="next">&hellip;part of the Accessible Platform Architectures Working Group (APA WG)&hellip;</li>
-				<li class="next">&hellip;within the Web Accessibility Initiative (WAI)&hellip;</li>
-				<li class="next">&hellip;of the World Wide Web Consortium (W3C), and&hellip;</li>
-				<li class="next">most importantly: part of <strong>your</strong> web!</li>
-			</ul>
-		</section>
-
-		<section class="slide" aria-label="slide">
-			<h2><mark>Began with ARIA and WCAG 1.0</mark></h2>
-			<ul>
-				<li class="next">Personalization was the aim from the start.</li>
-				<li class="next">Focus at first on scripts and screen readers: avoiding undue burden.</li>
-				<li class="next"><mark>ARIA</mark> then split from the <a href="https://www.w3.org/WAI/GL/task-forces/coga/">Cognitive and Learning Disabilties (COGA) TF</a> (under the APA and Accessibility Guidelines WGs).</li>
-				<li class="next">Codified &quot;input purpose&quot; in <a href="https://www.w3.org/WAI/WCAG21/Understanding/identify-input-purpose.html">WCAG 2.1 (SC 1.3.5)</a>.</li>
-				<li class="next">The Personalization TF was created to carry on this work.</li>
-				<li class="next">Informational, suggestive attributes available to authors that do not override other semantics.</li>
-				<li class="next">Now ready for candidate review status</li>
-			</ul>
-		</section>
-
-		<section class="slide" aria-label="slide">
-			<h2>Roadmap</h2>
-			<ul>
-				<li class="next">Multiple stages to the plan
-					<ul>
-						<li class="next"><a href="https://www.w3.org/TR/personalization-semantics-1.0/">Personalization Semantics Explainer</a></li>
-						<li class="next">Module 1 <a href="https://www.w3.org/TR/personalization-semantics-content-1.0/">Adaptable Content</a> <strong>(nearing wide community review)</strong></li>
-						<li class="next">Module 2 <a href="https://w3c.github.io/personalization-semantics/help/index.html">Adaptable Help and Support</a></li>
-						<li class="next">Module 3 <a href="https://w3c.github.io/personalization-semantics/tools/index.html">Adaptable Tools</a></li>
-					</ul>
-				</li>
-				<li class="next">Years in the making, and to come—get in on the ground floor!</li>
+				<li class="next"><strong>We're aiming for the sweet spot, where a small addition of machine-readable semantics supports a wide range of helpful adaptations.</strong></li>
 			</ul>
 		</section>
 
@@ -245,7 +234,7 @@
 			<div class="quite-big-text">
 				<p class="next"><strong>User need:</strong> Many people find too many on-screen options to be problematic.<span class="next"> Extra example: someone with a migraine.</span></p>
 				<p class="next"><strong>Solution:</strong> Authors indicate which features are most important.</p>
-				<p class="next"><strong>Demo:</strong> <mark><a href="https://raw.githack.com/ayelet-seeman/coga.personalisation/demo/">https://raw.githack.com/ayelet-seeman/coga.personalisation/demo/</a></mark></p>
+				<p class="next"><strong>Demo:</strong> <a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html">https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html</a></p>
 			</div>
 		</section>
 
@@ -253,10 +242,12 @@
 			<div class="big-text">
 				<h2>Simplification (2/2)</h2>
 			</div>
-			<div class="quite-big-text">
-				<p class="next"><code>&lt;p&gt;&lt;strong <mark>data-simplification="critical"</mark>&gt;School will close at 1 pm on Tuesday.&lt;/strong&gt; This is because Years 2-3 are putting on a play and we need to get the school hall ready.&lt;/p&gt;</code></p>
-				<p class="next"><code>&lt;input value="Submit" type="submit" <mark>data-simplification="critical"</mark>/&gt;</code></p>
-			</div>
+			<pre class="next">&lt;p&gt;&lt;strong <mark>data-simplification="critical"</mark>&gt;School will
+close at 1 pm on Tuesday.&lt;/strong&gt; This is because Years
+2-3 are putting on a play and we need to get the school
+hall ready.&lt;/p&gt;</pre>
+			<pre class="next">&lt;input value="Submit" type="submit"
+<mark>data-simplification="critical"</mark>/&gt;</pre>
 		</section>
 
 		<section class="slide" aria-label="slide">
@@ -274,7 +265,7 @@
 				<h2>Purpose (2/2)</h2>
 			</div>
 			<div class="quite-big-text">
-				<p class="next"><code>&lt;input type="text" <mark>data-purpose="home tel"</mark>/&gt;</code></p>
+				<pre class="next">&lt;input type="text" <mark>data-purpose="home tel"</mark>/&gt;</pre>
 				<p class="next"><strong>Benefits:</strong> <a href="https://www.w3.org/WAI/WCAG21/Understanding/identify-input-purpose.html">The different purposes of user input controls are already standard</a>.</p>
 				<p class="next"><strong>Demo:</strong> <mark><a href="http://matatk.agrip.org.uk/personalization-semantics-explorations/demo.html">http://matatk.agrip.org.uk/personalization-semantics-explorations/demo.html</a></mark></p>
 			</div>
@@ -293,29 +284,40 @@
 
 		<section class="slide" aria-label="slide">
 			<div class="quite-big-text">
-				<h2>Action and Destination (2/2)</h2>
+				<h2>Symbol</h2>
 			</div>
 			<div class="quite-big-text">
-				<pre class="next">
-&lt;button <mark>data-action="checkout"</mark>&gt;
-  Check out
-&lt;/button&gt;</pre>
-				<pre class="next">&lt;a href="..." <mark>data-destination="help"</mark>&gt;Help&lt;/a&gt;</pre>
+				<p class="next"><strong>User need:</strong> Users may need symbols to help them understand the concepts behind the content on the page<span class="next">, using the symbol set they know.</span></p>
+				<p class="next"><strong>Solution:</strong> Allow authors to attribute symbol-set-agnostic concepts to parts of the content on the page.</p>
 			</div>
-			<p><mark>FIXME: check 2nd code</mark></p>
 		</section>
 
 		<section class="slide" aria-label="slide">
-			<div class="big-text">
-				<h2>Distraction, Symbol</h2>
+			<h2 class="visually-hidden">Blissymbolics Concepts</h2>
+			<a href="https://www.blissymbolics.org/"><img src="images/blissymbolics-home.png" alt="Home page of Blissymbolics Communication International"/></a>
+			<!--
+				Reprise notes from above
+			-->
+		</section>
+
+		<section class="slide" aria-label="slide">
+			<div class="quite-big-text">
+				<h2>Symbol</h2>
 			</div>
 			<div class="quite-big-text">
-				<p class="next">Further attributes are provided to allow authors to&hellip;</p>
-				<ul>
-					<li class="next">Indicate elements that may cause distractions.</li>
-					<li class="next">Indicate the <strong>concepts</strong> conveyed by particular elements, so they can be mapped to the appropriate symbol set.</li>
-				</ul>
-				<p><mark>TODO: Elaborate on the concept mapping&mdash;it's a key feature of the spec!</mark></p>
+				<pre class="next"><mark>CODE SAMPLE TBA</mark></pre>
+				<p class="next">We are only mapping individual concepts to individual symbols&mdash;not translating.</p>
+			</div>
+		</section>
+
+		<section class="slide" aria-label="slide">
+			<div class="quite-big-text">
+				<h2>Distraction</h2>
+			</div>
+			<div class="quite-big-text">
+				<p class="next"><strong>User need:</strong> Content of various types and purposes can distract users.</p>
+				<p class="next"><strong>Solution:</strong> Provide a way for authors to mark up the nature of the distraction, across content types, so they may be filtered out, at the user's request.</p>
+				<pre class="next"><mark>CODE SAMPLE TBA</mark></pre>
 			</div>
 		</section>
 
@@ -326,14 +328,20 @@
 				<li class="next">Sites, content</li>
 				<li class="next">Extensions</li>
 				<li class="next">User Agent changes</li>
-				<li class="next"><mark>&hellip;</mark></li>
+				<li class="next">&hellip;</li>
 			</ul>
 		</section>
 
 		<section class="slide" aria-label="slide">
 			<h2>More ways you can help</h2>
 			<ul>
-				<li class="next">There is an upcoming wide review of <a href="https://w3c.github.io/personalization-semantics/content/">The Content Module ("Module 1")</a>.</li>
+				<li class="next">There is a wide review of <a href="https://w3c.github.io/personalization-semantics/content/">The Content Module ("Module 1")</a> in detail.</li>
+				<!--
+					COGA notes:
+
+					* Reinforce that for module 2 we need use cases.
+					* Overall directional feedback (3/other?)
+				-->
 				<li class="next">We will need feedback from authors, implementers and users.</li>
 				<li class="next">You can provide feedback via <a href="https://github.com/w3c/personalization-semantics">our GitHub repo</a>&mdash;no need to be a W3C member.</li>
 				<li class="next">You can follow the <a href="https://lists.w3.org/Archives/Public/public-personalization-tf/">mailing list</a> (again, no need to be a member).</li>
