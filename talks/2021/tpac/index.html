@@ -49,24 +49,26 @@
 			<address>Personalization Semantics Task Force</address>
 		</section>
 
-		<section class="slide quite-big-text" aria-label="slide">
+		<section class="slide" aria-label="slide">
 			<h2>Welcome</h2>
-			<p>Your presenters are&hellip;</p>
-			<ul>
-				<li class="next"><mark>Presenter 1 details</mark></li>
-				<li class="next"><mark>Presenter A details</mark></li>
-			</ul>
-			<p><mark>Your chair is/chairs are&hellip;</mark></p>
+			<div class="quite-big-text">
+				<p>I'm Matthew (he/him), accessibility consultant with <a href="https://tpgi.com/">TPGi</a> and speaking on behalf of the <a href="https://www.w3.org/WAI/APA/task-forces/personalization/">Personalization Task Force</a>.</p>
+				<ul class="next">
+					<li class="next"><mark>Sharon's details</mark></li>
+					<li class="next"><mark>Lionel's details</mark></li>
+				</ul>
+				<p class="next">Thanks to Lisa (<mark>details</mark>), Lionel and the Personalization Task Force for contributing material to, and working on these slides.</p>
+			</div>
 		</section>
 
 		<section class="slide" aria-label="slide">
 			<h2>What is this all about?</h2>
-			<ol class="big-text">
+			<ol class="quite-big-text">
 				<li class="next">
 					<p>We want to support the next billion users in accessing the web.</p>
 				</li>
 				<li class="next">
-					<p>We've developed a specification that will help content authors do this.</p>
+					<p>We've developed a specification that will help content authors do this<span class="next"><strong>, where a small addition of machine-readable semantic metadata supports a range of helpful adaptations.</strong></span></p>
 				</li>
 				<li class="next">
 					<p>We are looking for implementations (and other feedback).</p>
@@ -77,10 +79,10 @@
 		<section class="slide" aria-label="slide">
 			<h2>Who are the next billion users?</h2>
 			<ul class="quite-big-text">
-				<li class="next">People who use Augmentative and alternative communication (AAC) (with varying vocabulary sizes)</li>
+				<li class="next">People with cognitive and learning disabilities, such as dyscalculia, AD(H)D, short-term memory loss, etc.</li>
+				<li class="next">People who are in a time of crisis; have a migraine; are busy</li>
+				<li class="next">People who use Augmentative and Alternative Communication (AAC) (with varying vocabulary sizes)</li>
 				<li class="next">People who struggle to learn/recognise new icons</li>
-				<li class="next">People with cognitive and learning disabilities, such as dyscalculia</li>
-				<li class="next">People who are in a time of crisis<span class="next">, or have a migraine</span><span class="next">, or are busy&hellip;</span></li>
 			</ul>
 		</section>
 
@@ -160,11 +162,11 @@
 		</section>
 
 		<section class="slide" aria-label="slide">
-			<img class="fit" src="images/cup-of-tea-1.png" alt="FIXME"/>
+			<img class="fit" src="images/cup-of-tea-1.png" alt="WikiHow page about how to make a cup of tea before adaptation; featuring extraneous content and many visual elements."/>
 		</section>
 
 		<section class="slide" aria-label="slide">
-			<img class="fit" src="images/cup-of-tea-2.png" alt="FIXME"/>
+			<img class="fit" src="images/cup-of-tea-2.png" alt="WikiHow page about how to make a cup of tea after adaptation; with far less content around the central article, and symbols augmenting key words."/>
 		</section>
 
 		<section class="slide" aria-label="slide">
@@ -284,7 +286,7 @@ hall ready.&lt;/p&gt;</pre>
 
 		<section class="slide" aria-label="slide">
 			<div class="quite-big-text">
-				<h2>Symbol</h2>
+				<h2>Symbol (1/3)</h2>
 			</div>
 			<div class="quite-big-text">
 				<p class="next"><strong>User need:</strong> Users may need symbols to help them understand the concepts behind the content on the page<span class="next">, using the symbol set they know.</span></p>
@@ -302,38 +304,49 @@ hall ready.&lt;/p&gt;</pre>
 
 		<section class="slide" aria-label="slide">
 			<div class="quite-big-text">
-				<h2>Symbol</h2>
+				<h2>Symbol (3/3)</h2>
 			</div>
 			<div class="quite-big-text">
-				<pre class="next"><mark>CODE SAMPLE TBA</mark></pre>
+				<pre class="next">&lt;span <mark>data-symbol="13621 12324 17511"</mark>&gt;
+  cup of tea
+&lt;/span&gt;</pre>
 				<p class="next">We are only mapping individual concepts to individual symbols&mdash;not translating.</p>
 			</div>
 		</section>
 
 		<section class="slide" aria-label="slide">
 			<div class="quite-big-text">
-				<h2>Distraction</h2>
+				<h2>Distraction (1/2)</h2>
 			</div>
 			<div class="quite-big-text">
 				<p class="next"><strong>User need:</strong> Content of various types and purposes can distract users.</p>
 				<p class="next"><strong>Solution:</strong> Provide a way for authors to mark up the nature of the distraction, across content types, so they may be filtered out, at the user's request.</p>
-				<pre class="next"><mark>CODE SAMPLE TBA</mark></pre>
+			</div>
+		</section>
+
+		<section class="slide" aria-label="slide">
+			<div class="quite-big-text">
+				<h2>Distraction (2/2)</h2>
+			</div>
+			<div class="quite-big-text">
+				<pre class="next">&lt;div <mark>data-distraction="sensory messages"</mark>
+  class="stockticker-widget-container"&gt;&lt;/div&gt;</pre>
+				<p class="next"><strong>Values:</strong> <code>messages</code>, <code>offer</code>, <code>overlay</code>, <code>sensory</code></p>
 			</div>
 		</section>
 
 		<section class="slide quite-big-text" aria-label="slide">
-			<h2>We need your help</h2>
+			<h2>Move the needle&mdash;your input is critical</h2>
 			<p>We need <strong>implementations</strong> based on the specification.</p>
 			<ul>
 				<li class="next">Sites, content</li>
 				<li class="next">Extensions</li>
 				<li class="next">User Agent changes</li>
-				<li class="next">&hellip;</li>
 			</ul>
 		</section>
 
 		<section class="slide" aria-label="slide">
-			<h2>More ways you can help</h2>
+			<h2>More ways you can take part</h2>
 			<ul>
 				<li class="next">There is a wide review of <a href="https://w3c.github.io/personalization-semantics/content/">The Content Module ("Module 1")</a> in detail.</li>
 				<!--
