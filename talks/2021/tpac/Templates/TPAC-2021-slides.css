@@ -1,9 +1,6 @@
-/* Style for the slides for TPAC 2020, to be used together with the
+/* Style for the slides for TPAC 2021, to be used together with the
    Shower script or the b6+ script. For usage instructions, see
-   https://www.w3.org/2020/Talks/TPAC/Templates/Overview.html
-
-   The design is by Kenzo Ishida and is based on the style for the
-   TPAC pages by Tanya Mandal.
+   https://www.w3.org/2021/Talks/TPAC/Templates/Overview.html
 
    TODO: Styles for blockquotes?
 
@@ -31,25 +28,38 @@
    C = 2            = font size (and logo size) multiplier for cover pages
    w = N*A          = width of slide in em
 
-   Created: 2 September 2020
+   Created: 26 June 2021
    Author: Bert Bos <bert@w3.org>
-   Copyright © 2020 W3C
+   Copyright © 2021 W3C
 */
+
+@font-face {
+  font-family: My Lato;
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(Lato-Italic.woff2) format("woff2"),
+    url(Lato-Italic.woff) format("woff");
+  src: local(Lato Italic), local(Lato-Italic),
+    url(Lato-Italic.woff2) format("woff2"),
+    url(Lato-Italic.woff) format("woff")}
+
+@font-face {
+  font-family: My Lato;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(Lato-Regular.woff2) format("woff2"),
+    url(Lato-Regular.woff) format("woff");
+  src: local(Lato Regular), local(Lato-Regular),
+    url(Lato-Regular.woff2) format("woff2"),
+    url(Lato-Regular.woff) format("woff")}
 
 @font-face {
     font-family: My Lato;
     font-style: normal;
-    font-weight: normal;
-    src: url(Lato-Regular.woff2) format("woff2"),
-	 url(Lato-Regular.woff) format("woff");
-    src: local(Lato Regular), local(Lato-Regular),
- 	 url(Lato-Regular.woff2) format("woff2"),
-	 url(Lato-Regular.woff) format("woff");
-}
-@font-face {
-    font-family: My Lato;
-    font-style: normal;
     font-weight: bold;
+    font-display: swap;
     src: url(Lato-Bold.woff2) format("woff2"),
 	 url(Lato-Bold.woff) format("woff");
     src: local(Lato Bold), local(Lato-Bold),
@@ -59,17 +69,8 @@
 @font-face {
     font-family: My Lato;
     font-style: italic;
-    font-weight: normal;
-    src: url(Lato-Italic.woff2) format("woff2"),
-	 url(Lato-Italic.woff) format("woff");
-    src: local(Lato Italic), local(Lato-Italic),
-	 url(Lato-Italic.woff2) format("woff2"),
-	 url(Lato-Italic.woff) format("woff");
-}
-@font-face {
-    font-family: My Lato;
-    font-style: italic;
     font-weight: bold;
+    font-display: swap;
     src: url(Lato-BoldItalic.woff2) format("woff2"),
 	 url(Lato-BoldItalic.woff) format("woff");
     src: local(Lato Bold Italic), local(Lato-BoldItalic),
@@ -117,18 +118,22 @@
 
 
 /* Common layout independent of slide mode */
-html {font: 1em/1.3 My Lato, Carlito, Calibri, Open Sans, Helvetica Neue,
+html {font: 400 1em/1.3 My Lato, Carlito, Calibri, Open Sans, Helvetica Neue,
     Helvetica, Arial, Liberation Sans, sans-serif;
-  font-size-adjust: 0.497 /* Lato */}
+  font-size-adjust: 0.506 /* Lato Regular */; letter-spacing: 0.02em}
 body {background: url(linen.png) #595b60; counter-reset: slide; margin: 2em;
   color: white}
+b {font-weight: bold}
+dt {font-weight: bold}
+dd {margin: 0}
+h4 {font-size: 1.2em; margin: 0.5em 0}
 .slide p, .slide ul, .slide ol, .slide pre, .slide blockquote, .slide li {
   margin: 0.6em 0}
 .slide h1, .slide h2, .slide address {margin: 0 0 0.6em 0;
   font: 900 2em/1.1 My Montserrat, Arial Black, Myriad Pro, Roboto, sans-serif;
   font-size-adjust: 0.542}
-.slide address {color: hsl(356,67%,43%); font-size: 1.4em}
-.slide h3 {font-size: 1.1em; color: hsl(356,67%,43%);
+.slide address {color: hsl(356,67%,40%); font-size: 1.4em}
+.slide h3 {font-size: 1.1em; color: hsl(356,67%,40%);
   margin: 0.8em 0 0.48em 0}
 .full, .slide {width: 40.889rem; /*= w */ height: 23rem; /*= N */}
 .slide {color: hsl(204,67%,19%); box-shadow: 0 0.4em 0.6em #000;
@@ -139,9 +144,11 @@ body {background: url(linen.png) #595b60; counter-reset: slide; margin: 2em;
   box-sizing: border-box; z-index: 0; display: inline-block;
   margin: 4em 2em 0 0; vertical-align: bottom; counter-increment: slide;
   border-radius: 0.5em;
-  text-shadow: 0 0 1px hsl(208,19%,88%), 0 0 1px hsl(208,19%,88%),
-    0 0 1px hsl(208,19%,88%), 0 0 1px hsl(208,19%,88%);
-  background: hsl(208,19%,88%)}
+  text-shadow: 0 0 1px hsl(0,0%,98%), 0 0 1px hsl(0,0%,98%),
+    0 0 1px hsl(0,0%,98%), 0 0 1px hsl(0,0%,98%);
+  background: top right / 4em /*= L */ 100%
+    radial-gradient(circle, hsl(205,29%,96%), hsl(205,29%,80%)) no-repeat
+    hsl(0,0%,98%)}
 .slide:target {outline: lime solid 0.5em; outline-offset: 1em}
 .slide h3 a {color: inherit}
 
@@ -195,27 +202,16 @@ body {background: url(linen.png) #595b60; counter-reset: slide; margin: 2em;
   left: 17.889em /*= w - N */}
 
 /* Cover pages */
-.slide.cover {background: 2em 4em / auto 5.5em /*= N/2 - 4 - 2 */
-    url(TPAC-2020-slides-banner.svg) no-repeat,
-    21.444em /*= w/2 + 1 */ 50% / 22.944em /*= w/2 + 2.5 */ auto
-    url(conference-call-3.png) no-repeat,
-    radial-gradient(16.263em /*= sqrt(2) * N/2 */ circle
-      at 52.389em /*= w + N/2 */ 50%, hsl(204,67%,19%),
-      hsl(204,67%,19%) 16.263em /*= sqrt(2) * N/2 */,
-      hsl(208,19%,88%) 16.264em /*= sqrt(2) * N/2 + 0.001 */);
-  padding-top: 11.5em /*= N/2 */; padding-right: 21.444em /*= w/2 + 1 */}
+.slide.cover {background: 50% 2em / auto 5.3em url(TPAC-2021-slides-cover.svg)
+    no-repeat hsl(0,0%,98%);
+  text-align: center; padding-right: 2em;
+  padding-top: 8.8em /* 2 + 5.3 + 1.5 */}
 
 /* Last page */
-.slide.final {background: 1em 17.803em /*= N - 1 - (L - 1)/H */
-    / 3em /*= L - 1 */ auto url(TPAC-2020-slides-banner.svg) no-repeat,
-    21.444em /*= w/2 + 1 */ 50% / 22.944em /*= w/2 + 2.5 */ auto
-    url(conference-call-3.png) no-repeat,
-    radial-gradient(16.263em /*= sqrt(2) * N/2 */ circle
-      at 52.389em /*= w + N/2 */ 50%, hsl(204,67%,19%),
-      hsl(204,67%,19%) 16.263em /*= sqrt(2) * N/2 */,
-      hsl(208,19%,88%) 16.264em /*= sqrt(2) * N/2 + 0.001 */);
-  padding-left: 5em /*= L + 1 */;
-  padding-right: 21.444em /*= w/2 + 1 */}
+.slide.final {background: 50% 16.7em /*= N - 2 - 4.3 */ / auto 4.3em
+    url(TPAC-2021-slides-cover.svg) no-repeat hsl(0,0%,98%);
+  padding: 50% 12.142em /*= 1 + w - 120% * w + 120% * 70% * N */ 1em 5em;
+  padding: 2em 2em 7em}
 
 /* Notes in a smaller font */
 .slide .note {font-size: 70%}
@@ -255,7 +251,7 @@ pre.numbered::before {color: #aaa; text-align: right; white-space: pre-line;
 /* White-on-black pages */
 .slide.white {color: white; background-color: black;
   text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black}
-.slide.white address {color: hsl(356,67%,46%)}
+.slide.white address {color: hsl(356,67%,40%)}
 .slide.white ul > li::before,
 .slide.white code {background: #444}
 .slide.white :link {color: inherit; background: hsla(240,100%,20%,0.3)}
@@ -268,19 +264,21 @@ img.cover, img.fit {position: absolute; z-index: -1; top: 0; left: 0;
   width: 100%; height: 100%; object-fit: cover; padding: 0}
 img.fit {object-fit: contain}
 
-/* Logo in upper right, slide number in lower right (in a speech bubble) */
+/* Slide number in upper right corner, in a white circle. */
 .slide::after {content: counter(slide); color: black; position: absolute;
-  top: 1em; bottom: 0; line-height: 1; right: 0; text-shadow: none;
-  width: 4em /*= L */; padding-top: 19.1em /*= N - 1 - 1.5 - 1.40 */;
+  top: 1em; bottom: 1em; line-height: 1; right: 0; text-shadow: none;
+  width: 4em /*= L */;
+  top: 0; bottom: 0; padding: 2em 0;
   text-align: center; font: bold 1em/1 My Montserrat, sans-serif;
-  background: 50% 18.95em /*= N - 1 - 1.5 - 1.55 */
-    / 3em 1.55em url(bubble.svg) no-repeat,
-    0 0 / 3em /*= L - 1 */ auto url(TPAC-2020-slides-banner.svg) no-repeat}
-.slide.cover::after, .slide.final::after { /* No logo on cover page */
-  background: 50% 100% / 3em 1.55em url(bubble.svg) no-repeat}
+  background: 50% 1.71em / auto 1.55em no-repeat
+    url(data:image/svg+xml,<svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%202%202%22><circle%20cx=%221%22%20cy=%221%22%20r=%221%22%20fill=%22%23F9F9F9%22/></svg>),
+    50% 50% / auto 106% no-repeat url(TPAC-2021-slides-banner.svg)}
+.slide.cover::after, .slide.final::after { /* No banner on cover page */
+  padding-top: 2.6em; /* Align with the blue band in the cover image */
+  background: 50% 2.35em / auto 1.55em no-repeat
+    url(data:image/svg+xml,<svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%202%202%22><circle%20cx=%221%22%20cy=%221%22%20r=%221%22%20fill=%22%23F9F9F9%22/></svg>)}
 .slide.clear::after {content: none /* or " " to only omit the slide number */;
-  background: 0 0 / 3em /*= L - 1 */ auto
-    url(TPAC-2020-slides-banner.svg) no-repeat}
+  background: none}
 .slide.cover.clear::after, .slide.final.clear::after {/*content: none*/}
 
 /* Two columns, and alternate elements in the left and right column */
@@ -295,14 +293,23 @@ img.fit {object-fit: contain}
     grid-gap: 0 2em; justify-items: normal}
   .slide .columns > * {width: auto}
 }
+@supports not (display: grid) {
+  /* If grid is not supported and the column is a list, remove the margin */
+  .slide .columns > li {margin-left: 0; list-style-position: inside}
+}
 
 /* A list as a tree structure with box-drawing characters */
 .tree {list-style: none; font: 1em/1 monospace;
   white-space: nowrap; padding: 0.2em 0; overflow: auto}
 .tree li::before {content: none}
-.tree code {background: none; font-family: Gill Sans MT, Gill Sans,
-  My Gill Sans, Liberation Sans, sans-serif}
+.tree code {background: none; font-family: My Lato, Carlito, Calibri, Open Sans,
+    Helvetica Neue, Helvetica, Arial, Liberation Sans, sans-serif}
 .comment .tree code {font-family: serif}
+
+/* A trick that may be useful for Jeff's slides: class "compact" can
+   be set on a list or other container and removes the top and bottom
+   margin from list items and paragraphs inside that container. */
+.compact li, .compact p {margin-top: 0; margin-bottom: 0}
 
 /* Striped tables */
 table.striped {border-collapse: collapse; margin-bottom:0.48em; width: 100%}
@@ -325,7 +332,7 @@ figure img, summary img {display: block; margin: 0.6em auto;
   max-height: 15.6em /*= N - 2 - 1.1 * 2 - 0.6 * 2 - 2 */}
 .slide summary {list-style: none} /* Hide the triangle */
 .slide summary::-webkit-details-marker {display: none} /* Ditto webkit/blink */
-.slide [open] summary img {max-height: 14em}
+.slide [open] summary img {max-height: 4em}
 .slide summary {outline: none}
 .slide summary::before {content: "⊖"; float: left; width: 0.9em;
   margin-left: -1.1em; text-align: left; line-height: 0.9}
@@ -334,12 +341,21 @@ figure img, summary img {display: block; margin: 0.6em auto;
   outline: thin solid invert}
 
 /* Notes between the slides */
-.comment {background: hsl(50,80%,90%); color: black; padding: 1em 1em;
-  columns: 37em; font-family: serif; border-radius: 0.5em; margin: 4em 0 0;
-  widows: 2; orphans: 2; hyphens: auto}
+.comment {background: black; color: white; padding: 1rem 1rem;
+  columns: 25em; font-family: Times New Roman, Times, serif;
+  margin: 4rem 0 0; widows: 2; orphans: 2;
+  column-rule: thin solid; column-gap: 2rem}
+.comment :link, .comment :visited {color: inherit; text-decoration: underline}
+.comment code {background: #333}
+.comment pre {margin-left: 1em; font-family: Helvetica, sans-serif}
 .comment :first-child {margin-top: 0}
+.comment dd, .comment ul, .comment ol {padding-left: 1em; margin-left: 0}
+.comment dd {margin-bottom: 1em}
+.comment h1, .comment h2, .comment h3, .comment h4, .comment h5, .comment h6 {
+  break-after: avoid}
 
 /* Layout in slide mode (when body has class=full) */
+.shower.full {transform: scale(var(--shower-full-scale))} /* For Shower 3.1 */
 .full, .full .slide {position: absolute; overflow: hidden}
 .full {top: 50%; left: 50%; background: black;
   margin: -11.5em /*= -N/2 */ 0 0 -20.444em /*= -w/2 */}
@@ -353,12 +369,33 @@ figure img, summary img {display: block; margin: 0.6em auto;
   z-index: 1; transition: 0.5s}
 
 /* Reveal elements one by one */
-.full .next:not(.active) {visibility: hidden}
+.full .next:not(.active):not(.visited) {visibility: hidden}
 
-/* Dim previously revealed elements (only with b6+) */
-.full .incremental > .visited,
-.full .overlay > .visited,
-.full .next.visited {opacity: 0.3}
+/* Animate the active element when it appears. By default, the element
+   is progressively revealed, starting from the left. Setting
+   class=emerge instead causes the element to go from transparent to
+   opaque. Class=strong also fades in the element and in addition
+   makes its text red as long as it is the active item. And
+   class=quick omits the animation. The class can be set on the
+   element itself, on the ancestor that has class=incremental or
+   class=overlay, or on any ancestor of the elements with class=next.
+*/
+.incremental .active, .overlay .active, .next.active {animation: unfold 1s}
+.incremental .active.emerge, .overlay .active.emerge,
+.incremental.emerge .active, .overlay.emerge .active,
+.emerge .next.active, .next.active.emerge {animation: fade-in 0.5s}
+.incremental .active.quick, .overlay .active.quick,
+.incremental.quick .active, .overlay.quick .active,
+.quick .next.active, .next.active.quick {animation: none}
+.incremental .active.strong, .overlay .active.strong,
+.incremental.strong .active, .overlay.strong .active,
+.strong .next.active, .next.active.strong {color: hsl(356,67%,40%);
+  animation: fade-in 0.5s}
+
+@keyframes unfold {
+  from {clip-path: inset(0% 100% 0% -100%)}
+  to {clip-path: inset(0% 0% 0% -100%)}
+}
 
 /* Transitions between slides */
 .full .slide.active ~ .visited {animation: none} /* Moving backwards */
@@ -508,10 +545,42 @@ figure img, summary img {display: block; margin: 0.6em auto;
   to {transform: translate(0%, 0%)}
 }
 
-/* Not sure why Shower makes a section with class=region... */
-section.region {display: none}
+/* Shower makes a section with aria-live=assertive, which should be
+   spoken, but not displayed. */
+[role=region][aria-live=assertive] {position: absolute; top: 0; left: 0;
+  clip: rect(0 0 0 0)}
+
+/* Trick: If the viewport is exactly w x h or 1.2w x 1.2h,
+   it means the slides are
+   being shown inside an iframe of that size. Hide everything except
+   the targeted slide in that case and omit the black background,
+   which would otherwise be visible around the rounded corner of the
+   slide. (When JavaScript is on, adding ?full to the end of the slide
+   URL, e.g., ".../myslides.html?full#intro", has a similar effect and
+   doesn't require the iframe to be this exact size.) */
+@media (min-width: 40.839em /*= w - 0.05 */) and
+    (max-width: 40.939em /*= w + 0.05 */) and
+    (min-height: 22.95em /*= N - 0.05 */) and
+    (max-height: 23.05em /*= N + 0.05 */),
+    (min-width: 49.017em /*= 1.2 * w - 0.05 */) and
+    (max-width: 49.117em /*= 1.2 * w + 0.05 */) and
+    (min-height: 27.55em /*= 1.2 * N - 0.05 */) and
+    (max-height: 27.65em /*= 1.2 * N + 0.05 */) {
+  html {font-size: calc(100vh / 23)}
+  body {margin: 0; overflow: hidden}
+  body, .full {background: transparent}
+  body > *, .slide {display: none}
+  .slide {box-shadow: none; margin: 0}
+  .slide:target {display: block}
+}
+
+/* class=framed is used to indicate the slides are inside an iframe. */
+body.framed {background: transparent}
+body.framed .slide {box-shadow: none}
+body.framed .progress {display: none}
 
 
+/* Printing. */
 @page {
   margin: 1cm;
   @bottom {content: counter(page)}
@@ -521,6 +590,54 @@ section.region {display: none}
   body {background: none; color: black; margin: 0; columns: 40.889em /*= w */;
     column-gap: 4em; column-rule: 0.2pt solid}
   .slide {border: 0.2pt solid black; margin: 2em auto; display: block;
+    border-radius: 0;
     overflow: hidden; break-inside: avoid; box-shadow: none}
-  .comment {background: none; padding: 0; columns: 1}
+  .comment {background: none; color: black; padding: 0;
+    margin: 1rem 1rem 2rem 0}
+  .comment code {background: #eee}
+  .slide summary::before {content: none}
+  .slide details {visibility: hidden}
+  .slide summary {visibility: visible}
+}
+
+/* Output to PDF (trick).
+
+   To output to PDF, print the slides to PDF while selecting a
+   landscape paper size, e.g. A4 landscape or Letter landscape.
+
+   This style sheet assumes that, when the output is in landscape
+   mode, the goal is to export one slide per page, without margins,
+   and omitting the comments between the slides. (On the other hand,
+   to output multiple slides per page and interleave the comments,
+   choose a page size in portrait mode.)
+
+   Note: Not all user agents respect the 'size' property to set the
+   size of the output. If they don't, there will be some margin
+   to the right and below each slide. Prince respects the property.
+   E.g, to make myslides.pdf from myslides.html:
+
+     prince --page-size=landscape myslides.html
+
+   W3C team can also use the ",pdfui" tool online.
+*/
+@media print and (orientation: landscape) {
+  html {font-size: 7mm}
+  .comment {display: none}
+  .slide {margin: 0; page-break-after: always; box-shadow: none; border: none}
+
+  @page {
+    size: 286.22mm /*= 7 * w */ 161mm /*= 7 * N */;
+    margin: 0;
+    @bottom {content: none}
+  }
+}
+@media print and (orientation: landscape) and (min-width: 11in) {
+  /* Letter-size paper */
+  html {font-size: 0.26902in /*= 11 / w */}
+  @page {size: 11in 6.1875in /*= 11 / A */}
+}
+@media print and (orientation: landscape) and (min-width: 296mm) {
+  /* A4-size paper */
+  html {font-size: 7.2636mm /*= 297 / w */}
+  @page {size: 297mm 167.06mm /*= 297 / A */}
 }
