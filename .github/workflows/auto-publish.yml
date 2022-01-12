@@ -12,6 +12,7 @@ jobs:
       matrix:
         include:
           - source: index.html
+            destination: index.html
 
           - source: content
 
