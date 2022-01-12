@@ -11,12 +11,8 @@ jobs:
       max-parallel: 1
       matrix:
         include:
-          - source: index.html
-          destination: index.html
-
           - source: content
  
-
           - source: help
       
 
