@@ -9,7 +9,7 @@
 			{
 				border:1px solid black;
 				border-collapse:collapse;
-				
+				padding: 0.3em;
 			}
 		</style>
 	
@@ -42,7 +42,6 @@
     },
     {
       "name": "John Foliot",
-      "url": "http://www.deque.com",
       "mailto": "john@foliot.ca",
       "company": "Invited Expert",
       "w3cid": 41450
@@ -361,16 +360,15 @@
       ]
     }
   },
-  "publishDate": "2021-06-21",
-  "publishISODate": "2021-06-21T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 21 June 2021"
+  "publishISODate": "2022-01-12T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 12 January 2022"
 }</script><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
 	<body class="h-entry informative"><div class="head">
     <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title">Personalization Semantics Content Module 1.0</h1>
     
     <h2>
       W3C Editor's Draft
-      <time class="dt-published" datetime="2021-06-21">21 June 2021</time>
+      <time class="dt-published" datetime="2022-01-12">12 January 2022</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd>
@@ -398,7 +396,7 @@
     <p class="copyright">
     <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
     ©
-    2017-2021
+    2017-2022
     
     <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
     <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
@@ -469,7 +467,7 @@
   </p><p>
                   This document is governed by the
                   <a id="w3c_process_revision" href="https://www.w3.org/2019/Process-20190301/">1 March 2019 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-                </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#background"><bdi class="secno">1.1 </bdi>Background</a></li><li class="tocline"><a class="tocxref" href="#personalization-semantics-content-module"><bdi class="secno">1.2 </bdi>Personalization Semantics Content Module</a></li><li class="tocline"><a class="tocxref" href="#vocabulary-structure-and-implementations"><bdi class="secno">1.3 </bdi>Vocabulary Structure and Implementations</a></li><li class="tocline"><a class="tocxref" href="#use-cases-and-requirements"><bdi class="secno">1.4 </bdi>Use Cases and Requirements</a></li></ol></li><li class="tocline"><a class="tocxref" href="#terms"><bdi class="secno">2. </bdi>Terms</a></li><li class="tocline"><a class="tocxref" href="#content"><bdi class="secno">3. </bdi>Content</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#action-explanation"><bdi class="secno">3.1 </bdi>action</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description"><bdi class="secno">3.1.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#action-example"><bdi class="secno">3.1.2 </bdi>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics"><bdi class="secno">3.1.3 </bdi>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values"><bdi class="secno">3.1.4 </bdi>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#destination-explanation"><bdi class="secno">3.2 </bdi>destination</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-0"><bdi class="secno">3.2.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#destination-example"><bdi class="secno">3.2.2 </bdi>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-0"><bdi class="secno">3.2.3 </bdi>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values-0"><bdi class="secno">3.2.4 </bdi>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#purpose-explanation"><bdi class="secno">3.3 </bdi>purpose</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-1"><bdi class="secno">3.3.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#purpose-example"><bdi class="secno">3.3.2 </bdi>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-1"><bdi class="secno">3.3.3 </bdi>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values-1"><bdi class="secno">3.3.4 </bdi>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#simplification-explanation"><bdi class="secno">3.4 </bdi>simplification</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-2"><bdi class="secno">3.4.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#simplification-example"><bdi class="secno">3.4.2 </bdi>Examples</a></li><li class="tocline"><a class="tocxref" href="#characteristics-2"><bdi class="secno">3.4.3 </bdi>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values-2"><bdi class="secno">3.4.4 </bdi>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#distraction-explanation"><bdi class="secno">3.5 </bdi>distraction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-3"><bdi class="secno">3.5.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#distraction-example"><bdi class="secno">3.5.2 </bdi>Examples</a></li><li class="tocline"><a class="tocxref" href="#characteristics-3"><bdi class="secno">3.5.3 </bdi>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values-3"><bdi class="secno">3.5.4 </bdi>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#symbol-explanation"><bdi class="secno">3.6 </bdi>symbol</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-4"><bdi class="secno">3.6.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#symbol-example"><bdi class="secno">3.6.2 </bdi>Examples</a></li><li class="tocline"><a class="tocxref" href="#characteristics-4"><bdi class="secno">3.6.3 </bdi>Characteristics</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#privacy-and-security-considerations"><bdi class="secno">4. </bdi>Privacy and Security Considerations</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">A. </bdi>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><bdi class="secno">A.1 </bdi>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><bdi class="secno">A.2 </bdi>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><bdi class="secno">A.3 </bdi>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">B.1 </bdi>
+                </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#background"><bdi class="secno">1.1 </bdi>Background</a></li><li class="tocline"><a class="tocxref" href="#personalization-semantics-content-module"><bdi class="secno">1.2 </bdi>Personalization Semantics Content Module</a></li><li class="tocline"><a class="tocxref" href="#vocabulary-structure-and-implementations"><bdi class="secno">1.3 </bdi>Vocabulary Structure and Implementations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#properties"><bdi class="secno">1.3.1 </bdi>Properties</a></li><li class="tocline"><a class="tocxref" href="#vocabulary_values"><bdi class="secno">1.3.2 </bdi>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#use-cases-and-requirements"><bdi class="secno">1.4 </bdi>Use Cases and Requirements</a></li></ol></li><li class="tocline"><a class="tocxref" href="#terms"><bdi class="secno">2. </bdi>Terms</a></li><li class="tocline"><a class="tocxref" href="#vocabulary"><bdi class="secno">3. </bdi>Vocabulary</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#action-explanation"><bdi class="secno">3.1 </bdi>action</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description"><bdi class="secno">3.1.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#action-example"><bdi class="secno">3.1.2 </bdi>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics"><bdi class="secno">3.1.3 </bdi>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values"><bdi class="secno">3.1.4 </bdi>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#destination-explanation"><bdi class="secno">3.2 </bdi>destination</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-0"><bdi class="secno">3.2.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#destination-example"><bdi class="secno">3.2.2 </bdi>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-0"><bdi class="secno">3.2.3 </bdi>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values-0"><bdi class="secno">3.2.4 </bdi>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#purpose-explanation"><bdi class="secno">3.3 </bdi>purpose</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-1"><bdi class="secno">3.3.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#purpose-example"><bdi class="secno">3.3.2 </bdi>Example</a></li><li class="tocline"><a class="tocxref" href="#characteristics-1"><bdi class="secno">3.3.3 </bdi>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values-1"><bdi class="secno">3.3.4 </bdi>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#simplification-explanation"><bdi class="secno">3.4 </bdi>simplification</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-2"><bdi class="secno">3.4.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#simplification-example"><bdi class="secno">3.4.2 </bdi>Examples</a></li><li class="tocline"><a class="tocxref" href="#characteristics-2"><bdi class="secno">3.4.3 </bdi>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values-2"><bdi class="secno">3.4.4 </bdi>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#distraction-explanation"><bdi class="secno">3.5 </bdi>distraction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-3"><bdi class="secno">3.5.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#distraction-example"><bdi class="secno">3.5.2 </bdi>Examples</a></li><li class="tocline"><a class="tocxref" href="#characteristics-3"><bdi class="secno">3.5.3 </bdi>Characteristics</a></li><li class="tocline"><a class="tocxref" href="#values-3"><bdi class="secno">3.5.4 </bdi>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#symbol-explanation"><bdi class="secno">3.6 </bdi>symbol</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description-4"><bdi class="secno">3.6.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#symbol-example"><bdi class="secno">3.6.2 </bdi>Examples</a></li><li class="tocline"><a class="tocxref" href="#characteristics-4"><bdi class="secno">3.6.3 </bdi>Characteristics</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#privacy-and-security-considerations"><bdi class="secno">4. </bdi>Privacy and Security Considerations</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">A. </bdi>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><bdi class="secno">A.1 </bdi>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><bdi class="secno">A.2 </bdi>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><bdi class="secno">A.3 </bdi>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">B.1 </bdi>
         Informative references
       </a></li></ol></li></ol></nav>
 
@@ -490,7 +488,7 @@
 
 				<p>Personalization Semantics is a series of technical specifications that provide the element-level attributes and values which enable user agents and helper-applications to adapt content to an individual user's needs. It relies on author-supplied page and element level metadata in order to achieve individualized personalization.</p>
 
-				<p>Personalization Semantics currently consists of three modules: Content, Help, and Support Tools. The specification defined in this document is the Personalization Semantics Content Module—the first of the Personalization Semantics Modules series.</p>
+				<p>Personalization Semantics currently consists of three modules: Content, Help and Support, and Personalization Tools. The specification defined in this document is the Personalization Semantics Content Module—the first of the Personalization Semantics Modules series.</p>
 
 				<p>Personalization Semantics is more fully introduced in our <a href="https://www.w3.org/TR/personalization-semantics-1.0/">Personalization Semantics Explainer</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-personalization-semantics-1.0" title="Personalization Semantics Explainer 1.0">personalization-semantics-1.0</a></cite>].</p>
 			</section>
@@ -502,6 +500,33 @@
 				<h3 id="x1-3-vocabulary-structure-and-implementations"><bdi class="secno">1.3 </bdi>Vocabulary Structure and Implementations<a class="self-link" aria-label="§" href="#vocabulary-structure-and-implementations"></a></h3>
 				<p>All the vocabulary in Personalization Semantics Content Module is constructed of properties and their values. Please see our <a href="https://www.w3.org/TR/personalization-semantics-1.0/">Personalization Semantics Explainer</a>. </p>
 				<p>The vocabulary implementations included in this document are available at our <a href="https://github.com/w3c/personalization-semantics/wiki/Implementations-of-Semantics">implementations wiki page</a>.</p>
+				<section id="properties">
+				<h4 id="x1-3-1-properties"><bdi class="secno">1.3.1 </bdi>Properties<a class="self-link" aria-label="§" href="#properties"></a></h4>
+				<p>Properties are the main units of personalization types supported by the vocabulary. A given property supports a specific type of personalization. That property would only be used once on a given piece of content, but multiple different properties could be used on the same piece of content to address different needs.</p>
+				</section>
+				<section id="propcharacteristic_value">
+				<h4 id="vocabulary_values"><bdi class="secno">1.3.2 </bdi>Values<a class="self-link" aria-label="§" href="#vocabulary_values"></a></h4> 
+				<p>Values provide the specific personalization information for the property. The possible values for each property are elaborated in the definition of the property in the modules. Some properties require the value to come from a predefined list of possible values, others can accept arbitrary strings, and some may accept multiple values. The attribute value may be one of the following types:</p>
+				<dl>
+					<dt id="valuetype_idref">ID reference</dt>
+					<dd>Reference to the ID of another element in the same document</dd>
+					<dt id="valuetype_idref_list">ID reference list</dt>
+					<dd>A list of one or more ID references.</dd>
+					<dt id="valuetype_integer">integer</dt>
+					<dd>A numerical value without a fractional component.</dd>
+					<dt id="valuetype_number">number</dt>
+					<dd>Any real numerical value.</dd>
+					<dt id="valuetype_string">string</dt>
+					<dd>Unconstrained value type.</dd>
+					<dt id="valuetype_token">token</dt>
+					<dd>One of a limited set of allowed values.</dd>
+					<dt id="valuetype_token_list">token list</dt>
+					<dd>A list of one or more tokens.</dd>
+					<dt id="valuetype_uri">URI</dt>
+					<dd>A Uniform Resource Identifier as defined by <cite><a href="http://www.ietf.org/rfc/rfc3986.txt" id="bib-rfc3986">RFC 3986</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3986" title="Uniform Resource Identifier (URI): Generic Syntax">RFC3986</a></cite>] It may reference a separate document, or a content fragment identifier in a separate document, or a content fragment identifier within the same document.</dd>
+				</dl>
+				</section>				
+				<p><strong>Note that the attributes and values in this specification do not overide the semantics exposed in the accessibility tree, but rather augment them.</strong> In the case of conflict between an element's semantics and the attribute values, validation algorithms should issue a warning but not an error.</p>
 				 <div class="note" id="issue-container-generatedID"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="4"><span>Editor's note</span></div><div class="">Since implementations have not yet been finalized, any examples in this document are illustrative only, and are provided to help in understanding the concept.  All examples will be updated once implementation examples are finalized.</div></div>
 			</section>
 			
@@ -515,14 +540,16 @@
 			<h2 id="x2-terms"><bdi class="secno">2. </bdi>Terms<a class="self-link" aria-label="§" href="#terms"></a></h2>
 			
 
-<p>We use the term definitions from the Cognitive and Learning Disabilities Accessibility Task Force. See the <a href="https://www.w3.org/TR/coga-usable/#glossary">COGA Glossary</a>.</p>
+
+
+<p>This document uses a number of specific terms related to various cognitive disabilities and related user-needs. Those terms have been defined by the Cognitive and Learning Disabilities Accessibility Task Force. See the <a href="https://www.w3.org/TR/coga-usable/#glossary">COGA Glossary</a> for specific definitions.</p>
 
 		</section>
 		
 	
 
-		<section id="content">
-			<h2 id="x3-content"><bdi class="secno">3. </bdi>Content<a class="self-link" aria-label="§" href="#content"></a></h2>
+		<section id="vocabulary">
+			<h2 id="x3-vocabulary"><bdi class="secno">3. </bdi>Vocabulary<a class="self-link" aria-label="§" href="#vocabulary"></a></h2>
             
            
             
@@ -533,7 +560,7 @@
 		<h4 id="x3-1-1-description"><bdi class="secno">3.1.1 </bdi>Description<a class="self-link" aria-label="§" href="#description"></a></h4>
     	<div class="property-description">
 					
-				    <p>The <code>action</code> attribute provides the context of a button. It is typically used on a button element or element with role="button". <div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note" aria-level="5"><span>Note</span></div><em class="">Some of these token values can apply to both an Action and a Destination. Content authors should choose the appropriate component in context.</em></div></p>
+				    <p>The <code>action</code> attribute provides the context of a button. It is typically used on a button element or element with role="button". <div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note" aria-level="5"><span>Note</span></div><em class="">The attribute in this section, "action", is one of three attributes named "action", "destination" and "purpose" for which we considered some alternatives. You can find a detailed discussion of the three attributes and alternatives at <a href="https://github.com/w3c/personalization-semantics/wiki/Review-of-approaches-for-Action,-Destination,-and-Purpose">Review of approaches for Action, Destination, and Purpose</a>.</em></div></p>
     </div>
     </section>
     <section id="action-example">
@@ -576,7 +603,7 @@
 						</tr>
 						<tr>
 							<th class="property-value-head" scope="row">Value:</th>
-							<td class="property-value"><a href="#valuetype_token" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured">token</a></td>
+							<td class="property-value"><a href="#valuetype_token">token</a></td>
 						</tr>
 					</tbody>
 		</table>
@@ -605,11 +632,11 @@
 						</tr>
   						<tr>
 							<th class="value-name" scope="row">buy</th>
-							<td class="value-description">Buy the selected item or buy the item at the current location. Often involves adding the current item into a shopping cart. (Implied simplification = "critical".)</td>
+							<td class="value-description">Buy the selected item or buy the item at the current location. Often involves adding the current item into a shopping cart. (Implied <a href="#simplification-explanation">simplification</a> = "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">cancel</th>
-							<td class="value-description">Closes the dialog and discards any changes the user may have made within that dialog. (Implied simplification = "critical".)</td>
+							<td class="value-description">Closes the dialog and discards any changes the user may have made within that dialog. (Implied <a href="#simplification-explanation">simplification</a> = "critical", the reason being if there is no [escape] option [cancel] must be present to abort the operation.)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">captions</th>
@@ -622,11 +649,11 @@
 						</tr>
 			             <tr>
 							<th class="value-name" scope="row">checkout</th>
-							<td class="value-description">Proceed to the purchasing process. (Implied simplification  = "critical".)</td>
+							<td class="value-description">Proceed to the purchasing process. (Implied <a href="#simplification-explanation">simplification</a>  = "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">close</th>
-							<td class="value-description">Close the current dialog. (Implied simplification = "critical".)</td>
+							<td class="value-description">Close the current dialog. (Implied <a href="#simplification-explanation">simplification</a> = "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">color</th>
@@ -634,11 +661,11 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">compose</th>
-							<td class="value-description">Compose a new item such as an email. (Implied simplification = "critical".)</td>
+							<td class="value-description">Compose a new item such as an email. (Implied <a href="#simplification-explanation">simplification</a> = "critical".)</td>
 						</tr>
                         <tr>
 							<th class="value-name" scope="row">confirm</th>
-							<td class="value-description">Confirms submission of the form request to the server. For example, an "ok" button. (Implied simplification  = "critical".)</td>
+							<td class="value-description">Confirms submission of the form request to the server. For example, an "ok" button. (Implied <a href="#simplification-explanation">simplification</a>  = "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">connect</th>
@@ -654,11 +681,11 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">date</th>
-							<td class="value-description">Opens a date control. (Implied simplification= "critical".)</td>
+							<td class="value-description">Opens a date control. (Implied <a href="#simplification-explanation">simplification</a>= "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">decrease</th>
-							<td class="value-description">Decreases the level of the relevant setting. (Implied simplification= "critical".)</td>
+							<td class="value-description">Decreases the level of the relevant setting. (Implied <a href="#simplification-explanation">simplification</a>= "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">delete</th>
@@ -686,7 +713,7 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">escape</th>
-							<td class="value-description">Typically used to abort, cancel or change what is currently being displayed on the screen. A common application of the the esc key is to leave full screen mode.</td>
+							<td class="value-description">Typically used to abort, cancel or change what is currently being displayed on the screen. A common application of the the esc key is to leave full screen mode. (Implied <a href="#simplification-explanation">simplification</a> = "critical", the reason being if there is no [cancel] option [escape] must be present to abort the operation)</td>
 						</tr>
             
 						<tr>
@@ -699,11 +726,11 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">opens-in-page-help</th>
-							<td class="value-description">Opens a help function on the same page. (Implied simplification= "critical".)</td>
+							<td class="value-description">Opens a help function on the same page. (Implied <a href="#simplification-explanation">simplification</a>= "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">increase</th>
-							<td class="value-description">Increases the level of the relevant setting. (Implied simplification= "critical".)</td>
+							<td class="value-description">Increases the level of the relevant setting. (Implied <a href="#simplification-explanation">simplification</a>= "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">label</th>
@@ -715,7 +742,7 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">left</th>
-							<td class="value-description">Changes the location of the selected item(s) to the left based on physical positioning. Note that the logical implication may depend on the dirction of the page. If the logic is important, use next or previous.</td>
+							<td class="value-description">Changes the location of the selected item(s) to the left based on physical positioning. Note that the logical implication may depend on the direction of the page. If the logic is important, use next or previous.</td>
 						</tr>
            
    						<tr>
@@ -730,7 +757,7 @@
 						</tr>
  						<tr>
 							<th class="value-name" scope="row">mode</th>
-							<td class="value-description">Change the mode or functionality. (Implied simplification= "critical".)</td>
+							<td class="value-description">Change the mode or functionality. (Implied <a href="#simplification-explanation">simplification</a>= "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">more</th>
@@ -746,15 +773,15 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">new</th>
-							<td class="value-description">Open a new item. (Implied simplification= "critical".)</td>
+							<td class="value-description">Open a new item. (Implied <a href="#simplification-explanation">simplification</a>= "critical".)</td>
 						</tr>
                         <tr>
 							<th class="value-name" scope="row">next</th>
-							<td class="value-description">Go to the next item in the series. (Implied simplification  = "critical".)</td>
+							<td class="value-description">Go to the next item in the series. (Implied <a href="#simplification-explanation">simplification</a>  = "critical".)</td>
 						</tr>
 			         	<tr>
 							<th class="value-name" scope="row">open</th>
-							<td class="value-description">Open an item. (Implied simplification = "critical".)</td>
+							<td class="value-description">Open an item. (Implied <a href="#simplification-explanation">simplification</a> = "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">order</th>
@@ -766,15 +793,15 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">pause</th>
-							<td class="value-description">Pause a multimedia, audio or video element or object. (Implied simplification= "critical".)</td>
+							<td class="value-description">Pause a multimedia, audio or video element or object. (Implied <a href="#simplification-explanation">simplification</a> = "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">play</th>
-							<td class="value-description">Play a multimedia, audio or video element or object. (Implied simplification= "critical".)</td>
+							<td class="value-description">Play a multimedia, audio or video element or object. (Implied <a href="#simplification-explanation">simplification</a> = "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">previous</th>
-							<td class="value-description">Go to the previous item in the series. (Implied simplification  = "critical".)</td>
+							<td class="value-description">Go to the previous item in the series. (Implied <a href="#simplification-explanation">simplification</a>  = "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">print</th>
@@ -803,7 +830,7 @@
             
 						<tr>
 							<th class="value-name" scope="row">reply</th>
-							<td class="value-description">Reply to the current item such as an email. (Implied simplification = "critical".)</td>
+							<td class="value-description">Reply to the current item such as an email. (Implied <a href="#simplification-explanation">simplification</a> = "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">reset</th>
@@ -815,11 +842,11 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">right</th>
-							<td class="value-description">Changes the location of the selected item(s) to the right based on physical positioning. Note that the logical implication may depend on the dirction of the page. If the logic is important, use next or previous.</td>
+							<td class="value-description">Changes the location of the selected item(s) to the right based on physical positioning. Note that the logical implication may depend on the reading direction of the page. If this logic is important, use next or previous instead.</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">save</th>
-							<td class="value-description">Save the current content. (Implied simplification = "critical".)</td>
+							<td class="value-description">Save the current content. (Implied <a href="#simplification-explanation">simplification</a> = "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">scroll</th>
@@ -827,7 +854,7 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">send</th>
-							<td class="value-description">Send a form, email or request. (Implied simplification = "critical".)</td>
+							<td class="value-description">Send a form, email or request. (Implied <a href="#simplification-explanation">simplification</a> = "critical".)</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">sent</th>
@@ -847,16 +874,16 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">submit</th>
-							<td class="value-description">Submits the form data or a request to the server. (Implied simplification  = "critical".)</td>
+							<td class="value-description">Submits the form data or a request to the server. (Implied <a href="#simplification-explanation">simplification</a>  = "critical".)</td>
 						</tr>
  						<tr>
 							<th class="value-name" scope="row">temperature</th>
-							<td class="value-description">Adjust the temperature. Often used with increase or decrease but is sometimes used alone as a menu name  or item. 
+							<td class="value-description">Adjust the temperature. Often used with increase or decrease but is sometimes used alone as a menu name or item. 
                             <div class="note" id="issue-container-generatedID-5"><div role="heading" class="ednote-title marker" id="h-ednote-4" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div></td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">toc</th>
-							<td class="value-description">Opens a table of contents.</td>
+							<td class="value-description">Resolves to a table of contents.</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">undo</th>
@@ -876,7 +903,7 @@
 						</tr>
   						<tr>
 							<th class="value-name" scope="row">volume</th>
-							<td class="value-description">Adjust the volume of a multimedia component. Often used with increase or decrease  but is sometimes used alone as a menu name  or item.
+							<td class="value-description">Adjust the volume of a multimedia component. Often used with increase or decrease  but is sometimes used alone as a menu name or item.
                             <div class="note" id="issue-container-generatedID-6"><div role="heading" class="ednote-title marker" id="h-ednote-5" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div></td>
 						</tr>
 			</tbody>
@@ -896,7 +923,7 @@
 		<div class="property-description">
 			<p>The <code>destination</code> attribute categorizes the target of a hyperlink.</p>
 			<p>A personalization agent or user agent may add additional familiar user interface features to help users understand the link and follow the right one easily. User agents might add a familiar customized icon to the link, style the link in a customized way, or position the link on the page in a location that the user generally expects to find a link of the particular type. 
-			<div class="note" role="note" id="issue-container-generatedID-7"><div role="heading" class="note-title marker" id="h-note-0" aria-level="5"><span>Note</span></div><em class="">Some of these token values can apply to both an Action and a Destination. Content authors should choose the appropriate component in context.</em></div></p>
+			<div class="note" role="note" id="issue-container-generatedID-7"><div role="heading" class="note-title marker" id="h-note-0" aria-level="5"><span>Note</span></div><em class="">The attribute in this section, "destination", is one of three attributes named "action", "destination" and "purpose" for which we considered some alternatives. You can find a detailed discussion of the three attributes and alternatives at <a href="https://github.com/w3c/personalization-semantics/wiki/Review-of-approaches-for-Action,-Destination,-and-Purpose">Review of approaches for Action, Destination, and Purpose</a>.</em></div></p>
 		</div>
 	</section>
 	<section id="destination-example">
@@ -937,7 +964,7 @@
 						</tr>
 						<tr>
 							<th class="property-value-head" scope="row">Value:</th>
-							<td class="property-value"><a href="#valuetype_token" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-0">token</a></td>
+							<td class="property-value"><a href="#valuetype_token">token</a></td>
 						</tr>
 					</tbody>
 				</table>
@@ -971,7 +998,7 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">contact</th>
-							<td class="value-description">Opens contact information for content owner or producer.</td>
+							<td class="value-description">Opens contact information for the content owner or producer.</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">email-recipient</th>
@@ -1032,11 +1059,11 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">terms</th>
-							<td class="value-description">The terms and conditions of use applicable to the website or web content.</td>
+							<td class="value-description">The conditions or terms-of-use applicable to the website or web content.</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">tools</th>
-							<td class="value-description">Available tools for the current content.</td>
+							<td class="value-description">Available tools for interacting with the current content.</td>
 						</tr>
  					</tbody>
 				</table>
@@ -1057,7 +1084,7 @@
 			
 			<p>A personalization agent may add a symbol, replace the text with a more familiar term, or give it a specific presentation. Note that there is no default value.</p>
 			<p>The user experience may include filling in the field (autocomplete) or adding an icon to augment the input label.</p>
-			<p>The <code>purpose</code> values that would typically be on form inputs should provide context for the user. For example <code>tel</code> would relate to the user's telephone number.</p><p> Note that there is no default value, and there can be more than one space-seperated value for a field.</p>
+			<p>The <code>purpose</code> values that would typically be on form inputs should provide context for the user. For example <code>tel</code> would relate to the user's telephone number.</p><p> Note that there is no default value, and there can be more than one space-seperated value for a field.<div class="note" role="note" id="issue-container-generatedID-9"><div role="heading" class="note-title marker" id="h-note-1" aria-level="5"><span>Note</span></div><em class="">The attribute in this section, "purpose", is one of three attributes named "action", "destination" and "purpose" for which we considered some alternatives. You can find a detailed discussion of the three attributes and alternatives at <a href="https://github.com/w3c/personalization-semantics/wiki/Review-of-approaches-for-Action,-Destination,-and-Purpose">Review of approaches for Action, Destination, and Purpose</a>.</em></div></p>
 		</div>
 	</section>
 
@@ -1071,10 +1098,10 @@
   </div> <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"telnum"</span> <span class="hljs-attr">data-purpose</span>=<span class="hljs-string">"tel"</span>/&gt;</span></code></pre>
       </div></li>
 		 
-			<li>The following is an example using the <code>purpose</code> attribute on a textare input collecting both Country and Postal-code information.
-    	<div class="example" id="example-4-field-using-data-purpose-space-sperated-values">
+			<li>The following is an example using the <code>purpose</code> attribute on a textarea input collecting both Country and Postal-code information.
+    	<div class="example" id="example-4-field-using-data-purpose-space-separated-values">
         <div class="marker">
-    <a class="self-link" href="#example-4-field-using-data-purpose-space-sperated-values">Example<bdi> 4</bdi></a><span class="example-title">: Field Using data-purpose - space sperated values</span>
+    <a class="self-link" href="#example-4-field-using-data-purpose-space-separated-values">Example<bdi> 4</bdi></a><span class="example-title">: Field Using data-purpose - space separated values</span>
   </div> <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"country_zip"</span> <span class="hljs-attr">data-purpose</span>=<span class="hljs-string">"country-name postal-code"</span>/&gt;</span></code></pre>
       </div></li>
 	
@@ -1105,7 +1132,7 @@
 						</tr>
 						<tr>
 							<th class="property-value-head" scope="row">Value:</th>
-							<td class="property-value"><a href="#valuetype_token" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-1">token</a></td>
+							<td class="property-value"><a href="#valuetype_token">token</a></td>
 						</tr>
 					</tbody>
 				</table>
@@ -1244,17 +1271,17 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">date-end</th>
-							<td class="value-description">Set the end time of an event  
-                            <div class="note" role="note" id="issue-container-generatedID-9"><div role="heading" class="note-title marker" id="h-note-1" aria-level="5"><span>Note</span></div><em class="">We may remove this or harmonize with other date time standards.</em></div>
-                            <div class="note" id="issue-container-generatedID-10"><div role="heading" class="ednote-title marker" id="h-ednote-7" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div>
+							<td class="value-description">Set the end time of an event.  
+                            <div class="note" role="note" id="issue-container-generatedID-10"><div role="heading" class="note-title marker" id="h-note-2" aria-level="5"><span>Note</span></div><em class="">We may remove this or harmonize with other date time standards.</em></div>
+                            <div class="note" id="issue-container-generatedID-11"><div role="heading" class="ednote-title marker" id="h-ednote-7" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div>
                             </td>
                         </tr>
                         
 						<tr>
 							<th class="value-name" scope="row">date-start</th>
 							<td class="value-description">Set the start date or the date of an event.
-                            <div class="note" role="note" id="issue-container-generatedID-11"><div role="heading" class="note-title marker" id="h-note-2" aria-level="5"><span>Note</span></div><em class="">We may remove this or harmonize with other date time standards.</em></div>
-                            <div class="note" id="issue-container-generatedID-12"><div role="heading" class="ednote-title marker" id="h-ednote-8" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div>
+                            <div class="note" role="note" id="issue-container-generatedID-12"><div role="heading" class="note-title marker" id="h-note-3" aria-level="5"><span>Note</span></div><em class="">We may remove this or harmonize with other date time standards.</em></div>
+                            <div class="note" id="issue-container-generatedID-13"><div role="heading" class="ednote-title marker" id="h-ednote-8" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div>
                             </td>
 						</tr>
                         <tr>
@@ -1306,7 +1333,7 @@
                        <tr>
 							<th class="value-name" scope="row">language</th>
 							<td class="value-description">Ability to select the preferred language for the content. 
-							<div class="note" role="note" id="issue-container-generatedID-13"><div role="heading" class="note-title marker" id="h-note-3" aria-level="5"><span>Note</span></div><em class="">The use of the language token does not mandate the use of BCP47 values: authors can request content as either a <a href="https://tools.ietf.org/html/bcp47">BCP47 value</a> or a simple text string.</em></div></td>
+							<div class="note" role="note" id="issue-container-generatedID-14"><div role="heading" class="note-title marker" id="h-note-4" aria-level="5"><span>Note</span></div><em class="">The use of the language token does not mandate the use of BCP47 values: authors can request content as either a <a href="https://tools.ietf.org/html/bcp47">BCP47 value</a> or a simple text string.</em></div></td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">name</th>
@@ -1348,7 +1375,7 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">tel</th>
-							<td class="value-description">Full telephone number, including country code .</td>
+							<td class="value-description">Full telephone number, including country code.</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">tel-area-code</th>
@@ -1376,20 +1403,20 @@
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">tel-national</th>
-							<td class="value-description">Telephone number without the county code component, with a country-internal prefix applied if applicable.</td>
+							<td class="value-description">Telephone number without the country code component, with a country-internal prefix applied if applicable.</td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">time-end</th>
 							<td class="value-description">Set the end time of an event.
-                            <div class="note" role="note" id="issue-container-generatedID-14"><div role="heading" class="note-title marker" id="h-note-4" aria-level="5"><span>Note</span></div><em class="">We may remove this or harmonize with other date time standards.</em></div>
-                            <div class="note" id="issue-container-generatedID-15"><div role="heading" class="ednote-title marker" id="h-ednote-9" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div>
+                            <div class="note" role="note" id="issue-container-generatedID-15"><div role="heading" class="note-title marker" id="h-note-5" aria-level="5"><span>Note</span></div><em class="">We may remove this or harmonize with other date time standards.</em></div>
+                            <div class="note" id="issue-container-generatedID-16"><div role="heading" class="ednote-title marker" id="h-ednote-9" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div>
                             </td>
 						</tr>
 						<tr>
 							<th class="value-name" scope="row">time-start</th>
 							<td class="value-description"> Set the start time or the time of an event. 
-                            <div class="note" role="note" id="issue-container-generatedID-16"><div role="heading" class="note-title marker" id="h-note-5" aria-level="5"><span>Note</span></div><em class="">We may remove this or harmonize with other date time standards.</em></div>
-                            <div class="note" id="issue-container-generatedID-17"><div role="heading" class="ednote-title marker" id="h-ednote-10" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div>
+                            <div class="note" role="note" id="issue-container-generatedID-17"><div role="heading" class="note-title marker" id="h-note-6" aria-level="5"><span>Note</span></div><em class="">We may remove this or harmonize with other date time standards.</em></div>
+                            <div class="note" id="issue-container-generatedID-18"><div role="heading" class="ednote-title marker" id="h-ednote-10" aria-level="5"><span>Editor's note</span></div><em class="">At risk pending implementations.</em></div>
                             </td>
 						</tr>
                         <tr>
@@ -1449,7 +1476,7 @@
         <div class="marker">
     <a class="self-link" href="#example-6-simplification-using-data-simplification">Example<bdi> 6</bdi></a><span class="example-title">: Simplification Using data-simplification</span>
   </div> <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Years 2 - 3 are putting on a play next Tuesday. 
-<span class="hljs-tag">&lt;<span class="hljs-name">b</span> <span class="hljs-attr">data-simplification</span>=<span class="hljs-string">"critical"</span>&gt;</span>Therefore school will close at 1 pm on Tuesday<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span> 
+<span class="hljs-tag">&lt;<span class="hljs-name">strong</span> <span class="hljs-attr">data-simplification</span>=<span class="hljs-string">"critical"</span>&gt;</span>Therefore school will close at 1 pm on Tuesday<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span> 
  so we can get the school hall ready.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
       </div></li>
 		</ol>
@@ -1479,7 +1506,7 @@
 								</tr>
 								<tr>
 									<th class="property-value-head" scope="row">Value:</th>
-									<td class="property-value"><a href="#valuetype_token" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-2">token</a></td>
+									<td class="property-value"><a href="#valuetype_token">token</a></td>
 								</tr>
 							</tbody>
 				</table>
@@ -1538,12 +1565,19 @@
 	<section id="description-3">
 		<h4 id="x3-5-1-description"><bdi class="secno">3.5.1 </bdi>Description<a class="self-link" aria-label="§" href="#description-3"></a></h4>
 		<div class="property-description">
-            <p>The <code>distraction</code> attribute is intended to be used on non-essential distracting content, so that people who have problems keeping focus can minimize or turn the content off. An example user experiences would be to hide all non-essential distracting content.</p>
+            <p>The <code>distraction</code> attribute is intended to be used on non-essential distracting content, so that people who have problems keeping focus can minimize, re-order or turn the content off. An example user-experience would be to hide all non-essential distracting content.</p>
 			<p>Note that there is no default value.</p>
 			<p>Note that elements with the <code>distraction</code> attribute should also have a label or accessible name.</p>
 			
-			<p>It has been noted that advertising constitutes the critical revenue stream for many content providers. The purpose of allowing users to hide (or systematically show and sequentially review) on page advertising is simply to give distracted users the same control others have over such content. The user without a disability can ignore the advertisement and complete the task. The user who cannot ignore it, or TAB past it conveniently, is forced to grapple with a stumbling block that prevents them from completing a task.</p>
+			<p>It has been noted that advertising constitutes the critical revenue stream for many content providers. The purpose of allowing users to hide (or systematically show and sequentially review) on-page advertising is simply to give distracted users the same control others have over such content. The user without a disability can ignore the advertisement and complete the task. The user who cannot ignore it, or TAB past it conveniently, is forced to grapple with a stumbling block that prevents them from completing a task.</p>
 			<p>Users will choose to look at advertising because it's informative. It's an important mechanism for learning about options in life. By allowing users to control when and how they see ads, they have the ability to avoid becoming frustrated by processes that prevent task completion. This allows them to see advertising as potentially useful information, not a source of frustration. The alternative is that a frustrated user will not follow up on the ad that caused the frustration.</p>
+			<div class="note" id="issue-container-generatedID-19"><div role="heading" class="ednote-title marker" id="h-ednote-11" aria-level="5"><span>Editor's note</span></div><div class=""><p>The distraction attribute may appear to have some common features with the CSS prefers-reduced-motion media feature, however there are some significant differences:</p>
+				<ul>
+				<li>the distraction attribute is applying semantics at the element level, whereas the CSS media feature is presentational and semantics-free.</li>
+				<li>the CSS prefers-reduced-motion media feature requires that the content author also provide an alternative experience for users who have the Reduced Motion option enabled - the distraction attribute does not.</li>
+				<li>the CSS prefers-reduced-motion media feature anticipates a reduced presentation, the distraction attributes anticipates that the content can be minimize, re-ordered or even turned off (hidden) from the end user.</li>
+				</ul>
+			</div></div>
 		</div>
 	</section>
 	<section id="distraction-example">
@@ -1603,7 +1637,7 @@ each time a step in a sequence of steps on a set of web pages is completed. Some
 						</tr>
 						<tr>
 							<th class="property-value-head" scope="row">Value:</th>
-							<td class="property-value"><a href="#valuetype_token_list" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-3">token list</a></td>
+							<td class="property-value"><a href="#valuetype_token_list">token list</a></td>
 						</tr>
 					</tbody>
 				</table>
@@ -1657,7 +1691,7 @@ each time a step in a sequence of steps on a set of web pages is completed. Some
 						<li>facilitating symbol-set translation: loading alternative, locally stored symbols that the user is familiar with, so they do not have to learn new symbols across different applications.</li>
 					</ul>	
 					<p></p>
-                    <p>In some languages words and symbols are conjugated with sex or tense. In these case more then one value maybe needed to map to a symbol. Authors should join values that map to a single conjugated word with a \ + \ sign with a space on each side of the \ + \ sign. (User agent may choose to accept values for a conjugated term that have been separated without the spaces.)
+                    <p>In some languages words and symbols are conjugated with sex or tense. In these cases more than one value maybe needed to map to a symbol. Authors should join values that map to a single conjugated word with a \ + \ sign with a space on each side of the \ + \ sign. (User agents may choose to accept values for a conjugated term that have been separated without the spaces.)
 See <a href="https://github.com/w3c/personalization-semantics/wiki/Best-practices-for-symbol-values">best practices for symbol values</a>.
 			</p>			    
 			    
@@ -1665,7 +1699,7 @@ See <a href="https://github.com/w3c/personalization-semantics/wiki/Best-practice
 with white space. The order of multiple concepts should be the same as used in typical speech in the natural language of the content.
 </p>
 
-			<p>The reference numbers are the same references numbers used in Bliss (BCI numbers). Here is a link to the <a href="http://www.blissymbolics.net/BCI-AV_2020-03-09/BCI-AV_2020-03-09_(en+sv+no+fi)+derivations+symbols_8483-27158.pdf">BCI numbers</a> and <a href="http://www.blissymbolics.net/BCI-AV_2020-03-09/BCI-AV_2020-03-09_(en+sv+no+fi+hu+de+nl+af+ru+lv+po+fr+es+pt+it+dk)+derivations+symbols_8483-27158.pdf">additional language translations</a> at the time of publication and the <a href="http://www.blissymbolics.org/index.php/licensing">copyright licensing</a> from Bliss. For additional updates after publication see our <a href="https://github.com/w3c/personalization-semantics/wiki/Best-practices-for-symbol-values">best practices</a> for symbol page.</p> 
+			<p>The reference numbers are the same references numbers used in Bliss (BCI numbers). Here is a link to the <a href="http://www.blissymbolics.net/BCI-AV_2020-03-09/BCI-AV_2020-03-09_(en+sv+no+fi)+derivations+symbols_8483-27158.pdf">BCI numbers (PDF)</a> and <a href="http://www.blissymbolics.net/BCI-AV_2020-03-09/BCI-AV_2020-03-09_(en+sv+no+fi+hu+de+nl+af+ru+lv+po+fr+es+pt+it+dk)+derivations+symbols_8483-27158.pdf">additional language translations (PDF)</a> at the time of publication and the <a href="http://www.blissymbolics.org/index.php/licensing">copyright licensing</a> from Bliss. For additional updates after publication see our <a href="https://github.com/w3c/personalization-semantics/wiki/Best-practices-for-symbol-values">best practices</a> for symbols page.</p> 
 				</div>
 	</section>
 	<section id="symbol-example">
@@ -1724,7 +1758,7 @@ with white space. The order of multiple concepts should be the same as used in t
 											</tr>
 											<tr>
 												<th class="property-value-head" scope="row">Value:</th>
-												<td class="property-value"><a href="#valuetype_uri" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-4">URI</a></td>
+												<td class="property-value"><a href="#valuetype_uri">URI</a></td>
 											</tr>
 										</tbody>
 				</table>
@@ -1738,11 +1772,11 @@ with white space. The order of multiple concepts should be the same as used in t
 		</section>
 		<section id="privacy-and-security-considerations">
 			<h2 id="x4-privacy-and-security-considerations"><bdi class="secno">4. </bdi>Privacy and Security Considerations<a class="self-link" aria-label="§" href="#privacy-and-security-considerations"></a></h2>
-						<p>This specification adds context information&nbsp;about content to the document, and should not affect security.</p>
+				<p>This specification adds context information&nbsp;about content to the document, and should not affect security.</p>
 
-			<p>Although this specification does not expose personal preferences and personal information, third party user agents or proxy server(s) acting upon our semantic information may need to store personal preferences on how to&nbsp; present content to a specific user. We recommend any user agent or proxy server implements best practices to protect all personal preferences and personal information.</p>
+				<p>Although this specification does not expose personal preferences and personal information, third party user agents or proxy server(s) acting upon our semantic information may need to store personal preferences on how to&nbsp;present content to a specific user. It is recommended that any user agent or proxy server implements best practices to protect all personal preferences and personal information.</p>
 		
-<p>Any user agent with user setting are recommended to follow best practices to keep user information secure.</p>
+<p>Any user agent with user settings are recommended to follow best practices to keep user information secure.</p>
 		<p>The Privacy and Security Considerations of Personalization Semantics Content Module is also discussed at <a href="https://github.com/w3c/personalization-semantics/issues/131">issue #131</a>.</p>
 		
 		</section>
@@ -1755,14 +1789,17 @@ with white space. The order of multiple concepts should be the same as used in t
 		<h3 id="a-1-participants-active-in-the-personalization-tf-at-the-time-of-publication"><bdi class="secno">A.1 </bdi>Participants active in the Personalization TF at the time of publication<a class="self-link" aria-label="§" href="#ack_group"></a></h3>
 		<ul>
 			<li>Matthew Atkinson (TPG Interactive)</li>
+			<li>Mike Beganyi (TPG Interactive)</li>
 			<li>Thaddeus Cambron (Invited Expert)</li>
 			<li>Michael Cooper (<abbr title="World Wide Web Consortium">W3C</abbr>/<abbr title="Massachusetts Institute of Technology">MIT</abbr>)</li>
 			<li>John Foliot (Invited Expert)</li>
 			<li>Becky Gibson (Knowbility, Inc.)</li>
 			<li>Charles LaPierre (Benetech)</li>
 			<li>Roy Ran (<abbr title="World Wide Web Consortium">W3C</abbr>/Beihang)</li>
+			<li>Janina Sajka (Invited Expert)</li>
 			<li>Lisa Seeman (Invited Expert) </li>
 			<li>Sharon Snider (IBM Corporation)</li>
+			<li>Lionel Wolberger (Invited Expert)</li>
 		</ul>
   </section>
 	<section class="section" id="ack_others">
@@ -1789,7 +1826,7 @@ with white space. The order of multiple concepts should be the same as used in t
         Informative references
       <a class="self-link" aria-label="§" href="#informative-references"></a></h3>
     <dl class="bibliography">
-      <dt id="bib-dom4">[DOM4]</dt><dd><a href="https://dom.spec.whatwg.org/"><cite>DOM Standard</cite></a>. Anne van Kesteren.  WHATWG. Living Standard. URL: <a href="https://dom.spec.whatwg.org/">https://dom.spec.whatwg.org/</a></dd><dt id="bib-html5">[HTML5]</dt><dd><a href="https://www.w3.org/TR/html5/"><cite>HTML5</cite></a>. Ian Hickson; Robin Berjon; Steve Faulkner; Travis Leithead; Erika Doyle Navara; Theresa O'Connor; Silvia Pfeiffer.  W3C. 27 March 2018. W3C Recommendation. URL: <a href="https://www.w3.org/TR/html5/">https://www.w3.org/TR/html5/</a></dd><dt id="bib-html52">[HTML52]</dt><dd><a href="https://www.w3.org/TR/html52/"><cite>HTML 5.2</cite></a>. Steve Faulkner; Arron Eicholz; Travis Leithead; Alex Danilo; Sangwhan Moon.  W3C. 28 January 2021. W3C Recommendation. URL: <a href="https://www.w3.org/TR/html52/">https://www.w3.org/TR/html52/</a></dd><dt id="bib-microdata">[microdata]</dt><dd><a href="https://www.w3.org/TR/microdata/"><cite>HTML Microdata</cite></a>. Charles 'chaals' (McCathie) Nevile; Dan Brickley; Ian Hickson.  W3C. 28 January 2021. W3C Note. URL: <a href="https://www.w3.org/TR/microdata/">https://www.w3.org/TR/microdata/</a></dd><dt id="bib-personalization-semantics-1.0">[personalization-semantics-1.0]</dt><dd><a href="https://www.w3.org/TR/personalization-semantics-1.0/"><cite>Personalization Semantics Explainer 1.0</cite></a>. Lisa Seeman-Horwitz; Charles LaPierre; Michael Cooper; Ruoxi Ran; Richard Schwerdtfeger.  W3C. 27 January 2020. W3C Working Draft. URL: <a href="https://www.w3.org/TR/personalization-semantics-1.0/">https://www.w3.org/TR/personalization-semantics-1.0/</a></dd><dt id="bib-rdfa-primer">[rdfa-primer]</dt><dd><a href="https://www.w3.org/TR/rdfa-primer/"><cite>RDFa 1.1 Primer - Third Edition</cite></a>. Ivan Herman; Ben Adida; Manu Sporny; Mark Birbeck.  W3C. 17 March 2015. W3C Note. URL: <a href="https://www.w3.org/TR/rdfa-primer/">https://www.w3.org/TR/rdfa-primer/</a></dd><dt id="bib-svg2">[SVG2]</dt><dd><a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/"><cite>Scalable Vector Graphics (SVG) 2</cite></a>. Nikos Andronikos; Rossen Atanassov; Tavmjong Bah; Amelia Bellamy-Royds; Brian Birtles; Cyril Concolato; Erik Dahlström; Chris Lilley; Cameron McCormack; Doug Schepers; Dirk Schulze; Richard Schwerdtfeger; Satoru Takagi; Jonathan Watt et al.  W3C. W3C Working Draft. URL: <a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/">http://www.w3.org/TR/2015/WD-SVG2-20150915/</a></dd><dt id="bib-swbp-skos-core-guide">[swbp-skos-core-guide]</dt><dd><a href="https://www.w3.org/TR/swbp-skos-core-guide/"><cite>SKOS Core Guide</cite></a>. Alistair Miles; Dan Brickley.  W3C. 2 November 2005. W3C Working Draft. URL: <a href="https://www.w3.org/TR/swbp-skos-core-guide/">https://www.w3.org/TR/swbp-skos-core-guide/</a></dd><dt id="bib-wcag21">[WCAG21]</dt><dd><a href="https://www.w3.org/TR/WCAG21/"><cite>Web Content Accessibility Guidelines (WCAG) 2.1</cite></a>. Andrew Kirkpatrick; Joshue O Connor; Alastair Campbell; Michael Cooper.  W3C. 5 June 2018. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WCAG21/">https://www.w3.org/TR/WCAG21/</a></dd>
+      <dt id="bib-dom4">[DOM4]</dt><dd><a href="https://dom.spec.whatwg.org/"><cite>DOM Standard</cite></a>. Anne van Kesteren.  WHATWG. Living Standard. URL: <a href="https://dom.spec.whatwg.org/">https://dom.spec.whatwg.org/</a></dd><dt id="bib-html5">[HTML5]</dt><dd><a href="https://www.w3.org/TR/html5/"><cite>HTML5</cite></a>. Ian Hickson; Robin Berjon; Steve Faulkner; Travis Leithead; Erika Doyle Navara; Theresa O'Connor; Silvia Pfeiffer.  W3C. 27 March 2018. W3C Recommendation. URL: <a href="https://www.w3.org/TR/html5/">https://www.w3.org/TR/html5/</a></dd><dt id="bib-html52">[HTML52]</dt><dd><a href="https://www.w3.org/TR/html52/"><cite>HTML 5.2</cite></a>. Steve Faulkner; Arron Eicholz; Travis Leithead; Alex Danilo; Sangwhan Moon.  W3C. 28 January 2021. W3C Recommendation. URL: <a href="https://www.w3.org/TR/html52/">https://www.w3.org/TR/html52/</a></dd><dt id="bib-microdata">[microdata]</dt><dd><a href="https://www.w3.org/TR/microdata/"><cite>HTML Microdata</cite></a>. Charles 'chaals' (McCathie) Nevile; Dan Brickley; Ian Hickson.  W3C. 28 January 2021. W3C Note. URL: <a href="https://www.w3.org/TR/microdata/">https://www.w3.org/TR/microdata/</a></dd><dt id="bib-personalization-semantics-1.0">[personalization-semantics-1.0]</dt><dd><a href="https://www.w3.org/TR/personalization-semantics-1.0/"><cite>Personalization Semantics Explainer 1.0</cite></a>. Lisa Seeman-Horwitz; Charles LaPierre; John Foliot; Michael Cooper; Ruoxi Ran; Richard Schwerdtfeger.  W3C. 12 August 2021. W3C Working Draft. URL: <a href="https://www.w3.org/TR/personalization-semantics-1.0/">https://www.w3.org/TR/personalization-semantics-1.0/</a></dd><dt id="bib-rdfa-primer">[rdfa-primer]</dt><dd><a href="https://www.w3.org/TR/rdfa-primer/"><cite>RDFa 1.1 Primer - Third Edition</cite></a>. Ivan Herman; Ben Adida; Manu Sporny; Mark Birbeck.  W3C. 17 March 2015. W3C Note. URL: <a href="https://www.w3.org/TR/rdfa-primer/">https://www.w3.org/TR/rdfa-primer/</a></dd><dt id="bib-svg2">[SVG2]</dt><dd><a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/"><cite>Scalable Vector Graphics (SVG) 2</cite></a>. Nikos Andronikos; Rossen Atanassov; Tavmjong Bah; Amelia Bellamy-Royds; Brian Birtles; Cyril Concolato; Erik Dahlström; Chris Lilley; Cameron McCormack; Doug Schepers; Dirk Schulze; Richard Schwerdtfeger; Satoru Takagi; Jonathan Watt et al.  W3C. W3C Working Draft. URL: <a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/">http://www.w3.org/TR/2015/WD-SVG2-20150915/</a></dd><dt id="bib-swbp-skos-core-guide">[swbp-skos-core-guide]</dt><dd><a href="https://www.w3.org/TR/swbp-skos-core-guide/"><cite>SKOS Core Guide</cite></a>. Alistair Miles; Dan Brickley.  W3C. 2 November 2005. W3C Working Draft. URL: <a href="https://www.w3.org/TR/swbp-skos-core-guide/">https://www.w3.org/TR/swbp-skos-core-guide/</a></dd><dt id="bib-wcag21">[WCAG21]</dt><dd><a href="https://www.w3.org/TR/WCAG21/"><cite>Web Content Accessibility Guidelines (WCAG) 2.1</cite></a>. Andrew Kirkpatrick; Joshue O'Connor; Alastair Campbell; Michael Cooper.  W3C. 5 June 2018. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WCAG21/">https://www.w3.org/TR/WCAG21/</a></dd>
     </dl></section></section><p role="navigation" id="back-to-top">
     <a href="#title"><abbr title="Back to Top">↑</abbr></a>
   </p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
