@@ -15,16 +15,16 @@ jobs:
           destination: index.html
 
           - source: content
-          destination: index.html
+          destination: content
 
           - source: help
-          destination: index.html
+          destination: help
 
           - source: tools
-          destination: index.html
+          destination: tools
 
           - source: requirements
-          destination: index.html
+          destination: requirements
             # destination defaults to spec-2/index.html
             # echidna_token defaults to no publication to w3.org/TR
     steps:
