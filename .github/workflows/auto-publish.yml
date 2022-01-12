@@ -12,18 +12,22 @@ jobs:
       matrix:
         include:
           - source: content/index.html
-          destination: content
+          destination: content/index.html
+           echidna_token: ECHIDNA_TOKEN_CONTENT
  
           - source: help/index.html
-          destination: help
+          destination: help/index.html
+          echidna_token: ECHIDNA_TOKEN_HELP
       
 
           - source: tools/index.html
-          destination: tools
+          destination: tools/index.html
+          echidna_token: ECHIDNA_TOKEN_TOOLS
      
 
           - source: requirements/index.html
-          destination: requirements
+          destination: requirements/index.html
+          echidna_token: ECHIDNA_TOKEN_REQUIREMENTS
         
             # destination defaults to spec-2/index.html
             # echidna_token defaults to no publication to w3.org/TR
