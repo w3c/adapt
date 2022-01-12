@@ -7,42 +7,41 @@ jobs:
   main:
     name: Build, Validate and Deploy
     runs-on: ubuntu-20.04
-    strategy:
-      max-parallel: 1
-      matrix:
-        include:
-          - source: content
-          destination: content/index.html
-           echidna_token: ECHIDNA_TOKEN_CONTENT
-           TOOLCHAIN: respec
- 
-          - source: help
-          destination: help/index.html
-          echidna_token: ECHIDNA_TOKEN_HELP
-          TOOLCHAIN: respec
-      
-
-          - source: tools
-          destination: tools/index.html
-          echidna_token: ECHIDNA_TOKEN_TOOLS
-          TOOLCHAIN: respec
-     
-
-          - source: requirements
-          destination: requirements/index.html
-          echidna_token: ECHIDNA_TOKEN_REQUIREMENTS
-          TOOLCHAIN: respec
-        
-            # destination defaults to spec-2/index.html
-            # echidna_token defaults to no publication to w3.org/TR
     steps:
       - uses: actions/checkout@v2
       - uses: w3c/spec-prod@v2
         with:
-          SOURCE: ${{ matrix.source }}
-          DESTINATION: ${{ matrix.destination }}
+          SOURCE: index.html
+          DESTINATION: index.html
+          TOOLCHAIN: respec
           GH_PAGES_BRANCH: gh-pages
-          W3C_ECHIDNA_TOKEN: ${{ secrets[matrix.echidna_token] }}
-          VALIDATE_WEBIDL: false
+          VALIDATE_MARKUP: false
+      - uses: w3c/spec-prod@v2
+        with:
+          SOURCE: content/index.html
+          DESTINATION: content/index.html
+          TOOLCHAIN: respec
+          GH_PAGES_BRANCH: gh-pages
+          VALIDATE_MARKUP: false
+      - uses: w3c/spec-prod@v2
+        with:
+          SOURCE: help/index.html
+          DESTINATION: help/index.html
+          TOOLCHAIN: respec
+          GH_PAGES_BRANCH: gh-pages
+          VALIDATE_MARKUP: false
+      - uses: w3c/spec-prod@v2
+        with:
+          SOURCE: tools/index.html
+          DESTINATION: tools/index.html
+          TOOLCHAIN: respec
+          GH_PAGES_BRANCH: gh-pages
+          VALIDATE_MARKUP: false
+      - uses: w3c/spec-prod@v2
+        with:
+          SOURCE: requirements/index.html
+          DESTINATION: requirements/index.html
+          TOOLCHAIN: respec
+          GH_PAGES_BRANCH: gh-pages
           VALIDATE_MARKUP: false
         
