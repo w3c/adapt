@@ -11,21 +11,21 @@ jobs:
       max-parallel: 1
       matrix:
         include:
-          - source: content/index.html
+          - source: content
           destination: content/index.html
            echidna_token: ECHIDNA_TOKEN_CONTENT
  
-          - source: help/index.html
+          - source: help
           destination: help/index.html
           echidna_token: ECHIDNA_TOKEN_HELP
       
 
-          - source: tools/index.html
+          - source: tools
           destination: tools/index.html
           echidna_token: ECHIDNA_TOKEN_TOOLS
      
 
-          - source: requirements/index.html
+          - source: requirements
           destination: requirements/index.html
           echidna_token: ECHIDNA_TOKEN_REQUIREMENTS
         
