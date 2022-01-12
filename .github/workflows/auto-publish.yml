@@ -39,4 +39,6 @@ jobs:
           DESTINATION: ${{ matrix.destination }}
           GH_PAGES_BRANCH: gh-pages
           W3C_ECHIDNA_TOKEN: ${{ secrets[matrix.echidna_token] }}
+          VALIDATE_WEBIDL: false
+          VALIDATE_MARKUP: false
         
