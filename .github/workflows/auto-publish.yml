@@ -12,15 +12,19 @@ jobs:
       matrix:
         include:
           - source: index.html
-            destination: index.html
+          destination: index.html
 
           - source: content
+          destination: index.html
 
           - source: help
+          destination: index.html
 
           - source: tools
+          destination: index.html
 
           - source: requirements
+          destination: index.html
             # destination defaults to spec-2/index.html
             # echidna_token defaults to no publication to w3.org/TR
     steps:
