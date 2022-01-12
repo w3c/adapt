@@ -1,0 +1,33 @@
+name: CI
+on:
+  pull_request: {}
+  push:
+    branches: [main]
+jobs:
+  main:
+    name: Build, Validate and Deploy
+    runs-on: ubuntu-20.04
+    strategy:
+      max-parallel: 1
+      matrix:
+        include:
+          - source: index.html
+
+          - source: content
+
+          - source: help
+
+          - source: tools
+
+          - source: requirements
+            # destination defaults to spec-2/index.html
+            # echidna_token defaults to no publication to w3.org/TR
+    steps:
+      - uses: actions/checkout@v2
+      - uses: w3c/spec-prod@v2
+        with:
+          SOURCE: ${{ matrix.source }}
+          DESTINATION: ${{ matrix.destination }}
+          GH_PAGES_BRANCH: gh-pages
+          W3C_ECHIDNA_TOKEN: ${{ secrets[matrix.echidna_token] }}
+        
