@@ -1,0 +1,63 @@
+<section id="alternative-explanation">
+	<h2>Alternative</h2>
+  <section>
+    <h3>Description</h3>
+    <div class="property-description">
+          <p>Would be used on an alternative content as an alternative to more detailed or difficult to understand content. <code>alternative</code> can be used on a span, div, link or image that servers as alternative content to it's direct parent element.</p>
+          <p class="ednote">This data model may be too complex, so this property could undergo substantial changes.</p>
+          <p><strong>Supported values:</strong>
+          </p>
+          <ul>
+            <li>On text: easylang, explain, more, vocab500, vocab1000, vocab2000, active, literal, numberfree, smallsentences, chunks</li>
+            <li>General: lessoptions. Whitespace, largefont</li>
+            <li>Images: symbolic , realistic</li>
+            <li>p0, p1, p1, p2, p3 Where p0 are images with true content, p1 is a symbol or illustration that is typically shown with alt=&quot;&quot;, P2 are extra illustration that most people will not mind such as at the start of a paragraph or option. p3 are for disability centric illustrations that can disturb other people and may be mid sentence.</li>
+          </ul>
+          <p>Note that there is no default value.</p>
+    </div>
+  </section>
+	<section id="alternative-example">
+    <h3>Example</h3>
+		<p>The below example section show how <code>alternative</code> used when coding.</p>
+    <pre class="example" title="Alternative Using data-">
+    &lt;div&gt;
+	&lt;span data-alternative="easylang numberfree vocab1000" class="hidden"&gt;
+ 	   most people prefer simple text
+  	&lt;/span&gt;
+        In studies it was found that only 30% of users prefer long convoluted text
+  	with obtuse words and lots of numbers,
+  	with 56% claiming there preferred the simplified text,
+  	with the remainder unsure or stated it depends on the context.
+&lt;/div&gt;</pre>
+        
+    </section>
+    <section>
+      <h3>Characteristics</h3>
+      <table class="property-features">
+          <thead>
+            <tr>
+              <th scope="col">Characteristic</th>
+              <th scope="col">Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="property-related-head" scope="row">Related Concepts:</th>
+              <td class="property-related"><cite><a href="https://www.w3.org/TR/SVG2/"><abbr title="Scalable Vector Graphics">SVG</abbr></a></cite> [[SVG2]] and <cite><a href="https://www.w3.org/TR/dom/"><abbr title="Document Object Model">DOM</abbr></a></cite> [[DOM4]] active</td>
+            </tr>
+            <tr>
+              <th class="property-applicability-head" scope="row">Used in Roles:</th>
+              <td class="property-applicability">All elements of the base markup</td>
+            </tr>
+            <tr>
+              <th class="property-descendants-head" scope="row">Inherits into Roles:</th>
+              <td class="property-descendants">Placeholder</td>
+            </tr>
+            <tr>
+              <th class="property-value-head" scope="row">Value:</th>
+              <td class="property-value"><a href="#valuetype_token_list">token list</a></td>
+            </tr>
+          </tbody>
+        </table>
+    </section>
+</section>

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>User Settings</title>
+    </head>
+    <body>
+    	<section>
+			<h2>User Settings</h2>
+			<p class="ednote">This section is not yet developed. It is included to describe the concept.</p>
+			<p>User settings describe the user preferences. </p>
+			<p>User settings should be restricted to the expected values. User setting must conform to the supported values. Authors are expected to test their content against the expected values of each item. </p>
+			<p>User setting might be encoded in JSON or XML. Example code may be:</p>
+			<code>&quot;@coga-simplification&quot;: [{ &quot;critical&quot;: { &quot;settings&quot;: [{ &quot;@aria-hidden&quot;: &quot;false&quot;, &quot;css&quot;: &quot;visibility:visible;&quot; }]</code>
+
+
+			<section>
+				<h3>Base values for contextual elements </h3>
+				<table>
+					<tbody>
+						<tr>
+							<th>Property</th>
+							<th>supported values / types</th>
+							<th>expected values</th>
+							<th></th>
+						</tr>
+						<tr>
+							<td>@aria-hidden</td>
+							<td>
+								<p>false/true</p>
+							</td>
+							<td><p>false</p>
+								<p>true</p>
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>tooltip</td>
+							<td>text (UTF8)</td>
+							<td>between 1 - 25 characters </td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>CSS</td>
+							<td><p>string</p>
+								<p>any CSS style </p></td>
+							<td><p>CSS = </p>
+								<p>visibility:visible , non visible</p>
+								<p>position: fixed; relative,</p>
+								<p>left: 0, (valid is not overlapping)<br /> bottom: 0;</p>
+								<p>top:0<br /> right: 0;<br />
+								</p>
+								<p>float: right left<br /> border: 1 -5 px solid ;</p>
+								<p>width: 20 px - 300px;</p>
+								<p>Colors: black <a target="_blank" href="http://www.w3schools.com/colors/color_tryit.asp?color=MidnightBlue">MidnightBlue</a> , <a target="_blank" href="http://www.w3schools.com/colors/color_tryit.asp?color=DarkRed">DarkRed</a> with bgcolor: ,Beige, <a target="_blank" href="http://www.w3schools.com/colors/color_tryit.asp?color=Cornsilk">Cornsilk</a> , <a target="_blank" href="http://www.w3schools.com/colors/color_tryit.asp?color=Linen">Linen</a> , white, </p>
+								<p>or</p>
+								<p>colors: ,Beige, <a target="_blank" href="http://www.w3schools.com/colors/color_tryit.asp?color=Cornsilk">Cornsilk</a> , <a target="_blank" href="http://www.w3schools.com/colors/color_tryit.asp?color=Linen">Linen</a> , white, WITH bgcolor: black, <a target="_blank" href="http://www.w3schools.com/colors/color_tryit.asp?color=MidnightBlue">MidnightBlue</a> , <a target="_blank" href="http://www.w3schools.com/colors/color_tryit.asp?color=DarkRed">DarkRed</a></p>
+								<p>font-size: 12, 14, 18, 22, 24, 26</p>
+								<p>Line-spacing: 1.5, 2</p>
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>long desc</td>
+							<td><p>text (UTF8)</p>
+								<p>15 - 800 characters</p></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>more</td>
+							<td>URI</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td> shortcut </td>
+							<td>string</td>
+							<td>SHIFT / CTRL / ALT + SHIFT / CTRL / ALT + alpha numeric </td>
+							<td></td>
+						</tr>
+						<tr>
+							<td> Symbol </td>
+							<td><p>URI </p>
+								<p>or sub-container URL, creator license using DC notation</p>
+								<p>Formats : pg, SVG, JMEG, GIF, bmp</p>
+								<p>Size: </p>
+							</td>
+							<td>
+								<p>Sizes tested are: Xpx, Xpx, and Xpx</p></td>
+							<td><p>&quot;Symbol&quot;: &quot;https://d30y9cdsu7xlg0.cloudfront.net/pg/32455-200.png&quot;</p>
+								<p>Or</p>
+								<p>&quot;Symbol&quot;: [{ &quot;URL&quot;: &quot;https://d30y9cdsu7xlg0.cloudfront.net/pg/32455-200.png&quot;, &quot;creator&quot;: { &quot;name&quot;: &quot;Christopher Smith&quot;, &quot;URL&quot;: &quot;https://thenounproject.com/oneafternine/&quot; }, &quot;license&quot;: [{ &quot;name&quot;: &quot;Creative Commons&quot;, &quot;URL&quot;: &quot;http://creativecommons.org/licenses/by/3.0/us/&quot; }] }],</p></td>
+						</tr>
+						<tr>
+							<td> image </td>
+							<td><p>URI </p>
+								<p>or sub-container URL, creator license using DC notation</p>
+								<p>Formats : pg, SVG, JMEG, GIF, bmp</p></td>
+							<td>
+								<p>Sizes tested are: Xpx, Xpx, and Xpx</p></td>
+							<td><p>&quot;image&quot;: &quot;https://d30y9cdsu7xlg0.cloudfront.net/pg/32455-200.png&quot;</p>
+								<p>Or</p>
+								<p>&quot;image&quot;: [{ &quot;URL&quot;: &quot;https://d30y9cdsu7xlg0.cloudfront.net/pg/32455-200.png&quot;, &quot;creator&quot;: { &quot;name&quot;: &quot;Christopher Smith&quot;, &quot;URL&quot;: &quot;https://thenounproject.com/oneafternine/&quot; }, &quot;license&quot;: [{ &quot;name&quot;: &quot;Creative Commons&quot;, &quot;URL&quot;: &quot;http://creativecommons.org/licenses/by/3.0/us/&quot; }] }]</p></td>
+						</tr>
+						<tr>
+							<td> inherits </td>
+							<td>URI</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td> name </td>
+							<td>text</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>text</td>
+							<td>text</td>
+							<td>between 1 - 15 characters UTF8</td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+
+
+			<section>
+				<h3>Untitled section</h3>
+				<table>
+					<tbody>
+						<tr>
+							<th>Property</th>
+							<th>Attribute Values</th>
+							<th>Expected Type (Settings)</th>
+							<th>Expected Settings</th>
+							<th><p>Example (JSON)</p>
+							</th>
+						</tr>
+						<tr>
+							<td>coga-simplification</td>
+							<td><p>Critical</p>
+								<p>High</p>
+								<p>Med</p>
+								<p>Low</p></td>
+							<td>aria-hidden</td>
+							<td><p>@aria-hidden&quot;: &quot;false&quot;</p>
+								<p>@aria-hidden&quot;: &quot;true&quot;</p></td>
+							<td><p>&quot;@aria-importance&quot;: [{ &quot;critical&quot;: { &quot;settings&quot;: [{ &quot;@aria-hidden&quot;: &quot;false&quot;, &quot;CSS&quot;: &quot;visibility:visible;&quot; }]</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+
+
+			<section>
+				<h3>Features</h3>
+				<p>Taken from smart4MD funded by the European commission horizon 2020 projects.</p>
+				<table>
+					<tr>
+						<td><p>Text and icons</p></td>
+						<td><p>Text can be displayed under icon</p></td>
+						<td><p>Text can be changed. The text is associated with the icon role and is changed consistently for</p></td>
+					</tr>
+					<tr>
+						<td colspan="3"><p><strong>Contrast and display</strong><br />
+							</p></td>
+					</tr>
+					<tr>
+						<td><p>Contrast</p></td>
+						<td><p>Medium<br /> Contrast ratio of at least 4.5:1<br /> High: 7:1</p></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><p>Text size</p></td>
+						<td><p>Basic text <br /> Normal <br /> Large.<br /> V large</p></td>
+						<td><p>Normal: 14 pt <br /> Large: 18 pt.<br /> V large:22 pt</p></td>
+					</tr>
+					<tr>
+						<td><p>Buttons</p></td>
+						<td><p>text only <br /> images only<br /> text and images<br />
+							</p></td>
+						<td><p>(Note that Icons  on buttons with different roles should be settable)</p></td>
+					</tr>
+					<tr>
+						<td colspan="3"><p><strong>Feedback and orientation</strong></p></td>
+					</tr>
+					<tr>
+						<td>Spoken feedback</td>
+						<td>always/sometimes/off</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Text feedback</td>
+						<td>always/sometimes/off</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><p>Failure icon</p></td>
+						<td><p>URI</p></td>
+						<td><p>Need to specify expected format/ allowed format / expected sizes</p></td>
+					</tr>
+					<tr>
+						<td><p>Success Icons </p></td>
+						<td><p>URI</p></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td colspan="3"><p><strong>Interaction</strong></p></td>
+					</tr>
+					<tr>
+						<td><p>Allow scroll</p></td>
+						<td><p>On / off/ URI</p></td>
+						<td><p>URI is a widget that handles scroll</p></td>
+					</tr>
+					<tr>
+						<td><p>Allow gestures</p></td>
+						<td><p>terms for allowed gestures</p></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td colspan="3"><p><strong>Support</strong></p></td>
+					</tr>
+					<tr>
+						<td><p>Text to speech (with synchronized highlighting)</p></td>
+						<td><p>Automatic<br /> When an icon is pressed<br /> Never</p></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><p>Tooltips</p></td>
+						<td><p>On/off</p></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><p>Help panel</p></td>
+						<td><p>When I click an icon/text<br /> Never<br /> Always open</p>
+							<p>URI</p></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><p>Chat support?</p></td>
+						<td><p>Always </p>
+							<p>When I click an icon/text<br /> Never</p></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td colspan="3"><p><strong>Text</strong> Settings</p></td>
+					</tr>
+					<tr>
+						<td><p>Avoidnumbers</p></td>
+						<td><p>On /off</p></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><p>Readinglevel</p></td>
+						<td><p>Easiest<br /> Medium <br /> High<br /> Any</p></td>
+						<td><p>Medium (8th grade)<br /> High (12th grade)</p></td>
+					</tr>
+					<tr>
+						<td><p>Clarity</p></td>
+						<td><p>Normal<br /> Specific </p></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td colspan="3"><p><strong>Finding content </strong></p></td>
+					</tr>
+					<tr>
+						<td><p>Search</p></td>
+						<td><p>Have a search option when ever possible </p></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><p>Site map </p></td>
+						<td><p>Always</p>
+							<p>Sometimes</p></td>
+						<td><p>when to show link to the site map</p></td>
+					</tr>
+					<tr>
+						<td><p>Menu bars</p></td>
+						<td><p>Use menu bars with sub menus</p>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><p>Location of navigational elements</p></td>
+						<td></td>
+						<td>should these be handled as contextual elements</td>
+					</tr>
+					<tr>
+						<td>Search location</td>
+						<td>top right, top right , bottom left , bottom right</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>sitemap location</td>
+						<td>top right, top right , bottom left , bottom right</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>GetHelp location</td>
+						<td>top right, top right , bottom left , bottom right</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Next location</td>
+						<td>top right, top right , bottom left , bottom right</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Prev location</td>
+						<td>top right, top right , bottom left , bottom right</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Critical elements toolbar</td>
+						<td>top right, top right , bottom left , bottom right</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Video</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>show control bar </td>
+						<td>always/sometime</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>show captions</td>
+						<td>on /off</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Show navigation points ( videos)</td>
+						<td>on/off</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><p>Video icons with text</p></td>
+						<td><p>Iconsonly/icons with text/text only<br />
+							</p></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><p>Back button</p></td>
+						<td><p>Always show back button <br /> (on off)</p></td>
+						<td><p>do not rely on the tablet default for navigation as some people will not know how to use it</p></td>
+					</tr>
+					<tr>
+						<td><p>Links</p></td>
+						<td><p><strong>CSS</strong><br />
+							</p></td>
+						<td><p>expected values will be CSS values for :</p>
+							<p>blue and underline <br /> Hover affect<br /> Always have a link icon next to links<br /> links as a button</p></td>
+					</tr>
+					<tr>
+						<td><p>Breadcrumbs</p></td>
+						<td><p><strong>Options</strong><br /> -None<br /> -Normal<br /> -With data</p></td>
+						<td><p>With data will have a summary of what was submitted at each step so people can know exactly what they did</p></td>
+					</tr>
+					<tr>
+						<td colspan="3"><p>Distractions</p></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><ul>
+								<li>Turn off all non critical features (on off)</li>
+								<li>Turn off messages(on off)</li>
+								<li>Turn off messages accept for specific people</li>
+							</ul></td>
+						<td><p>TBD</p></td>
+					</tr>
+					<tr>
+						<td colspan="3"><p>Conformation</p></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><ul>
+								<li>Always show a conformation screen before submitting data</li>
+							</ul>
+						</td>
+						<td><p>TBD</p></td>
+					</tr>
+				</table>
+				<p>include user settings to match the accessibility terms and address how accessibility features should be handled </p>
+				<p>Example code may be:</p>
+				<code>&quot;@accessibilityFeature&quot;: [{ &quot;alternativeText&quot;: { &quot;settings&quot;: [{ &quot;replaceimage&quot;: &quot;true&quot;, &quot;css&quot;: &quot;visibility:visible;&quot; }]</code>
+				<p>The full accessibility terms are available at: https://www.w3.org/wiki/WebSchemas/Accessibility</p>
+			</section>
+
+
+			<section>
+				<h3>Accessibility term example</h3>
+				<table>
+					<tbody>
+						<tr>
+							<th>Property</th>
+							<th>Expected Type</th>
+							<th>Expected Values</th>
+							<th>Description</th>
+						</tr>
+						<tr>
+							<td>accessibilityFeature</td>
+							<td><a rel="nofollow" href="http://schema.org/Text">Text</a></td>
+							<td><ul>
+									<li>alternativeText</li>
+									<li>annotations</li>
+									<li>audioDescription</li>
+									<li>bookmarks</li>
+									<li>braille</li>
+									<li>captions</li>
+									<li>ChemML</li>
+									<li>describedMath</li>
+									<li>displayTransformability</li>
+									<li>highContrastAudio</li>
+									<li>highContrastDisplay</li>
+									<li>index</li>
+									<li>largePrint</li>
+									<li>latex</li>
+									<li>longDescription</li>
+									<li>MathML</li>
+									<li>none</li>
+									<li>printPageNumbers</li>
+									<li>readingOrder</li>
+									<li>rubyAnnotations</li>
+									<li>signLanguage</li>
+									<li>structuralNavigation</li>
+									<li>synchronizedAudioText</li>
+									<li>tableOfContents</li>
+									<li>taggedPDF</li>
+									<li>tactileGraphic</li>
+									<li>tactileObject</li>
+									<li>timingControl</li>
+									<li>transcript</li>
+									<li>ttsMarkup</li>
+									<li>unlocked</li>
+								</ul></td>
+							<td>Content features of the resource, such as accessible media, supported enhancements for accessibility and alternatives. <p>See the accessibilityFeature in detail section below for more information.</p></td>
+						</tr>
+						<tr>
+							<td>accessibilityHazard</td>
+							<td><a rel="nofollow" href="http://schema.org/Text">Text</a></td>
+							<td><ul>
+									<li>flashing</li>
+									<li>noFlashingHazard</li>
+									<li>motionSimulation</li>
+									<li>noMotionSimulationHazard</li>
+									<li>sound</li>
+									<li>noSoundHazard</li>
+									<li>unknown</li>
+								</ul></td>
+							<td>A characteristic of the described resource that is physiologically dangerous to some users. Related to <a rel="nofollow" href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/seizure.html">WCAG 2.0 guideline 2.3</a>. <p>All three of the negative properties should be set if none of the hazards are known to exist. If the content has hazard(s), include positive assertions for the hazards it has and negative assertions for the others.</p>
+								<p>If the property is not set in the positive or negative or is specifically set to unknown, the state of hazards is not known.</p></td>
+						</tr>
+						<tr>
+							<td>accessibilityAPI</td>
+							<td><a rel="nofollow" href="http://schema.org/Text">Text</a></td>
+							<td><ul>
+									<li>AndroidAccessibility</li>
+									<li>ARIA</li>
+									<li>ATK</li>
+									<li>AT-SPI</li>
+									<li>BlackberryAccessibility</li>
+									<li>iAccessible2</li>
+									<li>iOSAccessibility</li>
+									<li>JavaAccessibility</li>
+									<li>MacOSXAccessibility</li>
+									<li>MSAA</li>
+									<li>UIAutomation</li>
+								</ul></td>
+							<td>Indicates that the resource is compatible with the referenced accessibility API.</td>
+						</tr>
+						<tr>
+							<td>accessibilityControl</td>
+							<td><a rel="nofollow" href="http://schema.org/Text">Text</a></td>
+							<td><ul>
+									<li>fullKeyboardControl</li>
+									<li>fullMouseControl</li>
+									<li>fullSwitchControl</li>
+									<li>fullTouchControl</li>
+									<li>fullVideoControl</li>
+									<li>fullVoiceControl</li>
+								</ul></td>
+							<td>Identifies one or more input methods that allow access to all of the application functionality.</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+		</section>
+    </body>
+</html>
