@@ -11,15 +11,19 @@ jobs:
       max-parallel: 1
       matrix:
         include:
-          - source: content
+          - source: content/index.html
+          destination: content
  
-          - source: help
+          - source: help/index.html
+          destination: help
       
 
-          - source: tools
+          - source: tools/index.html
+          destination: tools
      
 
-          - source: requirements
+          - source: requirements/index.html
+          destination: requirements
         
             # destination defaults to spec-2/index.html
             # echidna_token defaults to no publication to w3.org/TR
