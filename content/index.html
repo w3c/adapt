@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>Personalization Semantics Content Module 1.0</title>
+		<title>WAI-Adapt: Content Module</title>
 		<meta charset="utf-8"/>
 		<script src="https://www.w3.org/Tools/respec/respec-w3c-common" class="remove"></script>
 		<script src="../common/biblio.js" class="remove"></script>
@@ -32,7 +32,7 @@
 
 							<p>The technology described in this specification is intended to be used to programmatically transform the appearance of typical web content including form controls, icons, and other user interface elements	into a rendering more familiar and comprehensible to an individual user. Providing additional help is supported, as is automated page simplification. Use cases and relevant vocabulary terms are defined which allow user agents to augment or adapt content to better fit a particular user's particular needs. This helps users with varying needs to understand web content more readily, by
 					simplifying the web interaction, and by avoiding forcing the user to grapple with unfamiliar representations they are ill equipped to comprehend.</p>
-					                        <p>This Personalization Semantics Content Module 1.0 is a component of the Personalization Semantics series introduced in the <a href="../">Personalization Semantics Explainer 1.0</a> document [[personalization-semantics-1.0]].</p>
+					                        <p>This WAI-Adapt: Content Module is a component of the WAI-Adapt series introduced in the <a href="../">WAI-Adapt Explainer</a> document [[personalization-semantics-1.0]].</p>
 								                </section>
 										 
 		<section id="sotd"></section>
@@ -52,27 +52,27 @@
 					<li>Enable new adapted user agents for people with learning and cognitive disabilities.</li>
 				</ul>
 
-				<p>Personalization Semantics is a series of technical specifications that provide the element-level attributes and values which enable user agents and helper-applications to adapt content to an individual user's needs. It relies on author-supplied page and element level metadata in order to achieve individualized personalization.</p>
+				<p>WAI-Adapt is a series of technical specifications that provide the element-level attributes and values which enable user agents and helper-applications to adapt content to an individual user's needs. It relies on author-supplied page and element level metadata in order to achieve individualized personalization.</p>
 
-				<p>Personalization Semantics currently consists of three modules: Content, Help and Support, and Personalization Tools. The specification defined in this document is the Personalization Semantics Content Module&mdash;the first of the Personalization Semantics Modules series.</p>
+				<p>WAI-Adapt currently consists of three modules: Content, Help and Support, and Tools . The specification defined in this document is the WAI-Adapt: Content Module&mdash;the first of the WAI-Adapt Modules series.</p>
 
-				<p>Personalization Semantics is more fully introduced in our <a href="https://www.w3.org/TR/personalization-semantics-1.0/">Personalization Semantics Explainer</a> [[personalization-semantics-1.0]].</p>
+				<p>WAI-Adapt is more fully introduced in our <a href="https://www.w3.org/TR/personalization-semantics-1.0/">WAI-Adapt Explainer</a> [[personalization-semantics-1.0]].</p>
 			</section>
 			<section>
-				<h2>Personalization Semantics Content Module</h2>
-				<p>Personalization Semantics Content Module is the first part of the Personalization Semantics technical specification, which provides personalization semantics and vocabularies that can be used to mark-up web content with additional semantic information, enabling user agents to augment or adapt content to various user-scenarios based on the user’s personalization settings or preferences. The Content Module enhances web content by providing additional information about form controls, buttons, links, and other user interface elements. User agents use these semantics to augment or adapt content to the user’s scenario &mdash; for example allowing for the conversion of text to symbols. This helps users with varying needs to understand the content by providing support for simplification and/or a way to manage unnecessary distractions.</p>
+				<h2>WAI-Adapt: Content Module</h2>
+				<p>WAI-Adapt: Content Module is the first part of the WAI-Adapt technical specification, which provides WAI-Adapt and vocabularies that can be used to mark-up web content with additional semantic information, enabling user agents to augment or adapt content to various user-scenarios based on the user’s personalization settings or preferences. The Content Module enhances web content by providing additional information about form controls, buttons, links, and other user interface elements. User agents use these semantics to augment or adapt content to the user’s scenario &mdash; for example allowing for the conversion of text to symbols. This helps users with varying needs to understand the content by providing support for simplification and/or a way to manage unnecessary distractions.</p>
 			</section>
 			<section>
 				<h2>Vocabulary Structure and Implementations</h2>
-				<p>All the vocabulary in Personalization Semantics Content Module is constructed of properties and their values. Please see our <a href="https://www.w3.org/TR/personalization-semantics-1.0/">Personalization Semantics Explainer</a>. </p>
+				<p>All the vocabulary in WAI-Adapt: Content Module is constructed of properties and their values. Please see our <a href="https://www.w3.org/TR/personalization-semantics-1.0/">WAI-Adapt Explainer</a>. </p>
 				<p>The vocabulary implementations included in this document are available at our <a href="https://github.com/w3c/personalization-semantics/wiki/Implementations-of-Semantics">implementations wiki page</a>.</p>
 				<section id="properties">
 				<h3>Properties</h3>
-				<p>Properties are the main units of personalization types supported by the vocabulary. A given property supports a specific type of personalization. That property would only be used once on a given piece of content, but multiple different properties could be used on the same piece of content to address different needs.</p>
+				<p>Properties are the main units of WAI-Adapt types supported by the vocabulary. A given property supports a specific type of personalization. That property would only be used once on a given piece of content, but multiple different properties could be used on the same piece of content to address different needs.</p>
 				</section>
 				<section id="propcharacteristic_value">
 				<h3 id="vocabulary_values">Values</h3> 
-				<p>Values provide the specific personalization information for the property. The possible values for each property are elaborated in the definition of the property in the modules. Some properties require the value to come from a predefined list of possible values, others can accept arbitrary strings, and some may accept multiple values. The attribute value may be one of the following types:</p>
+				<p>Values provide the specific WAI-Adapt information for the property. The possible values for each property are elaborated in the definition of the property in the modules. Some properties require the value to come from a predefined list of possible values, others can accept arbitrary strings, and some may accept multiple values. The attribute value may be one of the following types:</p>
 				<dl>
 					<dt id="valuetype_idref">ID reference</dt>
 					<dd>Reference to the ID of another element in the same document</dd>
@@ -98,7 +98,7 @@
 			
 			<section>
 				<h2>Use Cases and Requirements</h2>
-				<p>The <a href="https://github.com/w3c/personalization-semantics/wiki/Requirements">Requirements for Personalization Semantics</a> describes use cases and requirements. This module provides properties to fulfill those requirements related to adapting content.</p>
+				<p>The <a href="https://github.com/w3c/personalization-semantics/wiki/Requirements">Requirements for WAI-Adapt Specification</a> describes use cases and requirements. This module provides properties to fulfill those requirements related to adapting content.</p>
 			</section>
 
 		</section>
@@ -133,7 +133,7 @@
 				<p>Although this specification does not expose personal preferences and personal information, third party user agents or proxy server(s) acting upon our semantic information may need to store personal preferences on how to present content to a specific user. It is recommended that any user agent or proxy server implements best practices to protect all personal preferences and personal information.</p>
 		
 <p>Any user agent with user settings are recommended to follow best practices to keep user information secure.</p>
-		<p>The Privacy and Security Considerations of Personalization Semantics Content Module is also discussed at <a href="https://github.com/w3c/personalization-semantics/issues/131">issue #131</a>.</p>
+		<p>The Privacy and Security Considerations of WAI-Adapt: Content Module is also discussed at <a href="https://github.com/w3c/personalization-semantics/issues/131">issue #131</a>.</p>
 		
 		</section>
 
