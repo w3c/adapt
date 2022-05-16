@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>Personalization Semantics Explainer 1.0</title>
+		<title>WAI-Adapt Explainer 1.0</title>
 		<meta charset="utf-8"/>
 		<script src="https://www.w3.org/Tools/respec/respec-w3c-common" class="remove"></script>
 		<script src="common/biblio.js" class="remove"></script>
@@ -14,9 +14,9 @@
 		<section id="abstract">
 			<p>People have very different needs. There are many people with cognitive and learning disabilities that affect their ability to interact with the web. Some people cannot process numeric information (dyscalculia), but others understand numbers better than words. Some people with severe language disabilities use symbols to represent words; some people need (or want) simplified user-interfaces. Different people find different layouts and types of content easier to understand, and what is useable and understandable by one person can be be too complex for another. One of the main challenges is to address these varied and conflicting user needs, so that content can be understandable by the individual users. The specification (and modules) described in this Explainer provide a means for web technologies to address these requirements.</p>
 
-			<p>The personalization specification enables authors to add extra semantic information about content to enable personalization for the individual user. This provides extra support and facilitates user-agents for people with learning and cognitive disabilities.</p>
+			<p>The WAI-Adapt specification enables authors to add extra semantic information about content to enable personalization for the individual user. This provides extra support and facilitates user-agents for people with learning and cognitive disabilities.</p>
 
-			<p>Authors add extra semantic information using a collection of new attribute(s) and values, with (in most cases) a fixed token list (taxonomies). This document is an explanation for understanding how the Personalization attributes are used to personalize an accessible web site.</p>
+			<p>Authors add extra semantic information using a collection of new attribute(s) and values, with (in most cases) a fixed token list (taxonomies). This document is an explanation for understanding how the WAI-Adapt attributes are used to personalize an accessible web site.</p>
 		</section>
 
 		<section id="sotd"></section>
@@ -24,7 +24,7 @@
 		<section class="informative" id="introduction">
 
 			<h1>Introduction</h1>
-			<p>The personalization specification:</p>
+			<p>The WAI-Adapt specification:</p>
 			<ul>
 				<li>Expands upon the types of accessibility information that the author can provide;</li>
 				<li>Facilitates preference-driven individual personalization;</li>
@@ -36,8 +36,8 @@
 			<p>Technology holds the promise of being extremely flexible and the design of many systems includes the expectation that users can optimize their interaction experience according to their personal preferences or accessibility needs. </p>
 			
 			<section class="section" id="why_accessibility">
-				<h2>Why We Need Personalization</h2>
-				<p>Personalization will allow assitive technology to: </p>
+				<h2>Why We Need WAI-Adapt</h2>
+				<p>WAI-Adapt will allow assitive technology to: </p>
 				<ol>
 					<li>adapt to and meet the user's needs. Users who have difficulty with established, mainstream patterns can interact with interfaces modified to their preferences and abilities. </li>
 					<li>modify levels of complexity as people's skills improve or decline over time. For example, extra support may be critical for some people but distracting for others.</li>
@@ -66,7 +66,7 @@
 
 			<section>
 			<h2>Use Case Examples</h2>
-				<p><a href="requirements/">Requirements for Personalization Semantics</a> elaborates many use cases that further contextualize the above summary of user needs. These example use cases form the basis of requirements for this technology. Personalization enables developers to create targeted extensions as additional use cases are encountered.</p>
+				<p><a href="requirements/">Requirements for WAI-Adapt</a> elaborates many use cases that further contextualize the above summary of user needs. These example use cases form the basis of requirements for this technology. WAI-Adapt enables developers to create targeted extensions as additional use cases are encountered.</p>
 				
                 <p>Examples</p>
                 <ul>
@@ -140,7 +140,7 @@
 			</div>
 <h4>Proof of Concept: Symbol Example</h4>
 <p>In the screen shots below, a browser extension uses the <code>data-symbol</code> attribute to load symbols that are familiar to the user.</p>	
-				<p>Note that users learn a specific symbol vocabulary. However, the various symbol vocabularies are mutually unintelligible: users familiar with one set of symbols may not be familiar with or understand an alternative set. Personalization Semantics' <code>data-symbol</code> attribute offers a mechanism to translate between symbol sets, to allow people to communicate with one another where it was previously not possible.</p>	
+				<p>Note that users learn a specific symbol vocabulary. However, the various symbol vocabularies are mutually unintelligible: users familiar with one set of symbols may not be familiar with or understand an alternative set. WAI-Adapt's <code>data-symbol</code> attribute offers a mechanism to translate between symbol sets, to allow people to communicate with one another where it was previously not possible.</p>	
 
 			<figure>
 				<img src="https://user-images.githubusercontent.com/8376341/79741687-5b20a880-830a-11ea-814d-97ed7132d7d1.png" alt="screen shot, no symbols" style="height:95%; width:95%">
@@ -170,7 +170,7 @@
             
             <section>
             <h2>Out of Scope</h2>
-                <p>While the intention of this work is to introduce a new set of attributes to support Personalization, the following work items are out of scope:</p>
+                <p>While the intention of this work is to introduce a new set of attributes to support WAI-Adapt, the following work items are out of scope:</p>
                 <ul>
                     <li>Develop an API for browsers or other user-agents</li>
                     <li>Develop or produce supporting technology (browser extension, stand-alone software, etc.)</li>
@@ -188,15 +188,15 @@
 				<p>This specification has been divided into modules. </p>
 				<p>Each module has use cases and vocabularies: </p>
 				<ul>
-					<li><a href="content/index.html">Personalization Semantics Content Module 1.0:</a>
+					<li><a href="content/index.html">WAI-Adapt: Content Module:</a>
 					<p>This module provides vocabularies that enable user-agents to augment or adapt content to the user scenario which helps the user use and understand the content.</p>
 					<p>It includes use-cases and vocabularies for identifying the purpose of controls, symbols and user interface elements, and supports simplification and avoiding distractions.</p></li>
 				
-					<li><a href="help/index.html">Personalization Help and Support Module 1.0:</a>
+					<li><a href="help/index.html">WAI-Adapt: Help and Support Module:</a>
 					<p>The first working draft of this module is now available.</p>
 					<p>This module addresses adding information about the content to enable help scaffolding and additional support for different user scenarios.</p></li>
 				
-					<li><a href="tools/index.html">Personalization Tools Module 1.0:</a>
+					<li><a href="tools/index.html">WAI-Adapt: Tools Module:</a>
 					<p>The first working draft of this module is now available.</p>
 					<p>This module addresses adding information about the content to enable user-agents and extensions to provide additional support to the user. One example is adaptable breadcrumbs.</p></li>
 				
@@ -205,14 +205,14 @@
 
 		<section class="informative" id="characteristics_semanticproperties">
 			<h1>Vocabulary Structure</h1>
-			<p>Personalization Semantics is made of a vocabulary of properties and their values. This generic structure makes it possible to apply Personalization Semantics in a variety of contexts by adapting how the vocabulary is instantiated. The <a href="#vocabulary-implementations">Vocabulary Implementations</a> section below describes current ways to use the vocabulary.</p>
+			<p>WAI-Adapt is made of a vocabulary of properties and their values. This generic structure makes it possible to apply WAI-Adapt in a variety of contexts by adapting how the vocabulary is instantiated. The <a href="#vocabulary-implementations">Vocabulary Implementations</a> section below describes current ways to use the vocabulary.</p>
             <section>
                 <h2>Properties</h2>
-                <p>Properties are the main units of personalization types supported by the vocabulary. A given property supports a specific type of personalization. That property would only be used once on a given piece of content, but multiple different properties could be used on the same piece of content to address different needs.</p>
+                <p>Properties are the main units of WAI-Adapt types supported by the vocabulary. A given property supports a specific type of WAI-Adapt. That property would only be used once on a given piece of content, but multiple different properties could be used on the same piece of content to address different needs.</p>
             </section>
 			<section id="propcharacteristic_value">
 				<h2>Values</h2>
-				<p>Values provide the specific personalization information for the property. The possible values for each property are elaborated in the definition of the property in the modules. Some properties require the value to come from a predefined list of possible values, others can accept arbitrary strings, and some may accept multiple values. The attribute value may be one of the following types:</p>
+				<p>Values provide the specific WAI-Adapt information for the property. The possible values for each property are elaborated in the definition of the property in the modules. Some properties require the value to come from a predefined list of possible values, others can accept arbitrary strings, and some may accept multiple values. The attribute value may be one of the following types:</p>
 				<dl>
 					<dt id="valuetype_idref">ID reference</dt>
 					<dd>Reference to the ID of another element in the same document</dd>
@@ -246,8 +246,8 @@
 			<section class="section">
 			<h2>Current Usage</h2>
  
-            <p>At the present stage of development, the Personalization Semantics vocabulary can be used in HTML content using <a href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes">data-* attributes</a> [[html5]]. Attributes in this form can be used in valid HTML to implement features recognized by browser extensions or other special processors. Personalization Semantics is using this approach to gain early implementation experience of the features in a way that is simple and likely to be accepted within the web ecosystem as an interim approach.</p>
-            <p>This publication of the personalization semantics provides several <em>key-value pairs</em> (attribute = value). These attributes include but are not limted to:</p>
+            <p>At the present stage of development, the WAI-Adapt vocabulary can be used in HTML content using <a href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes">data-* attributes</a> [[html5]]. Attributes in this form can be used in valid HTML to implement features recognized by browser extensions or other special processors. WAI-Adapt is using this approach to gain early implementation experience of the features in a way that is simple and likely to be accepted within the web ecosystem as an interim approach.</p>
+            <p>This publication of the WAI-Adapt provides several <em>key-value pairs</em> (attribute = value). These attributes include but are not limted to:</p>
             <ul>
                 <li><a href="content/#action-explanation">data-action</a></li>
                 <li><a href="content/#destination-explanation">data-destination</a></li>
@@ -255,9 +255,9 @@
                 <li><a href="content/#symbol-explanation">data-symbol</a></li>
             </ul>
             <p>Other properties exist or will be developed as the modules mature. See the discussion <a href="https://github.com/w3c/personalization-semantics/wiki/Prototypes-with-data-dash-*-(Take-2)">Prototypes with data dash</a>.</p>
-            <div class="note"><p>The personalization specification currently defines and relies on multiple entity attributes
+            <div class="note"><p>The WAI-Adapt specification currently defines and relies on multiple entity attributes
 constructed according to the requirements of Sec. 3.2.6.6 of the HTML Specification, <a
-href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes"> Embedding custom non visible data with the data-* attributes</a> and by express request of W3C's Technical Advisory Group (TAG). The HTML data- attribute syntax is not intended to be used for long-term wide-scale features. The task force is using this approach at the moment to gain implementation experience and demonstrate the usefulness of Personalization Semantics in practice.</p><p>Implementers are cautioned that the "data-" prefix will be removed or replaced for some or all attribute values in succeeding iterations of this specification following additional consideration in W3C and the WHATWG.</p></div>
+href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes"> Embedding custom non visible data with the data-* attributes</a> and by express request of W3C's Technical Advisory Group (TAG). The HTML data- attribute syntax is not intended to be used for long-term wide-scale features. The task force is using this approach at the moment to gain implementation experience and demonstrate the usefulness of WAI-Adapt in practice.</p><p>Implementers are cautioned that the "data-" prefix will be removed or replaced for some or all attribute values in succeeding iterations of this specification following additional consideration in W3C and the WHATWG.</p></div>
 			</section>
 			<section class="section">
                 <h2>Technology Comparison Summary</h2>
@@ -266,20 +266,20 @@ href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visib
                     <li><a href="https://www.w3.org/TR/rdfa-lite/">RDFa Lite</a></li>
                     <li><a href="https://www.w3.org/TR/microdata/">HTML Microdata</a></li>
                     <li>Additional ARIA attributes (e.g. <code>aria-action</code>)</li>
-                    <li>AUI-prefixed attributes: a new, personalization specific set of attributes (e.g. <code>aui-action</code>)</li>
+                    <li>AUI-prefixed attributes: a new, WAI-Adapt specific set of attributes (e.g. <code>aui-action</code>)</li>
                     <li>A new single attribute, purpose, to encode both properties and values</li>
                     <li>A new single attribute with properties and values encoded using inline css syntax of key/value pairs</li>
                     <li>An extension of the above single attribute using CSS key/value pairs and simple text content</li>
                     <li>Three new attributes for token, value, and URI, respectively</li>
-                    <li>Value pairs - a personalization type attribute and an associated value attribute. </li>
-                    <li>Negotiate new personalization attributes into native host languages</li>
-                    <li>Embed personalization data via JavaScript Object Notation (JSON)</li>
+                    <li>Value pairs - a WAI-Adapt type attribute and an associated value attribute. </li>
+                    <li>Negotiate new WAI-Adapt attributes into native host languages</li>
+                    <li>Embed WAI-Adapt data via JavaScript Object Notation (JSON)</li>
                     <li>Use of the existing data- attribute mechanism of HTML</li>
                 </ul>
                 <h3>Considerations in the decision process:</h3>
 				<dl>
 					<dt>Authoring</dt>
-					<dd>ease of authoring and potential ambiguity between personalization and existing features;</dd>
+					<dd>ease of authoring and potential ambiguity between WAI-Adapt and existing features;</dd>
 					<dt>User-Agents</dt>
 					<dd>ease of determining and parsing the properties &amp; values and the ability to implement as an extension;</dd>
 					<dt>Host Languages</dt>
@@ -287,11 +287,11 @@ href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visib
 					<dt>Functionality</dt>
 					<dd>necessity of multiple properties and interaction between properties, integration with other vocabularies, likely search engine support for content alternatives, and typed value support;</dd>
 					<dt>Strategy</dt>
-					<dd>avoid segregation of accessibility from other features, provide a clear path to join with other W3C personalization efforts, and stable enough to avoid modification of authored content over time;</dd>
+					<dd>avoid segregation of accessibility from other features, provide a clear path to join with other W3C WAI-Adapt efforts, and stable enough to avoid modification of authored content over time;</dd>
 				</dl>
 
                 <p>The details of our research and discussion are documented on the <a href="https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content">Comparison of ways to use vocabulary in content</a> and <a href="https://github.com/w3c/personalization-semantics/wiki/Prototypes-with-data-dash-*-(Take-2)">Prototypes with data dash</a> pages in our Wiki. </p>
-                <p>We presented some of these options at the TPAC 2018 Personalization Plenary Day presentation and provided a working example using the data- attribute to add personalization features.  The data- solution was recommended by representatives of several working groups attending our presentation and discussions. See the <a href="https://w3c.github.io/personalization-semantics/#vocabulary-implementations">Vocabulary Implementations section in this Explainer document</a> for further details on the use of data- attributes.</p>
+                <p>We presented some of these options at the TPAC 2018 WAI-Adapt Plenary Day presentation and provided a working example using the data- attribute to add WAI-Adapt features. The data- solution was recommended by representatives of several working groups attending our presentation and discussions. See the <a href="https://w3c.github.io/personalization-semantics/#vocabulary-implementations">Vocabulary Implementations section in this Explainer document</a> for further details on the use of data- attributes.</p>
                 
             </section>
 		</section>
