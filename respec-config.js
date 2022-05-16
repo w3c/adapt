@@ -15,7 +15,7 @@ var respecConfig = {
     //diffTool:             "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
 
     // the specifications short name, as in http://www.w3.org/TR/short-name/
-    shortName:            "personalization-semantics-1.0",
+    shortName:            "adapt",
 
 
     // if you wish the publication date to be other than today, set this

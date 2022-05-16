@@ -1,12 +1,12 @@
 <!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 25.6.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>.issue-label{text-transform:initial}.warning>p:first-child{margin-top:0}.warning{padding:.5em;border-left-width:.5em;border-left-style:solid}span.warning{padding:.1em .5em .15em}.issue.closed span.issue-number{text-decoration:line-through}.warning{border-color:#f11;border-width:.2em;border-style:solid;background:#fbe9e9}.warning-title:before{content:"⚠";font-size:1.3em;float:left;padding-right:.3em;margin-top:-.3em}li.task-list-item{list-style:none}input.task-list-item-checkbox{margin:0 .35em .25em -1.6em;vertical-align:middle}.issue a.respec-gh-label{padding:5px;margin:0 2px 0 2px;font-size:10px;text-transform:none;text-decoration:none;font-weight:700;border-radius:4px;position:relative;bottom:2px;border:none;display:inline-block}</style>
-		<title>Personalization Semantics Explainer 1.0</title>
+		<title>WAI-Adapt Explainer 1.0</title>
 		
 		<style id="respec-mainstyle">@keyframes pop{0%{transform:scale(1,1)}25%{transform:scale(1.25,1.25);opacity:.75}100%{transform:scale(1,1)}}.hljs{background:0 0!important}a abbr,h1 abbr,h2 abbr,h3 abbr,h4 abbr,h5 abbr,h6 abbr{border:none}dfn{font-weight:700}a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}a.bibref{text-decoration:none}.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}@supports not (text-decoration:red wavy underline){.respec-offending-element:not(pre){display:inline-block}.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}}#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}cite .bibref{font-style:normal}code{color:#c63501}th code{color:inherit}a[href].orcid{padding-left:4px;padding-right:4px}a[href].orcid>svg{margin-bottom:-2px}.toc a,.tof a{text-decoration:none}a .figno,a .secno{color:#000}ol.tof,ul.tof{list-style:none outside none}.caption{margin-top:.5em;font-style:italic}table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}.simple th a{color:#fff;padding:3px 5px;text-align:left}.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}.simple td{padding:3px 10px;border-top:1px solid #ddd}.simple tr:nth-child(even){background:#f0f6ff}.section dd>p:first-child{margin-top:0}.section dd>p:last-child{margin-bottom:0}.section dd{margin-bottom:1em}.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}#issue-summary>ul,.respec-dfn-list{column-count:2}#issue-summary li,.respec-dfn-list li{list-style:none}details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}details.respec-tests-details>*{padding-right:2em}details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}details.respec-tests-details>ul{width:100%;margin-top:-.3em}details.respec-tests-details>li{padding-left:1em}a[href].self-link:hover{opacity:1;text-decoration:none;background-color:transparent}h2,h3,h4,h5,h6{position:relative}aside.example .marker>a.self-link{color:inherit}h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{border:none;color:inherit;font-size:83%;height:2em;left:-1.6em;opacity:.5;position:absolute;text-align:center;text-decoration:none;top:0;transition:opacity .2s;width:2em}h2>a.self-link::before,h3>a.self-link::before,h4>a.self-link::before,h5>a.self-link::before,h6>a.self-link::before{content:"§";display:block}@media (max-width:767px){dd{margin-left:0}h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{left:auto;top:auto}}@media print{.removeOnSave{display:none}}</style>
 		
 		
 	
 		<link href="common/css/common.css" rel="stylesheet" type="text/css">
-	<meta name="description" content="People have very different needs. There are many people with cognitive and learning disabilities that affect their ability to interact with the web. Some people cannot process numeric information (dyscalculia), but others understand numbers better than words. Some people with severe language disabilities use symbols to represent words; some people need (or want) simplified user-interfaces. Different people find different layouts and types of content easier to understand, and what is useable and understandable by one person can be be too complex for another. One of the main challenges is to address these varied and conflicting user needs, so that content can be understandable by the individual users. The specification (and modules) described in this Explainer provide a means for web technologies to address these requirements."><link rel="canonical" href="https://www.w3.org/TR/personalization-semantics-1.0/"><style>var{position:relative;cursor:pointer}var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}</style><script id="initialUserConfig" type="application/json">{
+	<meta name="description" content="People have very different needs. There are many people with cognitive and learning disabilities that affect their ability to interact with the web. Some people cannot process numeric information (dyscalculia), but others understand numbers better than words. Some people with severe language disabilities use symbols to represent words; some people need (or want) simplified user-interfaces. Different people find different layouts and types of content easier to understand, and what is useable and understandable by one person can be be too complex for another. One of the main challenges is to address these varied and conflicting user needs, so that content can be understandable by the individual users. The specification (and modules) described in this Explainer provide a means for web technologies to address these requirements."><link rel="canonical" href="https://www.w3.org/TR/adapt/"><style>var{position:relative;cursor:pointer}var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}</style><script id="initialUserConfig" type="application/json">{
   "trace": true,
   "doRDFa": "1.0",
   "includePermalinks": true,
@@ -15,7 +15,7 @@
   "tocIntroductory": true,
   "specStatus": "ED",
   "noRecTrack": true,
-  "shortName": "personalization-semantics-1.0",
+  "shortName": "adapt",
   "copyrightStart": "2017",
   "edDraftURI": "https://w3c.github.io/personalization-semantics/",
   "editors": [
@@ -355,7 +355,7 @@
   "generatedSubtitle": "Editor's Draft 16 May 2022"
 }</script><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
 	<body class="h-entry informative"><div class="head">
-    <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title">Personalization Semantics Explainer 1.0</h1>
+    <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title">WAI-Adapt Explainer 1.0</h1>
     
     <h2>
       W3C Editor's Draft
@@ -365,7 +365,7 @@
       <dt>This version:</dt><dd>
               <a class="u-url" href="https://w3c.github.io/personalization-semantics/">https://w3c.github.io/personalization-semantics/</a>
             </dd><dt>Latest published version:</dt><dd>
-              <a href="https://www.w3.org/TR/personalization-semantics-1.0/">https://www.w3.org/TR/personalization-semantics-1.0/</a>
+              <a href="https://www.w3.org/TR/adapt/">https://www.w3.org/TR/adapt/</a>
             </dd>
       <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/personalization-semantics/">https://w3c.github.io/personalization-semantics/</a></dd>
       
@@ -402,9 +402,9 @@
 		<section id="abstract" class="introductory"><h2>Abstract</h2>
 			<p>People have very different needs. There are many people with cognitive and learning disabilities that affect their ability to interact with the web. Some people cannot process numeric information (dyscalculia), but others understand numbers better than words. Some people with severe language disabilities use symbols to represent words; some people need (or want) simplified user-interfaces. Different people find different layouts and types of content easier to understand, and what is useable and understandable by one person can be be too complex for another. One of the main challenges is to address these varied and conflicting user needs, so that content can be understandable by the individual users. The specification (and modules) described in this Explainer provide a means for web technologies to address these requirements.</p>
 
-			<p>The personalization specification enables authors to add extra semantic information about content to enable personalization for the individual user. This provides extra support and facilitates user-agents for people with learning and cognitive disabilities.</p>
+			<p>The WAI-Adapt specification enables authors to add extra semantic information about content to enable personalization for the individual user. This provides extra support and facilitates user-agents for people with learning and cognitive disabilities.</p>
 
-			<p>Authors add extra semantic information using a collection of new attribute(s) and values, with (in most cases) a fixed token list (taxonomies). This document is an explanation for understanding how the Personalization attributes are used to personalize an accessible web site.</p>
+			<p>Authors add extra semantic information using a collection of new attribute(s) and values, with (in most cases) a fixed token list (taxonomies). This document is an explanation for understanding how the WAI-Adapt attributes are used to personalize an accessible web site.</p>
 		</section>
 
 		<section id="sotd" class="introductory"><h2>Status of This Document</h2><p><em>This section describes the status of this
@@ -449,14 +449,14 @@
   </p><p>
                   This document is governed by the
                   <a id="w3c_process_revision" href="https://www.w3.org/2019/Process-20190301/">1 March 2019 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-                </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#why_accessibility"><bdi class="secno">1.1 </bdi>Why We Need Personalization</a></li><li class="tocline"><a class="tocxref" href="#use-case-examples"><bdi class="secno">1.2 </bdi>Use Case Examples</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#distracted"><bdi class="secno">1.2.1 </bdi>Easily Distracted / Overwhelmed</a></li><li class="tocline"><a class="tocxref" href="#difficulty_numbers"><bdi class="secno">1.2.2 </bdi>Difficulty Understanding Numbers</a></li><li class="tocline"><a class="tocxref" href="#learning_disability"><bdi class="secno">1.2.3 </bdi>Mild-Moderate Language Impairment / Learning Disability</a></li><li class="tocline"><a class="tocxref" href="#language_impairment"><bdi class="secno">1.2.4 </bdi>Severe Language Impairment</a></li><li class="tocline"><a class="tocxref" href="#memory_impairment"><bdi class="secno">1.2.5 </bdi>Working Memory and Short-term Memory Impairment</a></li></ol></li><li class="tocline"><a class="tocxref" href="#out-of-scope"><bdi class="secno">1.3 </bdi>Out of Scope</a></li></ol></li><li class="tocline"><a class="tocxref" href="#modules"><bdi class="secno">2. </bdi>Modules</a></li><li class="tocline"><a class="tocxref" href="#characteristics_semanticproperties"><bdi class="secno">3. </bdi>Vocabulary Structure</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#properties"><bdi class="secno">3.1 </bdi>Properties</a></li><li class="tocline"><a class="tocxref" href="#propcharacteristic_value"><bdi class="secno">3.2 </bdi>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#vocabulary-implementations"><bdi class="secno">4. </bdi>Vocabulary Implementations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#current-usage"><bdi class="secno">4.1 </bdi>Current Usage</a></li><li class="tocline"><a class="tocxref" href="#technology-comparison-summary"><bdi class="secno">4.2 </bdi>Technology Comparison Summary</a></li></ol></li><li class="tocline"><a class="tocxref" href="#stakeholders"><bdi class="secno">5. </bdi>Stakeholders</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">A. </bdi>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><bdi class="secno">A.1 </bdi>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><bdi class="secno">A.2 </bdi>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><bdi class="secno">A.3 </bdi>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">B.1 </bdi>
+                </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#why_accessibility"><bdi class="secno">1.1 </bdi>Why We Need WAI-Adapt</a></li><li class="tocline"><a class="tocxref" href="#use-case-examples"><bdi class="secno">1.2 </bdi>Use Case Examples</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#distracted"><bdi class="secno">1.2.1 </bdi>Easily Distracted / Overwhelmed</a></li><li class="tocline"><a class="tocxref" href="#difficulty_numbers"><bdi class="secno">1.2.2 </bdi>Difficulty Understanding Numbers</a></li><li class="tocline"><a class="tocxref" href="#learning_disability"><bdi class="secno">1.2.3 </bdi>Mild-Moderate Language Impairment / Learning Disability</a></li><li class="tocline"><a class="tocxref" href="#language_impairment"><bdi class="secno">1.2.4 </bdi>Severe Language Impairment</a></li><li class="tocline"><a class="tocxref" href="#memory_impairment"><bdi class="secno">1.2.5 </bdi>Working Memory and Short-term Memory Impairment</a></li></ol></li><li class="tocline"><a class="tocxref" href="#out-of-scope"><bdi class="secno">1.3 </bdi>Out of Scope</a></li></ol></li><li class="tocline"><a class="tocxref" href="#modules"><bdi class="secno">2. </bdi>Modules</a></li><li class="tocline"><a class="tocxref" href="#characteristics_semanticproperties"><bdi class="secno">3. </bdi>Vocabulary Structure</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#properties"><bdi class="secno">3.1 </bdi>Properties</a></li><li class="tocline"><a class="tocxref" href="#propcharacteristic_value"><bdi class="secno">3.2 </bdi>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#vocabulary-implementations"><bdi class="secno">4. </bdi>Vocabulary Implementations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#current-usage"><bdi class="secno">4.1 </bdi>Current Usage</a></li><li class="tocline"><a class="tocxref" href="#technology-comparison-summary"><bdi class="secno">4.2 </bdi>Technology Comparison Summary</a></li></ol></li><li class="tocline"><a class="tocxref" href="#stakeholders"><bdi class="secno">5. </bdi>Stakeholders</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">A. </bdi>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><bdi class="secno">A.1 </bdi>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><bdi class="secno">A.2 </bdi>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><bdi class="secno">A.3 </bdi>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">B.1 </bdi>
         Informative references
       </a></li></ol></li></ol></nav>
 
 		<section class="informative" id="introduction">
 
 			<h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction<a class="self-link" aria-label="§" href="#introduction"></a></h2><p><em>This section is non-normative.</em></p>
-			<p>The personalization specification:</p>
+			<p>The WAI-Adapt specification:</p>
 			<ul>
 				<li>Expands upon the types of accessibility information that the author can provide;</li>
 				<li>Facilitates preference-driven individual personalization;</li>
@@ -467,8 +467,8 @@
 			<p>Technology holds the promise of being extremely flexible and the design of many systems includes the expectation that users can optimize their interaction experience according to their personal preferences or accessibility needs. </p>
 			
 			<section class="section" id="why_accessibility">
-				<h3 id="x1-1-why-we-need-personalization"><bdi class="secno">1.1 </bdi>Why We Need Personalization<a class="self-link" aria-label="§" href="#why_accessibility"></a></h3>
-				<p>Personalization will allow assitive technology to: </p>
+				<h3 id="x1-1-why-we-need-wai-adapt"><bdi class="secno">1.1 </bdi>Why We Need WAI-Adapt<a class="self-link" aria-label="§" href="#why_accessibility"></a></h3>
+				<p>WAI-Adapt will allow assitive technology to: </p>
 				<ol>
 					<li>adapt to and meet the user's needs. Users who have difficulty with established, mainstream patterns can interact with interfaces modified to their preferences and abilities. </li>
 					<li>modify levels of complexity as people's skills improve or decline over time. For example, extra support may be critical for some people but distracting for others.</li>
@@ -497,7 +497,7 @@
 
 			<section id="use-case-examples">
 			<h3 id="x1-2-use-case-examples"><bdi class="secno">1.2 </bdi>Use Case Examples<a class="self-link" aria-label="§" href="#use-case-examples"></a></h3>
-				<p><a href="requirements/">Requirements for Personalization Semantics</a> elaborates many use cases that further contextualize the above summary of user needs. These example use cases form the basis of requirements for this technology. Personalization enables developers to create targeted extensions as additional use cases are encountered.</p>
+				<p><a href="requirements/">Requirements for WAI-Adapt</a> elaborates many use cases that further contextualize the above summary of user needs. These example use cases form the basis of requirements for this technology. WAI-Adapt enables developers to create targeted extensions as additional use cases are encountered.</p>
 				
                 <p>Examples</p>
                 <ul>
@@ -571,7 +571,7 @@
 			</div>
 <h4 id="proof-of-concept-symbol-example">Proof of Concept: Symbol Example<a class="self-link" aria-label="§" href="#language_impairment"></a></h4>
 <p>In the screen shots below, a browser extension uses the <code>data-symbol</code> attribute to load symbols that are familiar to the user.</p>	
-				<p>Note that users learn a specific symbol vocabulary. However, the various symbol vocabularies are mutually unintelligible: users familiar with one set of symbols may not be familiar with or understand an alternative set. Personalization Semantics' <code>data-symbol</code> attribute offers a mechanism to translate between symbol sets, to allow people to communicate with one another where it was previously not possible.</p>	
+				<p>Note that users learn a specific symbol vocabulary. However, the various symbol vocabularies are mutually unintelligible: users familiar with one set of symbols may not be familiar with or understand an alternative set. WAI-Adapt's <code>data-symbol</code> attribute offers a mechanism to translate between symbol sets, to allow people to communicate with one another where it was previously not possible.</p>	
 
 			<figure id="fig-the-original-page">
 				<img src="downloaded-assets/user-images.githubusercontent.com/8376341/79741687-5b20a880-830a-11ea-814d-97ed7132d7d1.png" alt="screen shot, no symbols" style="height:95%; width:95%" height="560" width="1199">
@@ -582,7 +582,7 @@
 				<figcaption>Figure <bdi class="figno">2</bdi> <span class="fig-title">The same page loaded, but the user-agent has removed content and added symbols</span></figcaption>
 			</figure>
 			<figure id="fig-the-same-page-loaded-but-the-user-agent-has-removed-content-and-added-different-symbols-that-this-user-is-more-familiar-with">
-				<img src="downloaded-assets/user-images.githubusercontent.com/8376341/79741698-5d830280-830a-11ea-9976-f7816c4748be.png" alt="screen shot with different symbols (bliss)" style="height:95%; width:95%">
+				<img src="downloaded-assets/user-images.githubusercontent.com/8376341/79741698-5d830280-830a-11ea-9976-f7816c4748be.png" alt="screen shot with different symbols (bliss)" style="height:95%; width:95%" height="627" width="1209">
 				<figcaption>Figure <bdi class="figno">3</bdi> <span class="fig-title">The same page loaded, but the user-agent has removed content and added different symbols that this user is more familiar with</span></figcaption>
 			</figure>
 		</section>
@@ -601,7 +601,7 @@
             
             <section id="out-of-scope">
             <h3 id="x1-3-out-of-scope"><bdi class="secno">1.3 </bdi>Out of Scope<a class="self-link" aria-label="§" href="#out-of-scope"></a></h3>
-                <p>While the intention of this work is to introduce a new set of attributes to support Personalization, the following work items are out of scope:</p>
+                <p>While the intention of this work is to introduce a new set of attributes to support WAI-Adapt, the following work items are out of scope:</p>
                 <ul>
                     <li>Develop an API for browsers or other user-agents</li>
                     <li>Develop or produce supporting technology (browser extension, stand-alone software, etc.)</li>
@@ -619,15 +619,15 @@
 				<p>This specification has been divided into modules. </p>
 				<p>Each module has use cases and vocabularies: </p>
 				<ul>
-					<li><a href="content/index.html">Personalization Semantics Content Module 1.0:</a>
+					<li><a href="content/index.html">WAI-Adapt: Content Module:</a>
 					<p>This module provides vocabularies that enable user-agents to augment or adapt content to the user scenario which helps the user use and understand the content.</p>
 					<p>It includes use-cases and vocabularies for identifying the purpose of controls, symbols and user interface elements, and supports simplification and avoiding distractions.</p></li>
 				
-					<li><a href="help/index.html">Personalization Help and Support Module 1.0:</a>
+					<li><a href="help/index.html">WAI-Adapt: Help and Support Module:</a>
 					<p>The first working draft of this module is now available.</p>
 					<p>This module addresses adding information about the content to enable help scaffolding and additional support for different user scenarios.</p></li>
 				
-					<li><a href="tools/index.html">Personalization Tools Module 1.0:</a>
+					<li><a href="tools/index.html">WAI-Adapt: Tools Module:</a>
 					<p>The first working draft of this module is now available.</p>
 					<p>This module addresses adding information about the content to enable user-agents and extensions to provide additional support to the user. One example is adaptable breadcrumbs.</p></li>
 				
@@ -636,14 +636,14 @@
 
 		<section class="informative" id="characteristics_semanticproperties">
 			<h2 id="x3-vocabulary-structure"><bdi class="secno">3. </bdi>Vocabulary Structure<a class="self-link" aria-label="§" href="#characteristics_semanticproperties"></a></h2><p><em>This section is non-normative.</em></p>
-			<p>Personalization Semantics is made of a vocabulary of properties and their values. This generic structure makes it possible to apply Personalization Semantics in a variety of contexts by adapting how the vocabulary is instantiated. The <a href="#vocabulary-implementations">Vocabulary Implementations</a> section below describes current ways to use the vocabulary.</p>
+			<p>WAI-Adapt is made of a vocabulary of properties and their values. This generic structure makes it possible to apply WAI-Adapt in a variety of contexts by adapting how the vocabulary is instantiated. The <a href="#vocabulary-implementations">Vocabulary Implementations</a> section below describes current ways to use the vocabulary.</p>
             <section id="properties">
                 <h3 id="x3-1-properties"><bdi class="secno">3.1 </bdi>Properties<a class="self-link" aria-label="§" href="#properties"></a></h3>
-                <p>Properties are the main units of personalization types supported by the vocabulary. A given property supports a specific type of personalization. That property would only be used once on a given piece of content, but multiple different properties could be used on the same piece of content to address different needs.</p>
+                <p>Properties are the main units of WAI-Adapt types supported by the vocabulary. A given property supports a specific type of WAI-Adapt. That property would only be used once on a given piece of content, but multiple different properties could be used on the same piece of content to address different needs.</p>
             </section>
 			<section id="propcharacteristic_value">
 				<h3 id="x3-2-values"><bdi class="secno">3.2 </bdi>Values<a class="self-link" aria-label="§" href="#propcharacteristic_value"></a></h3>
-				<p>Values provide the specific personalization information for the property. The possible values for each property are elaborated in the definition of the property in the modules. Some properties require the value to come from a predefined list of possible values, others can accept arbitrary strings, and some may accept multiple values. The attribute value may be one of the following types:</p>
+				<p>Values provide the specific WAI-Adapt information for the property. The possible values for each property are elaborated in the definition of the property in the modules. Some properties require the value to come from a predefined list of possible values, others can accept arbitrary strings, and some may accept multiple values. The attribute value may be one of the following types:</p>
 				<dl>
 					<dt id="valuetype_idref">ID reference</dt>
 					<dd>Reference to the ID of another element in the same document</dd>
@@ -677,8 +677,8 @@
 			<section class="section" id="current-usage">
 			<h3 id="x4-1-current-usage"><bdi class="secno">4.1 </bdi>Current Usage<a class="self-link" aria-label="§" href="#current-usage"></a></h3>
  
-            <p>At the present stage of development, the Personalization Semantics vocabulary can be used in HTML content using <a href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes">data-* attributes</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-html5" title="HTML5">html5</a></cite>]. Attributes in this form can be used in valid HTML to implement features recognized by browser extensions or other special processors. Personalization Semantics is using this approach to gain early implementation experience of the features in a way that is simple and likely to be accepted within the web ecosystem as an interim approach.</p>
-            <p>This publication of the personalization semantics provides several <em>key-value pairs</em> (attribute = value). These attributes include but are not limted to:</p>
+            <p>At the present stage of development, the WAI-Adapt vocabulary can be used in HTML content using <a href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes">data-* attributes</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-html5" title="HTML5">html5</a></cite>]. Attributes in this form can be used in valid HTML to implement features recognized by browser extensions or other special processors. WAI-Adapt is using this approach to gain early implementation experience of the features in a way that is simple and likely to be accepted within the web ecosystem as an interim approach.</p>
+            <p>This publication of the WAI-Adapt provides several <em>key-value pairs</em> (attribute = value). These attributes include but are not limted to:</p>
             <ul>
                 <li><a href="content/#action-explanation">data-action</a></li>
                 <li><a href="content/#destination-explanation">data-destination</a></li>
@@ -686,8 +686,8 @@
                 <li><a href="content/#symbol-explanation">data-symbol</a></li>
             </ul>
             <p>Other properties exist or will be developed as the modules mature. See the discussion <a href="https://github.com/w3c/personalization-semantics/wiki/Prototypes-with-data-dash-*-(Take-2)">Prototypes with data dash</a>.</p>
-            <div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="4"><span>Note</span></div><div class=""><p>The personalization specification currently defines and relies on multiple entity attributes
-constructed according to the requirements of Sec. 3.2.6.6 of the HTML Specification, <a href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes"> Embedding custom non visible data with the data-* attributes</a> and by express request of <abbr title="World Wide Web Consortium">W3C</abbr>'s Technical Advisory Group (TAG). The HTML data- attribute syntax is not intended to be used for long-term wide-scale features. The task force is using this approach at the moment to gain implementation experience and demonstrate the usefulness of Personalization Semantics in practice.</p><p>Implementers are cautioned that the "data-" prefix will be removed or replaced for some or all attribute values in succeeding iterations of this specification following additional consideration in <abbr title="World Wide Web Consortium">W3C</abbr> and the WHATWG.</p></div></div>
+            <div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="4"><span>Note</span></div><div class=""><p>The WAI-Adapt specification currently defines and relies on multiple entity attributes
+constructed according to the requirements of Sec. 3.2.6.6 of the HTML Specification, <a href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes"> Embedding custom non visible data with the data-* attributes</a> and by express request of <abbr title="World Wide Web Consortium">W3C</abbr>'s Technical Advisory Group (TAG). The HTML data- attribute syntax is not intended to be used for long-term wide-scale features. The task force is using this approach at the moment to gain implementation experience and demonstrate the usefulness of WAI-Adapt in practice.</p><p>Implementers are cautioned that the "data-" prefix will be removed or replaced for some or all attribute values in succeeding iterations of this specification following additional consideration in <abbr title="World Wide Web Consortium">W3C</abbr> and the WHATWG.</p></div></div>
 			</section>
 			<section class="section" id="technology-comparison-summary">
                 <h3 id="x4-2-technology-comparison-summary"><bdi class="secno">4.2 </bdi>Technology Comparison Summary<a class="self-link" aria-label="§" href="#technology-comparison-summary"></a></h3>
@@ -696,20 +696,20 @@ constructed according to the requirements of Sec. 3.2.6.6 of the HTML Specificat
                     <li><a href="https://www.w3.org/TR/rdfa-lite/">RDFa Lite</a></li>
                     <li><a href="https://www.w3.org/TR/microdata/">HTML Microdata</a></li>
                     <li>Additional ARIA attributes (e.g. <code>aria-action</code>)</li>
-                    <li>AUI-prefixed attributes: a new, personalization specific set of attributes (e.g. <code>aui-action</code>)</li>
+                    <li>AUI-prefixed attributes: a new, WAI-Adapt specific set of attributes (e.g. <code>aui-action</code>)</li>
                     <li>A new single attribute, purpose, to encode both properties and values</li>
                     <li>A new single attribute with properties and values encoded using inline css syntax of key/value pairs</li>
                     <li>An extension of the above single attribute using CSS key/value pairs and simple text content</li>
                     <li>Three new attributes for token, value, and URI, respectively</li>
-                    <li>Value pairs - a personalization type attribute and an associated value attribute. </li>
-                    <li>Negotiate new personalization attributes into native host languages</li>
-                    <li>Embed personalization data via JavaScript Object Notation (JSON)</li>
+                    <li>Value pairs - a WAI-Adapt type attribute and an associated value attribute. </li>
+                    <li>Negotiate new WAI-Adapt attributes into native host languages</li>
+                    <li>Embed WAI-Adapt data via JavaScript Object Notation (JSON)</li>
                     <li>Use of the existing data- attribute mechanism of HTML</li>
                 </ul>
                 <h3 id="considerations-in-the-decision-process">Considerations in the decision process:<a class="self-link" aria-label="§" href="#technology-comparison-summary"></a></h3>
 				<dl>
 					<dt>Authoring</dt>
-					<dd>ease of authoring and potential ambiguity between personalization and existing features;</dd>
+					<dd>ease of authoring and potential ambiguity between WAI-Adapt and existing features;</dd>
 					<dt>User-Agents</dt>
 					<dd>ease of determining and parsing the properties &amp; values and the ability to implement as an extension;</dd>
 					<dt>Host Languages</dt>
@@ -717,11 +717,11 @@ constructed according to the requirements of Sec. 3.2.6.6 of the HTML Specificat
 					<dt>Functionality</dt>
 					<dd>necessity of multiple properties and interaction between properties, integration with other vocabularies, likely search engine support for content alternatives, and typed value support;</dd>
 					<dt>Strategy</dt>
-					<dd>avoid segregation of accessibility from other features, provide a clear path to join with other <abbr title="World Wide Web Consortium">W3C</abbr> personalization efforts, and stable enough to avoid modification of authored content over time;</dd>
+					<dd>avoid segregation of accessibility from other features, provide a clear path to join with other <abbr title="World Wide Web Consortium">W3C</abbr> WAI-Adapt efforts, and stable enough to avoid modification of authored content over time;</dd>
 				</dl>
 
                 <p>The details of our research and discussion are documented on the <a href="https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content">Comparison of ways to use vocabulary in content</a> and <a href="https://github.com/w3c/personalization-semantics/wiki/Prototypes-with-data-dash-*-(Take-2)">Prototypes with data dash</a> pages in our Wiki. </p>
-                <p>We presented some of these options at the TPAC 2018 Personalization Plenary Day presentation and provided a working example using the data- attribute to add personalization features.  The data- solution was recommended by representatives of several working groups attending our presentation and discussions. See the <a href="https://w3c.github.io/personalization-semantics/#vocabulary-implementations">Vocabulary Implementations section in this Explainer document</a> for further details on the use of data- attributes.</p>
+                <p>We presented some of these options at the TPAC 2018 WAI-Adapt Plenary Day presentation and provided a working example using the data- attribute to add WAI-Adapt features. The data- solution was recommended by representatives of several working groups attending our presentation and discussions. See the <a href="https://w3c.github.io/personalization-semantics/#vocabulary-implementations">Vocabulary Implementations section in this Explainer document</a> for further details on the use of data- attributes.</p>
                 
             </section>
 		</section>
