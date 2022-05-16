@@ -7,19 +7,13 @@
 					<p>The <code>symbol</code> attribute accepts a numeric reference number.</p>
 					<p>A personalization agent can then augment or translate User Interfaces by:</p>
 					<ul>
-						<li>converting text to symbols,</li> 
+						<li>converting text to symbols,</li>
 						<li>facilitating symbol-set translation: loading alternative, locally stored symbols that the user is familiar with, so they do not have to learn new symbols across different applications.</li>
-					</ul>	
+					</ul>
 					</p>
-                    <p>In some languages words and symbols are conjugated with sex or tense. In these cases more than one value maybe needed to map to a symbol. Authors should join values that map to a single conjugated word with a \ + \ sign with a space on each side of the \ + \ sign. (User agents may choose to accept values for a conjugated term that have been separated without the spaces.)
-See <a href="https://github.com/w3c/personalization-semantics/wiki/Best-practices-for-symbol-values">best practices for symbol values</a>.
-			</p>			    
-			    
- <p>When there is more than one concept that is not part of a single conjugated term, multiple concepts can be referenced by separating them 
-with white space. The order of multiple concepts should be the same as used in typical speech in the natural language of the content.
-</p>
-
-			<p>The reference numbers are the same references numbers used in Bliss (BCI numbers). Here is a link to the <a href="http://www.blissymbolics.net/BCI-AV_2020-03-09/BCI-AV_2020-03-09_(en+sv+no+fi)+derivations+symbols_8483-27158.pdf">BCI numbers (PDF)</a> and <a href="http://www.blissymbolics.net/BCI-AV_2020-03-09/BCI-AV_2020-03-09_(en+sv+no+fi+hu+de+nl+af+ru+lv+po+fr+es+pt+it+dk)+derivations+symbols_8483-27158.pdf">additional language translations (PDF)</a> at the time of publication and the <a href="http://www.blissymbolics.org/index.php/licensing">copyright licensing</a> from Bliss. For additional updates after publication see our <a href="https://github.com/w3c/personalization-semantics/wiki/Best-practices-for-symbol-values">best practices</a> for symbols page.</p> 
+					<p>In some languages words and symbols are conjugated with sex or tense. In these cases more than one value maybe needed to map to a symbol. Authors should join values that map to a single conjugated word with a plus (<code>+</code>) sign (with no spaces between the values). See <a href="https://github.com/w3c/personalization-semantics/wiki/Best-practices-for-symbol-values">best practices for symbol values</a>.</p>
+<p>When there is more than one concept that is not part of a single conjugated term, multiple concepts can be referenced by separating them with white space. The order of multiple concepts should be the same as used in typical speech in the natural language of the content.</p>
+			<p>The reference numbers are the same references numbers used in Bliss (BCI numbers). Here is a link to the <a href="http://www.blissymbolics.net/BCI-AV_2020-03-09/BCI-AV_2020-03-09_(en+sv+no+fi)+derivations+symbols_8483-27158.pdf">BCI numbers (PDF)</a> and <a href="http://www.blissymbolics.net/BCI-AV_2020-03-09/BCI-AV_2020-03-09_(en+sv+no+fi+hu+de+nl+af+ru+lv+po+fr+es+pt+it+dk)+derivations+symbols_8483-27158.pdf">additional language translations (PDF)</a> at the time of publication and the <a href="http://www.blissymbolics.org/index.php/licensing">copyright licensing</a> from Bliss. For additional updates after publication see our <a href="https://github.com/w3c/personalization-semantics/wiki/Best-practices-for-symbol-values">best practices</a> for symbols page.</p>
 				</div>
 	</section>
 	<section id="symbol-example">
@@ -27,20 +21,15 @@ with white space. The order of multiple concepts should be the same as used in t
 		<p>Here are some examples using the <code>symbol</code> attribute.</p>
 		<ol>
 		<li>Symbols for individual words.
-        <pre class="example" title="Symbols for individual words">
-    	   &lt;span data-symbol=&quot;13621&quot;&gt;Cup&lt;/span&gt; &lt;span data-symbol=&quot;12324&quot;&gt;of&lt;/span&gt; 
-	   &lt;span data-symbol=&quot;17511&quot; &gt;Tea&lt;/span&gt;</pre>		   </li>
-        <li>List of space-separated symbols for a text phrase. When there is more than one concept that is not part of a single conjugated term, multiple concepts are referenced by separating them with white space. 
-        <pre class="example" title="List of symbols for a text phrase">
-            &lt;span data-symbol=&quot;13621 12324 17511&quot;&gt;cup of Tea&lt;/span&gt;</pre></li>
-        <li>Symbols used with an image. (alt text represented as symbols)
-        <pre class="example" title="Symbols used with an image">
-	 &lt;img src="cuptea.png" data-symbol="13621 12324 17511" alt="cup of Tea"/></pre></li>
-		<li>Symbols with conjugation. In this example a symbol is used for "her name" for the conjugated Hebrew word, <span lang="he" dir="rtl">שמה</span>. The /+/ is used with no spaces to join the conjugated values, "her" (14707) and "name" (15691).  If the gender is not important, you can just use the value for name (15691).
-	<pre class="example" title="Symbols with conjugation">
-	 &lt;img src="her-name.png" alt="שמה" data-symbol="15691+14707"/></pre></li>
-	   </ul>
-			
+        <pre class="example" title="Symbols for individual words">&lt;span data-symbol=&quot;13621&quot;&gt;Cup&lt;/span&gt; of &lt;span data-symbol=&quot;17511&quot;&gt;Tea&lt;/span&gt;</pre>
+		</li>
+		<li>Symbols used with an image (<code>alt</code> text represented as a symbol).
+        <pre class="example" title="Symbols used with an image">&lt;img src="cup.png" data-symbol="13621" alt="Cup"/&gt;</pre>
+		</li>
+		<li>Symbols with conjugation. In this example a symbol is used for "her name" for the conjugated Hebrew word, <span lang="he" dir="rtl">שמה</span>. The plus sign is used with no spaces to join the conjugated values, "her" (14707) and "name" (15691). If the gender is not important, you can just use the value for name (15691).
+		<pre class="example" title="Symbols with conjugation">&lt;img src="her-name.png" alt="שמה" data-symbol="15691+14707"/></pre>
+		</li>
+	   </ol>
     </section>
     <section>
     	<h3>Characteristics</h3>
