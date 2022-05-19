@@ -16,7 +16,7 @@ var respecConfig = {
     //diffTool:             "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
 
     // the specifications short name, as in http://www.w3.org/TR/short-name/
-    shortName:            "personalization-semantics-requirements-1.0",
+    shortName:            "adapt-requirements",
 
 
     // if you wish the publication date to be other than today, set this
@@ -31,7 +31,7 @@ var respecConfig = {
     //previousDiffURI: "",
 
     // if there a publicly available Editors Draft, this is the link
-    edDraftURI: "https://w3c.github.io/personalization-semantics/requirements/",
+    edDraftURI: "https://w3c.github.io/adapt/requirements/",
 
     // if this is a LCWD, uncomment and set the end of its review period
     // lcEnd: "2012-02-21",
@@ -90,22 +90,25 @@ var respecConfig = {
     // errata: 'http://www.w3.org/2010/02/rdfa/errata.html',
 
     // name of the WG
-    wg:           "Accessible Platform Architectures Working Group",
+    //wg:           "Accessible Platform Architectures Working Group",
 
     // URI of the public WG page
-    wgURI:        "https://www.w3.org/WAI/APA/",
+    //wgURI:        "https://www.w3.org/WAI/APA/",
 
     // name (with the @w3c.org) of the public mailing to which comments are due
-    wgPublicList: "public-personalization-tf",
+   // wgPublicList: "public-personalization-tf",
 
     // URI of the patent status for this WG, for Rec-track documents
     // !!!! IMPORTANT !!!!
     // This is important for Rec-track documents, do not copy a patent URI from a random
     // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
     // Team Contact.
-    wgPatentURI:  "https://www.w3.org/2004/01/pp-impl/83907/status",
+    //wgPatentURI:  "https://www.w3.org/2004/01/pp-impl/83907/status",
     //maxTocLevel: 2,
 
-    localBiblio: biblio,
+    //localBiblio: biblio,
+    group: "apa",
+	  github: "w3c/adapt"
+
 
   };
