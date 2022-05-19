@@ -14,6 +14,16 @@
 					<p>In some languages words and symbols are conjugated with sex or tense. In these cases more than one value maybe needed to map to a symbol. Authors should join values that map to a single conjugated word with a plus (<code>+</code>) sign (with no spaces between the values). See <a href="https://github.com/w3c/personalization-semantics/wiki/Best-practices-for-symbol-values">best practices for symbol values</a>.</p>
 <p>When there is more than one concept that is not part of a single conjugated term, multiple concepts can be referenced by separating them with white space. The order of multiple concepts should be the same as used in typical speech in the natural language of the content.</p>
 			<p>The reference numbers are the same references numbers used in Bliss (BCI numbers). Here is a link to the <a href="http://www.blissymbolics.net/BCI-AV_2020-03-09/BCI-AV_2020-03-09_(en+sv+no+fi)+derivations+symbols_8483-27158.pdf">BCI numbers (PDF)</a> and <a href="http://www.blissymbolics.net/BCI-AV_2020-03-09/BCI-AV_2020-03-09_(en+sv+no+fi+hu+de+nl+af+ru+lv+po+fr+es+pt+it+dk)+derivations+symbols_8483-27158.pdf">additional language translations (PDF)</a> at the time of publication and the <a href="http://www.blissymbolics.org/index.php/licensing">copyright licensing</a> from Bliss. For additional updates after publication see our <a href="https://github.com/w3c/personalization-semantics/wiki/Best-practices-for-symbol-values">best practices</a> for symbols page.</p>
+			<div class="ednote">
+				<p>This specification is focused on allowing authors to make one-to-one mappings from parts of their content to concepts as defined by BCI. The rendering of the appropriate symbols for the user would be handled by the user agent, extension, or assistive technology. It is anticipated that symbol selection for rendering would take the form of a simple look-up.</p>
+				<p>Whilst this specification is not focused on rendering, here are some notes on the expected process, which may be of interest for authors and implementers.</p>
+				<ul>
+					<li>The Bliss concept ID may map to one rendered symbol, or possibly more than one rendered symbol, in the user's chosen symbol set. This is because the user's chosen set may not have a single symbol to represent that one concept.</li>
+					<li>There would exist a mapping from Bliss concept ID to the user's chosen symbol set, which would allow a user agent to render the one (or more) symbols for that Bliss concept ID.</li>
+					<li>The mapping would ideally in future be provided along with a given symbol set, but it could be created by anyone.</li>
+					<li>Authors should not assume that one concept ID maps to one symbol&mdash;though authors should not need to make any assumptions about rendering, other than ensuring their content can be resized and will reflow, as per WCAG 2.1 Success Criteria 1.4.4 <a href="https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html">Resize Text</a> and 1.4.10 <a href="https://www.w3.org/WAI/WCAG21/Understanding/reflow.html">Reflow</a>.</li>
+				</ul>
+			</div>
 				</div>
 	</section>
 	<section id="symbol-example">
