@@ -1,12 +1,106 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 25.6.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<title>Requirements for WAI-Adapt specification</title>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head>
+<meta charset="utf-8">
+<meta name="generator" content="ReSpec 32.1.6">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+dfn{cursor:pointer}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
+.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
+.dfn-panel *{margin:0}
+.dfn-panel b{display:block;color:#000;margin-top:.25em}
+.dfn-panel ul a[href]{color:#333}
+.dfn-panel>div{display:flex}
+.dfn-panel a.self-link{font-weight:700;margin-right:auto}
+.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
+.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
+.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
+.dfn-panel a[href]:hover{border-bottom-width:1px}
+.dfn-panel ul{padding:0}
+.dfn-panel li{margin-left:1em}
+.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
+</style>
 		
-		<style id="respec-mainstyle">@keyframes pop{0%{transform:scale(1,1)}25%{transform:scale(1.25,1.25);opacity:.75}100%{transform:scale(1,1)}}.hljs{background:0 0!important}a abbr,h1 abbr,h2 abbr,h3 abbr,h4 abbr,h5 abbr,h6 abbr{border:none}dfn{font-weight:700}a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}a.bibref{text-decoration:none}.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}@supports not (text-decoration:red wavy underline){.respec-offending-element:not(pre){display:inline-block}.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}}#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}cite .bibref{font-style:normal}code{color:#c63501}th code{color:inherit}a[href].orcid{padding-left:4px;padding-right:4px}a[href].orcid>svg{margin-bottom:-2px}.toc a,.tof a{text-decoration:none}a .figno,a .secno{color:#000}ol.tof,ul.tof{list-style:none outside none}.caption{margin-top:.5em;font-style:italic}table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}.simple th a{color:#fff;padding:3px 5px;text-align:left}.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}.simple td{padding:3px 10px;border-top:1px solid #ddd}.simple tr:nth-child(even){background:#f0f6ff}.section dd>p:first-child{margin-top:0}.section dd>p:last-child{margin-bottom:0}.section dd{margin-bottom:1em}.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}#issue-summary>ul,.respec-dfn-list{column-count:2}#issue-summary li,.respec-dfn-list li{list-style:none}details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}details.respec-tests-details>*{padding-right:2em}details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}details.respec-tests-details>ul{width:100%;margin-top:-.3em}details.respec-tests-details>li{padding-left:1em}a[href].self-link:hover{opacity:1;text-decoration:none;background-color:transparent}h2,h3,h4,h5,h6{position:relative}aside.example .marker>a.self-link{color:inherit}h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{border:none;color:inherit;font-size:83%;height:2em;left:-1.6em;opacity:.5;position:absolute;text-align:center;text-decoration:none;top:0;transition:opacity .2s;width:2em}h2>a.self-link::before,h3>a.self-link::before,h4>a.self-link::before,h5>a.self-link::before,h6>a.self-link::before{content:"§";display:block}@media (max-width:767px){dd{margin-left:0}h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{left:auto;top:auto}}@media print{.removeOnSave{display:none}}</style>
+<title>Requirements for WAI-Adapt specification</title>
+		
+		
+<style id="respec-mainstyle">
+@keyframes pop{
+0%{transform:scale(1,1)}
+25%{transform:scale(1.25,1.25);opacity:.75}
+100%{transform:scale(1,1)}
+}
+:is(h1,h2,h3,h4,h5,h6,a) abbr{border:none}
+dfn{font-weight:700}
+a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
+a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
+a.bibref{text-decoration:none}
+.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
+.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}
+@supports not (text-decoration:red wavy underline){
+.respec-offending-element:not(pre){display:inline-block}
+.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+}
+#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+cite .bibref{font-style:normal}
+code{color:#c63501}
+th code{color:inherit}
+a[href].orcid{padding-left:4px;padding-right:4px}
+a[href].orcid>svg{margin-bottom:-2px}
+.toc a,.tof a{text-decoration:none}
+a .figno,a .secno{color:#000}
+ol.tof,ul.tof{list-style:none outside none}
+.caption{margin-top:.5em;font-style:italic}
+table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
+.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}
+.simple th a{color:#fff;padding:3px 5px;text-align:left}
+.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}
+.simple td{padding:3px 10px;border-top:1px solid #ddd}
+.simple tr:nth-child(even){background:#f0f6ff}
+.section dd>p:first-child{margin-top:0}
+.section dd>p:last-child{margin-bottom:0}
+.section dd{margin-bottom:1em}
+.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}
+#issue-summary>ul{column-count:2}
+#issue-summary li{list-style:none;display:inline-block}
+details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
+details.respec-tests-details>*{padding-right:2em}
+details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
+details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
+details.respec-tests-details>ul{width:100%;margin-top:-.3em}
+details.respec-tests-details>li{padding-left:1em}
+.self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
+aside.example .marker>a.self-link{color:inherit}
+.header-wrapper{display:flex;align-items:baseline}
+:is(h2,h3,h4,h5,h6):not(#toc>h2,#abstract>h2,#sotd>h2,.head>h2){position:relative;left:-.5em}
+:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-1.1em;font-size:1rem;opacity:.5}
+:is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
+:is(h2,h3)+a.self-link{top:-.2em}
+:is(h4,h5,h6)+a.self-link::before{color:#000}
+@media (max-width:767px){
+dd{margin-left:0}
+}
+@media print{
+.removeOnSave{display:none}
+}
+</style>
 		
 		
 
-		<link href="../common/css/common.css" rel="stylesheet" type="text/css">
-	<meta name="description" content="Requirements for WAI-Adapt specification"><link rel="canonical" href="https://www.w3.org/TR/adapt-requirements/"><style>var{position:relative;cursor:pointer}var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}</style><script id="initialUserConfig" type="application/json">{
+		
+<link href="../common/css/common.css" rel="stylesheet" type="text/css">
+	
+<meta name="description" content="Requirements for WAI-Adapt specification">
+<style>
+var{position:relative;cursor:pointer}
+var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
+var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
+var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
+var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
+</style>
+<script id="initialUserConfig" type="application/json">{
   "trace": true,
   "doRDFa": "1.0",
   "includePermalinks": true,
@@ -17,24 +111,24 @@
   "specStatus": "ED",
   "shortName": "adapt-requirements",
   "copyrightStart": "2018",
-  "edDraftURI": "https://w3c.github.io/personalization-semantics/requirements/",
+  "edDraftURI": "https://w3c.github.io/adapt/requirements/",
   "editors": [
     {
       "name": "Lisa Seeman",
-      "url": "http://athena-ict.com",
+      "url": "mailto:lisa.seeman@zoho.com",
       "mailto": "lisa.seeman@zoho.com",
       "w3cid": 16320
     },
     {
       "name": "Charles LaPierre",
-      "url": "http://www.benetech.org",
+      "url": "mailto:charlesl@benetech.org",
       "mailto": "charlesl@benetech.org",
       "company": "Benetech",
       "w3cid": 72055
     },
     {
       "name": "Michael Cooper",
-      "url": "https://www.w3.org",
+      "url": "mailto:cooper@w3.org",
       "mailto": "cooper@w3.org",
       "company": "W3C",
       "companyURI": "http://www.w3.org",
@@ -42,331 +136,63 @@
     },
     {
       "name": "Roy Ran",
-      "url": "https://www.w3.org",
+      "url": "mailto:ran@w3.org",
       "mailto": "ran@w3.org",
       "company": "W3C",
       "companyURI": "http://www.w3.org",
       "w3cid": 100586
     }
   ],
-  "wg": "Accessible Platform Architectures Working Group",
-  "wgURI": "https://www.w3.org/WAI/APA/",
-  "wgPublicList": "public-personalization-tf",
-  "wgPatentURI": "https://www.w3.org/2004/01/pp-impl/83907/status",
-  "localBiblio": {
-    "ACCNAME-AAM": {
-      "title": "Accessible Name and Description: Computation and API Mappings 1.1",
-      "href": "http://www.w3.org/TR/accname-aam-1.1/",
-      "status": "WD",
-      "publisher": "W3C",
-      "authors": [
-        "Joseph Scheuhammer",
-        "Michael Cooper",
-        "Andi Snow-Weaver",
-        "Aaron Leventhal"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/WAI/ARIA/"
-      ]
-    },
-    "ARIA-PRACTICES": {
-      "title": "WAI-ARIA Authoring Practicess 1.1",
-      "href": "http://www.w3.org/TR/wai-aria-practices-1.1/",
-      "status": "WD",
-      "publisher": "W3C",
-      "authors": [
-        "Matt King",
-        "James Nurthen",
-        "Michael Cooper",
-        "Michiel Bijl",
-        "Joseph Scheuhammer",
-        "Lisa Pappas",
-        "Richard Schwerdtfeger"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/WAI/ARIA/"
-      ]
-    },
-    "ATK": {
-      "href": "https://developer.gnome.org/atk/stable/",
-      "title": "ATK - Accessibility Toolkit",
-      "publisher": "The GNOME Project"
-    },
-    "AXAPI": {
-      "href": "https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078",
-      "title": "Accessibility Programming Guide for OS X",
-      "publisher": "Apple Corporation"
-    },
-    "coga-gap-analysis": {
-      "title": "Cognitive Accessibility Roadmap and Gap Analysis",
-      "href": "https://w3c.github.io/coga/gap-analysis/",
-      "publisher": "W3C",
-      "editors": [
-        "Lisa Seeman",
-        "Michael Cooper"
-      ],
-      "etAl": "false",
-      "deliveredBy": "https://www.w3.org/WAI/PF/cognitive-a11y-tf/"
-    },
-    "coga-issue-papers": {
-      "title": "Issue Papers for the The Cognitive and Learning Disabilities Accessibility Task Force (COGA)",
-      "href": "https://w3c.github.io/coga/issue-papers/",
-      "publisher": "W3C",
-      "editors": [
-        "Lisa Seeman",
-        "Michael Cooper"
-      ],
-      "etAl": "false",
-      "deliveredBy": "https://www.w3.org/WAI/PF/cognitive-a11y-tf/"
-    },
-    "CORE-AAM": {
-      "title": "Core Accessibility API Mappings 1.1",
-      "href": "http://www.w3.org/TR/core-aam-1.1/",
-      "status": "WD",
-      "publisher": "W3C",
-      "authors": [
-        "Joseph Scheuhammer",
-        "Michael Cooper",
-        "Andi Snow-Weaver",
-        "Aaron Leventhal"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/WAI/ARIA/"
-      ]
-    },
-    "DPUB-ARIA": {
-      "title": "Digital Publishing WAI-ARIA Module 1.0",
-      "href": "http://www.w3.org/TR/dpub-aria-1.0/",
-      "status": "WD",
-      "publisher": "W3C",
-      "authors": [
-        "Matt Garrish",
-        "Tzviya Siegman",
-        "Markus Gylling",
-        "Shane McCarron"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/WAI/ARIA/"
-      ]
-    },
-    "GRAPHICS-ARIA": {
-      "title": "WAI-ARIA Graphics",
-      "href": "http://www.w3.org/TR/graphics-aria-1.0/",
-      "status": "WD",
-      "publisher": "W3C",
-      "authors": [
-        "Amelia Bellamy-Royds",
-        "Fred Esch",
-        "Rich Schwerdtfeger",
-        "Leonie Watson"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/WAI/ARIA/",
-        "http://www.w3.org/SVG/"
-      ]
-    },
-    "GRAPHICS-AAM": {
-      "title": "Graphics Accessibility API Mappings",
-      "href": "http://www.w3.org/TR/graphics-aam-1.0/",
-      "status": "WD",
-      "publisher": "W3C",
-      "authors": [
-        "Amelia Bellamy-Royds",
-        "Fred Esch",
-        "Richard Schwerdtfeger"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/WAI/ARIA/",
-        "http://www.w3.org/SVG/"
-      ]
-    },
-    "EPUB-SSV": {
-      "href": "http://www.idpf.org/epub/vocab/structure/",
-      "title": "EPUB Structural Semantics Vocabulary",
-      "publisher": "IDPF"
-    },
-    "EPUB-Content": {
-      "href": "http://www.idpf.org/epub/31/spec/epub-contentdocs.html",
-      "title": "EPUB Content Documents 3.1",
-      "publisher": "IDPF"
-    },
-    "GTK": {
-      "href": "https://developer.gnome.org/gtk3/stable/",
-      "title": "GTK+ 3 Reference Manual",
-      "publisher": "The GNOME Project"
-    },
-    "HTML-AAM": {
-      "authors": [
-        "Steve Faulkner",
-        "Jason Kiss",
-        "Cynthia Shelly",
-        "Alexander Surkov"
-      ],
-      "etAl": true,
-      "href": "http://www.w3.org/TR/html-aam-1.0/",
-      "title": "HTML Accessibility API Mappings 1.0",
-      "status": "WD",
-      "publisher": "W3C",
-      "deliveredBy": [
-        "http://www.w3.org/html",
-        "http://www.w3.org/WAI/PF/"
-      ]
-    },
-    "MSAA": {
-      "href": "https://msdn.microsoft.com/en-us/library/ms697707.aspx",
-      "title": "Microsoft Active Accessibility (MSAA) 2.0",
-      "publisher": "Microsoft Corporation"
-    },
-    "SVG-AAM": {
-      "title": "SVG2 Accessibility API Mappings 1.0",
-      "href": "http://www.w3.org/TR/svg-aam-1.0/",
-      "status": "WD",
-      "publisher": "W3C",
-      "authors": [
-        "Amelia Bellamy-Royds",
-        "Richard Schwerdtfeger"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/WAI/PF/"
-      ]
-    },
-    "SVG1": {
-      "title": "Scalable Vector Graphics (SVG) 1.0 Specification",
-      "href": "http://www.w3.org/TR/SVG10/",
-      "status": "REC",
-      "publisher": "W3C",
-      "authors": [
-        "John Ferraiolo"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/SVG"
-      ]
-    },
-    "SVG11": {
-      "title": "Scalable Vector Graphics (SVG) 1.1 (Second Edition)",
-      "href": "http://www.w3.org/TR/SVG11/",
-      "status": "REC",
-      "publisher": "W3C",
-      "authors": [
-        "Erik Dahlström",
-        "Patrick Dengler",
-        "Anthony Grasso",
-        "Chris Lilley",
-        "Cameron McCormack",
-        "Doug Schepers",
-        "Jonathan Watt",
-        "John Ferraiolo",
-        "藤沢 淳 (FUJISAWA Jun)",
-        "Dean Jackson"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/SVG"
-      ]
-    },
-    "SVG2": {
-      "title": "Scalable Vector Graphics (SVG) 2",
-      "href": "http://www.w3.org/TR/2015/WD-SVG2-20150915/",
-      "status": "WD",
-      "publisher": "W3C",
-      "authors": [
-        "Nikos Andronikos",
-        "Rossen Atanassov",
-        "Tavmjong Bah",
-        "Amelia Bellamy-Royds",
-        "Brian Birtles",
-        "Cyril Concolato",
-        "Erik Dahlström",
-        "Chris Lilley",
-        "Cameron McCormack",
-        "Doug Schepers",
-        "Dirk Schulze",
-        "Richard Schwerdtfeger",
-        "Satoru Takagi",
-        "Jonathan Watt"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/WAI/PF/"
-      ]
-    },
-    "UI-AUTOMATION": {
-      "href": "https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx",
-      "title": "UI Automation",
-      "publisher": "Microsoft Corporation"
-    },
-    "UIA-EXPRESS": {
-      "href": "https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx",
-      "title": "The IAccessibleEx Interface",
-      "publisher": "Microsoft Corporation"
-    },
-    "WAI-ARIA": {
-      "title": "Accessible Rich Internet Applications (WAI-ARIA) 1.1",
-      "href": "http://www.w3.org/TR/wai-aria-1.1/",
-      "status": "WD",
-      "publisher": "W3C",
-      "authors": [
-        "James Craig",
-        "Michael Cooper",
-        "Shane McCarron"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/WAI/PF/"
-      ]
-    },
-    "WAI-ARIA-10": {
-      "authors": [
-        "James Craig",
-        "Michael Cooper"
-      ],
-      "etAl": true,
-      "href": "http://www.w3.org/TR/wai-aria/",
-      "title": "Accessible Rich Internet Applications (WAI-ARIA) 1.0",
-      "status": "REC",
-      "publisher": "W3C",
-      "deliveredBy": [
-        "http://www.w3.org/WAI/PF/"
-      ]
-    }
-  },
+  "group": "apa",
+  "github": "w3c/adapt",
   "publishISODate": "2022-05-19T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 19 May 2022"
-}</script><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
-	<body class="h-entry informative toc-inline"><div class="head">
-    <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title">Requirements for WAI-Adapt specification</h1>
-    
-    <h2>
-      W3C Editor's Draft
-      <time class="dt-published" datetime="2022-05-19">19 May 2022</time>
-    </h2>
-    <dl>
-      <dt>This version:</dt><dd>
-              <a class="u-url" href="https://w3c.github.io/personalization-semantics/requirements/">https://w3c.github.io/personalization-semantics/requirements/</a>
-            </dd><dt>Latest published version:</dt><dd>
-              <a href="https://www.w3.org/TR/adapt-requirements/">https://www.w3.org/TR/adapt-requirements/</a>
-            </dd>
-      <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/personalization-semantics/requirements/">https://w3c.github.io/personalization-semantics/requirements/</a></dd>
-      
-      
-      
-      
-      
-      <dt>Editors:</dt>
-      <dd class="p-author h-card vcard" data-editor-id="16320"><a class="ed_mailto u-email email p-name" href="mailto:lisa.seeman@zoho.com">Lisa Seeman</a></dd><dd class="p-author h-card vcard" data-editor-id="72055"><a class="ed_mailto u-email email p-name" href="mailto:charlesl@benetech.org">Charles LaPierre</a> (Benetech) </dd><dd class="p-author h-card vcard" data-editor-id="34017"><a class="ed_mailto u-email email p-name" href="mailto:cooper@w3.org">Michael Cooper</a> (W3C) </dd><dd class="p-author h-card vcard" data-editor-id="100586"><a class="ed_mailto u-email email p-name" href="mailto:ran@w3.org">Roy Ran</a> (W3C) </dd>
-      
-      
-      
-    </dl>
-    
+  "generatedSubtitle": "W3C Editor's Draft 19 May 2022"
+}</script>
+<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED"></head>
+	<body class="h-entry informative"><div class="head">
+    <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
+  </a></p>
+    <h1 id="title" class="title">Requirements for WAI-Adapt specification</h1> 
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2022-05-19">19 May 2022</time></p>
+    <details open="">
+      <summary>More details about this document</summary>
+      <dl>
+        <dt>This version:</dt><dd>
+                <a class="u-url" href="https://w3c.github.io/adapt/requirements/">https://w3c.github.io/adapt/requirements/</a>
+              </dd>
+        <dt>Latest published version:</dt><dd>
+                <a href="https://www.w3.org/TR/adapt-requirements/">https://www.w3.org/TR/adapt-requirements/</a>
+              </dd>
+        <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/adapt/requirements/">https://w3c.github.io/adapt/requirements/</a></dd>
+        <dt>History:</dt><dd>
+                    <a href="https://github.com/w3c/adapt/commits/">Commit history</a>
+                  </dd>
+        
+        
+        
+        
+        
+        <dt>Editors:</dt><dd class="editor p-author h-card vcard" data-editor-id="16320">
+    <a class="ed_mailto u-email email p-name" href="mailto:lisa.seeman@zoho.com">Lisa Seeman</a>
+  </dd><dd class="editor p-author h-card vcard" data-editor-id="72055">
+    <a class="ed_mailto u-email email p-name" href="mailto:charlesl@benetech.org">Charles LaPierre</a> (<span class="p-org org h-org">Benetech</span>)
+  </dd><dd class="editor p-author h-card vcard" data-editor-id="34017">
+    <a class="ed_mailto u-email email p-name" href="mailto:cooper@w3.org">Michael Cooper</a> (<span class="p-org org h-org">W3C</span>)
+  </dd><dd class="editor p-author h-card vcard" data-editor-id="100586">
+    <a class="ed_mailto u-email email p-name" href="mailto:ran@w3.org">Roy Ran</a> (<span class="p-org org h-org">W3C</span>)
+  </dd>
+        
+        
+        <dt>Feedback:</dt><dd>
+        <a href="https://github.com/w3c/adapt/">GitHub w3c/adapt</a>
+        (<a href="https://github.com/w3c/adapt/pulls/">pull requests</a>,
+        <a href="https://github.com/w3c/adapt/issues/new/choose">new issue</a>,
+        <a href="https://github.com/w3c/adapt/issues/">open issues</a>)
+      </dd>
+        
+        
+      </dl>
+    </details>
     
     
     <p class="copyright">
@@ -376,10 +202,10 @@
     
     <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
     <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
-    <a href="https://ev.buaa.edu.cn/">Beihang</a>). 
-    W3C <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
-    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a rel="license" href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document">permissive document license</a> rules
-    apply.
+    <a href="https://ev.buaa.edu.cn/">Beihang</a>). W3C
+    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and
+    <a rel="license" href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document" title="W3C Software and Document Notice and License">permissive document license</a> rules apply.
   </p>
     <hr title="Separator for header">
   </div>
@@ -387,35 +213,28 @@
 			<p>Requirements for WAI-Adapt specification</p>
 		</section>
 		<section id="sotd" class="introductory"><h2>Status of This Document</h2><p><em>This section describes the status of this
-      document at the time of its publication. Other documents may supersede
-      this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision
-      of this technical report can be found in the
-      <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at
+      document at the time of its publication. A list of current <abbr title="World Wide Web Consortium">W3C</abbr>
+      publications and the latest revision of this technical report can be found
+      in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at
       https://www.w3.org/TR/.</em></p> <p>
-    This document was published by the <a href="https://www.w3.org/WAI/APA/">Accessible Platform Architectures Working Group</a> as an
-    Editor's Draft.
+    This document was published by the <a href="https://www.w3.org/groups/wg/apa">Accessible Platform Architectures Working Group</a> as
+    an Editor's Draft. 
+  </p><p>Publication as an Editor's Draft does not
+  imply endorsement by <abbr title="World Wide Web Consortium">W3C</abbr> and its Members. </p><p>
+    This is a draft document and may be updated, replaced or obsoleted by other
+    documents at any time. It is inappropriate to cite this document as other
+    than work in progress.
     
-  </p><p>
-    
-    Comments regarding this document are welcome.
-          Please send them to
-          <a href="mailto:public-personalization-tf@w3.org">public-personalization-tf@w3.org</a>
-          (<a href="https://lists.w3.org/Archives/Public/public-personalization-tf/">archives</a>).
-        
-  </p><p>
-    Publication as an Editor's Draft does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr>
-    Membership. This is a draft document and may be updated, replaced or
-    obsoleted by other documents at any time. It is inappropriate to cite this
-    document as other than work in progress.
   </p><p>
     
         This document was produced by a group
         operating under the
-        <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
-       The group does not expect this document to become a <abbr title="World Wide Web Consortium">W3C</abbr> Recommendation.
+        <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent
+          Policy</a>.
+      
     
                 <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
-                <a rel="disclosure" href="https://www.w3.org/2004/01/pp-impl/83907/status">public list of any patent disclosures</a>
+                <a rel="disclosure" href="https://www.w3.org/groups/wg/apa/ipr">public list of any patent disclosures</a>
           made in connection with the deliverables of
           the group; that page also includes
           instructions for disclosing a patent. An individual who has actual
@@ -424,13 +243,12 @@
           must disclose the information in accordance with
           <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
         
-    
   </p><p>
                   This document is governed by the
-                  <a id="w3c_process_revision" href="https://www.w3.org/2019/Process-20190301/">1 March 2019 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-                </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a></li><li class="tocline"><a class="tocxref" href="#wai-adapt-features"><bdi class="secno">2. </bdi>WAI-Adapt Features</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">A. </bdi>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><bdi class="secno">A.1 </bdi>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><bdi class="secno">A.2 </bdi>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><bdi class="secno">A.3 </bdi>Enabling funders</a></li></ol></li></ol></nav>
-		<section id="introduction">
-			<h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction<a class="self-link" aria-label="§" href="#introduction"></a></h2>
+                  <a id="w3c_process_revision" href="https://www.w3.org/2021/Process-20211102/">2 November 2021 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+                </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a></li><li class="tocline"><a class="tocxref" href="#wai-adapt-features"><bdi class="secno">2. </bdi>WAI-Adapt Features</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#familiar-terms-and-symbols"><bdi class="secno">2.1 </bdi>Familiar Terms and Symbols</a></li><li class="tocline"><a class="tocxref" href="#symbol-sets"><bdi class="secno">2.2 </bdi>Symbol Sets</a></li><li class="tocline"><a class="tocxref" href="#enable-alternatives-for-numeric-concepts"><bdi class="secno">2.3 </bdi>Enable alternatives for numeric concepts</a></li><li class="tocline"><a class="tocxref" href="#importance-identification"><bdi class="secno">2.4 </bdi>Importance identification</a></li><li class="tocline"><a class="tocxref" href="#enable-alternate-language-complexity-of-same-content"><bdi class="secno">2.5 </bdi>Enable Alternate Language Complexity of Same Content</a></li><li class="tocline"><a class="tocxref" href="#enable-alternate-for-non-literal-content"><bdi class="secno">2.6 </bdi>Enable Alternate for Non-Literal Content</a></li><li class="tocline"><a class="tocxref" href="#enable-additional-help-information"><bdi class="secno">2.7 </bdi>Enable Additional Help Information</a></li><li class="tocline"><a class="tocxref" href="#enable-additional-feedback"><bdi class="secno">2.8 </bdi>Enable Additional Feedback</a></li><li class="tocline"><a class="tocxref" href="#step-indicator"><bdi class="secno">2.9 </bdi>Step Indicator</a></li><li class="tocline"><a class="tocxref" href="#message-categorization"><bdi class="secno">2.10 </bdi>Message Categorization</a></li></ol></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">A. </bdi>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><bdi class="secno">A.1 </bdi>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><bdi class="secno">A.2 </bdi>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><bdi class="secno">A.3 </bdi>Enabling funders</a></li></ol></li></ol></nav>
+		<section id="introduction"><div class="header-wrapper"><h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction</h2><a class="self-link" href="#introduction" aria-label="Permalink for Section 1."></a></div>
+			
 
 				<p>This specification is designed to enable authors to add extra information about content, to enable personalization for the individual user, including providing extra support and enabling new user agents for people with learning and cognitive disabilities.</p>
 <p>Adding the semantics in these specifications enable user agents to adapt the content for the individual needs of the user. These adaptations may include:</p>
@@ -460,47 +278,47 @@
 <p>The latest working draft of the semantics and work-in-progress are available at&nbsp;<a href="https://w3c.github.io/personalization-semantics/" rel="nofollow">https://w3c.github.io/personalization-semantics/</a>.</p>
 			</section>
 
-<section id="wai-adapt-features">
-<h2 id="x2-wai-adapt-features"><bdi class="secno">2. </bdi>WAI-Adapt Features<a class="self-link" aria-label="§" href="#wai-adapt-features"></a></h2>
-<h3 id="familiar-terms-and-symbols">Familiar Terms and Symbols<a class="self-link" aria-label="§" href="#wai-adapt-features"></a></h3>
+<section id="wai-adapt-features"><div class="header-wrapper"><h2 id="x2-wai-adapt-features"><bdi class="secno">2. </bdi>WAI-Adapt Features</h2><a class="self-link" href="#wai-adapt-features" aria-label="Permalink for Section 2."></a></div>
+
+<section id="familiar-terms-and-symbols"><div class="header-wrapper"><h3 id="x2-1-familiar-terms-and-symbols"><bdi class="secno">2.1 </bdi>Familiar Terms and Symbols</h3><a class="self-link" href="#familiar-terms-and-symbols" aria-label="Permalink for Section 2.1"></a></div>
 <p>Common concepts used in controls should be machine understandable so the user agent or script should understand the context of links, buttons, and fields and other page elements so that symbols and text is displayed in a way each user understands.</p>
 <p>Implemented in module 1, <a href="https://www.w3.org/TR/personalization-semantics-content-1.0/">Adaptable Content</a>.</p>
-<h3 id="symbol-sets">Symbol Sets<a class="self-link" aria-label="§" href="#wai-adapt-features"></a></h3>
+</section><section id="symbol-sets"><div class="header-wrapper"><h3 id="x2-2-symbol-sets"><bdi class="secno">2.2 </bdi>Symbol Sets</h3><a class="self-link" href="#symbol-sets" aria-label="Permalink for Section 2.2"></a></div>
 <p>Enable text symbols and text to be mapped and converted into different set of symbols.</p>
 <p>Create interoperable symbol sets for users with complex communication needs that require the use of Alternative and Augmentative Communication (AAC) systems. AAC systems are designed for people who are non-verbal that often use symbols with or without text. AAC end-users tend to only learn one symbol set and cannot easily communicate with other symbol users in a written format. In addition, they may struggle to understand different symbols that are used in different applications. It's important to note that some symbols may be subject to copyright, which means they cannot be shared across applications. However, there are open symbol sets that can be shared and mapped against concepts, generating representative text.</p>
 <p>Implemented in module 1, <a href="https://www.w3.org/TR/personalization-semantics-content-1.0/">Adaptable Content</a>.</p>
-<h3 id="enable-alternatives-for-numeric-concepts">Enable alternatives for numeric concepts<a class="self-link" aria-label="§" href="#wai-adapt-features"></a></h3>
+</section><section id="enable-alternatives-for-numeric-concepts"><div class="header-wrapper"><h3 id="x2-3-enable-alternatives-for-numeric-concepts"><bdi class="secno">2.3 </bdi>Enable alternatives for numeric concepts</h3><a class="self-link" href="#enable-alternatives-for-numeric-concepts" aria-label="Permalink for Section 2.3"></a></div>
 <p>Not everyone can understand numeric concepts and numbers. We need to allow alternatives for numeric content.</p>
 <p>Implemented in module 2, <a href="https://www.w3.org/TR/personalization-semantics-help-1.0/">Adaptable Help and Support</a>.</p>
-<h3 id="importance-identification">Importance identification<a class="self-link" aria-label="§" href="#wai-adapt-features"></a></h3>
+</section><section id="importance-identification"><div class="header-wrapper"><h3 id="x2-4-importance-identification"><bdi class="secno">2.4 </bdi>Importance identification</h3><a class="self-link" href="#importance-identification" aria-label="Permalink for Section 2.4"></a></div>
 <p>There must be a mechanism to identify and differentiate the features included in web content based on its importance (e.g. critical, high, medium, low).</p>
 <p>Implemented in module 1, <a href="https://www.w3.org/TR/personalization-semantics-content-1.0/">Adaptable Content</a>.</p>
-<h3 id="enable-alternate-language-complexity-of-same-content">Enable Alternate Language Complexity of Same Content<a class="self-link" aria-label="§" href="#wai-adapt-features"></a></h3>
+</section><section id="enable-alternate-language-complexity-of-same-content"><div class="header-wrapper"><h3 id="x2-5-enable-alternate-language-complexity-of-same-content"><bdi class="secno">2.5 </bdi>Enable Alternate Language Complexity of Same Content</h3><a class="self-link" href="#enable-alternate-language-complexity-of-same-content" aria-label="Permalink for Section 2.5"></a></div>
 <p>Support for Authors to provide a simplified version of the page or of a section of a page. These alternative versions may not be identical in content but maintain the intent of the original content.</p>
 <p>Implemented in module 2, <a href="https://www.w3.org/TR/personalization-semantics-help-1.0/">Adaptable Help and Support</a>.</p>
-<h3 id="enable-alternate-for-non-literal-content">Enable Alternate for Non-Literal Content<a class="self-link" aria-label="§" href="#wai-adapt-features"></a></h3>
+</section><section id="enable-alternate-for-non-literal-content"><div class="header-wrapper"><h3 id="x2-6-enable-alternate-for-non-literal-content"><bdi class="secno">2.6 </bdi>Enable Alternate for Non-Literal Content</h3><a class="self-link" href="#enable-alternate-for-non-literal-content" aria-label="Permalink for Section 2.6"></a></div>
 <p>Some users cannot understand non-literal text and icons such as metaphors, idioms etc. The literal property is intended to identify text or images as non-literal and allows the author to explain non-literal text and images to users.</p>
 <p>Implemented in module 2, <a href="https://www.w3.org/TR/personalization-semantics-help-1.0/">Adaptable Help and Support</a>.</p>
-<h3 id="enable-additional-help-information">Enable Additional Help Information<a class="self-link" aria-label="§" href="#wai-adapt-features"></a></h3>
+</section><section id="enable-additional-help-information"><div class="header-wrapper"><h3 id="x2-7-enable-additional-help-information"><bdi class="secno">2.7 </bdi>Enable Additional Help Information</h3><a class="self-link" href="#enable-additional-help-information" aria-label="Permalink for Section 2.7"></a></div>
 <p>We propose additional properties so that an author can indicate the existence of additional information, that some user groups may need, but others will find unnecessary.</p>
 <p>Implemented in module 2, <a href="https://www.w3.org/TR/personalization-semantics-help-1.0/">Adaptable Help and Support</a>.</p>
-<h3 id="enable-additional-feedback">Enable Additional Feedback<a class="self-link" aria-label="§" href="#wai-adapt-features"></a></h3>
+</section><section id="enable-additional-feedback"><div class="header-wrapper"><h3 id="x2-8-enable-additional-feedback"><bdi class="secno">2.8 </bdi>Enable Additional Feedback</h3><a class="self-link" href="#enable-additional-feedback" aria-label="Permalink for Section 2.8"></a></div>
 <p>Support additional properties where the author can provide additional information or explain what just happened, that some users may need.</p>
 <p>Implemented in module 2, <a href="https://www.w3.org/TR/personalization-semantics-help-1.0/">Adaptable Help and Support</a>.</p>
-<h3 id="step-indicator">Step Indicator<a class="self-link" aria-label="§" href="#wai-adapt-features"></a></h3>
+</section><section id="step-indicator"><div class="header-wrapper"><h3 id="x2-9-step-indicator"><bdi class="secno">2.9 </bdi>Step Indicator</h3><a class="self-link" href="#step-indicator" aria-label="Permalink for Section 2.9"></a></div>
 <p>Support to users must be able to track completed tasks in order to identify their location in a process. In addition, a user must be able to navigate to completed tasks to make modifications or corrections.</p>
 <p>Implemented in module 3, <a href="https://www.w3.org/TR/personalization-semantics-tools-1.0/">Adaptable Tools</a>.</p>
-<h3 id="message-categorization">Message Categorization<a class="self-link" aria-label="§" href="#wai-adapt-features"></a></h3>
+</section><section id="message-categorization"><div class="header-wrapper"><h3 id="x2-10-message-categorization"><bdi class="secno">2.10 </bdi>Message Categorization</h3><a class="self-link" href="#message-categorization" aria-label="Permalink for Section 2.10"></a></div>
 <p>A mechanism for managing both system level and application level reminders and messages for users who are sensitive to distractions. We require a group of defined values that give users control over the amount of reminders and messages that are presented along with a mechanism for managing, prioritizing, managing and grouping reminders and messages.</p>
 <p>Implemented in module 3, <a href="https://www.w3.org/TR/personalization-semantics-tools-1.0/">Adaptable Tools</a>.</p>
-			</section>
+			</section></section>
 
 		
-		<section class="appendix informative section" id="acknowledgements">
-	<h2 id="a-acknowledgments"><bdi class="secno">A. </bdi>Acknowledgments<a class="self-link" aria-label="§" href="#acknowledgements"></a></h2><p><em>This section is non-normative.</em></p>
+		<section class="appendix informative section" id="acknowledgements"><div class="header-wrapper"><h2 id="a-acknowledgments"><bdi class="secno">A. </bdi>Acknowledgments</h2><a class="self-link" href="#acknowledgements" aria-label="Permalink for Appendix A."></a></div><p><em>This section is non-normative.</em></p>
+	
 	<p>The following people contributed to the development of this document.</p>
-	<section class="section" id="ack_group">
-		<h3 id="a-1-participants-active-in-the-personalization-tf-at-the-time-of-publication"><bdi class="secno">A.1 </bdi>Participants active in the Personalization TF at the time of publication<a class="self-link" aria-label="§" href="#ack_group"></a></h3>
+	<section class="section" id="ack_group"><div class="header-wrapper"><h3 id="a-1-participants-active-in-the-personalization-tf-at-the-time-of-publication"><bdi class="secno">A.1 </bdi>Participants active in the Personalization TF at the time of publication</h3><a class="self-link" href="#ack_group" aria-label="Permalink for Appendix A.1"></a></div>
+		
 		<ul>
 			<li>Matthew Atkinson (TPG Interactive)</li>
 			<li>Mike Beganyi (TPG Interactive)</li>
@@ -516,16 +334,16 @@
 			<li>Lionel Wolberger (Invited Expert)</li>
 		</ul>
   </section>
-	<section class="section" id="ack_others">
-		<h3 id="a-2-other-personalization-tf-contributors-commenters-and-previously-active-participants"><bdi class="secno">A.2 </bdi>Other Personalization TF contributors, commenters, and previously active participants<a class="self-link" aria-label="§" href="#ack_others"></a></h3>
+	<section class="section" id="ack_others"><div class="header-wrapper"><h3 id="a-2-other-personalization-tf-contributors-commenters-and-previously-active-participants"><bdi class="secno">A.2 </bdi>Other Personalization TF contributors, commenters, and previously active participants</h3><a class="self-link" href="#ack_others" aria-label="Permalink for Appendix A.2"></a></div>
+		
 		<ul>
 			<li>Joanmarie Diggs (Igalia)</li>
 			<li>Richard Schwerdtfeger (Knowbility, Inc.)</li>
 			<li>Jason White (Educational Testing Service)</li>
 		</ul>
 	</section>
-	<section class="section" id="ack_funders">
-		<h3 id="a-3-enabling-funders"><bdi class="secno">A.3 </bdi>Enabling funders<a class="self-link" aria-label="§" href="#ack_funders"></a></h3>
+	<section class="section" id="ack_funders"><div class="header-wrapper"><h3 id="a-3-enabling-funders"><bdi class="secno">A.3 </bdi>Enabling funders</h3><a class="self-link" href="#ack_funders" aria-label="Permalink for Appendix A.3"></a></div>
+		
 		<p>This publication has been funded in part with U.S. Federal funds from the Health and Human Services, National Institute on Disability, Independent Living, and Rehabilitation Research (NIDILRR) under contract number HHSP23301500054C. The content of this publication does not necessarily reflect the views or policies of the U.S. Department of Health and Human Services, nor does mention of trade names, commercial products, or organizations imply endorsement by the U.S. Government. Some of the work on this project has also received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No.780529 and 643399. </p>
 	</section>
 </section>
@@ -534,4 +352,226 @@
 
 <p role="navigation" id="back-to-top">
     <a href="#title"><abbr title="Back to Top">↑</abbr></a>
-  </p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
+  </p><script id="respec-dfn-panel">(() => {
+// @ts-check
+if (document.respec) {
+  document.respec.ready.then(setupPanel);
+} else {
+  setupPanel();
+}
+
+function setupPanel() {
+  const listener = panelListener();
+  document.body.addEventListener("keydown", listener);
+  document.body.addEventListener("click", listener);
+}
+
+function panelListener() {
+  /** @type {HTMLElement} */
+  let panel = null;
+  return event => {
+    const { target, type } = event;
+
+    if (!(target instanceof HTMLElement)) return;
+
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    const action = deriveAction(event);
+
+    switch (action) {
+      case "show": {
+        hidePanel(panel);
+        /** @type {HTMLElement} */
+        const dfn = target.closest("dfn, .index-term");
+        panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+        const coords = deriveCoordinates(event);
+        displayPanel(dfn, panel, coords);
+        break;
+      }
+      case "dock": {
+        panel.style.left = null;
+        panel.style.top = null;
+        panel.classList.add("docked");
+        break;
+      }
+      case "hide": {
+        hidePanel(panel);
+        panel = null;
+        break;
+      }
+    }
+  };
+}
+
+/**
+ * @param {MouseEvent|KeyboardEvent} event
+ */
+function deriveCoordinates(event) {
+  const target = /** @type HTMLElement */ (event.target);
+
+  // We prevent synthetic AT clicks from putting
+  // the dialog in a weird place. The AT events sometimes
+  // lack coordinates, so they have clientX/Y = 0
+  const rect = target.getBoundingClientRect();
+  if (
+    event instanceof MouseEvent &&
+    event.clientX >= rect.left &&
+    event.clientY >= rect.top
+  ) {
+    // The event probably happened inside the bounding rect...
+    return { x: event.clientX, y: event.clientY };
+  }
+
+  // Offset to the middle of the element
+  const x = rect.x + rect.width / 2;
+  // Placed at the bottom of the element
+  const y = rect.y + rect.height;
+  return { x, y };
+}
+
+/**
+ * @param {Event} event
+ */
+function deriveAction(event) {
+  const target = /** @type {HTMLElement} */ (event.target);
+  const hitALink = !!target.closest("a");
+  if (target.closest("dfn:not([data-cite]), .index-term")) {
+    return hitALink ? "none" : "show";
+  }
+  if (target.closest(".dfn-panel")) {
+    if (hitALink) {
+      return target.classList.contains("self-link") ? "hide" : "dock";
+    }
+    const panel = target.closest(".dfn-panel");
+    return panel.classList.contains("docked") ? "hide" : "none";
+  }
+  if (document.querySelector(".dfn-panel:not([hidden])")) {
+    return "hide";
+  }
+  return "none";
+}
+
+/**
+ * @param {HTMLElement} dfn
+ * @param {HTMLElement} panel
+ * @param {{ x: number, y: number }} clickPosition
+ */
+function displayPanel(dfn, panel, { x, y }) {
+  panel.hidden = false;
+  // distance (px) between edge of panel and the pointing triangle (caret)
+  const MARGIN = 20;
+
+  const dfnRects = dfn.getClientRects();
+  // Find the `top` offset when the `dfn` can be spread across multiple lines
+  let closestTop = 0;
+  let minDiff = Infinity;
+  for (const rect of dfnRects) {
+    const { top, bottom } = rect;
+    const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+    if (diffFromClickY < minDiff) {
+      minDiff = diffFromClickY;
+      closestTop = top;
+    }
+  }
+
+  const top = window.scrollY + closestTop + dfnRects[0].height;
+  const left = x - MARGIN;
+  panel.style.left = `${left}px`;
+  panel.style.top = `${top}px`;
+
+  // Find if the panel is flowing out of the window
+  const panelRect = panel.getBoundingClientRect();
+  const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
+  if (panelRect.right > SCREEN_WIDTH) {
+    const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
+    const newCaretOffset = left - newLeft;
+    panel.style.left = `${newLeft}px`;
+    /** @type {HTMLElement} */
+    const caret = panel.querySelector(".caret");
+    caret.style.left = `${newCaretOffset}px`;
+  }
+
+  // As it's a dialog, we trap focus.
+  // TODO: when <dialog> becomes a implemented, we should really
+  // use that.
+  trapFocus(panel, dfn);
+}
+
+/**
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function trapFocus(panel, dfn) {
+  /** @type NodeListOf<HTMLAnchorElement> elements */
+  const anchors = panel.querySelectorAll("a[href]");
+  // No need to trap focus
+  if (!anchors.length) return;
+
+  // Move focus to first anchor element
+  const first = anchors.item(0);
+  first.focus();
+
+  const trapListener = createTrapListener(anchors, panel, dfn);
+  panel.addEventListener("keydown", trapListener);
+
+  // Hiding the panel releases the trap
+  const mo = new MutationObserver(records => {
+    const [record] = records;
+    const target = /** @type HTMLElement */ (record.target);
+    if (target.hidden) {
+      panel.removeEventListener("keydown", trapListener);
+      mo.disconnect();
+    }
+  });
+  mo.observe(panel, { attributes: true, attributeFilter: ["hidden"] });
+}
+
+/**
+ *
+ * @param {NodeListOf<HTMLAnchorElement>} anchors
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function createTrapListener(anchors, panel, dfn) {
+  const lastIndex = anchors.length - 1;
+  let currentIndex = 0;
+  return event => {
+    switch (event.key) {
+      // Hitting "Tab" traps us in a nice loop around elements.
+      case "Tab": {
+        event.preventDefault();
+        currentIndex += event.shiftKey ? -1 : +1;
+        if (currentIndex < 0) {
+          currentIndex = lastIndex;
+        } else if (currentIndex > lastIndex) {
+          currentIndex = 0;
+        }
+        anchors.item(currentIndex).focus();
+        break;
+      }
+
+      // Hitting "Enter" on an anchor releases the trap.
+      case "Enter":
+        hidePanel(panel);
+        break;
+
+      // Hitting "Escape" returns focus to dfn.
+      case "Escape":
+        hidePanel(panel);
+        dfn.focus();
+        return;
+    }
+  };
+}
+
+/** @param {HTMLElement} panel */
+function hidePanel(panel) {
+  if (!panel) return;
+  panel.hidden = true;
+  panel.classList.remove("docked");
+}
+})()</script><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
