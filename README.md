@@ -1,5 +1,5 @@
-# personalization-semantics
-Semantics to describe user personalization preferences.
+# adapt
+Personalization Semantics to describe user personalization preferences.
 
 [Current Working Draft](https://w3c.github.io/adapt/)
 
