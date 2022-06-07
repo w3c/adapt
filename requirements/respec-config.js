@@ -42,20 +42,17 @@ var respecConfig = {
     editors: [
       {
         name: "Lisa Seeman",
-        url: 'http://athena-ict.com',
         mailto: "lisa.seeman@zoho.com",
         w3cid: 16320
       },
         {
         name: "Charles LaPierre",
-        url: 'http://www.benetech.org',
         mailto: "charlesl@benetech.org",
         company: "Benetech",
         w3cid: 72055
       },
       {
         name: "Michael Cooper",
-        url: 'https://www.w3.org',
         mailto: "cooper@w3.org",
         company: "W3C",
         companyURI: "http://www.w3.org",
@@ -63,7 +60,6 @@ var respecConfig = {
       },
       {
         name: "Roy Ran",
-        url: 'https://www.w3.org',
         mailto: "ran@w3.org",
         company: "W3C",
         companyURI: "http://www.w3.org",
