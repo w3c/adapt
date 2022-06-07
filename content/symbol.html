@@ -3,16 +3,15 @@
 	<section>
 		<h3>Description</h3>
 		<div class="property-description">
-					<p>The <code>symbol</code> attribute identifies the concept for symbols used in AAC devices, etc., for users who cannot process languages. The symbols are an alternative vocabulary, and multiple symbol sets exist today.</p>
-					<p>The <code>symbol</code> attribute accepts a numeric reference number.</p>
-					<p>A personalization agent can then augment or translate User Interfaces by:</p>
+			<p>The <code>symbol</code> attribute identifies the concept for symbols used in AAC devices, etc., for users who cannot process traditionally written languages. The symbols are an alternative vocabulary, and multiple symbol sets exist today. These various symbol sets are, unfortunately, not mutually comprehendable so the individual faimilar with expression via symbol set alph is unable to understand expressions using symbol set beta. This specification exists to provide a web-based technological mechanism to select appropriate symbols from the set an individual user knows by using the <abbr title="Blissymbolics Communication International">BCI</abbr> concept index, the current de facto standard for cross referencing symbolic representations among symbol sets extant in the world today.</p>
+					<p>The <code>symbol</code> attribute accepts a numeric reference number.</p>					<p>A personalization-aware user agent can then augment or transform User Interfaces by:</p>
 					<ul>
-						<li>converting text to symbols,</li>
-						<li>facilitating symbol-set translation: loading alternative, locally stored symbols that the user is familiar with, so they do not have to learn new symbols across different applications.</li>
+						<li>converting content author text, annotated using numeric values from the BCI concept index into  symbols in the user&apos;s preferred set,</li>
+						<li>facilitating symbol-set representation by loading and displaying symbols that the user is familiar with, so they do not have to learn new symbols across different applications environments.</li>
 					</ul>
 					</p>
 					<p>In some languages words and symbols are conjugated with sex or tense. In these cases more than one value maybe needed to map to a symbol. Authors should join values that map to a single conjugated word with a plus (<code>+</code>) sign (with no spaces between the values). See <a href="https://github.com/w3c/personalization-semantics/wiki/Best-practices-for-symbol-values">best practices for symbol values</a>.</p>
-<p>When there is more than one concept that is not part of a single conjugated term, multiple concepts can be referenced by separating them with white space. The order of multiple concepts should be the same as used in typical speech in the natural language of the content.</p>
+<p>When no individual codepoint exists to express the textual content, multiple concept index values MAY be conjugated by listing two or more concept index values together, separated only by a plus (+) symbol. The order of multiple concepts should be the same as used in typical speech in the natural language of the content.</p>
 			<p>The reference numbers are the same references numbers used in Bliss (BCI numbers). Here is a link to the <a href="http://www.blissymbolics.net/BCI-AV_2020-03-09/BCI-AV_2020-03-09_(en+sv+no+fi)+derivations+symbols_8483-27158.pdf">BCI numbers (PDF)</a> and <a href="http://www.blissymbolics.net/BCI-AV_2020-03-09/BCI-AV_2020-03-09_(en+sv+no+fi+hu+de+nl+af+ru+lv+po+fr+es+pt+it+dk)+derivations+symbols_8483-27158.pdf">additional language translations (PDF)</a> at the time of publication and the <a href="http://www.blissymbolics.org/index.php/licensing">copyright licensing</a> from Bliss. For additional updates after publication see our <a href="https://github.com/w3c/personalization-semantics/wiki/Best-practices-for-symbol-values">best practices</a> for symbols page.</p>
 			<div class="ednote">
 				<p>This specification is focused on allowing authors to make one-to-one mappings from parts of their content to concepts as defined by BCI. The rendering of the appropriate symbols for the user would be handled by the user agent, extension, or assistive technology. It is anticipated that symbol selection for rendering would take the form of a simple look-up.</p>
