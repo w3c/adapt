@@ -97,7 +97,7 @@ var respecConfig = {
    // wgPublicList: "public-personalization-tf",
 
     // URI of the patent status for this WG, for Rec-track documents
-    // !!!! IMPORTANT !!!!
+    // !!!! IMPORTANT !!!!git
     // This is important for Rec-track documents, do not copy a patent URI from a random
     // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
     // Team Contact.
