@@ -65,6 +65,9 @@
 			<section>
 				<h2>Vocabulary Structure and Implementations</h2>
 				<p>All the vocabulary in WAI-Adapt: Content Module is constructed of properties and their values. Please see our <a href="https://www.w3.org/TR/adapt/">WAI-Adapt Explainer</a>. </p>
+				<div class="ednote"><p>The WAI-Adapt specification currently defines and relies on multiple entity attributes
+					constructed according to the requirements of Sec. 3.2.6.6 of the HTML Specification, <a
+					href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes"> Embedding custom non visible data with the data-* attributes</a> and by express request of W3C's Technical Advisory Group (TAG). The HTML data- attribute syntax is not intended to be used for long-term wide-scale features. The task force is using this approach at the moment to gain implementation experience and demonstrate the usefulness of WAI-Adapt in practice.</p><p>Implementers are cautioned that the "data-" prefix will be removed or replaced for some or all attribute values in succeeding iterations of this specification following additional consideration in W3C and the WHATWG.</p></div>
 				<p>The vocabulary implementations included in this document are available at our <a href="https://github.com/w3c/adapt/wiki/Implementations-of-Semantics">implementations wiki page</a>.</p>
 				<section id="properties">
 				<h3>Properties</h3>
@@ -93,7 +96,7 @@
 				</dl>
 				</section>				
 				<p><strong>Note that the attributes and values in this specification do not overide the semantics exposed in the accessibility tree, but rather augment them.</strong> In the case of conflict between an element's semantics and the attribute values, validation algorithms should issue a warning but not an error.</p>
-				 <div class="ednote">Since implementations have not yet been finalized, any examples in this document are illustrative only, and are provided to help in understanding the concept.  All examples will be updated once implementation examples are finalized.</div>
+				 <div class="note">Since implementations have not yet been finalized, any examples in this document are illustrative only, and are provided to help in understanding the concept.  All examples will be updated once implementation examples are finalized.</div>
 			</section>
 			
 			<section>
