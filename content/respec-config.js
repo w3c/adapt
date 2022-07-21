@@ -9,7 +9,8 @@ var respecConfig = {
     // specification status (e.g., WD, LC, NOTE, etc.). If in doubt use ED.
     specStatus:           "CRD",
     noRecTrack: false,
-    //crEnd:                "2012-04-30",
+    crEnd:                "2023-01-26",
+    implementationReportURI: "https://example.com/imp-report/",
     //perEnd:               "2013-07-23",
     //publishDate:          "2013-08-22",
     //diffTool:             "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
