@@ -20,8 +20,8 @@ var respecConfig = {
 
     // if you wish the publication date to be other than today, set this
     //publishDate:  "2017-05-09",
-    copyrightStart:  "2021",
-    license: "document",
+    copyrightStart:  "2018",
+    license: "w3c-software-doc",
 
     // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
     // and its maturity status
@@ -43,6 +43,7 @@ var respecConfig = {
         name: "Lisa Seeman",
         url: 'http://athena-ict.com',
         mailto: "lisa.seeman@zoho.com",
+        company: "Invited Expert",
         w3cid: 16320
       },
       {
@@ -67,7 +68,7 @@ var respecConfig = {
         w3cid: 34017
       },
       {
-        name: "Roy Ran",
+        name: "Ruoxi Ran",
         url: 'https://www.w3.org',
         mailto: "ran@w3.org",
         company: "W3C",
