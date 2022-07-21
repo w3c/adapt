@@ -32,7 +32,7 @@
 
 							<p>The technology described in this specification is intended to be used to programmatically transform the appearance of typical web content including form controls, icons, and other user interface elements	into a rendering more familiar and comprehensible to an individual user. Providing additional help is supported, as is automated page simplification. Use cases and relevant vocabulary terms are defined which allow user agents to augment or adapt content to better fit a particular user's particular needs. This helps users with varying needs to understand web content more readily, by
 					simplifying the web interaction, and by avoiding forcing the user to grapple with unfamiliar representations they are ill equipped to comprehend.</p>
-					                        <p>This WAI-Adapt: Content Module is a component of the WAI-Adapt series introduced in the <a href="../">WAI-Adapt Explainer</a> document [[personalization-semantics-1.0]].</p>
+					                        <p>This WAI-Adapt: Content Module is a component of the WAI-Adapt series introduced in the <a href="https://www.w3.org/TR/adapt/">WAI-Adapt Explainer</a> document [[adapt]].</p>
 								                </section>
 										 
 		<section id="sotd"></section>
@@ -56,7 +56,7 @@
 
 				<p>WAI-Adapt currently consists of three modules: Content, Help and Support, and Tools . The specification defined in this document is the WAI-Adapt: Content Module&mdash;the first of the WAI-Adapt Modules series.</p>
 
-				<p>WAI-Adapt is more fully introduced in our <a href="https://www.w3.org/TR/personalization-semantics-1.0/">WAI-Adapt Explainer</a> [[personalization-semantics-1.0]].</p>
+				<p>WAI-Adapt is more fully introduced in our <a href="https://www.w3.org/TR/adapt/">WAI-Adapt Explainer</a> [[adapt]].</p>
 			</section>
 			<section>
 				<h2>WAI-Adapt: Content Module</h2>
@@ -64,8 +64,11 @@
 			</section>
 			<section>
 				<h2>Vocabulary Structure and Implementations</h2>
-				<p>All the vocabulary in WAI-Adapt: Content Module is constructed of properties and their values. Please see our <a href="https://www.w3.org/TR/personalization-semantics-1.0/">WAI-Adapt Explainer</a>. </p>
-				<p>The vocabulary implementations included in this document are available at our <a href="https://github.com/w3c/personalization-semantics/wiki/Implementations-of-Semantics">implementations wiki page</a>.</p>
+				<p>All the vocabulary in WAI-Adapt: Content Module is constructed of properties and their values. Please see our <a href="https://www.w3.org/TR/adapt/">WAI-Adapt Explainer</a>. </p>
+				<div class="ednote"><p>The WAI-Adapt specification currently defines and relies on multiple entity attributes
+					constructed according to the requirements of Sec. 3.2.6.6 of the HTML Specification, <a
+					href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes"> Embedding custom non visible data with the data-* attributes</a> and by express request of W3C's Technical Advisory Group (TAG). The HTML data- attribute syntax is not intended to be used for long-term wide-scale features. The task force is using this approach at the moment to gain implementation experience and demonstrate the usefulness of WAI-Adapt in practice.</p><p>Implementers are cautioned that the "data-" prefix will be removed or replaced for some or all attribute values in succeeding iterations of this specification following additional consideration in W3C and the WHATWG.</p></div>
+				<p>The vocabulary implementations included in this document are available at our <a href="https://github.com/w3c/adapt/wiki/Implementations-of-Semantics">implementations wiki page</a>.</p>
 				<section id="properties">
 				<h3>Properties</h3>
 				<p>Properties are the main units of WAI-Adapt types supported by the vocabulary. A given property supports a specific type of personalization. That property would only be used once on a given piece of content, but multiple different properties could be used on the same piece of content to address different needs.</p>
@@ -93,12 +96,12 @@
 				</dl>
 				</section>				
 				<p><strong>Note that the attributes and values in this specification do not overide the semantics exposed in the accessibility tree, but rather augment them.</strong> In the case of conflict between an element's semantics and the attribute values, validation algorithms should issue a warning but not an error.</p>
-				 <div class="ednote">Since implementations have not yet been finalized, any examples in this document are illustrative only, and are provided to help in understanding the concept.  All examples will be updated once implementation examples are finalized.</div>
+				 <div class="note">Since implementations have not yet been finalized, any examples in this document are illustrative only, and are provided to help in understanding the concept.  All examples will be updated once implementation examples are finalized.</div>
 			</section>
 			
 			<section>
 				<h2>Use Cases and Requirements</h2>
-				<p>The <a href="https://github.com/w3c/personalization-semantics/wiki/Requirements">Requirements document for WAI-Adapt</a> describes use cases and requirements. This module provides properties to fulfill those requirements related to adapting content.</p>
+				<p>The <a href="https://www.w3.org/TR/adapt-requirements/">Requirements document for WAI-Adapt</a> describes use cases and requirements. This module provides properties to fulfill those requirements related to adapting content.</p>
 			</section>
 
 		</section>
@@ -128,12 +131,12 @@
 		</section>
 		<section>
 			<h1>Privacy and Security Considerations</h1>
-				<p>This specification adds context information about content to the document, and should not affect security.</p>
+				<p>This specification adds context information about content to the document, and should not affect security.</p>
 
 				<p>Although this specification does not expose personal preferences and personal information, third party user agents or proxy server(s) acting upon our semantic information may need to store personal preferences on how to present content to a specific user. It is recommended that any user agent or proxy server implements best practices to protect all personal preferences and personal information.</p>
 		
 <p>Any user agent with user settings are recommended to follow best practices to keep user information secure.</p>
-		<p>The Privacy and Security Considerations of WAI-Adapt: Content Module is also discussed at <a href="https://github.com/w3c/personalization-semantics/issues/131">issue #131</a>.</p>
+		<p>The Privacy and Security Considerations of WAI-Adapt: Content Module is also discussed at <a href="https://github.com/w3c/adapt/issues/131">issue #131</a>.</p>
 		
 		</section>
 
