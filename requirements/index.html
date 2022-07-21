@@ -1,6 +1,6 @@
 <!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head>
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 32.1.10">
+<meta name="generator" content="ReSpec 32.2.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <style>
 dfn{cursor:pointer}
@@ -145,15 +145,15 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   ],
   "group": "apa",
   "github": "w3c/adapt",
-  "publishISODate": "2022-06-27T00:00:00.000Z",
-  "generatedSubtitle": "W3C Editor's Draft 27 June 2022"
+  "publishISODate": "2022-07-21T00:00:00.000Z",
+  "generatedSubtitle": "W3C Editor's Draft 21 July 2022"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED"></head>
 	<body class="h-entry informative"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">Requirements for WAI-Adapt specification</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2022-06-27">27 June 2022</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2022-07-21">21 July 2022</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
@@ -248,7 +248,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   </p><p>
                   This document is governed by the
                   <a id="w3c_process_revision" href="https://www.w3.org/2021/Process-20211102/">2 November 2021 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-                </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a></li><li class="tocline"><a class="tocxref" href="#wai-adapt-features"><bdi class="secno">2. </bdi>WAI-Adapt Features</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#familiar-terms-and-symbols"><bdi class="secno">2.1 </bdi>Familiar Terms and Symbols</a></li><li class="tocline"><a class="tocxref" href="#symbol-sets"><bdi class="secno">2.2 </bdi>Symbol Sets</a></li><li class="tocline"><a class="tocxref" href="#enable-alternatives-for-numeric-concepts"><bdi class="secno">2.3 </bdi>Enable alternatives for numeric concepts</a></li><li class="tocline"><a class="tocxref" href="#importance-identification"><bdi class="secno">2.4 </bdi>Importance identification</a></li><li class="tocline"><a class="tocxref" href="#enable-alternate-language-complexity-of-same-content"><bdi class="secno">2.5 </bdi>Enable Alternate Language Complexity of Same Content</a></li><li class="tocline"><a class="tocxref" href="#enable-alternate-for-non-literal-content"><bdi class="secno">2.6 </bdi>Enable Alternate for Non-Literal Content</a></li><li class="tocline"><a class="tocxref" href="#enable-additional-help-information"><bdi class="secno">2.7 </bdi>Enable Additional Help Information</a></li><li class="tocline"><a class="tocxref" href="#enable-additional-feedback"><bdi class="secno">2.8 </bdi>Enable Additional Feedback</a></li><li class="tocline"><a class="tocxref" href="#step-indicator"><bdi class="secno">2.9 </bdi>Step Indicator</a></li><li class="tocline"><a class="tocxref" href="#message-categorization"><bdi class="secno">2.10 </bdi>Message Categorization</a></li></ol></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">A. </bdi>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><bdi class="secno">A.1 </bdi>Participants active in the Personalization TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><bdi class="secno">A.2 </bdi>Other Personalization TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><bdi class="secno">A.3 </bdi>Enabling funders</a></li></ol></li></ol></nav>
+                </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a></li><li class="tocline"><a class="tocxref" href="#wai-adapt-features"><bdi class="secno">2. </bdi>WAI-Adapt Features</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#familiar-terms-and-symbols"><bdi class="secno">2.1 </bdi>Familiar Terms and Symbols</a></li><li class="tocline"><a class="tocxref" href="#symbol-sets"><bdi class="secno">2.2 </bdi>Symbol Sets</a></li><li class="tocline"><a class="tocxref" href="#enable-alternatives-for-numeric-concepts"><bdi class="secno">2.3 </bdi>Enable alternatives for numeric concepts</a></li><li class="tocline"><a class="tocxref" href="#importance-identification"><bdi class="secno">2.4 </bdi>Importance identification</a></li><li class="tocline"><a class="tocxref" href="#enable-alternate-language-complexity-of-same-content"><bdi class="secno">2.5 </bdi>Enable Alternate Language Complexity of Same Content</a></li><li class="tocline"><a class="tocxref" href="#enable-alternate-for-non-literal-content"><bdi class="secno">2.6 </bdi>Enable Alternate for Non-Literal Content</a></li><li class="tocline"><a class="tocxref" href="#enable-additional-help-information"><bdi class="secno">2.7 </bdi>Enable Additional Help Information</a></li><li class="tocline"><a class="tocxref" href="#enable-additional-feedback"><bdi class="secno">2.8 </bdi>Enable Additional Feedback</a></li><li class="tocline"><a class="tocxref" href="#step-indicator"><bdi class="secno">2.9 </bdi>Step Indicator</a></li><li class="tocline"><a class="tocxref" href="#message-categorization"><bdi class="secno">2.10 </bdi>Message Categorization</a></li></ol></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">A. </bdi>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><bdi class="secno">A.1 </bdi>Participants active in the WAI-Adapt TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><bdi class="secno">A.2 </bdi>Other WAI-Adapt TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><bdi class="secno">A.3 </bdi>Enabling funders</a></li></ol></li></ol></nav>
 		<section id="introduction"><div class="header-wrapper"><h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction</h2><a class="self-link" href="#introduction" aria-label="Permalink for Section 1."></a></div>
 			
 
@@ -311,7 +311,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 <p>Support to users must be able to track completed tasks in order to identify their location in a process. In addition, a user must be able to navigate to completed tasks to make modifications or corrections.</p>
 <p>Implemented in module 3, <a href="https://www.w3.org/TR/personalization-semantics-tools-1.0/">Adaptable Tools</a>.</p>
 </section><section id="message-categorization"><div class="header-wrapper"><h3 id="x2-10-message-categorization"><bdi class="secno">2.10 </bdi>Message Categorization</h3><a class="self-link" href="#message-categorization" aria-label="Permalink for Section 2.10"></a></div>
-<p>A mechanism for managing both system level and application level reminders and messages for users who are sensitive to distractions. We require a group of defined values that give users control over the amount of reminders and messages that are presented along with a mechanism for managing, prioritizing, managing and grouping reminders and messages.</p>
+<p>A mechanism for managing both system level and application level reminders and messages for users who are sensitive to distractions. We require a group of defined values that give users control over the number of reminders and messages that are presented along with a mechanism for managing, prioritizing, and grouping reminders and messages.</p>
 <p>Implemented in module 3, <a href="https://www.w3.org/TR/personalization-semantics-tools-1.0/">Adaptable Tools</a>.</p>
 			</section></section>
 
@@ -319,7 +319,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 		<section class="appendix informative section" id="acknowledgements"><div class="header-wrapper"><h2 id="a-acknowledgments"><bdi class="secno">A. </bdi>Acknowledgments</h2><a class="self-link" href="#acknowledgements" aria-label="Permalink for Appendix A."></a></div><p><em>This section is non-normative.</em></p>
 	
 	<p>The following people contributed to the development of this document.</p>
-	<section class="section" id="ack_group"><div class="header-wrapper"><h3 id="a-1-participants-active-in-the-personalization-tf-at-the-time-of-publication"><bdi class="secno">A.1 </bdi>Participants active in the Personalization TF at the time of publication</h3><a class="self-link" href="#ack_group" aria-label="Permalink for Appendix A.1"></a></div>
+	<section class="section" id="ack_group"><div class="header-wrapper"><h3 id="a-1-participants-active-in-the-wai-adapt-tf-at-the-time-of-publication"><bdi class="secno">A.1 </bdi>Participants active in the WAI-Adapt TF at the time of publication</h3><a class="self-link" href="#ack_group" aria-label="Permalink for Appendix A.1"></a></div>
 		
 		<ul>
 			<li>Matthew Atkinson (TPG Interactive)</li>
@@ -333,10 +333,10 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 			<li>Janina Sajka (Invited Expert)</li>
 			<li>Lisa Seeman (Invited Expert) </li>
 			<li>Sharon Snider (IBM Corporation)</li>
-			<li>Lionel Wolberger (Invited Expert)</li>
+			<li>Lionel Wolberger (UserWay)</li>
 		</ul>
   </section>
-	<section class="section" id="ack_others"><div class="header-wrapper"><h3 id="a-2-other-personalization-tf-contributors-commenters-and-previously-active-participants"><bdi class="secno">A.2 </bdi>Other Personalization TF contributors, commenters, and previously active participants</h3><a class="self-link" href="#ack_others" aria-label="Permalink for Appendix A.2"></a></div>
+	<section class="section" id="ack_others"><div class="header-wrapper"><h3 id="a-2-other-wai-adapt-tf-contributors-commenters-and-previously-active-participants"><bdi class="secno">A.2 </bdi>Other WAI-Adapt TF contributors, commenters, and previously active participants</h3><a class="self-link" href="#ack_others" aria-label="Permalink for Appendix A.2"></a></div>
 		
 		<ul>
 			<li>Joanmarie Diggs (Igalia)</li>
@@ -346,7 +346,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 	</section>
 	<section class="section" id="ack_funders"><div class="header-wrapper"><h3 id="a-3-enabling-funders"><bdi class="secno">A.3 </bdi>Enabling funders</h3><a class="self-link" href="#ack_funders" aria-label="Permalink for Appendix A.3"></a></div>
 		
-		<p>This publication has been funded in part with U.S. Federal funds from the Health and Human Services, National Institute on Disability, Independent Living, and Rehabilitation Research (NIDILRR) under contract number HHSP23301500054C. The content of this publication does not necessarily reflect the views or policies of the U.S. Department of Health and Human Services, nor does mention of trade names, commercial products, or organizations imply endorsement by the U.S. Government. Some of the work on this project has also received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No.780529 and 643399. </p>
+		<p>This publication has been funded initially under contract number ED-OSE-10-C-0067, then under contract number HHSP23301500054C, and now under HHS75P00120P00168. The content of this publication does not necessarily reflect the views or policies of the U.S. Department of Health and Human Services, nor does mention of trade names, commercial products, or organizations imply endorsement by the U.S. Government. Some of the work on this project has also received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No.780529 and 643399. </p>
 	</section>
 </section>
 
