@@ -10,7 +10,7 @@ var respecConfig = {
     specStatus:           "CRD",
     noRecTrack: false,
     crEnd:                "2023-01-26",
-    implementationReportURI: "https://example.com/imp-report/",
+    implementationReportURI: "https://w3c.github.io/adapt/content/reports/",
     //perEnd:               "2013-07-23",
     //publishDate:          "2013-08-22",
     //diffTool:             "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
