@@ -143,7 +143,23 @@
 
 		<div data-include="../common/acknowledgements.html" data-oninclude="fixIncludes" data-include-replace="true">Acknowledgements placeholder</div>
 
-
+		<section class="appendix">
+			<h1>Candidate Recommendation Exit Criteria</h1>
+			<p>The WAI Adapt Content Module 1.0 specification consists of attributes that may be added to a page’s HTML at the website’s discretion. A user agent may take suitable rendering decisions based on these attributes.</p>
+			<aside class="example" title="A user agent rendering decision">
+				<p>A user agent may have a rendering mode for <code>data-simplification=”critical”</code>. In such a rendering mode, elements marked up with WAI Adapt <code>data-simplification=”low”</code> would not be rendered.</p>
+			</aside>
+			<p>For the specification to exit Candidate Review status: for each attribute-value pair in the specification,at least two user agents (or extensions to existing user agents) react to the attribute in an identifiable manner which is suited to the semantics of the attribute.</p>
+			<p>For clarity, we note:</p>
+			<ul>
+				<li><p>While the WAI-Adapt standard stipulates HTML value/attribute markup codes for use by page authors, implementations to meet exit criteria are focused on rendering of the markup.</p></li>
+				<li><p>For user agents (or extensions) rendering a given attribute, all values for that attribute must be supported.</p></li>
+				<li><p>The results of testing are made available in a separate implementation report.</p></li>
+			</ul>
+			<div class="ednote">
+				<p>As per the introductory section on <a href="#vocabulary-structure-and-implementations">Vocabulary Structure and Implementations</a>, with the publication of this Candidate Recommendation, the Working Group plans to document implementation of WAI-Adapt Content attributes using the <code>data-*</code> attribute syntax. Once implementability and usefulness is demonstrated, the WG will request a reserved prefix for HTML. It plans then to re-issue a Candidate Recommendation using the new attribute names. Implementations tested in the first CR will need to update the recognized attributes, and the stable attribute name will support new implementations.</p>
+			</div>
+		</section>
 
 	</body>
 </html>
