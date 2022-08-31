@@ -16,6 +16,7 @@ var biblio = {
 			"http://www.w3.org/WAI/ARIA/"
 		]
 	},
+
 	"ARIA-PRACTICES": {
 		"title": "WAI-ARIA Authoring Practicess 1.1",
 		"href": "http://www.w3.org/TR/wai-aria-practices-1.1/",
@@ -47,6 +48,7 @@ var biblio = {
 		"title": "Accessibility Programming Guide for OS X",
 		"publisher": "Apple Corporation"
 	},
+	
 	"BCI-AV": {
 		"href": "http://www.blissymbolics.net/BCI-AV_2020-03-09/BCI-AV_2020-03-09_(en+sv+no+fi)+derivations+symbols_8483-27158.pdf",
 		"title": "PDF with symbols: BCI AV English, Swedish, Norwegian, Finnish",
