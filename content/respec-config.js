@@ -107,7 +107,7 @@ var respecConfig = {
 
     // URI of the public WG page
     //wgURI:        "https://www.w3.org/WAI/APA/",
-    localBiblio: "../common/biblio.js",
+    localBiblio: biblio,
 
     // name (with the @w3c.org) of the public mailing to which comments are due
     //wgPublicList: "public-adapt",
