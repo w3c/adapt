@@ -47,6 +47,17 @@ var biblio = {
 		"title": "Accessibility Programming Guide for OS X",
 		"publisher": "Apple Corporation"
 	},
+	"BCI-AV": {
+		"href": "http://www.blissymbolics.net/BCI-AV_2020-03-09/BCI-AV_2020-03-09_(en+sv+no+fi)+derivations+symbols_8483-27158.pdf",
+		"title": "PDF with symbols: BCI AV English, Swedish, Norwegian, Finnish",
+		"publisher": "Blissymbolics Communication International"
+	},
+
+	"BCI-AV-additional-language": {
+		"href": "http://www.blissymbolics.net/BCI-AV_2020-03-09/BCI-AV_2020-03-09_(en+sv+no+fi+hu+de+nl+af+ru+lv+po+fr+es+pt+it+dk)+derivations+symbols_8483-27158.pdf",
+		"title": "PDF with symbols: BCI AV English, Swedish, Deutsch, Norwegian, Finnish, Hungarian, German, Dutch, Afrikaans, Russian, Latvian, Polish, French, Spanish, Portuguese, Italian, Danish",
+		"publisher": "Blissymbolics Communication International"
+	},
 	"coga-gap-analysis": {
 		"title": "Cognitive Accessibility Roadmap and Gap Analysis",
 		"href": "https://w3c.github.io/coga/gap-analysis/",
