@@ -139,8 +139,13 @@
 		<section class="appendix">
 			<h1>Candidate Recommendation Exit Criteria</h1>
 			<p>The WAI Adapt Content Module 1.0 specification consists of attributes that may be added to a page’s HTML at the website’s discretion. A user agent may take suitable rendering decisions based on these attributes.</p>
-			<aside class="example" title="A user agent rendering decision">
-				<p>A user agent may have a rendering mode for <code>data-simplification=”critical”</code>. In such a rendering mode, elements marked up with WAI Adapt <code>data-simplification=”low”</code> would not be rendered.</p>
+			<aside class="example" title="A browser extension for rendering symbols">
+				<p>A browser extension or stand-alone tool may have a mode that renders the appropriate symbol for an input label.</p> 
+				<code>
+					&lt;label for="bar" <strong>data-symbol="14885"</strong>&gt;Your Principle Residence&lt;/label&gt; <br>
+					&lt;input type="textarea" id="bar" name="address" data-purpose="street-address"&gt;
+				</code>	
+				<p>Where the symbol value 14855 maps back to "Home".</p>
 			</aside>
 			<p>For the specification to exit Candidate Review status: for each attribute-value pair in the specification, at least two user agents (or extensions to existing user agents) react to the attribute in an identifiable manner which is suited to the semantics of the attribute.</p>
 			<p>For clarity, we note:</p>
