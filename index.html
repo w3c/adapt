@@ -12,27 +12,26 @@
 	<body>
 
 		<section id="abstract">
-			<p>People have very different needs. There are many people with cognitive and learning disabilities that affect their ability to interact with the web. Some people cannot process numeric information (dyscalculia), but others understand numbers better than words. Some people with severe language disabilities use symbols to represent words; some people need (or want) simplified user-interfaces. Different people find different layouts and types of content easier to understand, and what is useable and understandable by one person can be be too complex for another. One of the main challenges is to address these varied and conflicting user needs, so that content can be understandable by the individual users. The specification (and modules) described in this Explainer provide a means for web technologies to address these requirements.</p>
+			<p>People have very different needs. There are many people with cognitive and learning disabilities that affect their ability to interact with the web. Some people cannot process numeric information (dyscalculia), but others understand numbers better than words. Some people with severe language disabilities use symbols to represent words; some people need (or want) simplified user-interfaces. Different people find different layouts and types of content easier to understand, and what is useable and understandable by one person can be be too complex for another. The WAI-Adapt Task Force seeks to address these varied and conflicting user needs, so that content can be made more understandable to individual users based on their unique requirements. The various WAI-Adapt specification modules described in this Explainer provide various means for web technologies to address these requirements.</p>
 
-			<p>The WAI-Adapt specification enables authors to add extra semantic information about content to enable personalization for the individual user. This provides extra support and facilitates user-agents for people with learning and cognitive disabilities.</p>
+			<p>The various WAI-Adapt module specifications enable authors to selectively add semantic information about content to enable content and interface personalization for individual users. In turn this facilitates user-agents for people with learning and cognitive disabilities.</p>
 
-			<p>Authors add extra semantic information using a collection of new attribute(s) and values, with (in most cases) a fixed token list (taxonomies). This document is an explanation for understanding how the WAI-Adapt attributes are used to personalize an accessible web site.</p>
+			<p>WAI-Adapt technologies allow authors to add additional semantic information using a collection of new attributes and values, with (in most cases) a fixed token list (taxonomies). This document provides an explanation for understanding how the WAI-Adapt attributes can be used to personalize a more accessible web site.</p>
 		</section>
 
 		<section id="sotd"></section>
 
-		<section class="informative" id="introduction">
+		<section id="introduction">
 
 			<h1>Introduction</h1>
-			<p>The WAI-Adapt specification:</p>
+			<p>The WAI-Adapt specification modules:</p>
 			<ul>
 				<li>Expands upon the types of accessibility information that the author can provide;</li>
-				<li>Facilitates preference-driven individual personalization;</li>
-				<li>Enables the author to specify key semantics to support users with cognitive impairments;</li>
-				<li>Defines a syntax for adaptable content such as: links, buttons, symbols, help, and keyboard shortcuts.
+				<li>Facilitate preference-driven individual personalization;</li>
+				<li>Enable the author to specify key semantics to support users with cognitive impairments;</li>
+				<li>Define a syntax for adaptable content such as: links, buttons, symbols, help, and keyboard shortcuts.
 			</ul>
-			<!-- <p>The proposed syntax will start by using the data-* mechanism provided by HTML5.</p>
-			<p>Personalization involves tailoring aspects of the user experience to meet the preferences or needs of the user. For example, having familiar terms and symbols is key to being able to use the web. However what is familiar for one user may be new for another requiring them to learn new symbols. Personalization could include loading a set of symbols that is appropriate for the specific user, ensuring that all users find the icons simple and familiar.</p> -->
+			<p>Personalization involves tailoring aspects of the user experience to meet the preferences or needs of individual users. For example, having familiar terms and symbols is critical for effective use of web content for many as described in the user scenarios and use cases published in the <a href="https://www.w3.org/TR/coga-usable/">Making Content Usable (for COGA people)</a>. However what is familiar to one user will inevitably be new and foreign to another. Personalization based on WAI-Adapt AAC symbol support technologies supports loading a set of symbols that is appropriate for the specific user, ensuring that each user is presented with familiar symbols.</p>
 			<p>Technology holds the promise of being extremely flexible and the design of many systems includes the expectation that users can optimize their interaction experience according to their personal preferences or accessibility needs. </p>
 			
 			<section class="section" id="why_accessibility">
@@ -42,13 +41,13 @@
 					<li>adapt to and meet the user's needs. Users who have difficulty with established, mainstream patterns can interact with interfaces modified to their preferences and abilities. </li>
 					<li>modify levels of complexity as people's skills improve or decline over time. For example, extra support may be critical for some people but distracting for others.</li>
 	
-					<li>provide extra support to users who require: 				
+					<li>provide better support to users who require: 				
 					<ul>
 						<li>familiar and consistent symbols, iconography, and graphics </li>
 						<li>tooltips or similar on-demand help or clues</li>
 						<li>language they understand</li>
 						<li>fewer or more constrained features</li>
-						<li>distinction between native and third-party content</li>
+						<li>clearer distinction between native and third-party content</li>
 						<li>custom keyboard shortcuts</li>
 					</ul>
 					</li>
@@ -87,6 +86,8 @@
 				<p>For websites which rely on advertising revenue, it may be undesirable to completely suppress advertisements. We envision that this attribute could also facilitate relocating the most critical sections of a website above anything that is a lower priority. (i.e. Content re-ordering)</p>
 			</section>
 				
+			<p>WAI-Adapt recognizes that appropriate simplification will often be task determined. A complex page will often support multiple tasks each of which could be critical to the user requiring simplification at different times. We propose to facilitate users defining what task is critical to them in the moment rather than pre-determining what is primary or secondary in advance.</p>
+
 			<section class="section" id="difficulty_numbers">
 				<h3>Difficulty Understanding Numbers</h3>
 				<p>Someone who has dyscalculia will have difficulty understanding numbers and will have a hard time interacting with websites that use numbers to convey information. Therefore, critical numeric information must be provided in an alternative format that the user can understand.</p>
@@ -113,10 +114,10 @@
 			<h3>Mild-Moderate Language Impairment / Learning Disability</h3>
 				<p>Those who have a moderate Language Impairment / Learning Disability may have a limited vocabulary. They will only know terms that are in the core vocabulary they have learned. They may also use symbols to represent words and concepts.</p>
 
-				<div class="example"><p>Example: The user may know the word "name" or "last name" but have not learned the term "family name".</p><p> For some users, learning new terms is very slow, requiring hours of work. For these users, reading may also be very slow, so finding the right information can be a barrier. The ability to personalize a web page and present symbols instead helps users to easily understand the content being provided</p></div>
+				<div class="example"><p>Example: The user may know the word "name" or "last name" but not recognize the term "family name" or "surname" as cognates.</p><p> For some users, learning new terms is a very slow process, requiring hours of work. For these users, reading web content may also be a very slow process, so that finding the information desired on some particular web page can present a laborious barrier. The ability to personalize a web page and present symbols instead, or alongside content can help some users better and more promptly understand the content being provided</p></div>
 				<p>Note that some people with language disabilities are good at numbers. They will want a long string of text replaced with a short number: <code>&lt;span <strong>data-easylang="90% of the time this happens"</strong>&gt; normally this is the expected outcome&lt;/span&gt;</code>. This is the opposite of the numberfree example.</p>
 
-				<p>Additionally, because reading content for some users is extremely time-consuming, they may also want less content and features on the web page.<p>
+				<p>Additionally, because reading content for some users is extremely time-consuming, they may also want less content and fewer features on a given web page.<p>
 			</section>
 			
 			<section class="section" id="language_impairment">
@@ -183,14 +184,18 @@
            
 		</section>
 
-		<section class="section informative" >
+		<section >
 				<h2>Modules</h2>
-				<p>This specification has been divided into modules. </p>
-				<p>Each module has use cases and vocabularies: </p>
+				<p>WAI-Adapt specifications will be published as individual modules. How many modules will eventually be created is unclear at the time of this writing. However, each module specification
+will include use cases and vocabularies. At this time only one specification module is advancing toward Candidate Recommendation status at W3C:</p>
 				<ul>
 					<li><a href="content/index.html">WAI-Adapt: Content Module:</a>
-					<p>This module provides vocabularies that enable user-agents to augment or adapt content to the user scenario which helps the user use and understand the content.</p>
-					<p>It includes use-cases and vocabularies for identifying the purpose of controls, symbols and user interface elements, and supports simplification and avoiding distractions.</p></li>
+						<p>This module provides vocabularies that enable user-agents to augment or adapt content to allow authors to support AAC symbols.</p></li></ul>
+
+				<p>Additional modules, some available in early drafts, may include:</P>
+
+				<ul><li>
+					<p>Use-cases and vocabularies for identifying the purpose of controls, symbols and user interface elements, and supports simplification and avoiding distractions.</p></li>
 				
 					<li><a href="help/index.html">WAI-Adapt: Help and Support Module:</a>
 					<p>The first working draft of this module is now available.</p>
@@ -203,7 +208,7 @@
 				</ul>
 		</section>
 
-		<section class="informative" id="characteristics_semanticproperties">
+		<section id="characteristics_semanticproperties">
 			<h1>Vocabulary Structure</h1>
 			<p>WAI-Adapt is made of a vocabulary of properties and their values. This generic structure makes it possible to apply WAI-Adapt in a variety of contexts by adapting how the vocabulary is instantiated. The <a href="#vocabulary-implementations">Vocabulary Implementations</a> section below describes current ways to use the vocabulary.</p>
             <section>
@@ -241,7 +246,7 @@
 
 
 
-		<section class="informative">
+		<section>
 			<h1>Vocabulary Implementations</h1>
 			<section class="section">
 			<h2>Current Usage</h2>
@@ -295,7 +300,7 @@ href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visib
                 
             </section>
 		</section>
-        <section class="informative">
+        <section>
             <h2>Stakeholders</h2>
             <p>
                 This document is useful for:
