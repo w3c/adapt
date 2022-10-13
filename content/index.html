@@ -21,17 +21,14 @@
 		<section id="abstract">
             
 
-		                        <p>This specification provides web content authors a standard approach to support web users who are persons with various cognitive and learning disabilities, including users who:</p>
+		                        <p>This specification provides web content authors a standard approach to support web users who are persons with various cognitive and learning disabilities who:</p>
 
 					<ul>
 						<li>Customarily communicate using symbolic languages generally known as Augmentative and Alternative Communications (<abbr title="Augmentative and Alternative Communication">AAC</abbr>);</li>
 						<li>Need more familiar icons (and other graphical symbols) in order to comprehend page content;</li>
-						<li>Benefit from additional help resources;</li>
-						<li>Require a simplified page in order to interact successfully.</li>
 					</ul>
 
-							<p>The technology described in this specification is intended to be used to programmatically transform the appearance of typical web content including form controls, icons, and other user interface elements	into a rendering more familiar and comprehensible to an individual user. Providing additional help is supported, as is automated page simplification. Use cases and relevant vocabulary terms are defined which allow user agents to augment or adapt content to better fit a particular user's particular needs. This helps users with varying needs to understand web content more readily, by
-					simplifying the web interaction, and by avoiding forcing the user to grapple with unfamiliar representations they are ill equipped to comprehend.</p>
+					<p>The technology described in this specification is intended to be used to programmatically transform the appearance of typical web content including form controls, icons, and other user interface elements	into a rendering incorporating an individual user's preferred AAC symbols. The W3C <a href="https://w3c.github.io/adapt-registry/">WAI-Adapt Symbols Registry</a> provides the required mappings between concept values used by content authors and the user's preferred AAC symbol set representation of that concept.</p>
 					                        <p>This WAI-Adapt: Content Module is a component of the WAI-Adapt series introduced in the <a href="https://www.w3.org/TR/adapt/">WAI-Adapt Explainer</a> document [[adapt]].</p>
 								                </section>
 										 
@@ -42,19 +39,15 @@
 			<h1>Introduction</h1>
 			<section>
 				<h2>Background</h2>
-				<p>This specification module enables authors to add semantic information about content at the element level, in order to facilitate a more familiar or comprehensible interface for the individual user. Multiple screen renderings (transformations) are supported in order to meet the differing needs of different users. Final renderings &mdash; generated via helper apps or 3rd-party tools &mdash; are ultimately defined by the user's configuration settings.</p>
+				<p>This specification module enables authors to add semantic information about content at the element level, in order to facilitate a more familiar and comprehensible interface for the individual user who requires AAC symbols support. Final renderings &mdash; generated via helper apps or 3rd-party tools &mdash; are ultimately defined by the user's configuration settings.</p>
 				
-				<p>The goal of the attributes and values described in this specification is to enable personalized communication and web content interaction for the individual user. This specification includes facilities to:</p>
+				<p>The goal of the attribute and values described in this specification is to enable personalized communication and web content interaction for the individual user. This specification includes facilities to:</p>
 
 				<ul>
-					<li>Transform the user interface (UI) through the addition, removal, or adaptation of content which otherwise tends to have a negative impact on Augmentative and Alternative Communications (<abbr title="Augmentative and Alternative Communication">AAC</abbr>) users;</li>
-					<li>Provide extra support to the user;</li>
+					<li>Transform the user interface (UI) through adaptation of content by injection of AAC symbols and thus ameliorate the negative impact of content lacking AAC on Augmentative and Alternative Communications (<abbr title="Augmentative and Alternative Communication">AAC</abbr>) users;</li>
+					<li>Provide extra support to the user by providing the communication modality they are best able to comprehend;</li>
 					<li>Enable new adapted user agents for people with learning and cognitive disabilities.</li>
 				</ul>
-
-				<p>WAI-Adapt is a series of technical specifications that provide the element-level attributes and values which enable user agents and helper-applications to adapt content to an individual user's needs. It relies on author-supplied page and element level metadata in order to achieve individualized personalization.</p>
-
-				<p>WAI-Adapt currently consists of three modules: Content, Help and Support, and Tools. The specification defined in this document is the WAI-Adapt: Content Module&mdash;the first of the WAI-Adapt Modules series.</p>
 
 				<p>WAI-Adapt is more fully introduced in our <a href="https://www.w3.org/TR/adapt/">WAI-Adapt Explainer</a> [[adapt]].</p>
 			</section>
@@ -65,10 +58,10 @@
 			<section>
 				<h2>Vocabulary Structure and Implementations</h2>
 				<p>All the vocabulary in WAI-Adapt: Content Module is constructed of properties and their values. Please see our <a href="https://www.w3.org/TR/adapt/">WAI-Adapt Explainer</a>. </p>
-				<div class="ednote"><p>The WAI-Adapt specification currently defines and relies on multiple entity attributes
+				<div class="ednote"><p>WAI-Adapt module specifications currently define and relies on multiple entity attributes
 					constructed according to the requirements of Sec. 3.2.6.6 of the HTML Specification, <a
 					href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes"> Embedding custom non visible data with the data-* attributes</a> and by express request of W3C's Technical Advisory Group (TAG). The HTML data- attribute syntax is not intended to be used for long-term wide-scale features. The task force is using this approach at the moment to gain implementation experience and demonstrate the usefulness of WAI-Adapt in practice.</p><p>Implementers are cautioned that the "data-" prefix will be removed or replaced for some or all attribute values in succeeding iterations of this specification following additional consideration in W3C and the WHATWG.</p></div>
-				<p>The vocabulary implementations included in this document are available at our <a href="https://github.com/w3c/adapt/wiki/Implementations-of-Semantics">implementations wiki page</a>.</p>
+				<p>The vocabulary implementation included in this module specification is available at our <a href="https://github.com/w3c/adapt/wiki/Implementations-of-Semantics">implementations wiki page</a>.</p>
 				<section id="properties">
 				<h3>Properties</h3>
 				<p>Properties are the main units of WAI-Adapt types supported by the vocabulary. A given property supports a specific type of personalization. That property would only be used once on a given piece of content, but multiple different properties could be used on the same piece of content to address different needs.</p>
@@ -101,7 +94,7 @@
 			
 			<section>
 				<h2>Use Cases and Requirements</h2>
-				<p>The <a href="https://www.w3.org/TR/adapt-requirements/">Requirements document for WAI-Adapt</a> describes use cases and requirements. This module provides properties to fulfill those requirements related to adapting content.</p>
+				<p>The <a href="https://www.w3.org/TR/adapt-requirements/">Requirements document for WAI-Adapt</a> describes use cases and requirements which, in turn, are derived from the user scenarios and use cases published in the W3C Note, <a href="https://www.w3.org/TR/coga-usable/">Making Content Usable (for COGA People). This specification module provides one key component to fulfill those requirements related to adapting content to support AAC symbols.</p>
 			</section>
 
 		</section>
