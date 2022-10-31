@@ -81,7 +81,7 @@
 
 				<div  class="example"><p>Example: The user wants to get the latest weather report for their city and goes to a weather website.</p>
 				<p>Finding the actual weather forecast is actually a little challenging even if you have no disabilities due to all the additional content on the screen; along with advertisements, there is also the day's top stories, trending news, and social media to cognitively filter. If you are easily overwhelmed or distracted getting the key information about today's weather is a challenge. Having the ability to personalize and prioritize all but the key information (i.e. just the weather forecast for my city) is critical for this user.</p></div>
-				<p>In this example, the author can mark the <code>&lt;section&gt;</code>, <code>&lt;p&gt;</code>, or <code>&lt;div&gt;</code> that contains the actual weather report and any associated tools to manipulate the weather report (i.e. city search, hourly vs. 5 day forecast, etc.) with the <code>data-simplification</code> attribute (with a value of "critical"), and mark the other on-screen content as "medium" (default) or "low". (e.g. <code>&lt;p adapt-simplification="critical"&gt;</code><em>Today’s forecast is a high of 95&#176; and a low of 40&#176;</em><code>&lt;/p&gt;</code>)
+				<p>In this example, the author can mark the <code>&lt;section&gt;</code>, <code>&lt;p&gt;</code>, or <code>&lt;div&gt;</code> that contains the actual weather report and any associated tools to manipulate the weather report (i.e. city search, hourly vs. 5 day forecast, etc.) with the <code>adapt-simplification</code> attribute (with a value of "critical"), and mark the other on-screen content as "medium" (default) or "low". (e.g. <code>&lt;p adapt-simplification="critical"&gt;</code><em>Today’s forecast is a high of 95&#176; and a low of 40&#176;</em><code>&lt;/p&gt;</code>)
 
 				<p>For websites which rely on advertising revenue, it may be undesirable to completely suppress advertisements. We envision that this attribute could also facilitate relocating the most critical sections of a website above anything that is a lower priority. (i.e. Content re-ordering)</p>
 			</section>
@@ -105,7 +105,7 @@
 				</ul>
 				<p>Next to the humidity index of 90%, there could be a text alternative of “muggy”.</p>
 				</div>
-				<p>In this example, the author would mark up the numbers using the <code>data-numberfree</code> attribute. The default would show the numeric value. Those needing an alternative representation for numbers, would get an associated image or description/values as simplified text instead.</p>
+				<p>In this example, the author would mark up the numbers using the <code>adapt-numberfree</code> attribute. The default would show the numeric value. Those needing an alternative representation for numbers, would get an associated image or description/values as simplified text instead.</p>
 
 				<p>It is important to note that people with dyscalculia are often very good with words, so long text can be better than short numbers.</p>
 			</section>
@@ -131,7 +131,7 @@
 			<li>People who know different symbol sets wish to talk to each other.</li>
 			<li>A government agency creating information sheets about human rights and patient rights are seeking feedback from impacted users. They add symbols from a common symbol set to support a majority of different users. The agency would prefer to use a common symbol reference to support people who use or require different symbols. This allows all symbol set users to both read and edit the content.	</li>
 			</ul>
-			<div class="example"><p>Example: Using the <code>data-symbol</code> attribute, an author programmatically tags the label for a form input with the appropriate symbol value. Based on user preference settings, a browser helper application or stand-alone tool could then render that label using an appropriate symbol, alternative term, and/or furnishes an additional tool-tip that is understandable by the individual user. Using the <a href="https://www.blissymbolics.org/">Bliss Symbolics</a> set's unique reference numbers as our 'taxonomy', other symbol sets can map their equivalent symbols against the Bliss set.</p>
+			<div class="example"><p>Example: Using the <code>adapt-symbol</code> attribute, an author programmatically tags the label for a form input with the appropriate symbol value. Based on user preference settings, a browser helper application or stand-alone tool could then render that label using an appropriate symbol, alternative term, and/or furnishes an additional tool-tip that is understandable by the individual user. Using the <a href="https://www.blissymbolics.org/">Bliss Symbolics</a> set's unique reference numbers as our 'taxonomy', other symbol sets can map their equivalent symbols against the Bliss set.</p>
 
 			<code>
 			&lt;label for="bar" <strong>adapt-symbol="14885"</strong>&gt;Your Principle Residence&lt;/label&gt; <br>
@@ -140,8 +140,8 @@
 			<p>Where the symbol value 14855 maps back to "Home".</p>
 			</div>
 <h4>Proof of Concept: Symbol Example</h4>
-<p>In the screen shots below, a browser extension uses the <code>data-symbol</code> attribute to load symbols that are familiar to the user.</p>	
-				<p>Note that users learn a specific symbol vocabulary. However, the various symbol vocabularies are mutually unintelligible: users familiar with one set of symbols may not be familiar with or understand an alternative set. WAI-Adapt's <code>data-symbol</code> attribute offers a mechanism to translate between symbol sets, to allow people to communicate with one another where it was previously not possible.</p>	
+<p>In the screen shots below, a browser extension uses the <code>adapt-symbol</code> attribute to load symbols that are familiar to the user.</p>	
+				<p>Note that users learn a specific symbol vocabulary. However, the various symbol vocabularies are mutually unintelligible: users familiar with one set of symbols may not be familiar with or understand an alternative set. WAI-Adapt's <code>adapt-symbol</code> attribute offers a mechanism to translate between symbol sets, to allow people to communicate with one another where it was previously not possible.</p>	
 
 			<figure>
 				<img src="https://user-images.githubusercontent.com/8376341/79741687-5b20a880-830a-11ea-814d-97ed7132d7d1.png" alt="screen shot, no symbols" style="height:95%; width:95%">
@@ -176,7 +176,7 @@
                     <li>Develop an API for browsers or other user-agents</li>
                     <li>Develop or produce supporting technology (browser extension, stand-alone software, etc.)</li>
                     <li>Develop or produce an authoring tool to support the new attributes</li>
-                    <li>Produce a symbol set for <code>data-symbol</code></li>
+                    <li>Produce a symbol set for <code>adapt-symbol</code></li>
                 </ul>
                 <p>We encourage a the development of these items and a list of implementations can be found on <a href="https://github.com/w3c/adapt/wiki">our wiki</a>.</p>
             </section>
@@ -254,10 +254,10 @@ will include use cases and vocabularies. At this time only one specification mod
             <p>At the present stage of development, the WAI-Adapt vocabulary can be used in HTML content using <a href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes">data-* attributes</a> [[html5]]. Attributes in this form can be used in valid HTML to implement features recognized by browser extensions or other special processors. WAI-Adapt is using this approach to gain early implementation experience of the features in a way that is simple and likely to be accepted within the web ecosystem as an interim approach.</p>
             <p>This publication of the WAI-Adapt provides several <em>key-value pairs</em> (attribute = value). These attributes include but are not limted to:</p>
             <ul>
-                <li><a href="content/#action-explanation">data-action</a></li>
-                <li><a href="content/#destination-explanation">data-destination</a></li>
-                <li><a href="content/#purpose-explanation">data-purpose</a></li>
-                <li><a href="content/#symbol-explanation">data-symbol</a></li>
+                <li><a href="content/#action-explanation">adapt-action</a></li>
+                <li><a href="content/#destination-explanation">adapt-destination</a></li>
+                <li><a href="content/#purpose-explanation">adapt-purpose</a></li>
+                <li><a href="content/#symbol-explanation">adapt-symbol</a></li>
             </ul>
             <p>Other properties exist or will be developed as the modules mature. See the discussion <a href="https://github.com/w3c/adapt/wiki/Prototypes-with-data-dash-*-(Take-2)">Prototypes with data dash</a>.</p>
             <div class="ednote"><p>The WAI-Adapt specification currently defines and relies on multiple entity attributes
