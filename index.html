@@ -81,7 +81,7 @@
 
 				<div  class="example"><p>Example: The user wants to get the latest weather report for their city and goes to a weather website.</p>
 				<p>Finding the actual weather forecast is actually a little challenging even if you have no disabilities due to all the additional content on the screen; along with advertisements, there is also the day's top stories, trending news, and social media to cognitively filter. If you are easily overwhelmed or distracted getting the key information about today's weather is a challenge. Having the ability to personalize and prioritize all but the key information (i.e. just the weather forecast for my city) is critical for this user.</p></div>
-				<p>In this example, the author can mark the <code>&lt;section&gt;</code>, <code>&lt;p&gt;</code>, or <code>&lt;div&gt;</code> that contains the actual weather report and any associated tools to manipulate the weather report (i.e. city search, hourly vs. 5 day forecast, etc.) with the <code>data-simplification</code> attribute (with a value of "critical"), and mark the other on-screen content as "medium" (default) or "low". (e.g. <code>&lt;p data-simplification="critical"&gt;</code><em>Today’s forecast is a high of 95&#176; and a low of 40&#176;</em><code>&lt;/p&gt;</code>)
+				<p>In this example, the author can mark the <code>&lt;section&gt;</code>, <code>&lt;p&gt;</code>, or <code>&lt;div&gt;</code> that contains the actual weather report and any associated tools to manipulate the weather report (i.e. city search, hourly vs. 5 day forecast, etc.) with the <code>data-simplification</code> attribute (with a value of "critical"), and mark the other on-screen content as "medium" (default) or "low". (e.g. <code>&lt;p adapt-simplification="critical"&gt;</code><em>Today’s forecast is a high of 95&#176; and a low of 40&#176;</em><code>&lt;/p&gt;</code>)
 
 				<p>For websites which rely on advertising revenue, it may be undesirable to completely suppress advertisements. We envision that this attribute could also facilitate relocating the most critical sections of a website above anything that is a lower priority. (i.e. Content re-ordering)</p>
 			</section>
@@ -115,7 +115,7 @@
 				<p>Those who have a moderate Language Impairment / Learning Disability may have a limited vocabulary. They will only know terms that are in the core vocabulary they have learned. They may also use symbols to represent words and concepts.</p>
 
 				<div class="example"><p>Example: The user may know the word "name" or "last name" but not recognize the term "family name" or "surname" as cognates.</p><p> For some users, learning new terms is a very slow process, requiring hours of work. For these users, reading web content may also be a very slow process, so that finding the information desired on some particular web page can present a laborious barrier. The ability to personalize a web page and present symbols instead, or alongside content can help some users better and more promptly understand the content being provided</p></div>
-				<p>Note that some people with language disabilities are good at numbers. They will want a long string of text replaced with a short number: <code>&lt;span <strong>data-easylang="90% of the time this happens"</strong>&gt; normally this is the expected outcome&lt;/span&gt;</code>. This is the opposite of the numberfree example.</p>
+				<p>Note that some people with language disabilities are good at numbers. They will want a long string of text replaced with a short number: <code>&lt;span <strong>adapt-easylang="90% of the time this happens"</strong>&gt; normally this is the expected outcome&lt;/span&gt;</code>. This is the opposite of the numberfree example.</p>
 
 				<p>Additionally, because reading content for some users is extremely time-consuming, they may also want less content and fewer features on a given web page.<p>
 			</section>
@@ -134,8 +134,8 @@
 			<div class="example"><p>Example: Using the <code>data-symbol</code> attribute, an author programmatically tags the label for a form input with the appropriate symbol value. Based on user preference settings, a browser helper application or stand-alone tool could then render that label using an appropriate symbol, alternative term, and/or furnishes an additional tool-tip that is understandable by the individual user. Using the <a href="https://www.blissymbolics.org/">Bliss Symbolics</a> set's unique reference numbers as our 'taxonomy', other symbol sets can map their equivalent symbols against the Bliss set.</p>
 
 			<code>
-			&lt;label for="bar" <strong>data-symbol="14885"</strong>&gt;Your Principle Residence&lt;/label&gt; <br>
-			&lt;input type="textarea" id="bar" name="address" data-purpose="street-address"&gt;
+			&lt;label for="bar" <strong>adapt-symbol="14885"</strong>&gt;Your Principle Residence&lt;/label&gt; <br>
+			&lt;input type="textarea" id="bar" name="address" adapt-purpose="street-address"&gt;
 			</code>	
 			<p>Where the symbol value 14855 maps back to "Home".</p>
 			</div>
