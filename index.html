@@ -99,7 +99,7 @@ dd{margin-left:0}
 </style>
 		
 		
-	
+
 		
 <link href="common/css/common.css" rel="stylesheet" type="text/css">
 	
@@ -170,15 +170,15 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   ],
   "group": "apa",
   "github": "w3c/adapt",
-  "publishISODate": "2022-10-31T00:00:00.000Z",
-  "generatedSubtitle": "W3C Editor's Draft 31 October 2022"
+  "publishISODate": "2022-11-01T00:00:00.000Z",
+  "generatedSubtitle": "W3C Editor's Draft 01 November 2022"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED"></head>
 	<body class="h-entry informative"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">WAI-Adapt Explainer</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2022-10-31">31 October 2022</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2022-11-01">01 November 2022</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
@@ -297,15 +297,15 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 			</li></ul>
 			<p>Personalization involves tailoring aspects of the user experience to meet the preferences or needs of individual users. For example, having familiar terms and symbols is critical for effective use of web content for many as described in the user scenarios and use cases published in the <a href="https://www.w3.org/TR/coga-usable/">Making Content Usable (for COGA people)</a>. However what is familiar to one user will inevitably be new and foreign to another. Personalization based on WAI-Adapt AAC symbol support technologies supports loading a set of symbols that is appropriate for the specific user, ensuring that each user is presented with familiar symbols.</p>
 			<p>Technology holds the promise of being extremely flexible and the design of many systems includes the expectation that users can optimize their interaction experience according to their personal preferences or accessibility needs. </p>
-			
+
 			<section class="section" id="why_accessibility"><div class="header-wrapper"><h3 id="x1-1-why-we-need-wai-adapt"><bdi class="secno">1.1 </bdi>Why We Need WAI-Adapt</h3><a class="self-link" href="#why_accessibility" aria-label="Permalink for Section 1.1"></a></div>
 				
 				<p>WAI-Adapt will allow assitive technology to: </p>
 				<ol>
 					<li>adapt to and meet the user's needs. Users who have difficulty with established, mainstream patterns can interact with interfaces modified to their preferences and abilities. </li>
 					<li>modify levels of complexity as people's skills improve or decline over time. For example, extra support may be critical for some people but distracting for others.</li>
-	
-					<li>provide better support to users who require: 				
+
+					<li>provide better support to users who require:
 					<ul>
 						<li>familiar and consistent symbols, iconography, and graphics </li>
 						<li>tooltips or similar on-demand help or clues</li>
@@ -330,7 +330,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 			<section id="use-case-examples"><div class="header-wrapper"><h3 id="x1-2-use-case-examples"><bdi class="secno">1.2 </bdi>Use Case Examples</h3><a class="self-link" href="#use-case-examples" aria-label="Permalink for Section 1.2"></a></div>
 			
 				<p><a href="requirements/">Requirements for WAI-Adapt</a> elaborates many use cases that further contextualize the above summary of user needs. These example use cases form the basis of requirements for this technology. WAI-Adapt enables developers to create targeted extensions as additional use cases are encountered.</p>
-				
+
                 <p>Examples</p>
                 <ul>
                 	<li><a href="#distracted">Easily Distracted / Overwhelmed</a></li>
@@ -345,11 +345,11 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
 				<div class="example"><p>Example: The user wants to get the latest weather report for their city and goes to a weather website.</p>
 				<p>Finding the actual weather forecast is actually a little challenging even if you have no disabilities due to all the additional content on the screen; along with advertisements, there is also the day's top stories, trending news, and social media to cognitively filter. If you are easily overwhelmed or distracted getting the key information about today's weather is a challenge. Having the ability to personalize and prioritize all but the key information (i.e. just the weather forecast for my city) is critical for this user.</p></div>
-				<p>In this example, the author can mark the <code>&lt;section&gt;</code>, <code>&lt;p&gt;</code>, or <code>&lt;div&gt;</code> that contains the actual weather report and any associated tools to manipulate the weather report (i.e. city search, hourly vs. 5 day forecast, etc.) with the <code>data-simplification</code> attribute (with a value of "critical"), and mark the other on-screen content as "medium" (default) or "low". (e.g. <code>&lt;p data-simplification="critical"&gt;</code><em>Today’s forecast is a high of 95° and a low of 40°</em><code>&lt;/p&gt;</code>)
+				<p>In this example, the author can mark the <code>&lt;section&gt;</code>, <code>&lt;p&gt;</code>, or <code>&lt;div&gt;</code> that contains the actual weather report and any associated tools to manipulate the weather report (i.e. city search, hourly vs. 5 day forecast, etc.) with the <code>adapt-simplification</code> attribute (with a value of "critical"), and mark the other on-screen content as "medium" (default) or "low". (e.g. <code>&lt;p adapt-simplification="critical"&gt;</code><em>Today’s forecast is a high of 95° and a low of 40°</em><code>&lt;/p&gt;</code>)
 
 				</p><p>For websites which rely on advertising revenue, it may be undesirable to completely suppress advertisements. We envision that this attribute could also facilitate relocating the most critical sections of a website above anything that is a lower priority. (i.e. Content re-ordering)</p>
 			</section>
-				
+
 			<p>WAI-Adapt recognizes that appropriate simplification will often be task determined. A complex page will often support multiple tasks each of which could be critical to the user requiring simplification at different times. We propose to investigate how we might  facilitate users defining what task is critical to them in the moment rather than pre-determining what is primary or secondary in advance.</p>
 
 			<section class="section" id="difficulty_numbers"><div class="header-wrapper"><h4 id="x1-2-2-difficulty-understanding-numbers"><bdi class="secno">1.2.2 </bdi>Difficulty Understanding Numbers</h4><a class="self-link" href="#difficulty_numbers" aria-label="Permalink for Section 1.2.2"></a></div>
@@ -369,21 +369,21 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 				</ul>
 				<p>Next to the humidity index of 90%, there could be a text alternative of “muggy”.</p>
 				</div>
-				<p>In this example, the author would mark up the numbers using the <code>data-numberfree</code> attribute. The default would show the numeric value. Those needing an alternative representation for numbers, would get an associated image or description/values as simplified text instead.</p>
+				<p>In this example, the author would mark up the numbers using the <code>adapt-numberfree</code> attribute. The default would show the numeric value. Those needing an alternative representation for numbers, would get an associated image or description/values as simplified text instead.</p>
 
 				<p>It is important to note that people with dyscalculia are often very good with words, so long text can be better than short numbers.</p>
 			</section>
-			
+
 			<section class="section" id="learning_disability"><div class="header-wrapper"><h4 id="x1-2-3-mild-moderate-language-impairment-learning-disability"><bdi class="secno">1.2.3 </bdi>Mild-Moderate Language Impairment / Learning Disability</h4><a class="self-link" href="#learning_disability" aria-label="Permalink for Section 1.2.3"></a></div>
 			
 				<p>Those who have a moderate Language Impairment / Learning Disability may have a limited vocabulary. They will only know terms that are in the core vocabulary they have learned. They may also use symbols to represent words and concepts.</p>
 
 				<div class="example"><p>Example: The user may know the word "name" or "last name" but not recognize the term "family name" or "surname" as cognates.</p><p> For some users, learning new terms is a very slow process, requiring hours of work. For these users, reading web content may also be a very slow process, so that finding the information desired on some particular web page can present a laborious barrier. The ability to personalize a web page and present symbols instead, or alongside content can help some users better and more promptly understand the content being provided</p></div>
-				<p>Note that some people with language disabilities are good at numbers. They will want a long string of text replaced with a short number: <code>&lt;span <strong>data-easylang="90% of the time this happens"</strong>&gt; normally this is the expected outcome&lt;/span&gt;</code>. This is the opposite of the numberfree example.</p>
+				<p>Note that some people with language disabilities are good at numbers. They will want a long string of text replaced with a short number: <code>&lt;span <strong>adapt-easylang="90% of the time this happens"</strong>&gt; normally this is the expected outcome&lt;/span&gt;</code>. This is the opposite of the numberfree example.</p>
 
 				<p>Additionally, because reading content for some users is extremely time-consuming, they may also want less content and fewer features on a given web page.</p><p>
 			</p></section>
-			
+
 			<section class="section" id="language_impairment"><div class="header-wrapper"><h4 id="x1-2-4-severe-language-impairment"><bdi class="secno">1.2.4 </bdi>Severe Language Impairment</h4><a class="self-link" href="#language_impairment" aria-label="Permalink for Section 1.2.4"></a></div>
 			
 			<p>Some users with a severe speech and/or physical impairment may communicate using symbols, rather than written text, as part of an Augmentative and Alternative Communication (AAC) system. The use of symbols to represent words is their primary means of communication when both consuming and producing information. Symbol users face a wide variety of barriers to accessing web content, but one of the main challenges is a lack of standard inter-operability between different proprietary symbol sets, or a mechanism for translating the same concept from one symbol set to another.</p>
@@ -395,17 +395,17 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 			<li>People who know different symbol sets wish to talk to each other.</li>
 			<li>A government agency creating information sheets about human rights and patient rights are seeking feedback from impacted users. They add symbols from a common symbol set to support a majority of different users. The agency would prefer to use a common symbol reference to support people who use or require different symbols. This allows all symbol set users to both read and edit the content.	</li>
 			</ul>
-			<div class="example"><p>Example: Using the <code>data-symbol</code> attribute, an author programmatically tags the label for a form input with the appropriate symbol value. Based on user preference settings, a browser helper application or stand-alone tool could then render that label using an appropriate symbol, alternative term, and/or furnishes an additional tool-tip that is understandable by the individual user. Using the <a href="https://www.blissymbolics.org/">Bliss Symbolics</a> set's unique reference numbers as our 'taxonomy', other symbol sets can map their equivalent symbols against the Bliss set.</p>
+			<div class="example"><p>Example: Using the <code>adapt-symbol</code> attribute, an author programmatically tags the label for a form input with the appropriate symbol value. Based on user preference settings, a browser helper application or stand-alone tool could then render that label using an appropriate symbol, alternative term, and/or furnishes an additional tool-tip that is understandable by the individual user. Using the <a href="https://www.blissymbolics.org/">Bliss Symbolics</a> set's unique reference numbers as our 'taxonomy', other symbol sets can map their equivalent symbols against the Bliss set.</p>
 
 			<code>
-			&lt;label for="bar" <strong>data-symbol="14885"</strong>&gt;Your Principle Residence&lt;/label&gt; <br>
-			&lt;input type="textarea" id="bar" name="address" data-purpose="street-address"&gt;
-			</code>	
+			&lt;label for="bar" <strong>adapt-symbol="14885"</strong>&gt;Your Principle Residence&lt;/label&gt; <br>
+			&lt;input type="textarea" id="bar" name="address" adapt-purpose="street-address"&gt;
+			</code>
 			<p>Where the symbol value 14855 maps back to "Home".</p>
 			</div>
 <section id="proof-of-concept-symbol-example"><div class="header-wrapper"><h5 id="x1-2-4-1-proof-of-concept-symbol-example"><bdi class="secno">1.2.4.1 </bdi>Proof of Concept: Symbol Example</h5><a class="self-link" href="#proof-of-concept-symbol-example" aria-label="Permalink for Section 1.2.4.1"></a></div>
-<p>In the screen shots below, a browser extension uses the <code>data-symbol</code> attribute to load symbols that are familiar to the user.</p>	
-				<p>Note that users learn a specific symbol vocabulary. However, the various symbol vocabularies are mutually unintelligible: users familiar with one set of symbols may not be familiar with or understand an alternative set. WAI-Adapt's <code>data-symbol</code> attribute offers a mechanism to translate between symbol sets, to allow people to communicate with one another where it was previously not possible.</p>	
+<p>In the screen shots below, a browser extension uses the <code>adapt-symbol</code> attribute to load symbols that are familiar to the user.</p>
+				<p>Note that users learn a specific symbol vocabulary. However, the various symbol vocabularies are mutually unintelligible: users familiar with one set of symbols may not be familiar with or understand an alternative set. WAI-Adapt's <code>adapt-symbol</code> attribute offers a mechanism to translate between symbol sets, to allow people to communicate with one another where it was previously not possible.</p>
 
 			<figure id="fig-the-original-page">
 				<img src="downloaded-assets/user-images.githubusercontent.com/8376341/79741687-5b20a880-830a-11ea-814d-97ed7132d7d1.png" alt="screen shot, no symbols" style="height:95%; width:95%" height="560" width="1199">
@@ -420,7 +420,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 				<figcaption>Figure <bdi class="figno">3</bdi> <span class="fig-title">The same page loaded, but the user-agent has removed content and added different symbols that this user is more familiar with</span></figcaption>
 			</figure>
 		</section></section>
-		
+
 		<section class="section" id="memory_impairment"><div class="header-wrapper"><h4 id="x1-2-5-working-memory-and-short-term-memory-impairment"><bdi class="secno">1.2.5 </bdi>Working Memory and Short-term Memory Impairment</h4><a class="self-link" href="#memory_impairment" aria-label="Permalink for Section 1.2.5"></a></div>
 			
 			<p>Users may have differences in both working and short-term memory.  For some users the number of items that can be held in working memory is a fraction of the amound most users can hold in memory. Whereas most adults can repeat about seven digits in correct order, some users may only manage two or three digits. When these users become distracted, they are also likely to forget any information in their working memory.</p>
@@ -429,10 +429,10 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
 			<p>A step indicator allows an author to define steps within a process or represent an entire user path outside of the context of a defined process. This includes turning steps between defined processes into breadcrumbs or linked steps that identify completed tasks. This allows the user to navigate back to completed steps and identify a user's current location in a path.</p>
 
-			<p>More information on personas and user needs can be found in  <a href="https://www.w3.org/TR/coga-usable/" rel="nofollow">Making Content Usable for People with Cognitive and Learning Disabilities</a>.</p> 
+			<p>More information on personas and user needs can be found in  <a href="https://www.w3.org/TR/coga-usable/" rel="nofollow">Making Content Usable for People with Cognitive and Learning Disabilities</a>.</p>
 		</section>
 	</section>
-            
+
             <section id="out-of-scope"><div class="header-wrapper"><h3 id="x1-3-out-of-scope"><bdi class="secno">1.3 </bdi>Out of Scope</h3><a class="self-link" href="#out-of-scope" aria-label="Permalink for Section 1.3"></a></div>
             
                 <p>While the intention of this work is to introduce a new set of attributes to support WAI-Adapt, the following work items are out of scope:</p>
@@ -440,12 +440,12 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                     <li>Develop an API for browsers or other user-agents</li>
                     <li>Develop or produce supporting technology (browser extension, stand-alone software, etc.)</li>
                     <li>Develop or produce an authoring tool to support the new attributes</li>
-                    <li>Produce a symbol set for <code>data-symbol</code></li>
+                    <li>Produce a symbol set for <code>adapt-symbol</code></li>
                 </ul>
                 <p>We encourage a the development of these items and a list of implementations can be found on <a href="https://github.com/w3c/adapt/wiki">our wiki</a>.</p>
             </section>
-            
-           
+
+
 		</section>
 
 		<section id="modules"><div class="header-wrapper"><h2 id="x2-modules"><bdi class="secno">2. </bdi>Modules</h2><a class="self-link" href="#modules" aria-label="Permalink for Section 2."></a></div>
@@ -460,15 +460,15 @@ will include use cases and vocabularies. At this time only one specification mod
 
 				<ul><li>
 					<p>Use-cases and vocabularies for identifying the purpose of controls, symbols and user interface elements, and supports simplification and avoiding distractions.</p></li>
-				
+
 					<li><a href="help/index.html">WAI-Adapt: Help and Support Module:</a>
 					<p>The first working draft of this module is now available.</p>
 					<p>This module addresses adding information about the content to enable help scaffolding and additional support for different user scenarios.</p></li>
-				
+
 					<li><a href="tools/index.html">WAI-Adapt: Tools Module:</a>
 					<p>The first working draft of this module is now available.</p>
 					<p>This module addresses adding information about the content to enable user-agents and extensions to provide additional support to the user. One example is adaptable breadcrumbs.</p></li>
-				
+
 				</ul>
 		</section>
 
@@ -501,7 +501,7 @@ will include use cases and vocabularies. At this time only one specification mod
 					<dd>A Uniform Resource Identifier as defined by <cite><a href="http://www.ietf.org/rfc/rfc3986.txt">RFC 3986</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3986" title="Uniform Resource Identifier (URI): Generic Syntax">RFC3986</a></cite>]. It may reference a separate document, or a content fragment identifier in a separate document, or a content fragment identifier within the same document.</dd>
 				</dl>
 				<div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="4"><span>Note</span></div><div class="">The attributes and values in this specification are not intended to overide the semantics exposed in the Accessibility Tree, but rather augment them. In the case of conflict between an element's semantics and the attribute values, validation algorithms should issue a warning but not an error.</div></div>
-				
+
 			</section>
 		</section>
 
@@ -514,22 +514,19 @@ will include use cases and vocabularies. At this time only one specification mod
 			
 			<section class="section" id="current-usage"><div class="header-wrapper"><h3 id="x4-1-current-usage"><bdi class="secno">4.1 </bdi>Current Usage</h3><a class="self-link" href="#current-usage" aria-label="Permalink for Section 4.1"></a></div>
 			
- 
-            <p>At the present stage of development, the WAI-Adapt vocabulary can be used in HTML content using <a href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes">data-* attributes</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-html5" title="HTML5">html5</a></cite>]. Attributes in this form can be used in valid HTML to implement features recognized by browser extensions or other special processors. WAI-Adapt is using this approach to gain early implementation experience of the features in a way that is simple and likely to be accepted within the web ecosystem as an interim approach.</p>
+
             <p>This publication of the WAI-Adapt provides several <em>key-value pairs</em> (attribute = value). These attributes include but are not limted to:</p>
             <ul>
-                <li><a href="content/#action-explanation">data-action</a></li>
-                <li><a href="content/#destination-explanation">data-destination</a></li>
-                <li><a href="content/#purpose-explanation">data-purpose</a></li>
-                <li><a href="content/#symbol-explanation">data-symbol</a></li>
+                <li><a href="content/#action-explanation">adapt-action</a></li>
+                <li><a href="content/#destination-explanation">adapt-destination</a></li>
+                <li><a href="content/#purpose-explanation">adapt-purpose</a></li>
+                <li><a href="content/#symbol-explanation">adapt-symbol</a></li>
             </ul>
-            <p>Other properties exist or will be developed as the modules mature. See the discussion <a href="https://github.com/w3c/adapt/wiki/Prototypes-with-data-dash-*-(Take-2)">Prototypes with data dash</a>.</p>
-            <div class="note" id="issue-container-generatedID-0"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="4"><span>Editor's note</span></div><div class=""><p>The WAI-Adapt specification currently defines and relies on multiple entity attributes
-constructed according to the requirements of Sec. 3.2.6.6 of the HTML Specification, <a href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes"> Embedding custom non visible data with the data-* attributes</a> and by express request of <abbr title="World Wide Web Consortium">W3C</abbr>'s Technical Advisory Group (TAG). The HTML data- attribute syntax is not intended to be used for long-term wide-scale features. The task force is using this approach at the moment to gain implementation experience and demonstrate the usefulness of WAI-Adapt in practice.</p><p>Implementers are cautioned that the "data-" prefix will be removed or replaced for some or all attribute values in succeeding iterations of this specification following additional consideration in <abbr title="World Wide Web Consortium">W3C</abbr> and the WHATWG.</p></div></div>
+            <p>Other properties exist or will be developed as the modules mature.</p>
 			</section>
 			<section class="section" id="technology-comparison-summary"><div class="header-wrapper"><h3 id="x4-2-technology-comparison-summary"><bdi class="secno">4.2 </bdi>Technology Comparison Summary</h3><a class="self-link" href="#technology-comparison-summary" aria-label="Permalink for Section 4.2"></a></div>
                 
-                <p>The task force reviewed various vocabulary options before deciding upon the use of the data- HTML attribute syntax.  The list of technologies included:</p>
+                <p>The task force reviewed various vocabulary options before deciding upon the use of the HTML attribute syntax.  The list of technologies included:</p>
                 <ul>
                     <li><a href="https://www.w3.org/TR/rdfa-lite/">RDFa Lite</a></li>
                     <li><a href="https://www.w3.org/TR/microdata/">HTML Microdata</a></li>
@@ -559,8 +556,7 @@ constructed according to the requirements of Sec. 3.2.6.6 of the HTML Specificat
 				</dl>
 
                 <p>The details of our research and discussion are documented on the <a href="https://github.com/w3c/adapt/wiki/Comparison-of-ways-to-use-vocabulary-in-content">Comparison of ways to use vocabulary in content</a> and <a href="https://github.com/w3c/adapt/wiki/Prototypes-with-data-dash-*-(Take-2)">Prototypes with data dash</a> pages in our Wiki. </p>
-                <p>We presented some of these options at the TPAC 2018 WAI-Adapt Plenary Day presentation and provided a working example using the data- attribute to add WAI-Adapt features. The data- solution was recommended by representatives of several working groups attending our presentation and discussions. See the <a href="https://w3c.github.io/adapt/#vocabulary-implementations">Vocabulary Implementations section in this Explainer document</a> for further details on the use of data- attributes.</p>
-                
+
             </section></section>
 		</section>
         <section id="stakeholders"><div class="header-wrapper"><h2 id="x5-stakeholders"><bdi class="secno">5. </bdi>Stakeholders</h2><a class="self-link" href="#stakeholders" aria-label="Permalink for Section 5."></a></div>
@@ -576,10 +572,10 @@ constructed according to the requirements of Sec. 3.2.6.6 of the HTML Specificat
                 <li>Students who wish to develop a new software project that meets a real need</li>
                 <li>Policy makers who want to understand what is possible for inclusion</li>
             </ul>
-        
+
         <p>For early implementations of content we suggest including a link to an <a href="https://github.com/w3c/adapt/wiki/Implementations-of-Semantics">extension implementation</a> that can maximize the benefit for users.</p>
-         </section>   
-        
+         </section>
+
 		
 		<section class="appendix informative section" id="acknowledgements"><div class="header-wrapper"><h2 id="a-acknowledgments"><bdi class="secno">A. </bdi>Acknowledgments</h2><a class="self-link" href="#acknowledgements" aria-label="Permalink for Appendix A."></a></div><p><em>This section is non-normative.</em></p>
 	
@@ -620,9 +616,7 @@ constructed according to the requirements of Sec. 3.2.6.6 of the HTML Specificat
 
 <section id="references" class="appendix"><div class="header-wrapper"><h2 id="b-references"><bdi class="secno">B. </bdi>References</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix B."></a></div><section id="informative-references"><div class="header-wrapper"><h3 id="b-1-informative-references"><bdi class="secno">B.1 </bdi>Informative references</h3><a class="self-link" href="#informative-references" aria-label="Permalink for Appendix B.1"></a></div>
     
-    <dl class="bibliography"><dt id="bib-html5">[html5]</dt><dd>
-      <a href="https://www.w3.org/TR/html5/"><cite>HTML5</cite></a>. Ian Hickson; Robin Berjon; Steve Faulkner; Travis Leithead; Erika Doyle Navara; Theresa O'Connor; Silvia Pfeiffer.  W3C. 27 March 2018. W3C Recommendation. URL: <a href="https://www.w3.org/TR/html5/">https://www.w3.org/TR/html5/</a>
-    </dd><dt id="bib-rfc3986">[RFC3986]</dt><dd>
+    <dl class="bibliography"><dt id="bib-rfc3986">[RFC3986]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc3986"><cite>Uniform Resource Identifier (URI): Generic Syntax</cite></a>. T. Berners-Lee; R. Fielding; L. Masinter.  IETF. January 2005. Internet Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc3986">https://www.rfc-editor.org/rfc/rfc3986</a>
     </dd></dl>
   </section></section><p role="navigation" id="back-to-top">
