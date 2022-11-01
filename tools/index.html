@@ -21,10 +21,10 @@
 					<ul>
 						<li>may get overwhelmed with the volume of on-screen messages, and wishes to filter out low priority messages and concentrate on critical priority messages;</li>
 						<li>need to remember completed tasks in order to identify their location in a process.</li>
-						
+
 					</ul>
 			<p>The technology described in this specification is intended to be used to programmatically transform the appearance of typical web content including form controls, icons, and other user interface elements	into a rendering more familiar and comprehensible to an individual user. Use cases and relevant vocabulary terms are defined which allow user agents to augment or adapt content to better fit a particular user's particular needs. This helps users with varying needs to understand web content more readily, by simplifying the web interaction, or by avoiding forcing the user to grapple with unfamiliar representations they are ill equipped to comprehend.</p>
-			
+
 			<p>This WAI-Adapt: Tools Module is a component of the WAI-Adapt series introduced in the <a href="../">WAI-Adapt Explainer</a> document [[personalization-semantics-1.0]].</p>
 		</section>
 
@@ -35,10 +35,8 @@
 			<section id="background">
 				<h2>Background</h2>
 				<p>This specification module enables authors to add semantic information about content at the element level, in order to indicate the priority level of a message for the individual user, or programmatically enumerate tasks that the user is required to complete, so that users who have memory issues can keep track of the steps previously completed. It is anticipated that multiple screen renderings (transformations) will be supported in order to meet the differing needs of different users. Final renderings &mdash; generated via helper apps or 3rd-party tools &mdash; will be ultimately defined by the user's configuration settings.</p>
-				
+
 				<p>This document lists examples of the personalized tools properties, an extension of <a href="../">WAI-Adapt Explainer</a>, including the properties of <code>messageimportance</code>, <code>messagefrom</code>, <code>messagecontext</code>, <code>messagetime</code>,	and <code>stepindicator</code>. </p>
-				
-				<p class="ednote" id="examples-disclaimer">WAI-Adapt defines a set of properties and values to annotate content. The specific mechanism to apply these properties to content and semantics has not been decided. <a href="https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content">Several approaches are under consideration</a> and future drafts will show progress. To help understand the proposed properties, this document provides many examples of WAI-Adapt applied to content, which show attributes beginning with the prefix "data-". <em>This prefix has not been decided on as the definitive approach</em>, but is used as a way to illustrate the examples.</p>
 			</section>
 			<section id="module">
 				<h2>WAI-Adapt: Tools Module</h2>
@@ -53,7 +51,7 @@
 				<p>Properties are the main units of WAI-Adapt types supported by the vocabulary. A given property supports a specific type of WAI-Adapt. That property would only be used once on a given piece of content, but multiple different properties could be used on the same piece of content to address different needs.</p>
 				</section>
 				<section id="propcharacteristic_value">
-				<h3 id="vocabulary_values">Values</h3> 
+				<h3 id="vocabulary_values">Values</h3>
 				<p>Values provide the specific personalization information for the property. The possible values for each property are elaborated in the definition of the property in the modules. Some properties require the value to come from a predefined list of possible values, others can accept arbitrary strings, and some may accept multiple values. The attribute value may be one of the following types:</p>
 				<dl>
 					<dt id="valuetype_idref">ID reference</dt>
@@ -76,7 +74,7 @@
 				</section>
 				<p><strong>Note that the attributes and values in this specification do not overide the semantics exposed in the accessibility tree, but rather augment them.</strong> In the case of conflict between an element's semantics and the attribute values, validation algorithms should issue a warning but not an error.</p>
 				 <div class="ednote">Since implementations have not yet been finalized, any examples in this document are illustrative only, and are provided to help in understanding the concept.  All examples will be updated once implementation examples are finalized.</div>
-			</section>		
+			</section>
 			<section id="usecases">
 				<h2>Use Cases and Requirements</h2>
 				<p>The <a href="https://github.com/w3c/personalization-semantics/wiki/Requirements">Requirements for Personalization Semantics</a> describes use cases and requirements. This module provides properties to fulfill requirements related to user support tools.</p>
@@ -88,8 +86,8 @@
 		</section>
 		<section id="vocabulary">
 			<h1>Vocabulary</h1>
-			<section data-include="log.html" data-include-replace="true" id="log"></section>	
-			<section data-include="message.html" data-include-replace="true" id="message"></section>		
+			<section data-include="log.html" data-include-replace="true" id="log"></section>
+			<section data-include="message.html" data-include-replace="true" id="message"></section>
 		</section>
 		<section id="privacy">
 			<h1>Privacy and Security Considerations</h1>
