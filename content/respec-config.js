@@ -15,7 +15,7 @@ var respecConfig = {
     //diffTool:             "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
 
     // the specifications short name, as in http://www.w3.org/TR/short-name/
-    shortName:            "adapt-content",
+    shortName:            "adapt-symbols",
 
 
     // if you wish the publication date to be other than today, set this
@@ -31,7 +31,7 @@ var respecConfig = {
     //previousDiffURI: "",
 
     // if there a publicly available Editors Draft, this is the link
-    edDraftURI: "https://w3c.github.io/adapt/content/",
+    edDraftURI: "https://w3c.github.io/adapt/symbols/",
 
     // if this is a LCWD, uncomment and set the end of its review period
     // lcEnd: "2012-02-21",
