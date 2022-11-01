@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>WAI-Adapt: Content Module</title>
+		<title>WAI-Adapt: Symbols Module</title>
 		<meta charset="utf-8"/>
 		<script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove"></script>
 		<script src="../common/biblio.js" class="remove"></script>
@@ -29,7 +29,7 @@
 					</ul>
 
 					<p>The technology described in this specification is intended to be used to programmatically transform the appearance of typical web content including form controls, icons, and other user interface elements	into a rendering incorporating an individual user's preferred AAC symbols. The W3C <a href="https://w3c.github.io/adapt-registry/">WAI-Adapt Symbols Registry</a> provides the required mappings between concept values used by content authors and the user's preferred AAC symbol set representation of that concept.</p>
-					                        <p>This WAI-Adapt: Content Module is a component of the WAI-Adapt series introduced in the <a href="https://www.w3.org/TR/adapt/">WAI-Adapt Explainer</a> document [[adapt]].</p>
+					                        <p>This WAI-Adapt: Symbols Module is a component of the WAI-Adapt series introduced in the <a href="https://www.w3.org/TR/adapt/">WAI-Adapt Explainer</a> document [[adapt]].</p>
 								                </section>
 
 		<section id="sotd"></section>
@@ -52,12 +52,12 @@
 				<p>WAI-Adapt is more fully introduced in our <a href="https://www.w3.org/TR/adapt/">WAI-Adapt Explainer</a> [[adapt]].</p>
 			</section>
 			<section>
-				<h2>WAI-Adapt: Content Module</h2>
-				<p>WAI-Adapt: Content Module is the first part of the WAI-Adapt technical specification, which provides WAI-Adapt and vocabularies that can be used to mark-up web content with additional semantic information, enabling user agents to augment or adapt content to various user-scenarios based on the user’s personalization settings or preferences. The Content Module enhances web content by providing additional information about form controls, buttons, links, and other user interface elements. User agents use these semantics to augment or adapt content to the user’s scenario &mdash; for example allowing for the conversion of text to symbols. This helps users with varying needs understand content better by providing support for simplification.</p>
+				<h2>WAI-Adapt: Symbols Module</h2>
+				<p>WAI-Adapt: Symbols Module is the first part of the WAI-Adapt technical specification, which provides WAI-Adapt and vocabularies that can be used to mark-up web content with additional semantic information, enabling user agents to augment or adapt content to various user-scenarios based on the user’s personalization settings or preferences. The Symbols Module allows authors to enhance web content by providing additional information about the meaning of specific parts of the content. User agents use these semantics to augment or adapt content to the user's preferred symbol set. This helps users with varying needs better understand the content.</p>
 			</section>
 			<section>
 				<h2>Vocabulary Structure and Implementations</h2>
-				<p>All the vocabulary in WAI-Adapt: Content Module is constructed of properties and their values. Please see our <a href="https://www.w3.org/TR/adapt/">WAI-Adapt Explainer</a>. </p>
+				<p>The vocabulary in WAI-Adapt: Symbols Module is constructed of properties and their values. Please see our <a href="https://www.w3.org/TR/adapt/">WAI-Adapt Explainer</a>. </p>
 				<p>The vocabulary implementation included in this module specification is available at our <a href="https://github.com/w3c/adapt/wiki/Implementations-of-Semantics">implementations wiki page</a>.</p>
 				<section id="properties">
 				<h3>Properties</h3>
@@ -99,7 +99,7 @@
 			<h1>Terms</h1>
 
 
-<!-- p>The Personalization Semantics Content Module uses term definitions from the Cognitive and Learning Disabilities Accessibility Task Force. See the <a href="https://www.w3.org/TR/coga-usable/#glossary">COGA Glossary</a>.</p -->
+<!-- p>The Personalization Semantics Symbols Module uses term definitions from the Cognitive and Learning Disabilities Accessibility Task Force. See the <a href="https://www.w3.org/TR/coga-usable/#glossary">COGA Glossary</a>.</p -->
 
 <p>This document uses a number of specific terms related to various cognitive disabilities and related user-needs. Those terms have been defined by the Cognitive and Learning Disabilities Accessibility Task Force. See the <a href="https://www.w3.org/TR/coga-usable/#glossary">COGA Glossary</a> for specific definitions.</p>
 
@@ -122,13 +122,13 @@
 				<p>Although this specification does not expose personal preferences and personal information, third party user agents or proxy server(s) acting upon our semantic information may need to store personal preferences on how to present content to a specific user. It is recommended that any user agent or proxy server implements best practices to protect all personal preferences and personal information.</p>
 
 <p>Any user agent with user settings are recommended to follow best practices to keep user information secure.</p>
-		<p>The Privacy and Security Considerations of WAI-Adapt: Content Module is also discussed at <a href="https://github.com/w3c/adapt/issues/131">issue #131</a>.</p>
+		<p>The Privacy and Security Considerations of WAI-Adapt: Symbols Module is also discussed at <a href="https://github.com/w3c/adapt/issues/131">issue #131</a>.</p>
 
 		</section>
 
 		<section class="appendix">
 			<h1>Candidate Recommendation Exit Criteria</h1>
-			<p>The WAI Adapt Content Module 1.0 specification consists of attributes that may be added to a page’s HTML at the website’s discretion. A user agent may take suitable rendering decisions based on these attributes.</p>
+			<p>The WAI Adapt Symbols Module 1.0 specification consists of attributes that may be added to a page’s HTML at the website’s discretion. A user agent may take suitable rendering decisions based on these attributes.</p>
 			<aside class="example" title="A browser extension for rendering symbols">
 				<p>A browser extension or stand-alone tool may have a mode that renders the appropriate symbol for an input label.</p>
 				<code>
@@ -143,7 +143,7 @@
 				<li><p>While the WAI-Adapt standard stipulates HTML value/attribute markup codes for use by page authors, implementations to meet exit criteria are focused on rendering of the markup.</p></li>
 				<li><p>For user agents (or extensions) rendering a given attribute, all values for that attribute must be supported.</p></li>
 				<li><p>The results of testing are made available in a separate <a href="
-					https://w3c.github.io/adapt/content/reports/">implementation report</a>.</p></li>
+					https://w3c.github.io/adapt/symbols/reports/">implementation report</a>.</p></li>
 			</ul>
 		</section>
 
