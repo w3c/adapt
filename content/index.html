@@ -14,12 +14,12 @@
 				padding: 0.3em;
 			}
 		</style>
-	
+
 	</head>
 	<body>
 
 		<section id="abstract">
-            
+
 
 		                        <p>This specification provides web content authors a standard approach to support web users who are persons with various cognitive and learning disabilities who:</p>
 
@@ -31,7 +31,7 @@
 					<p>The technology described in this specification is intended to be used to programmatically transform the appearance of typical web content including form controls, icons, and other user interface elements	into a rendering incorporating an individual user's preferred AAC symbols. The W3C <a href="https://w3c.github.io/adapt-registry/">WAI-Adapt Symbols Registry</a> provides the required mappings between concept values used by content authors and the user's preferred AAC symbol set representation of that concept.</p>
 					                        <p>This WAI-Adapt: Content Module is a component of the WAI-Adapt series introduced in the <a href="https://www.w3.org/TR/adapt/">WAI-Adapt Explainer</a> document [[adapt]].</p>
 								                </section>
-										 
+
 		<section id="sotd"></section>
 
 		<section class="informative" id="introduction">
@@ -40,7 +40,7 @@
 			<section>
 				<h2>Background</h2>
 				<p>This specification module enables authors to add semantic information about content at the element level, in order to facilitate a more familiar and comprehensible interface for the individual user who requires AAC symbols support. Final renderings &mdash; generated via helper apps or 3rd-party tools &mdash; are ultimately defined by the user's configuration settings.</p>
-				
+
 				<p>The goal of the attribute and values described in this specification is to enable personalized communication and web content interaction for the individual user. This specification includes facilities to:</p>
 
 				<ul>
@@ -58,16 +58,13 @@
 			<section>
 				<h2>Vocabulary Structure and Implementations</h2>
 				<p>All the vocabulary in WAI-Adapt: Content Module is constructed of properties and their values. Please see our <a href="https://www.w3.org/TR/adapt/">WAI-Adapt Explainer</a>. </p>
-				<div class="ednote"><p>WAI-Adapt module specifications currently define and relies on multiple entity attributes
-					constructed according to the requirements of Sec. 3.2.6.6 of the HTML Specification, <a
-					href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes"> Embedding custom non visible data with the data-* attributes</a> and by express request of W3C's Technical Advisory Group (TAG). The HTML data- attribute syntax is not intended to be used for long-term wide-scale features. The task force is using this approach at the moment to gain implementation experience and demonstrate the usefulness of WAI-Adapt in practice.</p><p>Implementers are cautioned that the "data-" prefix will be removed or replaced for some or all attribute values in succeeding iterations of this specification following additional consideration in W3C and the WHATWG.</p></div>
 				<p>The vocabulary implementation included in this module specification is available at our <a href="https://github.com/w3c/adapt/wiki/Implementations-of-Semantics">implementations wiki page</a>.</p>
 				<section id="properties">
 				<h3>Properties</h3>
 				<p>Properties are the main units of WAI-Adapt types supported by the vocabulary. A given property supports a specific type of personalization. That property would only be used once on a given piece of content, but multiple different properties could be used on the same piece of content to address different needs.</p>
 				</section>
 				<section id="propcharacteristic_value">
-				<h3 id="vocabulary_values">Values</h3> 
+				<h3 id="vocabulary_values">Values</h3>
 				<p>Values provide the specific WAI-Adapt information for the property. The possible values for each property are elaborated in the definition of the property in the modules. Some properties require the value to come from a predefined list of possible values, others can accept arbitrary strings, and some may accept multiple values. The attribute value may be one of the following types:</p>
 				<dl>
 					<dt id="valuetype_idref">ID reference</dt>
@@ -87,11 +84,11 @@
 					<dt id="valuetype_uri">URI</dt>
 					<dd>A Uniform Resource Identifier as defined by <cite><a href="http://www.ietf.org/rfc/rfc3986.txt" id="bib-rfc3986">RFC 3986</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3986" title="Uniform Resource Identifier (URI): Generic Syntax">RFC3986</a></cite>] It may reference a separate document, or a content fragment identifier in a separate document, or a content fragment identifier within the same document.</dd>
 				</dl>
-				</section>				
+				</section>
 				<p><strong>Note that the attributes and values in this specification do not override the semantics exposed in the accessibility tree, but rather augment them.</strong> In the case of conflict between an element's semantics and the attribute values, validation algorithms should issue a warning but not an error.</p>
 				 <div class="note">Since implementations have not yet been finalized, any examples in this document are illustrative only, and are provided to help in understanding the concept.  All examples will be updated once implementation examples are finalized.</div>
 			</section>
-			
+
 			<section>
 				<h2>Use Cases and Requirements</h2>
 				<p>The <a href="https://www.w3.org/TR/adapt-requirements/">Requirements document for WAI-Adapt</a> describes use cases and requirements which, in turn, are derived from the user scenarios and use cases published in the W3C Note, <a href="https://www.w3.org/TR/coga-usable/">Making Content Usable (for COGA People). This specification module provides one key component to fulfill those requirements related to adapting content to support AAC symbols.</p>
@@ -100,7 +97,7 @@
 		</section>
 		<section>
 			<h1>Terms</h1>
-			
+
 
 <!-- p>The Personalization Semantics Content Module uses term definitions from the Cognitive and Learning Disabilities Accessibility Task Force. See the <a href="https://www.w3.org/TR/coga-usable/#glossary">COGA Glossary</a>.</p -->
 
@@ -115,29 +112,29 @@
 
 		<section>
 			<h1>Vocabulary</h1>
-            
-			<section data-include="symbol.html" data-include-replace="true" id="symbol"></section>		
+
+			<section data-include="symbol.html" data-include-replace="true" id="symbol"></section>
 		</section>
 		<section>
 			<h1>Privacy and Security Considerations</h1>
 				<p>This specification adds context information about content to the document, and should not affect security.</p>
 
 				<p>Although this specification does not expose personal preferences and personal information, third party user agents or proxy server(s) acting upon our semantic information may need to store personal preferences on how to present content to a specific user. It is recommended that any user agent or proxy server implements best practices to protect all personal preferences and personal information.</p>
-		
+
 <p>Any user agent with user settings are recommended to follow best practices to keep user information secure.</p>
 		<p>The Privacy and Security Considerations of WAI-Adapt: Content Module is also discussed at <a href="https://github.com/w3c/adapt/issues/131">issue #131</a>.</p>
-		
+
 		</section>
 
 		<section class="appendix">
 			<h1>Candidate Recommendation Exit Criteria</h1>
 			<p>The WAI Adapt Content Module 1.0 specification consists of attributes that may be added to a page’s HTML at the website’s discretion. A user agent may take suitable rendering decisions based on these attributes.</p>
 			<aside class="example" title="A browser extension for rendering symbols">
-				<p>A browser extension or stand-alone tool may have a mode that renders the appropriate symbol for an input label.</p> 
+				<p>A browser extension or stand-alone tool may have a mode that renders the appropriate symbol for an input label.</p>
 				<code>
 					&lt;label for="home" <strong>adapt-symbol="14885"</strong>&gt;Your Principle Residence&lt;/label&gt; <br>
 					&lt;input type="textarea" id="home" name="address" autocomplete="street-address"&gt;
-				</code>	
+				</code>
 				<p>Where the symbol value 14855 maps back to "Home".</p>
 			</aside>
 			<p>For the specification to exit Candidate Review status: for each attribute-value pair in the specification, at least two user agents (or extensions to existing user agents) react to the attribute in an identifiable manner which is suited to the semantics of the attribute.</p>
@@ -148,15 +145,12 @@
 				<li><p>The results of testing are made available in a separate <a href="
 					https://w3c.github.io/adapt/content/reports/">implementation report</a>.</p></li>
 			</ul>
-			<div class="ednote">
-				<p>As per the introductory section on <a href="#vocabulary-structure-and-implementations">Vocabulary Structure and Implementations</a>, with the publication of this Candidate Recommendation, the Working Group plans to document implementation of WAI-Adapt Content attributes using the <code>data-*</code> attribute syntax. Once implementability and usefulness is demonstrated, the WG will request a reserved prefix for HTML. It plans then to re-issue a Candidate Recommendation using the new attribute names. Implementations tested in the first CR will need to update the recognized attributes, and the stable attribute name will support new implementations.</p>
-			</div>
 		</section>
 
 
 		<div data-include="../common/acknowledgements.html" data-oninclude="fixIncludes" data-include-replace="true">Acknowledgements placeholder</div>
 
-		
+
 
 	</body>
 </html>
