@@ -32,8 +32,7 @@
 			<h1>Introduction</h1>
 			<section id="background">
 				<h2>Background</h2>
-			<p>This document lists examples of the personalized help and support properties, this is an extension of <a href="../">WAI-Adapt Explainer</a>, including the properties of <code>literal</code>, <code>numberfree</code>, <code>easylang</code>, <code>alternative</code>, <code>explain</code>, <code>feedback</code>, <code>moreinfo</code>, <code>extrahelp</code>, <code>helptype</code>. </p>	
-			<p class="ednote" id="examples-disclaimer">WAI-Adapt defines a set of properties and values to annotate content. The specific mechanism to apply these properties to content and semantics has not been decided. <a href="https://github.com/w3c/personalization-semantics/wiki/Comparison-of-ways-to-use-vocabulary-in-content">Several approaches are under consideration</a> and future drafts will show progress. To help understand the proposed properties, this document provides many examples of WAI-Adapt applied to content, which show attributes beginning with the prefix "data-". <em>This prefix has not been decided on as the definitive approach</em>, but is used as a way to illustrate the examples.</p>
+			<p>This document lists examples of the personalized help and support properties, this is an extension of <a href="../">WAI-Adapt Explainer</a>, including the properties of <code>literal</code>, <code>numberfree</code>, <code>easylang</code>, <code>alternative</code>, <code>explain</code>, <code>feedback</code>, <code>moreinfo</code>, <code>extrahelp</code>, <code>helptype</code>. </p>
 			</section>
 			<section id="module">
 				<h2>WAI-Adapt: Help and Support Module</h2>
@@ -48,7 +47,7 @@
 				<p>Properties are the main units of WAI-Adapt types supported by the vocabulary. A given property supports a specific type of WAI-Adapt. That property would only be used once on a given piece of content, but multiple different properties could be used on the same piece of content to address different needs.</p>
 				</section>
 				<section id="propcharacteristic_value">
-				<h3 id="vocabulary_values">Values</h3> 
+				<h3 id="vocabulary_values">Values</h3>
 				<p>Values provide the specific personalization information for the property. The possible values for each property are elaborated in the definition of the property in the modules. Some properties require the value to come from a predefined list of possible values, others can accept arbitrary strings, and some may accept multiple values. The attribute value may be one of the following types:</p>
 				<dl>
 					<dt id="valuetype_idref">ID reference</dt>
@@ -68,10 +67,10 @@
 					<dt id="valuetype_uri">URI</dt>
 					<dd>A Uniform Resource Identifier as defined by <cite><a href="http://www.ietf.org/rfc/rfc3986.txt" id="bib-rfc3986">RFC 3986</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3986" title="Uniform Resource Identifier (URI): Generic Syntax">RFC3986</a></cite>] It may reference a separate document, or a content fragment identifier in a separate document, or a content fragment identifier within the same document.</dd>
 				</dl>
-				</section>			
+				</section>
 				<p><strong>Note that the attributes and values in this specification do not overide the semantics exposed in the accessibility tree, but rather augment them.</strong> In the case of conflict between an element's semantics and the attribute values, validation algorithms should issue a warning but not an error.</p>
 				<div class="ednote">Since implementations have not yet been finalized, any examples in this document are illustrative only, and are provided to help in understanding the concept.  All examples will be updated once implementation examples are finalized.</div>
-			</section>		
+			</section>
 			<section id="usecases">
 				<h2>Use Cases and Requirements</h2>
 				<p>The <a href="https://github.com/w3c/personalization-semantics/wiki/Requirements">Requirements for Personalization Semantics</a> describes use cases and requirements. This module provides properties to fulfill those requirements related to adapting content.</p>
@@ -104,8 +103,8 @@
 						<section data-include="feedback.html" data-include-replace="true" id="feedback"></section>
 						<section data-include="moreinfo.html" data-include-replace="true" id="moreinfo"></section>
 						<section data-include="extrahelp.html" data-include-replace="true" id="extrahelp"></section>
-					</section>		
-			</section>	
+					</section>
+			</section>
 		</section>
 		<section id="privacy">
 			<h1>Privacy and Security Considerations</h1>
