@@ -1,0 +1,1 @@
+W3C announces publication of the Candidate Recommendation  of *WAI-Adapt Symbols Module 1.0*: https://www.w3.org/TR/adapt/symbols/, providing first-time support for interoperable Augmentative and Alternative Communication (AAC) symbols support in web content.
