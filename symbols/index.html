@@ -22,7 +22,7 @@ table,th,td {
 				<li>Need more familiar icons (and other graphical symbols) in order to comprehend page content;</li>
 			</ul>
 
-			<p>The technology described in this specification is intended to be used to programmatically transform the appearance of typical web content including form controls, icons, and other user interface elements	into a rendering incorporating an individual user's preferred AAC symbols. The W3C <a href="https://w3c.github.io/adapt-registry/">WAI-Adapt Symbols Registry</a> provides the required mappings between concept values used by content authors and the user's preferred AAC symbol set representation of that concept.</p>
+			<p>The technology described in this specification is intended to be used to programmatically transform the appearance of typical web content including form controls, icons, and other user interface elements	into a rendering incorporating an individual user's preferred AAC symbols. The W3C <a href="https://www.w3.org/TR/adapt-registry/">WAI-Adapt Symbols Registry</a> provides the required mappings between concept values used by content authors and the user's preferred AAC symbol set representation of that concept.</p>
 			<p>This WAI-Adapt: Symbols Module is a component of the WAI-Adapt series introduced in the <a href="https://www.w3.org/TR/adapt/">WAI-Adapt Explainer</a> document [[adapt]].</p>
 		</section>
 
@@ -94,8 +94,12 @@ table,th,td {
 		</section>
 
 		<section id="conformance">
-			<p>The main content of WAI-Adapt is sets of attributes with defined value ranges. Authors MAY use these attributes in HTML content to enhance personalization capabilities of the content. The sections may contain examples of recommended practice, but it is not required to follow those approaches in order to conform to this specification.</p>
-			<p>User agents MAY implement any set of attributes from this specification. If a user agent implements an Adapt attribute, it MUST provide support for all possible values of that attribute.</p>
+			<p>This section is normative.</p>
+
+			<p>The content of WAI-Adapt Symbols consists of numeric values for the adapt-symbol attribute for any span of text and taken from the <a href="https://www.w3.org/TR/adapt-registry">W3C WAI-Adapt Registry</a> corresponding to the concept associated with that Registry numeric value.
+
+			Authors MAY use this attribute in HTML content to enhance the personalizability of the content ad libitum. There is no requirement that all content must be marked with adapt-symbol index values, and there is no minimum.</p>
+
 		</section>
 
 		<section>
