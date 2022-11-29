@@ -9,7 +9,7 @@ https://www.w3.org/TR/adapt/symbols/
 
 *** Overview***
 
-* For the very first time in web content the WAI-Adapt Symbols Module 1.0 specifies a cross-platform standrad mechanism incorporating Augmentative and Alternative Communication (AAC) symbols in web content. It relies on the [WAI-Adapt registry](https://www.w3.org/TR/adapt-registry/) to achieve this. 
+* For the very first time in web content the WAI-Adapt Symbols Module 1.0 specifies a cross-platform standrad mechanism incorporating Augmentative and Alternative Communication (AAC) symbols in web content. It relies on the [WAI-Adapt registry](https://www.w3.org/TR/aac-registry/) to achieve this. 
 
 
 * Authors are provided guidance on  associating an appropriate BCI index value with a span of text corresponding to the defined concept expressed as standard text.
@@ -38,7 +38,7 @@ Please send comments by Friday 24 February 2023.
 We encourage you to share this information widely. Please include @w3c_wai, @w3c, #accessibility, #a11y, @@
 Here's a tweet text you can use: 
 
-W3C announces the First Public Working Draft of *WAI-Adapt Registry for AAC Symbols*: https://www.w3.org/TR/adapt-registry/, providing first-time support for interoperable Augmentative and Alternative Communication (AAC) symbols support in web content.
+W3C announces the First Public Working Draft of *WAI-Adapt Registry for AAC Symbols*: https://www.w3.org/TR/aac-registry/, providing first-time support for interoperable Augmentative and Alternative Communication (AAC) symbols support in web content.
 
 Regards,
 

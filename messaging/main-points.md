@@ -1,4 +1,4 @@
-- This specification defines the appropriate use of Blissymbolics Communication International (BCI) concept indexing as spefieid by the W3C [WAI-Adapt Registry for AAC Symbols](https://www.w3.org/TR/adapt-registry/) in web content.
+- This specification defines the appropriate use of Blissymbolics Communication International (BCI) concept indexing as spefieid by the W3C [WAI-Adapt Registry for AAC Symbols](https://www.w3.org/TR/aac-registry/) in web content.
 
 - Authors are provided guidance on  associating an appropriate BCI index value with a span of text corresponding to the defined concept expressed as standard text.
 

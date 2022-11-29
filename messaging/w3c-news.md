@@ -7,7 +7,7 @@ The Accessible Platform Architectures (APA) WAI-Adapt Task Force (WAI-Adapt) inv
 The purpose of this specification is to support Augmentative and Alternative Communication (AAC) symbols in web content. Millions of users comprehend AAC symbols better than standard text, but there are multiple AAC symbol sets and they are not mutually comprehensible. To solve this issue and make it possible for content creators to support AAC users in web content,:
 
 
-- This specification defines the appropriate use of Blissymbolics Communication International (BCI) concept indexing as spefieid by the W3C [WAI-Adapt Registry for AAC Symbols](https://www.w3.org/TR/adapt-registry/) in web content.
+- This specification defines the appropriate use of Blissymbolics Communication International (BCI) concept indexing as spefieid by the W3C [WAI-Adapt Registry for AAC Symbols](https://www.w3.org/TR/aac-registry/) in web content.
 
 - Authors are provided guidance on  associating an appropriate BCI index value with a span of text corresponding to the defined concept expressed as standard text.
 
