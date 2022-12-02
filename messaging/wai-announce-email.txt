@@ -7,10 +7,9 @@ WAI-Adapt Symbols Module 1.0
 
 https://www.w3.org/TR/adapt/symbols/
 
-*** Overview***
+*** Overview ***
 
 * For the very first time in web content the WAI-Adapt Symbols Module 1.0 specifies a cross-platform standrad mechanism incorporating Augmentative and Alternative Communication (AAC) symbols in web content. It relies on the [WAI-Adapt registry](https://www.w3.org/TR/aac-registry/) to achieve this. 
-
 
 * Authors are provided guidance on  associating an appropriate BCI index value with a span of text corresponding to the defined concept expressed as standard text.
 
@@ -19,7 +18,6 @@ https://www.w3.org/TR/adapt/symbols/
 For in-progress updates to the document, see the Editors' Draft at:
 
 https://w3c.github.io/adapt/symbols/
- 
 
 To comment, please use one of the following two methods:
 
@@ -33,7 +31,7 @@ Whether you comment in a github issue or by email, please create separate GitHub
 
 Please send comments by Friday 24 February 2023.
  
-***Share***
+*** Share ***
 
 We encourage you to share this information widely. Please include @w3c_wai, @w3c, #accessibility, #a11y, @@
 Here's a tweet text you can use: 
@@ -47,5 +45,3 @@ Sharon D Snider and Lionel Wolberger, Task Force Facilitators.
 Janina Sajka and Matthew Atkinson, APA Working Group Co-Chairs
 
 Roy Ran, W3C Staff Contact for APA Working Group
-
-
