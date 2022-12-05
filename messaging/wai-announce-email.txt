@@ -3,13 +3,13 @@ Dear WAI Interest Group,
 
 W3C WAI announces publication of the Candidate Recommendation of:
               
-WAI-Adapt Symbols Module 1.0
+WAI-Adapt: Symbols Module
 
-https://www.w3.org/TR/adapt/symbols/
+https://www.w3.org/TR/adapt-symbols/
 
 *** Overview ***
 
-* For the very first time in web content the WAI-Adapt Symbols Module 1.0 specifies a cross-platform standrad mechanism incorporating Augmentative and Alternative Communication (AAC) symbols in web content. It relies on the [WAI-Adapt registry](https://www.w3.org/TR/aac-registry/) to achieve this. 
+* For the very first time in web content the WAI-Adapt: Symbols Module specifies a cross-platform standrad mechanism incorporating Augmentative and Alternative Communication (AAC) symbols in web content. It relies on the [W3C Alternative and Augmented Communication (AAC) Symbol Registry](https://www.w3.org/TR/aac-registry/) to achieve this. 
 
 * Authors are provided guidance on  associating an appropriate BCI index value with a span of text corresponding to the defined concept expressed as standard text.
 
@@ -25,7 +25,7 @@ To comment, please use one of the following two methods:
 please open a new issue in the [WAI-Adapt GitHub repository](https://github.com/w3c/adapt/issues/new).
 
 * By email:
-Please send comments in e-mail to <public-adapt@w3.org>. Include \[Registry\] as the beginning of your subject line in your email message.
+Please send comments in e-mail to <public-adapt@w3.org>. Include [Registry] as the beginning of your subject line in your email message.
 
 Whether you comment in a github issue or by email, please create separate GitHub issues (or email messages) for each topic you address, rather than commenting on multiple topics in a single issue (or email).
 
