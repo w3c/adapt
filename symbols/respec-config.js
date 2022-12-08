@@ -7,21 +7,22 @@ var respecConfig = {
     permalinkHide:     false,
     tocIntroductory: true,
     // specification status (e.g., WD, LC, NOTE, etc.). If in doubt use ED.
-    specStatus:           "ED",
+    specStatus:           "CR",
     noRecTrack: false,
-    //crEnd:                "2012-04-30",
+    crEnd:                "2023-06-15",
     //perEnd:               "2013-07-23",
     //publishDate:          "2013-08-22",
     //diffTool:             "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
 
     // the specifications short name, as in http://www.w3.org/TR/short-name/
     shortName:            "adapt-symbols",
+    implementationReportURI: "https://w3c.github.io/adapt/symbols/reports/",
 
 
     // if you wish the publication date to be other than today, set this
-    //publishDate:  "2017-05-09",
-    copyrightStart:  "2021",
-    license: "document",
+    publishDate:  "2022-12-20",
+    copyrightStart:  "2018",
+    license: "w3c-software-doc",
 
     // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
     // and its maturity status
@@ -41,35 +42,37 @@ var respecConfig = {
     editors: [
       {
         name: "Lisa Seeman",
-        url: 'http://athena-ict.com',
-        mailto: "lisa.seeman@zoho.com",
+        url: "mailto:lisa.seeman@zoho.com",
+       
+        company: "Invited Expert",
         w3cid: 16320
       },
       {
         name: "Charles LaPierre",
-        url: 'http://www.benetech.org',
-        mailto: "charlesl@benetech.org",
+        url: "mailto:charlesl@benetech.org",
+    
         company: "Benetech",
         w3cid: 72055
       },
       {
         name: "John Foliot",
-        mailto: "john@foliot.ca",
+       
         company: "Invited Expert",
-        w3cid: 41450
+        w3cid: 41450,
+        url: "mailto:john@foliot.ca"
       },
       {
         name: "Michael Cooper",
-        url: 'https://www.w3.org',
-        mailto: "cooper@w3.org",
+        url: "mailto:cooper@w3.org",
+     
         company: "W3C",
         companyURI: "http://www.w3.org",
         w3cid: 34017
       },
       {
-        name: "Roy Ran",
-        url: 'https://www.w3.org',
-        mailto: "ran@w3.org",
+        name: "Ruoxi Ran",
+        url: "mailto:ran@w3.org",
+   
         company: "W3C",
         companyURI: "http://www.w3.org",
         w3cid: 100586
@@ -80,7 +83,7 @@ var respecConfig = {
         companyURL: "https://www.knowbility.org/",
         w3cid: 2460,
         note: "Editor until October 2017"
-       }
+      }
     ],
 
     // authors, add as many as you like.
