@@ -300,7 +300,26 @@ var biblio = {
 			"http://www.w3.org/WAI/PF/"
 		]
 	},
-	
+
+	"aac-registry": {
+		"title": "W3C Alternative and Augmented Communication (AAC) Symbol Registry",
+		"href": "https://www.w3.org/TR/aac-registry/",
+		"status": "DRY",
+		"publisher": "W3C",
+		"authors": [
+			"Michael Cooper",
+			"Ruoxi Ran",
+			"Janina Sajka",
+			"Matthew Atkinson",
+			"Russell Galvin"
+
+		],
+		"etAl": true,
+		"deliveredBy": [
+			"http://www.w3.org/WAI/APA/"
+		]
+	},
+
 	"WAI-ARIA-10": {
 		"authors": [
 			"James Craig",
