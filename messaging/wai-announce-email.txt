@@ -11,7 +11,7 @@ https://www.w3.org/TR/adapt-symbols/
 
 * For the very first time in web content the WAI-Adapt: Symbols Module specifies a cross-platform standrad mechanism incorporating Augmentative and Alternative Communication (AAC) symbols in web content. It relies on the [W3C Alternative and Augmented Communication (AAC) Symbol Registry](https://www.w3.org/TR/aac-registry/) to achieve this. 
 
-* Authors are provided guidance on  associating an appropriate BCI index value with a span of text corresponding to the defined concept expressed as standard text.
+* Authors are provided guidance on associating an appropriate BCI index value with a span of text corresponding to the defined concept expressed as standard text.
 
 * It is anticipated that user agents will display the corresponding AAC symbol from the user's preferred symbol set by allowing the user to configure for their preferred AAC symbol set and cache that symbol set locally.
 
@@ -31,17 +31,10 @@ Whether you comment in a github issue or by email, please create separate GitHub
 
 Please send comments by Friday 24 February 2023.
  
-*** Share ***
-
-We encourage you to share this information widely. Please include @w3c_wai, @w3c, #accessibility, #a11y, @@
-Here's a tweet text you can use: 
-
-W3C announces the First Public Working Draft of *WAI-Adapt Registry for AAC Symbols*: https://www.w3.org/TR/aac-registry/, providing first-time support for interoperable Augmentative and Alternative Communication (AAC) symbols support in web content.
-
 Regards,
 
-Sharon D Snider and Lionel Wolberger, Task Force Facilitators.
+Sharon D Snider and Lionel Wolberger, WAI-Adapt Task Force Facilitators
 
-Janina Sajka and Matthew Atkinson, APA Working Group Co-Chairs
+Janina Sajka and Matthew Atkinson, Accessible Platform Architectures (APA) Working Group Co-Chairs
 
 Roy Ran, W3C Staff Contact for APA Working Group
