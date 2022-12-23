@@ -659,6 +659,24 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "title": "The IAccessibleEx Interface",
       "publisher": "Microsoft Corporation"
     },
+    "aac-registry": {
+      "title": "W3C Alternative and Augmented Communication (AAC) Symbol Registry",
+      "href": "https://www.w3.org/TR/aac-registry/",
+      "status": "DRY",
+      "publisher": "W3C",
+      "authors": [
+        "Michael Cooper",
+        "Ruoxi Ran",
+        "Janina Sajka",
+        "Matthew Atkinson",
+        "Russell Galvin"
+      ],
+      "etAl": true,
+      "deliveredBy": [
+        "http://www.w3.org/WAI/APA/"
+      ],
+      "id": "aac-registry"
+    },
     "WAI-ARIA": {
       "title": "Accessible Rich Internet Applications (WAI-ARIA) 1.1",
       "href": "http://www.w3.org/TR/wai-aria-1.1/",
@@ -691,20 +709,20 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   },
   "group": "apa",
   "github": "w3c/adapt",
-  "publishISODate": "2022-12-20T00:00:00.000Z",
-  "generatedSubtitle": "W3C Candidate Recommendation Snapshot 20 December 2022"
+  "publishISODate": "2023-01-05T00:00:00.000Z",
+  "generatedSubtitle": "W3C Candidate Recommendation Snapshot 05 January 2022"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-CR"></head>
 	<body data-new-gr-c-s-check-loaded="14.1088.0" data-gr-ext-installed="" class="h-entry"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">WAI-Adapt: Symbols Module</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#CR">W3C Candidate Recommendation Snapshot</a> <time class="dt-published" datetime="2022-12-20">20 December 2022</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#CR">W3C Candidate Recommendation Snapshot</a> <time class="dt-published" datetime="2023-01-05">05 January 2023</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
         <dt>This version:</dt><dd>
-                <a class="u-url" href="https://www.w3.org/TR/2022/CR-adapt-symbols-20221220/">https://www.w3.org/TR/2022/CR-adapt-symbols-20221220/</a>
+                <a class="u-url" href="https://www.w3.org/TR/2023/CR-adapt-symbols-20230105/">https://www.w3.org/TR/2023/CR-adapt-symbols-20230105/</a>
               </dd>
         <dt>Latest published version:</dt><dd>
                 <a href="https://www.w3.org/TR/adapt-symbols/">https://www.w3.org/TR/adapt-symbols/</a>
@@ -770,7 +788,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 				<li>Need more familiar icons (and other graphical symbols) in order to comprehend page content;</li>
 			</ul>
 
-			<p>The technology described in this specification is intended to be used to programmatically transform the appearance of typical web content including form controls, icons, and other user interface elements	into a rendering incorporating an individual user's preferred <abbr title="Augmentative and Alternative Communication">AAC</abbr> symbols. The <abbr title="World Wide Web Consortium">W3C</abbr> <a href="https://www.w3.org/TR/adapt-registry/">WAI-Adapt Symbols Registry</a> provides the required mappings between concept values used by content authors and the user's preferred <abbr title="Augmentative and Alternative Communication">AAC</abbr> symbol set representation of that concept.</p>
+			<p>The technology described in this specification is intended to be used to programmatically transform the appearance of typical web content including form controls, icons, and other user interface elements	into a rendering incorporating an individual user's preferred <abbr title="Augmentative and Alternative Communication">AAC</abbr> symbols. The <a href="https://www.w3.org/TR/aac-registry/"><abbr title="World Wide Web Consortium">W3C</abbr> Augmentative and Alternative Communication (<abbr title="Augmentative and Alternative Communication">AAC</abbr>) Symbols Registry specification</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-aac-registry" title="W3C Alternative and Augmented Communication (AAC) Symbol Registry">aac-registry</a></cite>] provides the required mappings between concept values used by content authors and the user's preferred <abbr title="Augmentative and Alternative Communication">AAC</abbr> symbol set representation of that concept.</p>
 			<p>This WAI-Adapt: Symbols Module is a component of the WAI-Adapt series introduced in the <a href="https://www.w3.org/TR/adapt/">WAI-Adapt Explainer</a> document [<cite><a class="bibref" data-link-type="biblio" href="#bib-adapt" title="WAI-Adapt Explainer">adapt</a></cite>].</p>
 		</section>
 
@@ -891,7 +909,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       </p>
 			<p>This section is normative.</p>
 
-			<p>The content of WAI-Adapt Symbols consists of numeric values for the adapt-symbol attribute for any span of text and taken from the <a href="https://www.w3.org/TR/adapt-registry"><abbr title="World Wide Web Consortium">W3C</abbr> WAI-Adapt Registry</a> corresponding to the concept associated with that Registry numeric value.
+			<p>The content of WAI-Adapt Symbols consists of numeric values for the adapt-symbol attribute for any span of text and taken from the <a href="https://www.w3.org/TR/aac-registry/"><abbr title="World Wide Web Consortium">W3C</abbr> Augmentative and Alternative Communication (<abbr title="Augmentative and Alternative Communication">AAC</abbr>) Symbols Registry specification</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-aac-registry" title="W3C Alternative and Augmented Communication (AAC) Symbol Registry">aac-registry</a></cite>] corresponding to the concept associated with that Registry numeric value.
 
 			Authors <em class="rfc2119">MAY</em> use this attribute in HTML content to enhance the personalizability of the content ad libitum. There is no requirement that all content must be marked with adapt-symbol index values, and there is no minimum.</p>
 
@@ -917,10 +935,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 				<p>It is important to understand that support for the world's languages, and the translation of content from one language into another occurs between written natural languages. At no time is there any expectation of translation among symbols themselves. Such a concept remains undefined. Multiple <abbr title="Augmentative and Alternative Communication">AAC</abbr> symbol sets are supported by this specification because users of one symbol set generally cannot comprehend symbols from a different symbol set. Thus this specification facilitates the expression of concepts in the <abbr title="Augmentative and Alternative Communication">AAC</abbr> symbol set an individual user knows based on <abbr title="Blissymbolics Communication International">BCI</abbr> index values as the common concept interchange.</p></div></div>
 			<p>In those natural languages where an expression can differ based on gender and verb tense,  more than one <abbr title="Blissymbolics Communication International">BCI</abbr> index value may be needed to map the expression to a symbol. In such situations content authors should join multiple <abbr title="Blissymbolics Communication International">BCI</abbr> index values in order to map to a single conjugated symbol by using a plus (<code>+</code>) sign (with no spaces between the <abbr title="Blissymbolics Communication International">BCI</abbr> index values).</p>
 			<p>When no individual codepoint exists to express the textual content, multiple <abbr title="Blissymbolics Communication International">BCI</abbr> index values <em class="rfc2119">MAY</em> be conjugated by listing two or more concept index values together, separated only by a plus (<code>+</code>) symbol. The order of multiple concepts should be the same as used in typical speech in the natural language of the content.</p>
-			<p>The numeric values utilized to map to symbols <em class="rfc2119">MUST</em> be published <abbr title="Blissymbolics Communication International">BCI</abbr> index values. These can be obtained from the <a href="https://w3c.github.io/aac-registry/"><abbr title="World Wide Web Consortium">W3C</abbr> Augmentative and Alternative Communication (<abbr title="Augmentative and Alternative Communication">AAC</abbr>) Symbols Registry specification</a>.</p>
-			<div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="5"><span>Note</span></div><div class="">
-				<p>The <a href="https://w3c.github.io/aac-registry/"><abbr title="World Wide Web Consortium">W3C</abbr> Augmentative and Alternative Communication (<abbr title="Augmentative and Alternative Communication">AAC</abbr>) Symbols Registry specification</a> is not yet at First Public Working Draft (FPWD). When it reaches this milestone, we will seek to republish this document as a Candidate Recommendation (CR).</p>
-			</div></div>
+			<p>The numeric values utilized to map to symbols <em class="rfc2119">MUST</em> be published <abbr title="Blissymbolics Communication International">BCI</abbr> index values. These can be obtained from the <a href="https://www.w3.org/TR/aac-registry/"><abbr title="World Wide Web Consortium">W3C</abbr> Augmentative and Alternative Communication (<abbr title="Augmentative and Alternative Communication">AAC</abbr>) Symbols Registry specification</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-aac-registry" title="W3C Alternative and Augmented Communication (AAC) Symbol Registry">aac-registry</a></cite>].</p>
+
 			<div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="5"><span>Note</span></div><div class="">
 				<p>This specification is focused on allowing authors to make one-to-one mappings from parts of their content to concepts as defined by <abbr title="Blissymbolics Communication International">BCI</abbr>. The rendering of the appropriate symbols for the user would be handled by the user agent, extension, or assistive technology. It is anticipated that symbol selection for rendering would take the form of a simple look-up.</p>
 				<p>Whilst this specification is not focused on rendering, here are some notes on the expected process, which may be of interest for authors and implementers.</p>
@@ -1102,7 +1118,9 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
 <section id="references" class="appendix"><div class="header-wrapper"><h2 id="c-references"><bdi class="secno">C. </bdi>References</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix C."></a></div><section id="normative-references"><div class="header-wrapper"><h3 id="c-1-normative-references"><bdi class="secno">C.1 </bdi>Normative references</h3><a class="self-link" href="#normative-references" aria-label="Permalink for Appendix C.1"></a></div>
     
-    <dl class="bibliography"><dt id="bib-microdata">[microdata]</dt><dd>
+    <dl class="bibliography"><dt id="bib-aac-registry">[aac-registry]</dt><dd>
+      <a href="https://www.w3.org/TR/aac-registry/"><cite>W3C Alternative and Augmented Communication (AAC) Symbol Registry</cite></a>. Michael Cooper; Ruoxi Ran; Janina Sajka; Matthew Atkinson; Russell Galvin et al.  W3C. DRY. URL: <a href="https://www.w3.org/TR/aac-registry/">https://www.w3.org/TR/aac-registry/</a>
+    </dd><dt id="bib-microdata">[microdata]</dt><dd>
       <a href="https://www.w3.org/TR/microdata/"><cite>HTML Microdata</cite></a>. Chaals Nevile; Dan Brickley; Ian Hickson.  W3C. 28 January 2021. W3C Working Group Note. URL: <a href="https://www.w3.org/TR/microdata/">https://www.w3.org/TR/microdata/</a>
     </dd><dt id="bib-rdfa-primer">[rdfa-primer]</dt><dd>
       <a href="https://www.w3.org/TR/rdfa-primer/"><cite>RDFa 1.1 Primer - Third Edition</cite></a>. Ivan Herman; Ben Adida; Manu Sporny; Mark Birbeck.  W3C. 17 March 2015. W3C Working Group Note. URL: <a href="https://www.w3.org/TR/rdfa-primer/">https://www.w3.org/TR/rdfa-primer/</a>
