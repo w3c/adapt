@@ -12,7 +12,7 @@ WAI-Adapt specifications are introduced in:
 	WAI-Adapt Overview
 	https://www.w3.org/WAI/adapt/
 
-Background: Symbols are visual representations of words and ideas. Symbol-based communication is used by some people who cannot communicate using speech alone, and people who have low literacy with text and better fluency with symbols. Symbols are used in many alternative and augmented communication (AAC) systems. For example, the user selects symbols and the AAC device speaks the words. Some people with disabilities communicate better with AAC symbols instead of standard text, or with symbols in addition to text.
+Background: Symbols are visual representations of words and ideas. Symbol-based communication is used by some people who cannot communicate using speech alone, and people who have low literacy with text and better fluency with symbols. Symbols are used in many Alternative and Augmented Communication (AAC) systems. For example, the user selects symbols and the AAC device speaks the words. Some people with disabilities communicate better with AAC symbols instead of standard text, or with symbols in addition to text.
 
 The purpose of the WAI-Adapt: Symbols Module specification is to support AAC symbols in web content. It enables authors to add semantic information about content at the element level. Then user tools can display the corresponding AAC symbol from the user's preferred symbol set.
 
