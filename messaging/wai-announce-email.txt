@@ -1,7 +1,3 @@
-@@ confirm different dates for implementation and comments?
-@@ added then deleted: This specification references the W3C Alternative and Augmented Communication (AAC) Symbol Registry, which provides an extensible registry for the Blissymbolics Communication International (BCI) concept index. It provides a mapping between concepts expressed in standard text and corresponding symbols in major AAC symbol sets in use today.
-
-
 Dear WAI Interest Group,
 
 W3C WAI invites implementations of the 'Candidate Recommendation':
@@ -12,9 +8,9 @@ WAI-Adapt specifications are introduced in:
 	WAI-Adapt Overview
 	https://www.w3.org/WAI/adapt/
 
-Background: Symbols are visual representations of words and ideas. Symbol-based communication is used by some people who cannot communicate using speech alone, and people who have low literacy with text and better fluency with symbols. Symbols are used in many Alternative and Augmented Communication (AAC) systems. For example, the user selects symbols and the AAC device speaks the words. Some people with disabilities communicate better with AAC symbols instead of standard text, or with symbols in addition to text.
+Background: Symbols are visual representations of words and ideas. Symbol-based communication is used by people who cannot read or process text well, and can understand symbols better. Symbols are used in many alternative and augmented communication (AAC) systems for people who do not speak. The user selects symbols and the AAC device speaks the words. Symbols are also used for people to get information, including people who can speak. For example, a person who cannot read has a list of tasks as a series of symbols.
 
-The purpose of the WAI-Adapt: Symbols Module specification is to support AAC symbols in web content. It enables authors to add semantic information about content at the element level. Then user tools can display the corresponding AAC symbol from the user's preferred symbol set.
+The purpose of the WAI-Adapt: Symbols Module specification is to support symbols in web content. It enables authors to add semantic information about content at the element level. Then user tools can display the corresponding symbol from the user's preferred symbol set.
 
 Candidate Recommendation:
 The main purpose of Candidate Recommendation is to ensure that the standard can be implemented. More about Candidate Recommendation and the process for completing standards is in:
