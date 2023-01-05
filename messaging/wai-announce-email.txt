@@ -1,3 +1,5 @@
+Subject: Call for Implementations: 'WAI-Adapt: Symbols Module' Candidate Recommendation
+
 Dear WAI Interest Group,
 
 W3C WAI invites implementations of the 'Candidate Recommendation':
