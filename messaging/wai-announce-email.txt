@@ -23,7 +23,7 @@ Implementations and Comments:
 We welcome implementations of the symbol attribute in websites and web apps. To provide information about implementations or to comment, please use GitHub or e-mail:
 * GitHub: Please open a new issue in the WAI-Adapt GitHub repository
 	https://github.com/w3c/adapt/issues/new
-* E-mail: Please send comments as text in a message (not an attachment) to <public-adapt@w3.org>
+* E-mail: Please send any comments as text in a message (not an attachment) to <public-adapt@w3.org>
 Please create separate GitHub issues or e-mail messages for each topic, rather than commenting on multiple topics in a single issue or message.
 
 Please send comments by Friday 24 February 2023.
