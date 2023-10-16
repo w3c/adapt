@@ -1,6 +1,6 @@
 <!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head>
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 32.6.1">
+<meta name="generator" content="ReSpec 34.2.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <style>
 dfn{cursor:pointer}
@@ -143,15 +143,15 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   ],
   "group": "apa",
   "github": "w3c/adapt",
-  "publishISODate": "2023-01-05T00:00:00.000Z",
-  "generatedSubtitle": "W3C Editor's Draft 05 January 2023"
+  "publishISODate": "2023-10-16T00:00:00.000Z",
+  "generatedSubtitle": "W3C Editor's Draft 16 October 2023"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED"></head>
-	<body class="h-entry informative"><div class="head">
+	<body class="h-entry informative toc-inline"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">Requirements for WAI-Adapt specification</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2023-01-05">05 January 2023</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2023-10-16">16 October 2023</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
@@ -163,7 +163,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               </dd>
         <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/adapt/requirements/">https://w3c.github.io/adapt/requirements/</a></dd>
         <dt>History:</dt><dd>
-                    <a href="https://www.w3.org/standards/history/adapt-requirements">https://www.w3.org/standards/history/adapt-requirements</a>
+                    <a href="https://www.w3.org/standards/history/adapt-requirements/">https://www.w3.org/standards/history/adapt-requirements/</a>
                   </dd><dd>
                     <a href="https://github.com/w3c/adapt/commits/">Commit history</a>
                   </dd>
@@ -204,7 +204,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     <abbr title="World Wide Web Consortium">W3C</abbr><sup>®</sup>
     <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
     <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and
-    <a rel="license" href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document" title="W3C Software and Document Notice and License">permissive document license</a> rules apply.
+    <a rel="license" href="https://www.w3.org/Consortium/Legal/2023/software-license" title="W3C Software and Document Notice and License">permissive document license</a> rules apply.
   </p>
     <hr title="Separator for header">
   </div>
@@ -244,7 +244,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         
   </p><p>
                   This document is governed by the
-                  <a id="w3c_process_revision" href="https://www.w3.org/2021/Process-20211102/">2 November 2021 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+                  <a id="w3c_process_revision" href="https://www.w3.org/2023/Process-20230612/">12 June 2023 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
                 </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a></li><li class="tocline"><a class="tocxref" href="#wai-adapt-features"><bdi class="secno">2. </bdi>WAI-Adapt Features</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#familiar-terms-and-symbols"><bdi class="secno">2.1 </bdi>Familiar Terms and Symbols</a></li><li class="tocline"><a class="tocxref" href="#symbol-sets"><bdi class="secno">2.2 </bdi>Symbol Sets</a></li><li class="tocline"><a class="tocxref" href="#enable-alternatives-for-numeric-concepts"><bdi class="secno">2.3 </bdi>Enable alternatives for numeric concepts</a></li><li class="tocline"><a class="tocxref" href="#importance-identification"><bdi class="secno">2.4 </bdi>Importance identification</a></li><li class="tocline"><a class="tocxref" href="#enable-alternate-language-complexity-of-same-content"><bdi class="secno">2.5 </bdi>Enable Alternate Language Complexity of Same Content</a></li><li class="tocline"><a class="tocxref" href="#enable-alternate-for-non-literal-content"><bdi class="secno">2.6 </bdi>Enable Alternate for Non-Literal Content</a></li><li class="tocline"><a class="tocxref" href="#enable-additional-help-information"><bdi class="secno">2.7 </bdi>Enable Additional Help Information</a></li><li class="tocline"><a class="tocxref" href="#enable-additional-feedback"><bdi class="secno">2.8 </bdi>Enable Additional Feedback</a></li><li class="tocline"><a class="tocxref" href="#step-indicator"><bdi class="secno">2.9 </bdi>Step Indicator</a></li><li class="tocline"><a class="tocxref" href="#message-categorization"><bdi class="secno">2.10 </bdi>Message Categorization</a></li></ol></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">A. </bdi>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><bdi class="secno">A.1 </bdi>Participants active in the WAI-Adapt TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><bdi class="secno">A.2 </bdi>Other WAI-Adapt TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><bdi class="secno">A.3 </bdi>Enabling funders</a></li></ol></li></ol></nav>
 		<section id="introduction"><div class="header-wrapper"><h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction</h2><a class="self-link" href="#introduction" aria-label="Permalink for Section 1."></a></div>
 			
