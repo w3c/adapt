@@ -64,7 +64,7 @@
 		<h2>What is this all about?</h2>
 		<ol>
 			<li class="next">
-				<p>A more adaptive web</p>
+				<p>The need for WAI-Adapt</p>
 			</li>
 			<li class="next">
 				<p>Site navigation barriers</p>
@@ -85,22 +85,7 @@
 	</section>
 
 	<section class="slide">
-		<p class="shout">A more adaptive web</p>
-	</section>
-
-	<section class="slide">
-		<h2>Who needs a more adaptive web?</h2>
-		<ul>
-			<li class="next">People with cognitive and learning disabilities (e.g. ADHD, short-term memory
-				loss)</li>
-			<li class="next">People who are in a time of crisis; have a migraine; are busy</li>
-			<li class="next">People who use Augmentative and Alternative Communication (AAC)</li>
-			<li class="next">People who struggle to learn/recognise new icons</li>
-		</ul>
-		<p class="next"><strong>All of us, at some time or another!</strong></p>
-
-		<p class="next"><a href="https://www.w3.org/WAI/standards-guidelines/wcag/">The Web Content Accessibility Guidelines
-				(WCAG)</a> can help, but&hellip;</p>
+		<p class="shout">The need for WAI&#8209;Adapt</p>
 	</section>
 
 	<section class="slide">
@@ -137,7 +122,10 @@
 	</section>
 
 	<section class="slide">
-		<h2>The WAI-Adapt approach</h2>
+		<h2>The WAI-Adapt ethos</h2>
+		<p class="next"><a href="https://www.w3.org/WAI/standards-guidelines/wcag/">The Web Content Accessibility Guidelines
+				(WCAG)</a> and <a href="https://www.w3.org/TR/coga-usable/">Making Content Usable for People with Cognitive and
+				Learning Disabilities</a> can help us make content accessible, but an adaptable approach needs semantics.</p>
 		<p class="next"><strong>We're aiming for the sweet spot, where a small addition of machine-readable semantics
 				supports a wide range of helpful adaptations.</strong></p>
 		<p class="next">One area we're exploring is&hellip;</p>
@@ -150,14 +138,39 @@
 	<section class="slide">
 		<h2>User goal</h2>
 		<p>Get to a specific part of a site, quickly and easily.</p>
+	</section>
 
+	<section class="slide">
+		<h2>Website common destinations</h2>
+		<ul>
+			<li class="next">
+				<p>Accessibility statement</p>
+			</li>
+			<li class="next">
+				<p>Contact</p>
+			</li>
+			<li class="next">
+				<p>Help</p>
+			</li>
+			<li class="next">
+				<p>Home</p>
+			</li>
+			<li class="next">
+				<p>Log in</p>
+			</li>
+		</ul>
+	</section>
+
+	<section class="slide">
 		<div class="next">
-			<h2>What can make sites hard to navigate?</h2>
+			<h2>People may struggle to find these</h2>
+			<p class="next">Due to&hellip;</p>
 			<ul>
-				<li class="next">Visual design</li>
-				<li class="next">Information architecture</li>
-				<li class="next">Language</li>
-				<li class="next">Terminology</li>
+				<li class="next">Themes and variations</li>
+				<li class="next">Visual complexity</li>
+				<li class="next">Complex information architecture</li>
+				<li class="next">Synonyms (e.g. &quot;log in&quot vs. &quot;sign in&quot;) or other terminology</li>
+				<li class="next">Foreign language</li>
 			</ul>
 		</div>
 	</section>
@@ -178,16 +191,21 @@
 		<h2>Build on existing infrastructure</h2>
 		<ul>
 			<li class="next">
-				<p>The Cognitive Accessibility Task Force identified a series of common destinations.</p>
-				<p class="next">The challenge was how to expose them&hellip;</p>
+				<p>The Cognitive Accessibility Task Force identified a series of common destinations; the challenge was how to
+					expose them&hellip;</p>
 			</li>
 			<li class="next">
 				<p>Through APA WG's accessibility review work, we discovered <a
-						href="https://www.w3.org/TR/change-password-url/">A Well-Known URL for Changing Passwords</a>.</p>
+						href="https://www.w3.org/TR/change-password-url/">A Well-Known URL for Changing Passwords</a>, and realised
+					we could do similar.</p>
+			</li>
+			<li class="next">
+				<p>Our now-colleauges from SAP approached us independently with the same idea for the accessibility statement.
+				</p>
 			</li>
 			<li class="next">
 				<p>This builds on <a href="https://www.iana.org/assignments/well-known-uris/well-known-uris.xhtml">well-known
-						URIs</a>, providing a standard way to expose sites' common
+						URIs (IANA registry)</a>, providing a standard way to expose sites' common
 					destinations.</p>
 			</li>
 		</ul>
@@ -207,6 +225,17 @@
 				<p>We also have an <a href="">early draft of the specification</a>.</p>
 			</li>
 		</ul>
+		<p class="next">We are intending to propose some extensions:</p>
+		<ul>
+			<li class="next">
+				<p>Registering a namespace; seeing our common destinations as pointers into a site's information architecture.
+				</p>
+			</li>
+			<li class="next">
+				<p>Providing a simple, efficient way for the UA to query for all common destinations supported by the site in
+					one request.</p>
+			</li>
+		</ul>
 	</section>
 
 	<section class="slide">
@@ -222,6 +251,12 @@
 			</li>
 			<li class="next">
 				<p>Establish our basic set of features; refine their design.</p>
+				<ul>
+					<li class="next">
+						<p>We are investigating how we might indicate the relevant area of the page, if applicable, when it
+							is visited.</p>
+					</li>
+				</ul>
 			</li>
 			<li class="next">
 				<p>Seek implementations (sites that follow the spec; assistive technologies that present the results to users).
