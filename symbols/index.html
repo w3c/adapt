@@ -1,674 +1,63 @@
-<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
-<meta charset="utf-8">
-<meta name="generator" content="ReSpec 34.5.0">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<style>
-span.example-title{text-transform:none}
-:is(aside,div).example,div.illegal-example{padding:.5em;margin:1em 0;position:relative;clear:both}
-div.illegal-example{color:red}
-div.illegal-example p{color:#000}
-aside.example div.example{border-left-width:.1em;border-color:#999;background:#fff}
-</style>
-<style>
-.issue-label{text-transform:initial}
-.warning>p:first-child{margin-top:0}
-.warning{padding:.5em;border-left-width:.5em;border-left-style:solid}
-span.warning{padding:.1em .5em .15em}
-.issue.closed span.issue-number{text-decoration:line-through}
-.issue.closed span.issue-number::after{content:" (Closed)";font-size:smaller}
-.warning{border-color:#f11;border-color:var(--warning-border,#f11);border-width:.2em;border-style:solid;background:#fbe9e9;background:var(--warning-bg,#fbe9e9);color:#000;color:var(--text,#000)}
-.warning-title:before{content:"⚠";font-size:1.3em;float:left;padding-right:.3em;margin-top:-.3em}
-li.task-list-item{list-style:none}
-input.task-list-item-checkbox{margin:0 .35em .25em -1.6em;vertical-align:middle}
-.issue a.respec-gh-label{padding:5px;margin:0 2px 0 2px;font-size:10px;text-transform:none;text-decoration:none;font-weight:700;border-radius:4px;position:relative;bottom:2px;border:none;display:inline-block}
-</style>
-<style>
-dfn{cursor:pointer}
-.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;background:var(--indextable-hover-bg,#fff);color:#000;color:var(--text,#000);box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);box-shadow:0 1em 3em -.4em var(--tocsidebar-shadow,rgba(0,0,0,.3)),0 0 1px 1px var(--tocsidebar-shadow,rgba(0,0,0,.05));border-radius:2px}
-.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
-.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;border-bottom-color:var(--indextable-hover-bg,#fff);top:0}
-.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1;border-bottom-color:var(--indextable-hover-bg,#a2a9b1)}
-.dfn-panel *{margin:0}
-.dfn-panel b{display:block;color:#000;color:var(--text,#000);margin-top:.25em}
-.dfn-panel ul a[href]{color:#333;color:var(--text,#333)}
-.dfn-panel>div{display:flex}
-.dfn-panel a.self-link{font-weight:700;margin-right:auto}
-.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
-.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
-.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
-.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
-.dfn-panel a[href]:hover{border-bottom-width:1px}
-.dfn-panel ul{padding:0}
-.dfn-panel li{margin-left:1em}
-.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
-</style>
-		
-<title>WAI-Adapt: Symbols Module</title>
-		
-		
-<style id="respec-mainstyle">
-@keyframes pop{
-0%{transform:scale(1,1)}
-25%{transform:scale(1.25,1.25);opacity:.75}
-100%{transform:scale(1,1)}
-}
-:is(h1,h2,h3,h4,h5,h6,a) abbr{border:none}
-dfn{font-weight:700}
-a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
-a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
-a.bibref{text-decoration:none}
-.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
-.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}
-@supports not (text-decoration:red wavy underline){
-.respec-offending-element:not(pre){display:inline-block}
-.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
-}
-#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
-cite .bibref{font-style:normal}
-a[href].orcid{padding-left:4px;padding-right:4px}
-a[href].orcid>svg{margin-bottom:-2px}
-.toc a,.tof a{text-decoration:none}
-ol.tof,ul.tof{list-style:none outside none}
-.caption{margin-top:.5em;font-style:italic}
-table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
-.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}
-.simple th a{color:#fff;padding:3px 5px;text-align:left}
-.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}
-.simple td{padding:3px 10px;border-top:1px solid #ddd}
-.simple tr:nth-child(even){background:#f0f6ff}
-.section dd>p:first-child{margin-top:0}
-.section dd>p:last-child{margin-bottom:0}
-.section dd{margin-bottom:1em}
-.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}
-#issue-summary>ul{column-count:2}
-#issue-summary li{list-style:none;display:inline-block}
-details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
-details.respec-tests-details>*{padding-right:2em}
-details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
-details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
-details.respec-tests-details>ul{width:100%;margin-top:-.3em}
-details.respec-tests-details>li{padding-left:1em}
-.self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
-aside.example .marker>a.self-link{color:inherit}
-.header-wrapper{display:flex;align-items:baseline}
-:is(h2,h3,h4,h5,h6):not(#toc>h2,#abstract>h2,#sotd>h2,.head>h2){position:relative;left:-.5em}
-:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-1.1em;font-size:1rem;opacity:.5}
-:is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
-:is(h2,h3)+a.self-link{top:-.2em}
-:is(h4,h5,h6)+a.self-link::before{color:#000}
-@media (max-width:767px){
-dd{margin-left:0}
-}
-@media print{
-.removeOnSave{display:none}
-}
-</style>
-		
-		
-		
-<style type="text/css">
-
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>WAI-Adapt: Symbols Module</title>
+		<meta charset="utf-8"/>
+		<script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove"></script>
+		<script src="../common/biblio.js" class="remove"></script>
+		<script src="respec-config.js" class="remove"></script>
+		<style type="text/css">
 table,th,td {
 	border:1px solid black;
 	border-collapse:collapse;
 	padding: 0.3em;
 }
-		
-</style>
-	
-<meta name="description" content="This specification provides web content authors a standard approach to support web users with various cognitive and learning disabilities who:">
-<style>
-.hljs{--base:#fafafa;--mono-1:#383a42;--mono-2:#686b77;--mono-3:#717277;--hue-1:#0b76c5;--hue-2:#336ae3;--hue-3:#a626a4;--hue-4:#42803c;--hue-5:#ca4706;--hue-5-2:#c91243;--hue-6:#986801;--hue-6-2:#9a6a01}
-@media (prefers-color-scheme:dark){
-.hljs{--base:#282c34;--mono-1:#abb2bf;--mono-2:#818896;--mono-3:#5c6370;--hue-1:#56b6c2;--hue-2:#61aeee;--hue-3:#c678dd;--hue-4:#98c379;--hue-5:#e06c75;--hue-5-2:#be5046;--hue-6:#d19a66;--hue-6-2:#e6c07b}
-}
-.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;color:var(--mono-1,#383a42);background:#fafafa;background:var(--base,#fafafa)}
-.hljs-comment,.hljs-quote{color:#717277;color:var(--mono-3,#717277);font-style:italic}
-.hljs-doctag,.hljs-formula,.hljs-keyword{color:#a626a4;color:var(--hue-3,#a626a4)}
-.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#ca4706;color:var(--hue-5,#ca4706);font-weight:700}
-.hljs-literal{color:#0b76c5;color:var(--hue-1,#0b76c5)}
-.hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#42803c;color:var(--hue-4,#42803c)}
-.hljs-built_in,.hljs-class .hljs-title{color:#9a6a01;color:var(--hue-6-2,#9a6a01)}
-.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#986801;color:var(--hue-6,#986801)}
-.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#336ae3;color:var(--hue-2,#336ae3)}
-.hljs-emphasis{font-style:italic}
-.hljs-strong{font-weight:700}
-.hljs-link{text-decoration:underline}
-</style>
-<style>
-var{position:relative;cursor:pointer}
-var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
-var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#222}
-var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#222;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
-var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
-</style>
-<script id="initialUserConfig" type="application/json">{
-  "trace": true,
-  "doRDFa": "1.0",
-  "includePermalinks": true,
-  "permalinkEdge": true,
-  "permalinkHide": false,
-  "tocIntroductory": true,
-  "specStatus": "ED",
-  "noRecTrack": false,
-  "shortName": "adapt-symbols",
-  "copyrightStart": "2021",
-  "license": "document",
-  "edDraftURI": "https://w3c.github.io/adapt/symbols/",
-  "editors": [
-    {
-      "name": "Lisa Seeman",
-      "url": "mailto:lisa.seeman@zoho.com",
-      "mailto": "lisa.seeman@zoho.com",
-      "w3cid": 16320
-    },
-    {
-      "name": "Charles LaPierre",
-      "url": "mailto:charlesl@benetech.org",
-      "mailto": "charlesl@benetech.org",
-      "company": "Benetech",
-      "w3cid": 72055
-    },
-    {
-      "name": "John Foliot",
-      "mailto": "john@foliot.ca",
-      "company": "Invited Expert",
-      "w3cid": 41450,
-      "url": "mailto:john@foliot.ca"
-    },
-    {
-      "name": "Michael Cooper",
-      "url": "mailto:cooper@w3.org",
-      "mailto": "cooper@w3.org",
-      "company": "W3C",
-      "companyURI": "http://www.w3.org",
-      "w3cid": 34017
-    },
-    {
-      "name": "Roy Ran",
-      "url": "mailto:ran@w3.org",
-      "mailto": "ran@w3.org",
-      "company": "W3C",
-      "companyURI": "http://www.w3.org",
-      "w3cid": 100586
-    },
-    {
-      "name": "Richard Schwerdtfeger",
-      "company": "Knowbility",
-      "companyURL": "https://www.knowbility.org/",
-      "w3cid": 2460,
-      "note": "Editor until October 2017"
-    }
-  ],
-  "localBiblio": {
-    "ACCNAME-AAM": {
-      "title": "Accessible Name and Description: Computation and API Mappings 1.1",
-      "href": "http://www.w3.org/TR/accname-aam-1.1/",
-      "status": "WD",
-      "publisher": "W3C",
-      "authors": [
-        "Joseph Scheuhammer",
-        "Michael Cooper",
-        "Andi Snow-Weaver",
-        "Aaron Leventhal"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/WAI/ARIA/"
-      ]
-    },
-    "ARIA-PRACTICES": {
-      "title": "WAI-ARIA Authoring Practicess 1.1",
-      "href": "http://www.w3.org/TR/wai-aria-practices-1.1/",
-      "status": "WD",
-      "publisher": "W3C",
-      "authors": [
-        "Matt King",
-        "James Nurthen",
-        "Michael Cooper",
-        "Michiel Bijl",
-        "Joseph Scheuhammer",
-        "Lisa Pappas",
-        "Richard Schwerdtfeger"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/WAI/ARIA/"
-      ]
-    },
-    "ATK": {
-      "href": "https://developer.gnome.org/atk/stable/",
-      "title": "ATK - Accessibility Toolkit",
-      "publisher": "The GNOME Project"
-    },
-    "AXAPI": {
-      "href": "https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078",
-      "title": "Accessibility Programming Guide for OS X",
-      "publisher": "Apple Corporation"
-    },
-    "BCI-AV": {
-      "href": "http://www.blissymbolics.net/BCI-AV_2020-03-09/BCI-AV_2020-03-09_(en+sv+no+fi)+derivations+symbols_8483-27158.pdf",
-      "title": "PDF with symbols: BCI AV English, Swedish, Norwegian, Finnish",
-      "publisher": "Blissymbolics Communication International",
-      "etAl": true,
-      "deliveredBy": [
-        "https://www.blissymbolics.org/"
-      ]
-    },
-    "BCI-AV-additional-language": {
-      "href": "http://www.blissymbolics.net/BCI-AV_2020-03-09/BCI-AV_2020-03-09_(en+sv+no+fi+hu+de+nl+af+ru+lv+po+fr+es+pt+it+dk)+derivations+symbols_8483-27158.pdf",
-      "title": "PDF with symbols: BCI AV English, Swedish, Deutsch, Norwegian, Finnish, Hungarian, German, Dutch, Afrikaans, Russian, Latvian, Polish, French, Spanish, Portuguese, Italian, Danish",
-      "publisher": "Blissymbolics Communication International",
-      "etAl": true,
-      "deliveredBy": [
-        "https://www.blissymbolics.org/"
-      ]
-    },
-    "coga-gap-analysis": {
-      "title": "Cognitive Accessibility Roadmap and Gap Analysis",
-      "href": "https://w3c.github.io/coga/gap-analysis/",
-      "publisher": "W3C",
-      "editors": [
-        "Lisa Seeman",
-        "Michael Cooper"
-      ],
-      "etAl": "false",
-      "deliveredBy": "https://www.w3.org/WAI/PF/cognitive-a11y-tf/"
-    },
-    "coga-issue-papers": {
-      "title": "Issue Papers for the The Cognitive and Learning Disabilities Accessibility Task Force (COGA)",
-      "href": "https://w3c.github.io/coga/issue-papers/",
-      "publisher": "W3C",
-      "editors": [
-        "Lisa Seeman",
-        "Michael Cooper"
-      ],
-      "etAl": "false",
-      "deliveredBy": "https://www.w3.org/WAI/PF/cognitive-a11y-tf/"
-    },
-    "CORE-AAM": {
-      "title": "Core Accessibility API Mappings 1.1",
-      "href": "http://www.w3.org/TR/core-aam-1.1/",
-      "status": "WD",
-      "publisher": "W3C",
-      "authors": [
-        "Joseph Scheuhammer",
-        "Michael Cooper",
-        "Andi Snow-Weaver",
-        "Aaron Leventhal"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/WAI/ARIA/"
-      ]
-    },
-    "DPUB-ARIA": {
-      "title": "Digital Publishing WAI-ARIA Module 1.0",
-      "href": "http://www.w3.org/TR/dpub-aria-1.0/",
-      "status": "WD",
-      "publisher": "W3C",
-      "authors": [
-        "Matt Garrish",
-        "Tzviya Siegman",
-        "Markus Gylling",
-        "Shane McCarron"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/WAI/ARIA/"
-      ]
-    },
-    "GRAPHICS-ARIA": {
-      "title": "WAI-ARIA Graphics",
-      "href": "http://www.w3.org/TR/graphics-aria-1.0/",
-      "status": "WD",
-      "publisher": "W3C",
-      "authors": [
-        "Amelia Bellamy-Royds",
-        "Fred Esch",
-        "Rich Schwerdtfeger",
-        "Leonie Watson"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/WAI/ARIA/",
-        "http://www.w3.org/SVG/"
-      ]
-    },
-    "GRAPHICS-AAM": {
-      "title": "Graphics Accessibility API Mappings",
-      "href": "http://www.w3.org/TR/graphics-aam-1.0/",
-      "status": "WD",
-      "publisher": "W3C",
-      "authors": [
-        "Amelia Bellamy-Royds",
-        "Fred Esch",
-        "Richard Schwerdtfeger"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/WAI/ARIA/",
-        "http://www.w3.org/SVG/"
-      ]
-    },
-    "EPUB-SSV": {
-      "href": "http://www.idpf.org/epub/vocab/structure/",
-      "title": "EPUB Structural Semantics Vocabulary",
-      "publisher": "IDPF"
-    },
-    "EPUB-Content": {
-      "href": "http://www.idpf.org/epub/31/spec/epub-contentdocs.html",
-      "title": "EPUB Content Documents 3.1",
-      "publisher": "IDPF"
-    },
-    "GTK": {
-      "href": "https://developer.gnome.org/gtk3/stable/",
-      "title": "GTK+ 3 Reference Manual",
-      "publisher": "The GNOME Project"
-    },
-    "HTML-AAM": {
-      "authors": [
-        "Steve Faulkner",
-        "Jason Kiss",
-        "Cynthia Shelly",
-        "Alexander Surkov"
-      ],
-      "etAl": true,
-      "href": "http://www.w3.org/TR/html-aam-1.0/",
-      "title": "HTML Accessibility API Mappings 1.0",
-      "status": "WD",
-      "publisher": "W3C",
-      "deliveredBy": [
-        "http://www.w3.org/html",
-        "http://www.w3.org/WAI/PF/"
-      ]
-    },
-    "MSAA": {
-      "href": "https://msdn.microsoft.com/en-us/library/ms697707.aspx",
-      "title": "Microsoft Active Accessibility (MSAA) 2.0",
-      "publisher": "Microsoft Corporation"
-    },
-    "SVG-AAM": {
-      "title": "SVG2 Accessibility API Mappings 1.0",
-      "href": "http://www.w3.org/TR/svg-aam-1.0/",
-      "status": "WD",
-      "publisher": "W3C",
-      "authors": [
-        "Amelia Bellamy-Royds",
-        "Richard Schwerdtfeger"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/WAI/PF/"
-      ]
-    },
-    "SVG1": {
-      "title": "Scalable Vector Graphics (SVG) 1.0 Specification",
-      "href": "http://www.w3.org/TR/SVG10/",
-      "status": "REC",
-      "publisher": "W3C",
-      "authors": [
-        "John Ferraiolo"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/SVG"
-      ]
-    },
-    "SVG11": {
-      "title": "Scalable Vector Graphics (SVG) 1.1 (Second Edition)",
-      "href": "http://www.w3.org/TR/SVG11/",
-      "status": "REC",
-      "publisher": "W3C",
-      "authors": [
-        "Erik Dahlström",
-        "Patrick Dengler",
-        "Anthony Grasso",
-        "Chris Lilley",
-        "Cameron McCormack",
-        "Doug Schepers",
-        "Jonathan Watt",
-        "John Ferraiolo",
-        "藤沢 淳 (FUJISAWA Jun)",
-        "Dean Jackson"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/SVG"
-      ]
-    },
-    "SVG2": {
-      "title": "Scalable Vector Graphics (SVG) 2",
-      "href": "http://www.w3.org/TR/2015/WD-SVG2-20150915/",
-      "status": "WD",
-      "publisher": "W3C",
-      "authors": [
-        "Nikos Andronikos",
-        "Rossen Atanassov",
-        "Tavmjong Bah",
-        "Amelia Bellamy-Royds",
-        "Brian Birtles",
-        "Cyril Concolato",
-        "Erik Dahlström",
-        "Chris Lilley",
-        "Cameron McCormack",
-        "Doug Schepers",
-        "Dirk Schulze",
-        "Richard Schwerdtfeger",
-        "Satoru Takagi",
-        "Jonathan Watt"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/WAI/PF/"
-      ]
-    },
-    "UI-AUTOMATION": {
-      "href": "https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx",
-      "title": "UI Automation",
-      "publisher": "Microsoft Corporation"
-    },
-    "UIA-EXPRESS": {
-      "href": "https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx",
-      "title": "The IAccessibleEx Interface",
-      "publisher": "Microsoft Corporation"
-    },
-    "WAI-ARIA": {
-      "title": "Accessible Rich Internet Applications (WAI-ARIA) 1.1",
-      "href": "http://www.w3.org/TR/wai-aria-1.1/",
-      "status": "WD",
-      "publisher": "W3C",
-      "authors": [
-        "James Craig",
-        "Michael Cooper",
-        "Shane McCarron"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/WAI/PF/"
-      ]
-    },
-    "aac-registry": {
-      "title": "W3C Alternative and Augmented Communication (AAC) Symbol Registry",
-      "href": "https://www.w3.org/TR/aac-registry/",
-      "status": "DRY",
-      "publisher": "W3C",
-      "authors": [
-        "Michael Cooper",
-        "Ruoxi Ran",
-        "Janina Sajka",
-        "Matthew Atkinson",
-        "Russell Galvin"
-      ],
-      "etAl": true,
-      "deliveredBy": [
-        "http://www.w3.org/WAI/APA/"
-      ],
-      "id": "aac-registry"
-    },
-    "WAI-ARIA-10": {
-      "authors": [
-        "James Craig",
-        "Michael Cooper"
-      ],
-      "etAl": true,
-      "href": "http://www.w3.org/TR/wai-aria/",
-      "title": "Accessible Rich Internet Applications (WAI-ARIA) 1.0",
-      "status": "REC",
-      "publisher": "W3C",
-      "deliveredBy": [
-        "http://www.w3.org/WAI/PF/"
-      ]
-    }
-  },
-  "group": "apa",
-  "github": "w3c/adapt",
-  "publishISODate": "2024-03-12T00:00:00.000Z",
-  "generatedSubtitle": "W3C Editor's Draft 12 March 2024"
-}</script>
-<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED"></head>
-	<body class="h-entry"><div class="head">
-    <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
-  </a></p>
-    <h1 id="title" class="title">WAI-Adapt: Symbols Module</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2024-03-12">12 March 2024</time></p>
-    <details open="">
-      <summary>More details about this document</summary>
-      <dl>
-        <dt>This version:</dt><dd>
-                <a class="u-url" href="https://w3c.github.io/adapt/symbols/">https://w3c.github.io/adapt/symbols/</a>
-              </dd>
-        <dt>Latest published version:</dt><dd>
-                <a href="https://www.w3.org/TR/adapt-symbols/">https://www.w3.org/TR/adapt-symbols/</a>
-              </dd>
-        <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/adapt/symbols/">https://w3c.github.io/adapt/symbols/</a></dd>
-        <dt>History:</dt><dd>
-                    <a href="https://www.w3.org/standards/history/adapt-symbols/">https://www.w3.org/standards/history/adapt-symbols/</a>
-                  </dd><dd>
-                    <a href="https://github.com/w3c/adapt/commits/">Commit history</a>
-                  </dd>
-        
-        
-        
-        
-        
-        <dt>Editors:</dt><dd class="editor p-author h-card vcard" data-editor-id="16320">
-    <a class="ed_mailto u-email email p-name" href="mailto:lisa.seeman@zoho.com">Lisa Seeman</a>
-  </dd><dd class="editor p-author h-card vcard" data-editor-id="72055">
-    <a class="ed_mailto u-email email p-name" href="mailto:charlesl@benetech.org">Charles LaPierre</a> (<span class="p-org org h-org">Benetech</span>)
-  </dd><dd class="editor p-author h-card vcard" data-editor-id="41450">
-    <a class="ed_mailto u-email email p-name" href="mailto:john@foliot.ca">John Foliot</a> (<span class="p-org org h-org">Invited Expert</span>)
-  </dd><dd class="editor p-author h-card vcard" data-editor-id="34017">
-    <a class="ed_mailto u-email email p-name" href="mailto:cooper@w3.org">Michael Cooper</a> (<span class="p-org org h-org">W3C</span>)
-  </dd><dd class="editor p-author h-card vcard" data-editor-id="100586">
-    <a class="ed_mailto u-email email p-name" href="mailto:ran@w3.org">Roy Ran</a> (<span class="p-org org h-org">W3C</span>)
-  </dd><dd class="editor p-author h-card vcard" data-editor-id="2460">
-    <span class="p-name fn">Richard Schwerdtfeger</span> (<a class="p-org org h-org" href="https://www.knowbility.org/">Knowbility</a>) (Editor until October 2017)
-  </dd>
-        
-        
-        <dt>Feedback:</dt><dd>
-        <a href="https://github.com/w3c/adapt/">GitHub w3c/adapt</a>
-        (<a href="https://github.com/w3c/adapt/pulls/">pull requests</a>,
-        <a href="https://github.com/w3c/adapt/issues/new/choose">new issue</a>,
-        <a href="https://github.com/w3c/adapt/issues/">open issues</a>)
-      </dd>
-        
-        
-      </dl>
-    </details>
-    
-    
-    <p class="copyright">
-    <a href="https://www.w3.org/policies/#copyright">Copyright</a>
-    ©
-    2021-2024
-    
-    <a href="https://www.w3.org/">World Wide Web Consortium</a>.
-    <abbr title="World Wide Web Consortium">W3C</abbr><sup>®</sup>
-    <a href="https://www.w3.org/policies/#Legal_Disclaimer">liability</a>,
-    <a href="https://www.w3.org/policies/#W3C_Trademarks">trademark</a> and
-    <a rel="license" href="https://www.w3.org/copyright/document-license/" title="W3C Document License">document use</a> rules apply.
-  </p>
-    <hr title="Separator for header">
-  </div>
-		<section id="abstract" class="introductory"><h2>Abstract</h2>
+		</style>
+	</head>
+	<body>
+		<section id="abstract">
 			<p>This specification provides web content authors a standard approach to support web users with various cognitive and learning disabilities who:</p>
 			<ul>
 				<li>Customarily communicate using symbolic languages generally known as Augmentative and Alternative Communications (<abbr title="Augmentative and Alternative Communication">AAC</abbr>);</li>
 				<li>Need more familiar icons (and other graphical symbols) in order to comprehend page content;</li>
 			</ul>
 
-			<p>The technology described in this specification is intended to be used to programmatically transform the appearance of typical web content including form controls, icons, and other user interface elements	into a rendering incorporating an individual user's preferred <abbr title="Augmentative and Alternative Communication">AAC</abbr> symbols. The <abbr title="World Wide Web Consortium">W3C</abbr> <a href="https://www.w3.org/TR/aac-registry/">WAI-Adapt Symbols Registry</a> provides the required mappings between concept values used by content authors and the user's preferred <abbr title="Augmentative and Alternative Communication">AAC</abbr> symbol set representation of that concept.</p>
-			<p>This WAI-Adapt: Symbols Module is a component of the WAI-Adapt series introduced in the <a href="https://www.w3.org/TR/adapt/">WAI-Adapt Explainer</a> document [<cite><a class="bibref" data-link-type="biblio" href="#bib-adapt" title="WAI-Adapt Explainer">adapt</a></cite>].</p>
+			<p>The technology described in this specification is intended to be used to programmatically transform the appearance of typical web content including form controls, icons, and other user interface elements	into a rendering incorporating an individual user's preferred AAC symbols. The W3C <a href="https://www.w3.org/TR/aac-registry/">WAI-Adapt Symbols Registry</a> provides the required mappings between concept values used by content authors and the user's preferred AAC symbol set representation of that concept.</p>
+			<p>This WAI-Adapt: Symbols Module is a component of the WAI-Adapt series introduced in the <a href="https://www.w3.org/TR/adapt/">WAI-Adapt Explainer</a> document [[adapt]].</p>
 		</section>
 
-		<section id="sotd" class="introductory"><h2>Status of This Document</h2><p><em>This section describes the status of this
-      document at the time of its publication. A list of current <abbr title="World Wide Web Consortium">W3C</abbr>
-      publications and the latest revision of this technical report can be found
-      in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at
-      https://www.w3.org/TR/.</em></p><p>
-    This document was published by the <a href="https://www.w3.org/groups/wg/apa">Accessible Platform Architectures Working Group</a> as
-    an Editor's Draft. 
-  </p><p>Publication as an Editor's Draft does not
-  imply endorsement by <abbr title="World Wide Web Consortium">W3C</abbr> and its Members. </p><p>
-    This is a draft document and may be updated, replaced or obsoleted by other
-    documents at any time. It is inappropriate to cite this document as other
-    than work in progress.
-    
-  </p><p>
-    
-        This document was produced by a group
-        operating under the
-        <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent
-          Policy</a>.
-      
-    
-                <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
-                <a rel="disclosure" href="https://www.w3.org/groups/wg/apa/ipr">public list of any patent disclosures</a>
-          made in connection with the deliverables of
-          the group; that page also includes
-          instructions for disclosing a patent. An individual who has actual
-          knowledge of a patent which the individual believes contains
-          <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential Claim(s)</a>
-          must disclose the information in accordance with
-          <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
-        
-  </p><p>
-                      This document is governed by the
-                      <a id="w3c_process_revision" href="https://www.w3.org/2023/Process-20231103/">03 November 2023 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-                    </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#background"><bdi class="secno">1.1 </bdi>Background</a></li><li class="tocline"><a class="tocxref" href="#wai-adapt-symbols-module"><bdi class="secno">1.2 </bdi>WAI-Adapt: Symbols Module</a></li><li class="tocline"><a class="tocxref" href="#vocabulary-structure-and-implementations"><bdi class="secno">1.3 </bdi>Vocabulary Structure and Implementations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#properties"><bdi class="secno">1.3.1 </bdi>Properties</a></li><li class="tocline"><a class="tocxref" href="#vocabulary_values"><bdi class="secno">1.3.2 </bdi>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#use-cases-and-requirements"><bdi class="secno">1.4 </bdi>Use Cases and Requirements</a></li></ol></li><li class="tocline"><a class="tocxref" href="#terms"><bdi class="secno">2. </bdi>Terms</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">3. </bdi>Conformance</a></li><li class="tocline"><a class="tocxref" href="#vocabulary"><bdi class="secno">4. </bdi>Vocabulary</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#symbol-explanation"><bdi class="secno">4.1 </bdi>symbol</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#description"><bdi class="secno">4.1.1 </bdi>Description</a></li><li class="tocline"><a class="tocxref" href="#symbol-example"><bdi class="secno">4.1.2 </bdi>Examples</a></li><li class="tocline"><a class="tocxref" href="#characteristics"><bdi class="secno">4.1.3 </bdi>Characteristics</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#privacy-and-security-considerations"><bdi class="secno">5. </bdi>Privacy and Security Considerations</a></li><li class="tocline"><a class="tocxref" href="#candidate-recommendation-exit-criteria"><bdi class="secno">A. </bdi>Candidate Recommendation Exit Criteria</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">B. </bdi>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><bdi class="secno">B.1 </bdi>Participants active in the WAI-Adapt TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><bdi class="secno">B.2 </bdi>Other WAI-Adapt TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><bdi class="secno">B.3 </bdi>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">C. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">C.1 </bdi>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">C.2 </bdi>Informative references</a></li></ol></li></ol></nav>
+		<section id="sotd"></section>
 
-		<section class="informative" id="introduction"><div class="header-wrapper"><h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction</h2><a class="self-link" href="#introduction" aria-label="Permalink for Section 1."></a></div><p><em>This section is non-normative.</em></p>
-			
-			<section id="background"><div class="header-wrapper"><h3 id="x1-1-background"><bdi class="secno">1.1 </bdi>Background</h3><a class="self-link" href="#background" aria-label="Permalink for Section 1.1"></a></div>
-				
-				<p>This specification module enables authors to add semantic information about content at the element level, in order to facilitate a more familiar and comprehensible interface for the individual user who requires <abbr title="Augmentative and Alternative Communication">AAC</abbr> symbols support. Final renderings — generated via helper apps or 3rd-party tools — are ultimately defined by the user's configuration settings.</p>
+		<section class="informative" id="introduction">
+			<h2>Introduction</h2>
+			<section>
+				<h3>Background</h3>
+				<p>This specification module enables authors to add semantic information about content at the element level, in order to facilitate a more familiar and comprehensible interface for the individual user who requires AAC symbols support. Final renderings &mdash; generated via helper apps or 3rd-party tools &mdash; are ultimately defined by the user's configuration settings.</p>
 
 				<p>The goal of the attribute and values described in this specification is to enable personalized communication and web content interaction for the individual user. This specification includes facilities to:</p>
 
 				<ul>
-					<li>Transform the user interface (UI) through adaptation of content by injection of <abbr title="Augmentative and Alternative Communication">AAC</abbr> symbols and thus ameliorate the negative impact of content lacking <abbr title="Augmentative and Alternative Communication">AAC</abbr> on Augmentative and Alternative Communications (<abbr title="Augmentative and Alternative Communication">AAC</abbr>) users;</li>
+					<li>Transform the user interface (UI) through adaptation of content by injection of AAC symbols and thus ameliorate the negative impact of content lacking AAC on Augmentative and Alternative Communications (<abbr title="Augmentative and Alternative Communication">AAC</abbr>) users;</li>
 					<li>Provide extra support to the user by providing the communication modality they are best able to comprehend;</li>
 					<li>Enable new adapted user agents for people with learning and cognitive disabilities.</li>
 				</ul>
 
-				<p>WAI-Adapt is more fully introduced in our <a href="https://www.w3.org/TR/adapt/">WAI-Adapt Explainer</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-adapt" title="WAI-Adapt Explainer">adapt</a></cite>].</p>
+				<p>WAI-Adapt is more fully introduced in our <a href="https://www.w3.org/TR/adapt/">WAI-Adapt Explainer</a> [[adapt]].</p>
 			</section>
-			<section id="wai-adapt-symbols-module"><div class="header-wrapper"><h3 id="x1-2-wai-adapt-symbols-module"><bdi class="secno">1.2 </bdi>WAI-Adapt: Symbols Module</h3><a class="self-link" href="#wai-adapt-symbols-module" aria-label="Permalink for Section 1.2"></a></div>
-				
+			<section>
+				<h3>WAI-Adapt: Symbols Module</h3>
 				<p>WAI-Adapt: Symbols Module is the first part of the WAI-Adapt technical specification, which provides WAI-Adapt and vocabularies that can be used to mark-up web content with additional semantic information, enabling user agents to augment or adapt content to various user-scenarios based on the user’s personalization settings or preferences. The Symbols Module allows authors to enhance web content by providing additional information about the meaning of specific parts of the content. User agents use these semantics to augment or adapt content to the user's preferred symbol set. This helps users with varying needs better understand the content.</p>
 			</section>
-			<section id="vocabulary-structure-and-implementations"><div class="header-wrapper"><h3 id="x1-3-vocabulary-structure-and-implementations"><bdi class="secno">1.3 </bdi>Vocabulary Structure and Implementations</h3><a class="self-link" href="#vocabulary-structure-and-implementations" aria-label="Permalink for Section 1.3"></a></div>
-				
+			<section>
+				<h3>Vocabulary Structure and Implementations</h3>
 				<p>The vocabulary in WAI-Adapt: Symbols Module is constructed of properties and their values. Please see our <a href="https://www.w3.org/TR/adapt/">WAI-Adapt Explainer</a>. </p>
 				<p>The vocabulary implementation included in this module specification is available at our <a href="https://github.com/w3c/adapt/wiki/Implementations-of-Semantics">implementations wiki page</a>.</p>
-				<section id="properties"><div class="header-wrapper"><h4 id="x1-3-1-properties"><bdi class="secno">1.3.1 </bdi>Properties</h4><a class="self-link" href="#properties" aria-label="Permalink for Section 1.3.1"></a></div>
-					
+				<section id="properties">
+					<h4>Properties</h4>
 					<p>Properties are the main units of WAI-Adapt types supported by the vocabulary. A given property supports a specific type of personalization. That property would only be used once on a given piece of content, but multiple different properties could be used on the same piece of content to address different needs.</p>
 				</section>
-				<section id="propcharacteristic_value"><div class="header-wrapper"><h4 id="vocabulary_values"><bdi class="secno">1.3.2 </bdi>Values</h4><a class="self-link" href="#vocabulary_values" aria-label="Permalink for Section 1.3.2"></a></div>
-					
+				<section id="propcharacteristic_value">
+					<h4 id="vocabulary_values">Values</h4>
 					<p>Values provide the specific WAI-Adapt information for the property. The possible values for each property are elaborated in the definition of the property in the modules. Some properties require the value to come from a predefined list of possible values, others can accept arbitrary strings, and some may accept multiple values. The attribute value may be one of the following types:</p>
 					<dl>
 						<dt id="valuetype_idref">ID reference</dt>
@@ -690,147 +79,49 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 					</dl>
 				</section>
 				<p><strong>Note that the attributes and values in this specification do not override the semantics exposed in the accessibility tree, but rather augment them.</strong> In the case of conflict between an element's semantics and the attribute values, validation algorithms should issue a warning but not an error.</p>
-				<div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="4"><span>Note</span></div><div class="">Since implementations have not yet been finalized, any examples in this document are illustrative only, and are provided to help in understanding the concept.  All examples will be updated once implementation examples are finalized.</div></div>
+				<div class="note">Since implementations have not yet been finalized, any examples in this document are illustrative only, and are provided to help in understanding the concept.  All examples will be updated once implementation examples are finalized.</div>
 			</section>
 
-			<section id="use-cases-and-requirements"><div class="header-wrapper"><h3 id="x1-4-use-cases-and-requirements"><bdi class="secno">1.4 </bdi>Use Cases and Requirements</h3><a class="self-link" href="#use-cases-and-requirements" aria-label="Permalink for Section 1.4"></a></div>
-				
-				<p>The <a href="https://www.w3.org/TR/adapt-requirements/">Requirements document for WAI-Adapt</a> describes use cases and requirements which, in turn, are derived from the user scenarios and use cases published in the <abbr title="World Wide Web Consortium">W3C</abbr> Note, <a href="https://www.w3.org/TR/coga-usable/">Making Content Usable for People with Cognitive and Learning Disabilities</a>. This specification module provides one key component to fulfil those requirements related to adapting content to support <abbr title="Augmentative and Alternative Communication">AAC</abbr> symbols.</p>
+			<section>
+				<h3>Use Cases and Requirements</h3>
+				<p>The <a href="https://www.w3.org/TR/adapt-requirements/">Requirements document for WAI-Adapt</a> describes use cases and requirements which, in turn, are derived from the user scenarios and use cases published in the W3C Note, <a href="https://www.w3.org/TR/coga-usable/">Making Content Usable for People with Cognitive and Learning Disabilities</a>. This specification module provides one key component to fulfil those requirements related to adapting content to support AAC symbols.</p>
 			</section>
 		</section>
 
-		<section id="terms"><div class="header-wrapper"><h2 id="x2-terms"><bdi class="secno">2. </bdi>Terms</h2><a class="self-link" href="#terms" aria-label="Permalink for Section 2."></a></div>
-			
+		<section>
+			<h2>Terms</h2>
 			<p>This document uses a number of specific terms related to various cognitive disabilities and related user-needs. Those terms have been defined by the Cognitive and Learning Disabilities Accessibility Task Force. See the <a href="https://www.w3.org/TR/coga-usable/#glossary">COGA Glossary</a> for specific definitions.</p>
 		</section>
 
-		<section id="conformance"><div class="header-wrapper"><h2 id="x3-conformance"><bdi class="secno">3. </bdi>Conformance</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 3."></a></div><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p><p>
-        The key words <em class="rfc2119">MAY</em> and <em class="rfc2119">MUST</em> in this document
-        are to be interpreted as described in
-        <a href="https://datatracker.ietf.org/doc/html/bcp14">BCP 14</a>
-        [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">RFC2119</a></cite>] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8174" title="Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words">RFC8174</a></cite>]
-        when, and only when, they appear in all capitals, as shown here.
-      </p>
+		<section id="conformance">
 			<p>This section is normative.</p>
 
-			<p>The content of WAI-Adapt Symbols consists of numeric values for the adapt-symbol attribute for any span of text and taken from the <a href="https://www.w3.org/TR/adapt-registry"><abbr title="World Wide Web Consortium">W3C</abbr> WAI-Adapt Registry</a> corresponding to the concept associated with that Registry numeric value.
+			<p>The content of WAI-Adapt Symbols consists of numeric values for the adapt-symbol attribute for any span of text and taken from the <a href="https://www.w3.org/TR/adapt-registry">W3C WAI-Adapt Registry</a> corresponding to the concept associated with that Registry numeric value.
 
-			Authors <em class="rfc2119">MAY</em> use this attribute in HTML content to enhance the personalizability of the content ad libitum. There is no requirement that all content must be marked with adapt-symbol index values, and there is no minimum.</p>
-
-		</section>
-
-		<section id="vocabulary"><div class="header-wrapper"><h2 id="x4-vocabulary"><bdi class="secno">4. </bdi>Vocabulary</h2><a class="self-link" href="#vocabulary" aria-label="Permalink for Section 4."></a></div>
-			
-
-			<section id="symbol-explanation"><div class="header-wrapper"><h3 id="x4-1-symbol"><bdi class="secno">4.1 </bdi>symbol</h3><a class="self-link" href="#symbol-explanation" aria-label="Permalink for Section 4.1"></a></div>
-	
-	<section id="description"><div class="header-wrapper"><h4 id="x4-1-1-description"><bdi class="secno">4.1.1 </bdi>Description</h4><a class="self-link" href="#description" aria-label="Permalink for Section 4.1.1"></a></div>
-		
-		<div class="property-description">
-			<p>The <code>adapt-symbol</code> attribute identifies the concept for symbols used in <abbr title="Augmentative and Alternative Communication">AAC</abbr> devices, etc., for users who cannot process traditional written language. The symbols are an alternative vocabulary, and multiple symbol sets exist today. These various symbol sets are, unfortunately, not mutually comprehensible so the individual familiar with expression via symbol set alpha is unable to understand expressions using symbol set beta. This specification exists to provide a web-based technological mechanism to select appropriate symbols from the set an individual user knows by using the <abbr title="Blissymbolics Communication International">BCI</abbr> concept index, the current de facto standard for cross referencing symbolic representations among symbol sets extant in the world today.</p>
-			<p>The <code>adapt-symbol</code> attribute accepts a numeric reference number.</p>
-			<p>A personalization-aware user agent can then augment or transform User Interfaces by:</p>
-			<ul>
-				<li>converting content author text, annotated using numeric values from the <abbr title="Blissymbolics Communication International">BCI</abbr> concept index into  symbols in the user's preferred set,</li>
-				<li>facilitating symbol-set representation by loading and displaying symbols that the user is familiar with, so they do not have to learn new symbols across different applications environments.</li>
-			</ul>
-			<p></p>
-			<div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="5"><span>Note</span></div><div class="">
-				<p>It is important to understand that support for the world's languages, and the translation of content from one language into another occurs between written natural languages. At no time is there any expectation of translation among symbols themselves. Such a concept remains undefined. Multiple <abbr title="Augmentative and Alternative Communication">AAC</abbr> symbol sets are supported by this specification because users of one symbol set generally cannot comprehend symbols from a different symbol set. Thus this specification facilitates the expression of concepts in the <abbr title="Augmentative and Alternative Communication">AAC</abbr> symbol set an individual user knows based on <abbr title="Blissymbolics Communication International">BCI</abbr> index values as the common concept interchange.</p></div></div>
-			<p>In those natural languages where an expression can differ based on gender and verb tense,  more than one <abbr title="Blissymbolics Communication International">BCI</abbr> index value may be needed to map the expression to a symbol. In such situations content authors should join multiple <abbr title="Blissymbolics Communication International">BCI</abbr> index values in order to map to a single conjugated symbol by using a plus (<code>+</code>) sign (with no spaces between the <abbr title="Blissymbolics Communication International">BCI</abbr> index values).</p>
-			<p>When no individual codepoint exists to express the textual content, multiple <abbr title="Blissymbolics Communication International">BCI</abbr> index values <em class="rfc2119">MAY</em> be conjugated by listing two or more concept index values together, separated only by a plus (<code>+</code>) symbol. The order of multiple concepts should be the same as used in typical speech in the natural language of the content.</p>
-			<p>The numeric values utilized to map to symbols <em class="rfc2119">MUST</em> be published <abbr title="Blissymbolics Communication International">BCI</abbr> index values. These can be obtained from the <a href="https://w3c.github.io/aac-registry/"><abbr title="World Wide Web Consortium">W3C</abbr> Augmentative and Alternative Communication (<abbr title="Augmentative and Alternative Communication">AAC</abbr>) Symbols Registry specification</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-aac-registry" title="W3C Alternative and Augmented Communication (AAC) Symbol Registry">aac-registry</a></cite>].</p>
-			<div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="5"><span>Note</span></div><div class="">
-				<p>The <a href="https://w3c.github.io/aac-registry/"><abbr title="World Wide Web Consortium">W3C</abbr> Augmentative and Alternative Communication (<abbr title="Augmentative and Alternative Communication">AAC</abbr>) Symbols Registry specification</a> is not yet at First Public Working Draft (FPWD). When it reaches this milestone, we will seek to republish this document as a Candidate Recommendation (CR).</p>
-			</div></div>
-			<div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="5"><span>Note</span></div><div class="">
-				<p>This specification is focused on allowing authors to make one-to-one mappings from parts of their content to concepts as defined by <abbr title="Blissymbolics Communication International">BCI</abbr>. The rendering of the appropriate symbols for the user would be handled by the user agent, extension, or assistive technology. It is anticipated that symbol selection for rendering would take the form of a simple look-up.</p>
-				<p>Whilst this specification is not focused on rendering, here are some notes on the expected process, which may be of interest for authors and implementers.</p>
-				<ul>
-					<li>The <abbr title="Blissymbolics Communication International">BCI</abbr> index value may map to one rendered symbol, or possibly more than one rendered symbol, in the user's chosen symbol set. This is because the user's chosen set may not have a single symbol to represent that one concept.</li>
-					<li>A mapping from a <abbr title="Blissymbolics Communication International">BCI</abbr> index value to the user's chosen symbol set would exist, enabling a user agent to render one (or more) symbols for that index value.</li>
-					<li>An extensible, standard mapping URI resource utilizing a <a href="https://www.w3.org/2021/Process-20211102/#registries"><abbr title="World Wide Web Consortium">W3C</abbr> Registry</a> will be developed for <abbr title="Blissymbolics Communication International">BCI</abbr> concepts also cross-referencing corresponding symbols in multiple, available symbol sets.</li>
-					<li>Authors should not assume that one index value maps to one symbol—though authors should not need to make any assumptions about rendering, other than ensuring their content can be resized and will reflow, as per WCAG 2.1 Success Criteria 1.4.4 <a href="https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html">Resize Text</a> and 1.4.10 <a href="https://www.w3.org/WAI/WCAG21/Understanding/reflow.html">Reflow</a>.</li>
-				</ul>
-			</div></div>
-		</div>
-	</section>
-	<section id="symbol-example"><div class="header-wrapper"><h4 id="x4-1-2-examples"><bdi class="secno">4.1.2 </bdi>Examples</h4><a class="self-link" href="#symbol-example" aria-label="Permalink for Section 4.1.2"></a></div>
-		
-		<p>Here are some examples using the <code>adapt-symbol</code> attribute.</p>
-		<ol>
-			<li>Symbols for individual words.
-				<div class="example" id="example-symbols-for-individual-words">
-        <div class="marker">
-    <a class="self-link" href="#example-symbols-for-individual-words">Example<bdi> 1</bdi></a><span class="example-title">: Symbols for individual words</span>
-  </div> <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">adapt-symbol</span>=<span class="hljs-string">"13621"</span>&gt;</span>Cup<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> of <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">adapt-symbol</span>=<span class="hljs-string">"17511"</span>&gt;</span>Tea<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre>
-      </div>
-			</li>
-			<li>Symbols used with an image (<code>alt</code> text represented as a symbol).
-				<div class="example" id="example-symbols-used-with-an-image">
-        <div class="marker">
-    <a class="self-link" href="#example-symbols-used-with-an-image">Example<bdi> 2</bdi></a><span class="example-title">: Symbols used with an image</span>
-  </div> <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"cup.png"</span> <span class="hljs-attr">adapt-symbol</span>=<span class="hljs-string">"13621"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Cup"</span>/&gt;</span></code></pre>
-      </div>
-			</li>
-			<li>Symbols with conjugation. In this example a symbol is used for "her name" for the conjugated Hebrew word, <span lang="he" dir="rtl">שמה</span>. The plus sign is used with no spaces to join the conjugated values, "her" (14707) and "name" (15691). If the gender is not important, you can just use the value for name (15691).
-				<div class="example" id="example-symbols-with-conjugation">
-        <div class="marker">
-    <a class="self-link" href="#example-symbols-with-conjugation">Example<bdi> 3</bdi></a><span class="example-title">: Symbols with conjugation</span>
-  </div> <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"her-name.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"שמה"</span> <span class="hljs-attr">adapt-symbol</span>=<span class="hljs-string">"15691+14707"</span>/&gt;</span></code></pre>
-      </div>
-			</li>
-		</ol>
-	</section>
-	<section id="characteristics"><div class="header-wrapper"><h4 id="x4-1-3-characteristics"><bdi class="secno">4.1.3 </bdi>Characteristics</h4><a class="self-link" href="#characteristics" aria-label="Permalink for Section 4.1.3"></a></div>
-		
-		<table class="property-features">
-			<thead>
-				<tr>
-					<th scope="col">Characteristic</th>
-					<th scope="col">Value</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="property-related-head" scope="row">Related Concepts:</th>
-					<td class="property-related"><cite><a href="https://www.w3.org/TR/microdata/#the-basic-syntax">microdata</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-microdata" title="HTML Microdata">microdata</a></cite>], <cite><a href="http://www.w3.org/TR/2005/WD-swbp-skos-core-guide-20051102">SKOS Core Guide</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-swbp-skos-core-guide" title="SKOS Core Guide">swbp-skos-core-guide</a></cite>] and <cite><a href="https://www.w3.org/TR/rdfa-primer/">RDFa [<cite><a class="bibref" data-link-type="biblio" href="#bib-rdfa-primer" title="RDFa 1.1 Primer - Third Edition">rdfa-primer</a></cite>]</a></cite></td>
-				</tr>
-				<tr>
-					<th class="property-applicability-head" scope="row">Used in Roles:</th>
-					<td class="property-applicability">All elements of the base markup</td>
-				</tr>
-				<tr>
-					<th class="property-descendants-head" scope="row">Inherits into Roles:</th>
-					<td class="property-descendants">Placeholder</td>
-				</tr>
-				<tr>
-					<th class="property-value-head" scope="row">Value:</th>
-					<td class="property-value"><a href="#valuetype_uri">URI</a></td>
-				</tr>
-			</tbody>
-		</table>
-	</section>
-</section>
+			Authors MAY use this attribute in HTML content to enhance the personalizability of the content ad libitum. There is no requirement that all content must be marked with adapt-symbol index values, and there is no minimum.</p>
 
 		</section>
 
-		<section id="privacy-and-security-considerations"><div class="header-wrapper"><h2 id="x5-privacy-and-security-considerations"><bdi class="secno">5. </bdi>Privacy and Security Considerations</h2><a class="self-link" href="#privacy-and-security-considerations" aria-label="Permalink for Section 5."></a></div>
-			
+		<section>
+			<h2>Vocabulary</h2>
+
+			<section data-include="symbol.html" data-include-replace="true" id="symbol"></section>
+		</section>
+
+		<section>
+			<h2>Privacy and Security Considerations</h2>
 			<p>This specification adds context information about content to the document, and should not affect security.</p>
 
-			<p>Although this specification does not expose personal preferences and personal information, third party user agents or proxy server(s) acting upon our semantic information may need to store personal preferences on how to&nbsp;present content to a specific user. It is recommended that any user agent or proxy server implements best practices to protect all personal preferences and personal information.</p>
+			<p>Although this specification does not expose personal preferences and personal information, third party user agents or proxy server(s) acting upon our semantic information may need to store personal preferences on how to present content to a specific user. It is recommended that any user agent or proxy server implements best practices to protect all personal preferences and personal information.</p>
 
 			<p>Any user agent with user settings are recommended to follow best practices to keep user information secure.</p>
 			<p>The Privacy and Security Considerations of WAI-Adapt: Symbols Module is also discussed at <a href="https://github.com/w3c/adapt/issues/131">issue #131</a>.</p>
 		</section>
 
-		<section class="appendix" id="candidate-recommendation-exit-criteria"><div class="header-wrapper"><h2 id="a-candidate-recommendation-exit-criteria"><bdi class="secno">A. </bdi>Candidate Recommendation Exit Criteria</h2><a class="self-link" href="#candidate-recommendation-exit-criteria" aria-label="Permalink for Appendix A."></a></div>
-			
+		<section class="appendix">
+			<h2>Candidate Recommendation Exit Criteria</h2>
 			<p>The WAI Adapt: Symbols Module specification consists of the symbol attribute that may be added to a page’s HTML at the website’s discretion. A user agent may take suitable rendering decisions based on these attributes.</p>
-			<aside class="example" id="example-a-browser-extension-for-rendering-symbols"><div class="marker">
-    <a class="self-link" href="#example-a-browser-extension-for-rendering-symbols">Example<bdi> 4</bdi></a><span class="example-title">: A browser extension for rendering symbols</span>
-  </div>
+			<aside class="example" title="A browser extension for rendering symbols">
 				<p>A browser extension or stand-alone tool may have a mode that renders the appropriate symbol for an input label.</p>
 				<code>
 					&lt;label for="home" <strong>adapt-symbol="14885"</strong>&gt;Your Principle Residence&lt;/label&gt; <br>
@@ -848,284 +139,6 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 			</ul>
 		</section>
 
-		<section class="appendix informative section" id="acknowledgements"><div class="header-wrapper"><h2 id="b-acknowledgments"><bdi class="secno">B. </bdi>Acknowledgments</h2><a class="self-link" href="#acknowledgements" aria-label="Permalink for Appendix B."></a></div><p><em>This section is non-normative.</em></p>
-	
-	<p>The following people contributed to the development of this document.</p>
-	<section class="section" id="ack_group"><div class="header-wrapper"><h3 id="b-1-participants-active-in-the-wai-adapt-tf-at-the-time-of-publication"><bdi class="secno">B.1 </bdi>Participants active in the WAI-Adapt TF at the time of publication</h3><a class="self-link" href="#ack_group" aria-label="Permalink for Appendix B.1"></a></div>
-		
-		<ul>
-			<li>Matthew Atkinson (TPG Interactive)</li>
-			<li>Mike Beganyi (TPG Interactive)</li>
-			<li>Thaddeus Cambron (Invited Expert)</li>
-			<li>Michael Cooper (<abbr title="World Wide Web Consortium">W3C</abbr>/MIT)</li>
-			<li>John Foliot (Invited Expert)</li>
-			<li>Becky Gibson (Knowbility, Inc.)</li>
-			<li>Charles LaPierre (Benetech)</li>
-			<li>Roy Ran (<abbr title="World Wide Web Consortium">W3C</abbr>/Beihang)</li>
-			<li>Janina Sajka (Invited Expert)</li>
-			<li>Lisa Seeman (Invited Expert) </li>
-			<li>Sharon Snider (IBM Corporation)</li>
-			<li>Lionel Wolberger (UserWay)</li>
-		</ul>
-  </section>
-	<section class="section" id="ack_others"><div class="header-wrapper"><h3 id="b-2-other-wai-adapt-tf-contributors-commenters-and-previously-active-participants"><bdi class="secno">B.2 </bdi>Other WAI-Adapt TF contributors, commenters, and previously active participants</h3><a class="self-link" href="#ack_others" aria-label="Permalink for Appendix B.2"></a></div>
-		
-		<ul>
-			<li>Joanmarie Diggs (Igalia)</li>
-			<li>Richard Schwerdtfeger (Knowbility, Inc.)</li>
-			<li>Jason White (Educational Testing Service)</li>
-		</ul>
-	</section>
-	<section class="section" id="ack_funders"><div class="header-wrapper"><h3 id="b-3-enabling-funders"><bdi class="secno">B.3 </bdi>Enabling funders</h3><a class="self-link" href="#ack_funders" aria-label="Permalink for Appendix B.3"></a></div>
-		
-		<p>This publication has been funded initially under contract number ED-OSE-10-C-0067, then under contract number HHSP23301500054C, and now under HHS75P00120P00168. The content of this publication does not necessarily reflect the views or policies of the U.S. Department of Health and Human Services, nor does mention of trade names, commercial products, or organizations imply endorsement by the U.S. Government. Some of the work on this project has also received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No.780529 and 643399. </p>
-	</section>
-</section>
-
-	
-
-<section id="references" class="appendix"><div class="header-wrapper"><h2 id="c-references"><bdi class="secno">C. </bdi>References</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix C."></a></div><section id="normative-references"><div class="header-wrapper"><h3 id="c-1-normative-references"><bdi class="secno">C.1 </bdi>Normative references</h3><a class="self-link" href="#normative-references" aria-label="Permalink for Appendix C.1"></a></div>
-    
-    <dl class="bibliography"><dt id="bib-aac-registry">[aac-registry]</dt><dd>
-      <a href="https://www.w3.org/TR/aac-registry/"><cite>W3C Alternative and Augmented Communication (AAC) Symbol Registry</cite></a>. Michael Cooper; Ruoxi Ran; Janina Sajka; Matthew Atkinson; Russell Galvin et al.  W3C. DRY. URL: <a href="https://www.w3.org/TR/aac-registry/">https://www.w3.org/TR/aac-registry/</a>
-    </dd><dt id="bib-microdata">[microdata]</dt><dd>
-      <a href="https://www.w3.org/TR/microdata/"><cite>HTML Microdata</cite></a>. Chaals Nevile; Dan Brickley; Ian Hickson.  W3C. 28 January 2021. W3C Working Group Note. URL: <a href="https://www.w3.org/TR/microdata/">https://www.w3.org/TR/microdata/</a>
-    </dd><dt id="bib-rdfa-primer">[rdfa-primer]</dt><dd>
-      <a href="https://www.w3.org/TR/rdfa-primer/"><cite>RDFa 1.1 Primer - Third Edition</cite></a>. Ivan Herman; Ben Adida; Manu Sporny; Mark Birbeck.  W3C. 17 March 2015. W3C Working Group Note. URL: <a href="https://www.w3.org/TR/rdfa-primer/">https://www.w3.org/TR/rdfa-primer/</a>
-    </dd><dt id="bib-rfc2119">[RFC2119]</dt><dd>
-      <a href="https://www.rfc-editor.org/rfc/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>
-    </dd><dt id="bib-rfc8174">[RFC8174]</dt><dd>
-      <a href="https://www.rfc-editor.org/rfc/rfc8174"><cite>Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</cite></a>. B. Leiba.  IETF. May 2017. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>
-    </dd><dt id="bib-swbp-skos-core-guide">[swbp-skos-core-guide]</dt><dd>
-      <a href="https://www.w3.org/TR/swbp-skos-core-guide/"><cite>SKOS Core Guide</cite></a>. Alistair Miles; Dan Brickley.  W3C. 2 November 2005. W3C Working Draft. URL: <a href="https://www.w3.org/TR/swbp-skos-core-guide/">https://www.w3.org/TR/swbp-skos-core-guide/</a>
-    </dd></dl>
-  </section><section id="informative-references"><div class="header-wrapper"><h3 id="c-2-informative-references"><bdi class="secno">C.2 </bdi>Informative references</h3><a class="self-link" href="#informative-references" aria-label="Permalink for Appendix C.2"></a></div>
-    
-    <dl class="bibliography"><dt id="bib-adapt">[adapt]</dt><dd>
-      <a href="https://www.w3.org/TR/adapt/"><cite>WAI-Adapt Explainer</cite></a>. Lisa Seeman-Horwitz; Charles LaPierre; John Foliot; Michael Cooper; Ruoxi Ran; Richard Schwerdtfeger.  W3C. 3 January 2023. W3C Working Group Note. URL: <a href="https://www.w3.org/TR/adapt/">https://www.w3.org/TR/adapt/</a>
-    </dd></dl>
-  </section></section><p role="navigation" id="back-to-top">
-    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
-  </p><script id="respec-dfn-panel">(() => {
-// @ts-check
-if (document.respec) {
-  document.respec.ready.then(setupPanel);
-} else {
-  setupPanel();
-}
-
-function setupPanel() {
-  const listener = panelListener();
-  document.body.addEventListener("keydown", listener);
-  document.body.addEventListener("click", listener);
-}
-
-function panelListener() {
-  /** @type {HTMLElement} */
-  let panel = null;
-  return event => {
-    const { target, type } = event;
-
-    if (!(target instanceof HTMLElement)) return;
-
-    // For keys, we only care about Enter key to activate the panel
-    // otherwise it's activated via a click.
-    if (type === "keydown" && event.key !== "Enter") return;
-
-    const action = deriveAction(event);
-
-    switch (action) {
-      case "show": {
-        hidePanel(panel);
-        /** @type {HTMLElement} */
-        const dfn = target.closest("dfn, .index-term");
-        panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
-        const coords = deriveCoordinates(event);
-        displayPanel(dfn, panel, coords);
-        break;
-      }
-      case "dock": {
-        panel.style.left = null;
-        panel.style.top = null;
-        panel.classList.add("docked");
-        break;
-      }
-      case "hide": {
-        hidePanel(panel);
-        panel = null;
-        break;
-      }
-    }
-  };
-}
-
-/**
- * @param {MouseEvent|KeyboardEvent} event
- */
-function deriveCoordinates(event) {
-  const target = /** @type HTMLElement */ (event.target);
-
-  // We prevent synthetic AT clicks from putting
-  // the dialog in a weird place. The AT events sometimes
-  // lack coordinates, so they have clientX/Y = 0
-  const rect = target.getBoundingClientRect();
-  if (
-    event instanceof MouseEvent &&
-    event.clientX >= rect.left &&
-    event.clientY >= rect.top
-  ) {
-    // The event probably happened inside the bounding rect...
-    return { x: event.clientX, y: event.clientY };
-  }
-
-  // Offset to the middle of the element
-  const x = rect.x + rect.width / 2;
-  // Placed at the bottom of the element
-  const y = rect.y + rect.height;
-  return { x, y };
-}
-
-/**
- * @param {Event} event
- */
-function deriveAction(event) {
-  const target = /** @type {HTMLElement} */ (event.target);
-  const hitALink = !!target.closest("a");
-  if (target.closest("dfn:not([data-cite]), .index-term")) {
-    return hitALink ? "none" : "show";
-  }
-  if (target.closest(".dfn-panel")) {
-    if (hitALink) {
-      return target.classList.contains("self-link") ? "hide" : "dock";
-    }
-    const panel = target.closest(".dfn-panel");
-    return panel.classList.contains("docked") ? "hide" : "none";
-  }
-  if (document.querySelector(".dfn-panel:not([hidden])")) {
-    return "hide";
-  }
-  return "none";
-}
-
-/**
- * @param {HTMLElement} dfn
- * @param {HTMLElement} panel
- * @param {{ x: number, y: number }} clickPosition
- */
-function displayPanel(dfn, panel, { x, y }) {
-  panel.hidden = false;
-  // distance (px) between edge of panel and the pointing triangle (caret)
-  const MARGIN = 20;
-
-  const dfnRects = dfn.getClientRects();
-  // Find the `top` offset when the `dfn` can be spread across multiple lines
-  let closestTop = 0;
-  let minDiff = Infinity;
-  for (const rect of dfnRects) {
-    const { top, bottom } = rect;
-    const diffFromClickY = Math.abs((top + bottom) / 2 - y);
-    if (diffFromClickY < minDiff) {
-      minDiff = diffFromClickY;
-      closestTop = top;
-    }
-  }
-
-  const top = window.scrollY + closestTop + dfnRects[0].height;
-  const left = x - MARGIN;
-  panel.style.left = `${left}px`;
-  panel.style.top = `${top}px`;
-
-  // Find if the panel is flowing out of the window
-  const panelRect = panel.getBoundingClientRect();
-  const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
-  if (panelRect.right > SCREEN_WIDTH) {
-    const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
-    const newCaretOffset = left - newLeft;
-    panel.style.left = `${newLeft}px`;
-    /** @type {HTMLElement} */
-    const caret = panel.querySelector(".caret");
-    caret.style.left = `${newCaretOffset}px`;
-  }
-
-  // As it's a dialog, we trap focus.
-  // TODO: when <dialog> becomes a implemented, we should really
-  // use that.
-  trapFocus(panel, dfn);
-}
-
-/**
- * @param {HTMLElement} panel
- * @param {HTMLElement} dfn
- * @returns
- */
-function trapFocus(panel, dfn) {
-  /** @type NodeListOf<HTMLAnchorElement> elements */
-  const anchors = panel.querySelectorAll("a[href]");
-  // No need to trap focus
-  if (!anchors.length) return;
-
-  // Move focus to first anchor element
-  const first = anchors.item(0);
-  first.focus();
-
-  const trapListener = createTrapListener(anchors, panel, dfn);
-  panel.addEventListener("keydown", trapListener);
-
-  // Hiding the panel releases the trap
-  const mo = new MutationObserver(records => {
-    const [record] = records;
-    const target = /** @type HTMLElement */ (record.target);
-    if (target.hidden) {
-      panel.removeEventListener("keydown", trapListener);
-      mo.disconnect();
-    }
-  });
-  mo.observe(panel, { attributes: true, attributeFilter: ["hidden"] });
-}
-
-/**
- *
- * @param {NodeListOf<HTMLAnchorElement>} anchors
- * @param {HTMLElement} panel
- * @param {HTMLElement} dfn
- * @returns
- */
-function createTrapListener(anchors, panel, dfn) {
-  const lastIndex = anchors.length - 1;
-  let currentIndex = 0;
-  return event => {
-    switch (event.key) {
-      // Hitting "Tab" traps us in a nice loop around elements.
-      case "Tab": {
-        event.preventDefault();
-        currentIndex += event.shiftKey ? -1 : +1;
-        if (currentIndex < 0) {
-          currentIndex = lastIndex;
-        } else if (currentIndex > lastIndex) {
-          currentIndex = 0;
-        }
-        anchors.item(currentIndex).focus();
-        break;
-      }
-
-      // Hitting "Enter" on an anchor releases the trap.
-      case "Enter":
-        hidePanel(panel);
-        break;
-
-      // Hitting "Escape" returns focus to dfn.
-      case "Escape":
-        hidePanel(panel);
-        dfn.focus();
-        return;
-    }
-  };
-}
-
-/** @param {HTMLElement} panel */
-function hidePanel(panel) {
-  if (!panel) return;
-  panel.hidden = true;
-  panel.classList.remove("docked");
-}
-})()</script><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
+		<div data-include="../common/acknowledgements.html" data-oninclude="fixIncludes" data-include-replace="true">Acknowledgements placeholder</div>
+	</body>
+</html>
