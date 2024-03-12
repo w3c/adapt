@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset=UTF-8>
+	<meta content="width=device-width" name="viewport">
+	<title>Exploring making site navigation more accessible, with "well-known destinations"</title>
+	<link rel="stylesheet" href="Templates/slides.css">
+	<!-- To use the b6+ framework, include this: -->
+	<script src="Templates/b6plus.js"></script>
+	<!-- To use the Shower framework, remove b6plus above and add these two: -->
+	<!--   <script src="../Templates/shower.js"></script>         -->
+	<!--   <script src="../Templates/iframe-fixup.js"></script>   -->
+	<style>
+		.visually-hidden {
+			clip: rect(0 0 0 0);
+			clip-path: inset(50%);
+			height: 1px;
+			overflow: hidden;
+			position: absolute;
+			white-space: nowrap;
+			width: 1px;
+		}
+
+		.side-by-side {
+			display: flex;
+			gap: 1rem;
+			align-items: center;
+		}
+	</style>
+</head>
+
+<body class="emerge shower slide-up duration=15">
+	<!--
+			<section class="comment">
+			<p>Include TPAC session links when public.</p>
+			</section>
+		-->
+
+	<div class="progress">
+		<!-- Remove this element if you don't want a progress bar -->
+	</div>
+
+	<section class="slide cover clear" id="start">
+		<h1>Exploring making site navigation more accessible, with &quot;well&#8209;known&nbsp;destinations&quot;</h1>
+		<address>WAI-Adapt Task Force</address>
+		<p>★ W3C Breakouts Day 2024, 12 March ★</p>
+	</section>
+
+	<section class="slide">
+		<h2>Welcome</h2>
+		<p>This is a presentation on the latest work of the WAI-Adapt Task Force.</p>
+		<p><strong>Facilitator:</strong> Lionel Wolberger (UserWay AC rep)</p>
+		<p><strong>Task Force home:</strong> <a
+				href="https://www.w3.org/WAI/APA/task-forces/adapt/">https://www.w3.org/WAI/APA/task-forces/adapt/</a></p>
+		<p><strong>This talk:</strong> <small><a
+					href="https://raw.githack.com/w3c/adapt/main/presentations/breakouts-day-2024/">https://raw.githack.com/w3c/adapt/main/presentations/breakouts-day-2024/</a></small>
+		<p><strong>Presenters:</strong></p>
+		<ul>
+			<li>Matthew Atkinson (Samsung R&D UK; speaking as APA WG co&#8209;chair)</li>
+			<li>Abhinav Kumar, SAP Labs India</li>
+		</ul>
+		</p>
+		</p>
+	</section>
+
+	<section class="slide">
+		<h2>What is this all about?</h2>
+		<ol>
+			<li class="next">
+				<p>The need for WAI-Adapt</p>
+			</li>
+			<li class="next">
+				<p>Site navigation barriers</p>
+			</li>
+			<li class="next">
+				<p>What support could look like (browser extension demo)</p>
+			</li>
+			<li class="next">
+				<p>WAI-Adapt's proposed solution</p>
+			</li>
+			<li class="next">
+				<p>Next steps (including seeking review)</p>
+			</li>
+			<li class="next">
+				<p>Discussion</p>
+			</li>
+		</ol>
+	</section>
+
+	<section class="slide">
+		<p class="shout">The need for WAI&#8209;Adapt</p>
+	</section>
+
+	<section class="slide">
+		<h2>User needs differ</h2>
+		<div class="side-by-side">
+			<div>
+				<img class="next" src="../../TPAC/2021/images/save-1.png" alt="Textual 'save' button" />
+			</div>
+			<div>
+				<img class="next" src="../../TPAC/2021/images/save-2.png" alt="Save button that is a floppy disk icon" />
+			</div>
+			<div>
+				<img class="next" src="../../TPAC/2021/images/save-3.png"
+					alt="Save button that is a floppy disk icon with the text 'save' beneath" />
+			</div>
+			<div>
+				<img class="next" src="../../TPAC/2021/images/save-4.png"
+					alt="Save button that is a picture of a hand holding a USB flash drive" />
+			</div>
+		</div>
+	</section>
+
+	<section class="slide">
+		<h2 class="visually-hidden">Content Usable</h2>
+		<a href="https://www.w3.org/TR/coga-usable/"><img src="../../TPAC/2021/images/content-usable.png"
+				alt="The Cognitive and Learning Disabilities Accessibility Task Force's document on making content usable" /></a>
+		<!--
+				Content Usable needs good content design
+
+				We are aiming for the sweet spot where, with a little bit of
+				semantic information provided by the author, the machine can
+				make quite profound and helpful adaptations.
+			-->
+	</section>
+
+	<section class="slide">
+		<h2>The WAI-Adapt ethos</h2>
+		<p class="next"><a href="https://www.w3.org/WAI/standards-guidelines/wcag/">The Web Content Accessibility Guidelines
+				(WCAG)</a> and <a href="https://www.w3.org/TR/coga-usable/">Making Content Usable for People with Cognitive and
+				Learning Disabilities</a> can help us make content accessible, but an adaptable approach needs semantics.</p>
+		<p class="next"><strong>We're aiming for the sweet spot, where a small addition of machine-readable semantics
+				supports a wide range of helpful adaptations.</strong></p>
+		<p class="next">One area we're exploring is&hellip;</p>
+	</section>
+
+	<section class="slide">
+		<p class="shout">Site navigation barriers</p>
+	</section>
+
+	<section class="slide">
+		<h2>User goal</h2>
+		<p>Get to a specific part of a site, quickly and easily.</p>
+	</section>
+
+	<section class="slide">
+		<h2>Website common destinations</h2>
+		<ul>
+			<li class="next">
+				<p>Accessibility statement</p>
+			</li>
+			<li class="next">
+				<p>Contact</p>
+			</li>
+			<li class="next">
+				<p>Help</p>
+			</li>
+			<li class="next">
+				<p>Home</p>
+			</li>
+			<li class="next">
+				<p>Log in</p>
+			</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<div class="next">
+			<h2>People may struggle to find these</h2>
+			<p class="next">Due to&hellip;</p>
+			<ul>
+				<li class="next">Themes and variations</li>
+				<li class="next">Visual complexity</li>
+				<li class="next">Complex information architecture</li>
+				<li class="next">Synonyms (e.g. &quot;log in&quot vs. &quot;sign in&quot;) or other terminology</li>
+				<li class="next">Foreign language</li>
+			</ul>
+		</div>
+	</section>
+
+	<section class="slide">
+		<p class="shout">What support could look like</p>
+	</section>
+
+	<section class="slide">
+		<img class="fit" src="extension-ui.png" alt="Example browser extension UI, showing a menu containing 6 well-known destinations supported by a demo site" />
+	</section>
+
+	<section class="slide">
+		<p class="shout">WAI-Adapt's proposed approach</p>
+	</section>
+
+	<section class="slide">
+		<h2>Build on existing infrastructure</h2>
+		<ul>
+			<li class="next">
+				<p>The Cognitive Accessibility Task Force identified a series of common destinations; the challenge was how to
+					expose them&hellip;</p>
+			</li>
+			<li class="next">
+				<p>Through APA WG's accessibility review work, we discovered <a
+						href="https://www.w3.org/TR/change-password-url/">A Well-Known URL for Changing Passwords</a>, and realised
+					we could do similar.</p>
+			</li>
+			<li class="next">
+				<p>Our now-colleauges from SAP approached us independently with the same idea for the accessibility statement.
+				</p>
+			</li>
+			<li class="next">
+				<p>This builds on <a href="https://www.iana.org/assignments/well-known-uris/well-known-uris.xhtml">well-known
+						URIs (IANA registry)</a>, providing a standard way to expose sites' common
+					destinations.</p>
+			</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Explainer and draft specification</h2>
+		<ul>
+			<li class="next">
+				<!-- FIXME: Update URL -->
+				<p>We wrote an <a
+						href="https://github.com/w3c/adapt/blob/add-explainers/explainers/well-known-destinations.md#using-well-known-urls-and-link-types-for-accessible-machine-readable-information-architecture">&quot;Explainer&quot;
+						of our proposed approach</a>, for review..</p>
+			</li>
+			<li class="next">
+				<!-- FIXME: Update URL -->
+				<p>We are also working on a draft of the specification.</p>
+			</li>
+		</ul>
+		<p class="next">We are intending to propose some extensions:</p>
+		<ul>
+			<li class="next">
+				<p>Registering a namespace; seeing our common destinations as pointers into a site's information architecture.
+				</p>
+			</li>
+			<li class="next">
+				<p>Providing a simple, efficient way for the UA to query for all common destinations supported by the site in
+					one request.</p>
+			</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<p class="shout">Next steps</p>
+	</section>
+
+	<section class="slide">
+		<h2>Next steps</h2>
+		<ul>
+			<li class="next">
+				<p>Seek review from other W3C groups&mdash;on the proposed approach; and the destinations to be standardised.
+				</p>
+			</li>
+			<li class="next">
+				<p>Establish our basic set of features; refine their design.</p>
+				<ul>
+					<li class="next">
+						<p>We are investigating how we might indicate the relevant area of the page, if applicable, when it
+							is visited.</p>
+					</li>
+				</ul>
+			</li>
+			<li class="next">
+				<p>Seek implementations (sites that follow the spec; assistive technologies that present the results to users).
+				</p>
+			</li>
+	</section>
+
+	<section class="slide">
+		<p class="shout">Discussion</p>
+	</section>
+
+	<section class="slide final">
+		<h2>Thank you for listening&mdash;over to you for questions and discussion!</h2>
+		<!-- <p>We look forward to working with you</p> -->
+		<p>This talk was created by <a href="https://www.w3.org/groups/tf/personalization-tf/participants">members of
+				the
+				WAI-Adapt task force</a>
+		</p>
+		<p><strong>Task Force home:</strong> <a
+				href="https://www.w3.org/WAI/APA/task-forces/adapt/">https://www.w3.org/WAI/APA/task-forces/adapt/</a></p>
+		<p><strong>This talk:</strong> <a
+				href="https://raw.githack.com/w3c/adapt/main/presentations/breakouts-day-2024/">https://raw.githack.com/w3c/adapt/main/presentations/breakouts-day-2024/</a>
+		</p>
+	</section>
+</body>
+
+</html>
