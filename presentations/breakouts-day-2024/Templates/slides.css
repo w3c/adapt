@@ -234,7 +234,6 @@ h4 {font-size: 1em; margin: 0.5em 0}
 
 /* Cover pages */
 .slide.cover {background:
-    url(side-banner-fg.svg) 0 50% / auto 100% no-repeat,
     url(cover.svg) 50% 50% / 100% auto no-repeat, hsl(0,0%,98%);
   text-shadow: none; text-align: center; display: flex; flex-direction: column}
 .slide.cover::after {background:
@@ -296,7 +295,6 @@ img.fit {object-fit: contain}
   text-shadow: none; border-radius: 0.5rem;
   text-align: center; font: bold 1em/1.55 My Montserrat, sans-serif;
   background:
-    0 50% / auto 100% no-repeat url(side-banner.svg),
     content-box center / 2em 1.55em radial-gradient(circle closest-side,
       hsl(0,0%,30%), hsl(0,0%,30%) 100%, hsla(0,0%,30%,0) 100%,
       hsla(0,0%,30%,0)) no-repeat}
@@ -805,12 +803,10 @@ body.paused .timepause {opacity: 0.7}
       -0.7px -0.7px #000, 0.7px -0.7px #000,
       0.7px 0.7px #000, -0.7px 0.7px #000}
   .slide::after {background:
-      0 50% / auto 100% no-repeat url(side-banner-dark.svg),
       content-box center / 2em 1.55em radial-gradient(circle closest-side,
 	hsl(0,0%,30%), hsl(0,0%,30%) 100%, hsla(0,0%,30%,0) 100%,
 	hsla(0,0%,30%,0)) no-repeat}
   .slide.cover {background:
-      url(side-banner-fg-dark.svg) 0 50% / auto 100% no-repeat,
       url(cover-dark.svg) 50% 50% / 100% auto no-repeat, hsl(0,0%,98%);
     text-shadow: none}
   .cover address {color: hsl(62,100%,60%)}
