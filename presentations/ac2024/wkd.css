@@ -1,0 +1,34 @@
+strong {
+  color: yellow;
+}
+
+.centre {
+  display: grid;
+  height: 100%;
+  place-items: center;
+}
+
+.large {
+  font-size: 2em;
+}
+
+.footer-split {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.footer-split>* {
+  flex-basis: 100%;
+  padding: 1em;
+}
+
+.footer-split>div:first-child {
+  background: white;
+  color: black;
+}
+
+.footer-split>div:last-child {
+  background: grey;
+  color: lightgray;
+}
