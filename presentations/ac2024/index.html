@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+  <meta charset=UTF-8>
+  <meta content="width=device-width" name="viewport">
+  <title>Exploring making site navigation more accessible, with "well-known destinations"</title>
+  <link rel="stylesheet" href="Templates/slides.css">
+  <link rel="stylesheet" href="wkd.css">
+  <!-- To use the b6+ framework, include this: -->
+  <script src="Templates/b6plus.js"></script>
+  <!-- To use the Shower framework, remove b6plus above and add these two: -->
+  <!--   <script src="Templates/shower.js"></script>         -->
+  <!--   <script src="Templates/iframe-fixup.js"></script>   -->
+</head>
+
+<body class="shower quick duration=4">
+
+  <!-- Remove this element if you don't want a progress bar: -->
+  <div class=progress></div>
+
+  <!-- Remove this element if you don't want the remaining time in
+       index mode and on the 2nd screen. If you keep it, you may want
+       to add the class "duration=n" on BODY, where n is the initial
+       number of minutes on the clock. Default is 30. -->
+  <div class=clock></div>
+
+  <!-- Alternative: Show also real time and elapsed time. -->
+  <!-- <div class=fullclock></div> -->
+
+  <!-- What a screen reader should say on leaving slide mode,
+       instead of the default ‘Stopped.’ -->
+  <div role=region aria-live=assertive>
+    Leaving slide mode.
+  </div>
+
+
+  <section class="slide cover clear" id="start">
+    <h1>Exploring making site navigation more accessible, with "well-known destinations"</h1>
+    <address>Matthew Atkinson</address>
+    <p><img src="Templates/w3c-white-blue-circle.svg" alt="W3C">
+      AC 2024<br> Hiroshima, Japan<br> hybrid meeting<br> 8–9 APRIL 2024</p>
+  </section>
+
+
+  <section class="slide">
+    <p class="shout centre">🧪</p>
+  </section>
+
+
+  <section class="slide">
+    <p class="shout centre">What?</p>
+  </section>
+
+
+  <section class="slide">
+    <p class="large"><span class=next>The Adapt TF is proposing</span><span class=next> a standard,
+        <strong>mechanical</strong>, way
+        for sites to state</span><span class=next> which <strong>popular pages</strong> they offer.</span></p>
+    <p class=large><span class=next>This allows <strong>User Agents</strong></span><span class=next> to
+        <strong>automatically discover</strong></span><span class=next> which of these <strong>popular pages</strong> a
+        site provides.</span></p>
+  </section>
+
+
+  <section class="slide">
+    <p class="centre">
+      <span class=shout>Why?</span>
+      <span class="large next">(Will be explained shortly&hellip;)</span>
+    </p>
+  </section>
+
+
+  <section class="slide">
+    <p class="shout centre">Well-known</p>
+  </section>
+
+
+  <section class="slide">
+    <p class="shout centre">Destinations</p>
+  </section>
+
+
+  <section class="slide">
+    <p class="shout centre next"><code>:80</code></p>
+  </section>
+
+
+  <section class="slide">
+    <p class="centre">FIXME: another example - documents folder, search icon, Escape key, ???</p>
+  </section>
+
+
+  <section class="slide">
+    <p class="centre large"><code>/.well-known/...</code></p>
+  </section>
+
+
+  <section class="slide">
+    <p class="centre next">FIXME: examples of common destinations: home</p>
+  </section>
+
+
+  <section class="slide">
+    <p class="centre">FIXME: examples of common destinations: log in</p>
+  </section>
+
+
+  <section class="slide">
+    <p class="centre">FIXME: examples of common destinations: accessibility</p>
+  </section>
+
+
+  <section class=slide>
+    <ul class=large>
+      <li class=next>
+        Log in
+      </li>
+      <li class=next>
+        Login
+      </li>
+      <li class=next>
+        Sign-in
+      </li>
+      <li class=next>
+        Sign on
+      </li>
+      <li class=next>
+        Log on
+      </li>
+    </ul>
+  </section>
+
+
+  <section class="slide">
+    <p class="centre large">FIXME: different language example</p>
+  </section>
+
+
+  <section class="slide">
+    <p class="centre large">FIXME: complex design example</p>
+  </section>
+
+
+  <section class=slide>
+    <div class=footer-split>
+      <div>
+        <p>Some main page content&hellip;</p>
+        <p>&hellip;</p>
+        <p>&hellip;and that's all, folks.</p>
+      </div>
+      <div>
+        <ul>
+          <li>About</li>
+          <li>Accessibility</li>
+          <li>Contact</li>
+        </ul>
+        <p>&copy; ACME Corp 02024</p>
+      </div>
+  </section>
+
+
+  <section class="slide">
+    <p class="centre large"><code>/.well-known/...</code></p>
+  </section>
+
+
+  <section class=slide>
+    <p class="centre">FIXME: IANA logo</p>
+    <p class="centre">FIXME: AWKUFCP</p>
+  </section>
+
+
+  <section class=slide>
+    <ul class=large>
+      <li class=next><code>contact</code></li>
+      <li class=next><code>home</code></li>
+      <li class=next><code>log-in</code></li>
+      <li class=next><code>search</code></li>
+    </ul>
+  </section>
+
+
+  <section class=slide>
+    <ul class=large>
+      <li><code>/.well-known/ia/contact</code></li>
+      <li><code>/.well-known/ia/home</code></li>
+      <li><code>/.well-known/ia/log-in</code></li>
+      <li><code>/.well-known/ia/search</code></li>
+    </ul>
+  </section>
+
+
+  <section class="slide">
+    <p class="centre large incremental in-place">
+      <code>ia</code>
+      <span>information architecture</span>
+    </p>
+  </section>
+
+
+  <section class=slide>
+    <p class="large centre">What might it look like for users?</p>
+  </section>
+
+
+  <section class=slide>
+    <p class="large centre">FIXME: picture of web page in browser with badged icon</p>
+  </section>
+
+
+  <section class=slide>
+    <p class="large centre">FIXME: picture of visiting a different page</p>
+  </section>
+
+
+  <section class=slide>
+    <p class="large centre">FIXME: picture of extension menu (normal)</p>
+  </section>
+
+
+  <section class=slide>
+    <p class="large centre">FIXME: picture of extension menu (close-up)</p>
+  </section>
+
+
+  <section class=slide>
+    <p class="large centre">FIXME: picture of new page having been navigated to, with pop-up still visible</p>
+  </section>
+
+
+  <section class=slide>
+    <p class="large centre">You can try the extension yourself (via the link on the last slide)</p>
+  </section>
+
+  <section class=slide>
+    <h2>Next steps</h2>
+    <ul>
+      <li class=next>Horizontal review</li>
+      <li class=next>Seeking implementations</li>
+      <li class=next>Finalising MVP features</li>
+  </section>
+
+  <section class=slide>
+    <h2>Thank you!</h2>
+    <p>FIXME: URL OF ADAPT</p>
+    <p>FIXME: URL OF DEMO</p>
+  </section>
+
+</html>
