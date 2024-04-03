@@ -2,6 +2,10 @@
   padding: 0;
 }
 
+.normaltext {
+  font-weight: normal;
+}
+
 .initial-letter-emphasis {
   display: inline-block;
 }
@@ -27,6 +31,10 @@ strong,
   display: grid;
   height: 100%;
   place-items: center;
+}
+
+.horiz-centre {
+  text-align: center;
 }
 
 .bigger {

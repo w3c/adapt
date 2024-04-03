@@ -38,7 +38,11 @@
 
   <section class="slide cover clear" id="start">
     <h1>Exploring making site navigation more accessible, with "well-known destinations"</h1>
-    <address>Matthew Atkinson</address>
+    <address>
+      WAI-Adapt Task Force<br>
+      <span class=normaltext>Matthew Atkinson</span><br>
+      <span class=normaltext>Samsung R&amp;D Institute UK</span>
+    </address>
     <p><img src="Templates/w3c-white-blue-circle.svg" alt="W3C">
       AC 2024<br> Hiroshima, Japan<br> hybrid meeting<br> 8–9 APRIL 2024</p>
   </section>
@@ -46,6 +50,10 @@
 
   <section class="slide">
     <p class="shout centre">🚧</p>
+  </section>
+
+  <section class=comment>
+    <p>Please note, this proposal is under construction. Feedback is very welcome.</p>
   </section>
 
 
@@ -65,14 +73,6 @@
 
 
   <section class="slide">
-    <div class="centre">
-      <p class=shout>Why?</p>
-      <p class="large next">(Will be explained shortly&hellip;)</p>
-    </div>
-  </section>
-
-
-  <section class="slide">
     <p class="shout centre">&quot;Well-known&hellip;</p>
   </section>
 
@@ -84,8 +84,13 @@
 
   <section class="slide">
     <div class="shout centre">
-      <p><span class=next aria-hidden=true>🕸️</span><span class=next> Port 80</p>
+      <p><span class=next>🕸️</span><span class=next> Port 80</p>
     </div>
+  </section>
+
+  <section class=comment>
+    <p>Well-known locations are a fundamental technique in computing. For example, web servers run on port 80 by
+      default, to make them easily discoverable.</p>
   </section>
 
 
@@ -95,9 +100,8 @@
     </div>
   </section>
 
-
-  <section class="slide">
-    <p class="centre bigger"><code>https://example.site/.well-known/...</code></p>
+  <section class=comment>
+    <p>A magnifying glass icon often indicates where you will find the search feature of a site or app.</p>
   </section>
 
 
@@ -105,14 +109,36 @@
     <p class="centre shout next">🏡</p>
   </section>
 
+  <section class=comment>
+    <p>When we talk about destinations, in terms of popular pages on sites, what do we mean? Well there's the home
+      page&hellip;.</p>
+  </section>
+
 
   <section class="slide">
     <p class="centre shout">🛒</p>
   </section>
 
+  <section class=comment>
+    <p>&hellip;the products page&hellip;</p>
+  </section>
+
 
   <section class="slide">
     <p class="centre shout">📧</p>
+  </section>
+
+  <section class=comment>
+    <p>&hellip;the contact page, and so on.</p>
+  </section>
+
+
+  <section class="slide">
+    <p class="shout centre">Why?</p>
+  </section>
+
+  <section class=comment>
+    <p>But why do we need to make these pages easier to find? There are several reasons; here is one big one&hellip;</p>
   </section>
 
 
@@ -140,6 +166,11 @@
     </ul>
   </section>
 
+  <section class=comment>
+    <p>There are many different ways that the action of logging into one's account could be phrased&mdash;including in
+      other languages, with which the user may be unfamiliar.</p>
+  </section>
+
 
   <section class=slide>
     <div class=footer-split>
@@ -158,18 +189,36 @@
       </div>
   </section>
 
+  <section class=comment>
+    <p>The design of a site may be visually confusing&mdash;here is an example of a footer with low contrast.</p>
+  </section>
+
 
   <section class="slide">
-    <p class="centre large"><code>/.well-known/...</code></p>
+    <p class="shout centre">How?</p>
+  </section>
+
+
+  <section class="slide">
+    <p class="centre bigger"><code>https://example.site/.well-known/...</code></p>
+  </section>
+
+  <section class=comment>
+    <p>There's a standard for well-known URLs.</p>
   </section>
 
 
   <section class=slide>
-    <img class=fit src="awkufcp.jpeg" alt="FIXME">
-    <img class=fit src="awkufcp.jpeg" alt="FIXME">
+    <img class=fit src="awkufcp.jpeg" alt="A Well-known URL for Changing Passwords - W3C spec (top of document)">
     <p class=next>IETF:<br><a class=flat href="https://tools.ietf.org/html/rfc8615">RFC 8615</a></li>
     <p class=next>IANA:<br><a class=flat
         href="https://www.iana.org/assignments/well-known-uris/well-known-uris.xhtml">Registry</a></li>
+  </section>
+
+  <section class=comment>
+    <p>We (the Accessible Platform Architectures Working Group) first learnt of this when reviewing the W3C spec &qout;A
+      Well-known URL for Changing Passwords&quot. The spec is based on an existing standard (RFC) from IETF, and IANA
+      maintains the registry of well-known URLs.</p>
   </section>
 
 
@@ -182,6 +231,10 @@
     </ul>
   </section>
 
+  <section class=comment>
+    <p>Here are some (but not all) of the well-known URLs we may specify.</p>
+  </section>
+
 
   <section class=slide>
     <ul class=large>
@@ -190,6 +243,10 @@
       <li><code>/.well-known/ia/log-in</code></li>
       <li><code>/.well-known/ia/search</code></li>
     </ul>
+  </section>
+
+  <section class=comment>
+    <p>Their full URL paths from the root would be like this. We have namespaced them under the path &quot;ia&quot;.</p>
   </section>
 
 
@@ -201,11 +258,17 @@
     </p>
   </section>
 
+  <section class=comment>
+    <p>The &quot;ia&quot; path component stands for &quot;information architecture&quot;&mdash;this is accessibility and
+      then some.</p>
+    <p>This also allows us to facilitate more efficient discovery of the pages a site provides.</p>
+  </section>
+
 
   <section class=slide>
     <div class="centre large">
       <div>
-        <p>All of this is hidden from users.</p>
+        <p>We don't show users these URLs.</p>
         <p><span class=next>This is just about communication between the </span>
           <strong class=next>user agent</strong><span class=next>, and the <strong>web server</strong>.</span>
         </p>
@@ -213,45 +276,88 @@
     </div>
   </section>
 
+  <section class=comment>
+    <p>Users won't routinely see these URLs&mdash;the purpose of standardising them is so that the user agent and site
+      can communicate about which well-known destinations are offered.</p>
+  </section>
+
 
   <section class=slide>
     <p class="large centre">What might it look like for users?</p>
   </section>
 
-
-  <section class=slide>
-    <img class=fit src="ext01.png" alt="FIXME">
+  <section class=comment>
+    <p>We developed a demo browser extension to show how a UI based on this might look.</p>
   </section>
 
 
   <section class=slide>
-    <img class=fit src="ext02.png" alt="FIXME">
+    <img class=fit src="ext01.png"
+      alt="Fictional ACME Inc. home page. Extension icon in browser toolbar has a badge that says '6' on it.">
+  </section>
+
+  <section class=comment>
+    <p>Here's the home page of a site. The extension's toolbar icon badge shows there are 6 well-known destinations
+      offered by this site.</p>
   </section>
 
 
   <section class=slide>
-    <img class=fit src="ext02a.png" alt="FIXME">
+    <img class=fit src="ext02.png"
+      alt="The ACME Inc. home page, with the extension pop-up open, showing 6 buttons, each containing emoji and accompanying text names for the well-known destinations offered by the site: home, accessibility statement, contact, help, log in, and products.">
+  </section>
+
+  <section class=comment>
+    <p>This site offers 6 well-known destinations, as shown&mdash;in the user's preferred terms&mdash; in the
+      extension's pop-up menu.</p>
   </section>
 
 
   <section class=slide>
-    <img class=fit src="ext03.png" alt="FIXME">
+    <img class=fit src="ext02a.png"
+      alt="As with the previous image, but an arrow is shown pointing to the 'log in' destination, indicating its button is to be activated.">
+  </section>
+
+  <section class=comment>
+    <p>If we activate one of the buttons&hellip;</p>
   </section>
 
 
   <section class=slide>
-    <img class=fit src="ext-menu-a.png" alt="FIXME">
+    <img class=fit src="ext03.png" alt="The ACME Inc. log in page (called 'Sign in' on the page itself).">
+  </section>
+
+  <section class=comment>
+    <p>&hellip;we are navigated to the corresponding page&mdash;though the site calls this 'Sign in', the extension
+      called it 'Log in', according to the user's preferred term.</p>
   </section>
 
 
   <section class=slide>
-    <img class=fit src="ext-menu-b.png" alt="FIXME">
+    <div class=horiz-centre>
+      <img width=280 src="ext-menu-a.png"
+        alt="A close-up of the extension pop-up for the ACME Inc. home page, with the 6 buttons, each containing emoji and accompanying text names for the well-known destinations offered by the site: home, accessibility statement, contact, help, log in, and products.">
+    </div>
+  </section>
+
+  <section class=comment>
+    <p>Different sites can support different destinations; this is a zoomed view of the menu for the site we were just
+      looking at.</p>
   </section>
 
 
   <section class=slide>
-    <p class="large centre">You can try the demo yourself,<br>via the link on the last slide.</p>
+    <div class=horiz-centre>
+      <img width=280 src="ext-menu-b.png"
+        alt="A close-up of the pop-up for another site, which supports 5 destinations, one of which is new: home, accessibility statement, contact, help, and search.">
+    </div>
   </section>
+
+  <section class=comment>
+    <p>This site is about providing information, so it doesn't have products, or log in, but it does have a search
+      destination.</p>
+  </section>
+
 
   <section class=slide>
     <h2>Next steps</h2>
@@ -262,9 +368,15 @@
     </ul>
   </section>
 
-  <section class=slide>
-    <h2>Thank you!</h2>
-    <p class=large>Any questions?</p>
+  <section class=comment>
+    <p>As mentioned, we're at the beginning of this work. Coming up are these three stages. As part of exploring the
+      minimum viable product, we are thinking about how standard HTML features could be extended to support highlighting
+      the relevant <em>area</em> of the page, once the user gets there.</p>
+  </section>
+
+
+  <section class="slide final">
+    <p class=large>Join us!</p>
     <div class=bigger>
       <p>WAI-Adapt Task Force:<br><a class=flat
           href="https://www.w3.org/WAI/APA/task-forces/adapt/">https://www.w3.org/WAI/APA/task-forces/adapt/</a></p>
@@ -272,6 +384,11 @@
           href="https://github.com/SamsungInternet/wkd-prototype">https://github.com/SamsungInternet/wkd-prototype</a>
       </p>
     </div>
+  </section>
+
+  <section class=comment>
+    <p>Please join us and participate in empowering more people to use the web independently. Please ask any questions.
+      Feedback is greatly appreciated. Thank you for reading!</p>
   </section>
 
 </html>
