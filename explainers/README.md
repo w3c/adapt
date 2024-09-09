@@ -1,4 +1,13 @@
-# Adapt Explainer
+# WAI-Adapt Explainer
+
+## Authors
+
+* W3C WAI-Adapt TF participants
+
+## Participate
+
+* Issues: https://github.com/w3c/adapt/issues
+* Discussions: https://github.com/w3c/adapt/discussions
 
 ## Overview
 
@@ -6,9 +15,9 @@
 
 **FIXME:** The "explainer" below contains useful info, but is not in the correct format (concentrating on end-user use cases first; using standard headings); it needs to be re-written to fit that format&mdash;and perhaps have the content-module-specific parts factored out into a content module explainer? Also, the list of modules below should refer to the other explainers that exist in this directory.
 
-<div id="abstract" class="section">
+**FIXME:** The Explainer template doesn't have an "Overview" section (though maybe that's OK in this case).
 
-## Abstract
+## Introduction
 
 People have very different needs. There are many people with cognitive
 and learning disabilities that affect their ability to interact with the
@@ -35,15 +44,11 @@ most cases) a fixed token list (taxonomies). This document provides an
 explanation for understanding how the WAI-Adapt attributes can be used
 to personalize a more accessible web site.
 
-</div>
+### Further details
 
-<div id="sotd" class="section">
+> **FIXME:** This was the "Introduction" section, with the above being the "Abstract"&mdash;but Explainers are intended to start with a brief overview. This Explainer is an umbrella one, so maybe a bit different, but this still need some work to bring it in line with reader expectations.
 
-</div>
-
-<div id="introduction" class="section">
-
-## Introduction
+> **FIXME:** Perhaps this material could be put in an appendix?
 
 The WAI-Adapt specification modules:
 
@@ -71,9 +76,9 @@ of many systems includes the expectation that users can optimize their
 interaction experience according to their personal preferences or
 accessibility needs.
 
-<div id="why_accessibility" class="section section">
-
 ### Why We Need WAI-Adapt
+
+> **FIXME:** Perhaps this material could be put in an appendix?
 
 WAI-Adapt will allow assitive technology to:
 
@@ -113,11 +118,15 @@ Based on user preference settings the interface can be modified to:
 
 </div>
 
-</div>
-
-<div class="section">
-
 ### Use Case Examples
+
+> **FIXME:**
+> 
+> * Perhaps this material could be put in the "User research" section?
+>
+> * The linked "Requirements" doc is out-of-date.
+>
+> * These examples are _way_ too detailed, and refer to attributes that don't exist yet&mdash;need to re-phrase to talk _briefly_ about the _problems_ being solved, but not the specific mechanism. It is OK to say (in a later section) that the general solution is to provide attributes to provide additional element-level semantics, but most of these are not fleshed out and ready for implementation yet, so they shouldn't be mentioned in specific detail (and when they are, they should be in separate explainers).
 
 [Requirements for WAI-Adapt](requirements/) elaborates many use cases
 that further contextualize the above summary of user needs. These
@@ -133,8 +142,6 @@ Examples
   Disability](#learning_disability)
 - [Severe Language Impairment](#language_impairment)
 - [Working Memory and Short-term Memory Impairment](#memory_impairment)
-
-<div id="distracted" class="section section">
 
 #### Easily Distracted / Overwhelmed
 
@@ -174,16 +181,12 @@ completely suppress advertisements. We envision that this attribute
 could also facilitate relocating the most critical sections of a website
 above anything that is a lower priority. (i.e. Content re-ordering)
 
-</div>
-
 WAI-Adapt recognizes that appropriate simplification will often be task
 determined. A complex page will often support multiple tasks each of
 which could be critical to the user requiring simplification at
 different times. We propose to investigate how we might facilitate users
 defining what task is critical to them in the moment rather than
 pre-determining what is primary or secondary in advance.
-
-<div id="difficulty_numbers" class="section section">
 
 #### Difficulty Understanding Numbers
 
@@ -224,10 +227,6 @@ associated image or description/values as simplified text instead.
 It is important to note that people with dyscalculia are often very good
 with words, so long text can be better than short numbers.
 
-</div>
-
-<div id="learning_disability" class="section section">
-
 #### Mild-Moderate Language Impairment / Learning Disability
 
 Those who have a moderate Language Impairment / Learning Disability may
@@ -257,10 +256,6 @@ This is the opposite of the numberfree example.
 Additionally, because reading content for some users is extremely
 time-consuming, they may also want less content and fewer features on a
 given web page.
-
-</div>
-
-<div id="language_impairment" class="section section">
 
 #### Severe Language Impairment
 
@@ -350,10 +345,6 @@ and added different symbols that this user is more familiar
 with</figcaption>
 </figure>
 
-</div>
-
-<div id="memory_impairment" class="section section">
-
 #### Working Memory and Short-term Memory Impairment
 
 Users may have differences in both working and short-term memory. For
@@ -386,12 +377,6 @@ More information on personas and user needs can be found in
 <a href="https://www.w3.org/TR/coga-usable/" rel="nofollow">Making
 Content Usable for People with Cognitive and Learning Disabilities</a>.
 
-</div>
-
-</div>
-
-<div class="section">
-
 ### Out of Scope
 
 While the intention of this work is to introduce a new set of attributes
@@ -406,12 +391,6 @@ to support WAI-Adapt, the following work items are out of scope:
 We encourage a the development of these items and a list of
 implementations can be found on [our
 wiki](https://github.com/w3c/adapt/wiki).
-
-</div>
-
-</div>
-
-<div class="section">
 
 ### Modules
 
@@ -447,10 +426,6 @@ Additional modules, some available in early drafts, may include:
   user-agents and extensions to provide additional support to the user.
   One example is adaptable breadcrumbs.
 
-</div>
-
-<div id="characteristics_semanticproperties" class="section">
-
 ## Vocabulary Structure
 
 WAI-Adapt is made of a vocabulary of properties and their values. This
@@ -459,8 +434,6 @@ contexts by adapting how the vocabulary is instantiated. The [Vocabulary
 Implementations](#vocabulary-implementations) section below describes
 current ways to use the vocabulary.
 
-<div class="section">
-
 ### Properties
 
 Properties are the main units of WAI-Adapt types supported by the
@@ -468,10 +441,6 @@ vocabulary. A given property supports a specific type of WAI-Adapt. That
 property would only be used once on a given piece of content, but
 multiple different properties could be used on the same piece of content
 to address different needs.
-
-</div>
-
-<div id="propcharacteristic_value" class="section">
 
 ### Values
 
@@ -520,15 +489,7 @@ not an error.
 
 </div>
 
-</div>
-
-</div>
-
-<div class="section">
-
 ## Vocabulary Implementations
-
-<div class="section section">
 
 ### Current Usage
 
@@ -541,10 +502,6 @@ This publication of the WAI-Adapt provides several *key-value pairs*
 - [adapt-symbol](symbols/#symbol-explanation)
 
 Other properties exist or will be developed as the modules mature.
-
-</div>
-
-<div class="section section">
 
 ### Technology Comparison Summary
 
@@ -600,12 +557,6 @@ and [Prototypes with data
 dash](https://github.com/w3c/adapt/wiki/Prototypes-with-data-dash-*-(Take-2))
 pages in our Wiki.
 
-</div>
-
-</div>
-
-<div class="section">
-
 ### Stakeholders
 
 This document is useful for:
@@ -627,11 +578,27 @@ For early implementations of content we suggest including a link to an
 implementation](https://github.com/w3c/adapt/wiki/Implementations-of-Semantics)
 that can maximize the benefit for users.
 
-</div>
+### Acknowledgements
 
-<div include="common/acknowledgements.html" oninclude="fixIncludes"
-include-replace="true">
+> **FIXME:** placeholder
 
-Acknowledgements placeholder
+### Appendix: All proposed attributes and modules
 
-</div>
+> **FIXME:** This is just here to keep a more visible record of what _was_ proposed&mdash;need to find a more useful place, e.g. the wiki.
+
+#### Attributes
+
+* `adapt-action`
+* `adapt-destination`
+* `adapt-purpose` (autocomplete reasons++)
+* `adapt-symbol`
+* `adapt-simplification` (critical, ...)
+* `adapt-numberfree`
+* `adapt-easylang`
+
+#### Modules
+
+* Content (still wanting to propose the attributes from there, but concentrating on symbols only for now)
+* Symbols
+* Help and support
+* Tools
