@@ -32,7 +32,7 @@
       - [Disadvantages](#disadvantages-1)
   * [Forwards compatibility: multiple concepts per attribute value](#forwards-compatibility-multiple-concepts-per-attribute-value)
   * [Looking up concepts](#looking-up-concepts)
-- [The AAC Symbol Registry](#the-aac-symbol-registry)
+- [The W3C AAC Symbol Registry](#the-w3c-aac-symbol-registry)
 - [Privacy considerations](#privacy-considerations)
 - [Considered alternatives](#considered-alternatives)
 - [Demo](#demo)
@@ -69,7 +69,7 @@ We're working closely with BCI on this specification, and the W3C AAC Symbol Reg
 
 * Providing translation&mdash;the concepts are specified by the author to match the language of the page's content; if the page content were to be translated, the concepts would need to be translated too.
 
-* Providing an exhaustive list of concepts (the [W3C AAC Symbol Registry](#the-aac-symbols-registry), described below, aims to do this).
+* Providing an exhaustive list of concepts (the [W3C AAC Symbol Registry](#the-w3c-aac-symbol-registry), described below, aims to do this).
 
 ## Important notes on symbols and rendering
 
@@ -223,7 +223,7 @@ In this example, there are 4 concepts identified, via...
 
 The content author needs to be able to find known concepts, and their associated identifier. This is addressed in the next section.
 
-## The AAC Symbol Registry
+## The W3C AAC Symbol Registry
 
 > [!NOTE]
 > We are planning to split this explainer off into a separate file, to avoid explainers that are too long.
