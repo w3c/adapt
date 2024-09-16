@@ -108,7 +108,7 @@ Regardless, the overall appraoch for using the attribute would be the same:
 Therefore, setting aside the means of identifying concepts, the basic markup would be as follows.
 
 ```html
-<p>Would you care for some <span adapt-symbol="<concept_id>">tea</span>?</p>
+<p>Would you care for some <span adapt-symbol="CONCEPT_ID">tea</span>?</p>
 ```
 
 The following sections compare ways to identify concepts. For now, let's assume they will be integers.
