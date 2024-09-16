@@ -7,7 +7,6 @@
 ## Participate
 
 * Issues: https://github.com/w3c/adapt/issues
-
 * Discussions: https://github.com/w3c/adapt/discussions
 
 ## Contents
