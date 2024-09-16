@@ -10,6 +10,38 @@
 
 * Discussions: https://github.com/w3c/adapt/discussions
 
+## Contents
+
+<!-- toc -->
+
+- [Introduction](#introduction)
+- [Goals](#goals)
+- [Out of scope](#out-of-scope)
+- [Important notes on symbols and rendering](#important-notes-on-symbols-and-rendering)
+- [User research](#user-research)
+- [The `adapt-symbol` attribute](#the-adapt-symbol-attribute)
+  * [Mapping concepts to symbols (in general)](#mapping-concepts-to-symbols-in-general)
+  * [Concept IDs: keying schemes](#concept-ids-keying-schemes)
+    + [BCI concept IDs as attribute values](#bci-concept-ids-as-attribute-values)
+      - [Advantages](#advantages)
+      - [Disadvantages](#disadvantages)
+    + [Bliss characters' Unicode representations as attribute values](#bliss-characters-unicode-representations-as-attribute-values)
+      - [Unicode code points](#unicode-code-points)
+      - [Hex representations of Unicode code points](#hex-representations-of-unicode-code-points)
+      - [Advantages](#advantages-1)
+      - [Disadvantages](#disadvantages-1)
+  * [Forwards compatibility: multiple concepts per attribute value](#forwards-compatibility-multiple-concepts-per-attribute-value)
+  * [Looking up concepts](#looking-up-concepts)
+- [The AAC Symbol Registry](#the-aac-symbol-registry)
+- [Privacy considerations](#privacy-considerations)
+- [Considered alternatives](#considered-alternatives)
+- [Demo](#demo)
+- [Stakeholder feedback/opposition](#stakeholder-feedbackopposition)
+- [References](#references)
+- [Acknowledgments](#acknowledgments)
+
+<!-- tocstop -->
+
 ## Introduction
 
 <!-- _[Overall WAI-Adapt Explainer](README.md)_ -->
