@@ -9,9 +9,13 @@
 * Issues: https://github.com/w3c/adapt/issues
 * Discussions: https://github.com/w3c/adapt/discussions
 
+## Contents
+
+<!-- toc -->
+
 ## Introduction
 
-_[Overall WAI-Adapt Explainer](README.md)_
+<!-- _[Overall WAI-Adapt Explainer](README.md)_ -->
 
 Web sites can contain a huge array of varied and engaging content. This content, and the means of navigating around it, can be presented in almost any way, which makes for tailored and compelling experiences. However, whilst there are several conventions when it comes to navigation, this variability can pose challenges to certain people&mdash;and user agents acting on their behalf.
 
@@ -107,7 +111,8 @@ If a site is organised in such a way to have sub-sites that are at subdomains, t
 
 However, if the overall site is organised such that sub-sites are rooted at different URL paths, this will not be the case.
 
-> **TODO:** We are investigating:
+> [!NOTE]
+> We are investigating:
 >
 > * How much of a barrier this may be.
 >
@@ -148,6 +153,9 @@ The namespace has been specified as `/.well-known/ia/`, with "ia" standing for "
 Other options instead of "ia" were considered, including "information-architecture", "structure", and others. However "ia" was both felt to be accurate, and is more concise than the other alternatives.
 
 ### Enumerating well-known destinations
+
+> [!NOTE]
+> This section describes a behavior that would need to be specified as an extension to Well-known URIs.
 
 When a UA requests the root URL for the information architecture namespace:
 
@@ -191,15 +199,25 @@ When the "real" URL to which a well-known URL points is changed (because the pag
 
 > **TODO:** complete this section.
 
-## Option 2: Linksets
+## Option 2: Linksets, and HTML link types
 
 This approach builds on:
 
-* **TODO:** complete this section.
+* Linksets to identify destination pages&mdash;with a small extension (detailed below) for efficient polling of destinations; and
+
+* HTML link relation types to identify when links point to well-known destinations.
 
 ### Defining a site
 
+> [!NOTE]
+> This section describes a behavior that would need to be specified as an extension to Well-known URIs.
+
+A linkset document (i.e. the JSON serialization) would be created for the site.
+
 > **TODO:** complete this section.
+
+> [!NOTE]
+> We could actually serve the linkset document from a Well-known URI, to avoid the need for every HTML page to link to the linkset.
 
 ### The well-known destination namespace
 
@@ -208,6 +226,12 @@ This approach builds on:
 ### Enumerating well-known destinations
 
 > **TODO:** complete this section.
+
+> [!NOTE]
+> We could actually serve the linkset document from a Well-known URI, to avoid the need for every HTML page to link to the linkset.
+
+> [!NOTE]
+> We need to investigate how, on a large site, the linkset documents could be split up
 
 ### Visiting a well-known destination directly
 
