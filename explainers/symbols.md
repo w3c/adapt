@@ -14,6 +14,7 @@
 <!-- toc -->
 
 - [Introduction](#introduction)
+  * [Demo](#demo)
 - [Goals](#goals)
 - [Out of scope](#out-of-scope)
 - [Important notes on symbols and rendering](#important-notes-on-symbols-and-rendering)
@@ -25,16 +26,14 @@
       - [Advantages](#advantages)
       - [Disadvantages](#disadvantages)
     + [Bliss characters' Unicode representations as attribute values](#bliss-characters-unicode-representations-as-attribute-values)
-      - [Unicode code points](#unicode-code-points)
-      - [Hex representations of Unicode code points](#hex-representations-of-unicode-code-points)
       - [Advantages](#advantages-1)
       - [Disadvantages](#disadvantages-1)
-  * [Forwards compatibility: multiple concepts per attribute value](#forwards-compatibility-multiple-concepts-per-attribute-value)
+      - [Unknown factors](#unknown-factors)
+  * [Multiple concepts per attribute value](#multiple-concepts-per-attribute-value)
   * [Looking up concepts](#looking-up-concepts)
 - [The W3C AAC Symbol Registry](#the-w3c-aac-symbol-registry)
 - [Privacy considerations](#privacy-considerations)
 - [Considered alternatives](#considered-alternatives)
-- [Demo](#demo)
 - [Stakeholder feedback/opposition](#stakeholder-feedbackopposition)
 - [References](#references)
 - [Acknowledgments](#acknowledgments)
@@ -57,6 +56,16 @@ We use the set of concepts maintained by [Blissymbolics Communication Internatio
 These concepts underpin the Blissymbolics (or "Bliss") language&mdash;though our use of the concepts is strictly for mapping from a concept to the appropriate aymbol(s) for the user, and is not grammatical in nature.
 
 We're working closely with BCI on this specification, and the W3C AAC Symbol Registry (more details below).
+
+### Demo
+
+A proof-of-concept authoring tool demo can be found at: http://matatk.agrip.org.uk/adaptable-content-authoring-tool/editor/
+
+Please note the following limitations:
+
+* It only supports Bliss symbols.
+
+* The given example does not represent the typical use case of sparse use of symbols, mainly to annotate content such as media chapters.
 
 ## Goals
 
@@ -82,7 +91,8 @@ Though rendering is out of scope, it's important to be aware of the nature of sy
 
 ## User research
 
- > **TODO:** Add this section. Reference COGA work.
+> [!NOTE]
+> This work has been developed over several years, with input from the Cognitive Accessibility TF, and experts from BCI. We will add references to some key elements of that background work here.
 
 ## The `adapt-symbol` attribute
 
@@ -128,16 +138,13 @@ Here are three examples of how the `adapt-symbol` attribute could be used.
 
 3.  Symbols with conjugation. In this example a symbol is used for "her
     name" for the conjugated Hebrew word, <span lang="he"
-    dir="rtl">&#1513;&#1502;&#1492;</span>. The plus sign is used with
-    no spaces to join the conjugated values, "her" (14707) and "name"
+    dir="rtl">&#1513;&#1502;&#1492;</span>. The comma is used to join the conjugated values, "her" (14707) and "name"
     (15691). If the gender is not important, you can just use the value
     for name (15691).
 
     ```html
-    <img src="her-name.png" alt="שמה" adapt-symbol="15691+14707"/>
+    <img src="her-name.png" alt="שמה" adapt-symbol="15691, 14707"/>
     ```
-
-> **FIXME:** Is the "her+name" example equivalent to "her name" in our latest syntax?
 
 ### Concept IDs: keying schemes
 
@@ -159,27 +166,27 @@ BCI maintains a dictionry of concepts, with corresponding Bliss symbols, and wri
 
 ##### Disadvantages
 
-* Allows us to only specify Bliss concepts.
+* Allows us to only specify concepts available in the Bliss language. (But we can still map to any symbol set, based on those concepts.)
 
 #### Bliss characters' Unicode representations as attribute values
 
 ***This maps one or more representations of Bliss characters (symbols) to a concept.***
 
-**NOTE:** Basing the key into the concept dictionary on Bliss characters means that:
+Instead of BCI concept IDs (integers), we could use:
 
-* Regardless of the symbol set being used for output, the concept is expressed in terms of Bliss symbols.
+* Unicode code points for Bliss symbols (directly), or
 
-* The values used relate to the Unicode code points for these Bliss characters. Because there are approximately 6,500 Bliss concepts, but only around 1,400 Bliss characters being added to Unicode, this means that some concept identifiers will need to contain multiple Bliss character representations.
+* Hex (or other) representations of Unicode code points that correspond to Bliss symbols.
 
-> **FIXME:** Add this section, from <https://github.com/w3c/adapt/issues/240#issuecomment-2126679208>.
+> [!IMPORTANT]
+> Basing the key into the concept dictionary on Bliss characters means that:
+>
+> * Regardless of the symbol set being used for output, the concept is expressed in terms of Bliss symbols.
+>
+> * The values used relate to the Unicode code points for these Bliss characters. Because there are approximately 6,500 Bliss concepts, but only around 1,400 Bliss characters being added to Unicode, this means that some concept identifiers will need to contain multiple Bliss character representations.
 
-##### Unicode code points
-
-> **FIXME:** Add this section.
-
-##### Hex representations of Unicode code points
-
-> **FIXME:** Add this section.
+> [!NOTE]
+> Further details can be found in our comment on issue 240 (this comment only suggest the user of code points directly, though): <https://github.com/w3c/adapt/issues/240#issuecomment-2126679208>.
 
 ##### Advantages
 
@@ -187,17 +194,20 @@ BCI maintains a dictionry of concepts, with corresponding Bliss symbols, and wri
 
 ##### Disadvantages
 
-* Complex&mdash;some concepts that would be represented by one BCI ID would need more than one Bliss character representation to identify them.
-
 * Exposes the implementation details of Bliss to someone writing this markup.
+
+  - As part of this, it's more complex than using atomic keys (such as BCI concept IDs): some concepts that would be represented by one BCI ID would need more than one Bliss character representation to identify them.
+
+
+##### Unknown factors
 
 * Unclear as to what the process for adding additional Bliss characters to Unicode would be.
 
 * The time between new concepts being added to Bliss, and them being available via Unicode would likely be significant, due to the release cadence of Unicode.
 
-### Forwards compatibility: multiple concepts per attribute value
+### Multiple concepts per attribute value
 
-Though it is not in the spec at the moment, we have considered how multiple concepts may be referenced within one attribute value.
+Though it is not expected to be used extensively, we have considered how multiple concepts may be referenced within one attribute value.
 
 As separate Bliss characters (or their representations) are space-separated, it is proposed that if multiple concepts were to be included in a single `adapt-symbol` attribute value, they would be comma-separated. For example:
 
@@ -238,27 +248,19 @@ The registry brings BCI's dictionary of concepts into W3C space. Each record in 
 The registry can be found at: https://www.w3.org/TR/aac-registry/
 
 > [!NOTE]
-> The registry's key for identifying concepts is presently the concepts' BCI Concept ID (an integer). However, as discussed above, we are in discussions with potential implementers on whether the corresponding Bliss Unicode code point(s) for a given concept could be used instead.
+> The registry's key for identifying concepts is presently the concepts' BCI concept ID (an integer). However, as discussed above, we are in discussions with potential implementers on whether the corresponding Bliss Unicode code point(s) for a given concept could be used instead.
 
 ## Privacy considerations
 
-> **FIXME:** Expand upon this section.
+> [!NOTE]
+> This section is to be expanded.
 
 Because the rendering of symbols is expected to be done by injecting them into the HTML, the site could determine that the user is using symbols, and which symbol set is in use.
 
 ## Considered alternatives
 
-> **FIXME:** Add this section.
-
-## Demo
-
-A proof-of-concept authoring tool demo can be found at: http://matatk.agrip.org.uk/adaptable-content-authoring-tool/editor/
-
-Please note the following limitations:
-
-* It only supports Bliss symbols.
-
-* The given example does not represent the typical use case of sparse use of symbols, mainly to annotate content such as media chapters.
+> [!NOTE]
+> This section is to be added.
 
 ## Stakeholder feedback/opposition
 
@@ -272,7 +274,8 @@ We have engaged with experts in the COGA TF regarding the appropriateness of bui
 
 ## References
 
-> **FIXME:** Add this section.
+> [!NOTE]
+> This section to be added.
 
 ## Acknowledgments
 
