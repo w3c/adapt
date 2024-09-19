@@ -93,7 +93,7 @@ Our proposed "well-known destinations" come from work done by the [Cognitive and
 
 An illustrative set of proposed well-known destinations is as follows...
 
-* `accessibility` (for the site's [accessibility statement](https://www.w3.org/WAI/planning/statements/))
+* `accessibility-statement` (for the site's [accessibility statement](https://www.w3.org/WAI/planning/statements/))
 
 * `change-password` (as per [A Well-known URL for Changing Passwords](https://www.w3.org/TR/change-password-url/))
 
@@ -141,7 +141,7 @@ As there are several destinations that could be provided by a site, they will be
 
 Under this namespace are the following proposed URLs (the purpose of each is given in the [user research](#user-research) section above).
 
-* `/.well-known/ia/accessibility`
+* `/.well-known/ia/accessibility-statement`
 
 * `/.well-known/ia/change-password`
 
@@ -190,7 +190,7 @@ When a UA requests the root URL for the information architecture namespace:
 A JSON string is returned that represents the list of well-known destinations this site provides. For example, if the site provided a page to allow users to sign in to their accounts, and an accessibility statement, then the returned JSON string would be:
 
 ```json
-["accessibility","log-in"]
+["accessibility-statement","log-in"]
 ```
 
 The UA would then be able to present this information to the user in some way. We envisage that, initially, this could be done via a browser extension that provides a pop-up (or sidebar) that would list the available destinations on the site in a localised manner for the user. In this case, that list might be:
@@ -244,7 +244,7 @@ Each destination is part of a vocabulary. As there are several destinations that
 
 Under this namespace are the following proposed URLs (the purpose of each is given in the [user research](#user-research) section above).
 
-* `https://w3.org/voc/ia/accessibility`
+* `https://w3.org/voc/ia/accessibility-statement`
 
 * `https://w3.org/voc/ia/change-password`
 
