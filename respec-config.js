@@ -37,20 +37,34 @@ var respecConfig = {
 
     // editors, add as many as you like
     // only "name" is required
-    editors: [
+  editors: [
+    
+    {
+      name: "Matthew Atkinson",
+      company: "Samsung Electronics Co., Ltd.",
+      companyURL: "https://www.w3.org/organizations/40030/",
+      w3cid: 68793,
+    },
+    {
+      name: "Janina Sajka",
+      company: "Invited Expert",
+      w3cid: 33688,
+    },
+    {
+      name: "Lionel Wolberger",
+      company: "Level Access",
+      companyURL: "https://www.w3.org/organizations/69854/",
+      w3cid: 106386,
+    }
+  ],
+    formerEditors: [
       {
-        name: "Lisa Seeman",
-        url: 'http://athena-ict.com',
-        mailto: "lisa.seeman@zoho.com",
-        w3cid: 16320
-      },
-        {
-        name: "Charles LaPierre",
-        url: 'http://www.benetech.org',
-        mailto: "charlesl@benetech.org",
-        company: "Benetech",
-        w3cid: 72055
-      },
+        name: "Michael Cooper",
+        url: 'https://www.w3.org',
+        company: "W3C",
+        companyURI: "http://www.w3.org",
+        w3cid: 34017
+      }, 
       {
         name: "John Foliot",
         mailto: "john@foliot.ca",
@@ -58,20 +72,22 @@ var respecConfig = {
         w3cid: 41450
       },
       {
-        name: "Michael Cooper",
-        url: 'https://www.w3.org',
-        mailto: "cooper@w3.org",
-        company: "W3C",
-        companyURI: "http://www.w3.org",
-        w3cid: 34017
+        name: "Charles LaPierre",
+        url: 'http://www.benetech.org',
+        company: "Benetech",
+        w3cid: 72055
       },
       {
-        name: "Roy Ran",
+        name: "Ruoxi Ran",
         url: 'https://www.w3.org',
-        mailto: "ran@w3.org",
         company: "W3C",
         companyURI: "http://www.w3.org",
         w3cid: 100586
+      },
+      {
+        name: "Lisa Seeman",
+        url: 'http://athena-ict.com',
+        w3cid: 16320
       },
       {
         name: "Richard Schwerdtfeger",
