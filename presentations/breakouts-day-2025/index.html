@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+  <meta charset=UTF-8>
+  <meta content="width=device-width" name="viewport">
+  <title>Simplifying Site Navigation: A Standardized Approach for Accessible Destinations</title>
+  <link rel="stylesheet" href="Templates/slides.css">
+  <link rel="stylesheet" href="wkd.css">
+  <!-- To use the b6+ framework, include this: -->
+  <script src="Templates/b6plus.js"></script>
+  <!-- To use the Shower framework, remove b6plus above and add these two: -->
+  <!--   <script src="Templates/shower.js"></script>         -->
+  <!--   <script src="Templates/iframe-fixup.js"></script>   -->
+</head>
+
+<body class="shower quick duration=4">
+
+  <!-- Remove this element if you don't want a progress bar: -->
+  <div class=progress></div>
+
+  <!-- Remove this element if you don't want the remaining time in
+       index mode and on the 2nd screen. If you keep it, you may want
+       to add the class "duration=n" on BODY, where n is the initial
+       number of minutes on the clock. Default is 30. -->
+  <div class=clock></div>
+
+  <!-- Alternative: Show also real time and elapsed time. -->
+  <!-- <div class=fullclock></div> -->
+
+  <!-- What a screen reader should say on leaving slide mode,
+       instead of the default ‘Stopped.’ -->
+  <div role=region aria-live=assertive>
+    Leaving slide mode.
+  </div>
+
+
+  <section class="slide cover clear" id="start">
+    <h1>Simplifying Site Navigation: A Standardized Approach for Accessible Destinations</h1>
+    <address>
+      WAI-Adapt Task Force<br>
+      <span class=normaltext>Abhinav Kumar, SAP</span><br>
+      <span class=normaltext>Matthew Atkinson, Samsung R&amp;D Institute UK</span>
+    </address>
+    <p><img src="Templates/w3c-white-blue-circle.svg" alt="W3C">
+      AC 2024<br> Hiroshima, Japan<br> hybrid meeting<br> 8–9 APRIL 2024</p>
+  </section>
+
+
+  <section class="slide">
+    <h2>Outline</h2>
+    <ul>
+      <li><mark>Intro &amp; problem statement</mark></li>
+      <li>Understanding navigation barriers</li>
+      <li>Demo</li>
+      <li>WAI-Adapt’s revised (based on feedback) solution</li>
+      <li><mark>Open questions</mark></li>
+      <li><mark>Proposed next steps</mark></li>
+      <li>Interactive discussion</li>
+      <li>Next steps</li>
+    </ul>
+  </section>
+
+
+  <section class="slide">
+    <p class="shout centre">Intro</p>
+  </section>
+
+  <section class="slide">
+    <p><mark>Brief slide about Adapt</mark></p>
+    <p><mark>Brief slide about Adapt</mark></p>
+  </section>
+
+  <section class=comment>
+    <p><mark>TODO</mark></p>
+  </section>
+
+  <section class="slide">
+    <!-- <p class="shout centre">🚧</p> -->
+    <p><mark>This is not a spec,</mark></p>
+    <p><mark>but it doesn't need to be;</mark></p>
+    <p><mark>it's a concrete proposal.</mark></p>
+  </section>
+
+
+  <section class="slide">
+    <p class="large">The Adapt TF is proposing<span class=next> a standard,
+        <strong>mechanical</strong>, way
+        for sites to state</span><span class=next> which <strong>popular pages</strong> they offer.</span></p>
+    <p class=large><span class=next>This allows <strong>user agents</strong></span><span class=next> to
+        <strong>automatically discover</strong></span><span class=next> which of these <strong>popular pages</strong> a
+        site provides.</span></p>
+  </section>
+
+
+  <section class="slide">
+    <p class="shout centre">&quot;Well-known&hellip;</p>
+  </section>
+
+
+  <section class="slide">
+    <p class="shout centre">&hellip;Destinations&quot;</p>
+  </section>
+
+
+  <section class="slide">
+    <div class="shout centre">
+      <p><span class=next>🕸️</span><span class=next> Port 80</p>
+    </div>
+  </section>
+
+  <section class=comment>
+    <p>Well-known locations are a fundamental technique in computing. For example, web servers run on port 80 by
+      default, to make them easily discoverable.</p>
+  </section>
+
+
+  <section class="slide">
+    <div class="shout centre">
+      <p><span>🔎</span><span class=next> &quot;search&quot;</span></p>
+    </div>
+  </section>
+
+  <section class=comment>
+    <p>A magnifying glass icon often indicates where you will find the search feature of a site or app.</p>
+  </section>
+
+
+  <section class="slide">
+    <div class=centre>
+      <p class="shout next">🏡</p>
+      <p class="shout">🛒</p>
+      <p class="shout">📧</p>
+    </div>
+  </section>
+
+  <section class=comment>
+    <p>When we talk about destinations, in terms of popular pages on sites, what do we mean? Well there's the home
+      page&hellip;.</p>
+    <p>&hellip;the products page&hellip;</p>
+    <p>&hellip;the contact page, and so on.</p>
+  </section>
+
+  <section class="slide">
+    <p class="shout centre">Understanding navigation barriers</p>
+  </section>
+
+  <section class=comment>
+    <p>But why do we need to make these pages easier to find? There are several reasons; here is one big one&hellip;</p>
+  </section>
+
+
+  <section class=slide>
+    <h2>Variation in terms</h2>
+    <ul class="columns large">
+      <li class=next>
+        Log in
+      </li>
+      <li class=next>
+        Sign-in
+      </li>
+      <li class=next>
+        Sign on
+      </li>
+      <li class=next>
+        Log on
+      </li>
+      <li class=next>
+        Anmelden
+      </li>
+      <li class=next>
+        ログイン
+      </li>
+    </ul>
+  </section>
+
+  <section class=comment>
+    <p>There are many different ways that the action of logging into one's account could be phrased&mdash;including in
+      other languages, with which the user may be unfamiliar.</p>
+  </section>
+
+
+  <section class=slide>
+    <div class=footer-split>
+      <div>
+        <p>Some main page content&hellip;</p>
+        <p>&hellip;</p>
+        <p>&hellip;and that's all, folks.</p>
+      </div>
+      <div>
+        <ul>
+          <li>About</li>
+          <li>Accessibility</li>
+          <li>Contact</li>
+        </ul>
+        <p>&copy; ACME Corp 02024</p>
+      </div>
+  </section>
+
+  <section class=comment>
+    <p>The design of a site may be visually confusing&mdash;here is an example of a footer with low contrast.</p>
+  </section>
+
+
+  <section class=slide>
+    <p class="large centre">What might it look like for users?</p>
+  </section>
+
+  <section class=comment>
+    <p>We developed a demo browser extension to show how a UI based on this might look.</p>
+  </section>
+
+
+  <section class=slide>
+    <img class=fit src="ext01.png"
+      alt="Fictional ACME Inc. home page. Extension icon in browser toolbar has a badge that says '6' on it.">
+  </section>
+
+  <section class=comment>
+    <p>Here's the home page of a site. The extension's toolbar icon badge shows there are 6 well-known destinations
+      offered by this site.</p>
+  </section>
+
+
+  <section class=slide>
+    <img class=fit src="ext02.png"
+      alt="The ACME Inc. home page, with the extension pop-up open, showing 6 buttons, each containing emoji and accompanying text names for the well-known destinations offered by the site: home, accessibility statement, contact, help, log in, and products.">
+  </section>
+
+  <section class=comment>
+    <p>This site offers 6 well-known destinations, as shown&mdash;in the user's preferred terms&mdash; in the
+      extension's pop-up menu.</p>
+  </section>
+
+
+  <section class=slide>
+    <img class=fit src="ext02a.png"
+      alt="As with the previous image, but an arrow is shown pointing to the 'log in' destination, indicating its button is to be activated.">
+  </section>
+
+  <section class=comment>
+    <p>If we activate one of the buttons&hellip;</p>
+  </section>
+
+
+  <section class=slide>
+    <img class=fit src="ext03.png" alt="The ACME Inc. log in page (called 'Sign in' on the page itself).">
+  </section>
+
+  <section class=comment>
+    <p>&hellip;we are navigated to the corresponding page&mdash;though the site calls this 'Sign in', the extension
+      called it 'Log in', according to the user's preferred term.</p>
+  </section>
+
+
+  <section class=slide>
+    <div class=horiz-centre>
+      <img width=280 src="ext-menu-a.png"
+        alt="A close-up of the extension pop-up for the ACME Inc. home page, with the 6 buttons, each containing emoji and accompanying text names for the well-known destinations offered by the site: home, accessibility statement, contact, help, log in, and products.">
+    </div>
+  </section>
+
+  <section class=comment>
+    <p>Different sites can support different destinations; this is a zoomed view of the menu for the site we were just
+      looking at.</p>
+  </section>
+
+
+  <section class=slide>
+    <div class=horiz-centre>
+      <img width=280 src="ext-menu-b.png"
+        alt="A close-up of the pop-up for another site, which supports 5 destinations, one of which is new: home, accessibility statement, contact, help, and search.">
+    </div>
+  </section>
+
+  <section class=comment>
+    <p>This site is about providing information, so it doesn't have products, or log in, but it does have a search
+      destination.</p>
+  </section>
+
+
+  <section class="slide">
+    <p class="shout centre">WAI-Adapt's revised solution</p>
+  </section>
+
+  <section class=slide>
+    <ul class=large>
+      <li class=next><code>contact</code></li>
+      <li class=next><code>home</code></li>
+      <li class=next><code>log-in</code></li>
+      <li class=next><code>search</code></li>
+      <li class=next><code>&hellip;</code></li>
+    </ul>
+  </section>
+
+  <section class=comment>
+    <p>Here are some (but not all) of the well-known destinations a site may provide.</p>
+  </section>
+
+
+  <section class=slide>
+    <p><mark>TO DO: code sample in head</mark></p>
+  </section>
+
+  <section class=comment>
+    <p><mark>TO DO</mark></p>
+  </section>
+
+
+
+  <section class=slide>
+    <div class="centre large">
+      <div>
+        <!-- <p>We don't show users these URLs.</p> -->
+        <p>This link information is not shown to users.</p>
+        <p><span class=next>This is just about communication between the </span>
+          <strong class=next>user agent</strong><span class=next>, and the <strong>web server</strong>.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class=comment>
+    <p>Users won't routinely see these URLs&mdash;the purpose of standardising them is so that the user agent and site
+      can communicate about which well-known destinations are offered.</p>
+  </section>
+
+  <section class=slide>
+    <h2>Open Questions</h2>
+    <ul class=bigger>
+      <li class=next></li>
+      <li class=next></li>
+      <li class=next></li>
+    </ul>
+  </section>
+
+  <section class=slide>
+    <h2>Next steps</h2>
+    <ul class=bigger>
+      <li class=next>Horizontal review</li>
+      <li class=next>Seeking implementations</li>
+      <li class=next>Finalising &quot;minimum viable product&quot; (MVP) features</li>
+    </ul>
+  </section>
+
+  <section class=comment>
+    <p><mark>TO DO</mark></p>
+    <p>As mentioned, we're at the beginning of this work. Coming up are these three stages. As part of exploring the
+      minimum viable product, we are thinking about how standard HTML features could be extended to support highlighting
+      the relevant <em>area</em> of the page, once the user gets there.</p>
+  </section>
+
+
+  <section class="slide final">
+    <p class=large>Join us!</p>
+    <div class=bigger>
+      <p>WAI-Adapt Task Force:<br><a class=flat
+          href="https://www.w3.org/WAI/APA/task-forces/adapt/">https://www.w3.org/WAI/APA/task-forces/adapt/</a></p>
+      <p>Demo extension:<br><a class=flat
+          href="https://github.com/SamsungInternet/wkd-prototype">https://github.com/SamsungInternet/wkd-prototype</a>
+      </p>
+    </div>
+  </section>
+
+  <section class=comment>
+    <p>Please join us and participate in empowering more people to use the web independently. Please ask any questions.
+      Feedback is greatly appreciated. Thank you for reading!</p>
+  </section>
+
+</html>

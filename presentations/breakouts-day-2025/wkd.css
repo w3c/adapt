@@ -1,0 +1,72 @@
+.slide a.flat {
+  padding: 0;
+}
+
+.normaltext {
+  font-weight: normal;
+}
+
+.initial-letter-emphasis {
+  display: inline-block;
+}
+
+.initial-letter-emphasis::first-letter {
+  text-decoration: underline;
+}
+
+strong,
+.initial-letter-emphasis::first-letter {
+  color: blue;
+}
+
+@media (prefers-color-scheme: dark) {
+
+  strong,
+  .initial-letter-emphasis::first-letter {
+    color: yellow;
+  }
+}
+
+.centre {
+  display: grid;
+  height: 100%;
+  place-items: center;
+}
+
+.horiz-centre {
+  text-align: center;
+}
+
+.bigger {
+  font-size: 1.42em;
+}
+
+.large {
+  font-size: 2em;
+}
+
+.footer-split {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.footer-split li,
+.footer-split p {
+  text-shadow: none;
+}
+
+.footer-split>* {
+  flex-basis: 100%;
+  padding: 1em;
+}
+
+.footer-split>div:first-child {
+  background: white;
+  color: black;
+}
+
+.footer-split>div:last-child {
+  background: grey;
+  color: lightgray;
+}
