@@ -54,7 +54,7 @@
       <li><mark>Intro &amp; problem statement</mark></li>
       <li>Understanding navigation barriers</li>
       <li>Demo</li>
-      <li>WAI-Adapt’s revised (based on feedback) solution</li>
+      <li>WAI-Adapt’s revised solution (based on feedback)</li>
       <li><mark>Open questions</mark></li>
       <li><mark>Proposed next steps</mark></li>
       <li>Interactive discussion</li>
@@ -62,25 +62,37 @@
     </ul>
   </section>
 
+  <section class=comment>
+    <p><strong>Drafting note for Adapt TF participants:</strong> the <mark>highlighted</mark> sections in the Outline slide weren't in the session description, but seem to be needed.</p>
+  </section>
+
 
   <section class="slide">
     <p class="shout centre">Intro</p>
   </section>
 
+
   <section class="slide">
-    <p><mark>Brief slide about Adapt</mark></p>
-    <p><mark>Brief slide about Adapt</mark></p>
+		<h2>Welcome</h2>
+		<p>This is a presentation on the latest work of the WAI-Adapt Task Force.</p>
+		<p><strong>Facilitator:</strong> Lionel Wolberger (UserWay AC rep)</p>
+		<p><strong>Task Force home:</strong> <a href="https://www.w3.org/WAI/APA/task-forces/adapt/">https://www.w3.org/WAI/APA/task-forces/adapt/</a></p>
+		<p><strong>This talk:</strong> <small><a href="https://raw.githack.com/w3c/adapt/main/presentations/breakouts-day-2025/">https://raw.githack.com/w3c/adapt/main/presentations/breakouts-day-2025/</a></small>
+		</p>
+    <p><strong>Presenters:</strong></p>
+		<ul>
+			<li>Abhinav Kumar, SAP Labs India</li>
+			<li>Matthew Tylee Atkinson (Samsung R&amp;D UK; speaking as APA WG co‑chair)</li>
+		</ul>
+	</section>
+
+
+  <section class=slide>
+    <p class="shout centre">🚧❓</p>
   </section>
 
   <section class=comment>
-    <p><mark>TODO</mark></p>
-  </section>
-
-  <section class="slide">
-    <!-- <p class="shout centre">🚧</p> -->
-    <p><mark>This is not a spec,</mark></p>
-    <p><mark>but it doesn't need to be;</mark></p>
-    <p><mark>it's a concrete proposal.</mark></p>
+    <p>This <strong>was</strong> a specification &quot;under construction&quot; but, following community feedback, we found that we could reach our goals by building on existing specifications&mdash;more on that later.</p>
   </section>
 
 
@@ -141,6 +153,7 @@
     <p>&hellip;the products page&hellip;</p>
     <p>&hellip;the contact page, and so on.</p>
   </section>
+
 
   <section class="slide">
     <p class="shout centre">Understanding navigation barriers</p>
@@ -204,7 +217,7 @@
 
 
   <section class=slide>
-    <p class="large centre">What might it look like for users?</p>
+    <p class="shout centre">Demo</p>
   </section>
 
   <section class=comment>
@@ -284,6 +297,14 @@
     <p class="shout centre">WAI-Adapt's revised solution</p>
   </section>
 
+
+  <section class="slide">
+    <div class="large centre">
+      <p><strong>tl;dr:</strong> <code>&lt;link&gt;</code> elements and additional <code>rel</code> attribute values<br>(and a UA, or extension).</p>
+    </div>
+  </section>
+
+
   <section class=slide>
     <ul class=large>
       <li class=next><code>contact</code></li>
@@ -295,27 +316,28 @@
   </section>
 
   <section class=comment>
-    <p>Here are some (but not all) of the well-known destinations a site may provide.</p>
+    <p>We specify <code>rel</code> attribute values for the various common destinations that a site might provide (some, but not all, are listed here).</p>
   </section>
 
 
   <section class=slide>
-    <p><mark>TO DO: code sample in head</mark></p>
+    <pre class=bigger>&lt;head&gt;
+  . . .
+  &lt;link rel=&quot;accessibility-statement&quot;
+    href=&quot;/accessibility-statement&quot;&gt;
+  &lt;link rel=&quot;help&quot; href=&quot;/support&quot;&gt;
+  &lt;link rel=&quot;log-in&quot; href=&quot;/sign-in&quot;&gt;
+  . . .
+&lt;/head&gt;</pre>
   </section>
-
-  <section class=comment>
-    <p><mark>TO DO</mark></p>
-  </section>
-
 
 
   <section class=slide>
     <div class="centre large">
       <div>
-        <!-- <p>We don't show users these URLs.</p> -->
-        <p>This link information is not shown to users.</p>
-        <p><span class=next>This is just about communication between the </span>
-          <strong class=next>user agent</strong><span class=next>, and the <strong>web server</strong>.</span>
+        <p>This <code>rel</code> attribute values are not shown directly to users.</p>
+        <p><span class=next>They are used for communication between the </span>
+          <strong class=next>web site</strong><span class=next>, and the <strong>user agent</strong>.</span>
         </p>
       </div>
     </div>
@@ -329,26 +351,28 @@
   <section class=slide>
     <h2>Open Questions</h2>
     <ul class=bigger>
-      <li class=next></li>
-      <li class=next></li>
-      <li class=next></li>
+      <li class=next><mark>What <em>type</em> of resources is provided?</mark></li>
+      <li class=next><mark>TO DO</mark></li>
+      <li class=next><mark>TO DO</mark></li>
     </ul>
   </section>
 
   <section class=slide>
     <h2>Next steps</h2>
-    <ul class=bigger>
-      <li class=next>Horizontal review</li>
-      <li class=next>Seeking implementations</li>
-      <li class=next>Finalising &quot;minimum viable product&quot; (MVP) features</li>
-    </ul>
+    <div class=bigger>
+      <p><strong>Right now:</strong> Q&A; open discussion</p>
+      <p><strong>For the Adapt TF:</strong>
+      <ul>
+        <li class=next>Finalising &quot;minimum viable product&quot; (MVP) scope and <code>rel</code> attribute values</li>
+        <li class=next>Horizontal review</li>
+        <li class=next>Seeking implementations</li>
+      </ul>
+    </div>
   </section>
 
   <section class=comment>
-    <p><mark>TO DO</mark></p>
-    <p>As mentioned, we're at the beginning of this work. Coming up are these three stages. As part of exploring the
-      minimum viable product, we are thinking about how standard HTML features could be extended to support highlighting
-      the relevant <em>area</em> of the page, once the user gets there.</p>
+    <p><mark>TO DO: Update this comment!</mark></p>
+    <p>As mentioned, we're at the beginning of this work. Coming up are these three stages. As part of exploring the minimum viable product, we are thinking about how standard HTML features could be extended to support highlighting the relevant <em>area</em> of the page, once the user gets there.</p>
   </section>
 
 
@@ -357,8 +381,11 @@
     <div class=bigger>
       <p>WAI-Adapt Task Force:<br><a class=flat
           href="https://www.w3.org/WAI/APA/task-forces/adapt/">https://www.w3.org/WAI/APA/task-forces/adapt/</a></p>
-      <p>Demo extension:<br><a class=flat
-          href="https://github.com/SamsungInternet/wkd-prototype">https://github.com/SamsungInternet/wkd-prototype</a>
+      <p><a class=flat
+          href="https://github.com/w3c/adapt/blob/main/explainers/well-known-destinations.md">Well-known destinations explainer</a>
+      </p>
+      <p><a class=flat
+          href="https://github.com/SamsungInternet/wkd-prototype">Demo brower extension</a>
       </p>
     </div>
   </section>
