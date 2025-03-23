@@ -27,14 +27,12 @@ strong,
   }
 }
 
-.centre {
-  display: grid;
-  height: 100%;
-  place-items: center;
-}
-
 .horiz-centre {
   text-align: center;
+}
+
+.slightly-bigger {
+  font-size: 1.2em;
 }
 
 .bigger {

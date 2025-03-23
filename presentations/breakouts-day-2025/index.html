@@ -39,32 +39,25 @@
       <span class=normaltext>Abhinav Kumar, SAP</span><br>
       <span class=normaltext>Matthew Atkinson, Samsung R&amp;D Institute UK</span>
     </address>
-    <p>W3C Breakouts Day 2025</p>
   </section>
 
 
   <section class="slide">
     <h2>Outline</h2>
     <ul>
-      <li><mark>Intro &amp; problem statement</mark></li>
+      <li>Intro &amp; problem statement</li>
       <li>Understanding navigation barriers</li>
       <li>Demo</li>
       <li>WAI-Adapt’s revised solution (based on feedback)</li>
-      <li><mark>Open questions</mark></li>
-      <li><mark>Proposed next steps</mark></li>
+      <li>Open questions</li>
+      <li>Proposed next steps</li>
       <li>Interactive discussion</li>
-      <li>Next steps</li>
     </ul>
-  </section>
-
-  <section class=comment>
-    <p><strong>Drafting note for Adapt TF participants:</strong> the <mark>highlighted</mark> sections in the Outline
-      slide weren't in the session description, but seem to be needed.</p>
   </section>
 
 
   <section class="slide">
-    <p class="shout centre">Intro</p>
+    <h1 class="place">Intro</h1>
   </section>
 
 
@@ -86,7 +79,7 @@
 
 
   <section class=slide>
-    <p class="shout centre">🚧❓</p>
+    <p class="shout place">🚧❓</p>
   </section>
 
   <section class=comment>
@@ -96,53 +89,55 @@
 
 
   <section class="slide">
-    <p class="large">The Adapt TF is proposing<span class=next> a standard,
+  <div class=bigger>
+    <p>The Adapt TF is proposing<span class=next> a standard,
         <strong>mechanical</strong>, way
         for sites to state</span><span class=next> which <strong>popular pages</strong> they offer.</span></p>
-    <p class=large><span class=next>This allows <strong>user agents</strong></span><span class=next> to
+    <p><span class=next>This allows <strong>user agents</strong></span><span class=next> to
         <strong>automatically discover</strong></span><span class=next> which of these <strong>popular pages</strong> a
         site provides.</span></p>
+        </div>
   </section>
+
+
+  <!-- <section class="slide"> -->
+    <!-- <p class="shout place">&quot;Well-known&hellip;</p> -->
+  <!-- </section> -->
+
+
+  <!-- <section class="slide"> -->
+    <!-- <p class="shout place">&hellip;Destinations&quot;</p> -->
+  <!-- </section> -->
+
+
+  <!-- <section class="slide"> -->
+    <!-- <div class="shout place"> -->
+      <!-- <p><span class=next>🕸️</span><span class=next> Port 80</p> -->
+    <!-- </div> -->
+  <!-- </section> -->
+
+  <!-- <section class=comment> -->
+    <!-- <p>Well-known locations are a fundamental technique in computing. For example, web servers run on port 80 by -->
+      <!-- default, to make them easily discoverable.</p> -->
+  <!-- </section> -->
+
+
+  <!-- <section class="slide"> -->
+    <!-- <div class="shout place"> -->
+      <!-- <p><span>🔎</span><span class=next> &quot;search&quot;</span></p> -->
+    <!-- </div> -->
+  <!-- </section> -->
+
+  <!-- <section class=comment> -->
+    <!-- <p>A magnifying glass icon often indicates where you will find the search feature of a site or app.</p> -->
+  <!-- </section> -->
 
 
   <section class="slide">
-    <p class="shout centre">&quot;Well-known&hellip;</p>
-  </section>
-
-
-  <section class="slide">
-    <p class="shout centre">&hellip;Destinations&quot;</p>
-  </section>
-
-
-  <section class="slide">
-    <div class="shout centre">
-      <p><span class=next>🕸️</span><span class=next> Port 80</p>
-    </div>
-  </section>
-
-  <section class=comment>
-    <p>Well-known locations are a fundamental technique in computing. For example, web servers run on port 80 by
-      default, to make them easily discoverable.</p>
-  </section>
-
-
-  <section class="slide">
-    <div class="shout centre">
-      <p><span>🔎</span><span class=next> &quot;search&quot;</span></p>
-    </div>
-  </section>
-
-  <section class=comment>
-    <p>A magnifying glass icon often indicates where you will find the search feature of a site or app.</p>
-  </section>
-
-
-  <section class="slide">
-    <div class=centre>
+    <div class=place>
       <p class="shout next">🏡</p>
-      <p class="shout">🛒</p>
-      <p class="shout">📧</p>
+      <p class="shout next">🛒</p>
+      <p class="shout next">📧</p>
     </div>
   </section>
 
@@ -155,7 +150,7 @@
 
 
   <section class="slide">
-    <p class="shout centre">Understanding navigation barriers</p>
+    <h1 class="place l">Understanding navigation barriers</h1>
   </section>
 
   <section class=comment>
@@ -216,7 +211,7 @@
 
 
   <section class=slide>
-    <p class="shout centre">Demo</p>
+    <h1 class=place>Demo</h1>
   </section>
 
   <section class=comment>
@@ -293,20 +288,21 @@
 
 
   <section class="slide">
-    <p class="shout centre">WAI-Adapt's revised solution</p>
+    <h1 class="place l">WAI-Adapt's revised solution</h1>
   </section>
 
 
   <section class="slide">
-    <div class="large centre">
-      <p><strong>tl;dr:</strong> <code>&lt;link&gt;</code> elements and additional <code>rel</code> attribute
+    <div class="large">
+      <p><code>&lt;link&gt;</code> elements and additional <code>rel</code> attribute
         values<br>(and a UA, or extension).</p>
     </div>
   </section>
 
 
   <section class=slide>
-    <ul class=large>
+    <ul class=bigger>
+      <li class=next><code>accessibility-statement</code></li>
       <li class=next><code>contact</code></li>
       <li class=next><code>home</code></li>
       <li class=next><code>log-in</code></li>
@@ -322,19 +318,20 @@
 
 
   <section class=slide>
-    <pre class=bigger>&lt;head&gt;
-      . . .
-      &lt;link rel=&quot;accessibility-statement&quot;
-      href=&quot;/accessibility-statement&quot;&gt;
-      &lt;link rel=&quot;help&quot; href=&quot;/support&quot;&gt;
-      &lt;link rel=&quot;log-in&quot; href=&quot;/sign-in&quot;&gt;
-      . . .
-      &lt;/head&gt;</pre>
+    <pre class="numbered slightly-bigger">&lt;head&gt;
+  . . .
+  &lt;link rel=&quot;accessibility-statement&quot;
+  href=&quot;/accessibility-statement&quot;&gt;
+  &lt;link rel=&quot;help&quot; href=&quot;/support&quot;&gt;
+  &lt;link rel=&quot;log-in&quot; href=&quot;/sign-in&quot;&gt;
+  . . .
+&lt;/head&gt;</pre>
+    <p class=slightly-bigger><strong>Note:</strong> sites' names can be mapped to standard destinations.</p>
   </section>
 
 
   <section class=slide>
-    <div class="centre large">
+    <div class="horiz-centre large">
       <div>
         <p>This <code>rel</code> attribute values are not shown directly to users.</p>
         <p><span class=next>They are used for communication between the </span>
@@ -351,16 +348,28 @@
 
   <section class=slide>
     <h2>Open Questions</h2>
-    <ul class=bigger>
-      <li class=next><mark>What <em>type</em> of resources is provided?</mark></li>
-      <li class=next><mark>TO DO</mark></li>
-      <li class=next><mark>TO DO</mark></li>
+    <ul>
+      <li class=next>How might we indicate what type of resources is provided?
+        <ul>
+          <li class=next>e.g. Human help, or chatbot, or telephone help line?</li>
+        </ul>
+      </li>
+      <li class=next>How best to represent nested structure?
+        <ul>
+          <li class=next>e.g. A hotel with sub-sites for restaurant, and gym&mdash;we need to experiment with UIs?</li>
+        </ul>
+      </li>
+      <li class=next>Are we missing any common destinations?
+        <ul>
+          <li class=next><a href="https://raw.githack.com/w3c/adapt/CR-content-2022-07-26/content/index.html#values-0">Our original list</a> comes from the <a href="https://www.w3.org/WAI/GL/task-forces/coga/">Cognitive Accessibility (COGA) Task Force</a>.</li>
+        </ul>
+      </li>
     </ul>
   </section>
 
   <section class=slide>
     <h2>Next steps</h2>
-    <div class=bigger>
+    <div>
       <p><strong>Right now:</strong> Q&A; open discussion</p>
       <p><strong>For the Adapt TF:</strong>
       <ul>
@@ -382,7 +391,7 @@
 
   <section class="slide final">
     <h1>Join us!</h1>
-    <div class=bigger>
+    <div>
       <p>WAI-Adapt Task Force:<br><a class=flat
           href="https://www.w3.org/WAI/APA/task-forces/adapt/">https://www.w3.org/WAI/APA/task-forces/adapt/</a></p>
       <p><a class=flat href="https://github.com/w3c/adapt/blob/main/explainers/well-known-destinations.md">Well-known
