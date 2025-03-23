@@ -6,13 +6,9 @@
   <meta charset=UTF-8>
   <meta content="width=device-width" name="viewport">
   <title>Simplifying Site Navigation: A Standardized Approach for Accessible Destinations</title>
-  <link rel="stylesheet" href="Templates/slides.css">
+  <link rel="stylesheet" href="Templates/humaaans.css">
   <link rel="stylesheet" href="wkd.css">
-  <!-- To use the b6+ framework, include this: -->
   <script src="Templates/b6plus.js"></script>
-  <!-- To use the Shower framework, remove b6plus above and add these two: -->
-  <!--   <script src="Templates/shower.js"></script>         -->
-  <!--   <script src="Templates/iframe-fixup.js"></script>   -->
 </head>
 
 <body class="shower quick duration=4">
@@ -37,14 +33,13 @@
 
 
   <section class="slide cover clear" id="start">
-    <h1>Simplifying Site Navigation: A Standardized Approach for Accessible Destinations</h1>
+    <h1>Simplifying Site Navigation: A&nbsp;Standardized Approach for Accessible Destinations</h1>
     <address>
       WAI-Adapt Task Force<br>
       <span class=normaltext>Abhinav Kumar, SAP</span><br>
       <span class=normaltext>Matthew Atkinson, Samsung R&amp;D Institute UK</span>
     </address>
-    <p><img src="Templates/w3c-white-blue-circle.svg" alt="W3C">
-      AC 2024<br> Hiroshima, Japan<br> hybrid meeting<br> 8–9 APRIL 2024</p>
+    <p>W3C Breakouts Day 2025</p>
   </section>
 
 
@@ -63,7 +58,8 @@
   </section>
 
   <section class=comment>
-    <p><strong>Drafting note for Adapt TF participants:</strong> the <mark>highlighted</mark> sections in the Outline slide weren't in the session description, but seem to be needed.</p>
+    <p><strong>Drafting note for Adapt TF participants:</strong> the <mark>highlighted</mark> sections in the Outline
+      slide weren't in the session description, but seem to be needed.</p>
   </section>
 
 
@@ -73,18 +69,20 @@
 
 
   <section class="slide">
-		<h2>Welcome</h2>
-		<p>This is a presentation on the latest work of the WAI-Adapt Task Force.</p>
-		<p><strong>Facilitator:</strong> Lionel Wolberger (UserWay AC rep)</p>
-		<p><strong>Task Force home:</strong> <a href="https://www.w3.org/WAI/APA/task-forces/adapt/">https://www.w3.org/WAI/APA/task-forces/adapt/</a></p>
-		<p><strong>This talk:</strong> <small><a href="https://raw.githack.com/w3c/adapt/main/presentations/breakouts-day-2025/">https://raw.githack.com/w3c/adapt/main/presentations/breakouts-day-2025/</a></small>
-		</p>
+    <h2>Welcome</h2>
+    <p>This is a presentation on the latest work of the WAI-Adapt Task Force.</p>
+    <p><strong>Facilitator:</strong> Lionel Wolberger (UserWay AC rep)</p>
+    <p><strong>Task Force home:</strong> <a
+        href="https://www.w3.org/WAI/APA/task-forces/adapt/">https://www.w3.org/WAI/APA/task-forces/adapt/</a></p>
+    <p><strong>This talk:</strong> <small><a
+          href="https://raw.githack.com/w3c/adapt/main/presentations/breakouts-day-2025/">https://raw.githack.com/w3c/adapt/main/presentations/breakouts-day-2025/</a></small>
+    </p>
     <p><strong>Presenters:</strong></p>
-		<ul>
-			<li>Abhinav Kumar, SAP Labs India</li>
-			<li>Matthew Tylee Atkinson (Samsung R&amp;D UK; speaking as APA WG co‑chair)</li>
-		</ul>
-	</section>
+    <ul>
+      <li>Abhinav Kumar, SAP Labs India</li>
+      <li>Matthew Tylee Atkinson (Samsung R&amp;D UK; speaking as APA WG co‑chair)</li>
+    </ul>
+  </section>
 
 
   <section class=slide>
@@ -92,7 +90,8 @@
   </section>
 
   <section class=comment>
-    <p>This <strong>was</strong> a specification &quot;under construction&quot; but, following community feedback, we found that we could reach our goals by building on existing specifications&mdash;more on that later.</p>
+    <p>This <strong>was</strong> a specification &quot;under construction&quot; but, following community feedback, we
+      found that we could reach our goals by building on existing specifications&mdash;more on that later.</p>
   </section>
 
 
@@ -300,7 +299,8 @@
 
   <section class="slide">
     <div class="large centre">
-      <p><strong>tl;dr:</strong> <code>&lt;link&gt;</code> elements and additional <code>rel</code> attribute values<br>(and a UA, or extension).</p>
+      <p><strong>tl;dr:</strong> <code>&lt;link&gt;</code> elements and additional <code>rel</code> attribute
+        values<br>(and a UA, or extension).</p>
     </div>
   </section>
 
@@ -316,19 +316,20 @@
   </section>
 
   <section class=comment>
-    <p>We specify <code>rel</code> attribute values for the various common destinations that a site might provide (some, but not all, are listed here).</p>
+    <p>We specify <code>rel</code> attribute values for the various common destinations that a site might provide (some,
+      but not all, are listed here).</p>
   </section>
 
 
   <section class=slide>
     <pre class=bigger>&lt;head&gt;
-  . . .
-  &lt;link rel=&quot;accessibility-statement&quot;
-    href=&quot;/accessibility-statement&quot;&gt;
-  &lt;link rel=&quot;help&quot; href=&quot;/support&quot;&gt;
-  &lt;link rel=&quot;log-in&quot; href=&quot;/sign-in&quot;&gt;
-  . . .
-&lt;/head&gt;</pre>
+      . . .
+      &lt;link rel=&quot;accessibility-statement&quot;
+      href=&quot;/accessibility-statement&quot;&gt;
+      &lt;link rel=&quot;help&quot; href=&quot;/support&quot;&gt;
+      &lt;link rel=&quot;log-in&quot; href=&quot;/sign-in&quot;&gt;
+      . . .
+      &lt;/head&gt;</pre>
   </section>
 
 
@@ -363,7 +364,8 @@
       <p><strong>Right now:</strong> Q&A; open discussion</p>
       <p><strong>For the Adapt TF:</strong>
       <ul>
-        <li class=next>Finalising &quot;minimum viable product&quot; (MVP) scope and <code>rel</code> attribute values</li>
+        <li class=next>Finalising &quot;minimum viable product&quot; (MVP) scope and <code>rel</code> attribute values
+        </li>
         <li class=next>Horizontal review</li>
         <li class=next>Seeking implementations</li>
       </ul>
@@ -372,20 +374,21 @@
 
   <section class=comment>
     <p><mark>TO DO: Update this comment!</mark></p>
-    <p>As mentioned, we're at the beginning of this work. Coming up are these three stages. As part of exploring the minimum viable product, we are thinking about how standard HTML features could be extended to support highlighting the relevant <em>area</em> of the page, once the user gets there.</p>
+    <p>As mentioned, we're at the beginning of this work. Coming up are these three stages. As part of exploring the
+      minimum viable product, we are thinking about how standard HTML features could be extended to support highlighting
+      the relevant <em>area</em> of the page, once the user gets there.</p>
   </section>
 
 
   <section class="slide final">
-    <p class=large>Join us!</p>
+    <h1>Join us!</h1>
     <div class=bigger>
       <p>WAI-Adapt Task Force:<br><a class=flat
           href="https://www.w3.org/WAI/APA/task-forces/adapt/">https://www.w3.org/WAI/APA/task-forces/adapt/</a></p>
-      <p><a class=flat
-          href="https://github.com/w3c/adapt/blob/main/explainers/well-known-destinations.md">Well-known destinations explainer</a>
+      <p><a class=flat href="https://github.com/w3c/adapt/blob/main/explainers/well-known-destinations.md">Well-known
+          destinations explainer</a>
       </p>
-      <p><a class=flat
-          href="https://github.com/SamsungInternet/wkd-prototype">Demo brower extension</a>
+      <p><a class=flat href="https://github.com/SamsungInternet/wkd-prototype">Demo brower extension</a>
       </p>
     </div>
   </section>
