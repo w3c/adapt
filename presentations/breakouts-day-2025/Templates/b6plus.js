@@ -1,4 +1,4 @@
-/* b6plus.js $Revision: 1.137 $
+/* b6plus.js $Revision: 1.139 $
  *
  * Script to simulate projection mode on browsers that don't support
  * media=projection or 'overflow-block: paged' (or ‘overflow-block:
@@ -356,11 +356,18 @@ const translations = {
     de: "zeichnen auf dem Dia ein-/ausschalten",
     fr: "dessiner sur la diapo activer/désactiver",
     nl: "tekenen op de dia aan/uit"},
+  "F and F1 only work in the window with the slides. (Browser security restriction.)": {
+    de: "F und F1 funktonieren nur im Fenster mit den Dias. (Browsersicherheitsbeschränkung.)",
+    fr: "F et F1 ne fonctionnent que dans la fenêtre avec les diapo. (Restriction de sécurité du navigateur.)",
+    nl: "F en F1 werken alleen in het venster met de dia's. (Browser-beveiligingsbeperking.)"},
 };
 
 /* Logo for use on a dark background. (The border of the circle is
  * light violet.) */
 const logo = '<svg viewBox="0 0 26.415 26.415" xmlns="http://www.w3.org/2000/svg"><desc>b6+</desc><circle cx="13.207" cy="13.207" fill="#98a" r="12.435" stroke="#ccd" stroke-width="1.544"/><path d="m8.242 19.168h-1.133v-12.121h1.215v4.324q.389-.595.876-.885.496-.298 1.1-.298.843 0 1.53.504.695.504 1.108 1.53.413 1.025.413 2.489 0 2.232-.934 3.448-.934 1.207-2.183 1.207-.628 0-1.133-.322-.496-.331-.86-.976zm-.017-4.457q0 1.364.248 2.042.248.678.703 1.034.455.356 1.009.356.752 0 1.331-.843.587-.852.587-2.538 0-1.728-.562-2.538-.562-.81-1.381-.81-.752 0-1.348.852-.587.843-.587 2.447z"/><g fill="#fff"><path d="m19.13 8.556-.922.124q-.066-.678-.542-.678-.31 0-.517.339-.203.339-.256 1.368.178-.256.397-.384.219-.128.484-.128.583 0 1.017.546.434.542.434 1.443 0 .959-.459 1.505-.459.546-1.137.546-.744 0-1.236-.707-.488-.711-.488-2.352 0-1.666.508-2.398.508-.732 1.306-.732.55 0 .926.376.38.372.484 1.133zm-2.154 2.534q0 .575.211.881.215.302.488.302.265 0 .438-.252.178-.252.178-.827 0-.595-.19-.868-.19-.273-.471-.273-.273 0-.463.26-.19.26-.19.777z"/><path d="m17.129 19.366v-1.575h-1.302v-1.087h1.302v-1.575h.868v1.575h1.306v1.087h-1.306v1.575z"/></g></svg>';
+
+/* Initial inner size of the second window. */
+const popupWidth = 800, popupHeight = 690;
 
 /* Global variables */
 var curslide = null;
@@ -871,6 +878,76 @@ function numberSlides()
 }
 
 
+/* scaleFontIfNeeded -- if the slide has class=textfit, maybe shrink the font */
+function scaleFontIfNeeded(slide)
+{
+  var style, height, f, f1, f2, wrapper, saveHeight, saveMaxHeight;
+
+  // The slide only needs to be checked if it has class=textfit or if
+  // the body has that class. And then only if the slide is one
+  // element. TODO: Also try to handle other markup?
+  if (slide.classList.contains('slide') &&
+      (document.body.classList.contains('textfit') ||
+	  slide.classList.contains('textfit'))) {
+
+    // Get the slide's height, which presumably is the desired height.
+    height = slide.getBoundingClientRect().height;
+
+    // Save the slide's inline height and max-height properties, if
+    // any, so we can restore them later. Then set them temporarily to
+    // auto and none.
+    saveHeight = slide.style.height;
+    saveMaxHeight = slide.style.maxHeight;
+    slide.style.height = 'auto';
+    slide.style.maxHeight = 'none';
+
+    // Get the height of the slide again, to see if it is bigger now.
+    if (slide.getBoundingClientRect().height > height) {
+      // Make a wrapper for the slide's content, if we didn't already.
+      // We'll then set a smaller font size on the wrapper to try and
+      // reduce the height of the slide.
+      wrapper = slide.firstChild;
+      if (!wrapper?.b6textfitwrapper) {
+	wrapper = document.createElement('div');
+	wrapper.setAttribute('class', 'b6textfitwrapper');
+	wrapper.style.display = 'block';
+	wrapper.style.width = '100%';
+	wrapper.style.height = '100%';
+	wrapper.style.margin = '0';
+	wrapper.style.padding = '0';
+	wrapper.style.position = 'static';
+	wrapper.style.overflow = 'visible';
+	while (slide.firstChild) wrapper.appendChild(slide.firstChild);
+	slide.appendChild(wrapper);
+	wrapper.b6textfitwrapper = true;
+      }
+
+      // Find new font size between 0.01px and the current size.
+      f1 = 0.01;
+      style = window.getComputedStyle(slide);
+      f2 = parseFloat(style.getPropertyValue('font-size'));
+      while (f2 > 1.00001 * f1) {	// Until within 0.001%
+	f = (f1 + f2)/2;
+	wrapper.style.fontSize = f + 'px';
+	if (slide.getBoundingClientRect().height > height) f2 = f; else f1 = f;
+      }
+    }
+
+    // Restore the element's style sttribute.
+    slide.style.height = saveHeight;
+    slide.style.maxHeight = saveMaxHeight;
+  }
+}
+
+
+/* textFit -- if the body or a slide has a class=textfit, make text fit */
+function textFit()
+{
+  for (const h of document.body.children)
+    if (isStartOfSlide(h)) scaleFontIfNeeded(h);
+}
+
+
 /* instrumentVideos -- add event handlers to all video and audio elements */
 function instrumentVideos()
 {
@@ -1012,6 +1089,7 @@ function displaySlide()
 
   updateProgress();
   initIncrementals();
+  scaleFontIfNeeded(curslide);	// Do it again, the style may be different now
 
   /* If there is a first window, tell it to scroll to the same slide. */
   if (firstwindow)
@@ -1074,22 +1152,27 @@ function makeCurrent(elt)
 
 
 /* fullscreen -- toggle fullscreen mode or turn it on ("on") or off ("off") */
-function toggleFullscreen(onoff)
+async function toggleFullscreen(onoff)
 {
+  var s, x;
+
   switchFullscreen = true;	// For the fullscreenchange event handler
 
   if (onoff !== "on" && document.fullscreenElement)
     document.exitFullscreen();
-  else if (onoff !== "on" && document.webkitFullscreenElement)
-    document.webkitExitFullscreen();
   else if (onoff !== "off" && document.fullscreenEnabled)
-    document.documentElement.requestFullscreen({navigationUI: "hide"})
-	    .catch(err => {
-	      alert(_("An error occurred while trying to switch into fullscreen mode")
-		  + ' (' + err.message + ' – ' + err.name + ")\n\n" +
-		  _("You can try again with the F or F1 key."))});
-  else if (onoff !== "off" && document.documentElement.webkitRequestFullscreen)
-    document.documentElement.webkitRequestFullscreen();
+    try {
+      // If there is exactly one external screen, use that.
+      s = "getScreenDetails" in window &&
+	(x = (await getScreenDetails()).screens.filter((h) => !h.isInternal)) &&
+	x.length == 1 ? x[0] : screen;
+      await document.documentElement.requestFullscreen({navigationUI: "hide",
+	screen: s});
+    } catch (err) {
+      alert(_("An error occurred while trying to switch into fullscreen mode")
+	  + ' (' + err.message + ' – ' + err.name + ")\n\n" +
+	  _("You can try again with the F or F1 key."));
+    }
   else if (onoff !== "off")
     window.alert(_("Fullscreen mode is not possible"));
 }
@@ -1296,7 +1379,7 @@ function openSecondWindow()
       Math.trunc(0x100000 * Math.random()).toString(36));
     // url.hash = "";
     secondwindow = open(url, "b6+ slide window",
-      "innerWidth=800,innerHeight=690");
+      `innerWidth=${popupWidth},innerHeight=${popupHeight},resizable`);
     secondwindow.focus();
   }
 
@@ -1319,6 +1402,14 @@ function warnSyncMode()
   console.assert(!firstwindow);	// We're on the first window
   warningBanner(_("No navigation possible while sync mode is on."), "\n",
     _("Press S to toggle sync mode off."));
+}
+
+
+/* warnFullscreen -- alert the user fullscreen does not work between windows */
+function warnFullscreen()
+{
+  console.assert(!firstwindow);	// We're on the first window
+  warningBanner(_("F and F1 only work in the window with the slides. (Browser security restriction.)"));
 }
 
 
@@ -1521,10 +1612,7 @@ function keyDown(event)
   case "F1":
     if (slidemode) toggleFullscreen()	// In slide mode
     else if (secondwindow?.closed !== false) return // No 2nd window
-    else secondwindow.postMessage({event: "keydown", v: event.key});
-    // TODO: This does not work: the 2nd window will not go into
-    // fullscreen, for security reasons. Show a message here instead
-    // with instructions?
+    else warnFullscreen();
     break;
   case "Esc":				// Some older browsers
   case "Escape":
@@ -1653,20 +1741,46 @@ function toggleMedia()
 /* scaleBody -- if the BODY has a fixed size, scale it to fit the window */
 function scaleBody()
 {
-  var w, h;
+  var w, h, w2, h2;
 
   if (document.body.offsetWidth && document.body.offsetHeight) {
     w = document.body.offsetWidth;
     h = document.body.offsetHeight;
-    scale = Math.min(window.innerWidth/w, window.innerHeight/h);
+    w2 = window.visualViewport.width * window.visualViewport.scale;
+    h2 = window.visualViewport.height * window.visualViewport.scale;
+    scale = Math.min(w2/w, h2/h);
+    // console.log(`scaleBody ${w}x${h} -> ${w2}x${h2} -> ${scale}`);
     document.body.style.transform = "scale(" + scale + ")";
     document.body.style.position = "relative";
-    document.body.style.marginLeft = (window.innerWidth - w)/2 + "px";
-    document.body.style.marginTop = (window.innerHeight - h)/2 + "px";
+    document.body.style.marginLeft = (w2 - w)/2 + "px";
+    document.body.style.marginTop = (h2 - h)/2 + "px";
     document.body.style.top = "0";
     document.body.style.left = "0";
     /* --shower-full-scale is for style sheets written for Shower 3.1: */
     document.body.style.setProperty('--shower-full-scale', '' + scale);
+  }
+}
+
+
+/* shrinkWindow -- give the 2nd window the same aspect ratio as the slides */
+function shrinkWindow()
+{
+  var r, w, h, safari_fix;
+
+  // Only do somthing if this is a 2nd window, the body has a definite
+  // height, and we're not in fullscreen mode.
+  if (firstwindow && document.body.offsetWidth && document.body.offsetHeight &&
+      ! document.fullscreenElement) {
+    r = document.body.getBoundingClientRect();
+    if (window.visualViewport) {
+      w = window.visualViewport.width * window.visualViewport.scale;
+      h = window.visualViewport.height * window.visualViewport.scale;
+    } else {
+      w = window.innerWidth;
+      h = window.innerHeight;
+    }
+    safari_fix = popupWidth / w;	// Safari reports 941.1 instead of 800??
+    resizeBy((r.width - w) * safari_fix, (r.height - h) * safari_fix);
   }
 }
 
@@ -1689,6 +1803,7 @@ function finishToggleMode()
     scaleBody(); // If the BODY has a fixed size, scale it to fit the window
     initProgress();		// Find and initialize progress bar, etc.
     initHideMouse();		// If requested, hide an idle mouse pointer
+    shrinkWindow();		// If 2nd window, try and remove black bands
 
     // If we're a 2nd window, inform the 1st window that we are ready.
     if (firstwindow) firstwindow.postMessage({event: "init"});
@@ -1807,22 +1922,44 @@ function toggleModeAndFullscreen()
 }
 
 
-/* toggleDarkMode -- add, remove or toggle class=darkmode on the BODY */
+/* toggleDarkMode -- add, remove or toggle darkmode/lightmode on the BODY */
 function toggleDarkMode(onoff)
 {
-  var darkmodeIsOn;
+  var darkmodeIsOn, lightmodeIsOn;
 
   if (! hasDarkMode) return;
 
-  darkmodeIsOn = document.body.classList.contains("darkmode");
-  if (darkmodeIsOn && onoff !== "on") {
-    document.body.classList.remove("darkmode");
-    firstwindow?.postMessage({event: "darkmodeOff"});
-    secondwindow?.postMessage({event: "darkmodeOff"});
-  } else if (! darkmodeIsOn && onoff !== "off") {
-    document.body.classList.add("darkmode");
-    firstwindow?.postMessage({event: "darkmodeOn"});
-    secondwindow?.postMessage({event: "darkmodeOn"});
+  // If onoff is "on", set a class on body. If onoff is "off", unset
+  // it. If onoff is undefined, toggle the class. If the OS is in dark
+  // mode, this toggles class=lightmode. Otherwise this toggles
+  // class=darkode.
+  //
+  if (matchMedia('(prefers-color-scheme: dark)').matches) {
+    // The OS is currently in dark mode.
+    lightmodeIsOn = document.body.classList.contains("lightmode");
+    if (lightmodeIsOn && onoff !== "on") {
+      document.body.classList.remove("lightmode");
+      firstwindow?.postMessage({event: "lightmodeOff"});
+      secondwindow?.postMessage({event: "lightmodeOff"});
+    } else if (! lightmodeIsOn && onoff !== "off") {
+      document.body.classList.remove("darkmode");
+      document.body.classList.add("lightmode");
+      firstwindow?.postMessage({event: "lightmodeOn"});
+      secondwindow?.postMessage({event: "lightmodeOn"});
+    }
+  } else {
+    // The OS is currently not in dark mode.
+    darkmodeIsOn = document.body.classList.contains("darkmode");
+    if (darkmodeIsOn && onoff !== "on") {
+      document.body.classList.remove("darkmode");
+      firstwindow?.postMessage({event: "darkmodeOff"});
+      secondwindow?.postMessage({event: "darkmodeOff"});
+    } else if (! darkmodeIsOn && onoff !== "off") {
+      document.body.classList.remove("lightmode");
+      document.body.classList.add("darkmode");
+      firstwindow?.postMessage({event: "darkmodeOn"});
+      secondwindow?.postMessage({event: "darkmodeOn"});
+    }
   }
 }
 
@@ -2564,15 +2701,23 @@ function beforeUnload(ev)
 }
 
 
-/* initDarkMode -- set hasDarkMode to true/false depending on the style sheet */
+/* initDarkMode -- set hasDarkMode depending on the style sheet and slides */
 function initDarkMode()
 {
-  // A style sheet that supports the class "darkmode" on the body
-  // element should signal that by setting the property
-  // "--has-darkmode" to "1" on the body element.
-
-  hasDarkMode = window.getComputedStyle(document.body)
-		      .getPropertyValue("--has-darkmode") == "1";
+  // If the body element has one of the classes darkmode or lightmode,
+  // the author doesn't intend for any slides to change, so we set
+  // hasDarkMode to false. Otherwise we check if the style sheet
+  // supports dark mode.
+  //
+  // A style sheet that supports the classes "darkmode" and
+  // "lightmode" on the body element should signal that by setting the
+  // property "--has-darkmode" to "1" on the body element.
+  //
+  hasDarkMode =
+    ! document.body.classList.contains('darkmode') &&
+    ! document.body.classList.contains('lightmode') &&
+    window.getComputedStyle(document.body)
+	  .getPropertyValue("--has-darkmode") == "1";
 }
 
 
@@ -2770,7 +2915,8 @@ function checkIfSecondWindow()
     firstwindow = window.opener;
 
     // Modify the title.
-    document.title = "b6+ slide window – " + document.title;
+    document.title = "Drag to 2nd screen, then press F for full screen  |  " +
+      document.title + "  |  b6+";
 
     // Accessibility hint.
     if (interactive) document.body.setAttribute("role", "application");
@@ -2794,6 +2940,7 @@ function initialize()
   checkOptions();		// Look for options in body.classList
   checkIfSecondWindow();	// If this is a secondwindow, configure it
   numberSlides();		// Count & number the slides and give them IDs
+  textFit();			// Maybe shrink font on slides w/ class=textfit
   instrumentVideos();		// Add event handlers to any video elements
   document.body.classList.add('b6plus'); // Tell style sheet that b6+ is used
   window.addEventListener('resize', windowResize, true);
