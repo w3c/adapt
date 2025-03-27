@@ -208,9 +208,6 @@ The UA/AT can then use this information (and the knowledge that the navigation w
 > [!NOTE]
 > This was the TF's favoured approach pre-TPAC 2024. Keeping this here for now to help write the revised, simpler, one, and to possibly be used to offer an idea of how the approach _may_ be made more efficient in future if there is demand.
 
-> [!NOTE]
-> This approach originally had 'defining a site' immediately after the first, namespace, section. This has been moved to reflect the heading structure above.
-
 ### The well-known destination namespace
 
 Each destination is part of a vocabulary. As there are several destinations that could be provided by a site, they will be namespaced under a root vocabulary namespace, for example (taking inspiration from GS1's vocabulary)...
@@ -370,7 +367,7 @@ The UA will know if this link points to the root of the well-known destination (
 > [!NOTE]
 > We have not completed this section yet.
 
-## Considered alternatives
+## Alternatives considered
 
 ### Well-known URIs
 
