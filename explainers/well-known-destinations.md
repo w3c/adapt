@@ -17,34 +17,28 @@
 - [Motivating Use Cases](#motivating-use-cases)
 - [Out of scope](#out-of-scope)
 - [User research](#user-research)
-- [Well-known destinations: technical requirements](#well-known-destinations-technical-requirements)
-- [Option 1: Well-known URIs, and HTML link types](#option-1-well-known-uris-and-html-link-types)
+- [Technical requirements](#technical-requirements)
+- [The "Well-known destinations" approach](#the-well-known-destinations-approach)
   * [The well-known destination namespace](#the-well-known-destination-namespace)
-  * [Defining a site](#defining-a-site)
   * [Enumerating well-known destinations](#enumerating-well-known-destinations)
+  * [Defining a site](#defining-a-site)
   * [Visiting a well-known destination directly](#visiting-a-well-known-destination-directly)
   * [Updating a well-known destination](#updating-a-well-known-destination)
   * [Expressing when a link points to part of a well-known destination](#expressing-when-a-link-points-to-part-of-a-well-known-destination)
   * [Demarcating destination content](#demarcating-destination-content)
-- [Option 2: Linksets, and HTML link types, and one Well-known URI](#option-2-linksets-and-html-link-types-and-one-well-known-uri)
-  * [The well-known destination namespace](#the-well-known-destination-namespace-1)
-  * [Defining a site](#defining-a-site-1)
-  * [Enumerating well-known destinations](#enumerating-well-known-destinations-1)
-  * [Visiting a well-known destination directly](#visiting-a-well-known-destination-directly-1)
-  * [Updating a well-known destination](#updating-a-well-known-destination-1)
-  * [Expressing when a link points to part of a well-known destination](#expressing-when-a-link-points-to-part-of-a-well-known-destination-1)
-  * [Demarcating destination content](#demarcating-destination-content-1)
+- [Open Questions](#open-questions)
+  * [Indicating the _kind_ of content](#indicating-the-_kind_-of-content)
+  * [Discoverability and repetition](#discoverability-and-repetition)
+  * [Demarcating sub-sites](#demarcating-sub-sites)
 - [Security \& Privacy considerations](#security--privacy-considerations)
-- [Considered alternatives](#considered-alternatives)
+- [Alternatives considered](#alternatives-considered)
+  * [Well-known URIs](#well-known-uris)
   * [Sitemaps](#sitemaps)
   * [Using `rel` attribute values alone](#using-rel-attribute-values-alone)
+  * [Linksets](#linksets)
 - [Stakeholder feedback/opposition](#stakeholder-feedbackopposition)
 - [References \& acknowledgements](#references--acknowledgements)
-  * [Foundational work](#foundational-work)
-    + [Destinations](#destinations)
-    + [Well-known URLs](#well-known-urls)
-    + [Linksets](#linksets)
-    + [Link types/relations](#link-typesrelations)
+  * [Foundational and related work](#foundational-and-related-work)
 
 <!-- tocstop -->
 
@@ -80,7 +74,7 @@ The motivating use cases, "option 1" approach (using Well-known URIs), and an ex
 
 * Specifying the interface within the UA (or UA extension) by which the user can navigate to supported well-known pages.
 
-Though out of scope, an proof-of-concept UI for enumerating a site's well-known destinations is depicted below.
+Though detailed UI design is out of scope, an proof-of-concept UI for enumerating a site's well-known destinations is depicted below.
 
 ![A fictional ACME Inc. home page, with the extension pop-up open, showing 6 buttons, each containing emoji and accompanying text names for the well-known destinations offered by the site: home, accessibility statement, contact, help, log in, and products.](../presentations/ac2024/ext02.png)
 
@@ -105,15 +99,15 @@ An illustrative set of proposed well-known destinations is as follows...
 
 * `search` (intended for a dedicated search page; a [`search` landmark region](https://www.w3.org/TR/wai-aria-1.2/#search) would be used on any page that contains a search form)
 
-## Well-known destinations: technical requirements
+## Technical requirements
 
-We are investigating two technical approaches to supporting the above user needs. Both approaches have common elements. All approches that would solve these user needs must provide the following.
-
-* A way to denote the scope of any particular site (or sub-site).
+Any approch that would solve these user needs must provide the following.
 
 * A way to represent each well-known destination proposed above.
 
 * A mechanism for discovering all well-known destinations supported by a site&mdash;to be used when a UA first visits a site on behalf of the user. In order to do this efficiently, it must be possible to make this query in a single HTTP request. The results would be available to the user via the UI of the UA.
+
+* A way to denote the scope of any particular site (or sub-site).
 
 * A procedure for visiting a well-known destination directly (when the user activates the interface in the UA).
 
@@ -121,122 +115,154 @@ We are investigating two technical approaches to supporting the above user needs
 
 * Means to identify when a link on a page takes the user to a sub-page of a well-known destination page. E.g. a link to the "help on logging in" page (as opposed to the main "help" section landing page, which is where the well-known destination alone would take the user).
 
-The following features are also very desirable, but may be deferred to a later version of the spec:
-
 * Means to demarcate an element on the destination page that provides the destination content.
 
-## Option 1: Well-known URIs, and HTML link types
+* A way to indicate the _kind_ of content that the destination provides&mdash;e.g. people with cognitive disabilities may need to get help from, or chat to, a human, over the phone, rather than a chatbot, or sending an email.
 
-This approach builds on:
+> [!CAUTION]
+> The last of these requirements&mdash;indicating the _kind_ of content or support&mdash;is currently an open question, not addressed by the proposed approach below, but may be addressed in a future iteration of this approach, or by a future WAI-Adapt TF project.
 
-* Well-known URIs to identify destination pages&mdash;with a small extension (detailed in [enumerating well-known destinations](#enumerating-well-known-destinations) below) to support efficient polling of destinations; and
+## The "Well-known destinations" approach
 
-* HTML link relation types to identify when links point to well-known destinations.
+This involves using the `<link>` element, and custom `rel` attribute values, to signpost well-known destinations on a site.
 
 ### The well-known destination namespace
 
-As there are several destinations that could be provided by a site, they will be namespaced under the following parent well-known URL.
+All possible well-known destinations will be registered as `rel` attribute values.
 
-    /.well-known/ia/
+* `accessibility-statement`
 
-Under this namespace are the following proposed URLs (the purpose of each is given in the [user research](#user-research) section above).
+* `change-password`
 
-* `/.well-known/ia/accessibility-statement`
+* `help`
 
-* `/.well-known/ia/change-password`
+* `log-in`
 
-* `/.well-known/ia/help`
+* `products`
 
-* `/.well-known/ia/log-in`
-
-* `/.well-known/ia/products`
-
-* `/.well-known/ia/search`
-
-The namespace has been specified as `/.well-known/ia/`, with "ia" standing for "information architecture". This term matches clauses 2, 4, and 8 of [the definition of "information architecture" as given by Wikipedia](https://en.wikipedia.org/wiki/Information_architecture#Definition). Clause 2 states:
-
-> The art and science of organizing and labeling web sites, intranets, online communities, and software to support findability and usability.
-
-Other options instead of "ia" were considered, including "information-architecture", "structure", and others. However "ia" was both felt to be accurate, and is more concise than the other alternatives.
-
-### Defining a site
-
-Well-known URLs work on the basis of _origins_.
-
-If a site is organised in such a way to have sub-sites that are at subdomains, this will work as intended&mdash;the destinations for each sub-site will be reflected separately.
-
-However, if the overall site is organised such that sub-sites are rooted at different URL paths, this will not be the case.
-
-> [!NOTE]
-> We are investigating:
->
-> * How much of a barrier this may be.
->
->   - How many sites may be affected.
->
->   - How problematic it may be for users to have to visit a landing page that provides links to sub-site-specific pages.
->
-> * Ways that this could be overcome (other than having the well-known destination point to a landing page that provides onward links to sub-site pages).
+* `search`
 
 ### Enumerating well-known destinations
 
-> [!IMPORTANT]
-> This section describes a behavior that would need to be specified as an extension to Well-known URIs.
+On the site's home page, the destinations supported by the site would be indicated via `<link>` elements. For example:
 
-When a UA requests the root URL for the information architecture namespace:
-
-    /.well-known/ia/
-
-A JSON string is returned that represents the list of well-known destinations this site provides. For example, if the site provided a page to allow users to sign in to their accounts, and an accessibility statement, then the returned JSON string would be:
-
-```json
-["accessibility-statement","log-in"]
+```html
+. . .
+<head>
+  . . .
+  <link rel="accessibility-statement" href="/accessibility-statement">
+  <link rel="help" href="/support">
+  <link rel="log-in" href="/sign-in">
+</head>
 ```
 
-The UA would then be able to present this information to the user in some way. We envisage that, initially, this could be done via a browser extension that provides a pop-up (or sidebar) that would list the available destinations on the site in a localised manner for the user. In this case, that list might be:
+This will provide an overview of the available destinations.
 
-* Accessibility statement
+> [!NOTE]
+> All destinations would need to be repeated on all pages of the site. (This is one reason why the URLs in the example begin with `/`).
 
-* Log in
+### Defining a site
+
+Because all destinations are repeated on all pages of a site, if we move to a sub-site, the sub-site will expose all destinations on all of its pages, and thus the UA/AT will be able to present the correct destinations for the sub-site.
 
 ### Visiting a well-known destination directly
 
-This would normally happen when the user activates a control in the UA's (or UA extension's) interface to trigger visiting the particular destination.
+* The user selects the well-known destination in the UI of their UA.
 
-1. UA requests the well-known URL directly.
-
-2. Depending on whether the URL exists&hellip;
-
-   1. **If the URL exists:** a redirect is given, and the actual page loads normally (assuming the "real" URL given in the redirect is valid).
-
-   2. **If the URL does not exist:** A 404 response is received. In this case, the UA would display the 404 page&hellip;this is unlikely to happen in normal use (because supported destinations would've already been queried), and may indicate that the site is mis-configured.
+* The corresponding URL is loaded.
 
 ### Updating a well-known destination
 
-When the "real" URL to which a well-known URL points is changed (because the page is moved/deleted), then the well-known URL redirect must be updated, or removed entirely.
+The content author would need to ensure that the `<link>` elements sent are correct. In practice this would most likely be managed by the CMS powering the site, which could take the repetition out of the authoring process.
 
 ### Expressing when a link points to part of a well-known destination
 
-A link could be decorated with a `rel` attribute value that corresponds to the applicable destination.
+When an in-page (anchor, `<a>`) link points to a page that is a sub-page of a well-known destination (such as the "help on logging in" page, rather than the "help" home page), this can be indicated by adding a `rel`  value to the anchor.
 
-The UA will know if this link points to the root of the well-known destination (e.g. the "Help" landing page, vs "Help on logging in") becuase it knows the URL of the root of the well-known destination, via the discovery process above.
+```html
+<p>For more details, consult the <a href="/help/signing-in" rel="help">help section on signing in to your account</a>.</p>
+```
 
 ### Demarcating destination content
 
+As well-known destinations are normal links, they can make use of fragments to point to certain elements on the destination page.
+
+The UA/AT can then use this information (and the knowledge that the navigation was via the Well-known destination UI) to render the destination page in an appropriate way for the user. This may involve:
+
+* Highlighting the specific relevant part of the page.
+
+* Removing other elements from the rendering of the page.
+
+## Open Questions
+
+### Indicating the _kind_ of content
+
 > [!NOTE]
-> We have not completed this feature yet.
+> As above, COGA need that we are not yet addressing.
 
-## Option 2: Linksets, and HTML link types, and one Well-known URI
+### Discoverability and repetition
 
-This approach builds on:
+> [!NOTE]
+> This is a work-in-progress
 
-* Linksets to identify destination pages&mdash;with a small "extension" (or, rather, difference in how the linkset is interpreted&mdash;detailed in [defining a site](#defining-a-site-1) below) for defining sub-sites;
+### Demarcating sub-sites
 
-* A single Well-known URI from which the linkset would be served; and
+> [!NOTE]
+> This is a work-in-progress
 
-* HTML link relation types to identify when links point to well-known destinations.
+* Semantically
 
-### The well-known destination namespace
+* UI-wise
+
+## Security \& Privacy considerations
+
+> [!NOTE]
+> We have not completed this section yet.
+
+## Alternatives considered
+
+### Well-known URIs
+
+We first explored using [Well-known URIs](https://datatracker.ietf.org/doc/html/rfc8615), which provide a number of useful features. However, there were some important limitations:
+
+* Well-known URIs are linked to an _origin_ which means it's not possible to demarcate sub-sites.
+
+* Well-known URIs are usually managed separately to site content, making it harder for regular content authors to keep them up-to-date.
+
+### Sitemaps
+
+[Sitemaps](https://www.sitemaps.org/) are intended to solve different problems than this work.
+
+* Sitemaps are intended to enumerate all major (and possibly minor) pages; our goal here is to highlight specific common pages that may be provided.
+
+* Sitemaps do not give standard names to certain types of pages; our goal here is to semantically identify the purpose of specific pages, so that the UA can present this information to the user, and so that machines can reach certain pages.
+
+It does not seem like a good fit to try to extend the format of sitemaps to accommodate these requirements.
+
+### Using `rel` attribute values alone
+
+Using `rel` attribute values is part of the proposed spec&mdash;for cases where deep links may be provided into an overall well-known section (e.g. help on a specific topic).
+
+It would be possible to use _only_ `rel` values to highlight well-known destinations (if they were applied to links to the top-level destination landing pages, and there was a way to denote that a link was to the top-level destination landing page), but this would have the disadvantage that the overall destinations for a particular site could not be determined, nor presented to the user, in a simple and robust way. The user could only discover them if they landed on the right pages.
+
+This would pose the risk that the interface presented by the UA would not give a complete picture of what is available on the site, and thus either not be of great use, or&mdash;worse&mdash;be actively confusing for people to use.
+
+> [!NOTE]
+> Open questions:
+>
+> * How often would footer links cover this? (If often, does that negate the need for this spec?)
+>
+> * What is the performance cost of parsing all those `rel` attributes every time? (This would be required if the `rel` approach were to be used at all.)
+
+### Linksets
+
+This was the TF's favoured approach pre-TPAC 2024. Linksets are semantically equivalent to the above approach (of using `<link>` elements in the header). They would require some additional authoring work (to create the linkset), and would result in smaller pages, with one extra request for the linkset document (which would cover the whole site).
+
+For now we opt for the above approach of putting all the relevant information in `<link>` elements in the `<head>` of each page, for simplicity. However it would still be possible to use linksets in future.
+
+The following sections mirror those above for the proposed approach, for reference.
+
+#### The well-known destination namespace
 
 Each destination is part of a vocabulary. As there are several destinations that could be provided by a site, they will be namespaced under a root vocabulary namespace, for example (taking inspiration from GS1's vocabulary)...
 
@@ -262,7 +288,14 @@ The namespace has been specified as `https://w3.org/voc/ia/`, with "ia" standing
 
 Other options instead of "ia" were considered, including "information-architecture", "structure", and others. However "ia" was both felt to be accurate, and is more concise than the other alternatives.
 
-### Defining a site
+#### Enumerating well-known destinations
+
+The first time the user visits the origin, the linkset for the origin, and sub-sites, would be fetched from a well-known URI, such as `/.well-known/ia/linkset`.
+
+> [!NOTE]
+> We need to investigate how, on a large site, the linkset documents could be split up to improve performance and/or ease of editing, in the event different teams work on different sub-sites.
+
+#### Defining a site
 
 > [!IMPORTANT]
 > This section describes a semantic that would need to be interpreted differently when interpreting a "well-known" linkset.
@@ -336,14 +369,7 @@ In this case, the UA would need to interpret the URL structure of the linkset as
 > [!NOTE]
 > The way that the UA presents the underlying tree structure of destinations across the root and sub-sites is out of scope. We envisage a range of UAs, or user preference settings, being created to cater for differing user needs.
 
-### Enumerating well-known destinations
-
-The first time the user visits the origin, the linkset for the origin, and sub-sites, would be fetched from a well-known URI, such as `/.well-known/ia/linkset`.
-
-> [!NOTE]
-> We need to investigate how, on a large site, the linkset documents could be split up to improve performance and/or ease of editing, in the event different teams work on different sub-sites.
-
-### Visiting a well-known destination directly
+#### Visiting a well-known destination directly
 
 * The user selects the well-known destination in the UI of their UA.
 
@@ -351,55 +377,23 @@ The first time the user visits the origin, the linkset for the origin, and sub-s
 
 If a destination isn't supported, the UI is expected to _not_ include it.
 
-### Updating a well-known destination
+#### Updating a well-known destination
 
 The content author would need to update the linkset file, and replace it on the server.
 
 > [!NOTE]
 > We need to investigate how, on a large site, the linkset documents could be split up to improve performance and/or ease of editing, in the event different teams work on different sub-sites.
 
-### Expressing when a link points to part of a well-known destination
+#### Expressing when a link points to part of a well-known destination
 
 A link could be decorated with a `rel` attribute value that corresponds to the applicable destination.
 
 The UA will know if this link points to the root of the well-known destination (e.g. the "Help" landing page, vs "Help on logging in") becuase it knows the URL of the root of the well-known destination, via the discovery process above.
 
-### Demarcating destination content
+#### Demarcating destination content
 
 > [!NOTE]
 > We have not completed this feature yet.
-
-## Security \& Privacy considerations
-
-> [!NOTE]
-> We have not completed this section yet.
-
-## Considered alternatives
-
-### Sitemaps
-
-[Sitemaps](https://www.sitemaps.org/) are intended to solve different problems than this work.
-
-* Sitemaps are intended to enumerate all major (and possibly minor) pages; our goal here is to highlight specific common pages that may be provided.
-
-* Sitemaps do not give standard names to certain types of pages; our goal here is to semantically identify the purpose of specific pages, so that the UA can present this information to the user, and so that machines can reach certain pages.
-
-It does not seem like a good fit to try to extend the format of sitemaps to accommodate these requirements.
-
-### Using `rel` attribute values alone
-
-Using `rel` attribute values is part of the proposed spec&mdash;for cases where deep links may be provided into an overall well-known section (e.g. help on a specific topic).
-
-It would be possible to use _only_ `rel` values to highlight well-known destinations (if they were applied to links to the top-level destination landing pages, and there was a way to denote that a link was to the top-level destination landing page), but this would have the disadvantage that the overall destinations for a particular site could not be determined, nor presented to the user, in a simple and robust way. The user could only discover them if they landed on the right pages.
-
-This would pose the risk that the interface presented by the UA would not give a complete picture of what is available on the site, and thus either not be of great use, or&mdash;worse&mdash;be actively confusing for people to use.
-
-> [!NOTE]
-> Open questions:
->
-> * How often would footer links cover this? (If often, does that negate the need for this spec?)
->
-> * What is the performance cost of parsing all those `rel` attributes every time? (This would be required if the `rel` approach were to be used at all.)
 
 ## Stakeholder feedback/opposition
 
@@ -418,7 +412,11 @@ This would pose the risk that the interface presented by the UA would not give a
 
 * The COGA TF
 
-### Foundational work
+* Tantek Çelik
+
+* Theresa O’Connor
+
+### Foundational and related work
 
 #### Destinations
 
@@ -426,20 +424,6 @@ This would pose the risk that the interface presented by the UA would not give a
 
 > [!NOTE]
 > As mentioned above, the destinations are under review.
-
-#### Well-known URLs
-
-* [IETF's Well-Known URIs RFC](https://www.rfc-editor.org/rfc/rfc8615)
-
-* [IANA's well-known URI registry](https://www.iana.org/assignments/well-known-uris/well-known-uris.xhtml)
-
-* W3C's [A Well-Known URL for Changing Passwords](https://www.w3.org/TR/change-password-url/) specification (the URL for which is lodged in IANA's registry)
-
-#### Linksets
-
-* [IETF's Linksets RFC](https://www.rfc-editor.org/rfc/rfc9264)
-
-* [GS1's linkset visualisation demo](https://gs1.github.io/linkset/)
 
 #### Link types/relations
 
@@ -450,3 +434,12 @@ This would pose the risk that the interface presented by the UA would not give a
   - [Link types managed by the Microformats project](https://html.spec.whatwg.org/multipage/links.html#other-link-types)
 
   - [Link types anaged by IANA](https://www.iana.org/assignments/link-relations/link-relations.xhtml)
+
+#### Linksets
+
+> [!NOTE]
+> We are not using linksets in the spec, though they were suggested to us as a suitable implementation path. They provide a slightly more centralised semantic equivalent to `<link>` elements, which can be separated out into a separate document. They would likely require slightly more authoring effort initially.
+
+* [IETF's Linksets RFC](https://www.rfc-editor.org/rfc/rfc9264)
+
+* [GS1's linkset visualisation demo](https://gs1.github.io/linkset/)
