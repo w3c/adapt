@@ -26,29 +26,19 @@
   * [Updating a well-known destination](#updating-a-well-known-destination)
   * [Expressing when a link points to part of a well-known destination](#expressing-when-a-link-points-to-part-of-a-well-known-destination)
   * [Demarcating destination content](#demarcating-destination-content)
-- [Previous iteration: Linksets](#previous-iteration-linksets)
-  * [The well-known destination namespace](#the-well-known-destination-namespace-1)
-  * [Enumerating well-known destinations](#enumerating-well-known-destinations-1)
-  * [Defining a site](#defining-a-site-1)
-  * [Visiting a well-known destination directly](#visiting-a-well-known-destination-directly-1)
-  * [Updating a well-known destination](#updating-a-well-known-destination-1)
-  * [Expressing when a link points to part of a well-known destination](#expressing-when-a-link-points-to-part-of-a-well-known-destination-1)
-  * [Demarcating destination content](#demarcating-destination-content-1)
 - [Open Questions](#open-questions)
   * [Indicating the _kind_ of content](#indicating-the-_kind_-of-content)
   * [Discoverability and repetition](#discoverability-and-repetition)
   * [Demarcating sub-sites](#demarcating-sub-sites)
 - [Security \& Privacy considerations](#security--privacy-considerations)
-- [Considered alternatives](#considered-alternatives)
+- [Alternatives considered](#alternatives-considered)
   * [Well-known URIs](#well-known-uris)
   * [Sitemaps](#sitemaps)
   * [Using `rel` attribute values alone](#using-rel-attribute-values-alone)
+  * [Previous iteration: Linksets](#previous-iteration-linksets)
 - [Stakeholder feedback/opposition](#stakeholder-feedbackopposition)
 - [References \& acknowledgements](#references--acknowledgements)
   * [Foundational and related work](#foundational-and-related-work)
-    + [Destinations](#destinations)
-    + [Link types/relations](#link-typesrelations)
-    + [Linksets](#linksets)
 
 <!-- tocstop -->
 
@@ -203,12 +193,79 @@ The UA/AT can then use this information (and the knowledge that the navigation w
 
 * Removing other elements from the rendering of the page.
 
-## Previous iteration: Linksets
+## Open Questions
+
+### Indicating the _kind_ of content
 
 > [!NOTE]
-> This was the TF's favoured approach pre-TPAC 2024. Keeping this here for now to help write the revised, simpler, one, and to possibly be used to offer an idea of how the approach _may_ be made more efficient in future if there is demand.
+> As above, COGA need that we are not yet addressing.
 
-### The well-known destination namespace
+### Discoverability and repetition
+
+> [!NOTE]
+> This is a work-in-progress
+
+### Demarcating sub-sites
+
+> [!NOTE]
+> This is a work-in-progress
+
+* Semantically
+
+* UI-wise
+
+## Security \& Privacy considerations
+
+> [!NOTE]
+> We have not completed this section yet.
+
+## Alternatives considered
+
+### Well-known URIs
+
+We first explored using [Well-known URIs](https://datatracker.ietf.org/doc/html/rfc8615), which provide a number of useful features. However, there were some important limitations:
+
+* Well-known URIs are linked to an _origin_ which means it's not possible to demarcate sub-sites.
+
+* Well-known URIs are usually managed separately to site content, making it harder for regular content authors to keep them up-to-date.
+
+### Sitemaps
+
+[Sitemaps](https://www.sitemaps.org/) are intended to solve different problems than this work.
+
+* Sitemaps are intended to enumerate all major (and possibly minor) pages; our goal here is to highlight specific common pages that may be provided.
+
+* Sitemaps do not give standard names to certain types of pages; our goal here is to semantically identify the purpose of specific pages, so that the UA can present this information to the user, and so that machines can reach certain pages.
+
+It does not seem like a good fit to try to extend the format of sitemaps to accommodate these requirements.
+
+### Using `rel` attribute values alone
+
+> [!WARNING]
+> This section is particularly out of date, as we are now using this approach - though we could work on reducing repetition in future.
+
+Using `rel` attribute values is part of the proposed spec&mdash;for cases where deep links may be provided into an overall well-known section (e.g. help on a specific topic).
+
+It would be possible to use _only_ `rel` values to highlight well-known destinations (if they were applied to links to the top-level destination landing pages, and there was a way to denote that a link was to the top-level destination landing page), but this would have the disadvantage that the overall destinations for a particular site could not be determined, nor presented to the user, in a simple and robust way. The user could only discover them if they landed on the right pages.
+
+This would pose the risk that the interface presented by the UA would not give a complete picture of what is available on the site, and thus either not be of great use, or&mdash;worse&mdash;be actively confusing for people to use.
+
+> [!NOTE]
+> Open questions:
+>
+> * How often would footer links cover this? (If often, does that negate the need for this spec?)
+>
+> * What is the performance cost of parsing all those `rel` attributes every time? (This would be required if the `rel` approach were to be used at all.)
+
+### Previous iteration: Linksets
+
+This was the TF's favoured approach pre-TPAC 2024. Linksets are semantically equivalent to the above approach (of using `<link>` elements in the header). They would require some additional authoring work (to create the linkset), and would result in smaller pages, with one extra request for the linkset document (which would cover the whole site).
+
+For now we opt for the above approach of putting all the relevant information in `<link>` elements in the `<head>` of each page, for simplicity. However it would still be possible to use linksets in future.
+
+The following sections mirror those above for the proposed approach, for reference.
+
+#### The well-known destination namespace
 
 Each destination is part of a vocabulary. As there are several destinations that could be provided by a site, they will be namespaced under a root vocabulary namespace, for example (taking inspiration from GS1's vocabulary)...
 
@@ -234,14 +291,14 @@ The namespace has been specified as `https://w3.org/voc/ia/`, with "ia" standing
 
 Other options instead of "ia" were considered, including "information-architecture", "structure", and others. However "ia" was both felt to be accurate, and is more concise than the other alternatives.
 
-### Enumerating well-known destinations
+#### Enumerating well-known destinations
 
 The first time the user visits the origin, the linkset for the origin, and sub-sites, would be fetched from a well-known URI, such as `/.well-known/ia/linkset`.
 
 > [!NOTE]
 > We need to investigate how, on a large site, the linkset documents could be split up to improve performance and/or ease of editing, in the event different teams work on different sub-sites.
 
-### Defining a site
+#### Defining a site
 
 > [!IMPORTANT]
 > This section describes a semantic that would need to be interpreted differently when interpreting a "well-known" linkset.
@@ -315,7 +372,7 @@ In this case, the UA would need to interpret the URL structure of the linkset as
 > [!NOTE]
 > The way that the UA presents the underlying tree structure of destinations across the root and sub-sites is out of scope. We envisage a range of UAs, or user preference settings, being created to cater for differing user needs.
 
-### Visiting a well-known destination directly
+#### Visiting a well-known destination directly
 
 * The user selects the well-known destination in the UI of their UA.
 
@@ -323,87 +380,23 @@ In this case, the UA would need to interpret the URL structure of the linkset as
 
 If a destination isn't supported, the UI is expected to _not_ include it.
 
-### Updating a well-known destination
+#### Updating a well-known destination
 
 The content author would need to update the linkset file, and replace it on the server.
 
 > [!NOTE]
 > We need to investigate how, on a large site, the linkset documents could be split up to improve performance and/or ease of editing, in the event different teams work on different sub-sites.
 
-### Expressing when a link points to part of a well-known destination
+#### Expressing when a link points to part of a well-known destination
 
 A link could be decorated with a `rel` attribute value that corresponds to the applicable destination.
 
 The UA will know if this link points to the root of the well-known destination (e.g. the "Help" landing page, vs "Help on logging in") becuase it knows the URL of the root of the well-known destination, via the discovery process above.
 
-### Demarcating destination content
+#### Demarcating destination content
 
 > [!NOTE]
 > We have not completed this feature yet.
-
-## Open Questions
-
-### Indicating the _kind_ of content
-
-> [!NOTE]
-> As above, COGA need that we are not yet addressing.
-
-### Discoverability and repetition
-
-> [!NOTE]
-> This is a work-in-progress
-
-### Demarcating sub-sites
-
-> [!NOTE]
-> This is a work-in-progress
-
-* Semantically
-
-* UI-wise
-
-## Security \& Privacy considerations
-
-> [!NOTE]
-> We have not completed this section yet.
-
-## Alternatives considered
-
-### Well-known URIs
-
-We first explored using [Well-known URIs](https://datatracker.ietf.org/doc/html/rfc8615), which provide a number of useful features. However, there were some important limitations:
-
-* Well-known URIs are linked to an _origin_ which means it's not possible to demarcate sub-sites.
-
-* Well-known URIs are usually managed separately to site content, making it harder for regular content authors to keep them up-to-date.
-
-### Sitemaps
-
-[Sitemaps](https://www.sitemaps.org/) are intended to solve different problems than this work.
-
-* Sitemaps are intended to enumerate all major (and possibly minor) pages; our goal here is to highlight specific common pages that may be provided.
-
-* Sitemaps do not give standard names to certain types of pages; our goal here is to semantically identify the purpose of specific pages, so that the UA can present this information to the user, and so that machines can reach certain pages.
-
-It does not seem like a good fit to try to extend the format of sitemaps to accommodate these requirements.
-
-### Using `rel` attribute values alone
-
-> [!WARNING]
-> This section is particularly out of date, as we are now using this approach - though we could work on reducing repetition in future.
-
-Using `rel` attribute values is part of the proposed spec&mdash;for cases where deep links may be provided into an overall well-known section (e.g. help on a specific topic).
-
-It would be possible to use _only_ `rel` values to highlight well-known destinations (if they were applied to links to the top-level destination landing pages, and there was a way to denote that a link was to the top-level destination landing page), but this would have the disadvantage that the overall destinations for a particular site could not be determined, nor presented to the user, in a simple and robust way. The user could only discover them if they landed on the right pages.
-
-This would pose the risk that the interface presented by the UA would not give a complete picture of what is available on the site, and thus either not be of great use, or&mdash;worse&mdash;be actively confusing for people to use.
-
-> [!NOTE]
-> Open questions:
->
-> * How often would footer links cover this? (If often, does that negate the need for this spec?)
->
-> * What is the performance cost of parsing all those `rel` attributes every time? (This would be required if the `rel` approach were to be used at all.)
 
 ## Stakeholder feedback/opposition
 
