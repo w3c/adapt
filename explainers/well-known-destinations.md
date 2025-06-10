@@ -35,7 +35,7 @@
   * [Well-known URIs](#well-known-uris)
   * [Sitemaps](#sitemaps)
   * [Using `rel` attribute values alone](#using-rel-attribute-values-alone)
-  * [Previous iteration: Linksets](#previous-iteration-linksets)
+  * [Linksets](#linksets)
 - [Stakeholder feedback/opposition](#stakeholder-feedbackopposition)
 - [References \& acknowledgements](#references--acknowledgements)
   * [Foundational and related work](#foundational-and-related-work)
@@ -254,7 +254,7 @@ This would pose the risk that the interface presented by the UA would not give a
 >
 > * What is the performance cost of parsing all those `rel` attributes every time? (This would be required if the `rel` approach were to be used at all.)
 
-### Previous iteration: Linksets
+### Linksets
 
 This was the TF's favoured approach pre-TPAC 2024. Linksets are semantically equivalent to the above approach (of using `<link>` elements in the header). They would require some additional authoring work (to create the linkset), and would result in smaller pages, with one extra request for the linkset document (which would cover the whole site).
 
