@@ -241,9 +241,6 @@ It does not seem like a good fit to try to extend the format of sitemaps to acco
 
 ### Using `rel` attribute values alone
 
-> [!WARNING]
-> This section is particularly out of date, as we are now using this approach - though we could work on reducing repetition in future.
-
 Using `rel` attribute values is part of the proposed spec&mdash;for cases where deep links may be provided into an overall well-known section (e.g. help on a specific topic).
 
 It would be possible to use _only_ `rel` values to highlight well-known destinations (if they were applied to links to the top-level destination landing pages, and there was a way to denote that a link was to the top-level destination landing page), but this would have the disadvantage that the overall destinations for a particular site could not be determined, nor presented to the user, in a simple and robust way. The user could only discover them if they landed on the right pages.
