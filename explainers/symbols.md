@@ -60,7 +60,7 @@ so that the appropriate symbol(s) for that concept can be rendered for the user,
 using _their chosen symbol set_.
 
 We use the set of concepts maintained by [Blissymbolics Communication International](https://www.blissymbolics.org/) (BCI).
-These concepts underpin the Blissymbolics (or "Bliss") language&mdash;though our use of the concepts is strictly for mapping from a concept to the appropriate aymbol(s) for the user, and is not grammatical in nature.
+These concepts underpin the Blissymbolics (or "Bliss") language&mdash;though our use of the concepts is strictly for mapping from a concept to the appropriate symbol(s) for the user, and is not grammatical in nature.
 
 We're working closely with BCI on this approach, and the W3C AAC Symbol Registry (more details below).
 
