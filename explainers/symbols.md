@@ -20,7 +20,12 @@
 - [Important notes on symbols and rendering](#important-notes-on-symbols-and-rendering)
 - [User research](#user-research)
 - [Use of Bliss Unicode code points](#use-of-bliss-unicode-code-points)
-- [Extending `` to support "symbol"](#extending--to-support-symbol)
+  * [Content author's perspective](#content-authors-perspective)
+  * [Symbol providers' perspective](#symbol-providers-perspective)
+  * [Browser implementers' perspective](#browser-implementers-perspective)
+  * [Unicode perspective](#unicode-perspective)
+  * [Managing changes](#managing-changes)
+- [Extending `` to support "symbol" content](#extending--to-support-symbol-content)
 - [The W3C AAC Symbol Registry](#the-w3c-aac-symbol-registry)
 - [Privacy considerations](#privacy-considerations)
 - [Considered alternatives](#considered-alternatives)
@@ -75,6 +80,12 @@ Broadly speaking, the approach is comprised of the following:
 
   The [W3C AAC Symbol Registry](#the-w3c-aac-symbol-registry) is described below.
 
+Here's an example of what some mark-up might look like (you would need a font that supports Bliss' code points in order for this to render correctly)...
+
+```html
+<p>A nice <ruby type=symbol>cup<rt>@@@</rt></ruby> of <ruby type=symbol>tea<rt>@@@</rt></ruby>.</p>
+```
+
 ### Demo
 
 A proof-of-concept authoring tool demo can be found at: http://matatk.agrip.org.uk/adaptable-content-authoring-tool/editor/
@@ -114,11 +125,40 @@ Though rendering is out of scope, it's important to be aware of the nature of sy
 
 ## Use of Bliss Unicode code points
 
-FIXME
+> [!NOTE]
+> This section to be completed.
 
-## Extending `<ruby>` to support "symbol"
+### Content author's perspective
 
-FIXME
+> [!NOTE]
+> This section to be completed.
+
+### Symbol providers' perspective
+
+> [!NOTE]
+> This section to be completed.
+
+### Browser implementers' perspective
+
+> [!NOTE]
+> This section to be completed.
+
+### Unicode perspective
+
+> [!NOTE]
+> This section to be completed.
+
+### Managing changes
+
+> [!NOTE]
+> This section to be completed.
+
+## Extending `<ruby>` to support "symbol" content
+
+> [!NOTE]
+> This section to be completed.
+
+There is [a proposal to extend the `<ruby>` element to indicate when "symbol" content is being used](https://github.com/w3c/html-ruby/issues/24).
 
 ## The W3C AAC Symbol Registry
 
@@ -143,7 +183,12 @@ The registry can be found at: https://www.w3.org/TR/aac-registry/
 > [!NOTE]
 > This section is to be expanded.
 
-Because the rendering of symbols is expected to be done by injecting them into the HTML, the site could determine that the user is using symbols, and which symbol set is in use.
+It would be possible for a site to know that symbols are being displayed.
+
+The site could also find out which font is being used.
+
+> [!NOTE]
+> Double-check on font detection.
 
 ## Considered alternatives
 
