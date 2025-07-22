@@ -72,7 +72,7 @@ We're working closely with BCI on this approach, which is comprised of the follo
 
 * **A registry of concepts (BCI code point sets) for authors to look up.**
 
-  The [W3C AAC Symbol Registry](#the-w3c-aac-symbol-registry) is described below.
+  The W3C AAC Symbol Registry provides the code points used to identify a given concept.
 
 * **Use of the `<ruby>` element for presentation&mdash;with an attribute to indicate this is a symbol.**
 
