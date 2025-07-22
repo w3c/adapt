@@ -25,8 +25,8 @@
   * [Browser implementers' perspective](#browser-implementers-perspective)
   * [Unicode perspective](#unicode-perspective)
   * [Managing changes](#managing-changes)
-- [Extending `` to support "symbol" content](#extending--to-support-symbol-content)
 - [The W3C AAC Symbol Registry](#the-w3c-aac-symbol-registry)
+- [Extending `<ruby>` to support "symbol" content](#extending-ruby-to-support-symbol-content)
 - [Privacy considerations](#privacy-considerations)
 - [Considered alternatives](#considered-alternatives)
   * [The `adapt-symbol` attribute](#the-adapt-symbol-attribute)
@@ -64,19 +64,19 @@ These concepts underpin the Blissymbolics (or "Bliss") language&mdash;though our
 
 We're working closely with BCI on this approach, which is comprised of the following:
 
-* **The use of (upcoming) Bliss Unicode code points to encode a concept.**
+* **The use of Bliss Unicode code points to encode a concept.**
 
   A font then maps these code points into the appropriate symbol for the user.
 
   The code points are under Unicode Consortium review.
 
-* **Use of the `<ruby>` element for presentation&mdash;with an attribute to indicate this is a symbol.**
-
-  The idea is that the browser will not display such elements by default, but will do if the user has expressed a preference for symbols to be shown.
-
 * **A registry of concepts (BCI code point sets) for authors to look up.**
 
   The [W3C AAC Symbol Registry](#the-w3c-aac-symbol-registry) is described below.
+
+* **Use of the `<ruby>` element for presentation&mdash;with an attribute to indicate this is a symbol.**
+
+  The idea is that the browser will not display such elements by default, but will do if the user has expressed a preference for symbols to be shown.
 
 Here's an example of what some mark-up might look like (you would need a font that supports Bliss' code points in order for this to render correctly)...
 
@@ -151,13 +151,6 @@ Though rendering is out of scope, it's important to be aware of the nature of sy
 > [!NOTE]
 > This section to be completed.
 
-## Extending `<ruby>` to support "symbol" content
-
-> [!NOTE]
-> This section to be completed.
-
-There is [a proposal to extend the `<ruby>` element to indicate when "symbol" content is being used](https://github.com/w3c/html-ruby/issues/24).
-
 ## The W3C AAC Symbol Registry
 
 > [!NOTE]
@@ -175,6 +168,13 @@ The registry can be found at: https://www.w3.org/TR/aac-registry/
 
 > [!NOTE]
 > The registry's key for identifying concepts is presently the concepts' BCI concept ID (an integer). However, as discussed above, we are in discussions with potential implementers on whether the corresponding Bliss Unicode code point(s) for a given concept could be used instead.
+
+## Extending `<ruby>` to support "symbol" content
+
+> [!NOTE]
+> This section to be completed.
+
+There is [a proposal to extend the `<ruby>` element to indicate when "symbol" content is being used](https://github.com/w3c/html-ruby/issues/24).
 
 ## Privacy considerations
 
