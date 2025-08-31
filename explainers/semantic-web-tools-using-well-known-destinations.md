@@ -14,8 +14,6 @@
 
 ## Contents
 
-<!-- toc -->
-
 - [Introduction](#introduction)
 - [Current State: The API Dependency Challenge](#current-state-the-api-dependency-challenge)
 - [The Semantic Web Tools Solution](#the-semantic-web-tools-solution)
@@ -33,8 +31,6 @@
 - [Open Questions](#open-questions)
 - [References](#references)
 
-<!-- tocstop -->
-
 ## Introduction
 
 **Agentic AI systems** are autonomous software agents that can plan, reason, and execute complex multi-step tasks on behalf of users. These systems represent a new frontier in automation, capable of understanding natural language requests and breaking them down into actionable steps.
@@ -48,7 +44,7 @@ When a user asks an AI agent to "find contact information across my service prov
 This explainer proposes extending the [Well-known Destinations](well-known-destinations.md) standard to bridge this gap through **Semantic Web Tools**—standardized software components that enable reliable website navigation using semantic identifiers rather than fragile technical selectors.
 
 **The Vision:**
-Instead of agents saying "find the element with class '.contact-info'", they would say "navigate to the 'contact' destination." This semantic approach works consistently across all compliant websites, creating a new middle ground between full API development and unreliable scraping.
+Instead of agents saying "find the element with class `.contact-info`", they would say "navigate to the 'contact' destination." This semantic approach works consistently across all compliant websites, creating a new middle ground between full API development and unreliable scraping.
 
 ## Current State: The API Dependency Challenge
 
