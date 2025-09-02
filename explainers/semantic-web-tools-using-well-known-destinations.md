@@ -41,7 +41,7 @@ However, there's a fundamental challenge: while these AI agents excel at working
 When a user asks an AI agent to "find contact information across my service providers," the agent faces a dilemma. For the 20-30% of sites with APIs, it can work reliably. For the remaining 70-80%, it must resort to fragile CSS selectors and HTML parsing that requires constant maintenance.
 
 **Our Proposal:**
-This explainer proposes extending the [Well-known Destinations](well-known-destinations.md) standard to bridge this gap through **Semantic Web Tools**—standardized software components that enable reliable website navigation using semantic identifiers rather than fragile technical selectors.
+This explainer proposes extending the [Well-known Destinations](well-known-destinations.md) approach to bridge this gap through **Semantic Web Tools**—standardized software components that enable reliable website navigation using semantic identifiers rather than fragile technical selectors.
 
 **The Vision:**
 Instead of agents saying "find the element with class `.contact-info`", they would say "navigate to the 'contact' destination." This semantic approach works consistently across all compliant websites, creating a new middle ground between full API development and unreliable scraping.
