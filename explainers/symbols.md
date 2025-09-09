@@ -106,6 +106,9 @@ Please note the following limitations:
 
 * Providing an exhaustive list of concepts (the [W3C AAC Symbol Registry](#the-w3c-aac-symbol-registry), described below, aims to do this).
 
+> [!CAUTION]
+> The last point here contradicts the inclusion of the registry section in this document; perhaps a better way to explain it would be to say that we're not relying on _content authors_ to provide an exhaustive list of concepts&mdash;rather that we have one, from Bliss, in the form of the registry.
+
 ## Important notes on symbols and rendering
 
 Though rendering is out of scope, it's important to be aware of the nature of symbols, and different symbol sets:
@@ -152,9 +155,6 @@ Though rendering is out of scope, it's important to be aware of the nature of sy
 > This section to be completed.
 
 ## The W3C AAC Symbol Registry
-
-> [!NOTE]
-> We are planning to split this explainer off into a separate file, to avoid explainers that are too long.
 
 The registry brings BCI's dictionary of concepts into W3C space. Each record in the registry contains:
 
