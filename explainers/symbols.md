@@ -1,4 +1,4 @@
-# WAI-Adapt: Symbols Module Explainer
+# WAI-Adapt: Symbols Explainer
 
 ## Authors
 
