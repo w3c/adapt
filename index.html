@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 35.3.0">
+<meta name="generator" content="ReSpec 35.5.1">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <style>
 .issue-label{text-transform:initial}
@@ -39,6 +39,8 @@ dfn{cursor:pointer}
 <title>WAI-Adapt Explainer</title>
 		
 		
+<meta name="color-scheme" content="light dark">
+		
 <style id="respec-mainstyle">
 @keyframes pop{
 0%{transform:scale(1,1)}
@@ -55,7 +57,7 @@ a.bibref{text-decoration:none}
 .respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
 }
 #references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
-cite .bibref{font-style:normal}
+cite .bibref{font-style:italic}
 a[href].orcid{padding-left:4px;padding-right:4px}
 a[href].orcid>svg{margin-bottom:-2px}
 ol.tof,ul.tof{list-style:none outside none}
@@ -87,7 +89,6 @@ dd{margin-left:0}
 		
 
 	
-<meta name="color-scheme" content="light">
 <meta name="description" content="People have very different needs. There are many people with cognitive and learning disabilities that affect their ability to interact with the web. Some people cannot process numeric information (dyscalculia), but others understand numbers better than words. Some people with severe language disabilities use symbols to represent words; some people need (or want) simplified user-interfaces. Different people find different layouts and types of content easier to understand, and what is useable and understandable by one person can be be too complex for another. The WAI-Adapt Task Force seeks to address these varied and conflicting user needs, so that content can be made more understandable to individual users based on their unique requirements. The various WAI-Adapt specification modules described in this Explainer provide various means for web technologies to address these requirements.">
 <style>
 var:hover{text-decoration:underline;cursor:pointer}
@@ -187,15 +188,16 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   ],
   "group": "apa",
   "github": "w3c/adapt",
-  "publishISODate": "2025-03-27T00:00:00.000Z",
-  "generatedSubtitle": "W3C Editor's Draft 27 March 2025"
+  "publishISODate": "2025-09-10T00:00:00.000Z",
+  "generatedSubtitle": "W3C Editor's Draft 10 September 2025"
 }</script>
-<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED"></head>
+<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED">
+<link rel="stylesheet" media="(prefers-color-scheme: dark)" href="https://www.w3.org/StyleSheets/TR/2021/dark.css"></head>
 	<body class="h-entry informative"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">WAI-Adapt Explainer</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2025-03-27">27 March 2025</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2025-09-10">10 September 2025</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
@@ -277,15 +279,14 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       document at the time of its publication. A list of current <abbr title="World Wide Web Consortium">W3C</abbr>
       publications and the latest revision of this technical report can be found
       in the
-      <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> standards and drafts index</a> at
-      https://www.w3.org/TR/.</em></p><p>
+      <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> standards and drafts index</a>.</em></p><p>
     This document was published by the <a href="https://www.w3.org/groups/wg/apa">Accessible Platform Architectures Working Group</a> as
     an Editor's Draft. 
   </p><p>Publication as an Editor's Draft does not
   imply endorsement by <abbr title="World Wide Web Consortium">W3C</abbr> and its Members. </p><p>
-    This is a draft document and may be updated, replaced or obsoleted by other
+    This is a draft document and may be updated, replaced, or obsoleted by other
     documents at any time. It is inappropriate to cite this document as other
-    than work in progress.
+    than a work in progress.
     
   </p><p>
     
@@ -300,14 +301,14 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
           made in connection with the deliverables of
           the group; that page also includes
           instructions for disclosing a patent. An individual who has actual
-          knowledge of a patent which the individual believes contains
+          knowledge of a patent that the individual believes contains
           <a href="https://www.w3.org/policies/patent-policy/#def-essential">Essential Claim(s)</a>
           must disclose the information in accordance with
           <a href="https://www.w3.org/policies/patent-policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
         
   </p><p>
                       This document is governed by the
-                      <a id="w3c_process_revision" href="https://www.w3.org/policies/process/20231103/">03 November 2023 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+                      <a id="w3c_process_revision" href="https://www.w3.org/policies/process/20250818/">18 August 2025 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
                     </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#why_accessibility"><bdi class="secno">1.1 </bdi>Why We Need WAI-Adapt</a></li><li class="tocline"><a class="tocxref" href="#use-case-examples"><bdi class="secno">1.2 </bdi>Use Case Examples</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#distracted"><bdi class="secno">1.2.1 </bdi>Easily Distracted / Overwhelmed</a></li><li class="tocline"><a class="tocxref" href="#difficulty_numbers"><bdi class="secno">1.2.2 </bdi>Difficulty Understanding Numbers</a></li><li class="tocline"><a class="tocxref" href="#learning_disability"><bdi class="secno">1.2.3 </bdi>Mild-Moderate Language Impairment / Learning Disability</a></li><li class="tocline"><a class="tocxref" href="#language_impairment"><bdi class="secno">1.2.4 </bdi>Severe Language Impairment</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#proof-of-concept-symbol-example"><bdi class="secno">1.2.4.1 </bdi>Proof of Concept: Symbol Example</a></li></ol></li><li class="tocline"><a class="tocxref" href="#memory_impairment"><bdi class="secno">1.2.5 </bdi>Working Memory and Short-term Memory Impairment</a></li></ol></li><li class="tocline"><a class="tocxref" href="#out-of-scope"><bdi class="secno">1.3 </bdi>Out of Scope</a></li></ol></li><li class="tocline"><a class="tocxref" href="#modules"><bdi class="secno">2. </bdi>Modules</a></li><li class="tocline"><a class="tocxref" href="#characteristics_semanticproperties"><bdi class="secno">3. </bdi>Vocabulary Structure</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#properties"><bdi class="secno">3.1 </bdi>Properties</a></li><li class="tocline"><a class="tocxref" href="#propcharacteristic_value"><bdi class="secno">3.2 </bdi>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#vocabulary-implementations"><bdi class="secno">4. </bdi>Vocabulary Implementations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#current-usage"><bdi class="secno">4.1 </bdi>Current Usage</a></li><li class="tocline"><a class="tocxref" href="#technology-comparison-summary"><bdi class="secno">4.2 </bdi>Technology Comparison Summary</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#considerations-in-the-decision-process"><bdi class="secno">4.2.1 </bdi>Considerations in the decision process:</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#stakeholders"><bdi class="secno">5. </bdi>Stakeholders</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">A. </bdi>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><bdi class="secno">A.1 </bdi>Participants active in the WAI-Adapt TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><bdi class="secno">A.2 </bdi>Other WAI-Adapt TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><bdi class="secno">A.3 </bdi>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">B.1 </bdi>Informative references</a></li></ol></li></ol></nav>
 
 		<section id="introduction"><div class="header-wrapper"><h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction</h2><a class="self-link" href="#introduction" aria-label="Permalink for Section 1."></a></div>
