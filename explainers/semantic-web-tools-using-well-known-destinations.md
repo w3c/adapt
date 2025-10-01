@@ -3,9 +3,6 @@
 ## Authors
 
 - Abhinav Kumar (@abhina-kumar), SAP Labs India Pvt. Ltd.
-- Matthew Tylee Atkinson (@matatk), Samsung Electronics
-- Lionel Wolberger (@lwolberg), Level Access
-- Janina Sajka (@JaninaSajka), W3C Invited Experts
 
 ## Participate
 
