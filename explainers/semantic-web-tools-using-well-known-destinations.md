@@ -30,18 +30,19 @@
 
 ## Introduction
 
-**Agentic AI systems** are autonomous software agents that can plan, reason, and execute complex multi-step tasks on behalf of users. These systems represent a new frontier in automation, capable of understanding natural language requests and breaking them down into actionable steps.
+**Agentic AI systems** are autonomous software agents that can plan, reason, and execute complex multi-step tasks on behalf of users. These systems represent a new frontier in automation, capable of understanding natural language requests and breaking them down into actionable steps. For users with disabilities, these AI agents can serve as powerful assistive technologies, helping navigate digital environments and complete tasks that might otherwise be challenging.
 
-However, there's a fundamental challenge: while these AI agents excel at working with structured APIs, the vast majority of websites (70-80%) don't provide APIs for the functionality users actually need. This forces agents to fall back on brittle web scraping techniques that break whenever sites update their designs.
+However, there's a fundamental challenge: while these AI agents excel at working with structured APIs, the vast majority of websites (70-80%) don't provide APIs for the functionality users actually need. This forces agents to fall back on brittle web scraping techniques that break whenever sites update their designs, particularly problematic for users who depend on consistent, reliable access to digital services.
 
-**The Problem Today:**
-When a user asks an AI agent to "find contact information across my service providers," the agent faces a dilemma. For the 20-30% of sites with APIs, it can work reliably. For the remaining 70-80%, it must resort to fragile CSS selectors and HTML parsing that requires constant maintenance.
+### The Problem Today
 
-**Our Proposal:**
-This explainer proposes extending the [Well-known Destinations](well-known-destinations.md) approach to bridge this gap through **Semantic Web Tools**—standardized software components that enable reliable website navigation using semantic identifiers rather than fragile technical selectors.
+When a user with cognitive disabilities asks an AI agent to "find contact information across my service providers," or when someone with motor impairments needs assistance navigating multiple websites, the agent faces a dilemma. For the 20-30% of sites with APIs, it can work reliably. For the remaining 70-80%, it must resort to fragile CSS selectors and HTML parsing that requires constant maintenance, causing unreliable experiences precisely when consistency matters most.
 
-**The Vision:**
-Instead of agents saying "find the element with class `.contact-info`", they would say "navigate to the 'contact' destination." This semantic approach works consistently across all compliant websites, creating a new middle ground between full API development and unreliable scraping.
+### Our Proposal
+
+This explainer proposes extending the [Well-known Destinations](well-known-destinations.md) approach to bridge this gap through **Semantic Web Tools**, basically standardized software components that enable reliable website navigation using semantic identifiers rather than fragile technical selectors. This approach benefits both direct accessibility (helping users with disabilities navigate websites) and indirect accessibility (enabling AI assistive technologies to work reliably).
+
+Instead of agents saying "find the element with class `.contact-info`", they would say "navigate to the 'contact' destination." This semantic approach works consistently across all compliant websites, creating reliable digital experiences for users who depend on assistive technologies and AI agents for web navigation.
 
 ## Current State: The API Dependency Challenge
 
@@ -59,11 +60,11 @@ When APIs aren't available, AI agents become digital archaeologists, excavating 
 
 - **CSS Selector Archaeology**: Hunting for `.contact-info` classes that vanish with the next design update
 - **HTML Structure Divination**: Parsing unstructured content that changes without notice  
-- **Site-Specific Scripting**: Maintaining individual automation for each website—a maintenance nightmare
+- **Site-Specific Scripting**: Maintaining individual automation for each website which is a maintenance nightmare
 
 ### Real-World Pain Points
 
-Consider an AI assistant tasked with "auditing accessibility statements across our company's website portfolio." For sites with APIs, this is straightforward. For the majority without APIs, the agent must:
+Consider an AI assistant tasked with "auditing accessibility statements across a company's website portfolio." For sites with APIs, this is straightforward. For the majority without APIs, the agent must:
 
 1. **Guess** where accessibility statements might be located
 2. **Hope** the HTML structure hasn't changed since the last update
@@ -114,23 +115,23 @@ The primary approach for sensitive operations should be human-in-the-loop, where
 
 ## Real-World Applications
 
-Imagine the possibilities when AI agents can reliably navigate any website using semantic markers:
+Imagine the possibilities when AI agents can reliably navigate any website using semantic markers, particularly for users who face barriers in traditional web navigation:
 
-**The Accessibility Auditor**: A compliance officer asks their AI assistant to "check accessibility statements across our 50 partner websites." Instead of manually visiting each site or maintaining fragile scrapers, the AI agent systematically discovers and analyzes `accessibility-statement` destinations across all sites in minutes.
+**The Accessibility Compliance Assistant**: A disability rights advocate asks their AI assistant to "check accessibility statements across our 50 partner websites." Instead of manually visiting each site or maintaining fragile scrapers, the AI agent systematically discovers and analyzes `accessibility-statement` destinations across all sites in minutes, ensuring comprehensive accessibility monitoring.
 
-**The Support Research Assistant**: A customer facing issues with multiple service providers asks for help options. The AI agent discovers `contact` and `help` destinations across different platforms, presenting a comprehensive support landscape without breaking when sites redesign.
+**The Cognitive Support Assistant**: A user with cognitive disabilities facing issues with multiple service providers asks for help options. The AI agent discovers `contact` and `help` destinations across different platforms, presenting a comprehensive support landscape in a simplified, consistent format without breaking when sites redesign.
 
-**The Digital Estate Manager**: A user wants to update their profile information across platforms. The AI agent navigates to `account-settings` destinations on each site, then guides the user through the updates with full context and control.
+**The Motor Accessibility Aid**: A user with motor impairments wants to update their profile information across platforms but finds repeated navigation challenging. The AI agent navigates to `account-settings` destinations on each site, then guides the user through the updates with full context and control, reducing the physical navigation burden.
 
-**The Compliance Monitor**: A legal team needs regular checks of privacy policies across their digital ecosystem. Semantic destinations enable automated discovery and monitoring without the maintenance burden of traditional scraping.
+**The Accessibility Monitoring System**: Disability services organizations need regular checks of accessibility resources across their digital ecosystem. Semantic destinations enable automated discovery of `accessibility-statement` and `help` destinations without the maintenance burden of traditional scraping, ensuring accessibility information remains current and accessible.
 
-These scenarios share a common pattern: **AI agents handle the discovery and navigation complexity, while humans maintain control over sensitive decisions and actions.**
+These scenarios share a common pattern: **AI agents handle the discovery and navigation complexity, while humans maintain control over sensitive decisions and actions, this is particularly important for users who may need additional time or alternative interaction methods.**
 
 ## Building on Well-known Destinations
 
-The beauty of this approach lies in its foundation: the [Well-known Destinations](well-known-destinations.md) proposal already provides the semantic infrastructure we need.
+The beauty of this approach lies in its foundation: the [Well-known Destinations](well-known-destinations.md) proposal already provides the semantic infrastructure we need, with a core focus on accessibility.
 
-**From Human Accessibility to AI Navigation**: Well-known Destinations were designed to help humans with accessibility needs find important pages quickly. This same semantic approach perfectly serves AI agents—what helps humans navigate also helps machines understand.
+**From Human Accessibility to AI-Assisted Accessibility**: Well-known Destinations were designed to help humans with accessibility needs find important pages quickly. This same semantic approach perfectly serves AI agents acting as assistive technologies—what helps humans with disabilities navigate also enables machines to provide consistent assistance.
 
 **The Technical Foundation**: Websites already mark important destinations using standard HTML:
 
@@ -142,32 +143,34 @@ The beauty of this approach lies in its foundation: the [Well-known Destinations
 
 **Semantic Discovery**: Instead of guessing where functionality might be, AI agents can programmatically discover what each website offers through these semantic markers. This transforms unpredictable navigation into reliable discovery.
 
-**Progressive Enhancement**: Sites don't need to rebuild anything—they simply add semantic markers to their existing pages. This creates a path for gradual ecosystem adoption without disrupting current workflows.
+**Progressive Enhancement**: Sites don't need to rebuild anything, they simply add semantic markers to their existing pages. This creates a path for gradual ecosystem adoption without disrupting current workflows.
 
 ## How It Works: The Technical Foundation
 
 The architecture is elegantly simple, built on three core capabilities:
 
-**1. Destination Discovery**: AI agents enumerate available destinations by reading the semantic markers websites provide—either through HTML `<link>` elements or centralized linkset documents.
+**1. Destination Discovery**: AI agents enumerate available destinations by reading the semantic markers websites provide, either through HTML `<link>` elements or centralized linkset documents.
 
-**2. Reliable Navigation**: Using discovered destinations, agents convert semantic names like `contact` into actual URLs and navigate confidently to the right pages.
+**2. Reliable Navigation**: Using discovered destinations, agents resolve semantic names like `contact` into actual URLs and navigate confidently to the right pages.
 
 **3. Intelligent Content Processing**: Once at the destination, agents retrieve page content and hand it to Large Language Models (LLMs) for intelligent extraction and analysis.
 
 This division creates a **separation of concerns**: simple tools handle the mechanical navigation, while sophisticated AI handles the intelligent understanding of content.
 
-### The AI Integration Story
+### AI System Integration Through MCP
 
-The magic happens in how Semantic Web Tools integrate with AI systems through the [Model Context Protocol (MCP)](https://github.com/modelcontextprotocol/specification)—an open standard that allows AI applications to securely connect with external tools.
+Semantic Web Tools integrate with AI systems through the [Model Context Protocol (MCP)](https://github.com/modelcontextprotocol/specification), an open standard that enables AI applications to securely connect with external tools and data sources.
 
-**The Workflow**: When a user asks an AI agent to "find support options across my service providers," here's what happens:
+**Integration Workflow**: When a user requests an AI agent to "find support options across my service providers," the system follows this pattern:
 
-1. **Discovery Phase**: The agent uses Semantic Web Tools to discover what destinations each website offers
-2. **Planning Phase**: Based on available destinations, the agent plans the optimal navigation strategy  
+1. **Discovery Phase**: The agent uses Semantic Web Tools to discover available destinations on each target website
+2. **Planning Phase**: Based on discovered destinations, the agent determines the optimal navigation strategy  
 3. **Execution Phase**: The agent navigates to relevant destinations and retrieves content
-4. **Analysis Phase**: AI processes the retrieved content to extract and synthesize useful information
+4. **Analysis Phase**: The AI processes the retrieved content to extract and synthesize information
 
-This pattern works consistently across any collection of websites that implement Well-known Destinations, creating a standardized foundation for agentic web interaction.
+**Coordination Model**: This workflow emerges from LLM reasoning capabilities rather than pre-programmed algorithms. The AI agent uses language understanding to dynamically interpret requirements, assess available destinations, and adapt its approach based on what it discovers. The semantic foundation provided by Well-known Destinations enables this flexible, reasoning-based coordination to operate reliably across different websites.
+
+This integration pattern works consistently across any collection of websites that implement Well-known Destinations, creating a standardized foundation for agentic web interaction.
 
 ## Semantic Web Tools Architecture
 
@@ -177,7 +180,7 @@ Semantic Web Tools provide standardized capabilities that work uniformly across 
 
 #### Core Capabilities
 
-* **Destination Discovery**: Enumerating all available Well-known Destinations for a given site through parsing `<link>` elements or accessing linkset documents
+* **Destination Discovery**: Enumerating all available Well-known Destinations for a given site through parsing `<link>` or `<a>` elements or accessing linkset documents
 * **Semantic Navigation**: Navigating to specific destinations using semantic identifiers rather than site-specific selectors
 * **Content Retrieval**: Fetching page content from destination URLs and delivering it to LLMs for intelligent processing
 
@@ -245,7 +248,7 @@ The [Model Context Protocol (MCP)](https://github.com/modelcontextprotocol/speci
 #### MCP Architecture Overview
 
 MCP operates on a client-server model:
-- **MCP Clients**: AI applications (like Claude, ChatGPT, or custom AI agents)
+- **MCP Clients**: AI applications (agents)
 - **MCP Servers**: Applications that expose tools and resources to AI systems
 - **Protocol**: Standardized JSON-RPC communication between clients and servers
 
@@ -257,6 +260,29 @@ Semantic Web Tools can be exposed through MCP servers, providing AI agents with 
 
 * **Standardized Interface**: AI agents can interact with Semantic Web Tools using standard MCP protocols
 * **Ecosystem**: Leverage the growing MCP ecosystem of tools and integrations
+
+#### WebMCP vs Traditional MCP Server Deployment
+
+**What is WebMCP?**
+WebMCP is a browser-based implementation of MCP that allows websites to expose tools directly through embedded JavaScript widgets. The website itself becomes an MCP server endpoint.
+
+**What is Traditional MCP Server?**
+Traditional MCP servers are standalone applications that implement standardized semantic web tools. A single server can provide tools that work across multiple websites by taking the target website URL as a parameter.
+
+**Both Approaches Support Well-known Destinations Standardization:**
+Since Well-known Destinations provides standardized discovery and navigation, both deployment models can implement the same standardized tools:
+
+**Traditional MCP Server Approach:**
+- Single server implements standardized tools like `discoverDestinations(url)`
+- Tools are centralized but work across any compliant website
+- Server handles the standardized discovery and navigation logic
+- Easier to maintain consistency across the tool implementations
+
+**WebMCP Approach:**
+- Each website implements the same standardized tools locally
+- Tools are distributed but follow the same semantic web standards
+- Websites expose their own Well-known Destinations through embedded widgets
+- Lower deployment barrier for individual website adoption
 
 ## Agentic AI Integration Patterns
 
@@ -288,6 +314,27 @@ AI agents process the retrieved content using LLMs to extract relevant informati
 
 This integration pattern enables AI agents to work reliably across any collection of websites that implement Well-known Destinations, providing a standardized foundation for agentic web interaction.
 
+### Semantic Web Tools API Specification
+
+Semantic Web Tools expose a standardized set of capabilities through MCP that work uniformly across any website implementing Well-known Destinations. Below are the sample tool signatures:
+
+#### Sample Semantic Web Tools
+
+```
+Tool: discoverDestinations
+Description: Discover available semantic destinations on a page
+Parameters:
+- url (string): Page URL to discover destinations from
+Returns: List of available destinations with types and URLs
+
+Tool: navigateToDestination  
+Description: Navigate to a semantic destination and retrieve page content
+Parameters:
+- url (string): Base page URL containing the destination reference
+- destinationType (string): Destination type (e.g., contact, help, accessibility-statement)
+Returns: Navigation result with destination URL and content
+```
+
 ## Division of Responsibilities: LLM vs Semantic Web Tools
 
 The system operates through a clear separation of concerns between the LLM (reasoning/coordination) and Semantic Web Tools (technical execution):
@@ -316,16 +363,17 @@ This division ensures that the intelligent processing of unstructured web conten
 
 ## Extended Destination Types for AI Tools
 
-The Well-known Destinations proposal primarily serves human accessibility needs. For agentic AI systems operating where APIs, schemas, and webhooks don't exist, a few additional destination types could be beneficial. These are examples of potential extensions, as more use cases may be discovered in the future.
+The Well-known Destinations proposal primarily serves human accessibility needs. For agentic AI systems operating as assistive technologies where APIs, schemas, and webhooks don't exist, a few additional destination types could be beneficial for accessibility support. These are examples of potential extensions that would benefit both direct accessibility and AI-assisted accessibility.
 
 ### Example Additional Destinations
 
-* **`search`**: Site-specific search functionality when no search API is available
-* **`account-settings`**: User profile/account management pages
+* **`search`**: Site-specific search functionality when no search API is available—critical for users who rely on AI assistance to find information
+* **`account-settings`**: User profile/account management pages—essential for users who need AI assistance managing their digital presence
+* **`accessibility-preferences`**: User accessibility settings and preferences—enabling AI agents to help users configure accessible experiences
 
-These destination types address common agentic AI use cases that cannot be handled through existing Well-known Destinations and where sites lack APIs. Importantly, these additional destinations would also benefit human users by providing clearer navigation paths to search functionality and account management.
+These destination types address common accessibility and agentic AI use cases that cannot be handled through existing Well-known Destinations and where sites lack APIs. Importantly, these additional destinations would directly benefit users with disabilities by providing clearer navigation paths to critical functionality while enabling AI assistive technologies to operate reliably.
 
-As the ecosystem evolves and more agentic AI use cases emerge, additional destination types may be identified and proposed through the standard development process.
+As the ecosystem evolves and more accessibility-focused agentic AI use cases emerge, additional destination types may be identified and proposed through the standard development process.
 
 ## Open Questions
 
