@@ -21,7 +21,7 @@
 - [Semantic Web Tools Architecture](#semantic-web-tools-architecture)
   * [Semantic Web Tools Capabilities](#semantic-web-tools-capabilities)
   * [Discovery and Navigation Mechanisms](#discovery-and-navigation-mechanisms)
-  * [MCP Server Integration](#mcp-server-integration)
+  * [Example Integration: MCP Servers](#example-integration-mcp-servers)
 - [Agentic AI Integration Patterns](#agentic-ai-integration-patterns)
 - [Division of Responsibilities: LLM vs Semantic Web Tools](#division-of-responsibilities-llm-vs-semantic-web-tools)
 - [Extended Destination Types for AI Tools](#extended-destination-types-for-ai-tools)
@@ -157,11 +157,11 @@ The architecture is elegantly simple, built on three core capabilities:
 
 This division creates a **separation of concerns**: simple tools handle the mechanical navigation, while sophisticated AI handles the intelligent understanding of content.
 
-### AI System Integration Through MCP
+### Example: AI System Integration Through MCP
 
-Semantic Web Tools integrate with AI systems through the [Model Context Protocol (MCP)](https://github.com/modelcontextprotocol/specification), an open standard that enables AI applications to securely connect with external tools and data sources.
+One way Semantic Web Tools can integrate with AI systems is through the [Model Context Protocol (MCP)](https://github.com/modelcontextprotocol/specification), an open standard that enables AI applications to securely connect with external tools and data sources. This represents one example of how such integration could work.
 
-**Integration Workflow**: When a user requests an AI agent to "find support options across my service providers," the system follows this pattern:
+**Example Integration Workflow**: When a user requests an AI agent to "find support options across my service providers," a system using MCP might follow this pattern:
 
 1. **Discovery Phase**: The agent uses Semantic Web Tools to discover available destinations on each target website
 2. **Planning Phase**: Based on discovered destinations, the agent determines the optimal navigation strategy  
@@ -170,7 +170,7 @@ Semantic Web Tools integrate with AI systems through the [Model Context Protocol
 
 **Coordination Model**: This workflow emerges from LLM reasoning capabilities rather than pre-programmed algorithms. The AI agent uses language understanding to dynamically interpret requirements, assess available destinations, and adapt its approach based on what it discovers. The semantic foundation provided by Well-known Destinations enables this flexible, reasoning-based coordination to operate reliably across different websites.
 
-This integration pattern works consistently across any collection of websites that implement Well-known Destinations, creating a standardized foundation for agentic web interaction.
+This example integration pattern demonstrates how semantic web tools could work consistently across any collection of websites that implement Well-known Destinations, creating a standardized foundation for agentic web interaction. Other integration approaches and protocols could achieve similar results.
 
 ## Semantic Web Tools Architecture
 
@@ -241,9 +241,9 @@ GET /.well-known/destinations
 
 This would return a standardized JSON format describing available destinations and any additional metadata needed for automated processing.
 
-### MCP Server Integration
+### Example Integration: MCP Servers
 
-The [Model Context Protocol (MCP)](https://github.com/modelcontextprotocol/specification) is an open standard that enables AI applications to securely connect to external systems and data sources. MCP defines a standardized way for AI applications to interact with tools, resources, and services through a simple protocol.
+The [Model Context Protocol (MCP)](https://github.com/modelcontextprotocol/specification) provides one example of how semantic web tools could integrate with AI systems. MCP is an open standard that enables AI applications to securely connect to external systems and data sources, defining a standardized way for AI applications to interact with tools, resources, and services through a simple protocol.
 
 #### MCP Architecture Overview
 
@@ -256,37 +256,37 @@ MCP operates on a client-server model:
 
 Semantic Web Tools can be exposed through MCP servers, providing AI agents with standardized access to website interaction capabilities. This integration allows AI systems to discover destinations, navigate to semantic endpoints, and retrieve content for LLM processing through the established MCP protocol.
 
-#### Benefits of MCP Integration
+#### Benefits of This Integration Approach
 
-* **Standardized Interface**: AI agents can interact with Semantic Web Tools using standard MCP protocols
-* **Ecosystem**: Leverage the growing MCP ecosystem of tools and integrations
+* **Standardized Interface**: AI agents can interact with Semantic Web Tools using established protocols like MCP
+* **Ecosystem Leverage**: Can take advantage of existing tool ecosystems and integrations
+* **Flexibility**: Other integration patterns and protocols could provide similar benefits
 
-#### WebMCP vs Traditional MCP Server Deployment
+#### Example Deployment Patterns with MCP
 
-**What is WebMCP?**
-WebMCP is a browser-based implementation of MCP that allows websites to expose tools directly through embedded JavaScript widgets. The website itself becomes an MCP server endpoint.
+**Browser-based Integration (WebMCP Example):**
+One approach allows websites to expose tools directly through embedded JavaScript , where the website itself becomes a tool server endpoint.
 
-**What is Traditional MCP Server?**
-Traditional MCP servers are standalone applications that implement standardized semantic web tools. A single server can provide tools that work across multiple websites by taking the target website URL as a parameter.
+**Standalone Server Integration (Traditional MCP Example):**
+Another approach uses standalone applications that implement standardized semantic web tools. A single server can provide tools that work across multiple websites by taking the target website page URL as a parameter.
 
-**Both Approaches Support Well-known Destinations Standardization:**
-Since Well-known Destinations provides standardized discovery and navigation, both deployment models can implement the same standardized tools:
+**Both Example Approaches Support Well-known Destinations:**
+Since Well-known Destinations provides standardized discovery and navigation, different deployment models can implement the same standardized tools:
 
-**Traditional MCP Server Approach:**
+**Standalone Server Example:**
 - Single server implements standardized tools like `discoverDestinations(url)`
 - Tools are centralized but work across any compliant website
 - Server handles the standardized discovery and navigation logic
 - Easier to maintain consistency across the tool implementations
 
-**WebMCP Approach:**
+**Browser-based Integration Example:**
 - Each website implements the same standardized tools locally
 - Tools are distributed but follow the same semantic web standards
-- Websites expose their own Well-known Destinations through embedded widgets
-- Lower deployment barrier for individual website adoption
+
 
 ## Agentic AI Integration Patterns
 
-Agentic AI systems integrate with Semantic Web Tools through a straightforward workflow that leverages semantic destinations for reliable website interaction. The integration follows a consistent pattern regardless of the specific task or websites involved.
+Agentic AI systems can integrate with Semantic Web Tools through various approaches that leverage semantic destinations for reliable website interaction. While specific integration methods may vary, the core workflow pattern remains consistent regardless of the specific task or websites involved.
 
 ### Core Integration Workflow
 
@@ -314,9 +314,9 @@ AI agents process the retrieved content using LLMs to extract relevant informati
 
 This integration pattern enables AI agents to work reliably across any collection of websites that implement Well-known Destinations, providing a standardized foundation for agentic web interaction.
 
-### Semantic Web Tools API Specification
+### Example: Semantic Web Tools API Specification
 
-Semantic Web Tools expose a standardized set of capabilities through MCP that work uniformly across any website implementing Well-known Destinations. Below are the sample tool signatures:
+Semantic Web Tools could expose a standardized set of capabilities that work uniformly across any website implementing Well-known Destinations. The following shows example tool signatures that could be implemented through various integration approaches (such as MCP or other protocols):
 
 #### Sample Semantic Web Tools
 
