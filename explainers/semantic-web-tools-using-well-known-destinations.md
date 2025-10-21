@@ -145,6 +145,19 @@ The beauty of this approach lies in its foundation: the [Well-known Destinations
 
 **Progressive Enhancement**: Sites don't need to rebuild anything, they simply add semantic markers to their existing pages. This creates a path for gradual ecosystem adoption without disrupting current workflows.
 
+## How AI Agents Learn to Use Semantic Destinations
+
+A key question emerges: **How do AI agents actually learn to use semantic markers like `rel="contact"`?** The practical answer is through explicit tool integration rather than expecting agents to discover these patterns naturally.
+
+### Explicit Tool Integration
+
+AI agents don't need to "learn" semantic markers through training data. Instead, they are explicitly equipped with Semantic Web Tools that understand Well-known Destinations:
+
+**Active Tool Integration**: AI frameworks like MCP (Model Context Protocol) allow developers to provide agents with specific tools that know how to discover and navigate semantic destinations. The agent doesn't need to "learn" that `rel="contact"` means contact information, it uses a tool that's explicitly programmed with this knowledge.
+
+**Instruction-Following**: Modern LLMs excel at following instructions. When given tools that can "find destinations on this website" or "navigate to the contact page," they can coordinate these capabilities effectively without needing prior training on semantic web standards.
+
+
 ## How It Works: The Technical Foundation
 
 The architecture is elegantly simple, built on three core capabilities:
