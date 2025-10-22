@@ -198,7 +198,6 @@ These destination types address common accessibility and agentic AI use cases wh
 
 * [WAI-Adapt: Well-known Destinations Explainer](well-known-destinations.md)
 * [Model Context Protocol (MCP) Specification](https://github.com/modelcontextprotocol/specification)
-* [RFC 9264: Linksets](https://www.rfc-editor.org/rfc/rfc9264)
 * [RFC 8615: Well-Known URIs](https://datatracker.ietf.org/doc/html/rfc8615)
 * [WebMCP](https://github.com/webmachinelearning/webmcp)
 
