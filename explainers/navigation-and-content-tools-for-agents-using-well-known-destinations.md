@@ -200,6 +200,7 @@ These destination types address common accessibility and agentic AI use cases wh
 * [Model Context Protocol (MCP) Specification](https://github.com/modelcontextprotocol/specification)
 * [RFC 9264: Linksets](https://www.rfc-editor.org/rfc/rfc9264)
 * [RFC 8615: Well-Known URIs](https://datatracker.ietf.org/doc/html/rfc8615)
+* [WebMCP](https://github.com/webmachinelearning/webmcp)
 
 ---
 
@@ -266,15 +267,24 @@ When a user requests an AI agent to "find support options across my service prov
 3. The agent navigates to relevant destinations and retrieves content
 4. The AI processes the retrieved content to extract and synthesize information
 
-#### Example Deployment Patterns with MCP
+#### Deployment Patterns with MCP: WebMCP vs. Traditional MCP Server
 
-**Websites acting as MCP Server (WebMCP):**
-Websites can expose tools directly through embedded JavaScript, where the website itself becomes a tool server.
+To address the practical challenges of browser interaction and session management, two primary architectural models emerge for deploying Semantic Web Tools:
 
-**Standalone Server Integration (Traditional MCP Example):**
-Standalone applications implement standardized semantic web tools. A single server can provide tools that work across multiple websites by taking the target website/webpage URL as a parameter.
+1.  **Traditional MCP Server**:
+    -   **How it Works**: In this model, the MCP server and its tools run on a remote server, completely independent of the user's browser. When a tool like `navigateToDestination` is invoked, the server makes a direct HTTP request to the target website.
+    -   **Strengths**: Simple to deploy for public data retrieval.
+    -   **Limitations**:
+        -   **No Session Access**: It has no access to the user's browser session, cookies, or authentication state. It cannot perform actions on behalf of a logged-in user.
+        -   **No Browser Interaction**: It cannot interact with the live browser environment, making it unsuitable for tasks that require triggering navigation or interacting with dynamic, client-side rendered applications.
 
-**Both approaches support Well-known Destinations** since the standard provides unified discovery and navigation that works regardless of deployment model.
+2.  **WebMCP**:
+    -   **How it Works**: In this model, the web page itself acts as an MCP Server. It uses a JavaScript API to define and expose "tools". An AI agent can discover and invokes these tools.
+    -   **Strengths**:
+        -   **Full Session Access**: Because the tools are part of the web page's code and execute in the browser, they automatically operate within the user's existing session, with full access to authentication state and page context.
+        -   **Live Browser Interaction**: Tools can directly manipulate the DOM and call existing JavaScript functions, allowing the agent to drive the user interface collaboratively.
+        
+-   **Recommendation**: The WebMCP model is better suited for any use case involving authenticated operations, personalized content, or complex user-specific workflows. The traditional server-side model is only suitable for public data scenarios.
 
 #### Sample Semantic Web Tools API
 
