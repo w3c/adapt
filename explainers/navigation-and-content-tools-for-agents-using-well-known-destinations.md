@@ -186,7 +186,7 @@ These destination types address common accessibility and agentic AI use cases wh
 ### Well-known Destinations Extensions
 
 * **New Destination Types**: Should additional destinations like `search` and `account-settings` be standardized?
-* **Discovery Optimization**: Should Well-known Destinations include a centralized discovery endpoint (e.g., `/.well-known/destinations`) to improve efficiency?
+* **Discovery Optimization**: The Well-Known Destinations specification considers alternative centralized discovery mechanisms, such as `/.well-known/destinations` and Linksets. Should these be formally adopted to support efficient discovery?
 
 ### Standardization Process
 
@@ -198,8 +198,9 @@ These destination types address common accessibility and agentic AI use cases wh
 
 * [WAI-Adapt: Well-known Destinations Explainer](well-known-destinations.md)
 * [Model Context Protocol (MCP) Specification](https://github.com/modelcontextprotocol/specification)
-* [RFC 8615: Well-Known URIs](https://datatracker.ietf.org/doc/html/rfc8615)
 * [WebMCP](https://github.com/webmachinelearning/webmcp)
+* [RFC 8615: Well-Known URIs](https://datatracker.ietf.org/doc/html/rfc8615)
+* [RFC 9264: Linksets](https://www.rfc-editor.org/rfc/rfc9264)
 
 ---
 
