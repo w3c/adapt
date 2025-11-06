@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset=UTF-8>
+  <meta content="width=device-width" name="viewport">
+  <title>Stronger Together: Super-charging Agentic AI with Accessibility Destinations</title>
+  <link rel="stylesheet" href="./Templates/slides.css">
+  <!-- To use the b6+ framework, include this: -->
+  <script src="./Templates/b6plus.js"></script>
+  <!-- To use the Shower framework, remove b6plus above and add these two: -->
+  <!-- <script src="../Templates/shower.js"></script>       -->
+  <!-- <script src="../Templates/iframe-fixup.js"></script> -->
+  <style>
+   .game td {border: thin solid; height: 1.2em}
+   .game {border: hidden; table-layout: fixed; border-collapse: collapse;
+     width: 5em; margin: 1em auto; text-align: center}
+  </style>
+ </head>
+ 
+<body class="shower fade-in">
+<div class="progress"></div>
+
+<!-- Slide 1: Title -->
+<section class="slide cover clear">
+<h1 style="text-align: center">Super-charging Agentic AI with Accessibility Destinations</h1>
+<h3 style="text-align: center">WAI-Adapt Task Force</h3>
+<address style="text-align: center">
+	  <span class=normaltext>Janina Sajka, W3C Invited Expert</span><br>
+      <span class=normaltext>Abhinav Kumar, SAP Labs India</span><br>
+	  <span class=normaltext>Lionel Wolberger, Level Access</span>
+    </address>
+</section>
+<section class="comment">Introductory slide for TPAC session.</section>
+
+<!-- Slide 2: Outline -->
+<section class="slide">
+<h2>Outline</h2>
+<ol>
+<li>Agentic AI Scope with an Example</li>
+<li>How Current Agents Work and their Limitations</li>
+<li>Brief introduction of Discoverable Destinations</li>
+<li>Agents + Discoverable Destinations</li>
+<li>Architecture & Sample Workflows</li>
+<li>Possible Tool Integration using MCP</li>
+<li>Next Steps</li>
+</ol>
+</section>
+<section class="comment">Overview of topics covered in this presentation.</section>
+
+<!-- Slide 3: Definition of Agentic AI -->
+<section class="slide">
+<h2>Agentic AI Scope</h2>
+<ul>
+<li>Autonomous systems that plan, reason, and execute tasks</li>
+<li>Minimal user input and automate multi-step workflows</li>
+<li>Understands natural language and acts on behalf of users</li>
+</ul>
+</section>
+<section class="comment">Explain concept clearly, emphasize autonomy and assistive potential.</section>
+
+<!-- Slide 4: Example – Accessibility Comparision -->
+<section class="slide">
+<h2>Agentic AI Example: Accessibility statement comparision</h2>
+<p>User asks: “Compare accessibility statements across 50 partner websites.”</p>
+<ul>
+<li>Ideal Agent Workflow:</li>
+<ul>
+<li class="next">Discover relevant pages</li>
+<li class="next">Navigate consistently</li>
+<li class="next">Extract and summarize accessibility statements found</li>
+</ul>
+</ul>
+</section>
+<section class="comment">Show real-world impact and time savings.</section>
+
+<!-- Slide 5: How Current Agents Work -->
+<section class="slide">
+<h2>High Level Agent Workflow for Navigation</h2>
+<ul>
+<li>HTML parsing</li>
+<li>Site-specific scripts</li>
+</ul>
+<p class="next">Fragile and breaks with design changes.</p>
+</section>
+<section class="comment">Highlight brittleness of current approach.</section>
+
+<!-- Slide 6: Limitations of Current Agents -->
+<section class="slide">
+<h2>Limitations of Current Agents</h2>
+<ul>
+<li>High maintenance</li>
+<li>Brittle</li>
+<li>No universal navigation standard</li>
+</ul>
+</section>
+<section class="comment">Set stage for introducing Discoverable Destinations.</section>
+
+<!-- Slide 7: Well-Known Destinations -->
+<section class="slide">
+<h2>Discoverable Destinations</h2>
+<ul>
+<li>Standardized semantic markers for common pages</li>
+<li>Examples: help, contact, log-in, accessibility-statement</li>
+<li>Enables predictable navigation</li>
+</ul>
+</section>
+<section class="comment">Explain concept and its accessibility roots.</section>
+
+<!-- Slide 8: How Agents Leverage Well-Known Destinations -->
+<section class="slide">
+<h2>Stronger Together? (Agents and Discoverable Destinations)</h2>
+<ul>
+<li>Discover destinations via semantic identifiers</li>
+<li>Navigate reliably to key pages</li>
+<li>Consistent automation across compliant sites</li>
+</ul>
+</section>
+<section class="comment">Show synergy between AI and semantic web standards.</section>
+
+<!-- Slide 9: Architecture & Complex Workflows -->
+<section class="slide">
+<h2>Stronger Together? (High Level Architecture & Workflows)</h2>
+<ul>
+<li>LLM: Planning, reasoning, content synthesis</li>
+<li>Semantic Tools (based on Adapt's Discoverable Destinations): Discovery, navigation, content retrieval</li>
+<li>Complex Actions (like password changes): Combine destinations + APIs + human-in-the-loop</li>
+</ul>
+</section>
+<section class="comment">Talk about flow in detail.</section>
+
+<!-- Slide 10: Sample Workflow & Tools -->
+<section class="slide">
+<h2>Sample Workflow & Tools</h2>
+<ol>
+<li>Discover destinations</li>
+<ul>
+<li class="next">Tool: discoverDestinations</li>
+</ul>
+<li class="next">LLM selects relevant destination</li>
+<ul>
+<li class="next">Tool: navigateToDestination</li>
+</ul>
+<li class="next">Navigate</li>
+<li class="next">Fetch content</li>
+<ul>
+<li class="next">Tool: fetchContentFromDestination</li>
+</ul>
+<li class="next">LLM processes and summarizes</li>
+</ol>
+</section>
+<section class="comment">Explain tool roles briefly.</section>
+
+<!-- Slide 11: Tool Integration using MCP -->
+<section class="slide">
+  <h2>Tool Integration using Model Context Protocol (MCP)</h2>
+  <ul>
+    <li><strong>MCP Overview:</strong> An open protocol enabling AI agents to securely connect with external tools and data sources.</li>
+    <li class="next"><strong>Roles:</strong>
+      <ul>
+        <li>MCP Clients: AI agents / LLM applications</li>
+        <li>MCP Servers: Tool providers (e.g., Semantic Web Tools)</li>
+      </ul>
+    </li>
+    <li class="next"><strong>Workflow:</strong> Agents discover destinations → plan navigation or retrieve content → process with LLMs, if required.</li>
+	<li class="next"><em>Note:</em> MCP is one example, other protocols and frameworks may also be used.</li>
+  </ul>
+</section>
+
+<!-- Slide 12: Deployment Models: WebMCP vs Traditional MCP Server -->
+<section class="slide" id="mcp-models">
+  <h2>MCP deployment models : How agents call these tools</h2>
+  <ul class="emerge">
+    <li class="next"><strong>Traditional MCP Server</strong> (remote):
+      <ul>
+        <li>Runs tools on a server; great for public pages</li>
+        <li><em>Limits</em>: no access to user’s browser session and no live DOM/UI control.</li>
+      </ul>
+    </li>
+    <li class="next"><strong>WebMCP</strong> (in‑page):
+      <ul>
+        <li>The web page exposes tools to the agent via a JS API.</li>
+        <li><em>Strengths</em>: access to full browser session and DOM control; ideal for authenticated, user‑specific flows.</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<!-- Slide 13: Next Steps / Call for Action -->
+<section class=slide>
+<h2>Next steps</h2>
+<div>
+  <p><strong>Right now:</strong> Q&A; open discussion</p>
+  <p><strong>For the Adapt TF:</strong>
+  <ul>
+	<li>Horizontal review</li>
+	<li>Seeking implementations</li>
+  </ul>
+</div>
+</section>
+
+<!-- Slide 14: Final Slide -->
+<section class="slide final">
+<h1>Join us!</h1>
+<div>
+  <p>WAI-Adapt Task Force:<br><a class=flat
+	  href="https://www.w3.org/WAI/APA/task-forces/adapt/">https://www.w3.org/WAI/APA/task-forces/adapt/</a></p>
+  <p><a class=flat href="https://github.com/w3c/adapt/pull/326">PR for Navigation and Content Tools for Agentic AI Using Discoverable Destinations Explainer</a>
+  </p>
+  <p><a class=flat href="https://github.com/w3c/adapt/blob/main/explainers/well-known-destinations.md">Discoverable
+	  destinations explainer</a>
+  </p>
+  
+</div>
+</section>
+
+</body>
+</html>
