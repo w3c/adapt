@@ -145,40 +145,6 @@
 </section>
 <section class="comment">Explain tool roles briefly.</section>
 
-<!-- Slide 11: Tool Integration using MCP -->
-<section class="slide">
-  <h2>Tool Integration using Model Context Protocol (MCP)</h2>
-  <ul>
-    <li><strong>MCP Overview:</strong> An open protocol enabling AI agents to securely connect with external tools and data sources.</li>
-    <li class="next"><strong>Roles:</strong>
-      <ul>
-        <li>MCP Clients: AI agents / LLM applications</li>
-        <li>MCP Servers: Tool providers (e.g., Semantic Web Tools)</li>
-      </ul>
-    </li>
-    <li class="next"><strong>Workflow:</strong> Agents discover destinations → plan navigation or retrieve content → process with LLMs, if required.</li>
-	<li class="next"><em>Note:</em> MCP is one example, other protocols and frameworks may also be used.</li>
-  </ul>
-</section>
-
-<!-- Slide 12: Deployment Models: WebMCP vs Traditional MCP Server -->
-<section class="slide" id="mcp-models">
-  <h2>MCP deployment models : How agents call these tools</h2>
-  <ul class="emerge">
-    <li class="next"><strong>Traditional MCP Server</strong> (remote):
-      <ul>
-        <li>Runs tools on a server; great for public pages</li>
-        <li><em>Limits</em>: no access to user’s browser session and no live DOM/UI control.</li>
-      </ul>
-    </li>
-    <li class="next"><strong>WebMCP</strong> (in‑page):
-      <ul>
-        <li>The web page exposes tools to the agent via a JS API.</li>
-        <li><em>Strengths</em>: access to full browser session and DOM control; ideal for authenticated, user‑specific flows.</li>
-      </ul>
-    </li>
-  </ul>
-</section>
 
 <!-- Slide 13: Next Steps / Call for Action -->
 <section class=slide>
@@ -208,5 +174,48 @@
 </div>
 </section>
 
+<!-- Appendix Seperator: Slides Below Here Are Optional -->
+<section class="slide">
+  <h2>Appendix</h2>
+<p>Optional Slides</p>
+</section>
+	
+
+<!-- Appendix Slide 1: Tool Integration using MCP -->
+<section class="slide">
+  <h2>Tool Integration using Model Context Protocol (MCP)</h2>
+  <ul>
+    <li><strong>MCP Overview:</strong> An open protocol enabling AI agents to securely connect with external tools and data sources.</li>
+    <li class="next"><strong>Roles:</strong>
+      <ul>
+        <li>MCP Clients: AI agents / LLM applications</li>
+        <li>MCP Servers: Tool providers (e.g., Semantic Web Tools)</li>
+      </ul>
+    </li>
+    <li class="next"><strong>Workflow:</strong> Agents discover destinations → plan navigation or retrieve content → process with LLMs, if required.</li>
+	<li class="next"><em>Note:</em> MCP is one example, other protocols and frameworks may also be used.</li>
+  </ul>
+</section>
+
+<!-- Appendix Slide 2: Deployment Models: WebMCP vs Traditional MCP Server -->
+<section class="slide" id="mcp-models">
+  <h2>MCP deployment models : How agents call these tools</h2>
+  <ul class="emerge">
+    <li class="next"><strong>Traditional MCP Server</strong> (remote):
+      <ul>
+        <li>Runs tools on a server; great for public pages</li>
+        <li><em>Limits</em>: no access to user’s browser session and no live DOM/UI control.</li>
+      </ul>
+    </li>
+    <li class="next"><strong>WebMCP</strong> (in‑page):
+      <ul>
+        <li>The web page exposes tools to the agent via a JS API.</li>
+        <li><em>Strengths</em>: access to full browser session and DOM control; ideal for authenticated, user‑specific flows.</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+	
 </body>
 </html>
