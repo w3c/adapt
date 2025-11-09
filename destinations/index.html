@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>WAI-Adapt: Well-known Destinations</title>
+		<title>WAI-Adapt: Discoverable Destinations</title>
 		<meta charset="utf-8"/>
 		<meta name="color-scheme" content="dark light" />
 		<script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove"></script>
@@ -17,10 +17,6 @@ table, th, td {
 	</head>
 	<body>
 		<section id="abstract">
-			<div class=ednote>
-				<p>This document will be renamed; it is currently referred to as &quot;well-known destinations&quot; for historical reasons.</p>
-			</div>
-
 			<p>This document describes an approach that content authors can use to provide improved ease of navigation to website visitors.</p>
 		</section>
 
@@ -34,7 +30,7 @@ almost any way, which makes for tailored and compelling experiences.
 However, whilst there are several conventions when it comes to
 navigation, this variability can pose challenges to certain people—and
 user agents acting on their behalf.</p>
-<p>This specification aims to address the challenge of making sites more
+<p>This best practices document aims to address the challenge of making sites more
 easily navigable for both people (particularly those facing
 accessibility barriers) and machines. It does this by standardising
 machine-readable names for common page types. User Agents can then query
@@ -73,9 +69,9 @@ displayed to the user.</p></li>
 the user can navigate to supported well-known pages.</p></li>
 </ul>
 <p>Though detailed UI design is out of scope, an proof-of-concept UI for
-enumerating a site's well-known destinations is depicted below.</p>
+enumerating a site's discoverable destinations is depicted below.</p>
 <figure><img src="../presentations/ac2024/ext02.png"
-alt="A fictional ACME Inc. home page, with the extension pop-up open, showing 6 buttons, each containing emoji and accompanying text names for the well-known destinations offered by the site: home, accessibility statement, contact, help, log in, and products." />
+alt="A fictional ACME Inc. home page, with the extension pop-up open, showing 6 buttons, each containing emoji and accompanying text names for the discoverable destinations offered by the site: home, accessibility statement, contact, help, log in, and products." />
 <figcaption>Example UI, via a browser extension running on a custom shopping site</figcaption>
 </figure>
 </section>
@@ -87,7 +83,7 @@ alt="A fictional ACME Inc. home page, with the extension pop-up open, showing 6 
 				</div>
 
 <h3 id="user-research">User research</h3>
-<p>Our proposed "well-known destinations" come from work done by the <a
+<p>Our proposed "discoverable destinations" come from work done by the <a
 href="https://www.w3.org/WAI/GL/task-forces/coga/">Cognitive and
 Learning Disabilities Accessibility Task Force</a>.</p>
 <div class="note">
@@ -96,7 +92,7 @@ Learning Disabilities Accessibility Task Force</a>.</p>
 href="https://raw.githack.com/w3c/adapt/CR-content-2022-07-26/content/index.html#values-0">destinations
 that the WAI-Adapt TF inherited from COGA</a>.</p>
 </div>
-<p>An illustrative set of proposed well-known destinations is as
+<p>An illustrative set of proposed discoverable destinations is as
 follows...</p>
 <ul>
 <li><p><code>accessibility-statement</code> (for the site's <a
@@ -120,23 +116,23 @@ form)</p></li>
 <p>Any approch that would solve these user needs must provide the
 following.</p>
 <ol>
-<li><p>A way to represent each well-known destination proposed
+<li><p>A way to represent each discoverable destination proposed
 above.</p></li>
-<li><p>A mechanism for discovering all well-known destinations supported
+<li><p>A mechanism for discovering all discoverable destinations supported
 by a site—to be used when a UA first visits a site on behalf of the
 user. In order to do this efficiently, it must be possible to make this
 query in a single HTTP request. The results would be available to the
 user via the UI of the UA.</p></li>
 <li><p>A way to denote the scope of any particular site (or
 sub-site).</p></li>
-<li><p>A procedure for visiting a well-known destination directly (when
+<li><p>A procedure for visiting a discoverable destination directly (when
 the user activates the interface in the UA).</p></li>
-<li><p>A mechanism by which a well-known destination would be updated
+<li><p>A mechanism by which a discoverable destination would be updated
 (by the content author).</p></li>
 <li><p>Means to identify when a link on a page takes the user to a
-sub-page of a well-known destination page. E.g. a link to the "help on
+sub-page of a discoverable destination page. E.g. a link to the "help on
 logging in" page (as opposed to the main "help" section landing page,
-which is where the well-known destination alone would take the
+which is where the discoverable destination alone would take the
 user).</p></li>
 <li><p>Means to demarcate an element on the destination page that
 provides the destination content.</p></li>
@@ -154,14 +150,12 @@ this approach, or by a future WAI-Adapt TF project.</p>
 </section>
 
 <section>
-<h2 id="the-well-known-destinations-approach">The "Well-known
-destinations" approach</h2>
+<h2 id="the-discoverable-destinations-approach">The "discoverable destinations" approach</h2>
 <p>This involves using the <code>&lt;link&gt;</code> element, and custom
-<code>rel</code> attribute values, to signpost well-known destinations
+<code>rel</code> attribute values, to signpost discoverable destinations
 on a site.</p>
-<h3 id="the-well-known-destination-namespace">The well-known destination
-namespace</h3>
-<p>All possible well-known destinations will be registered as
+<h3 id="the-discoverable-destination-namespace">The discoverable destination namespace</h3>
+<p>All possible discoverable destinations will be registered as
 <code>rel</code> attribute values.</p>
 <ul>
 <li><p><code>accessibility-statement</code></p></li>
@@ -172,8 +166,7 @@ namespace</h3>
 <li><p><code>search</code></p></li>
 </ul>
 
-<h3 id="enumerating-well-known-destinations">Enumerating well-known
-destinations</h3>
+<h3 id="enumerating-discoverable-destinations">Enumerating discoverable destinations</h3>
 <p>On the site's home page, the destinations supported by the site would
 be indicated via <code>&lt;link&gt;</code> elements. For example:</p>
 
@@ -200,24 +193,21 @@ be indicated via <code>&lt;link&gt;</code> elements. For example:</p>
 move to a sub-site, the sub-site will expose all destinations on all of
 its pages, and thus the UA/AT will be able to present the correct
 destinations for the sub-site.</p>
-<h3 id="visiting-a-well-known-destination-directly">Visiting a
-well-known destination directly</h3>
+<h3 id="visiting-a-discoverable-destination-directly">Visiting a discoverable destination directly</h3>
 <ul>
-<li><p>The user selects the well-known destination in the UI of their
+<li><p>The user selects the discoverable destination in the UI of their
 UA.</p></li>
 <li><p>The corresponding URL is loaded.</p></li>
 </ul>
-<h3 id="updating-a-well-known-destination">Updating a well-known
-destination</h3>
+<h3 id="updating-a-discoverable-destination">Updating a discoverable destination</h3>
 <p>The content author would need to ensure that the
 <code>&lt;link&gt;</code> elements sent are correct. In practice this
 would most likely be managed by the CMS powering the site, which could
 take the repetition out of the authoring process.</p>
 <h3
-id="expressing-when-a-link-points-to-part-of-a-well-known-destination">Expressing
-when a link points to part of a well-known destination</h3>
+id="expressing-when-a-link-points-to-part-of-a-discoverable-destination">Expressing when a link points to part of a discoverable destination</h3>
 <p>When an in-page (anchor, <code>&lt;a&gt;</code>) link points to a
-page that is a sub-page of a well-known destination (such as the "help
+page that is a sub-page of a discoverable destination (such as the "help
 on logging in" page, rather than the "help" home page), this can be
 indicated by adding a <code>rel</code> value to the anchor.</p>
 <aside class=example>
@@ -228,10 +218,10 @@ indicated by adding a <code>rel</code> value to the anchor.</p>
 
 <h3 id="demarcating-destination-content">Demarcating destination
 content</h3>
-<p>As well-known destinations are normal links, they can make use of
+<p>As discoverable destinations are normal links, they can make use of
 fragments to point to certain elements on the destination page.</p>
 <p>The content/UA/AT can then use this information (and the knowledge that the
-navigation was via the Well-known destination UI) to render the
+navigation was via the Discoverable Destination UI) to render the
 destination page in an appropriate way for the user.</p>
 
 <h2 id="open-questions">Open Questions</h2>

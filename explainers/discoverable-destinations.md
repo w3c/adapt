@@ -1,4 +1,4 @@
-# WAI-Adapt: Well-known destinations Explainer
+# WAI-Adapt: Discoverable Destinations Explainer
 
 ## Authors
 
@@ -18,13 +18,13 @@
 - [Out of scope](#out-of-scope)
 - [User research](#user-research)
 - [Technical requirements](#technical-requirements)
-- [The "Well-known destinations" approach](#the-well-known-destinations-approach)
-  * [The well-known destination namespace](#the-well-known-destination-namespace)
-  * [Enumerating well-known destinations](#enumerating-well-known-destinations)
+- [The "Discoverable Destinations" approach](#the-discoverable-destinations-approach)
+  * [The discoverable destination namespace](#the-discoverable-destination-namespace)
+  * [Enumerating discoverable destinations](#enumerating-discoverable-destinations)
   * [Defining a site](#defining-a-site)
-  * [Visiting a well-known destination directly](#visiting-a-well-known-destination-directly)
-  * [Updating a well-known destination](#updating-a-well-known-destination)
-  * [Expressing when a link points to part of a well-known destination](#expressing-when-a-link-points-to-part-of-a-well-known-destination)
+  * [Visiting a discoverable destination directly](#visiting-a-discoverable-destination-directly)
+  * [Updating a discoverable destination](#updating-a-discoverable-destination)
+  * [Expressing when a link points to part of a discoverable destination](#expressing-when-a-link-points-to-part-of-a-discoverable-destination)
   * [Demarcating destination content](#demarcating-destination-content)
 - [Open Questions](#open-questions)
   * [Indicating the _kind_ of content](#indicating-the-_kind_-of-content)
@@ -36,9 +36,19 @@
   * [Sitemaps](#sitemaps)
   * [Using `rel` attribute values alone](#using-rel-attribute-values-alone)
   * [Linksets](#linksets)
+    + [The discoverable destination namespace](#the-discoverable-destination-namespace-1)
+    + [Enumerating discoverable destinations](#enumerating-discoverable-destinations-1)
+    + [Defining a site](#defining-a-site-1)
+    + [Visiting a discoverable destination directly](#visiting-a-discoverable-destination-directly-1)
+    + [Updating a discoverable destination](#updating-a-discoverable-destination-1)
+    + [Expressing when a link points to part of a discoverable destination](#expressing-when-a-link-points-to-part-of-a-discoverable-destination-1)
+    + [Demarcating destination content](#demarcating-destination-content-1)
 - [Stakeholder feedback/opposition](#stakeholder-feedbackopposition)
 - [References \& acknowledgements](#references--acknowledgements)
   * [Foundational and related work](#foundational-and-related-work)
+    + [Destinations](#destinations)
+    + [Link types/relations](#link-typesrelations)
+    + [Linksets](#linksets-1)
 
 <!-- tocstop -->
 
@@ -54,7 +64,7 @@ The User Agent, or a User Agent extension, could provide an interface to allow t
 
 This specification builds upon several existing specifications and registries, as detailed in the [foundational work](#foundational-work) section below.
 
-The motivating use cases, "option 1" approach (using Well-known URIs), and an example end-user UI, are depicted in [our Well-known destinations AC 2024 lightning talk](https://w3c.github.io/adapt/presentations/ac2024/).
+The motivating use cases, "option 1" approach (using Well-known URIs), and an example end-user UI, are depicted in [our Discoverable Destinations AC 2024 lightning talk](https://w3c.github.io/adapt/presentations/ac2024/).
 
 ## Motivating Use Cases
 
@@ -74,18 +84,18 @@ The motivating use cases, "option 1" approach (using Well-known URIs), and an ex
 
 * Specifying the interface within the UA (or UA extension) by which the user can navigate to supported well-known pages.
 
-Though detailed UI design is out of scope, an proof-of-concept UI for enumerating a site's well-known destinations is depicted below.
+Though detailed UI design is out of scope, an proof-of-concept UI for enumerating a site's discoverable destinations is depicted below.
 
-![A fictional ACME Inc. home page, with the extension pop-up open, showing 6 buttons, each containing emoji and accompanying text names for the well-known destinations offered by the site: home, accessibility statement, contact, help, log in, and products.](../presentations/ac2024/ext02.png)
+![A fictional ACME Inc. home page, with the extension pop-up open, showing 6 buttons, each containing emoji and accompanying text names for the discoverable destinations offered by the site: home, accessibility statement, contact, help, log in, and products.](../presentations/ac2024/ext02.png)
 
 ## User research
 
-Our proposed "well-known destinations" come from work done by the [Cognitive and Learning Disabilities Accessibility Task Force](https://www.w3.org/WAI/GL/task-forces/coga/).
+Our proposed "discoverable destinations" come from work done by the [Cognitive and Learning Disabilities Accessibility Task Force](https://www.w3.org/WAI/GL/task-forces/coga/).
 
 > [!NOTE]
 > This is not a complete list&mdash;we are consulting with COGA to update the [destinations that the WAI-Adapt TF inherited from COGA](https://raw.githack.com/w3c/adapt/CR-content-2022-07-26/content/index.html#values-0).
 
-An illustrative set of proposed well-known destinations is as follows...
+An illustrative set of proposed discoverable destinations is as follows...
 
 * `accessibility-statement` (for the site's [accessibility statement](https://www.w3.org/WAI/planning/statements/))
 
@@ -103,17 +113,17 @@ An illustrative set of proposed well-known destinations is as follows...
 
 Any approch that would solve these user needs must provide the following.
 
-* A way to represent each well-known destination proposed above.
+* A way to represent each discoverable destination proposed above.
 
-* A mechanism for discovering all well-known destinations supported by a site&mdash;to be used when a UA first visits a site on behalf of the user. In order to do this efficiently, it must be possible to make this query in a single HTTP request. The results would be available to the user via the UI of the UA.
+* A mechanism for discovering all discoverable destinations supported by a site&mdash;to be used when a UA first visits a site on behalf of the user. In order to do this efficiently, it must be possible to make this query in a single HTTP request. The results would be available to the user via the UI of the UA.
 
 * A way to denote the scope of any particular site (or sub-site).
 
-* A procedure for visiting a well-known destination directly (when the user activates the interface in the UA).
+* A procedure for visiting a discoverable destination directly (when the user activates the interface in the UA).
 
-* A mechanism by which a well-known destination would be updated (by the content author).
+* A mechanism by which a discoverable destination would be updated (by the content author).
 
-* Means to identify when a link on a page takes the user to a sub-page of a well-known destination page. E.g. a link to the "help on logging in" page (as opposed to the main "help" section landing page, which is where the well-known destination alone would take the user).
+* Means to identify when a link on a page takes the user to a sub-page of a discoverable destination page. E.g. a link to the "help on logging in" page (as opposed to the main "help" section landing page, which is where the discoverable destination alone would take the user).
 
 * Means to demarcate an element on the destination page that provides the destination content.
 
@@ -122,13 +132,13 @@ Any approch that would solve these user needs must provide the following.
 > [!CAUTION]
 > The last of these requirements&mdash;indicating the _kind_ of content or support&mdash;is currently an open question, not addressed by the proposed approach below, but may be addressed in a future iteration of this approach, or by a future WAI-Adapt TF project.
 
-## The "Well-known destinations" approach
+## The "Discoverable Destinations" approach
 
-This involves using the `<link>` element, and custom `rel` attribute values, to signpost well-known destinations on a site.
+This involves using the `<link>` element, and custom `rel` attribute values, to signpost discoverable destinations on a site.
 
-### The well-known destination namespace
+### The discoverable destination namespace
 
-All possible well-known destinations will be registered as `rel` attribute values.
+All possible discoverable destinations will be registered as `rel` attribute values.
 
 * `accessibility-statement`
 
@@ -142,7 +152,7 @@ All possible well-known destinations will be registered as `rel` attribute value
 
 * `search`
 
-### Enumerating well-known destinations
+### Enumerating discoverable destinations
 
 On the site's home page, the destinations supported by the site would be indicated via `<link>` elements. For example:
 
@@ -165,19 +175,19 @@ This will provide an overview of the available destinations.
 
 Because all destinations are repeated on all pages of a site, if we move to a sub-site, the sub-site will expose all destinations on all of its pages, and thus the UA/AT will be able to present the correct destinations for the sub-site.
 
-### Visiting a well-known destination directly
+### Visiting a discoverable destination directly
 
-* The user selects the well-known destination in the UI of their UA.
+* The user selects the discoverable destination in the UI of their UA.
 
 * The corresponding URL is loaded.
 
-### Updating a well-known destination
+### Updating a discoverable destination
 
 The content author would need to ensure that the `<link>` elements sent are correct. In practice this would most likely be managed by the CMS powering the site, which could take the repetition out of the authoring process.
 
-### Expressing when a link points to part of a well-known destination
+### Expressing when a link points to part of a discoverable destination
 
-When an in-page (anchor, `<a>`) link points to a page that is a sub-page of a well-known destination (such as the "help on logging in" page, rather than the "help" home page), this can be indicated by adding a `rel`  value to the anchor.
+When an in-page (anchor, `<a>`) link points to a page that is a sub-page of a discoverable destination (such as the "help on logging in" page, rather than the "help" home page), this can be indicated by adding a `rel`  value to the anchor.
 
 ```html
 <p>For more details, consult the <a href="/help/signing-in" rel="help">help section on signing in to your account</a>.</p>
@@ -185,9 +195,9 @@ When an in-page (anchor, `<a>`) link points to a page that is a sub-page of a we
 
 ### Demarcating destination content
 
-As well-known destinations are normal links, they can make use of fragments to point to certain elements on the destination page.
+As discoverable destinations are normal links, they can make use of fragments to point to certain elements on the destination page.
 
-The UA/AT can then use this information (and the knowledge that the navigation was via the Well-known destination UI) to render the destination page in an appropriate way for the user. This may involve:
+The UA/AT can then use this information (and the knowledge that the navigation was via the Discoverable Destination UI) to render the destination page in an appropriate way for the user. This may involve:
 
 * Highlighting the specific relevant part of the page.
 
@@ -243,7 +253,7 @@ It does not seem like a good fit to try to extend the format of sitemaps to acco
 
 Using `rel` attribute values is part of the proposed spec&mdash;for cases where deep links may be provided into an overall well-known section (e.g. help on a specific topic).
 
-It would be possible to use _only_ `rel` values to highlight well-known destinations (if they were applied to links to the top-level destination landing pages, and there was a way to denote that a link was to the top-level destination landing page), but this would have the disadvantage that the overall destinations for a particular site could not be determined, nor presented to the user, in a simple and robust way. The user could only discover them if they landed on the right pages.
+It would be possible to use _only_ `rel` values to highlight discoverable destinations (if they were applied to links to the top-level destination landing pages, and there was a way to denote that a link was to the top-level destination landing page), but this would have the disadvantage that the overall destinations for a particular site could not be determined, nor presented to the user, in a simple and robust way. The user could only discover them if they landed on the right pages.
 
 This would pose the risk that the interface presented by the UA would not give a complete picture of what is available on the site, and thus either not be of great use, or&mdash;worse&mdash;be actively confusing for people to use.
 
@@ -262,7 +272,7 @@ For now we opt for the above approach of putting all the relevant information in
 
 The following sections mirror those above for the proposed approach, for reference.
 
-#### The well-known destination namespace
+#### The discoverable destination namespace
 
 Each destination is part of a vocabulary. As there are several destinations that could be provided by a site, they will be namespaced under a root vocabulary namespace, for example (taking inspiration from GS1's vocabulary)...
 
@@ -288,7 +298,7 @@ The namespace has been specified as `https://w3.org/voc/ia/`, with "ia" standing
 
 Other options instead of "ia" were considered, including "information-architecture", "structure", and others. However "ia" was both felt to be accurate, and is more concise than the other alternatives.
 
-#### Enumerating well-known destinations
+#### Enumerating discoverable destinations
 
 The first time the user visits the origin, the linkset for the origin, and sub-sites, would be fetched from a well-known URI, such as `/.well-known/ia/linkset`.
 
@@ -324,7 +334,7 @@ For example, the linkset for a simple site (with no sub-sites), which supports t
 
 Note that the linkset standard allows us to provide links to equivalent pages in other human languages; this is not shown here, for brevity.
 
-Also note that a **UA that supports well-known destinations would interpret the `anchor` field in a specific way:** Well-known destinations are intented to be (sub-)site-wide, so the links relating to the single given `anchor` above would apply to all other URLs that start with the `anchor`'s URL.
+Also note that a **UA that supports discoverable destinations would interpret the `anchor` field in a specific way:** Discoverable Destinations are intented to be (sub-)site-wide, so the links relating to the single given `anchor` above would apply to all other URLs that start with the `anchor`'s URL.
 
 A more complex site, which is hosted at one origin, but provides two micro-sites, could be coded as follows. The following example linkset represents a hotel's website that has the following structure.
 
@@ -369,26 +379,26 @@ In this case, the UA would need to interpret the URL structure of the linkset as
 > [!NOTE]
 > The way that the UA presents the underlying tree structure of destinations across the root and sub-sites is out of scope. We envisage a range of UAs, or user preference settings, being created to cater for differing user needs.
 
-#### Visiting a well-known destination directly
+#### Visiting a discoverable destination directly
 
-* The user selects the well-known destination in the UI of their UA.
+* The user selects the discoverable destination in the UI of their UA.
 
 * The corresponding URL is loaded.
 
 If a destination isn't supported, the UI is expected to _not_ include it.
 
-#### Updating a well-known destination
+#### Updating a discoverable destination
 
 The content author would need to update the linkset file, and replace it on the server.
 
 > [!NOTE]
 > We need to investigate how, on a large site, the linkset documents could be split up to improve performance and/or ease of editing, in the event different teams work on different sub-sites.
 
-#### Expressing when a link points to part of a well-known destination
+#### Expressing when a link points to part of a discoverable destination
 
 A link could be decorated with a `rel` attribute value that corresponds to the applicable destination.
 
-The UA will know if this link points to the root of the well-known destination (e.g. the "Help" landing page, vs "Help on logging in") becuase it knows the URL of the root of the well-known destination, via the discovery process above.
+The UA will know if this link points to the root of the discoverable destination (e.g. the "Help" landing page, vs "Help on logging in") becuase it knows the URL of the root of the discoverable destination, via the discovery process above.
 
 #### Demarcating destination content
 
