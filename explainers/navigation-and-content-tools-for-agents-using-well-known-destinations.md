@@ -1,4 +1,4 @@
-# WAI-Adapt: Navigation and Content Tools for Agentic AI Using Well-known Destinations Explainer
+# WAI-Adapt: Navigation and Content Tools for Agentic AI Using Discoverable Destinations Explainer
 
 ## Authors
 
@@ -14,7 +14,7 @@
 - [Introduction](#introduction)
 - [The Problem: API Dependency Challenge](#the-problem-api-dependency-challenge)
 - [The Solution: Semantic Web Tools](#the-solution-semantic-web-tools)
-- [Building on Well-known Destinations](#building-on-well-known-destinations)
+- [Building on Discoverable Destinations](#building-on-discoverable-destinations)
 - [Technical Foundation](#technical-foundation)
 - [Real-World Applications](#real-world-applications)
 - [Scope and Limitations](#scope-and-limitations)
@@ -29,7 +29,7 @@
 
 However, there's a fundamental challenge: while these AI agents excel at working with structured APIs, the vast majority of websites (70-80%) don't provide APIs for the functionality users actually need. This forces agents to fall back on brittle web scraping techniques that break whenever sites update their designs.
 
-This explainer proposes extending the [Well-known Destinations](well-known-destinations.md) approach to bridge this gap through **Semantic Web Tools** - standardized software components that enable reliable website navigation using semantic identifiers rather than fragile technical selectors.
+This explainer proposes extending the [Discoverable Destinations](discoverable-destinations.md) approach to bridge this gap through **Semantic Web Tools** - standardized software components that enable reliable website navigation using semantic identifiers rather than fragile technical selectors.
 
 Instead of AI agents looking for contact information using fragile selectors like "find the element with class `.contact-info`", they would use semantic identifiers to say "navigate to the 'contact' destination". This semantic approach works consistently across all compliant websites, creating reliable digital experiences.
 
@@ -67,15 +67,15 @@ Consider an AI assistant tasked with "auditing accessibility statements across a
 
 ## The Solution: Semantic Web Tools
 
-Well-known Destinations offer an elegant solution to this challenge. Instead of websites needing to build full APIs, they can provide semantic signposts that AI agents can follow reliably.
+Discoverable Destinations offer an elegant solution to this challenge. Instead of websites needing to build full APIs, they can provide semantic signposts that AI agents can follow reliably.
 
-Rather than an AI agent hunting for contact information using fragile selectors like `document.querySelector('.contact-page-link')`, it simply looks for the Well-Known Destination for Contact page. This approach transforms brittle technical navigation into reliable semantic discovery.
+Rather than an AI agent hunting for contact information using fragile selectors like `document.querySelector('.contact-page-link')`, it simply looks for the Discoverable Destination for Contact page. This approach transforms brittle technical navigation into reliable semantic discovery.
 
-## Building on Well-known Destinations
+## Building on Discoverable Destinations
 
-The beauty of this approach lies in its foundation, the [Well-known Destinations](well-known-destinations.md) proposal already provides the semantic infrastructure we need, with a core focus on accessibility.
+The beauty of this approach lies in its foundation, the [Discoverable Destinations](discoverable-destinations.md) proposal already provides the semantic infrastructure we need, with a core focus on accessibility.
 
-**From Human Accessibility to AI-Assisted Accessibility**: Well-known Destinations were designed to help humans with accessibility needs find important pages quickly. This same semantic approach perfectly serves AI agents also acting as assistive technologies, what helps humans with disabilities navigate also enables machines to provide consistent assistance. These Well-known Destinations act as a basis for tools used by agents to discover and navigate to these destinations.
+**From Human Accessibility to AI-Assisted Accessibility**: Discoverable Destinations were designed to help humans with accessibility needs find important pages quickly. This same semantic approach perfectly serves AI agents also acting as assistive technologies, what helps humans with disabilities navigate also enables machines to provide consistent assistance. These Discoverable Destinations act as a basis for tools used by agents to discover and navigate to these destinations.
 
 ## Technical Foundation
 
@@ -83,7 +83,7 @@ The architecture is elegantly simple, built on three core capabilities:
 
 ### Core Web Tools Capabilities
 
-* **Destination Discovery**: Enumerating all available Well-known Destinations for a given site / page 
+* **Destination Discovery**: Enumerating all available Discoverable Destinations for a given site / page 
 * **Semantic Navigation**: Navigating to specific destinations using semantic identifiers rather than site-specific selectors
 * **Content Retrieval**: Fetching page content from destination URLs and delivering it to LLMs for intelligent processing
 
@@ -95,7 +95,7 @@ The architecture is elegantly simple, built on three core capabilities:
 
 ### Discovery Mechanisms
 
-Semantic Web Tools leverage the standardized discovery mechanisms already defined in the Well-known Destinations proposal. The Well-known Destinations framework supports multiple discovery methods (like linkset), ensuring AI tools can adapt as new optimization approaches emerge.
+Semantic Web Tools leverage the standardized discovery mechanisms already defined in the Discoverable Destinations proposal. The Discoverable Destinations framework supports multiple discovery methods (like linkset), ensuring AI tools can adapt as new optimization approaches emerge.
 
 ### Division of Responsibilities
 
@@ -109,7 +109,7 @@ The system operates through a clear separation of concerns between the LLM (reas
 * **User Interaction**: Managing clarifications, progress updates, and result presentation
 
 **Web Tools Responsibilities:**
-* **Destination Discovery**: Finding available Well-known Destinations on target websites
+* **Destination Discovery**: Finding available Discoverable Destinations on target websites
 * **Navigation**: Converting semantic destination names to URLs and performing HTTP requests
 * **Content Retrieval**: Fetching raw page content and passing it to LLMs for processing
 * **Error Reporting**: Detecting and reporting technical failures (network errors, missing pages, authentication failures) to the LLM for decision-making
@@ -139,7 +139,7 @@ These scenarios share a common pattern: AI agents handle the discovery and navig
 
 ## Scope and Limitations
 
-### What Well-known Destinations Solve Well
+### What Discoverable Destinations Solve Well
 
 * **Content Discovery**: Finding specific types of pages (help, contact, accessibility statements, product catalogs)
 * **Information Extraction**: Extracting data from destination pages
@@ -148,22 +148,22 @@ These scenarios share a common pattern: AI agents handle the discovery and navig
 ### What Requires Additional Solutions
 
 * **Complex Actions**: Multi-step workflows like password changes, account modifications, or transaction processing
-  - *Why Well-known Destinations aren't sufficient*: While destinations can navigate to account settings pages, the actual modification workflows vary dramatically between sites. A password change might require current password verification, security questions, or two-factor authentication in site-specific ways that can't be standardized through destinations alone.
-  - *Solution approach*: Well-known Destinations provide navigation to relevant areas, then additional tools (APIs, human-in-the-loop) handle the complex workflows.
+  - *Why Discoverable Destinations aren't sufficient*: While destinations can navigate to account settings pages, the actual modification workflows vary dramatically between sites. A password change might require current password verification, security questions, or two-factor authentication in site-specific ways that can't be standardized through destinations alone.
+  - *Solution approach*: Discoverable Destinations provide navigation to relevant areas, then additional tools (APIs, human-in-the-loop) handle the complex workflows.
 
 * **Authenticated Operations**: Actions requiring user-specific authentication and authorization  
-  - *Why Well-known Destinations aren't sufficient*: While an agent could navigate to a login page using destinations, the authentication mechanisms (OAuth, SAML, multi-factor authentication) require site-specific integration that goes beyond semantic navigation.
+  - *Why Discoverable Destinations aren't sufficient*: While an agent could navigate to a login page using destinations, the authentication mechanisms (OAuth, SAML, multi-factor authentication) require site-specific integration that goes beyond semantic navigation.
   - *Solution approach*: Destinations can navigate to login/authentication pages, but secure authentication requires specialized protocols and often human involvement for security.
 
 * **Site-specific Workflows**: Unique business processes that don't map to standard destinations
-  - *Why Well-known Destinations aren't sufficient*: Business processes like "submit insurance claim" or "schedule medical appointment" involve complex, industry-specific workflows that can't be standardized across all websites.
+  - *Why Discoverable Destinations aren't sufficient*: Business processes like "submit insurance claim" or "schedule medical appointment" involve complex, industry-specific workflows that can't be standardized across all websites.
   - *Solution approach*: Destinations help reach relevant sections, but specialized tools or APIs are needed for complex business logic.
 
 ### Human-in-the-Loop for Complex Scenarios
 
 For complex scenarios, a layered approach works best:
 
-1. **Well-known Destinations**: Provide navigation to relevant areas
+1. **Discoverable Destinations**: Provide navigation to relevant areas
 2. **API Integration**: Use APIs where available for sensitive operations
 3. **Human-in-the-Loop**: Include human oversight for sensitive or complex tasks
 
@@ -171,7 +171,7 @@ The primary approach for sensitive operations should be human-in-the-loop, where
 
 ## Extended Destination Types for AI Tools
 
-The Well-known Destinations proposal primarily serves human accessibility needs. For agentic AI systems operating as assistive technologies, a few additional destination types could be beneficial:
+The Discoverable Destinations proposal primarily serves human accessibility needs. For agentic AI systems operating as assistive technologies, a few additional destination types could be beneficial:
 
 ### Example Additional Destinations
 
@@ -183,10 +183,10 @@ These destination types address common accessibility and agentic AI use cases wh
 
 ## Open Questions
 
-### Well-known Destinations Extensions
+### Discoverable Destinations Extensions
 
 * **New Destination Types**: Should additional destinations like `search` and `account-settings` be standardized?
-* **Discovery Optimization**: The Well-Known Destinations specification considers alternative centralized discovery mechanisms, such as `/.well-known/destinations` and Linksets. Should these be formally adopted to support efficient discovery?
+* **Discovery Optimization**: The Discoverable Destinations specification considers alternative centralized discovery mechanisms, such as `/.well-known/destinations` and Linksets. Should these be formally adopted to support efficient discovery?
 
 ### Standardization Process
 
@@ -196,7 +196,7 @@ These destination types address common accessibility and agentic AI use cases wh
 
 ### Foundational Work
 
-* [WAI-Adapt: Well-known Destinations Explainer](well-known-destinations.md)
+* [WAI-Adapt: Discoverable Destinations Explainer](discoverable-destinations.md)
 * [Model Context Protocol (MCP) Specification](https://github.com/modelcontextprotocol/specification)
 * [WebMCP](https://github.com/webmachinelearning/webmcp)
 * [RFC 8615: Well-Known URIs](https://datatracker.ietf.org/doc/html/rfc8615)
@@ -212,13 +212,13 @@ These destination types address common accessibility and agentic AI use cases wh
 
 ### How AI Agents Learn to Use Semantic Destinations
 
-A key question emerges: How do AI agents actually learn to use semantic markers exposed via Well-Known Destinations? The practical answer is through explicit tool integration rather than expecting agents to discover these patterns naturally.
+A key question emerges: How do AI agents actually learn to use semantic markers exposed via Discoverable Destinations? The practical answer is through explicit tool integration rather than expecting agents to discover these patterns naturally.
 
 #### Explicit Tool Integration
 
-AI agents don't need to "learn" semantic markers through training data. Instead, they are explicitly equipped with Semantic Tools that understand Well-known Destinations:
+AI agents don't need to "learn" semantic markers through training data. Instead, they are explicitly equipped with Semantic Tools that understand Discoverable Destinations:
 
-**Tool Integration**: AI frameworks like MCP (Model Context Protocol) allow developers to provide agents with specific tools. Such tools can be used to discover destinations, navigate to destinations, or fetch content from destinations using Well-Known Destinations.
+**Tool Integration**: AI frameworks like MCP (Model Context Protocol) allow developers to provide agents with specific tools. Such tools can be used to discover destinations, navigate to destinations, or fetch content from destinations using Discoverable Destinations.
 
 **Instruction-Following**: Modern LLMs excel at following instructions. When given tools that can "find destinations on this website" or "navigate to the contact page," they can coordinate these capabilities effectively without needing prior training.
 
@@ -226,9 +226,9 @@ AI agents don't need to "learn" semantic markers through training data. Instead,
 
 #### Core Integration Workflow
 
-Agentic AI systems integrate with Semantic Web Tools through a standardized workflow pattern that works consistently across all websites implementing Well-known Destinations:
+Agentic AI systems integrate with Semantic Web Tools through a standardized workflow pattern that works consistently across all websites implementing Discoverable Destinations:
 
-1. **Destination Discovery**: AI agents use Semantic Web Tools to discover available destinations on target webpage by using well-known destinations.
+1. **Destination Discovery**: AI agents use Semantic Web Tools to discover available destinations on target webpage by using discoverable destinations.
 
 2. **Destination Selection and Planning**: Based on discovered destinations and user requirements, AI agents plan which destinations to visit and in what sequence to accomplish their tasks
 
@@ -238,13 +238,13 @@ Agentic AI systems integrate with Semantic Web Tools through a standardized work
 
 ### Workflow Characteristics
 
-**Uniform Approach**: The same Semantic Web Tool and workflow pattern works across all websites that implement Well-known Destinations, eliminating the need for site-specific customization.
+**Uniform Approach**: The same Semantic Web Tool and workflow pattern works across all websites that implement Discoverable Destinations, eliminating the need for site-specific customization.
 
 **Semantic Reliability**: Navigation based on semantic destinations (`contact`, `help`, `accessibility-statement`) rather than fragile selectors ensures consistent operation even when sites update their designs.
 
 **Clear Separation**: Semantic Web Tools handle technical navigation and content retrieval, while LLMs handle intelligent processing and decision-making.
 
-This integration pattern enables AI agents to work reliably across any websites that implement Well-known Destinations, providing a standardized foundation for agentic web interaction.
+This integration pattern enables AI agents to work reliably across any websites that implement Discoverable Destinations, providing a standardized foundation for agentic web interaction.
 
 #### Example Integration with Model Context Protocol (MCP)
 
@@ -288,7 +288,7 @@ To address the practical challenges of browser interaction and session managemen
 
 #### Sample Semantic Web Tools API
 
-Semantic Web Tools expose a standardized set of capabilities that work uniformly across any website implementing Well-known Destinations. These tools support two distinct workflows:
+Semantic Web Tools expose a standardized set of capabilities that work uniformly across any website implementing Discoverable Destinations. These tools support two distinct workflows:
 
 **Workflow 1 - Direct Navigation**: User wants to visit a specific page (e.g., "take me to the help page")
 
