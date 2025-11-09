@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>WAI-Adapt: Well-known Destinations</title>
+		<meta charset="utf-8"/>
+		<meta name="color-scheme" content="dark light" />
+		<script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove"></script>
+		<script src="../common/biblio.js" class="remove"></script>
+		<script src="respec-config.js" class="remove"></script>
+		<style type="text/css">
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 0.3em;
+}
+		</style>
+	</head>
+	<body>
+		<section id="abstract">
+			<div class=ednote>
+				<p>This document will be renamed; it is currently referred to as &quot;well-known destinations&quot; for historical reasons.</p>
+			</div>
+
+			<p>This document describes an approach that content authors can use to provide improved ease of navigation to website visitors.</p>
+		</section>
+
+		<section id="sotd"></section>
+
+<section id="introduction">
+<h2>Introduction</h2>
+<p>Web sites can contain a huge array of varied and engaging content.
+This content, and the means of navigating around it, can be presented in
+almost any way, which makes for tailored and compelling experiences.
+However, whilst there are several conventions when it comes to
+navigation, this variability can pose challenges to certain people—and
+user agents acting on their behalf.</p>
+<p>This specification aims to address the challenge of making sites more
+easily navigable for both people (particularly those facing
+accessibility barriers) and machines. It does this by standardising
+machine-readable names for common page types. User Agents can then query
+as to which destinations are supported on a given site (or page of that
+site), and present this information in an appropriate way for the
+user.</p>
+<p>The User Agent, or a User Agent extension, could provide an interface
+to allow the user to: view supported common pages using a method, and
+terminology, that is clear to them; and to request to visit common
+destination pages directly.</p>
+
+<h3 id="motivating-use-cases">Motivating Use Cases</h3>
+<ul>
+<li><p>Supporting people facing cognitive accessibility barriers in
+navigating sites.</p>
+<ul>
+<li><p>This includes mechanisms that can support clear signposting
+within a User Agent to "standard" or "common" areas of sites that users
+wish to visit—e.g. "log in", "products", or the site's accessibility
+statement.</p></li>
+<li><p>This also includes supporting users and accessibility auditors in
+quickly discovering the accessibility statement for a site.</p></li>
+</ul></li>
+<li><p>Allowing UAs, or other machines, acting on behalf of users to
+also find common areas of sites.</p></li>
+</ul>
+
+<h3 id="out-of-scope">Out of scope</h3>
+<ul>
+<li><p>Specifying the contents of well-known pages, nor the schema of
+any data to be found in one of the common areas of the site, when they
+are accessed by machines.</p></li>
+<li><p>Specifying the way in which supported well-known pages are
+displayed to the user.</p></li>
+<li><p>Specifying the interface within the UA (or UA extension) by which
+the user can navigate to supported well-known pages.</p></li>
+</ul>
+<p>Though detailed UI design is out of scope, an proof-of-concept UI for
+enumerating a site's well-known destinations is depicted below.</p>
+<figure><img src="../presentations/ac2024/ext02.png"
+alt="A fictional ACME Inc. home page, with the extension pop-up open, showing 6 buttons, each containing emoji and accompanying text names for the well-known destinations offered by the site: home, accessibility statement, contact, help, log in, and products." />
+<figcaption>Example UI, via a browser extension running on a custom shopping site</figcaption>
+</figure>
+</section>
+
+			<section>
+				<h2>Use Cases and Requirements</h2>
+				<div class=issue>
+				<p>This section needs some work.</p>
+				</div>
+
+<h3 id="user-research">User research</h3>
+<p>Our proposed "well-known destinations" come from work done by the <a
+href="https://www.w3.org/WAI/GL/task-forces/coga/">Cognitive and
+Learning Disabilities Accessibility Task Force</a>.</p>
+<div class="note">
+<p>This is not a complete list—we are consulting with COGA to update the
+<a
+href="https://raw.githack.com/w3c/adapt/CR-content-2022-07-26/content/index.html#values-0">destinations
+that the WAI-Adapt TF inherited from COGA</a>.</p>
+</div>
+<p>An illustrative set of proposed well-known destinations is as
+follows...</p>
+<ul>
+<li><p><code>accessibility-statement</code> (for the site's <a
+href="https://www.w3.org/WAI/planning/statements/">accessibility
+statement</a>)</p></li>
+<li><p><code>change-password</code> (as per <a
+href="https://www.w3.org/TR/change-password-url/">A Well-known URL for
+Changing Passwords</a>)</p></li>
+<li><p><code>help</code> (for the site's main help landing
+page)</p></li>
+<li><p><code>log-in</code></p></li>
+<li><p><code>products</code> (for the site's main product section's
+landing page)</p></li>
+<li><p><code>search</code> (intended for a dedicated search page; a <a
+href="https://www.w3.org/TR/wai-aria-1.2/#search"><code>search</code>
+landmark region</a> would be used on any page that contains a search
+form)</p></li>
+</ul>
+
+<h3 id="technical-requirements">Technical requirements</h3>
+<p>Any approch that would solve these user needs must provide the
+following.</p>
+<ol>
+<li><p>A way to represent each well-known destination proposed
+above.</p></li>
+<li><p>A mechanism for discovering all well-known destinations supported
+by a site—to be used when a UA first visits a site on behalf of the
+user. In order to do this efficiently, it must be possible to make this
+query in a single HTTP request. The results would be available to the
+user via the UI of the UA.</p></li>
+<li><p>A way to denote the scope of any particular site (or
+sub-site).</p></li>
+<li><p>A procedure for visiting a well-known destination directly (when
+the user activates the interface in the UA).</p></li>
+<li><p>A mechanism by which a well-known destination would be updated
+(by the content author).</p></li>
+<li><p>Means to identify when a link on a page takes the user to a
+sub-page of a well-known destination page. E.g. a link to the "help on
+logging in" page (as opposed to the main "help" section landing page,
+which is where the well-known destination alone would take the
+user).</p></li>
+<li><p>Means to demarcate an element on the destination page that
+provides the destination content.</p></li>
+<li><p>A way to indicate the <em>kind</em> of content that the
+destination provides—e.g. people with cognitive disabilities may need to
+get help from, or chat to, a human, over the phone, rather than a
+chatbot, or sending an email.</p></li>
+</ol>
+<div class=issue>
+<p>The last of these requirements—indicating the <em>kind</em> of
+content or support—is currently an open question, not addressed by the
+proposed approach below, but may be addressed in a future iteration of
+this approach, or by a future WAI-Adapt TF project.</p>
+</div>
+</section>
+
+<section>
+<h2 id="the-well-known-destinations-approach">The "Well-known
+destinations" approach</h2>
+<p>This involves using the <code>&lt;link&gt;</code> element, and custom
+<code>rel</code> attribute values, to signpost well-known destinations
+on a site.</p>
+<h3 id="the-well-known-destination-namespace">The well-known destination
+namespace</h3>
+<p>All possible well-known destinations will be registered as
+<code>rel</code> attribute values.</p>
+<ul>
+<li><p><code>accessibility-statement</code></p></li>
+<li><p><code>change-password</code></p></li>
+<li><p><code>help</code></p></li>
+<li><p><code>log-in</code></p></li>
+<li><p><code>products</code></p></li>
+<li><p><code>search</code></p></li>
+</ul>
+
+<h3 id="enumerating-well-known-destinations">Enumerating well-known
+destinations</h3>
+<p>On the site's home page, the destinations supported by the site would
+be indicated via <code>&lt;link&gt;</code> elements. For example:</p>
+
+<aside class=example>
+<pre class=html>
+. . .
+&lt;head&gt;
+  . . .
+  &lt;link rel=&quot;accessibility-statement&quot; href=&quot;/accessibility-statement&quot;&gt;
+  &lt;link rel=&quot;help&quot; href=&quot;/support&quot;&gt;
+  &lt;link rel=&quot;log-in&quot; href=&quot;/sign-in&quot;&gt;
+&lt;/head&gt;
+</pre>
+</aside>
+
+<p>This will provide an overview of the available destinations.</p>
+<div class="note">
+<p>All destinations need to be repeated on all pages of the site.
+(This is one reason why the URLs in the example begin with
+<code>/</code>).</p>
+</div>
+<h3 id="defining-a-site">Defining a site</h3>
+<p>Because all destinations are repeated on all pages of a site, if we
+move to a sub-site, the sub-site will expose all destinations on all of
+its pages, and thus the UA/AT will be able to present the correct
+destinations for the sub-site.</p>
+<h3 id="visiting-a-well-known-destination-directly">Visiting a
+well-known destination directly</h3>
+<ul>
+<li><p>The user selects the well-known destination in the UI of their
+UA.</p></li>
+<li><p>The corresponding URL is loaded.</p></li>
+</ul>
+<h3 id="updating-a-well-known-destination">Updating a well-known
+destination</h3>
+<p>The content author would need to ensure that the
+<code>&lt;link&gt;</code> elements sent are correct. In practice this
+would most likely be managed by the CMS powering the site, which could
+take the repetition out of the authoring process.</p>
+<h3
+id="expressing-when-a-link-points-to-part-of-a-well-known-destination">Expressing
+when a link points to part of a well-known destination</h3>
+<p>When an in-page (anchor, <code>&lt;a&gt;</code>) link points to a
+page that is a sub-page of a well-known destination (such as the "help
+on logging in" page, rather than the "help" home page), this can be
+indicated by adding a <code>rel</code> value to the anchor.</p>
+<aside class=example>
+<pre class=html>
+&lt;p&gt;For more details, consult the &lt;a href=&quot;/help/signing-in&quot; rel=&quot;help&quot;&gt;help section on signing in to your account&lt;/a&gt;.&lt;/p&gt;
+</pre>
+</aside>
+
+<h3 id="demarcating-destination-content">Demarcating destination
+content</h3>
+<p>As well-known destinations are normal links, they can make use of
+fragments to point to certain elements on the destination page.</p>
+<p>The content/UA/AT can then use this information (and the knowledge that the
+navigation was via the Well-known destination UI) to render the
+destination page in an appropriate way for the user.</p>
+
+<h2 id="open-questions">Open Questions</h2>
+<div class=issue>
+<p>The sub-sections here should be promoted, and match the numbers of the corresponding technical requirements above. Some requirements should be added to that list in order to provide the justification for those requirements being addressed in this section.</p>
+</div>
+<h3 id="indicating-the-kind-of-content">Indicating the <em>kind</em> of
+content</h3>
+<div class="issue">
+<p>As above, COGA need that we are not yet addressing.</p>
+</div>
+<h3 id="discoverability-and-repetition">Discoverability and
+repetition</h3>
+<div class="issue">
+<p>This is a work-in-progress</p>
+</div>
+<h3 id="demarcating-sub-sites">Demarcating sub-sites</h3>
+<div class="issue">
+<p>This is a work-in-progress</p>
+</div>
+<ul>
+<li><p>Semantically</p></li>
+<li><p>UI-wise</p></li>
+</ul>
+</section>
+
+		<section>
+			<h2>Privacy and Security Considerations</h2>
+			<div class=issue>
+				<p>We have not completed this section yet.</p>
+			</div>
+		</section>
+
+		<div data-include="../common/acknowledgements.html" data-oninclude="fixIncludes" data-include-replace="true">Acknowledgements placeholder</div>
+	</body>
+</html>
