@@ -76,7 +76,7 @@ We're working closely with BCI on this approach, which is comprised of the follo
 
 * **Use of the `<ruby>` element for presentation&mdash;with an attribute to indicate this is a symbol.**
 
-  The idea is that the browser will not display such elements by default, but will do if the user has expressed a preference for symbols to be shown.
+  The idea is that the browser will not display such elements by default, but will do so if the user has expressed a preference for symbols to be shown.
 
 Here's an example of what some mark-up might look like (you would need a font that supports Bliss' code points in order for this to render correctly)...
 
