@@ -81,7 +81,7 @@ We're working closely with BCI on this approach, which is comprised of the follo
 Here's an example of what some mark-up might look like (you would need a font that supports Bliss' code points in order for this to render correctly)...
 
 ```html
-<p>A nice <ruby type=symbol>cup<rt>@@@</rt></ruby> of <ruby type=symbol>tea<rt>@@@</rt></ruby>.</p>
+<p>A nice <ruby lang=zbl>cup<rt>@@@</rt></ruby> of <ruby lang=zbl>tea<rt>@@@</rt></ruby>.</p>
 ```
 
 ### Demo
