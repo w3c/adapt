@@ -1,4 +1,4 @@
-# WAI-Adapt: Symbols Module Explainer
+# WAI-Adapt: Symbols Explainer
 
 ## Authors
 
@@ -19,21 +19,28 @@
 - [Out of scope](#out-of-scope)
 - [Important notes on symbols and rendering](#important-notes-on-symbols-and-rendering)
 - [User research](#user-research)
-- [The `adapt-symbol` attribute](#the-adapt-symbol-attribute)
-  * [Mapping concepts to symbols (in general)](#mapping-concepts-to-symbols-in-general)
-  * [Concept IDs: keying schemes](#concept-ids-keying-schemes)
-    + [BCI concept IDs as attribute values](#bci-concept-ids-as-attribute-values)
-      - [Advantages](#advantages)
-      - [Disadvantages](#disadvantages)
-    + [Bliss characters' Unicode representations as attribute values](#bliss-characters-unicode-representations-as-attribute-values)
-      - [Advantages](#advantages-1)
-      - [Disadvantages](#disadvantages-1)
-      - [Unknown factors](#unknown-factors)
-  * [Multiple concepts per attribute value](#multiple-concepts-per-attribute-value)
-  * [Looking up concepts](#looking-up-concepts)
+- [Use of Bliss Unicode code points](#use-of-bliss-unicode-code-points)
+  * [Content author's perspective](#content-authors-perspective)
+  * [Symbol providers' perspective](#symbol-providers-perspective)
+  * [Browser implementers' perspective](#browser-implementers-perspective)
+  * [Unicode perspective](#unicode-perspective)
+  * [Managing changes](#managing-changes)
 - [The W3C AAC Symbol Registry](#the-w3c-aac-symbol-registry)
+- [Extending `<ruby>` to support "symbol" content](#extending-ruby-to-support-symbol-content)
 - [Privacy considerations](#privacy-considerations)
 - [Considered alternatives](#considered-alternatives)
+  * [The `adapt-symbol` attribute](#the-adapt-symbol-attribute)
+    + [Mapping concepts to symbols (in general)](#mapping-concepts-to-symbols-in-general)
+    + [Concept IDs: keying schemes](#concept-ids-keying-schemes)
+      - [BCI concept IDs as attribute values](#bci-concept-ids-as-attribute-values)
+        * [Advantages](#advantages)
+        * [Disadvantages](#disadvantages)
+      - [Bliss characters' Unicode representations as attribute values](#bliss-characters-unicode-representations-as-attribute-values)
+        * [Advantages](#advantages-1)
+        * [Disadvantages](#disadvantages-1)
+        * [Unknown factors](#unknown-factors)
+    + [Multiple concepts per attribute value](#multiple-concepts-per-attribute-value)
+    + [Looking up concepts](#looking-up-concepts)
 - [Stakeholder feedback/opposition](#stakeholder-feedbackopposition)
 - [References](#references)
 - [Acknowledgments](#acknowledgments)
@@ -48,14 +55,34 @@ Some people find graphical symbols easier to interpret than written text.
 They may find that when symbols are presented alongside text content, that content is easier to understand.
 But there are many different symbol sets in use, and people don't tend to learn more than one.
 
-We propose the `adapt-symbol` attribute, which allows content authors to mark up the _concepts_ relevant to their content,
+We propose an approach that allows content authors to mark up the _concepts_ relevant to their content,
 so that the appropriate symbol(s) for that concept can be rendered for the user,
 using _their chosen symbol set_.
 
 We use the set of concepts maintained by [Blissymbolics Communication International](https://www.blissymbolics.org/) (BCI).
-These concepts underpin the Blissymbolics (or "Bliss") language&mdash;though our use of the concepts is strictly for mapping from a concept to the appropriate aymbol(s) for the user, and is not grammatical in nature.
+These concepts underpin the Blissymbolics (or "Bliss") language&mdash;though our use of the concepts is strictly for mapping from a concept to the appropriate symbol(s) for the user, and is not grammatical in nature.
 
-We're working closely with BCI on this specification, and the W3C AAC Symbol Registry (more details below).
+We're working closely with BCI on this approach, which is comprised of the following:
+
+* **The use of Bliss Unicode code points to encode a concept.**
+
+  A font then maps these code points into the appropriate symbol for the user.
+
+  The code points are under Unicode Consortium review.
+
+* **A registry of concepts (BCI code point sets) for authors to look up.**
+
+  The W3C AAC Symbol Registry provides the code points used to identify a given concept.
+
+* **Use of the `<ruby>` element for presentation&mdash;with a `lang=zbl` attribute to indicate this is a symbol.**
+
+  The idea is that the browser will not display such elements by default, but will do so if the user has expressed a preference for symbols to be shown.
+
+Here's an example of what some mark-up might look like (you would need a font that supports Bliss' code points in order for this to render correctly)...
+
+```html
+<p>A nice <ruby lang=zbl>cup<rt>@@@</rt></ruby> of <ruby lang=zbl>tea<rt>@@@</rt></ruby>.</p>
+```
 
 ### Demo
 
@@ -79,6 +106,9 @@ Please note the following limitations:
 
 * Providing an exhaustive list of concepts (the [W3C AAC Symbol Registry](#the-w3c-aac-symbol-registry), described below, aims to do this).
 
+> [!CAUTION]
+> The last point here contradicts the inclusion of the registry section in this document; perhaps a better way to explain it would be to say that we're not relying on _content authors_ to provide an exhaustive list of concepts&mdash;rather that we have one, from Bliss, in the form of the registry.
+
 ## Important notes on symbols and rendering
 
 Though rendering is out of scope, it's important to be aware of the nature of symbols, and different symbol sets:
@@ -94,13 +124,82 @@ Though rendering is out of scope, it's important to be aware of the nature of sy
 > [!NOTE]
 > This work has been developed over several years, with input from the Cognitive Accessibility TF, and experts from BCI. We will add references to some key elements of that background work here.
 
-## The `adapt-symbol` attribute
+## Use of Bliss Unicode code points
+
+> [!NOTE]
+> This section to be completed.
+
+### Content author's perspective
+
+> [!NOTE]
+> This section to be completed.
+
+### Symbol providers' perspective
+
+> [!NOTE]
+> This section to be completed.
+
+### Browser implementers' perspective
+
+> [!NOTE]
+> This section to be completed.
+
+### Unicode perspective
+
+> [!NOTE]
+> This section to be completed.
+
+### Managing changes
+
+> [!NOTE]
+> This section to be completed.
+
+## The W3C AAC Symbol Registry
+
+The registry brings BCI's dictionary of concepts into W3C space. Each record in the registry contains:
+
+* A uniquely-identifying key.
+
+* A description of the concept in a written language (e.g. English).
+
+* The Bliss symbol(s) that embody this concept in the Bliss language.
+
+The registry can be found at: https://www.w3.org/TR/aac-registry/
+
+> [!NOTE]
+> The registry's key for identifying concepts is presently the concepts' BCI concept ID (an integer). However, as discussed above, we are in discussions with potential implementers on whether the corresponding Bliss Unicode code point(s) for a given concept could be used instead.
+
+## Extending `<ruby>` to support "symbol" content
+
+> [!NOTE]
+> This section to be completed.
+
+There is [a proposal to extend the `<ruby>` element to indicate when "symbol" content is being used](https://github.com/w3c/html-ruby/issues/24).
+
+## Privacy considerations
+
+> [!NOTE]
+> This section is to be expanded.
+
+It would be possible for a site to know that symbols are being displayed.
+
+The site could also find out which font is being used.
+
+> [!NOTE]
+> Double-check on font detection.
+
+## Considered alternatives
+
+> [!NOTE]
+> This section is to be made more concise (after the outcome of the workshop has been incorporated into the primary sections above), and have any additional alternative approaches added.
+
+### The `adapt-symbol` attribute
 
 The intent of the `adapt-symbol` attribute is to link a _concept_ (for which the UA will render an appropriate symbol for the user) to some content (usually text) on the page.
 
 The value of the `adapt-symbol` attribute is a representation of a concept, which will be rendered as one or more symbols by the UA. There are several ways that the concepts may be encoded, which is the subject of current discussion.
 
-### Mapping concepts to symbols (in general)
+#### Mapping concepts to symbols (in general)
 
 There are a number of ways we may identify, or "key", concepts&mdash;some alternatives are discussed below.
 
@@ -146,17 +245,17 @@ Here are three examples of how the `adapt-symbol` attribute could be used.
     <img src="her-name.png" alt="שמה" adapt-symbol="15691, 14707"/>
     ```
 
-### Concept IDs: keying schemes
+#### Concept IDs: keying schemes
 
 There is [ongoing discussion on how the concepts should be expressed in the HTML markup in issue 240](https://github.com/w3c/adapt/issues/240). This section makes three suggestions.
 
-#### BCI concept IDs as attribute values
+##### BCI concept IDs as attribute values
 
 ***This keying scheme maps one integer (the BCI concept ID) to a concept.***
 
 BCI maintains a dictionry of concepts, with corresponding Bliss symbols, and written-language definitions.
 
-##### Advantages
+###### Advantages
 
 * Simple&mdash;provides a 1:1 mapping between concept and key that identifies the concept.
 
@@ -164,11 +263,11 @@ BCI maintains a dictionry of concepts, with corresponding Bliss symbols, and wri
 
 * Relatively minimal lag time between a concept addition/update and availability via authoring tools, or the W3C AAC Symbol Registry.
 
-##### Disadvantages
+###### Disadvantages
 
 * Allows us to only specify concepts available in the Bliss language. (But we can still map to any symbol set, based on those concepts.)
 
-#### Bliss characters' Unicode representations as attribute values
+##### Bliss characters' Unicode representations as attribute values
 
 ***This maps one or more representations of Bliss characters (symbols) to a concept.***
 
@@ -188,24 +287,23 @@ Instead of BCI concept IDs (integers), we could use:
 > [!NOTE]
 > Further details can be found in our comment on issue 240 (this comment only suggest the user of code points directly, though): <https://github.com/w3c/adapt/issues/240#issuecomment-2126679208>.
 
-##### Advantages
+###### Advantages
 
 * Based on an existing standard (Unicode).
 
-##### Disadvantages
+###### Disadvantages
 
 * Exposes the implementation details of Bliss to someone writing this markup.
 
   - As part of this, it's more complex than using atomic keys (such as BCI concept IDs): some concepts that would be represented by one BCI ID would need more than one Bliss character representation to identify them.
 
-
-##### Unknown factors
+###### Unknown factors
 
 * Unclear as to what the process for adding additional Bliss characters to Unicode would be.
 
 * The time between new concepts being added to Bliss, and them being available via Unicode would likely be significant, due to the release cadence of Unicode.
 
-### Multiple concepts per attribute value
+#### Multiple concepts per attribute value
 
 Though it is not expected to be used extensively, we have considered how multiple concepts may be referenced within one attribute value.
 
@@ -228,39 +326,9 @@ In this example, there are 4 concepts identified, via...
 > [!NOTE]
 > We want to maintain consitency with how other parts of the platform handle this&mdash;we're very-much open to using other delimiters if needed.
 
-### Looking up concepts
+#### Looking up concepts
 
 The content author needs to be able to find known concepts, and their associated identifier. This is addressed in the next section.
-
-## The W3C AAC Symbol Registry
-
-> [!NOTE]
-> We are planning to split this explainer off into a separate file, to avoid explainers that are too long.
-
-The registry brings BCI's dictionary of concepts into W3C space. Each record in the registry contains:
-
-* A uniquely-identifying key.
-
-* A description of the concept in a written language (e.g. English).
-
-* The Bliss symbol(s) that embody this concept in the Bliss language.
-
-The registry can be found at: https://www.w3.org/TR/aac-registry/
-
-> [!NOTE]
-> The registry's key for identifying concepts is presently the concepts' BCI concept ID (an integer). However, as discussed above, we are in discussions with potential implementers on whether the corresponding Bliss Unicode code point(s) for a given concept could be used instead.
-
-## Privacy considerations
-
-> [!NOTE]
-> This section is to be expanded.
-
-Because the rendering of symbols is expected to be done by injecting them into the HTML, the site could determine that the user is using symbols, and which symbol set is in use.
-
-## Considered alternatives
-
-> [!NOTE]
-> This section is to be added.
 
 ## Stakeholder feedback/opposition
 
