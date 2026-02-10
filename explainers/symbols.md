@@ -74,7 +74,7 @@ We're working closely with BCI on this approach, which is comprised of the follo
 
   The W3C AAC Symbol Registry provides the code points used to identify a given concept.
 
-* **Use of the `<ruby>` element for presentation&mdash;with an attribute to indicate this is a symbol.**
+* **Use of the `<ruby>` element for presentation&mdash;with a `lang=zbl` attribute to indicate this is a symbol.**
 
   The idea is that the browser will not display such elements by default, but will do so if the user has expressed a preference for symbols to be shown.
 
