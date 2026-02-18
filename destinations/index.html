@@ -17,7 +17,8 @@ table, th, td {
 	</head>
 	<body>
 		<section id="abstract">
-			<p>This document describes an approach that content authors can use to provide improved ease of navigation to website visitors.</p>
+			<p>This document describes an approach that content authors can use to provide improved ease of navigation to website visitors, particularly those facing accessibility barriers. It introduces the concept of "Discoverable Destinations", which are standardized machine readable names for common page types that User Agents can query to present navigation options in an accessible and consistent manner.</p>
+			<p>The approach uses HTML <code>&lt;link&gt;</code> elements with standardized <code>rel</code> attribute values to signpost common destinations such as help pages, accessibility statements, and login pages. This enables User Agents, assistive technologies, and AI agents to reliably discover and navigate to these destinations across different websites.</p>
 		</section>
 
 		<section id="sotd"></section>
@@ -28,7 +29,7 @@ table, th, td {
 This content, and the means of navigating around it, can be presented in
 almost any way, which makes for tailored and compelling experiences.
 However, whilst there are several conventions when it comes to
-navigation, this variability can pose challenges to certain people—and
+navigation, this variability can pose challenges to certain people, and
 user agents acting on their behalf.</p>
 <p>This best practices document aims to address the challenge of making sites more
 easily navigable for both people (particularly those facing
@@ -49,7 +50,7 @@ navigating sites.</p>
 <ul>
 <li><p>This includes mechanisms that can support clear signposting
 within a User Agent to "standard" or "common" areas of sites that users
-wish to visit—e.g. "log in", "products", or the site's accessibility
+wish to visit, such as "log in", "products", or the site's accessibility
 statement.</p></li>
 <li><p>This also includes supporting users and accessibility auditors in
 quickly discovering the accessibility statement for a site.</p></li>
@@ -68,8 +69,7 @@ displayed to the user.</p></li>
 <li><p>Specifying the interface within the UA (or UA extension) by which
 the user can navigate to supported well-known pages.</p></li>
 </ul>
-<p>Though detailed UI design is out of scope, an proof-of-concept UI for
-enumerating a site's discoverable destinations is depicted below.</p>
+<p>Though detailed UI design is out of scope, a proof of concept user interface for enumerating a site's discoverable destinations is shown below.</p>
 <figure><img src="../presentations/ac2024/ext02.png"
 alt="A fictional ACME Inc. home page, with the extension pop-up open, showing 6 buttons, each containing emoji and accompanying text names for the discoverable destinations offered by the site: home, accessibility statement, contact, help, log in, and products." />
 <figcaption>Example UI, via a browser extension running on a custom shopping site</figcaption>
@@ -87,7 +87,7 @@ alt="A fictional ACME Inc. home page, with the extension pop-up open, showing 6 
 href="https://www.w3.org/WAI/GL/task-forces/coga/">Cognitive and
 Learning Disabilities Accessibility Task Force</a>.</p>
 <div class="note">
-<p>This is not a complete list—we are consulting with COGA to update the
+<p>This is not a complete list. We are consulting with COGA to update the
 <a
 href="https://raw.githack.com/w3c/adapt/CR-content-2022-07-26/content/index.html#values-0">destinations
 that the WAI-Adapt TF inherited from COGA</a>.</p>
@@ -113,13 +113,13 @@ form)</p></li>
 </ul>
 
 <h3 id="technical-requirements">Technical requirements</h3>
-<p>Any approch that would solve these user needs must provide the
+<p>Any approach that addresses these user needs must provide the
 following.</p>
 <ol>
 <li><p>A way to represent each discoverable destination proposed
 above.</p></li>
 <li><p>A mechanism for discovering all discoverable destinations supported
-by a site—to be used when a UA first visits a site on behalf of the
+by a site. This mechanism is to be used when a UA first visits a site on behalf of the
 user. In order to do this efficiently, it must be possible to make this
 query in a single HTTP request. The results would be available to the
 user via the UI of the UA.</p></li>
@@ -137,13 +137,13 @@ user).</p></li>
 <li><p>Means to demarcate an element on the destination page that
 provides the destination content.</p></li>
 <li><p>A way to indicate the <em>kind</em> of content that the
-destination provides—e.g. people with cognitive disabilities may need to
+destination provides. For example, people with cognitive disabilities may need to
 get help from, or chat to, a human, over the phone, rather than a
 chatbot, or sending an email.</p></li>
 </ol>
 <div class=issue>
-<p>The last of these requirements—indicating the <em>kind</em> of
-content or support—is currently an open question, not addressed by the
+<p>The last of these requirements, indicating the <em>kind</em> of
+content or support, is currently an open question, not addressed by the
 proposed approach below, but may be addressed in a future iteration of
 this approach, or by a future WAI-Adapt TF project.</p>
 </div>
@@ -216,13 +216,14 @@ indicated by adding a <code>rel</code> value to the anchor.</p>
 </pre>
 </aside>
 
-<h3 id="demarcating-destination-content">Demarcating destination
-content</h3>
-<p>As discoverable destinations are normal links, they can make use of
-fragments to point to certain elements on the destination page.</p>
-<p>The content/UA/AT can then use this information (and the knowledge that the
-navigation was via the Discoverable Destination UI) to render the
-destination page in an appropriate way for the user.</p>
+<h3 id="demarcating-destination-content">Demarcating destination content</h3>
+<p>As discoverable destinations are normal links, they can make use of fragments to point to certain elements on the destination page.</p>
+<p>The content/UA/AT can then use this information (and the knowledge that the navigation was via the Discoverable Destination UI) to render the destination page in an appropriate way for the user. This may involve:</p>
+<ul>
+	<li><p>Highlighting the specific relevant part of the page.</p></li>
+	<li><p>Removing other elements from the rendering of the page to reduce cognitive load.</p></li>
+	<li><p>Providing additional context or guidance based on the destination type.</p></li>
+</ul>
 
 <h2 id="open-questions">Open Questions</h2>
 <div class=issue>
@@ -249,10 +250,87 @@ repetition</h3>
 </section>
 
 		<section>
-			<h2>Privacy and Security Considerations</h2>
-			<div class=issue>
-				<p>We have not completed this section yet.</p>
+			<h2>Agentic AI and Machine Navigation</h2>
+			<p>Agentic AI systems are autonomous software agents that can plan, reason, and execute complex tasks on behalf of users. These systems represent a significant development in automation, capable of understanding natural language requests and breaking them down into actionable steps. For users with disabilities, these AI agents can serve as powerful assistive technologies, helping navigate digital environments and complete tasks that might otherwise be challenging.</p>
+
+			<h3 id="from-human-to-machine-accessibility">From Human Accessibility to Machine Assisted Accessibility</h3>
+			<p>Discoverable Destinations were designed to help humans with accessibility needs find important pages quickly. This same semantic approach also serves AI agents acting as assistive technologies. What helps humans with disabilities navigate also enables machines to provide consistent assistance.</p>
+			<p>The semantic identifiers provided by Discoverable Destinations work consistently across all compliant websites. Rather than AI agents searching for contact information using fragile selectors such as "find the element with class <code>.contact-info</code>", they can use semantic identifiers to navigate to the <code>contact</code> destination. This approach transforms brittle technical navigation into reliable semantic discovery.</p>
+
+			<h3 id="illustrative-use-cases">Illustrative Use Cases</h3>
+			<p>The following examples illustrate how AI agents might use Discoverable Destinations to assist users with disabilities:</p>
+			<ul>
+				<li><p>An accessibility compliance assistant could help a disability rights advocate check accessibility statements across multiple partner websites. The AI agent would systematically discover and analyse <code>accessibility-statement</code> destinations across all sites, ensuring comprehensive accessibility monitoring without the need for manual navigation.</p></li>
+				<li><p>A cognitive support assistant could help a user with cognitive disabilities who is facing issues with multiple service providers. The AI agent would discover <code>contact</code> and <code>help</code> destinations across different platforms, presenting a comprehensive support landscape in a simplified, consistent format.</p></li>
+				<li><p>A motor accessibility aid could assist a user with motor impairments who wishes to update their profile information across platforms but finds repeated navigation challenging. The AI agent would navigate to relevant destinations on each site, then guide the user through the updates with full context and control, reducing the physical navigation burden.</p></li>
+			</ul>
+			<p>These scenarios share a common pattern: AI agents handle the discovery and navigation complexity, while humans maintain control over sensitive decisions and actions.</p>
+
+			<h3 id="scope-and-limitations">Scope and Limitations</h3>
+			<p>Discoverable Destinations are well suited for content discovery, such as finding specific types of pages including help, contact, and accessibility statements. They also support information extraction from destination pages and provide consistent navigation patterns across different websites.</p>
+			<p>However, certain tasks require additional solutions beyond Discoverable Destinations:</p>
+			<ul>
+				<li><p>Complex actions involving workflows such as password changes, account modifications, or transaction processing may vary dramatically between sites. Discoverable Destinations can navigate to relevant areas, but the actual workflows may require additional tools or human involvement.</p></li>
+				<li><p>Authenticated operations requiring user specific authentication and authorisation need specialised protocols and often human involvement for security.</p></li>
+			</ul>
+			<p>For complex scenarios, a layered approach works best: Discoverable Destinations provide navigation to relevant areas, APIs are used where available for sensitive operations, and human oversight is included for sensitive or complex tasks.</p>
+
+			<h3 id="integration-patterns">Integration Patterns</h3>
+			<p>AI agents can integrate with Discoverable Destinations through various architectural patterns. Two primary models are relevant for deploying tools that leverage semantic destinations:</p>
+			<ul>
+				<li><p>A server side model where tools run independently of the user's browser and make direct HTTP requests to target websites. This approach is suitable for public data retrieval but has no access to the user's browser session or authentication state.</p></li>
+				<li><p>A browser based model, such as <a href="https://github.com/webmachinelearning/webmcp">WebMCP</a>, where the web page itself can expose tools to AI agents. This approach operates within the user's existing session with full access to authentication state and page context, making it better suited for authenticated operations and personalised content.</p></li>
+			</ul>
+			<p>The choice of integration pattern depends on the specific use case. For scenarios involving authenticated operations, personalised content, or complex user specific workflows, a browser based approach is recommended. For public data scenarios, a server side approach may be sufficient.</p>
+		</section>
+
+		<section>
+			<h2>Requesting Additional Destination Types</h2>
+			<div class="issue">
+				<p>This section is a placeholder. The process for requesting standardisation of additional destination types is to be defined.</p>
 			</div>
+			<p>The set of standardised destination types may evolve over time as new common navigation patterns emerge. Parties interested in proposing additional destination types should consider the following:</p>
+			<ul>
+				<li><p>The proposed destination type should address a common navigation need that is shared across many websites.</p></li>
+				<li><p>The destination type should provide clear accessibility benefits, particularly for users facing cognitive accessibility barriers.</p></li>
+				<li><p>The destination type should be sufficiently general to apply across different industries and website types.</p></li>
+			</ul>
+			<div class="note">
+				<p>The formal governance process for proposing, reviewing, and adding new destination types to the standard is under development.</p>
+			</div>
+		</section>
+
+		<section>
+			<h2>Privacy and Security Considerations</h2>
+			<p>The Discoverable Destinations approach has been designed with privacy and security in mind.</p>
+
+			<h3 id="privacy-considerations">Privacy Considerations</h3>
+			<p>Discoverable Destinations use standard HTML <code>&lt;link&gt;</code> elements that are already part of web pages. No additional user data is collected or transmitted beyond normal web browsing. The approach does not introduce any new tracking mechanisms, as User Agents discover destinations by parsing existing page content. Users retain full control over when and how they navigate to discovered destinations through the User Agent interface.</p>
+
+			<h3 id="security-considerations">Security Considerations</h3>
+			<p>All navigation uses standard HTTP and HTTPS requests subject to normal browser security policies. Destinations are typically within the same origin, which reduces cross origin security concerns. Content authors are responsible for ensuring that the <code>href</code> values in their <code>&lt;link&gt;</code> elements point to legitimate, secure pages.</p>
+
+			<h3 id="ai-agent-considerations">Considerations for AI Agent Integration</h3>
+			<p>When AI agents use Discoverable Destinations on behalf of users, certain considerations apply. For sensitive operations such as authentication or account changes, human oversight should be maintained. Discoverable Destinations are designed for navigation and content discovery, not for executing complex authenticated operations. The primary approach for sensitive operations should be human in the loop, where AI agents navigate to relevant pages using semantic destinations, extract and present available options to users, then hand control to humans for actual execution.</p>
+		</section>
+
+		<section class="informative">
+			<h2>References</h2>
+
+			<h3 id="foundational-work">Foundational and Related Work</h3>
+
+			<h4 id="ref-link-types">Link Types/Relations</h4>
+			<ul>
+				<li><a href="https://html.spec.whatwg.org/multipage/links.html#linkTypes">HTML Standard: Link types</a></li>
+				<li><a href="https://html.spec.whatwg.org/multipage/links.html#other-link-types">Link types managed by the Microformats project</a></li>
+				<li><a href="https://www.iana.org/assignments/link-relations/link-relations.xhtml">Link types managed by IANA</a></li>
+			</ul>
+
+			<h4 id="ref-ai-integration">AI Integration References</h4>
+			<ul>
+				<li><a href="https://github.com/modelcontextprotocol/specification">Model Context Protocol (MCP) Specification</a></li>
+				<li><a href="https://github.com/webmachinelearning/webmcp">WebMCP</a></li>
+			</ul>
 		</section>
 
 		<div data-include="../common/acknowledgements.html" data-oninclude="fixIncludes" data-include-replace="true">Acknowledgements placeholder</div>
