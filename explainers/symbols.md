@@ -104,7 +104,7 @@ Please note the following limitations:
 
 * Providing translation&mdash;the concepts are specified by the author to match the language of the page's content; if the page content were to be translated, the concepts would need to be translated too.
 
-* Providing an exhaustive list of concepts (the [W3C AAC Symbol Registry](#the-w3c-aac-symbol-registry), described below, aims to do this).
+* Providing a way to define new concepts (the [W3C AAC Symbol Registry](#the-w3c-aac-symbol-registry), described below, provides a list of available concepts).
 
 > [!CAUTION]
 > The last point here contradicts the inclusion of the registry section in this document; perhaps a better way to explain it would be to say that we're not relying on _content authors_ to provide an exhaustive list of concepts&mdash;rather that we have one, from Bliss, in the form of the registry.
