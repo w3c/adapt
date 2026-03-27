@@ -319,7 +319,7 @@ Semantic Web Tools expose a standardized set of capabilities that work uniformly
 
 **Workflow 2 - Information Extraction**: User wants specific information (e.g., "get the customer service phone number")
 
-**Workflow 3 (Intra-page Navigation)**: User wants to reach a specific section within a destination page (e.g., "take me to account management help")
+**Workflow 3 - Intra-page Navigation**: User wants to reach a specific section within a destination page (e.g., "take me to account management help")
 
 ```
 Tool: discoverDestinations
