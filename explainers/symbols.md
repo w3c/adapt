@@ -107,6 +107,8 @@ Please note the following limitations:
 * Providing a way to define new concepts (the [W3C AAC Symbol Registry](#the-w3c-aac-symbol-registry), described below, provides a list of available concepts).
 
 > [!CAUTION]
+> The first point here is no longer the case as the font is the mechanism that does the mapping to the appropriate symbol set for the user. Symbol set providers are expected to provide fonts for their symbol sets containing these mappings. An online tool could be created for easy creation of these fonts.
+> 
 > The last point here contradicts the inclusion of the registry section in this document; perhaps a better way to explain it would be to say that we're not relying on _content authors_ to provide an exhaustive list of concepts&mdash;rather that we have one, from Bliss, in the form of the registry.
 
 ## Important notes on symbols and rendering
