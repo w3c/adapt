@@ -101,7 +101,6 @@ Please note the following limitations:
 ## Out of scope
 
 * Mapping from the concepts to the appropriate symbols for the user, and rendering those symbols (this is left to the UA, or an extension).
-
 * Providing translation&mdash;the concepts are specified by the author to match the language of the page's content; if the page content were to be translated, the concepts would need to be translated too.
 
 * Providing a way to define new concepts (the [W3C AAC Symbol Registry](#the-w3c-aac-symbol-registry), described below, provides a list of available concepts).
