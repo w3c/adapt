@@ -79,13 +79,14 @@ The beauty of this approach lies in its foundation, the [Discoverable Destinatio
 
 ## Technical Foundation
 
-The architecture is elegantly simple, built on three core capabilities:
+The architecture is elegantly simple, built on following core capabilities:
 
 ### Core Web Tools Capabilities
 
 * **Destination Discovery**: Enumerating all available Discoverable Destinations for a given site / page 
 * **Semantic Navigation**: Navigating to specific destinations using semantic identifiers rather than site-specific selectors
 * **Content Retrieval**: Fetching page content from destination URLs and delivering it to LLMs for intelligent processing
+* **Intra-page Navigation via ARIA Landmarks**: Discovering available [ARIA landmark roles](https://www.w3.org/TR/wai-aria-1.2/#landmark_roles) on a destination page and navigating the user's browser to a specific labelled section
 
 **Benefits of Semantic Approach:**
 - Single set of capabilities works across all compliant websites
@@ -113,6 +114,7 @@ The system operates through a clear separation of concerns between the LLM (reas
 * **Navigation**: Converting semantic destination names to URLs and performing HTTP requests
 * **Content Retrieval**: Fetching raw page content and passing it to LLMs for processing
 * **Error Reporting**: Detecting and reporting technical failures (network errors, missing pages, authentication failures) to the LLM for decision-making
+* **Landmark Discovery and Navigation**: Listing available ARIA landmark labels on the current page and scrolling the user's browser to a specific labelled section
 
 ### Content Processing Strategy
 
@@ -122,6 +124,29 @@ Semantic Web Tools handle only the technical aspects of content retrieval, while
 - **LLMs**: Extract, clean, structure, and interpret the content based on specific task requirements
 
 This division ensures that intelligent processing of unstructured web content is handled by LLMs, which can adapt to different page layouts, content types, and extraction requirements. Technical issues like rate limiting, authentication failures, or access restrictions are reported to the LLM, which decides how to respond (retry, use alternative destinations, request human intervention, etc.).
+
+### Leveraging ARIA Landmarks for Intra-page Navigation
+
+Discoverable Destinations solve the *inter-page* navigation problem: finding and reaching the right page. But users sometimes need to reach a specific *section* within a destination page. For example: "take me to the account management section of xyz's help page."
+
+For **content extraction** tasks (e.g. "what is the billing support phone number?"), ARIA landmarks are not essential. LLMs are capable of processing full page content and extracting the relevant information from raw HTML. Using the `<main>` element (or `role="main"`) to filter out navigation bars, footers, and advertisements etc. before passing content to the LLM can reduce noise and token cost, but this is a practical optimisation, not a requirement.
+
+For **intra-page navigation** tasks (e.g. "take me to account management help"), ARIA landmarks are genuinely valuable. When the user asks to be *taken to* a specific section, the agent needs a reliable DOM target to scroll or focus the browser. The LLM can *understand* where "Account Management" is in the HTML, but it cannot *scroll the browser* there without a concrete element to target. Labelled [`region`](https://www.w3.org/TR/wai-aria-1.2/#region) landmarks provide exactly this: standardised, semantic anchors that the tool can use to navigate the user's view to the right part of the page.
+
+This intra-page navigation works as follows:
+
+1. The user asks to be taken to a specific section of a destination page (e.g. "take me to account management help on xyz.com").
+2. The LLM calls `navigateToDestination` to reach the `help` page.
+3. The LLM calls `discoverLandmarks` with the destination URL to retrieve the list of available landmark labels on the page (e.g. "Getting Started", "Account Management", "Billing Support").
+4. The LLM identifies which landmark best matches the user's request and calls `navigateToLandmark` with the destination URL and that label (e.g. `"Account Management"`).
+5. The tool locates the matching labelled `region` landmark in the DOM and scrolls or focuses the browser to that element.
+6. The user sees the relevant section of the page.
+
+This is primarily relevant in the **browser-based (WebMCP) model**, where the tool has direct DOM access to scroll and focus the user's browser. In a server-side model, intra-page navigation is not applicable since there is no browser to control.
+
+The [`navigation`](https://www.w3.org/TR/wai-aria-1.2/#navigation) landmark can also help agents discover secondary navigation paths on a page, revealing links the agent can follow on the user's behalf.
+
+Content authors are encouraged to use the `<main>` element to wrap their primary destination content, and to label distinct content regions with `region` landmarks. This benefits both human users of assistive technologies and AI agents acting on their behalf.
 
 ## Real-World Applications
 
@@ -294,6 +319,8 @@ Semantic Web Tools expose a standardized set of capabilities that work uniformly
 
 **Workflow 2 - Information Extraction**: User wants specific information (e.g., "get the customer service phone number")
 
+**Workflow 3 - Intra-page Navigation**: User wants to reach a specific section within a destination page (e.g., "take me to account management help")
+
 ```
 Tool: discoverDestinations
 Description: Discover available semantic destinations on a page
@@ -309,13 +336,29 @@ Parameters:
 Returns: Navigation result with destination URL
 
 Tool: fetchContentFromDestination
-Description: Navigate to a semantic destination and retrieve page content for LLM processing
+Description: Navigate to a semantic destination and retrieve page content for LLM processing. Prioritises content within the <main> landmark when present, filtering out peripheral page elements.
 Parameters:
 - url (string): Base page URL containing the destination reference  
 - destinationType (string): Destination type (e.g., contact, help, accessibility-statement)
-Returns: Navigation result with destination URL and extracted content for LLM analysis
+Returns: Navigation result with destination URL and extracted page content for LLM analysis
+
+Tool: discoverLandmarks
+Description: Discover available ARIA landmark labels on the current page. Only applicable in browser-based (WebMCP) deployments.
+Parameters:
+- url (string): URL of the page to discover landmarks on (typically the destination URL returned by a previous navigateToDestination call)
+Returns: List of landmark roles and their labels (e.g. [{role: "region", label: "Account Management"}, {role: "navigation", label: "Main Menu"}])
+
+Tool: navigateToLandmark
+Description: Navigate the user's browser to a specific labelled landmark region on the current page. Only applicable in browser-based (WebMCP) deployments.
+Parameters:
+- url (string): URL of the page containing the landmark
+- landmarkLabel (string): Label of the landmark region to scroll/focus to (e.g., "Account Management", "Billing Support")
+Returns: Success/failure indication and the landmark element identifier
 ```
 
+> **Note:** For content extraction tasks, LLMs can process full page content directly and ARIA landmarks are not essential. Using `<main>` to filter peripheral content is a practical optimisation that reduces noise and token cost. For intra-page navigation tasks (where the user wants to be *taken to* a specific section), the LLM first calls `discoverLandmarks` with the destination URL to learn what sections are available, then calls `navigateToLandmark` to scroll the user's browser to the matching labelled [ARIA landmark](https://www.w3.org/TR/wai-aria-1.2/#landmark_roles) region.
+
 **Usage Examples:**
-- **Direct Navigation**: `navigateToDestination` for "take me to the contact page"
-- **Information Extraction**: `fetchContentFromDestination` for "get the customer service phone number" (LLM processes the content to extract specific information)
+* **Inter-page Navigation**: `navigateToDestination` for "take me to the help page"
+* **Intra-page Navigation**: `navigateToDestination` to reach the help page, then `discoverLandmarks(url)` to list available sections, then `navigateToLandmark(url, "Account Management")` for "take me to account management help"
+* **Information Extraction**: `fetchContentFromDestination` for "what is the customer service phone number?" (LLM processes the returned content to extract the answer)

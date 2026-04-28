@@ -218,6 +218,8 @@ indicated by adding a <code>rel</code> value to the anchor.</p>
 
 <h3 id="demarcating-destination-content">Demarcating destination content</h3>
 <p>As discoverable destinations are normal links, they can make use of fragments to point to certain elements on the destination page.</p>
+<p>In addition to fragment identifiers, <a href="https://www.w3.org/TR/wai-aria-1.2/#landmark_roles">ARIA landmark roles</a> provide a complementary mechanism for both identifying and navigating to content on a destination page. In particular, the <code>&lt;main&gt;</code> element (or <code>role="main"</code>) demarcates the principal content of the page. When a discoverable destination link does not include a fragment identifier, User Agents and assistive technologies should treat the <code>&lt;main&gt;</code> element as the default content boundary for the destination. Content authors are encouraged to ensure that destination pages use the <code>&lt;main&gt;</code> element to wrap their primary destination content.</p>
+<p>Landmarks also support navigation within a page. A destination page may contain multiple labelled <code>region</code> landmarks, each representing a distinct content area. User Agents and assistive technologies can enumerate these landmarks and present them to the user, or navigate directly to a specific region. For example, a help destination page with regions labelled "Getting Started", "Account Settings", and "Billing Support" would allow the user or their agent to jump directly to the relevant section.</p>
 <p>The content/UA/AT can then use this information (and the knowledge that the navigation was via the Discoverable Destination UI) to render the destination page in an appropriate way for the user. This may involve:</p>
 <ul>
 	<li><p>Highlighting the specific relevant part of the page.</p></li>
@@ -256,6 +258,14 @@ repetition</h3>
 			<h3 id="from-human-to-machine-accessibility">From Human Accessibility to Machine Assisted Accessibility</h3>
 			<p>Discoverable Destinations were designed to help humans with accessibility needs find important pages quickly. This same semantic approach also serves AI agents acting as assistive technologies. What helps humans with disabilities navigate also enables machines to provide consistent assistance.</p>
 			<p>The semantic identifiers provided by Discoverable Destinations work consistently across all compliant websites. Rather than AI agents searching for contact information using fragile selectors such as "find the element with class <code>.contact-info</code>", they can use semantic identifiers to navigate to the <code>contact</code> destination. This approach transforms brittle technical navigation into reliable semantic discovery.</p>
+
+			<h3 id="leveraging-aria-landmarks">Leveraging ARIA Landmarks for Intra-page Navigation</h3>
+			<p>Discoverable Destinations address <em>inter-page</em> navigation: finding and reaching the right page on a site. Users sometimes also need to reach a specific <em>section</em> within a destination page. For example: "take me to the account management section of the help page."</p>
+			<p>For <strong>content extraction</strong> tasks, where an AI agent retrieves information from a destination page on the user's behalf, <a href="https://www.w3.org/TR/wai-aria-1.2/#landmark_roles">ARIA landmarks</a> are not essential. LLMs are capable of processing full page content and extracting relevant information from raw HTML. Using the <code>&lt;main&gt;</code> element (or <code>role="main"</code>) to filter out navigation bars, footers, and advertisements before passing content to the LLM can reduce noise and token cost, but this is a practical optimisation, not a requirement.</p>
+			<p>For <strong>intra-page navigation</strong> tasks, where the user asks to be <em>taken to</em> a specific section of a page, ARIA landmarks are genuinely valuable. The AI agent can understand where a section is in the HTML, but it cannot scroll or focus the user's browser to that section without a concrete DOM target. Labelled <a href="https://www.w3.org/TR/wai-aria-1.2/#region"><code>region</code></a> landmarks provide exactly this: standardised, semantic anchors that a tool can use to navigate the user's view to the right part of the page.</p>
+			<p>For example, if a user asks to be taken to "account management help" and the help destination page contains labelled regions for "Getting Started", "Account Management", and "Billing Support", the AI agent first discovers the available landmark labels on the page, identifies the best match for the user's request, and then directs the tool to scroll the user's browser to the "Account Management" region. This is primarily relevant in browser-based integration models where the tool has direct access to the page DOM. In a server-side model, intra-page navigation is not applicable since there is no browser to control.</p>
+			<p>The <a href="https://www.w3.org/TR/wai-aria-1.2/#navigation"><code>navigation</code></a> landmark can also help agents discover secondary navigation paths on a page, revealing links the agent can follow on the user's behalf.</p>
+			<p>Content authors are encouraged to use the <code>&lt;main&gt;</code> element to wrap primary destination content, and to label distinct content regions with <code>region</code> landmarks. This benefits both human users of assistive technologies and AI agents acting on their behalf.</p>
 
 			<h3 id="illustrative-use-cases">Illustrative Use Cases</h3>
 			<p>The following examples illustrate how AI agents might use Discoverable Destinations to assist users with disabilities:</p>
@@ -324,6 +334,11 @@ repetition</h3>
 				<li><a href="https://html.spec.whatwg.org/multipage/links.html#linkTypes">HTML Standard: Link types</a></li>
 				<li><a href="https://html.spec.whatwg.org/multipage/links.html#other-link-types">Link types managed by the Microformats project</a></li>
 				<li><a href="https://www.iana.org/assignments/link-relations/link-relations.xhtml">Link types managed by IANA</a></li>
+			</ul>
+
+			<h4 id="ref-aria-landmarks">ARIA Landmarks</h4>
+			<ul>
+				<li><a href="https://www.w3.org/TR/wai-aria-1.2/#landmark_roles">WAI-ARIA 1.2: Landmark Roles</a></li>
 			</ul>
 
 			<h4 id="ref-ai-integration">AI Integration References</h4>
