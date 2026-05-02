@@ -78,9 +78,6 @@ alt="A fictional ACME Inc. home page, with the extension pop-up open, showing 6 
 
 			<section>
 				<h2>Use Cases and Requirements</h2>
-				<div class=issue>
-				<p>This section needs some work.</p>
-				</div>
 
 <h3 id="user-research">User research</h3>
 <p>Our proposed "discoverable destinations" come from work done by the <a
@@ -93,7 +90,7 @@ href="https://raw.githack.com/w3c/adapt/CR-content-2022-07-26/content/index.html
 that the WAI-Adapt TF inherited from COGA</a>.</p>
 </div>
 <p>An illustrative set of proposed discoverable destinations is as
-follows...</p>
+follows.</p>
 <ul>
 <li><p><code>accessibility-statement</code> (for the site's <a
 href="https://www.w3.org/WAI/planning/statements/">accessibility
@@ -111,6 +108,25 @@ href="https://www.w3.org/TR/wai-aria-1.2/#search"><code>search</code>
 landmark region</a> would be used on any page that contains a search
 form)</p></li>
 </ul>
+
+<h3 id="use-cases">Use Cases</h3>
+<p>The following use cases illustrate the kinds of navigation challenges that Discoverable Destinations are intended to address.</p>
+
+<h4 id="use-case-accessibility-audit">Accessibility Statement Discovery</h4>
+<p>An accessibility auditor is reviewing a portfolio of websites on behalf of a disability rights organization. Each site structures its accessibility statement differently, some link to it from the footer, others from the main navigation, and others only from an internal policy page. The auditor spends considerable time on each site searching for the relevant page before the audit can begin.</p>
+<p>With Discoverable Destinations, a User Agent or assistive technology can immediately locate the <code>accessibility-statement</code> destination on any compliant site and present a direct link to the auditor, regardless of where the site has chosen to place it in its navigation structure.</p>
+
+<h4 id="use-case-cognitive-navigation">Navigation Support for Users with Cognitive Disabilities</h4>
+<p>A user with a cognitive disability wants to log in to their account on a retail website. The site's primary navigation does not label the login entry point in a way the user recognises, and the page layout makes it difficult to locate. The user's browser extension, which presents a simplified navigation panel, cannot automatically locate the login page because no standard signposting exists.</p>
+<p>With Discoverable Destinations, the browser extension can read the <code>log-in</code> destination from the page's <code>&lt;head&gt;</code> and present a clearly labelled button in its simplified interface, giving the user a direct and reliable path to the page they need.</p>
+
+<h4 id="use-case-ai-agent">AI Agent Assistance</h4>
+<p>A user with motor impairments uses an AI-powered assistive agent to help navigate websites and complete common tasks. The user asks the agent to "find the help page for my internet provider." Without semantic signposting, the agent must attempt to locate the help page by guessing at URL structures or parsing navigation HTML, which is brittle and may fail when the site is updated.</p>
+<p>With Discoverable Destinations, the agent can query the <code>help</code> destination directly from the site's page headers, retrieve the correct URL in a single step, and navigate the user there reliably, regardless of how the site has structured its navigation menus.</p>
+
+<h4 id="use-case-password-change">Password Change Assistance</h4>
+<p>A password manager application wants to help users navigate directly to the password change page on any website, consistent with the <a href="https://www.w3.org/TR/change-password-url/">Well-Known URL for Changing Passwords</a> specification. On many sites, the password change page is buried several levels deep within account settings, and its location varies across sites.</p>
+<p>With Discoverable Destinations, the password manager can use the <code>change-password</code> destination to locate the correct page directly, without the need for site-specific integration or manual maintenance of URL mappings.</p>
 
 <h3 id="technical-requirements">Technical requirements</h3>
 <p>Any approach that addresses these user needs must provide the
@@ -228,27 +244,40 @@ indicated by adding a <code>rel</code> value to the anchor.</p>
 </ul>
 
 <h2 id="open-questions">Open Questions</h2>
-<div class=issue>
-<p>The sub-sections here should be promoted, and match the numbers of the corresponding technical requirements above. Some requirements should be added to that list in order to provide the justification for those requirements being addressed in this section.</p>
-</div>
 <h3 id="indicating-the-kind-of-content">Indicating the <em>kind</em> of
 content</h3>
+<p>The current approach identifies <em>where</em> a destination is located but does not convey <em>what kind</em> of support or content it provides. This distinction is important for users with cognitive disabilities who may require a specific mode of interaction. For example, a user may need to speak to a human being over the phone rather than engage with a chatbot or submit a form by email.</p>
+<p>Several possible approaches are under consideration:</p>
+<ul>
+<li><p>Extending the <code>rel</code> value vocabulary to include more specific destination subtypes (for example, <code>help-human</code> or <code>help-chat</code>). This approach is specific and directly discoverable by User Agents, but risks becoming unwieldy as the number of content kinds grows.</p></li>
+<li><p>Using an additional attribute or a companion <code>&lt;meta&gt;</code> element alongside the <code>&lt;link&gt;</code> element to annotate the kind of support offered, keeping the destination identifier stable.</p></li>
+<li><p>Deferring this concern to the destination page itself, where structured data markup could describe the available support types. This places the burden on page authors and requires User Agents to fetch and parse the destination page before presenting options to the user.</p></li>
+</ul>
 <div class="issue">
-<p>As above, COGA need that we are not yet addressing.</p>
+<p>We still need to find reasonable resolution for above problem. We may also delay the resolution till next iteration</p>
 </div>
+
 <h3 id="discoverability-and-repetition">Discoverability and
 repetition</h3>
-<div class="issue">
-<p>This is a work-in-progress</p>
-</div>
-<h3 id="demarcating-sub-sites">Demarcating sub-sites</h3>
-<div class="issue">
-<p>This is a work-in-progress</p>
-</div>
+<p>The current approach requires all <code>&lt;link&gt;</code> destination elements to be repeated in the <code>&lt;head&gt;</code> of every page on the site. This has the advantage of simplicity, a User Agent can read the available destinations from the current page without making any additional HTTP requests. However, it introduces authoring overhead and requires every page to be updated whenever a destination URL changes.</p>
+<p><strong>The Task Force has agreed to adopt the <code>&lt;link&gt;</code> element approach for the first iteration of this specification.</strong> This decision reflects that the approach has a low entry barrier, as it builds on existing, well-understood HTML mechanisms that content authors and User Agents already support, requires no new infrastructure, and can be incrementally adopted. The per-page repetition, while an authoring overhead, can be managed in practice through CMS templates.</p>
+<p>The following questions remain open for future iterations:</p>
 <ul>
-<li><p>Semantically</p></li>
-<li><p>UI-wise</p></li>
+<li><p>Should there be a single canonical discovery endpoint, such as a well-known URI, that a User Agent can consult once per origin rather than reading destinations from each individual page? This would reduce per-page overhead but would require an additional HTTP request on first visit to a site.</p></li>
+<li><p>If a centralized endpoint is provided, how should per-page and per-origin destination declarations be reconciled when they differ? For instance, a sub-site may legitimately need to override destinations declared at the root level.</p></li>
+<li><p>What caching expectations should apply to destination declarations, both in the per-page <code>&lt;link&gt;</code> approach and in any centralized discovery document?</p></li>
 </ul>
+<p>The <a href="https://www.rfc-editor.org/rfc/rfc9264">Linksets</a> format offers one possible path toward centralized discovery and may be revisited in a subsequent iteration.</p>
+
+<h3 id="demarcating-sub-sites">Demarcating sub-sites</h3>
+<p>A site hosted at a single origin may contain functionally distinct sub-sites. For example, a hotel website might host a main booking section, a restaurant section, and a gym section, each with its own set of relevant destinations.</p>
+<p>The <code>&lt;link&gt;</code> element approach handles this naturally. Because every page carries its own <code>&lt;link&gt;</code> declarations, each sub-site simply includes the destinations relevant to that sub-site on its pages. The User Agent always reads the destinations from the current page, so:</p>
+<ul>
+<li><p><strong>Scope is implicit and automatic.</strong> When the user is on a restaurant sub-site page, that page's <code>&lt;link&gt;</code> elements define the applicable destinations. No boundary detection or URL prefix matching is required.</p></li>
+<li><p><strong>Overriding destinations is straightforward.</strong> A sub-site page that declares a different <code>contact</code> destination than the root site will naturally present the sub-site's destination to the User Agent, since the User Agent always uses the current page's declarations.</p></li>
+<li><p><strong>No additional authoring mechanism is needed.</strong> Content authors control sub-site scoping by controlling which <code>&lt;link&gt;</code> elements appear on each set of pages, typically managed through their CMS templates.</p></li>
+</ul>
+<p>The Task Force considers sub-site demarcation to be resolved by the per-page <code>&lt;link&gt;</code> approach.</p>
 </section>
 
 		<section>
@@ -296,18 +325,18 @@ repetition</h3>
 
 		<section>
 			<h2>Requesting Additional Destination Types</h2>
-			<div class="issue">
-				<p>This section is a placeholder. The process for requesting standardisation of additional destination types is to be defined.</p>
-			</div>
-			<p>The set of standardised destination types may evolve over time as new common navigation patterns emerge. Parties interested in proposing additional destination types should consider the following:</p>
+			<p>The set of standardised destination types may evolve over time as new common navigation patterns emerge and as new user needs are identified. The current set of destinations reflects the priorities identified by the COGA TF at the time of publication, but it is not exhaustive.</p>
+			<p>Parties interested in proposing additional destination types should consider the following criteria:</p>
 			<ul>
-				<li><p>The proposed destination type should address a common navigation need that is shared across many websites.</p></li>
+				<li><p>The proposed destination type should address a common navigation need that is shared across many websites, not a need specific to a particular industry or platform.</p></li>
 				<li><p>The destination type should provide clear accessibility benefits, particularly for users facing cognitive accessibility barriers.</p></li>
-				<li><p>The destination type should be sufficiently general to apply across different industries and website types.</p></li>
+				<li><p>The destination type should be sufficiently general to apply across different industries and website types. Where a need is specific to a particular domain, it may be more appropriate to address it through domain-specific conventions rather than a standardised destination type.</p></li>
+				<li><p>The destination type should not duplicate an existing destination type or overlap significantly with one already in the standard.</p></li>
 			</ul>
 			<div class="note">
-				<p>The formal governance process for proposing, reviewing, and adding new destination types to the standard is under development.</p>
+				<p>The formal governance process for proposing, reviewing, and adding new destination types to the standard is under development. Interested parties are encouraged to raise proposals as issues in the <a href="https://github.com/w3c/adapt/issues">WAI-Adapt GitHub repository</a> for discussion by the Task Force.</p>
 			</div>
+			<p>For agentic AI use cases specifically, additional destination types may be beneficial in contexts where AI agents need reliable access to common site areas that are not yet covered by the current set. For example, account settings pages and accessibility preference pages. Proposals for such additions should follow the criteria above and be raised with the Task Force for review.</p>
 		</section>
 
 		<section>
@@ -316,12 +345,14 @@ repetition</h3>
 
 			<h3 id="privacy-considerations">Privacy Considerations</h3>
 			<p>Discoverable Destinations use standard HTML <code>&lt;link&gt;</code> elements that are already part of web pages. No additional user data is collected or transmitted beyond normal web browsing. The approach does not introduce any new tracking mechanisms, as User Agents discover destinations by parsing existing page content. Users retain full control over when and how they navigate to discovered destinations through the User Agent interface.</p>
+			<p>A User Agent that exposes a destination list to the user reveals which discoverable destinations a site supports. Since this information is already present in the page's <code>&lt;head&gt;</code> and therefore visible to any party that loads the page, no new information is disclosed by processing or presenting it.</p>
 
 			<h3 id="security-considerations">Security Considerations</h3>
-			<p>All navigation uses standard HTTP and HTTPS requests subject to normal browser security policies. Destinations are typically within the same origin, which reduces cross origin security concerns. Content authors are responsible for ensuring that the <code>href</code> values in their <code>&lt;link&gt;</code> elements point to legitimate, secure pages.</p>
+			<p>All navigation uses standard HTTP and HTTPS requests subject to normal browser security policies. Destinations are typically within the same origin, which reduces cross-origin security concerns. Content authors are responsible for ensuring that the <code>href</code> values in their <code>&lt;link&gt;</code> elements point to legitimate, secure pages under their control.</p>
+			<p>User Agents and extensions that implement a discoverable destination interface should validate that destination URLs share the same origin as the page from which they were discovered. Where a cross-origin destination URL is present, User Agents should present the full URL to the user before navigating, to support informed decision-making.</p>
 
 			<h3 id="ai-agent-considerations">Considerations for AI Agent Integration</h3>
-			<p>When AI agents use Discoverable Destinations on behalf of users, certain considerations apply. For sensitive operations such as authentication or account changes, human oversight should be maintained. Discoverable Destinations are designed for navigation and content discovery, not for executing complex authenticated operations. The primary approach for sensitive operations should be human in the loop, where AI agents navigate to relevant pages using semantic destinations, extract and present available options to users, then hand control to humans for actual execution.</p>
+			<p>When AI agents use Discoverable Destinations on behalf of users, the same privacy and security considerations apply as for human users. Additionally, agents should not aggregate or store destination metadata in ways that could be used to profile users' browsing patterns across sites. For sensitive operations such as authentication or account changes, human oversight should be maintained. Discoverable Destinations are designed for navigation and content discovery, not for executing complex authenticated operations. The primary approach for sensitive operations should be human-in-the-loop, where AI agents navigate to relevant pages using semantic destinations, extract and present available options to users, then hand control to humans for actual execution.</p>
 		</section>
 
 		<section class="informative">
@@ -329,7 +360,7 @@ repetition</h3>
 
 			<h3 id="foundational-work">Foundational and Related Work</h3>
 
-			<h4 id="ref-link-types">Link Types/Relations</h4>
+			<h4 id="ref-link-types">Link Types and Relations</h4>
 			<ul>
 				<li><a href="https://html.spec.whatwg.org/multipage/links.html#linkTypes">HTML Standard: Link types</a></li>
 				<li><a href="https://html.spec.whatwg.org/multipage/links.html#other-link-types">Link types managed by the Microformats project</a></li>
@@ -345,6 +376,14 @@ repetition</h3>
 			<ul>
 				<li><a href="https://github.com/modelcontextprotocol/specification">Model Context Protocol (MCP) Specification</a></li>
 				<li><a href="https://github.com/webmachinelearning/webmcp">WebMCP</a></li>
+			</ul>
+
+			<h4 id="ref-related-standards">Related Standards</h4>
+			<ul>
+				<li><a href="https://datatracker.ietf.org/doc/html/rfc8615">RFC 8615: Well-Known URIs</a></li>
+				<li><a href="https://www.rfc-editor.org/rfc/rfc9264">RFC 9264: Linksets</a></li>
+				<li><a href="https://www.w3.org/TR/change-password-url/">A Well-known URL for Changing Passwords</a></li>
+				<li><a href="https://www.w3.org/WAI/planning/statements/">W3C Web Accessibility Statement Generator</a></li>
 			</ul>
 		</section>
 

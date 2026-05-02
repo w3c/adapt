@@ -62,7 +62,7 @@ This specification aims to address the challenge of making sites more easily nav
 
 The User Agent, or a User Agent extension, could provide an interface to allow the user to: view supported common pages using a method, and terminology, that is clear to them; and to request to visit common destination pages directly.
 
-This specification builds upon several existing specifications and registries, as detailed in the [foundational work](#foundational-work) section below.
+This specification builds upon several existing specifications and registries, as detailed in the [foundational and related work](#foundational-and-related-work) section below.
 
 The motivating use cases, "option 1" approach (using Well-known URIs), and an example end-user UI, are depicted in [our Discoverable Destinations AC 2024 lightning talk](https://w3c.github.io/adapt/presentations/ac2024/).
 
@@ -84,7 +84,7 @@ The motivating use cases, "option 1" approach (using Well-known URIs), and an ex
 
 * Specifying the interface within the UA (or UA extension) by which the user can navigate to supported well-known pages.
 
-Though detailed UI design is out of scope, an proof-of-concept UI for enumerating a site's discoverable destinations is depicted below.
+Though detailed UI design is out of scope, a proof-of-concept UI for enumerating a site's discoverable destinations is depicted below.
 
 ![A fictional ACME Inc. home page, with the extension pop-up open, showing 6 buttons, each containing emoji and accompanying text names for the discoverable destinations offered by the site: home, accessibility statement, contact, help, log in, and products.](../presentations/ac2024/ext02.png)
 
@@ -111,7 +111,7 @@ An illustrative set of proposed discoverable destinations is as follows...
 
 ## Technical requirements
 
-Any approch that would solve these user needs must provide the following.
+Any approach that would solve these user needs must provide the following.
 
 * A way to represent each discoverable destination proposed above.
 
@@ -197,37 +197,87 @@ When an in-page (anchor, `<a>`) link points to a page that is a sub-page of a di
 
 As discoverable destinations are normal links, they can make use of fragments to point to certain elements on the destination page.
 
+In addition to fragment identifiers, [ARIA landmark roles](https://www.w3.org/TR/wai-aria-1.2/#landmark_roles) provide a complementary mechanism for both identifying and navigating to content on a destination page. In particular, the `<main>` element (or `role="main"`) demarcates the principal content of the page. When a discoverable destination link does not include a fragment identifier, User Agents and assistive technologies should treat the `<main>` element as the default content boundary for the destination. Content authors are encouraged to ensure that destination pages use the `<main>` element to wrap their primary destination content.
+
+Landmarks also support navigation within a page. A destination page may contain multiple labelled `region` landmarks, each representing a distinct content area. User Agents and assistive technologies can enumerate these landmarks and present them to the user, or navigate directly to a specific region. For example, a help destination page with regions labelled "Getting Started", "Account Settings", and "Billing Support" would allow the user or their agent to jump directly to the relevant section.
+
 The UA/AT can then use this information (and the knowledge that the navigation was via the Discoverable Destination UI) to render the destination page in an appropriate way for the user. This may involve:
 
 * Highlighting the specific relevant part of the page.
 
-* Removing other elements from the rendering of the page.
+* Removing other elements from the rendering of the page to reduce cognitive load.
+
+* Providing additional context or guidance based on the destination type.
 
 ## Open Questions
 
 ### Indicating the _kind_ of content
 
-> [!NOTE]
-> As above, COGA need that we are not yet addressing.
+The current proposal identifies _where_ a destination is located but does not convey _what kind_ of support or content it offers. This distinction matters for users with cognitive disabilities who may need a specific type of interaction. For instance, a user may need to speak to a human being over the phone rather than engage with a chatbot or submit an email form.
+
+The question is whether, and how, such information should be expressed alongside or within a destination. Possible approaches include:
+
+* Extending the `rel` value vocabulary to include more specific destination subtypes (e.g. `help-human`, `help-chat`), though this risks combinatorial explosion as the number of content kinds grows.
+
+* Using an additional attribute or a companion `<meta>` element to annotate the kind of support offered by a given destination, keeping the destination identifier itself stable.
+
+* Deferring this concern to the destination page itself, where structured data (e.g. schema.org markup) could describe the available support types, leaving it to the UA to interpret and present this.
+
+This remains an open question under active consideration with the COGA Task Force. A resolution is expected to inform a future iteration of this work.
 
 ### Discoverability and repetition
 
-> [!NOTE]
-> This is a work-in-progress
+The current approach requires all `<link>` destination elements to be repeated in the `<head>` of every page on the site. This has the advantage of simplicity, a UA can read the destinations of the current page without fetching any additional resource. However, it introduces authoring overhead, since every page must be regenerated whenever a destination URL changes.
+
+**The Task Force has agreed to adopt the `<link>` element approach for the first cut of this specification.** This decision reflects that the approach is highly flexible, straightforward to implement by content authors and UAs alike, and builds directly on existing, well-understood HTML mechanisms. The per-page repetition, while an authoring overhead, can be managed in practice by modern CMS tooling.
+
+Several questions remain open for future iterations:
+
+* Should there be a single canonical discovery endpoint (such as a well-known URI) that a UA can consult once per origin, rather than reading destinations from each page? This would reduce per-page overhead but would require an extra HTTP request on first visit.
+
+* If a centralized endpoint is added, how should per-page and per-origin destinations be reconciled when they differ? For instance, a sub-site may legitimately override some destinations declared at the origin level.
+
+* What caching expectations should be set for destination declarations, both in the per-page `<link>` approach and in any centralized discovery document?
+
+The [Linksets](#linksets) alternative described later in this document offers one possible path to centralized discovery and may be revisited in a subsequent iteration.
 
 ### Demarcating sub-sites
 
-> [!NOTE]
-> This is a work-in-progress
+A site hosted at a single origin may contain functionally distinct sub-sites (for example, a hotel website that hosts both a main booking section and a restaurant section). Each sub-site may wish to declare its own set of destinations that differ from those of the root site.
 
-* Semantically
+The `<link>` element approach handles this naturally. Because every page carries its own `<link>` declarations, each sub-site simply includes the destinations relevant to that sub-site on its pages. The UA always reads the destinations from the current page, so:
 
-* UI-wise
+* **Scope is implicit and automatic.** When the user is on a restaurant sub-site page, that page's `<link>` elements define the applicable destinations. No boundary detection or URL prefix matching is required.
+
+* **Overriding destinations is straightforward.** A sub-site page that declares a different `contact` destination than the root site will naturally present the sub-site's destination to the UA, since the UA always uses the current page's declarations.
+
+* **No additional authoring mechanism is needed.** Content authors control sub-site scoping by controlling which `<link>` elements appear on each set of pages, typically managed through their CMS templates.
+
+The Task Force considers sub-site demarcation to be resolved by the per-page `<link>` approach.
 
 ## Security \& Privacy considerations
 
-> [!NOTE]
-> We have not completed this section yet.
+### Privacy
+
+Discoverable Destinations use standard HTML `<link>` elements that are already part of web pages. No additional user data is collected or transmitted beyond normal web browsing. The approach does not introduce any new tracking mechanisms like User Agents discover destinations by parsing existing page content. Users retain full control over when and how they navigate to discovered destinations through the UA interface.
+
+A UA that exposes a destination list to the user reveals which discoverable destinations a site supports. Since this information is already present in the page's `<head>` and therefore visible to any party that loads the page, no new information is exposed by processing or displaying it.
+
+### Security
+
+All navigation triggered by discoverable destinations uses standard HTTP and HTTPS requests, subject to normal browser security policies. Destination URLs are typically within the same origin as the page declaring them, which reduces cross-origin security concerns.
+
+Content authors are responsible for ensuring that the `href` values in their `<link>` elements point to legitimate, secure pages under their control. A malicious or compromised CMS could inject destination `<link>` elements pointing to phishing pages; however, this is not a new attack surface specific to this proposal. The same risk exists for any link or navigation element present in a page.
+
+UAs and UA extensions that implement a discoverable destination interface should validate that destination URLs share the same origin as the page from which they were discovered, and should present the full URL to the user before navigating, to support informed decision-making.
+
+### Considerations for AI Agents
+
+When AI agents use Discoverable Destinations on behalf of users, the same privacy and security considerations apply as for human users. Additionally:
+
+* Agents should not aggregate or store destination metadata in ways that could be used to profile users' browsing patterns across sites.
+
+* For sensitive operations such as authentication or account changes, human oversight should be maintained. Discoverable Destinations are designed for navigation and content discovery, not for executing complex authenticated operations.
 
 ## Alternatives considered
 
@@ -312,7 +362,7 @@ The first time the user visits the origin, the linkset for the origin, and sub-s
 
 A linkset document (i.e. the JSON serialization) would be created for the site.
 
-For example, the linkset for a simple site (with no sub-sites), which supports three well-known destinatiions (`accessibility-statement`, `help`, and `log-in`), may be represented as follows.
+For example, the linkset for a simple site (with no sub-sites), which supports three well-known destinations (`accessibility-statement`, `help`, and `log-in`), may be represented as follows.
 
 ```json
 { "linkset":
@@ -334,7 +384,7 @@ For example, the linkset for a simple site (with no sub-sites), which supports t
 
 Note that the linkset standard allows us to provide links to equivalent pages in other human languages; this is not shown here, for brevity.
 
-Also note that a **UA that supports discoverable destinations would interpret the `anchor` field in a specific way:** Discoverable Destinations are intented to be (sub-)site-wide, so the links relating to the single given `anchor` above would apply to all other URLs that start with the `anchor`'s URL.
+Also note that a **UA that supports discoverable destinations would interpret the `anchor` field in a specific way:** Discoverable Destinations are intended to be (sub-)site-wide, so the links relating to the single given `anchor` above would apply to all other URLs that start with the `anchor`'s URL.
 
 A more complex site, which is hosted at one origin, but provides two micro-sites, could be coded as follows. The following example linkset represents a hotel's website that has the following structure.
 
@@ -398,7 +448,7 @@ The content author would need to update the linkset file, and replace it on the 
 
 A link could be decorated with a `rel` attribute value that corresponds to the applicable destination.
 
-The UA will know if this link points to the root of the discoverable destination (e.g. the "Help" landing page, vs "Help on logging in") becuase it knows the URL of the root of the discoverable destination, via the discovery process above.
+The UA will know if this link points to the root of the discoverable destination (e.g. the "Help" landing page, vs "Help on logging in") because it knows the URL of the root of the discoverable destination, via the discovery process above.
 
 #### Demarcating destination content
 
@@ -443,7 +493,7 @@ The UA will know if this link points to the root of the discoverable destination
 
   - [Link types managed by the Microformats project](https://html.spec.whatwg.org/multipage/links.html#other-link-types)
 
-  - [Link types anaged by IANA](https://www.iana.org/assignments/link-relations/link-relations.xhtml)
+  - [Link types managed by IANA](https://www.iana.org/assignments/link-relations/link-relations.xhtml)
 
 #### Linksets
 
