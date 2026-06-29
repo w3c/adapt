@@ -112,21 +112,21 @@ form)</p></li>
 <h3 id="use-cases">Use Cases</h3>
 <p>The following use cases illustrate the kinds of navigation challenges that Discoverable Destinations are intended to address.</p>
 
+<h4 id="use-case-cognitive-navigation">Navigation Support for Users with Cognitive Disabilities</h4>
+<p>A user with a cognitive disability wants to find common areas of a website, such as help pages, contact information, or their account login. The site's navigation uses unfamiliar labels, buries key pages in dropdown menus, or presents a complex layout that makes it difficult to locate these areas. Without standard signposting, User Agents and assistive technologies have no reliable way to identify these pages on the user's behalf.</p>
+<p>With Discoverable Destinations, a User Agent can read standardised destination identifiers from the page's <code>&lt;head&gt;</code> and present clearly labelled navigation options in an accessible and consistent interface, giving the user direct and reliable paths to the pages they need, regardless of how the site has chosen to structure its navigation.</p>
+
 <h4 id="use-case-accessibility-audit">Accessibility Statement Discovery</h4>
 <p>An accessibility auditor is reviewing a portfolio of websites on behalf of a disability rights organization. Each site structures its accessibility statement differently, some link to it from the footer, others from the main navigation, and others only from an internal policy page. The auditor spends considerable time on each site searching for the relevant page before the audit can begin.</p>
 <p>With Discoverable Destinations, a User Agent or assistive technology can immediately locate the <code>accessibility-statement</code> destination on any compliant site and present a direct link to the auditor, regardless of where the site has chosen to place it in its navigation structure.</p>
 
-<h4 id="use-case-cognitive-navigation">Navigation Support for Users with Cognitive Disabilities</h4>
-<p>A user with a cognitive disability wants to log in to their account on a retail website. The site's primary navigation does not label the login entry point in a way the user recognises, and the page layout makes it difficult to locate. The user's browser extension, which presents a simplified navigation panel, cannot automatically locate the login page because no standard signposting exists.</p>
-<p>With Discoverable Destinations, the browser extension can read the <code>log-in</code> destination from the page's <code>&lt;head&gt;</code> and present a clearly labelled button in its simplified interface, giving the user a direct and reliable path to the page they need.</p>
+<h4 id="use-case-assistive-navigation">Assistive Navigation Technology</h4>
+<p>A user with motor impairments uses assistive navigation technology, such as speech recognition or switch access software, to browse websites and complete common tasks. The user asks to "go to the help page" but the software cannot reliably identify the correct link because sites label and position their help pages inconsistently. Without semantic signposting, the software must attempt to locate the page by guessing at link text or URL structures, which is brittle and may fail when the site is updated.</p>
+<p>With Discoverable Destinations, assistive navigation technology can query the <code>help</code> destination directly from the site's page headers, retrieve the correct URL in a single step, and navigate the user there reliably, regardless of how the site has structured its navigation menus.</p>
 
-<h4 id="use-case-ai-agent">AI Agent Assistance</h4>
-<p>A user with motor impairments uses an AI-powered assistive agent to help navigate websites and complete common tasks. The user asks the agent to "find the help page for my internet provider." Without semantic signposting, the agent must attempt to locate the help page by guessing at URL structures or parsing navigation HTML, which is brittle and may fail when the site is updated.</p>
-<p>With Discoverable Destinations, the agent can query the <code>help</code> destination directly from the site's page headers, retrieve the correct URL in a single step, and navigate the user there reliably, regardless of how the site has structured its navigation menus.</p>
-
-<h4 id="use-case-password-change">Password Change Assistance</h4>
-<p>A password manager application wants to help users navigate directly to the password change page on any website, consistent with the <a href="https://www.w3.org/TR/change-password-url/">Well-Known URL for Changing Passwords</a> specification. On many sites, the password change page is buried several levels deep within account settings, and its location varies across sites.</p>
-<p>With Discoverable Destinations, the password manager can use the <code>change-password</code> destination to locate the correct page directly, without the need for site-specific integration or manual maintenance of URL mappings.</p>
+<h4 id="use-case-ai-agent">Agent-based Navigation</h4>
+<p>An agent is navigating a website headlessly on behalf of a user, for example to gather information or complete a routine task. Without standard signposting, the agent must rely on heuristics such as parsing navigation HTML or guessing URL patterns, approaches that are fragile and break when sites change their structure.</p>
+<p>With Discoverable Destinations, the agent can programmatically discover standard page types from the site's <code>&lt;link&gt;</code> elements, enabling consistent and reliable navigation across any compliant site without site-specific configuration.</p>
 
 <h3 id="technical-requirements">Technical requirements</h3>
 <p>Any approach that addresses these user needs must provide the
