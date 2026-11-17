@@ -292,7 +292,7 @@ repetition</h3>
 			<p>Discoverable Destinations address <em>inter-page</em> navigation: finding and reaching the right page on a site. Users sometimes also need to reach a specific <em>section</em> within a destination page. For example: "take me to the account management section of the help page."</p>
 			<p>For <strong>content extraction</strong> tasks, where an AI agent retrieves information from a destination page on the user's behalf, <a href="https://www.w3.org/TR/wai-aria-1.2/#landmark_roles">ARIA landmarks</a> are not essential. LLMs are capable of processing full page content and extracting relevant information from raw HTML. Using the <code>&lt;main&gt;</code> element (or <code>role="main"</code>) to filter out navigation bars, footers, and advertisements before passing content to the LLM can reduce noise and token cost, but this is a practical optimisation, not a requirement.</p>
 			<p>For <strong>intra-page navigation</strong> tasks, where the user asks to be <em>taken to</em> a specific section of a page, ARIA landmarks are genuinely valuable. The AI agent can understand where a section is in the HTML, but it cannot scroll or focus the user's browser to that section without a concrete DOM target. Labelled <a href="https://www.w3.org/TR/wai-aria-1.2/#region"><code>region</code></a> landmarks provide exactly this: standardised, semantic anchors that a tool can use to navigate the user's view to the right part of the page.</p>
-			<p>For example, if a user asks to be taken to "account management help" and the help destination page contains labelled regions for "Getting Started", "Account Management", and "Billing Support", the AI agent first discovers the available landmark labels on the page, identifies the best match for the user's request, and then directs the tool to scroll the user's browser to the "Account Management" region. This is primarily relevant in browser-based integration models where the tool has direct access to the page DOM. In a server-side model, intra-page navigation is not applicable since there is no browser to control.</p>
+			<p>For example, if a user asks to be taken to "account management help" and the help destination page contains labelled regions for "Getting Started", "Account Management", and "Billing Support", the AI agent first discovers the available landmark labels on the page, identifies the best match for the user's request, and then directs the tool to scroll the user's browser to the "Account Management" region. This is primarily relevant in browser-based integration models, such as a browser extension or a browser-native approach, where the tool has direct access to the page DOM. In a server-side model, intra-page navigation is not applicable since there is no browser to control.</p>
 			<p>The <a href="https://www.w3.org/TR/wai-aria-1.2/#navigation"><code>navigation</code></a> landmark can also help agents discover secondary navigation paths on a page, revealing links the agent can follow on the user's behalf.</p>
 			<p>Content authors are encouraged to use the <code>&lt;main&gt;</code> element to wrap primary destination content, and to label distinct content regions with <code>region</code> landmarks. This benefits both human users of assistive technologies and AI agents acting on their behalf.</p>
 
@@ -312,15 +312,37 @@ repetition</h3>
 				<li><p>Complex actions involving workflows such as password changes, account modifications, or transaction processing may vary dramatically between sites. Discoverable Destinations can navigate to relevant areas, but the actual workflows may require additional tools or human involvement.</p></li>
 				<li><p>Authenticated operations requiring user specific authentication and authorisation need specialised protocols and often human involvement for security.</p></li>
 			</ul>
-			<p>For complex scenarios, a layered approach works best: Discoverable Destinations provide navigation to relevant areas, APIs are used where available for sensitive operations, and human oversight is included for sensitive or complex tasks.</p>
+			<p>For complex scenarios, a layered approach works best: Discoverable Destinations provide navigation to relevant areas, APIs are used where available for sensitive operations, and human oversight is included for sensitive or complex tasks. Where neither semantic destinations nor APIs are available, or where a semantic step fails unexpectedly, a Computer Use Agent can serve as a fallback; see <a href="#computer-use-fallback">Computer Use Agents: A Different Navigation Approach</a> below.</p>
 
 			<h3 id="integration-patterns">Integration Patterns</h3>
-			<p>AI agents can integrate with Discoverable Destinations through various architectural patterns. Two primary models are relevant for deploying tools that leverage semantic destinations:</p>
+			<p>AI agents can integrate with Discoverable Destinations through a variety of architectural approaches, and new patterns may emerge as the ecosystem matures. The approaches described here have been demonstrated in practice. Two questions help identify the right starting point: whether the task requires access to the user's live browser session, and whether the tools run inside the user's environment or on a remote server.</p>
+
+			<h4 id="browser-extension-model">Browser Extension Model</h4>
+			<p>In this model, a browser extension runs within the user's browser and exposes Semantic Web Tools to an AI agent. The extension uses standard browser extension APIs to read <code>&lt;link&gt;</code> elements from the current page, navigate tabs, and retrieve page content. Because the extension runs in the user's browser environment, it has full access to the user's session, authentication state, and the live page DOM. This is the recommended approach for most accessibility use cases, and it is the model used in the reference prototypes accompanying this document.</p>
+			<p>The browser extension pattern has the following characteristics:</p>
 			<ul>
-				<li><p>A server side model where tools run independently of the user's browser and make direct HTTP requests to target websites. This approach is suitable for public data retrieval but has no access to the user's browser session or authentication state.</p></li>
-				<li><p>A browser based model, such as <a href="https://github.com/webmachinelearning/webmcp">WebMCP</a>, where the web page itself can expose tools to AI agents. This approach operates within the user's existing session with full access to authentication state and page context, making it better suited for authenticated operations and personalised content.</p></li>
+				<li><p>Destination discovery reads directly from the live DOM of the tab currently open in the user's browser, so the destinations are always current and scoped to the active page.</p></li>
+				<li><p>Navigation is performed by updating the browser tab, so the user's session cookies and authentication state are preserved across navigations.</p></li>
+				<li><p>Intra-page navigation, such as scrolling the browser to a labelled ARIA landmark region, is possible because the extension has direct access to the page DOM.</p></li>
+				<li><p>The extension can communicate with an AI agent either through a local server or through a cloud service, while the browser-side execution remains within the user's session.</p></li>
 			</ul>
-			<p>The choice of integration pattern depends on the specific use case. For scenarios involving authenticated operations, personalised content, or complex user specific workflows, a browser based approach is recommended. For public data scenarios, a server side approach may be sufficient.</p>
+
+			<h4 id="server-side-model">Server-side Model</h4>
+			<p>In this model, tools run independently of the user's browser and make direct HTTP requests to target websites. This approach is suitable for public data retrieval tasks, such as auditing accessibility statements across a portfolio of sites, where no session state is required. It has no access to the user's browser session, cookies, or authentication state, and it cannot interact with the live browser environment, so it is unsuitable for tasks that require navigation on behalf of a logged-in user.</p>
+
+			<h4 id="webmcp-model">Browser-native Model (WebMCP)</h4>
+			<p><a href="https://github.com/webmachinelearning/webmcp">WebMCP</a> is an emerging proposal in which the web page itself exposes tools directly to AI agents using a JavaScript API. Because the tools execute as part of the page's own code, they operate within the user's session and have full access to the DOM and authentication context. This model is architecturally well suited to Discoverable Destinations and may become the preferred pattern as the proposal matures. At present, browser extensions represent the practical deployment model that achieves equivalent capabilities using stable, widely supported browser APIs.</p>
+
+			<h3 id="computer-use-fallback">Computer Use Agents: A Different Navigation Approach</h3>
+			<p>Computer Use Agent (CUA) systems are a class of AI agent that interact with a browser or desktop by taking screenshots and issuing low-level input events such as mouse clicks and keyboard input. CUA does not use Discoverable Destinations or Semantic Web Tools. It navigates a website by visually interpreting screenshots and simulating user input, without any awareness of <code>&lt;link&gt;</code> elements or semantic destination identifiers, and can in principle reach any page on any website without the site implementing Discoverable Destinations.</p>
+			<p>However, CUA-based navigation has significant practical limitations when compared to the semantic approach described in this document:</p>
+			<ul>
+				<li><p>Each navigation step requires at least one screenshot, which consumes substantially more tokens than a lightweight tool call that reads a <code>&lt;link&gt;</code> element. Tasks that require visiting several pages can become prohibitively expensive.</p></li>
+				<li><p>Navigation decisions are made by analysing a visual rendering of the page, which is an inherently probabilistic process. The agent may misidentify a link, click the wrong element, or fail to find a destination if it is not immediately visible in the viewport.</p></li>
+				<li><p>CUA systems are sensitive to visual changes in a site's design. A layout change that would have no effect on a <code>&lt;link&gt;</code> element in the page <code>&lt;head&gt;</code> may cause a CUA agent to fail entirely.</p></li>
+				<li><p>Because each interaction requires a round-trip through the model to interpret a screenshot before the next action can be taken, CUA-based workflows are substantially slower than tool-based semantic navigation.</p></li>
+			</ul>
+			<p>For these reasons, CUA is best understood as a fallback or self-healing mechanism rather than a primary approach. If a site does not implement Discoverable Destinations and no API is available, a CUA agent may be able to complete the task, accepting the associated costs and reduced reliability. Additionally, if a semantic navigation step fails unexpectedly, a CUA fallback can be invoked to attempt the same action visually, after which the semantic approach can resume. This layered strategy allows accessibility tools to degrade gracefully rather than failing completely when semantic infrastructure is absent.</p>
 		</section>
 
 		<section>
@@ -376,6 +398,7 @@ repetition</h3>
 			<ul>
 				<li><a href="https://github.com/modelcontextprotocol/specification">Model Context Protocol (MCP) Specification</a></li>
 				<li><a href="https://github.com/webmachinelearning/webmcp">WebMCP</a></li>
+				<li><a href="https://developer.chrome.com/docs/extensions/">Chrome Extensions Developer Guide</a></li>
 			</ul>
 
 			<h4 id="ref-related-standards">Related Standards</h4>
