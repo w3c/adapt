@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 37.1.0">
+<meta name="generator" content="ReSpec 37.5.1">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <style>
 .issue-label{text-transform:initial}
@@ -78,11 +78,11 @@ details.respec-tests-details>li{padding-left:1em}
 .self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
 aside.example .marker>a.self-link{color:inherit}
 .header-wrapper{display:flex;align-items:baseline}
-:is(h2,h3,h4,h5,h6):not(#toc>h2,#abstract>h2,#sotd>h2,.head>h2):has(+a.self-link){position:relative;left:-.5em}
-:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-1.1em;font-size:1rem;opacity:.5}
-:is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
+:is(h2,h3,h4,h5,h6):not(:where(#toc>h2,#abstract>h2,#sotd>h2,.head>h2)):has(+a.self-link){position:relative;left:-.5em}
+:is(h2,h3,h4,h5,h6):not(:where(#toch2))+a.self-link{color:inherit;order:-1;position:relative;left:-1.1em;font-size:1rem;opacity:.8;text-decoration:none}
+:is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§"}
 :is(h2,h3)+a.self-link{top:-.2em}
-:is(h4,h5,h6)+a.self-link::before{color:#000}
+:is(h2,h3)+a.self-link::before{color:var(--heading-text)}
 @media (max-width:767px){
 dd{margin-left:0}
 }
@@ -195,39 +195,39 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   ],
   "group": "apa",
   "github": "w3c/adapt",
-  "publishISODate": "2026-08-04T00:00:00.000Z",
-  "generatedSubtitle": "W3C Editor's Draft 04 August 2026"
+  "publishISODate": "2026-11-17T00:00:00.000Z",
+  "generatedSubtitle": "W3C Editor's Draft 17 November 2026"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED">
-<link rel="stylesheet" media="(prefers-color-scheme: dark)" href="https://www.w3.org/StyleSheets/TR/2021/dark.css"></head>
+<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/dark.css" media="(prefers-color-scheme: dark)"></head>
 	<body class="h-entry informative"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">WAI-Adapt Explainer</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2026-08-04">04 August 2026</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2026-11-17">17 November 2026</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
         <dt>This version:</dt><dd>
-                <a class="u-url" href="https://w3c.github.io/adapt/">https://w3c.github.io/adapt/</a>
-              </dd>
+                  <a class="u-url" href="https://w3c.github.io/adapt/">https://w3c.github.io/adapt/</a>
+                </dd>
         <dt>Latest published version:</dt><dd>
-                <a href="https://www.w3.org/TR/adapt/">https://www.w3.org/TR/adapt/</a>
-              </dd>
+                  <a href="https://www.w3.org/TR/adapt/">https://www.w3.org/TR/adapt/</a>
+                </dd>
         <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/adapt/">https://w3c.github.io/adapt/</a></dd>
         <dt>History:</dt><dd>
-                    <a href="https://www.w3.org/standards/history/adapt/">https://www.w3.org/standards/history/adapt/</a>
-                  </dd><dd>
-                    <a href="https://github.com/w3c/adapt/commits/">Commit history</a>
-                  </dd>
+                        <a href="https://www.w3.org/standards/history/adapt/">https://www.w3.org/standards/history/adapt/</a>
+                      </dd><dd>
+                        <a href="https://github.com/w3c/adapt/commits/">Commit history</a>
+                      </dd>
         
         
         
         
         
         <dt>
-                Editors:
-              </dt><dd class="editor p-author h-card vcard" data-editor-id="68793">
+                  Editors:
+                </dt><dd class="editor p-author h-card vcard" data-editor-id="68793">
     <span class="p-name fn">Matthew Atkinson</span> (<a class="p-org org h-org" href="https://www.w3.org/organizations/40030/">Samsung Electronics Co., Ltd.</a>)
   </dd><dd class="editor p-author h-card vcard" data-editor-id="33688">
     <span class="p-name fn">Janina Sajka</span> (<span class="p-org org h-org">Invited Expert</span>)
@@ -235,8 +235,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     <span class="p-name fn">Lionel Wolberger</span> (<a class="p-org org h-org" href="https://www.w3.org/organizations/69854/">Level Access</a>)
   </dd>
         <dt>
-                Former editors:
-              </dt><dd class="editor p-author h-card vcard" data-editor-id="34017">
+                  Former editors:
+                </dt><dd class="editor p-author h-card vcard" data-editor-id="34017">
     <a class="u-url url p-name fn" href="https://www.w3.org">Michael Cooper</a> (<span class="p-org org h-org">W3C</span>)
   </dd><dd class="editor p-author h-card vcard" data-editor-id="41450">
     <a class="ed_mailto u-email email p-name" href="mailto:john@foliot.ca">John Foliot</a> (<span class="p-org org h-org">Invited Expert</span>)
@@ -306,20 +306,20 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
           Policy</a>.
       
     
-                <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
-                <a rel="disclosure" href="https://www.w3.org/groups/wg/apa/ipr">public list of any patent disclosures</a>
-          made in connection with the deliverables of
-          the group; that page also includes
-          instructions for disclosing a patent. An individual who has actual
-          knowledge of a patent that the individual believes contains
-          <a href="https://www.w3.org/policies/patent-policy/#def-essential">Essential Claim(s)</a>
-          must disclose the information in accordance with
-          <a href="https://www.w3.org/policies/patent-policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
-        
+                    <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
+                    <a rel="disclosure" href="https://www.w3.org/groups/wg/apa/ipr">public list of any patent disclosures</a>
+            made in connection with the deliverables of
+            the group; that page also includes
+            instructions for disclosing a patent. An individual who has actual
+            knowledge of a patent that the individual believes contains
+            <a href="https://www.w3.org/policies/patent-policy/#def-essential">Essential Claim(s)</a>
+            must disclose the information in accordance with
+            <a href="https://www.w3.org/policies/patent-policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+          
   </p><p>
-                      This document is governed by the
-                      <a id="w3c_process_revision" href="https://www.w3.org/policies/process/20250818/">18 August 2025 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-                    </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#why_accessibility"><bdi class="secno">1.1 </bdi>Why We Need WAI-Adapt</a></li><li class="tocline"><a class="tocxref" href="#use-case-examples"><bdi class="secno">1.2 </bdi>Use Case Examples</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#distracted"><bdi class="secno">1.2.1 </bdi>Easily Distracted / Overwhelmed</a></li><li class="tocline"><a class="tocxref" href="#difficulty_numbers"><bdi class="secno">1.2.2 </bdi>Difficulty Understanding Numbers</a></li><li class="tocline"><a class="tocxref" href="#learning_disability"><bdi class="secno">1.2.3 </bdi>Mild-Moderate Language Impairment / Learning Disability</a></li><li class="tocline"><a class="tocxref" href="#language_impairment"><bdi class="secno">1.2.4 </bdi>Severe Language Impairment</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#proof-of-concept-symbol-example"><bdi class="secno">1.2.4.1 </bdi>Proof of Concept: Symbol Example</a></li></ol></li><li class="tocline"><a class="tocxref" href="#memory_impairment"><bdi class="secno">1.2.5 </bdi>Working Memory and Short-term Memory Impairment</a></li></ol></li><li class="tocline"><a class="tocxref" href="#out-of-scope"><bdi class="secno">1.3 </bdi>Out of Scope</a></li></ol></li><li class="tocline"><a class="tocxref" href="#modules"><bdi class="secno">2. </bdi>Modules</a></li><li class="tocline"><a class="tocxref" href="#characteristics_semanticproperties"><bdi class="secno">3. </bdi>Vocabulary Structure</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#properties"><bdi class="secno">3.1 </bdi>Properties</a></li><li class="tocline"><a class="tocxref" href="#propcharacteristic_value"><bdi class="secno">3.2 </bdi>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#vocabulary-implementations"><bdi class="secno">4. </bdi>Vocabulary Implementations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#current-usage"><bdi class="secno">4.1 </bdi>Current Usage</a></li><li class="tocline"><a class="tocxref" href="#technology-comparison-summary"><bdi class="secno">4.2 </bdi>Technology Comparison Summary</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#considerations-in-the-decision-process"><bdi class="secno">4.2.1 </bdi>Considerations in the decision process:</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#stakeholders"><bdi class="secno">5. </bdi>Stakeholders</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">A. </bdi>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><bdi class="secno">A.1 </bdi>Participants active in the WAI-Adapt TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><bdi class="secno">A.2 </bdi>Other WAI-Adapt TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><bdi class="secno">A.3 </bdi>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">B.1 </bdi>Informative references</a></li></ol></li></ol></nav>
+                          This document is governed by the
+                          <a id="w3c_process_revision" href="https://www.w3.org/policies/process/20250818/">18 August 2025 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+                        </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#why_accessibility"><bdi class="secno">1.1 </bdi>Why We Need WAI-Adapt</a></li><li class="tocline"><a class="tocxref" href="#use-case-examples"><bdi class="secno">1.2 </bdi>Use Case Examples</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#distracted"><bdi class="secno">1.2.1 </bdi>Easily Distracted / Overwhelmed</a></li><li class="tocline"><a class="tocxref" href="#difficulty_numbers"><bdi class="secno">1.2.2 </bdi>Difficulty Understanding Numbers</a></li><li class="tocline"><a class="tocxref" href="#learning_disability"><bdi class="secno">1.2.3 </bdi>Mild-Moderate Language Impairment / Learning Disability</a></li><li class="tocline"><a class="tocxref" href="#language_impairment"><bdi class="secno">1.2.4 </bdi>Severe Language Impairment</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#proof-of-concept-symbol-example"><bdi class="secno">1.2.4.1 </bdi>Proof of Concept: Symbol Example</a></li></ol></li><li class="tocline"><a class="tocxref" href="#memory_impairment"><bdi class="secno">1.2.5 </bdi>Working Memory and Short-term Memory Impairment</a></li></ol></li><li class="tocline"><a class="tocxref" href="#out-of-scope"><bdi class="secno">1.3 </bdi>Out of Scope</a></li></ol></li><li class="tocline"><a class="tocxref" href="#modules"><bdi class="secno">2. </bdi>Modules</a></li><li class="tocline"><a class="tocxref" href="#characteristics_semanticproperties"><bdi class="secno">3. </bdi>Vocabulary Structure</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#properties"><bdi class="secno">3.1 </bdi>Properties</a></li><li class="tocline"><a class="tocxref" href="#propcharacteristic_value"><bdi class="secno">3.2 </bdi>Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#vocabulary-implementations"><bdi class="secno">4. </bdi>Vocabulary Implementations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#current-usage"><bdi class="secno">4.1 </bdi>Current Usage</a></li><li class="tocline"><a class="tocxref" href="#technology-comparison-summary"><bdi class="secno">4.2 </bdi>Technology Comparison Summary</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#considerations-in-the-decision-process"><bdi class="secno">4.2.1 </bdi>Considerations in the decision process:</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#stakeholders"><bdi class="secno">5. </bdi>Stakeholders</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">A. </bdi>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><bdi class="secno">A.1 </bdi>Participants active in the WAI-Adapt TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><bdi class="secno">A.2 </bdi>Other WAI-Adapt TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><bdi class="secno">A.3 </bdi>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">B.1 </bdi>Informative references</a></li></ol></li></ol></nav>
 
 		<section id="introduction"><div class="header-wrapper"><h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction</h2><a class="self-link" href="#introduction" aria-label="Permalink for Section 1."></a></div>
 
