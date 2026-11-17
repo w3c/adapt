@@ -1,6 +1,6 @@
 <!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head>
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 37.1.0">
+<meta name="generator" content="ReSpec 37.5.1">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <style>
 dfn{cursor:pointer}
@@ -65,11 +65,11 @@ details.respec-tests-details>li{padding-left:1em}
 .self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
 aside.example .marker>a.self-link{color:inherit}
 .header-wrapper{display:flex;align-items:baseline}
-:is(h2,h3,h4,h5,h6):not(#toc>h2,#abstract>h2,#sotd>h2,.head>h2):has(+a.self-link){position:relative;left:-.5em}
-:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-1.1em;font-size:1rem;opacity:.5}
-:is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
+:is(h2,h3,h4,h5,h6):not(:where(#toc>h2,#abstract>h2,#sotd>h2,.head>h2)):has(+a.self-link){position:relative;left:-.5em}
+:is(h2,h3,h4,h5,h6):not(:where(#toch2))+a.self-link{color:inherit;order:-1;position:relative;left:-1.1em;font-size:1rem;opacity:.8;text-decoration:none}
+:is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§"}
 :is(h2,h3)+a.self-link{top:-.2em}
-:is(h4,h5,h6)+a.self-link::before{color:#000}
+:is(h2,h3)+a.self-link::before{color:var(--heading-text)}
 @media (max-width:767px){
 dd{margin-left:0}
 }
@@ -155,39 +155,39 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   ],
   "group": "apa",
   "github": "w3c/adapt",
-  "publishISODate": "2026-08-04T00:00:00.000Z",
-  "generatedSubtitle": "W3C Editor's Draft 04 August 2026"
+  "publishISODate": "2026-11-17T00:00:00.000Z",
+  "generatedSubtitle": "W3C Editor's Draft 17 November 2026"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED">
-<link rel="stylesheet" media="(prefers-color-scheme: dark)" href="https://www.w3.org/StyleSheets/TR/2021/dark.css"></head>
+<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/dark.css" media="(prefers-color-scheme: dark)"></head>
 	<body class="h-entry informative"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">Requirements for WAI-Adapt specification</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2026-08-04">04 August 2026</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2026-11-17">17 November 2026</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
         <dt>This version:</dt><dd>
-                <a class="u-url" href="https://w3c.github.io/adapt/requirements/">https://w3c.github.io/adapt/requirements/</a>
-              </dd>
+                  <a class="u-url" href="https://w3c.github.io/adapt/requirements/">https://w3c.github.io/adapt/requirements/</a>
+                </dd>
         <dt>Latest published version:</dt><dd>
-                <a href="https://www.w3.org/TR/adapt-requirements/">https://www.w3.org/TR/adapt-requirements/</a>
-              </dd>
+                  <a href="https://www.w3.org/TR/adapt-requirements/">https://www.w3.org/TR/adapt-requirements/</a>
+                </dd>
         <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/adapt/requirements/">https://w3c.github.io/adapt/requirements/</a></dd>
         <dt>History:</dt><dd>
-                    <a href="https://www.w3.org/standards/history/adapt-requirements/">https://www.w3.org/standards/history/adapt-requirements/</a>
-                  </dd><dd>
-                    <a href="https://github.com/w3c/adapt/commits/">Commit history</a>
-                  </dd>
+                        <a href="https://www.w3.org/standards/history/adapt-requirements/">https://www.w3.org/standards/history/adapt-requirements/</a>
+                      </dd><dd>
+                        <a href="https://github.com/w3c/adapt/commits/">Commit history</a>
+                      </dd>
         
         
         
         
         
         <dt>
-                Editors:
-              </dt><dd class="editor p-author h-card vcard" data-editor-id="16320">
+                  Editors:
+                </dt><dd class="editor p-author h-card vcard" data-editor-id="16320">
     <a class="ed_mailto u-email email p-name" href="mailto:lisa.seeman@zoho.com">Lisa Seeman</a>
   </dd><dd class="editor p-author h-card vcard" data-editor-id="72055">
     <a class="ed_mailto u-email email p-name" href="mailto:charlesl@benetech.org">Charles LaPierre</a> (<span class="p-org org h-org">Benetech</span>)
@@ -248,20 +248,20 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
           Policy</a>.
       
     
-                <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
-                <a rel="disclosure" href="https://www.w3.org/groups/wg/apa/ipr">public list of any patent disclosures</a>
-          made in connection with the deliverables of
-          the group; that page also includes
-          instructions for disclosing a patent. An individual who has actual
-          knowledge of a patent that the individual believes contains
-          <a href="https://www.w3.org/policies/patent-policy/#def-essential">Essential Claim(s)</a>
-          must disclose the information in accordance with
-          <a href="https://www.w3.org/policies/patent-policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
-        
+                    <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
+                    <a rel="disclosure" href="https://www.w3.org/groups/wg/apa/ipr">public list of any patent disclosures</a>
+            made in connection with the deliverables of
+            the group; that page also includes
+            instructions for disclosing a patent. An individual who has actual
+            knowledge of a patent that the individual believes contains
+            <a href="https://www.w3.org/policies/patent-policy/#def-essential">Essential Claim(s)</a>
+            must disclose the information in accordance with
+            <a href="https://www.w3.org/policies/patent-policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+          
   </p><p>
-                      This document is governed by the
-                      <a id="w3c_process_revision" href="https://www.w3.org/policies/process/20250818/">18 August 2025 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-                    </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a></li><li class="tocline"><a class="tocxref" href="#wai-adapt-features"><bdi class="secno">2. </bdi>WAI-Adapt Features</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#familiar-terms-and-symbols"><bdi class="secno">2.1 </bdi>Familiar Terms and Symbols</a></li><li class="tocline"><a class="tocxref" href="#symbol-sets"><bdi class="secno">2.2 </bdi>Symbol Sets</a></li><li class="tocline"><a class="tocxref" href="#enable-alternatives-for-numeric-concepts"><bdi class="secno">2.3 </bdi>Enable alternatives for numeric concepts</a></li><li class="tocline"><a class="tocxref" href="#importance-identification"><bdi class="secno">2.4 </bdi>Importance identification</a></li><li class="tocline"><a class="tocxref" href="#enable-alternate-language-complexity-of-same-content"><bdi class="secno">2.5 </bdi>Enable Alternate Language Complexity of Same Content</a></li><li class="tocline"><a class="tocxref" href="#enable-alternate-for-non-literal-content"><bdi class="secno">2.6 </bdi>Enable Alternate for Non-Literal Content</a></li><li class="tocline"><a class="tocxref" href="#enable-additional-help-information"><bdi class="secno">2.7 </bdi>Enable Additional Help Information</a></li><li class="tocline"><a class="tocxref" href="#enable-additional-feedback"><bdi class="secno">2.8 </bdi>Enable Additional Feedback</a></li><li class="tocline"><a class="tocxref" href="#step-indicator"><bdi class="secno">2.9 </bdi>Step Indicator</a></li><li class="tocline"><a class="tocxref" href="#message-categorization"><bdi class="secno">2.10 </bdi>Message Categorization</a></li></ol></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">A. </bdi>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><bdi class="secno">A.1 </bdi>Participants active in the WAI-Adapt TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><bdi class="secno">A.2 </bdi>Other WAI-Adapt TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><bdi class="secno">A.3 </bdi>Enabling funders</a></li></ol></li></ol></nav>
+                          This document is governed by the
+                          <a id="w3c_process_revision" href="https://www.w3.org/policies/process/20250818/">18 August 2025 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+                        </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a></li><li class="tocline"><a class="tocxref" href="#wai-adapt-features"><bdi class="secno">2. </bdi>WAI-Adapt Features</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#familiar-terms-and-symbols"><bdi class="secno">2.1 </bdi>Familiar Terms and Symbols</a></li><li class="tocline"><a class="tocxref" href="#symbol-sets"><bdi class="secno">2.2 </bdi>Symbol Sets</a></li><li class="tocline"><a class="tocxref" href="#enable-alternatives-for-numeric-concepts"><bdi class="secno">2.3 </bdi>Enable alternatives for numeric concepts</a></li><li class="tocline"><a class="tocxref" href="#importance-identification"><bdi class="secno">2.4 </bdi>Importance identification</a></li><li class="tocline"><a class="tocxref" href="#enable-alternate-language-complexity-of-same-content"><bdi class="secno">2.5 </bdi>Enable Alternate Language Complexity of Same Content</a></li><li class="tocline"><a class="tocxref" href="#enable-alternate-for-non-literal-content"><bdi class="secno">2.6 </bdi>Enable Alternate for Non-Literal Content</a></li><li class="tocline"><a class="tocxref" href="#enable-additional-help-information"><bdi class="secno">2.7 </bdi>Enable Additional Help Information</a></li><li class="tocline"><a class="tocxref" href="#enable-additional-feedback"><bdi class="secno">2.8 </bdi>Enable Additional Feedback</a></li><li class="tocline"><a class="tocxref" href="#step-indicator"><bdi class="secno">2.9 </bdi>Step Indicator</a></li><li class="tocline"><a class="tocxref" href="#message-categorization"><bdi class="secno">2.10 </bdi>Message Categorization</a></li></ol></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">A. </bdi>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><bdi class="secno">A.1 </bdi>Participants active in the WAI-Adapt TF at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><bdi class="secno">A.2 </bdi>Other WAI-Adapt TF contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><bdi class="secno">A.3 </bdi>Enabling funders</a></li></ol></li></ol></nav>
 		<section id="introduction"><div class="header-wrapper"><h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction</h2><a class="self-link" href="#introduction" aria-label="Permalink for Section 1."></a></div>
 			
 
