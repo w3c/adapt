@@ -214,7 +214,7 @@ indicated by adding a <code>rel</code> value to the anchor.</p>
 
 		<section>
 			<h2>Agentic AI and Machine Navigation</h2>
-			<p>Agentic AI systems are autonomous software agents that can plan, reason, and execute complex tasks on behalf of users. For users with disabilities, these agents can serve as powerful assistive technologies. The semantic infrastructure of Discoverable Destinations serves both human users and AI agents: standardised destination identifiers work consistently across all compliant websites, giving agents a reliable navigation foundation without site-specific configuration.</p>
+			<p>Agentic AI systems are autonomous software agents that can plan, reason, and execute complex tasks on behalf of users. For users with disabilities, these agents can serve as powerful assistive technologies. The same semantic mechanism that helps human users also enables AI agents to navigate consistently across any compliant site.</p>
 
 			<h3 id="leveraging-aria-landmarks">Leveraging ARIA Landmarks for Intra-page Navigation</h3>
 			<p>Discoverable Destinations address <em>inter-page</em> navigation: finding and reaching the right page on a site. Users sometimes also need to reach a specific <em>section</em> within a destination page. For example: "take me to the account management section of the help page."</p>
@@ -227,9 +227,9 @@ indicated by adding a <code>rel</code> value to the anchor.</p>
 			<h3 id="illustrative-use-cases">Illustrative Use Cases</h3>
 			<p>The following examples illustrate how AI agents might use Discoverable Destinations to assist users with disabilities:</p>
 			<ul>
-				<li><p>An accessibility compliance assistant could help a disability rights advocate check accessibility statements across multiple partner websites. The AI agent would systematically discover and analyse <code>accessibility-statement</code> destinations across all sites, ensuring comprehensive accessibility monitoring without the need for manual navigation.</p></li>
-				<li><p>A cognitive support assistant could help a user with cognitive disabilities who is facing issues with multiple service providers. The AI agent would discover <code>contact</code> and <code>help</code> destinations across different platforms, presenting a comprehensive support landscape in a simplified, consistent format.</p></li>
-				<li><p>A motor accessibility aid could assist a user with motor impairments who wishes to update their profile information across platforms but finds repeated navigation challenging. The AI agent would navigate to relevant destinations on each site, then guide the user through the updates with full context and control, reducing the physical navigation burden.</p></li>
+				<li><p>An accessibility compliance assistant can help a disability rights advocate check accessibility statements across multiple partner websites. The AI agent discovers the <code>accessibility-statement</code> destination on each site, removing the need for manual navigation.</p></li>
+				<li><p>A user with cognitive disabilities facing issues across multiple service providers can be helped by an agent that finds the <code>contact</code> and <code>help</code> destinations on each platform and presents them in a consistent format.</p></li>
+				<li><p>A user with motor impairments who needs to update profile information across several sites can rely on an agent to handle the navigation to each relevant destination, leaving the user to focus on the actual updates rather than the getting there.</p></li>
 			</ul>
 			<p>These scenarios share a common pattern: AI agents handle the discovery and navigation complexity, while humans maintain control over sensitive decisions and actions.</p>
 
@@ -283,7 +283,6 @@ indicated by adding a <code>rel</code> value to the anchor.</p>
 
 		<section>
 			<h2>Privacy and Security Considerations</h2>
-			<p>The Discoverable Destinations approach has been designed with privacy and security in mind.</p>
 
 			<h3 id="privacy-considerations">Privacy Considerations</h3>
 			<p>Discoverable Destinations use standard HTML <code>&lt;link&gt;</code> elements that are already part of web pages. No additional user data is collected or transmitted beyond normal web browsing. The approach does not introduce any new tracking mechanisms, as User Agents discover destinations by parsing existing page content. Users retain full control over when and how they navigate to discovered destinations through the User Agent interface.</p>

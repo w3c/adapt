@@ -108,7 +108,7 @@ The limitation is coverage. APIs exist for roughly 20 to 30 percent of sites, an
 
 ## Scope of Discoverable Destinations for Agentic Use
 
-Discoverable Destinations are well suited for content discovery, such as finding specific types of pages including help, contact, and accessibility statements. They support information extraction from destination pages and provide consistent navigation patterns across different websites.
+Discoverable Destinations address navigation to common page types and content retrieval from those pages. They work across any compliant site without site-specific configuration.
 
 Certain tasks require solutions beyond Discoverable Destinations:
 
@@ -159,7 +159,7 @@ Agents querying many sites benefit from a centralised discovery endpoint that re
 
 ## Appendix: Integration Patterns and Sample API
 
-> **Note:** The authoritative description of integration patterns (browser extension model, server-side model, and browser-native WebMCP model) is in the [WAI-Adapt: Discoverable Destinations W3C Note](../destinations/index.html#integration-patterns). The patterns below are reproduced here as background context for understanding the sample API. Where this appendix and the Note differ, the Note takes precedence.
+> **Note:** The W3C Note is the authoritative reference for integration patterns; this appendix provides context for the sample API below.
 
 ### How AI Agents Learn to Use Semantic Destinations
 
