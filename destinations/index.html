@@ -254,7 +254,7 @@ indicated by adding a <code>rel</code> value to the anchor.</p>
 			<p><a href="https://github.com/webmachinelearning/webmcp">WebMCP</a> is an emerging proposal in which the web page itself exposes tools directly to AI agents using a JavaScript API. Because the tools execute as part of the page's own code, they operate within the user's session and have full access to the DOM and authentication context.</p>
 
 			<h3 id="computer-use-fallback">Fallback Navigation</h3>
-			<p>When a site does not implement Discoverable Destinations and no API is available, a Computer Use Agent (CUA) can serve as a fallback, navigating by visual screenshot analysis rather than semantic identifiers. A CUA fallback can also recover a failed semantic navigation step, after which the semantic approach resumes. A comparison of the two approaches and guidance on when to invoke a CUA fallback is provided in the <a href="../explainers/navigation-and-content-tools-for-agents-using-discoverable-destinations.html">agentic AI explainer</a>.</p>
+			<p>When a site does not implement Discoverable Destinations and no API is available, a Computer Use Agent (CUA) can serve as a fallback, navigating by visual screenshot analysis rather than semantic identifiers. CUA navigation is inherently probabilistic, more token-intensive, and sensitive to visual redesigns compared to the semantic approach. A CUA fallback can also recover a failed semantic navigation step, after which the semantic approach resumes. This layered strategy allows accessibility tools to degrade gracefully rather than failing completely when semantic infrastructure is absent.</p>
 		</section>
 
 		<section id="open-questions">

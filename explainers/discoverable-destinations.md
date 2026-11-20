@@ -193,7 +193,7 @@ The [Linksets](https://www.rfc-editor.org/rfc/rfc9264) format offers one possibl
 #### Linksets
 
 > [!NOTE]
-> We are not using linksets in the spec, though they were suggested to us as a suitable implementation path. They provide a slightly more centralised semantic equivalent to `<link>` elements, which can be separated out into a separate document. They would likely require slightly more authoring effort initially.
+> The Task Force is not using linksets in this specification, though they were suggested as a suitable implementation path. They provide a slightly more centralised semantic equivalent to `<link>` elements, which can be separated out into a separate document. They would likely require slightly more authoring effort initially.
 
 * [IETF's Linksets RFC](https://www.rfc-editor.org/rfc/rfc9264)
 
