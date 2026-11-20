@@ -14,6 +14,7 @@
 - [Introduction](#introduction)
 - [The Problem](#the-problem)
 - [How Discoverable Destinations Helps](#how-discoverable-destinations-helps)
+  * [Division of responsibilities](#division-of-responsibilities)
 - [Alternatives Considered](#alternatives-considered)
   * [Traditional Web Scraping](#traditional-web-scraping)
   * [Computer Use Agents](#computer-use-agents)
@@ -71,6 +72,24 @@ The core capabilities are:
 * **Intra-page Navigation**: Discover labelled ARIA landmark regions on a destination page and scroll the user's browser to a specific section (browser-based deployments only)
 
 The full technical specification — including how the LLM and tools divide responsibilities, the browser extension, server-side, and browser-native deployment patterns — is in the [W3C Note](../destinations/index.html#agentic-ai-and-machine-navigation).
+
+### Division of responsibilities
+
+The system operates through a clear separation of concerns between the LLM and the Semantic Web Tools:
+
+**LLM responsibilities:**
+* Interpreting user requests and determining which destinations are needed
+* Orchestrating the sequence of tool calls
+* Synthesising information retrieved from web pages into coherent responses
+* Deciding how to respond when tools encounter failures or missing content
+* Managing clarifications, progress updates, and result presentation to the user
+
+**Semantic Web Tools responsibilities:**
+* Discovering available Discoverable Destinations on target websites
+* Converting semantic destination names to URLs and performing HTTP requests
+* Fetching raw page content and passing it to the LLM for processing
+* Detecting and reporting technical failures (network errors, missing pages, authentication failures) to the LLM
+* Listing available ARIA landmark labels on the current page and scrolling the user's browser to a specific labelled section
 
 ## Alternatives Considered
 
@@ -164,6 +183,26 @@ Agents querying many sites benefit from a centralised discovery endpoint that re
 ### How AI Agents Learn to Use Semantic Destinations
 
 AI agents use Discoverable Destinations through explicit tool integration, not through pattern recognition learned during training. Frameworks like the Model Context Protocol (MCP) allow developers to equip agents with specific tools that understand Discoverable Destinations. The agent calls a tool described as "navigate to the help destination on this website" and the tool handles all the HTML mechanics. The semantics live in the tool descriptions, not in model weights — so agents work correctly on any compliant site without site-specific training.
+
+### Example Integration with Model Context Protocol (MCP)
+
+The [Model Context Protocol (MCP)](https://github.com/modelcontextprotocol/specification) is an open standard that enables AI applications to securely connect with external tools and data sources.
+
+**MCP Architecture Overview:**
+MCP operates on a client-server model:
+- **MCP Clients**: AI applications (agents)
+- **MCP Servers**: Applications that expose tools and resources to AI systems
+- **Protocol**: JSON-RPC over stdio, HTTP with SSE (Server-Sent Events), or WebSocket connections
+
+Semantic Web Tools can be exposed through MCP servers, providing AI agents with standardised tools to access websites.
+
+**Example MCP Integration Workflow:**
+When a user asks an AI agent to "find support options across my service providers," a system using MCP might follow this pattern:
+
+1. The agent uses Semantic Web Tools to discover available destinations on each target website
+2. Based on the discovered destinations, the agent determines the optimal navigation strategy
+3. The agent navigates to relevant destinations and retrieves content
+4. The AI processes the retrieved content to extract and synthesise the information
 
 ### Sample Semantic Web Tools API
 

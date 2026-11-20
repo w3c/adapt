@@ -230,6 +230,7 @@ indicated by adding a <code>rel</code> value to the anchor.</p>
 				<li><p>An accessibility compliance assistant can help a disability rights advocate check accessibility statements across multiple partner websites. The AI agent discovers the <code>accessibility-statement</code> destination on each site, removing the need for manual navigation.</p></li>
 				<li><p>A user with cognitive disabilities facing issues across multiple service providers can be helped by an agent that finds the <code>contact</code> and <code>help</code> destinations on each platform and presents them in a consistent format.</p></li>
 				<li><p>A user with motor impairments who needs to update profile information across several sites can rely on an agent to handle the navigation to each relevant destination, leaving the user to focus on the actual updates rather than the navigation.</p></li>
+				<li><p>A disability services organisation that needs to regularly verify accessibility resources across its digital ecosystem can use an agent to discover <code>accessibility-statement</code> and <code>help</code> destinations automatically, without maintaining fragile site-specific scripts.</p></li>
 			</ul>
 			<p>These scenarios share a common pattern: AI agents handle the discovery and navigation complexity, while humans maintain control over sensitive decisions and actions.</p>
 
@@ -289,7 +290,7 @@ indicated by adding a <code>rel</code> value to the anchor.</p>
 			<p>A User Agent that exposes a destination list to the user reveals which discoverable destinations a site supports. Since this information is already present in the page's <code>&lt;head&gt;</code> and therefore visible to any party that loads the page, no new information is disclosed by processing or presenting it.</p>
 
 			<h3 id="security-considerations">Security Considerations</h3>
-			<p>All navigation uses standard HTTP and HTTPS requests subject to normal browser security policies. Destinations are typically within the same origin, which reduces cross-origin security concerns. Content authors are responsible for ensuring that the <code>href</code> values in their <code>&lt;link&gt;</code> elements point to legitimate, secure pages under their control.</p>
+			<p>All navigation uses standard HTTP and HTTPS requests subject to normal browser security policies. Destinations are typically within the same origin, which reduces cross-origin security concerns. Content authors are responsible for ensuring that the <code>href</code> values in their <code>&lt;link&gt;</code> elements point to legitimate, secure pages under their control. A compromised CMS could inject destination <code>&lt;link&gt;</code> elements pointing to phishing pages; however, this is not a new attack surface introduced by this approach. The same risk exists for any link or navigation element in a page.</p>
 			<p>User Agents and extensions that implement a discoverable destination interface are encouraged to validate that destination URLs share the same origin as the page from which they were discovered. Where a cross-origin destination URL is present, it is good practice for User Agents to present the full URL to the user before navigating, to support informed decision-making.</p>
 
 			<h3 id="ai-agent-considerations">Considerations for AI Agent Integration</h3>
