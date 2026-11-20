@@ -12,208 +12,142 @@
 ## Contents
 
 - [Introduction](#introduction)
-- [The Problem: API Dependency Challenge](#the-problem-api-dependency-challenge)
-- [Technical Foundation](#technical-foundation)
-- [Real-World Applications](#real-world-applications)
-- [Scope and Limitations](#scope-and-limitations)
+- [The Problem](#the-problem)
+- [How Discoverable Destinations Helps](#how-discoverable-destinations-helps)
+- [Alternatives Considered](#alternatives-considered)
+  * [Traditional Web Scraping](#traditional-web-scraping)
+  * [Computer Use Agents](#computer-use-agents)
+  * [Site-specific APIs](#site-specific-apis)
+- [Scope of Discoverable Destinations for Agentic Use](#scope-of-discoverable-destinations-for-agentic-use)
 - [Extended Destination Types for AI Tools](#extended-destination-types-for-ai-tools)
 - [Open Questions](#open-questions)
 - [References](#references)
-- [Appendix: Background on Agentic AI and Integration Patterns](#appendix-background-on-agentic-ai-and-integration-patterns)
+- [Appendix: Integration Patterns and Sample API](#appendix-integration-patterns-and-sample-api)
 
 ## Introduction
 
-**Agentic AI systems** are autonomous software agents that can plan, reason, and execute complex multi-step tasks on behalf of users. These systems represent a new frontier in automation, capable of understanding natural language requests and breaking them down into actionable steps. For users with disabilities, these AI agents can serve as powerful assistive technologies, helping navigate digital environments and complete tasks that might otherwise be challenging.
+Agentic AI systems are autonomous software agents that can plan, reason, and execute complex multi-step tasks on behalf of users. For users with disabilities, these agents can serve as powerful assistive technologies, helping navigate digital environments and completing tasks that might otherwise be challenging.
 
-However, there is a fundamental challenge: while these AI agents excel at working with structured APIs, the vast majority of websites (70-80%) do not provide APIs for the functionality users actually need. This forces agents to fall back on brittle web scraping techniques that break whenever sites update their designs.
+However, there is a fundamental problem: while AI agents work well with structured APIs, the vast majority of websites do not expose APIs for the functionality users actually need. This forces agents to rely on fragile techniques that break whenever a site updates its design.
 
-This explainer proposes extending the [Discoverable Destinations](discoverable-destinations.md) approach to bridge this gap through **Semantic Web Tools**, standardized software components that enable reliable website navigation using semantic identifiers rather than fragile technical selectors. Discoverable Destinations were designed to help humans with accessibility needs find important pages quickly; this same semantic infrastructure serves AI agents acting as assistive technologies equally well.
+This explainer proposes extending the [Discoverable Destinations](discoverable-destinations.md) approach to address this gap. Discoverable Destinations were designed to help humans with accessibility needs find important pages quickly. The same semantic infrastructure serves AI agents acting as assistive technologies equally well.
 
-Instead of AI agents looking for contact information using fragile selectors like "find the element with class `.contact-info`", they use semantic identifiers to say "navigate to the `contact` destination". This approach works consistently across all compliant websites and benefits both direct accessibility (helping users with disabilities navigate) and indirect accessibility (enabling AI assistive technologies to work reliably).
+The technical specification of how AI agents leverage Discoverable Destinations, including ARIA landmark navigation and integration patterns, is in the [WAI-Adapt: Discoverable Destinations W3C Note](../destinations/index.html#agentic-ai-and-machine-navigation). This explainer covers the problem context, the alternatives considered (including when and why to use a Computer Use Agent as a fallback), and open questions.
 
-## The Problem: API Dependency Challenge
+## The Problem
 
-Today's agentic AI systems operate in a two-tier world of website interaction.
+Today's agentic AI systems face a two-tier web.
 
-**The Privileged Few (20-30% of sites):**
-Sites like Twitter and GitHub provide robust APIs. AI agents work reliably with these: they can access data, perform actions, and integrate seamlessly into workflows.
+**Sites with APIs (roughly 20 to 30 percent):** Services like GitHub or large e-commerce platforms provide structured APIs. Agents work reliably with these: they access data, perform actions, and integrate predictably.
 
-**The Struggling Majority (70-80% of sites):**
-Most websites, from local businesses to government agencies, do not provide APIs for basic functions like finding contact information, accessing help resources, or managing user accounts. This forces AI agents into a world of fragile workarounds:
+**Sites without APIs (roughly 70 to 80 percent):** Most websites — local businesses, government agencies, healthcare providers — do not expose APIs for common tasks like finding contact information, locating help resources, or discovering accessibility statements. This leaves agents with poor alternatives:
 
-- **CSS Selector Archaeology**: Hunting for `.contact-info` classes that vanish with the next design update
-- **HTML Structure Divination**: Parsing unstructured content that changes without notice
-- **Site-Specific Scripting**: Maintaining individual automation for each website, a significant maintenance burden
+* Hunting for CSS selectors like `.contact-info` that vanish with the next design update
+* Parsing unstructured HTML that changes without notice
+* Maintaining site-specific scripts, a constant and significant maintenance burden
 
-### Real-World Pain Points
+Consider an AI assistant asked to "audit accessibility statements across our fifty partner websites." For the minority with APIs this is trivial. For the rest, the agent must guess where the page lives, hope the structure has not changed, and fail silently when selectors break — leaving users with incomplete results.
 
-Consider an AI assistant tasked with "auditing accessibility statements across a company's website portfolio." For sites with APIs, this is straightforward. For the majority without APIs, the agent must:
+What is needed is a semantic bridge between the reliability of APIs and the universality of web interfaces.
 
-1. Guess where accessibility statements might be located
-2. Hope the HTML structure has not changed since the last update
-3. Fail gracefully when selectors break, leaving users with incomplete results
+| Approach | Coverage | Reliability | Token Cost | Maintenance |
+|---|---|---|---|---|
+| APIs | ~20 to 30% of sites | High | Negligible | Low |
+| Traditional scraping | ~100% of sites | Very low | Negligible | Constant |
+| Semantic Web Tools | Growing with adoption | High | Negligible | None |
+| Computer Use Agents | ~100% of sites | Probabilistic | Very high | High |
 
-**The Core Problem**: A semantic bridge is needed between the reliability of APIs and the universality of web interfaces.
+## How Discoverable Destinations Helps
 
-| Approach | Coverage | Reliability | Navigation Token Cost | Maintenance Reality |
-|----------|----------|-------------|----------------------|---------------------|
-| **APIs Only** | ~20-30% of sites | High | Negligible | Low (when available) |
-| **Traditional Scraping** | ~100% of sites | Very Low | Negligible | Constant firefighting |
-| **Semantic Web Tools** | Growing with adoption | High | Negligible | Set-and-forget |
-| **Computer Use Agents** | ~100% of sites | Probabilistic | Very High | High (sensitive to redesigns) |
+Discoverable Destinations give AI agents the same semantic navigation infrastructure designed for human assistive technologies. Instead of searching for contact information using a fragile CSS selector, an agent uses a semantic identifier to navigate to the `contact` destination. This works consistently across all compliant websites.
 
-## Technical Foundation
+**Semantic Web Tools** are software components that expose the Discoverable Destinations mechanism as callable tools to AI agents. The agent does not need to know anything about `<link>` elements or HTML structure. It calls a tool that handles discovery, navigation, and content retrieval.
 
-The architecture is elegantly simple, built on following core capabilities:
+The core capabilities are:
 
-### Core Web Tools Capabilities
+* **Destination Discovery**: Enumerate all Discoverable Destinations available on a given site or page
+* **Semantic Navigation**: Navigate to a destination using its semantic identifier rather than a site-specific URL or selector
+* **Content Retrieval**: Fetch page content from a destination and deliver it to the LLM for processing, filtered through the `<main>` landmark to reduce noise
+* **Intra-page Navigation**: Discover labelled ARIA landmark regions on a destination page and scroll the user's browser to a specific section (browser-based deployments only)
 
-* **Destination Discovery**: Enumerating all available Discoverable Destinations for a given site / page 
-* **Semantic Navigation**: Navigating to specific destinations using semantic identifiers rather than site-specific selectors
-* **Content Retrieval**: Fetching page content from destination URLs and delivering it to LLMs for intelligent processing
-* **Intra-page Navigation via ARIA Landmarks**: Discovering available [ARIA landmark roles](https://www.w3.org/TR/wai-aria-1.2/#landmark_roles) on a destination page and navigating the user's browser to a specific labelled section
+The full technical specification — including how the LLM and tools divide responsibilities, the browser extension, server-side, and browser-native deployment patterns — is in the [W3C Note](../destinations/index.html#agentic-ai-and-machine-navigation).
 
-**Benefits of Semantic Approach:**
-- Single set of capabilities works across all compliant websites
-- No site-specific customization or maintenance required
-- Consistent, predictable behavior for AI agents
-- Leverages semantic web standards for reliability
+## Alternatives Considered
 
-### Discovery Mechanisms
+### Traditional Web Scraping
 
-Semantic Web Tools leverage the standardized discovery mechanisms already defined in the Discoverable Destinations proposal. The Discoverable Destinations framework supports multiple discovery methods (like linkset), ensuring AI tools can adapt as new optimization approaches emerge.
+Scraping parses HTML structure or matches CSS selectors to find content. It achieves broad coverage — any website can in principle be scraped — and adds no token cost per navigation step.
 
-### Division of Responsibilities
+The critical problem is reliability. Selectors are tied to a site's visual design and break whenever the site is updated. Maintaining scrapers across dozens or hundreds of sites is a significant ongoing burden. For accessibility use cases where agents act on behalf of users with disabilities, silent failures or stale data are unacceptable outcomes.
 
-The system operates through a clear separation of concerns between the LLM (reasoning/coordination) and Semantic Web Tools (technical execution):
+Semantic Web Tools achieve the same broad coverage once sites adopt Discoverable Destinations, with far higher reliability and zero ongoing maintenance. Scraping remains a last resort for sites that have not yet adopted the standard.
 
-**LLM Responsibilities:**
-* **Task Planning**: Interpreting user requests and determining which destinations are needed from available destinations.
-* **Workflow Coordination**: Orchestrating the sequence of operations
-* **Web Page Analysis**: Synthesizing information from web page into coherent responses (like getting a hotel's reception number)
-* **Error Handling**: Deciding how to respond when tools encounter failures or missing content
-* **User Interaction**: Managing clarifications, progress updates, and result presentation
+### Computer Use Agents
 
-**Web Tools Responsibilities:**
-* **Destination Discovery**: Finding available Discoverable Destinations on target websites
-* **Navigation**: Converting semantic destination names to URLs and performing HTTP requests
-* **Content Retrieval**: Fetching raw page content and passing it to LLMs for processing
-* **Error Reporting**: Detecting and reporting technical failures (network errors, missing pages, authentication failures) to the LLM for decision-making
-* **Landmark Discovery and Navigation**: Listing available ARIA landmark labels on the current page and scrolling the user's browser to a specific labelled section
+Computer Use Agent (CUA) systems interact with a browser by taking screenshots and issuing low-level input events such as mouse clicks and keyboard presses. Because they navigate visually rather than semantically, they can in principle reach any page on any website without the site implementing Discoverable Destinations.
 
-### Leveraging ARIA Landmarks for Intra-page Navigation
+However, CUA-based navigation has significant practical limitations for accessibility use cases:
 
-Discoverable Destinations solve the *inter-page* navigation problem: finding and reaching the right page. But users sometimes need to reach a specific *section* within a destination page. For example: "take me to the account management section of xyz's help page."
+* **Token cost**: Each navigation step requires at least one screenshot and a model round-trip to interpret it before the next action. Tasks requiring several page visits can become prohibitively expensive. A Semantic Web Tools call that reads all destinations from a `<link>` element costs a fraction of this.
 
-For **content extraction** tasks (e.g. "what is the billing support phone number?"), ARIA landmarks are not essential. LLMs are capable of processing full page content and extracting the relevant information from raw HTML. Using the `<main>` element (or `role="main"`) to filter out navigation bars, footers, and advertisements etc. before passing content to the LLM can reduce noise and token cost, but this is a practical optimisation, not a requirement.
+* **Reliability**: Navigation decisions are made by visually analysing a rendered page, which is inherently probabilistic. The agent may misidentify a link, click the wrong element, or fail to find a destination that is not visible in the current viewport.
 
-For **intra-page navigation** tasks (e.g. "take me to account management help"), ARIA landmarks are genuinely valuable. When the user asks to be *taken to* a specific section, the agent needs a reliable DOM target to scroll or focus the browser. The LLM can *understand* where "Account Management" is in the HTML, but it cannot *scroll the browser* there without a concrete element to target. Labelled [`region`](https://www.w3.org/TR/wai-aria-1.2/#region) landmarks provide exactly this: standardised, semantic anchors that the tool can use to navigate the user's view to the right part of the page.
+* **Design sensitivity**: CUA agents are fragile under visual redesigns. A layout change that leaves the page's `<link>` elements completely untouched can cause a CUA agent to fail entirely on the next run.
 
-This intra-page navigation works as follows:
+* **Speed**: Because each interaction requires a model round-trip to process a screenshot, CUA workflows are substantially slower than a lightweight tool call.
 
-1. The user asks to be taken to a specific section of a destination page (e.g. "take me to account management help on xyz.com").
-2. The LLM calls `navigateToDestination` to reach the `help` page.
-3. The LLM calls `discoverLandmarks` with the destination URL to retrieve the list of available landmark labels on the page (e.g. "Getting Started", "Account Management", "Billing Support").
-4. The LLM identifies which landmark best matches the user's request and calls `navigateToLandmark` with the destination URL and that label (e.g. `"Account Management"`).
-5. The tool locates the matching labelled `region` landmark in the DOM and scrolls or focuses the browser to that element.
-6. The user sees the relevant section of the page.
+For these reasons, CUA is not a primary approach for agentic accessibility work. It is best used as a fallback in two specific situations: when a site has not yet adopted Discoverable Destinations and no API is available, and when a semantic navigation step fails unexpectedly and a one-off visual recovery is needed. After the CUA recovery step, semantic navigation resumes. This layered strategy allows accessibility tools to degrade gracefully rather than failing completely.
 
-This is primarily relevant in browser-based integration models, such as a browser extension or a browser-native approach, where the tool has direct DOM access to scroll and focus the user's browser. In a server-side model, intra-page navigation is not applicable since there is no browser to control.
+The comparison is summarised in the table in [The Problem](#the-problem) section.
 
-The [`navigation`](https://www.w3.org/TR/wai-aria-1.2/#navigation) landmark can also help agents discover secondary navigation paths on a page, revealing links the agent can follow on the user's behalf.
+### Site-specific APIs
 
-Content authors are encouraged to use the `<main>` element to wrap their primary destination content, and to label distinct content regions with `region` landmarks. This benefits both human users of assistive technologies and AI agents acting on their behalf.
+Where a site provides an API for the needed functionality, using it is the most reliable option. API-based access is fast, structured, and version-stable.
 
-## Real-World Applications
+The limitation is coverage. APIs exist for roughly 20 to 30 percent of sites, and even on API-enabled sites, common accessibility-relevant pages (accessibility statements, help pages, contact information) are rarely exposed through APIs. Discoverable Destinations and site-specific APIs are complementary: the standard handles navigation to common pages across any compliant site, while APIs handle complex or sensitive operations on the minority of sites that provide them.
 
-Imagine the possibilities when AI agents can reliably navigate any website using semantic markers, particularly for users who face barriers in traditional web navigation:
+## Scope of Discoverable Destinations for Agentic Use
 
-**The Accessibility Compliance Assistant**: A disability rights advocate asks their AI assistant to "check accessibility statements across our 50 partner websites." Instead of manually visiting each site or maintaining fragile scrapers, the AI agent systematically discovers and analyzes `accessibility-statement` destinations across all sites in minutes, ensuring comprehensive accessibility monitoring.
+Discoverable Destinations are well suited for content discovery, such as finding specific types of pages including help, contact, and accessibility statements. They support information extraction from destination pages and provide consistent navigation patterns across different websites.
 
-**The Cognitive Support Assistant**: A user with cognitive disabilities facing issues with multiple service providers asks for help options. The AI agent discovers `contact` and `help` destinations across different platforms, presenting a comprehensive support landscape in a simplified, consistent format without breaking when sites redesign.
+Certain tasks require solutions beyond Discoverable Destinations:
 
-**The Motor Accessibility Aid**: A user with motor impairments wants to update their profile information across platforms but finds repeated navigation challenging. The AI agent navigates to the relevant destination pages on each site, then guides the user through the updates with full context and control, reducing the physical navigation burden.
+* Complex workflows such as password changes, account modifications, or transaction processing may vary dramatically between sites. Discoverable Destinations can navigate to the relevant starting point, but the actual workflow may require additional tools or human involvement.
 
-**The Accessibility Monitoring System**: Disability services organizations need regular checks of accessibility resources across their digital ecosystem. Semantic destinations enable automated discovery of `accessibility-statement` and `help` destinations without the maintenance burden of traditional scraping, ensuring accessibility information remains current and accessible.
+* Authenticated operations requiring user-specific authorisation need specialised protocols and often human involvement for security.
 
-These scenarios share a common pattern: AI agents handle the discovery and navigation complexity using LLMs for planning and coordination, while Semantic Web Tools provide reliable technical execution. Humans maintain control over sensitive decisions and actions.
-
-## Scope and Limitations
-
-### What Discoverable Destinations Solve Well
-
-* **Content Discovery**: Finding specific types of pages (help, contact, accessibility statements, product catalogs)
-* **Information Extraction**: Extracting data from destination pages
-* **Consistent Navigation**: Standardized navigation patterns across different websites
-
-### What Requires Additional Solutions
-
-* **Complex Actions**: Multi-step workflows like password changes, account modifications, or transaction processing
-  - *Why Discoverable Destinations are not sufficient*: While destinations can navigate to account settings pages, the actual modification workflows vary dramatically between sites. A password change might require current password verification, security questions, or two-factor authentication in site-specific ways that cannot be standardized through destinations alone.
-  - *Solution approach*: Discoverable Destinations provide navigation to relevant areas, then additional tools (APIs, human-in-the-loop) handle the complex workflows.
-
-* **Authenticated Operations**: Actions requiring user-specific authentication and authorization
-  - *Why Discoverable Destinations are not sufficient*: While an agent could navigate to a login page using destinations, the authentication mechanisms (OAuth, SAML, multi-factor authentication) require site-specific integration that goes beyond semantic navigation.
-  - *Solution approach*: Destinations can navigate to login/authentication pages, but secure authentication requires specialized protocols and often human involvement for security.
-
-* **Site-specific Workflows**: Unique business processes that do not map to standard destinations
-  - *Why Discoverable Destinations are not sufficient*: Business processes like "submit insurance claim" or "schedule medical appointment" involve complex, industry-specific workflows that cannot be standardized across all websites.
-  - *Solution approach*: Destinations help reach relevant sections, but specialized tools or APIs are needed for complex business logic.
-
-### Human-in-the-Loop for Complex Scenarios
-
-For complex scenarios, a layered approach works best:
-
-1. **Discoverable Destinations**: Provide navigation to relevant areas
-2. **API Integration**: Use APIs where available for sensitive operations
-3. **Human-in-the-Loop**: Include human oversight for sensitive or complex tasks
-
-The primary approach for sensitive operations should be human-in-the-loop, where AI agents navigate to relevant pages using semantic destinations, extract and present available options to users, then hand control to humans for actual execution.
-
-### Computer Use Agents: A Different Navigation Approach
-
-Computer Use Agent (CUA) systems are a class of AI agent that interact with a browser by taking screenshots and issuing low-level input events such as mouse clicks and keyboard actions. CUA does not use Discoverable Destinations or Semantic Web Tools. It navigates a website by visually interpreting screenshots and simulating user input, without any awareness of `<link>` elements or semantic destination identifiers.
-
-CUA-based navigation can, in principle, reach any page on any website without the site implementing Discoverable Destinations. However it carries significant practical costs:
-
-* Each navigation step requires the agent to take a screenshot and interpret it before deciding the next action. This consumes substantially more tokens per task than a Semantic Web Tools approach, where a single tool call retrieves all available destinations from the page `<head>`. Tasks that involve visiting several pages can become prohibitively expensive.
-* Because navigation decisions are made by visually analysing a rendered page, the process is inherently probabilistic. The agent may misidentify a link, click the wrong element, or fail to locate a destination if it is not immediately visible in the viewport.
-* CUA systems are sensitive to changes in a site's visual design. A layout update that has no effect on the `<link>` elements in the page `<head>` may cause a CUA agent to fail, requiring the agent to be re-evaluated against the new design.
-* Each step in a CUA workflow requires a round-trip through the model to process a screenshot before the next action can be taken, making these workflows substantially slower than the lightweight tool calls used in the semantic approach.
-
-For these reasons, CUA should not be considered a primary approach for agentic web navigation. It is best understood as a fallback or self-healing mechanism in two specific situations. First, if a site does not yet implement Discoverable Destinations and no API is available, a CUA agent may be able to complete the task, accepting the associated token cost and reduced reliability. Second, if a semantic navigation step fails unexpectedly, for example because a destination URL has temporarily changed, a CUA agent can be invoked to attempt the same action visually. Once the CUA agent completes the recovery step, the semantic approach can resume for subsequent steps. This layered strategy allows accessibility tools to degrade gracefully rather than failing entirely when semantic infrastructure is absent or temporarily unavailable.
+For complex scenarios, a layered approach works well: Discoverable Destinations provide navigation to relevant areas, site-specific APIs handle sensitive operations where available, and human oversight is included for sensitive or complex tasks. Where neither semantic destinations nor APIs are available, a Computer Use Agent can serve as a fallback, as described in the Alternatives Considered section above.
 
 ## Extended Destination Types for AI Tools
 
-The Discoverable Destinations proposal primarily serves human accessibility needs. For agentic AI systems operating as assistive technologies, a few additional destination types could be beneficial:
+The current set of Discoverable Destinations was designed around human accessibility needs. For AI agents acting as assistive technologies, a small number of additional destination types could be valuable:
 
-### Example Additional Destinations
+* **`account-settings`**: User profile and account management pages. AI agents helping users with disabilities manage their digital presence across platforms need a reliable way to reach these pages without site-specific knowledge.
+* **`accessibility-preferences`**: User accessibility settings and preferences. An AI agent helping a user configure an accessible experience needs to locate this page consistently across different services.
 
-* **`account-settings`**: User profile/account management pages, essential for users who need AI assistance managing their digital presence
-* **`accessibility-preferences`**: User accessibility settings and preferences, enabling AI agents to help users configure accessible experiences
-
-These destination types address common accessibility and agentic AI use cases where sites lack APIs, directly benefiting users by providing clearer navigation paths while enabling AI assistive technologies to operate reliably.
+These are proposed additions, not yet in the standard. Proposals for new destination types are discussed in the [W3C Note](../destinations/index.html#requesting-additional-destination-types).
 
 ## Open Questions
 
-### Discoverable Destinations Extensions
+### New destination types for agentic use cases
 
-* **New Destination Types**: Should additional destinations like `account-settings` and `accessibility-preferences` be standardized for AI-assisted accessibility use cases?
-* **Discovery Optimization**: The Discoverable Destinations specification considers alternative centralized discovery mechanisms, such as `/.well-known/destinations` and Linksets. Should these be formally adopted to support efficient discovery?
+Should `account-settings`, `accessibility-preferences`, and similar destinations be standardised for AI-assisted accessibility? The current governance process for proposing new types is under development. Proposals can be raised as issues in the [WAI-Adapt GitHub repository](https://github.com/w3c/adapt/issues).
 
-### Standardization Process
+### CUA fallback policy
 
-* **Governance Model**: How should new AI-relevant destination types be proposed, reviewed, and added to the standard?
+Under what conditions should an agent trigger a CUA fallback rather than reporting a failure to the user? A clear policy would help implementors decide when the additional token cost and reduced reliability of visual navigation are acceptable. Options include triggering on any semantic navigation failure, only after a configurable number of retries, or only when the user has explicitly enabled CUA fallback.
 
-### Integration and Fallback
+### Capability declaration
 
-* **CUA Fallback Triggering**: What conditions should trigger a CUA fallback when semantic navigation fails? A clear policy would help implementors decide when to accept the additional cost of visual navigation rather than reporting a failure to the user.
-* **Graceful Degradation**: Should tools that implement the Semantic Web Tools API be required to declare whether they support CUA fallback, so that orchestrating agents can make informed decisions about task routing?
+Should tools that implement the Semantic Web Tools interface be required to declare whether they support CUA fallback, so that orchestrating agents can make informed decisions about task routing? Without this, an agent cannot know in advance whether a fallback is available.
+
+### Discovery optimisation for agents
+
+Agents querying many sites benefit from a centralised discovery endpoint that reduces per-page overhead. The open question of whether a well-known URI endpoint should complement per-page `<link>` declarations (discussed in the [Discoverable Destinations explainer](discoverable-destinations.md#discoverability-and-repetition)) is particularly relevant for agents that query many sites in a single session.
 
 ## References
 
-### Foundational Work
-
+* [WAI-Adapt: Discoverable Destinations W3C Note](../destinations/index.html)
 * [WAI-Adapt: Discoverable Destinations Explainer](discoverable-destinations.md)
 * [Model Context Protocol (MCP) Specification](https://github.com/modelcontextprotocol/specification)
 * [WebMCP](https://github.com/webmachinelearning/webmcp)
@@ -223,127 +157,63 @@ These destination types address common accessibility and agentic AI use cases wh
 
 ---
 
-## Appendix: Background on Agentic AI and Integration Patterns
+## Appendix: Integration Patterns and Sample API
 
-### How AI Agents Use Semantic Destinations
+> **Note:** The authoritative description of integration patterns (browser extension model, server-side model, and browser-native WebMCP model) is in the [WAI-Adapt: Discoverable Destinations W3C Note](../destinations/index.html#integration-patterns). The patterns below are reproduced here as background context for understanding the sample API. Where this appendix and the Note differ, the Note takes precedence.
 
-A common question is how AI agents learn to use semantic markers exposed via Discoverable Destinations. The answer is through explicit tool integration rather than expecting agents to discover these patterns through prior training.
+### How AI Agents Learn to Use Semantic Destinations
 
-**Tool Integration**: AI frameworks like MCP (Model Context Protocol) allow developers to equip agents with specific tools that understand Discoverable Destinations. These tools handle the technical work of discovering destinations, navigating to them, and fetching content. The agent does not need to know anything about `<link>` elements or HTML structure.
+AI agents use Discoverable Destinations through explicit tool integration, not through pattern recognition learned during training. Frameworks like the Model Context Protocol (MCP) allow developers to equip agents with specific tools that understand Discoverable Destinations. The agent calls a tool described as "navigate to the help destination on this website" and the tool handles all the HTML mechanics. The semantics live in the tool descriptions, not in model weights — so agents work correctly on any compliant site without site-specific training.
 
-**Instruction-Following**: Modern LLMs excel at following instructions. When given a tool described as "navigate to the help destination on this website", they can invoke it correctly and coordinate multiple tools in sequence without site-specific training. The semantics are in the tool descriptions, not in the model weights.
+### Sample Semantic Web Tools API
 
-### Integration Architecture Patterns
+These tools work uniformly across any website implementing Discoverable Destinations and support three workflows:
 
-#### Core Integration Workflow
+**Workflow 1 — Direct Navigation**: "Take me to the help page"
 
-Agentic AI systems integrate with Semantic Web Tools through a workflow that works consistently across all websites implementing Discoverable Destinations:
+**Workflow 2 — Information Extraction**: "What is the customer service phone number?"
 
-1. **Destination Discovery**: The agent uses Semantic Web Tools to discover available destinations on the target page.
-2. **Destination Selection and Planning**: Based on discovered destinations and the user's request, the agent plans which destinations to visit and in what sequence.
-3. **Semantic Navigation and Content Retrieval**: The agent navigates to selected destinations and retrieves page content for analysis.
-4. **LLM Processing and Synthesis**: The agent processes retrieved content using the LLM to extract relevant information, make decisions, and synthesize results.
-
-#### Workflow Characteristics
-
-**Uniform Approach**: The same Semantic Web Tools and workflow pattern works across all websites that implement Discoverable Destinations, eliminating the need for site-specific customization.
-
-**Semantic Reliability**: Navigation based on semantic destinations (`contact`, `help`, `accessibility-statement`) rather than fragile CSS selectors ensures consistent operation even when sites update their visual design.
-
-**Clear Separation**: Semantic Web Tools handle technical navigation and content retrieval; LLMs handle intelligent processing and decision-making. Technical failures such as rate limiting, authentication errors, or missing pages are reported to the LLM, which decides how to respond.
-
-#### Example Integration with Model Context Protocol (MCP)
-
-The [Model Context Protocol (MCP)](https://github.com/modelcontextprotocol/specification) provides one example of how tools could integrate with AI systems. MCP is an open standard that enables AI applications (Agents) to securely connect with external tools and data sources.
-
-**MCP Architecture Overview:**
-MCP operates on a client-server model:
-- **MCP Clients**: AI applications (agents)
-- **MCP Servers**: Applications that expose tools and resources to AI systems
-- **Protocol**: JSON-RPC over stdio, HTTP with SSE (Server-Sent Events), or WebSocket connections
-
-**Semantic Web Tools as MCP Tools:**
-Semantic Web Tools can be exposed through MCP servers, providing AI agents with standardized tools to access websites.
-
-**Example MCP Integration Workflow:**
-When a user requests an AI agent to "find support options across my service providers," a system using MCP might follow this pattern:
-
-1. The agent uses Semantic Web Tools to discover available destinations on each target website
-2. Based on discovered destinations, the agent determines the optimal navigation strategy  
-3. The agent navigates to relevant destinations and retrieves content
-4. The AI processes the retrieved content to extract and synthesize information
-
-#### Deployment Patterns: Browser Extension, Server-side, and Browser-native
-
-Semantic Web Tools can be deployed in a variety of ways, and new integration approaches may emerge as the ecosystem matures. The patterns described here represent approaches that have been demonstrated in practice. The right choice depends on two questions: whether the task requires access to the user's live browser session, and whether the tools run inside the user's environment or on a remote server.
-
-**Browser Extension Model (Recommended)**
-
-In this model, a browser extension provides the Semantic Web Tools to the AI agent. The extension runs within the user's browser and uses standard browser extension APIs to read `<link>` elements from the current page, update browser tabs, and execute scripts in the page context. This is the model demonstrated in the reference prototypes accompanying this work.
-
-The browser extension model has the following characteristics:
-
-- Destination discovery reads directly from the live DOM of the tab currently open in the user's browser, so the results are always current and scoped to the active page.
-- Navigation updates the browser tab the user is looking at, preserving session cookies and authentication state across page loads.
-- Intra-page navigation is fully supported because the extension can execute scripts in the page to locate and scroll to labelled ARIA landmark regions.
-- The extension communicates with the AI agent through a local or cloud-hosted service, while all browser-side execution remains within the user's session.
-
-**Server-side Model**
-
-In this model, the tools run on a remote server and make direct HTTP requests to target websites. No browser session is involved. This approach is well suited for batch tasks on public websites, such as auditing accessibility statements across a portfolio of sites, where no authentication or live browser interaction is required. It cannot access the user's session, cannot navigate a tab the user is looking at, and cannot perform intra-page navigation.
-
-**Browser-native Model (WebMCP)**
-
-[WebMCP](https://github.com/webmachinelearning/webmcp) is an emerging proposal in which the web page itself exposes tools directly to AI agents through a JavaScript API. Because the tools execute as part of the page's own code, they operate within the user's session and have direct DOM access. This model is architecturally well suited to Discoverable Destinations and may become the preferred approach as the proposal matures and gains browser support. At present, browser extensions represent the practical deployment model that achieves the same capabilities using stable, widely supported APIs.
-
-#### Sample Semantic Web Tools API
-
-Semantic Web Tools expose a standardized set of capabilities that work uniformly across any website implementing Discoverable Destinations. These tools support two distinct workflows:
-
-**Workflow 1 - Direct Navigation**: User wants to visit a specific page (e.g., "take me to the help page")
-
-**Workflow 2 - Information Extraction**: User wants specific information (e.g., "get the customer service phone number")
-
-**Workflow 3 - Intra-page Navigation**: User wants to reach a specific section within a destination page (e.g., "take me to account management help")
+**Workflow 3 — Intra-page Navigation**: "Take me to the account management section of the help page" (browser-based deployments only)
 
 ```
 Tool: discoverDestinations
 Description: Discover available semantic destinations on a page
 Parameters:
-- url (string): Page URL to discover destinations from
+  url (string): Page URL to discover destinations from
 Returns: List of available destinations with types and URLs
 
-Tool: navigateToDestination  
+Tool: navigateToDestination
 Description: Navigate to a semantic destination
 Parameters:
-- url (string): Base page URL containing the destination reference
-- destinationType (string): Destination type (e.g., contact, help, accessibility-statement)
+  url (string): Base page URL containing the destination reference
+  destinationType (string): Destination type (e.g. contact, help, accessibility-statement)
 Returns: Navigation result with destination URL
 
 Tool: fetchContentFromDestination
-Description: Navigate to a semantic destination and retrieve page content for LLM processing. Prioritises content within the <main> landmark when present, filtering out peripheral page elements.
+Description: Navigate to a destination and retrieve page content for LLM processing.
+             Filters to content within the <main> landmark when present.
 Parameters:
-- url (string): Base page URL containing the destination reference  
-- destinationType (string): Destination type (e.g., contact, help, accessibility-statement)
-Returns: Navigation result with destination URL and extracted page content for LLM analysis
+  url (string): Base page URL containing the destination reference
+  destinationType (string): Destination type (e.g. contact, help, accessibility-statement)
+Returns: Destination URL and extracted page content
 
 Tool: discoverLandmarks
-Description: Discover available ARIA landmark labels on the current page. Only applicable in browser-based deployments (browser extension or browser-native model).
+Description: List available ARIA landmark labels on the current page.
+             Browser-based deployments only (browser extension or browser-native model).
 Parameters:
-- url (string): URL of the page to discover landmarks on (typically the destination URL returned by a previous navigateToDestination call)
-Returns: List of landmark roles and their labels (e.g. [{role: "region", label: "Account Management"}, {role: "navigation", label: "Main Menu"}])
+  url (string): URL of the page to inspect
+Returns: List of landmark roles and labels (e.g. [{role: "region", label: "Account Management"}])
 
 Tool: navigateToLandmark
-Description: Navigate the user's browser to a specific labelled landmark region on the current page. Only applicable in browser-based deployments (browser extension or browser-native model).
+Description: Scroll the user's browser to a specific labelled landmark region.
+             Browser-based deployments only (browser extension or browser-native model).
 Parameters:
-- url (string): URL of the page containing the landmark
-- landmarkLabel (string): Label of the landmark region to scroll/focus to (e.g., "Account Management", "Billing Support")
-Returns: Success/failure indication and the landmark element identifier
+  url (string): URL of the page containing the landmark
+  landmarkLabel (string): Label of the target region (e.g. "Account Management")
+Returns: Success or failure, and the matched element identifier
 ```
 
-> **Note:** For content extraction tasks, LLMs can process full page content directly and ARIA landmarks are not essential. Using `<main>` to filter peripheral content is a practical optimisation that reduces noise and token cost. For intra-page navigation tasks (where the user wants to be *taken to* a specific section), the LLM first calls `discoverLandmarks` with the destination URL to learn what sections are available, then calls `navigateToLandmark` to scroll the user's browser to the matching labelled [ARIA landmark](https://www.w3.org/TR/wai-aria-1.2/#landmark_roles) region. Both landmark tools require a browser-based deployment (browser extension or browser-native model) that has direct access to the page DOM.
-
-**Usage Examples:**
-* **Inter-page Navigation**: `navigateToDestination` for "take me to the help page"
-* **Intra-page Navigation**: `navigateToDestination` to reach the help page, then `discoverLandmarks(url)` to list available sections, then `navigateToLandmark(url, "Account Management")` for "take me to account management help"
-* **Information Extraction**: `fetchContentFromDestination` for "what is the customer service phone number?" (LLM processes the returned content to extract the answer)
+**Usage patterns:**
+* Direct navigation: `navigateToDestination(url, "help")` — takes the user to the help page
+* Intra-page navigation: `navigateToDestination` to reach the page, then `discoverLandmarks(url)` to list sections, then `navigateToLandmark(url, "Account Management")` to scroll there
+* Information extraction: `fetchContentFromDestination(url, "contact")` — LLM extracts the answer from the returned content
