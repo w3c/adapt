@@ -33,9 +33,9 @@
 
 <!-- _[Overall WAI-Adapt Explainer](README.md)_ -->
 
-Web sites can contain a huge array of varied and engaging content. This content, and the means of navigating around it, can be presented in almost any way, which makes for tailored and compelling experiences. However, whilst there are several conventions when it comes to navigation, this variability can pose challenges to certain people and user agents acting on their behalf.
+Web sites can contain a huge array of varied and engaging content. This content, and the means of navigating around it, can be presented in almost any way, which makes for tailored and compelling experiences. However, while there are several conventions when it comes to navigation, this variability can pose challenges to certain people and user agents acting on their behalf.
 
-This work aims to address the challenge of making sites more easily navigable for both people (particularly those facing accessibility barriers) and machines. It does this by standardising machine-readable names for common page types. User Agents can then query as to which destinations are supported on a given site and present this information in an appropriate way for the user.
+This work aims to address the challenge of making sites more easily navigable for both people (particularly those facing accessibility barriers) and machines. It does this by standardizing machine-readable names for common page types. User Agents can then query as to which destinations are supported on a given site and present this information in an appropriate way for the user.
 
 The User Agent, or a User Agent extension, could provide an interface to allow the user to view supported common pages using a method and terminology that is clear to them, and to request to visit common destination pages directly.
 
@@ -112,7 +112,7 @@ This would pose the risk that the interface presented by the UA would not give a
 
 ### Linksets
 
-This was the Task Force's favoured approach before TPAC 2024. Linksets are semantically equivalent to the `<link>` element approach. They would require some additional authoring work to create the linkset, and would result in smaller pages, with one extra request for the linkset document that would cover the whole site.
+This was the Task Force's favored approach before TPAC 2024. Linksets are semantically equivalent to the `<link>` element approach. They would require some additional authoring work to create the linkset, and would result in smaller pages, with one extra request for the linkset document that would cover the whole site.
 
 The Task Force opted for the `<link>` element approach for simplicity. However, it would still be possible to use linksets in future.
 
@@ -144,11 +144,11 @@ Options under consideration for future iterations include:
 
 * A single canonical discovery endpoint, such as a well-known URI, that a User Agent can consult once per origin rather than reading destinations from each page. This would reduce per-page overhead but would require an additional HTTP request on first visit.
 
-* If a centralised endpoint is added, how per-page and per-origin declarations would be reconciled when they differ — for example, when a sub-site legitimately overrides a root-level destination.
+* If a centralized endpoint is added, how per-page and per-origin declarations would be reconciled when they differ — for example, when a sub-site legitimately overrides a root-level destination.
 
-* What caching expectations should apply to destination declarations in both the per-page `<link>` approach and any centralised discovery document.
+* What caching expectations should apply to destination declarations in both the per-page `<link>` approach and any centralized discovery document.
 
-The [Linksets](https://www.rfc-editor.org/rfc/rfc9264) format offers one possible path toward centralised discovery and may be revisited in a subsequent iteration.
+The [Linksets](https://www.rfc-editor.org/rfc/rfc9264) format offers one possible path toward centralized discovery and may be revisited in a subsequent iteration.
 
 ## Stakeholder feedback/opposition
 
@@ -193,7 +193,7 @@ The [Linksets](https://www.rfc-editor.org/rfc/rfc9264) format offers one possibl
 #### Linksets
 
 > [!NOTE]
-> The Task Force is not using linksets in this specification, though they were suggested as a suitable implementation path. They provide a slightly more centralised semantic equivalent to `<link>` elements, which can be separated out into a separate document. They would likely require slightly more authoring effort initially.
+> The Task Force is not using linksets in this specification, though they were suggested as a suitable implementation path. They provide a slightly more centralized semantic equivalent to `<link>` elements, which can be separated out into a separate document. They would likely require slightly more authoring effort initially.
 
 * [IETF's Linksets RFC](https://www.rfc-editor.org/rfc/rfc9264)
 

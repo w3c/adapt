@@ -69,7 +69,7 @@ The core capabilities are:
 * **Destination Discovery**: Enumerate all Discoverable Destinations available on a given site or page
 * **Semantic Navigation**: Navigate to a destination using its semantic identifier rather than a site-specific URL or selector
 * **Content Retrieval**: Fetch page content from a destination and deliver it to the LLM for processing, filtered through the `<main>` landmark to reduce noise
-* **Intra-page Navigation**: Discover labelled ARIA landmark regions on a destination page and scroll the user's browser to a specific section (browser-based deployments only)
+* **Intra-page Navigation**: Discover labeled ARIA landmark regions on a destination page and scroll the user's browser to a specific section (browser-based deployments only)
 
 The full technical specification — including how the LLM and tools divide responsibilities, the browser extension, server-side, and browser-native deployment patterns — is in the [W3C Note](../destinations/index.html#agentic-ai-and-machine-navigation).
 
@@ -89,7 +89,7 @@ The system operates through a clear separation of concerns between the LLM and t
 * Converting semantic destination names to URLs and performing HTTP requests
 * Fetching raw page content and passing it to the LLM for processing
 * Detecting and reporting technical failures (network errors, missing pages, authentication failures) to the LLM
-* Listing available ARIA landmark labels on the current page and scrolling the user's browser to a specific labelled section
+* Listing available ARIA landmark labels on the current page and scrolling the user's browser to a specific labeled section
 
 ## Alternatives Considered
 
@@ -109,7 +109,7 @@ However, CUA-based navigation has significant practical limitations for accessib
 
 * **Token cost**: Each navigation step requires at least one screenshot and a model round-trip to interpret it before the next action. Tasks requiring several page visits can become prohibitively expensive. A Semantic Web Tools call that reads all destinations from a `<link>` element costs a fraction of this.
 
-* **Reliability**: Navigation decisions are made by visually analysing a rendered page, which is inherently probabilistic. The agent may misidentify a link, click the wrong element, or fail to find a destination that is not visible in the current viewport.
+* **Reliability**: Navigation decisions are made by visually analyzing a rendered page, which is inherently probabilistic. The agent may misidentify a link, click the wrong element, or fail to find a destination that is not visible in the current viewport.
 
 * **Design sensitivity**: CUA agents are fragile under visual redesigns. A layout change that leaves the page's `<link>` elements completely untouched can cause a CUA agent to fail entirely on the next run.
 
@@ -117,7 +117,7 @@ However, CUA-based navigation has significant practical limitations for accessib
 
 For these reasons, CUA is not a primary approach for agentic accessibility work. It is best used as a fallback in two specific situations: when a site has not yet adopted Discoverable Destinations and no API is available, and when a semantic navigation step fails unexpectedly and a one-off visual recovery is needed. After the CUA recovery step, semantic navigation resumes. This layered strategy allows accessibility tools to degrade gracefully rather than failing completely.
 
-The comparison is summarised in the table in [The Problem](#the-problem) section.
+The comparison is summarized in the table in [The Problem](#the-problem) section.
 
 ### Site-specific APIs
 
@@ -133,7 +133,7 @@ Certain tasks require solutions beyond Discoverable Destinations:
 
 * Complex workflows such as password changes, account modifications, or transaction processing may vary dramatically between sites. Discoverable Destinations can navigate to the relevant starting point, but the actual workflow may require additional tools or human involvement.
 
-* Authenticated operations requiring user-specific authorisation need specialised protocols and often human involvement for security.
+* Authenticated operations requiring user-specific authorization need specialized protocols and often human involvement for security.
 
 For complex scenarios, a layered approach works well: Discoverable Destinations provide navigation to relevant areas, site-specific APIs handle sensitive operations where available, and human oversight is included for sensitive or complex tasks. Where neither semantic destinations nor APIs are available, a Computer Use Agent can serve as a fallback, as described in the Alternatives Considered section above.
 
@@ -150,7 +150,7 @@ These are proposed additions, not yet in the standard. Proposals for new destina
 
 ### New destination types for agentic use cases
 
-Should `account-settings`, `accessibility-preferences`, and similar destinations be standardised for AI-assisted accessibility? The current governance process for proposing new types is under development. Proposals can be raised as issues in the [WAI-Adapt GitHub repository](https://github.com/w3c/adapt/issues).
+Should `account-settings`, `accessibility-preferences`, and similar destinations be standardized for AI-assisted accessibility? The current governance process for proposing new types is under development. Proposals can be raised as issues in the [WAI-Adapt GitHub repository](https://github.com/w3c/adapt/issues).
 
 ### CUA fallback policy
 
@@ -160,9 +160,9 @@ Under what conditions should an agent trigger a CUA fallback rather than reporti
 
 Should tools that implement the Semantic Web Tools interface be required to declare whether they support CUA fallback, so that orchestrating agents can make informed decisions about task routing? Without this, an agent cannot know in advance whether a fallback is available.
 
-### Discovery optimisation for agents
+### Discovery optimization for agents
 
-Agents querying many sites benefit from a centralised discovery endpoint that reduces per-page overhead. The open question of whether a well-known URI endpoint should complement per-page `<link>` declarations (discussed in the [Discoverable Destinations explainer](discoverable-destinations.md#discoverability-and-repetition)) is particularly relevant for agents that query many sites in a single session.
+Agents querying many sites benefit from a centralized discovery endpoint that reduces per-page overhead. The open question of whether a well-known URI endpoint should complement per-page `<link>` declarations (discussed in the [Discoverable Destinations explainer](discoverable-destinations.md#discoverability-and-repetition)) is particularly relevant for agents that query many sites in a single session.
 
 ## References
 
@@ -194,7 +194,7 @@ MCP operates on a client-server model:
 - **MCP Servers**: Applications that expose tools and resources to AI systems
 - **Protocol**: JSON-RPC over stdio, HTTP with SSE (Server-Sent Events), or WebSocket connections
 
-Semantic Web Tools can be exposed through MCP servers, providing AI agents with standardised tools to access websites.
+Semantic Web Tools can be exposed through MCP servers, providing AI agents with standardized tools to access websites.
 
 **Example MCP Integration Workflow:**
 When a user asks an AI agent to "find support options across my service providers," a system using MCP might follow this pattern:
@@ -202,7 +202,7 @@ When a user asks an AI agent to "find support options across my service provider
 1. The agent uses Semantic Web Tools to discover available destinations on each target website
 2. Based on the discovered destinations, the agent determines the optimal navigation strategy
 3. The agent navigates to relevant destinations and retrieves content
-4. The AI processes the retrieved content to extract and synthesise the information
+4. The AI processes the retrieved content to extract and synthesize the information
 
 ### Sample Semantic Web Tools API
 
@@ -244,7 +244,7 @@ Parameters:
 Returns: List of landmark roles and labels (e.g. [{role: "region", label: "Account Management"}])
 
 Tool: navigateToLandmark
-Description: Scroll the user's browser to a specific labelled landmark region.
+Description: Scroll the user's browser to a specific labeled landmark region.
              Browser-based deployments only (browser extension or browser-native model).
 Parameters:
   url (string): URL of the page containing the landmark

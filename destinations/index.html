@@ -18,7 +18,7 @@ table, th, td {
 	<body>
 		<section id="abstract">
 			<p>This document describes an approach that content authors can use to provide improved ease of navigation to website visitors, particularly those facing accessibility barriers. It introduces the concept of "Discoverable Destinations", which are standardized machine readable names for common page types that User Agents can query to present navigation options in an accessible and consistent manner.</p>
-			<p>The approach uses HTML <code>&lt;link&gt;</code> elements with standardised <code>rel</code> attribute values to signpost common destinations such as help pages, accessibility statements, and login pages. This enables User Agents, assistive technologies, and AI agents to reliably discover and navigate to these destinations across different websites.</p>
+			<p>The approach uses HTML <code>&lt;link&gt;</code> elements with standardized <code>rel</code> attribute values to signpost common destinations such as help pages, accessibility statements, and login pages. This enables User Agents, assistive technologies, and AI agents to reliably discover and navigate to these destinations across different websites.</p>
 		</section>
 
 		<section id="sotd"></section>
@@ -28,12 +28,12 @@ table, th, td {
 <p>Web sites can contain a huge array of varied and engaging content.
 This content, and the means of navigating around it, can be presented in
 almost any way, which makes for tailored and compelling experiences.
-However, whilst there are several conventions when it comes to
+However, while there are several conventions when it comes to
 navigation, this variability can pose challenges to certain people, and
 user agents acting on their behalf.</p>
 <p>This best practices document aims to address the challenge of making sites more
 easily navigable for both people (particularly those facing
-accessibility barriers) and machines. It does this by standardising
+accessibility barriers) and machines. It does this by standardizing
 machine-readable names for common page types. User Agents can then query
 as to which destinations are supported on a given site (or page of that
 site), and present this information in an appropriate way for the
@@ -83,10 +83,10 @@ form)</p></li>
 
 <h4 id="use-case-cognitive-navigation">Navigation Support for Users with Cognitive Disabilities</h4>
 <p>A user with a cognitive disability wants to find common areas of a website, such as help pages, contact information, or their account login. The site's navigation uses unfamiliar labels, buries key pages in dropdown menus, or presents a complex layout that makes it difficult to locate these areas. Without standard signposting, User Agents and assistive technologies have no reliable way to identify these pages on the user's behalf.</p>
-<p>With Discoverable Destinations, a User Agent can read standardised destination identifiers from the page's <code>&lt;head&gt;</code> and present clearly labelled navigation options in an accessible and consistent interface, giving the user direct and reliable paths to the pages they need, regardless of how the site has chosen to structure its navigation.</p>
+<p>With Discoverable Destinations, a User Agent can read standardized destination identifiers from the page's <code>&lt;head&gt;</code> and present clearly labeled navigation options in an accessible and consistent interface, giving the user direct and reliable paths to the pages they need, regardless of how the site has chosen to structure its navigation.</p>
 
 <h4 id="use-case-accessibility-audit">Accessibility Statement Discovery</h4>
-<p>An accessibility auditor is reviewing a portfolio of websites on behalf of a disability rights organisation. Each site structures its accessibility statement differently, some link to it from the footer, others from the main navigation, and others only from an internal policy page. The auditor spends considerable time on each site searching for the relevant page before the audit can begin.</p>
+<p>An accessibility auditor is reviewing a portfolio of websites on behalf of a disability rights organization. Each site structures its accessibility statement differently, some link to it from the footer, others from the main navigation, and others only from an internal policy page. The auditor spends considerable time on each site searching for the relevant page before the audit can begin.</p>
 <p>With Discoverable Destinations, a User Agent or assistive technology can immediately locate the <code>accessibility-statement</code> destination on any compliant site and present a direct link to the auditor, regardless of where the site has chosen to place it in its navigation structure.</p>
 
 <h4 id="use-case-assistive-navigation">Assistive Navigation Technology</h4>
@@ -202,7 +202,7 @@ indicated by adding a <code>rel</code> value to the anchor.</p>
 <h3 id="demarcating-destination-content">Demarcating destination content</h3>
 <p>As discoverable destinations are normal links, they can make use of fragments to point to certain elements on the destination page.</p>
 <p>In addition to fragment identifiers, <a href="https://www.w3.org/TR/wai-aria-1.2/#landmark_roles">ARIA landmark roles</a> provide a complementary mechanism for both identifying and navigating to content on a destination page. In particular, the <code>&lt;main&gt;</code> element (or <code>role="main"</code>) demarcates the principal content of the page. When a discoverable destination link does not include a fragment identifier, it is good practice for User Agents and assistive technologies to treat the <code>&lt;main&gt;</code> element as the default content boundary for the destination. Content authors are encouraged to ensure that destination pages use the <code>&lt;main&gt;</code> element to wrap their primary destination content.</p>
-<p>Landmarks also support navigation within a page. A destination page may contain multiple labelled <code>region</code> landmarks, each representing a distinct content area. User Agents and assistive technologies can enumerate these landmarks and present them to the user, or navigate directly to a specific region. For example, a help destination page with regions labelled "Getting Started", "Account Settings", and "Billing Support" would allow the user or their agent to jump directly to the relevant section.</p>
+<p>Landmarks also support navigation within a page. A destination page may contain multiple labeled <code>region</code> landmarks, each representing a distinct content area. User Agents and assistive technologies can enumerate these landmarks and present them to the user, or navigate directly to a specific region. For example, a help destination page with regions labeled "Getting Started", "Account Settings", and "Billing Support" would allow the user or their agent to jump directly to the relevant section.</p>
 <p>User Agents and assistive technologies can then use this information (and the knowledge that the navigation was via the Discoverable Destination UI) to render the destination page in an appropriate way for the user. This may involve:</p>
 <ul>
 	<li><p>Highlighting the specific relevant part of the page.</p></li>
@@ -218,9 +218,9 @@ indicated by adding a <code>rel</code> value to the anchor.</p>
 
 			<h3 id="leveraging-aria-landmarks">Leveraging ARIA Landmarks for Intra-page Navigation</h3>
 			<p>Discoverable Destinations address <em>inter-page</em> navigation: finding and reaching the right page on a site. Users sometimes also need to reach a specific <em>section</em> within a destination page. For example: "take me to the account management section of the help page."</p>
-			<p>For <strong>content extraction</strong> tasks, where an AI agent retrieves information from a destination page on the user's behalf, <a href="https://www.w3.org/TR/wai-aria-1.2/#landmark_roles">ARIA landmarks</a> are not essential. LLMs are capable of processing full page content and extracting relevant information from raw HTML. Using the <code>&lt;main&gt;</code> element (or <code>role="main"</code>) to filter out navigation bars, footers, and advertisements before passing content to the LLM can reduce noise and token cost, but this is a practical optimisation, not a requirement.</p>
-			<p>For <strong>intra-page navigation</strong> tasks, where the user asks to be <em>taken to</em> a specific section of a page, ARIA landmarks are genuinely valuable. The AI agent can understand where a section is in the HTML, but it cannot scroll or focus the user's browser to that section without a concrete DOM target. Labelled <a href="https://www.w3.org/TR/wai-aria-1.2/#region"><code>region</code></a> landmarks provide exactly this: standardised, semantic anchors that a tool can use to navigate the user's view to the right part of the page.</p>
-			<p>For example, if a user asks to be taken to "account management help" and the help destination page contains labelled regions for "Getting Started", "Account Management", and "Billing Support", the AI agent first discovers the available landmark labels on the page, identifies the best match for the user's request, and then directs the tool to scroll the user's browser to the "Account Management" region. This is primarily relevant in browser-based integration models, such as a browser extension or a browser-native approach, where the tool has direct access to the page DOM. In a server-side model, intra-page navigation is not applicable since there is no browser to control.</p>
+			<p>For <strong>content extraction</strong> tasks, where an AI agent retrieves information from a destination page on the user's behalf, <a href="https://www.w3.org/TR/wai-aria-1.2/#landmark_roles">ARIA landmarks</a> are not essential. LLMs are capable of processing full page content and extracting relevant information from raw HTML. Using the <code>&lt;main&gt;</code> element (or <code>role="main"</code>) to filter out navigation bars, footers, and advertisements before passing content to the LLM can reduce noise and token cost, but this is a practical optimization, not a requirement.</p>
+			<p>For <strong>intra-page navigation</strong> tasks, where the user asks to be <em>taken to</em> a specific section of a page, ARIA landmarks are genuinely valuable. The AI agent can understand where a section is in the HTML, but it cannot scroll or focus the user's browser to that section without a concrete DOM target. Labelled <a href="https://www.w3.org/TR/wai-aria-1.2/#region"><code>region</code></a> landmarks provide exactly this: standardized, semantic anchors that a tool can use to navigate the user's view to the right part of the page.</p>
+			<p>For example, if a user asks to be taken to "account management help" and the help destination page contains labeled regions for "Getting Started", "Account Management", and "Billing Support", the AI agent first discovers the available landmark labels on the page, identifies the best match for the user's request, and then directs the tool to scroll the user's browser to the "Account Management" region. This is primarily relevant in browser-based integration models, such as a browser extension or a browser-native approach, where the tool has direct access to the page DOM. In a server-side model, intra-page navigation is not applicable since there is no browser to control.</p>
 			<p>The <a href="https://www.w3.org/TR/wai-aria-1.2/#navigation"><code>navigation</code></a> landmark can also help agents discover secondary navigation paths on a page, revealing links the agent can follow on the user's behalf.</p>
 			<p>Content authors are encouraged to use the <code>&lt;main&gt;</code> element to wrap primary destination content, and to label distinct content regions with <code>region</code> landmarks. This benefits both human users of assistive technologies and AI agents acting on their behalf.</p>
 
@@ -230,7 +230,7 @@ indicated by adding a <code>rel</code> value to the anchor.</p>
 				<li><p>An accessibility compliance assistant can help a disability rights advocate check accessibility statements across multiple partner websites. The AI agent discovers the <code>accessibility-statement</code> destination on each site, removing the need for manual navigation.</p></li>
 				<li><p>A user with cognitive disabilities facing issues across multiple service providers can be helped by an agent that finds the <code>contact</code> and <code>help</code> destinations on each platform and presents them in a consistent format.</p></li>
 				<li><p>A user with motor impairments who needs to update profile information across several sites can rely on an agent to handle the navigation to each relevant destination, leaving the user to focus on the actual updates rather than the navigation.</p></li>
-				<li><p>A disability services organisation that needs to regularly verify accessibility resources across its digital ecosystem can use an agent to discover <code>accessibility-statement</code> and <code>help</code> destinations automatically, without maintaining fragile site-specific scripts.</p></li>
+				<li><p>A disability services organization that needs to regularly verify accessibility resources across its digital ecosystem can use an agent to discover <code>accessibility-statement</code> and <code>help</code> destinations automatically, without maintaining fragile site-specific scripts.</p></li>
 			</ul>
 			<p>These scenarios share a common pattern: AI agents handle the discovery and navigation complexity, while humans maintain control over sensitive decisions and actions.</p>
 
@@ -243,7 +243,7 @@ indicated by adding a <code>rel</code> value to the anchor.</p>
 			<ul>
 				<li><p>Destination discovery reads directly from the live DOM of the tab currently open in the user's browser, so the destinations are always current and scoped to the active page.</p></li>
 				<li><p>Navigation is performed by updating the browser tab, so the user's session cookies and authentication state are preserved across navigations.</p></li>
-				<li><p>Intra-page navigation, such as scrolling the browser to a labelled ARIA landmark region, is possible because the extension has direct access to the page DOM.</p></li>
+				<li><p>Intra-page navigation, such as scrolling the browser to a labeled ARIA landmark region, is possible because the extension has direct access to the page DOM.</p></li>
 				<li><p>The extension can communicate with an AI agent either through a local server or through a cloud service, while the browser-side execution remains within the user's session.</p></li>
 			</ul>
 
@@ -268,12 +268,12 @@ indicated by adding a <code>rel</code> value to the anchor.</p>
 
 		<section>
 			<h2>Requesting Additional Destination Types</h2>
-			<p>The set of standardised destination types may evolve over time as new common navigation patterns emerge and as new user needs are identified. The current set of destinations reflects the priorities identified by the COGA TF at the time of publication, but it is not exhaustive.</p>
+			<p>The set of standardized destination types may evolve over time as new common navigation patterns emerge and as new user needs are identified. The current set of destinations reflects the priorities identified by the COGA TF at the time of publication, but it is not exhaustive.</p>
 			<p>Parties interested in proposing additional destination types are encouraged to consider the following criteria:</p>
 			<ul>
 				<li><p>The proposed destination type is expected to address a common navigation need that is shared across many websites, not a need specific to a particular industry or platform.</p></li>
 				<li><p>The destination type is expected to provide clear accessibility benefits, particularly for users facing cognitive accessibility barriers.</p></li>
-				<li><p>The destination type is expected to be sufficiently general to apply across different industries and website types. Where a need is specific to a particular domain, it may be more appropriate to address it through domain-specific conventions rather than a standardised destination type.</p></li>
+				<li><p>The destination type is expected to be sufficiently general to apply across different industries and website types. Where a need is specific to a particular domain, it may be more appropriate to address it through domain-specific conventions rather than a standardized destination type.</p></li>
 				<li><p>The destination type is expected to avoid duplicating an existing destination type or overlapping significantly with one already in the standard.</p></li>
 			</ul>
 			<div class="note">
